@@ -5,13 +5,19 @@
 \usepackage{enumerate}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{enumitem}
 %\usepackage{mathbbol}
-\usepackage{theorem}
+%\usepackage{theorem}
 \usepackage{rotating}
 \usepackage{isotope}
 \usepackage{tensor}
 \usepackage{ytableau}
 \usepackage{titlepage}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
+
 
 %% Colour version which is nice on-screen:
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=red,hyperfootnotes=false]{hyperref}
@@ -61,12 +67,25 @@
 \DeclareMathOperator{\Tr}{Tr}
 
 
-{\theorembodyfont{\upshape}
-\theoremstyle{break}
-\newtheorem{teorem}{Teorem}[section]
+%% BEGIN New theorem-like environments
+\newtheoremstyle{myt}%
+   {1.5\topsep} % space above
+   {.5\topsep} % space below
+   {\addtolength{\leftskip}{2.5em}\upshape} % bodyfont
+   {\parindent}  % indent
+   {\bfseries} % Theorem head font
+   {} % punctuation after head
+   {\newline}  % space after head  ({ } is normal interword space, \newline = line break)
+   {}  % Theorem head specification
+
+\theoremstyle{myt}
+\newtheorem{teorem}{Teorem}
 \newtheorem{primjer}[teorem]{Primjer}
 \newtheorem{definicija}[teorem]{Definicija}
-}
+% Need this to control lists inside theorem-like environments:
+\setlist[enumerate]{leftmargin=10ex, topsep=0pt, start=1, label={\arabic*)}}
+%% END New theorem-like environments
+
 %Defining \vec to make a symbol bold
 \if@mathematic
    \def\vec#1{\ensuremath{\mathbf{#1}}}
@@ -101,7 +120,7 @@
 %\cleardoublepage
 %\include{predgovor}
 \include{1_grupe}
-\include{2_reprezentacije}
+%\include{2_reprezentacije}
 %\include{3_irreps}
 %\include{4_klasicna}
 %\include{5_Lieve_grupe}

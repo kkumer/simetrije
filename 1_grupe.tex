@@ -11,39 +11,68 @@
 \section{Definicija grupe i primjeri}
 
 
+Moć teorije grupa leži u njenoj apstraktnosti koju je poznati fizičar Arthur
+Eddington ilustrirao 
+riječima
+\begin{quote}
+ \emph{We need a super-mathematics in which the operations are as unknown as the
+ quantities they operate on, and a super-mathematician who does not know what
+ he is doing when he performs these operations. Such a super-mathematics is the
+Theory of Groups.}
+\end{quote}
+Možda je Eddingtonova karakterizacija teorije grupa kao "super-matematike" malo pretjerana, jer
+teorija grupa je čvrsti dio standardne matematike, ali točno je da je upotrebljivost
+ove teorije iznenađujuće široka i da najraznolikiji matematički i fizikalni objekti
+imaju strukturu grupe.
+Stoga je poželjno prvo definirati pojam grupe maksimalno apstraktno, bez pozivanja
+na njene konkretne primjere i realizacije:
+
 \begin{definicija}[Grupa] 
-Grupa $(G,\circ)$ je skup objekata $G$ na kojem je definirana binarna operacija
- $\circ$ tako da su zadovoljena slijedeća svojstva:
-\begin{enumerate}[1)]
-\item Zatvorenost: $g_1, g_2 \in G \imp g_1 \circ g_2 \in G$
-\item Asocijativnost: $ g_1 \circ (g_2 \circ g_3) =
-                       (g_1 \circ  g_2)\circ g_3$
-\item Egzistencija identiteta: 
-    $\exists e \td g\circ e = e \circ g = g \quad \forall g\in G$
-\item Egzistencija inverza: 
-  $\forall g\in G \;\; \exists g^{-1} \td g\circ g^{-1} = g^{-1}\circ
-g =e$
+Grupa $(G,\star)$ je skup objekata $G$ na kojem je definirana binarna operacija
+ $\star$ tako da su zadovoljena sljedeća svojstva:
+\begin{enumerate}
+\item $g_1 \star g_2 \in G \quad \forall  g_1, g_2 \in G$  (zatvorenost)
+\item $ g_1 \star (g_2 \star g_3) = (g_1 \star  g_2)\star g_3 \quad \forall 
+    g_1, g_2, g_3 \in G$  (asocijativnost)
+\item $\exists e \in G \td g\star e = e \star g = g \quad \forall g\in G$
+    (egzistencija jedinstvenog identiteta)
+\item $\forall g\in G \;\; \exists g^{-1} \td g\star g^{-1} = g^{-1}\star g =e$
+    (egzistencija inverza za svaki element)
 \end{enumerate}
 \end{definicija}
 
+Dat ćemo sada nekoliko klasičnih primjera skupova $G$ i pripadajućih
+binarnih operacija $\star$ kao ilustraciju gore navedene široke primjene grupa.
 
 \begin{primjer}[$\mathbb{Z}$, +]
  Lako se uvjeriti da skup cijelih brojeva $\mathbb{Z}$ čini grupu obzirom
- na obično zbrajanje brojeva:
-\begin{enumerate}[1)]
+ na binarnu operaciju običnog zbrajanja brojeva:
+\begin{enumerate}
 \item $n,m \in  \mathbb{Z} \imp n+m \in  \mathbb{Z}$
-\item n+(m+k)=(n+m)+k
-\item 0+n=n \quad \text{nula je identitet tj. ``jedinični element''}
-\item n+(-n)=0
+\item $n+(m+k)=(n+m)+k \quad \forall n,m,k \in \mathbb{Z}$
+\item $0+n=n \quad \forall n\in\mathbb{Z}$ \quad \text{(nula je identitet tj. "jedinični element")}
+\item $n+(-n)=0 \quad \forall n\in\mathbb{Z}$  \quad \text{($-n$ je inverzni element od $n$)}
 \end{enumerate}
 \end{primjer}
 
 \begin{primjer}[$\mathbb{Z}$, $\cdot$]
 S druge strane, taj isti skup $\mathbb{Z}$ nije grupa obzirom na
-operaciju množenja. Zašto? \secret{Nema inverza.}
+operaciju množenja. Naime, aksiom zatvorenosti je zadovoljen jer
+množenjem cijelih brojeva dobivamo cijele brojeve. Asocijativnost
+je također zadovoljena: $m(nk)=(mn)k$. Broj $1$ je identitet jer
+za svaki $n\in\mathbb{Z}$ vrijedi da je $1n=n$.
+No aksiom postojanja inverza za svaki element nije zadovoljen.
+Inverz od $n$ je broj $\frac{1}{n}$, ali taj broj nije element
+skupa cijelih brojeva $\mathbb{Z}$ (osim za specijalne slučajeve
+kad je $n\in\{-1, 1\}$ što nije dovoljno).
 \end{primjer}
 
+Ovaj primjer ilustrira da je za potpunu definiciju pojma grupe nužno
+specificirati i skup i binarnu operaciju. U praksi, često je iz konteksta
+očito na koju se binarnu operaciju misli pa se njeno navođenje izostavlja.
+
 \begin{primjer}
+    \label{th:dvijemat}
 Skup dvije matrice
 \[\left\{
 \begin{pmatrix}
@@ -63,13 +92,13 @@ grupno-teorijskom oznakom GL(2).
 \end{primjer}
 
 Grupu zovemo \emph{Abelova (abelovska, komutativna)} ako 
-$\forall g_1, g_2 \in G \quad g_1 \circ g_2 = g_2 \circ g_1$
-
-Npr. ($\mathbb{Z}$, +) je Abelova dok grupa GL(2) to nije.
-
+$\forall g_1, g_2 \in G \quad g_1 \star g_2 = g_2 \star g_1$.
+Na primjer ($\mathbb{Z}$, +) je Abelova dok grupa GL(2) to nije jer množenje
+matrica općenito ne komutira.
 Broj elemenata grupe nazivamo \emph{red grupe}. Obzirom na njega razlikujemo:
 \begin{itemize}
-\item \emph{Konačne grupe}. Primjer: ($\{1,-1\}$, $\cdot$)
+\item \emph{Konačne grupe}. Primjeri su npr. ($\{1,-1\}$, $\cdot$) ili
+    grupa iz primjera \ref{th:dvijemat}.
 \item \emph{Beskonačne diskretne grupe} koje imaju 
 prebrojivo\footnote{Beskonačan skup je \emph{prebrojiv} ukoliko je moguće uspostaviti
 bijektivno preslikavanje između tog skupa i skupa prirodnih brojeva $\mathbb{N}$. Npr. skup
@@ -79,42 +108,45 @@ beskonačan broj elemenata. Primjer: ($\mathbb{Z}$, +)
 \item \emph{Beskonačne kontinuirane grupe} 
 koje imaju neprebrojiv broj elemenata i čije elemente možemo
 zamisliti kao kontinuirani skup točaka. Ukoliko su zadovoljeni neki dodatni
-uvjeti, vidi Poglavlje \ref{chap:lie}, ove grupe se nazivaju Lieve grupe. 
+uvjeti, vidi poglavlje \ref{chap:lie}, ove grupe se nazivaju Lieve grupe. 
 Primjeri: ($\mathbb{R}\backslash\{0\}$, $\cdot$), GL(2)
 \end{itemize}
 
 \begin{primjer}[Grupa simetrija]
 Skup svih transformacija simetrije tj. transformacija koje ostavljaju
-neki objekt nepromijenjen nužno tvore grupu.
-
-\begin{enumerate}[1)]
+neki objekt nepromijenjen nužno tvore grupu obzirom na binarnu
+operaciju kompozicije transformacija $\circ$:
+\begin{enumerate}
 \item zatvorenost: ako ni $g_1$ ni $g_2$ ne mijenjaju objekt, ne mijenja
-   ga ni $g_2 \circ g_1$
-
-\item asocijativnost je očita (zapravo, nije baš, čini se \dots)
-
-\item identiteta - transformacija koja ne radi ništa ne mijenja objekt
-   po definiciji
-
-\item suprotna transformacija je isto simetrija
+   ga ni njihova kompozicija $g_2 \circ g_1$
+\item asocijativnost: transformacije možemo interpretirati kao
+    funkcije na skupu svih stanja objekta koji transformiramo, a kompozicija funkcija je asocijativna
+\item identiteta: transformaciju koja ne radi ništa tj. ne mijenja objekt
+      također smatramo transformacijom
+\item suprotna transformacija je isto simetrija (dobra vježba iz apstraktnog
+    razmišljanja je uvjeriti se da za svaku transformaciju objekta postoji suprotna)
 \end{enumerate}
+\end{primjer}
 
-``Objekt'' na kojeg djeluju transformacije grupe simetrija može biti
+Činjenica da transformacije simetrije čine grupu nam je od velikog
+značaja. To će nam sada omogućiti elegantnu konstrukciju mnogih važnih
+grupa, a kasnije će nas zanimati grupe simetrija fizikalnih
+objekata.
+"Objekt" na kojeg djeluju transformacije grupe simetrija može biti
 nekakav realan fizikalni objekt poput kristala, ali može biti i
-nešto apstraktniji entitet poput kvantnomehaničke valne funkcije.
-
+nešto apstraktniji entitet poput kvantnomehaničke valne funkcije
+ili bilo kakvog matematičkog objekta kojeg možemo definirati.
 Važno je imati na umu da su sam pojam i svojstva grupe neovisni o
-tom objektu. Njega ćemo iskoristiti da identificiramo skup transformacija
+tom objektu. Zamisao tog objekta ćemo iskoristiti da identificiramo skup transformacija
 simetrije, da vizualiziramo pojedine transformacije i da
 fizikalno interpretiramo rezultate teorije grupa, ali nikad
 ne smijemo izgubiti iz vida da je grupa sasvim apstraktan matematički pojam.
-
-\end{primjer}
 
 
 \begin{primjer}[Ciklička grupa C$_n$]
 Ciklička grupa C$_n$ je grupa simetrija rotacija pravilnog poligona s $n$
 usmjerenih stranica.
+\end{primjer}
 
 \centerline{\includegraphics[scale=1.0]{pics/Cn}}
 
@@ -124,29 +156,37 @@ stranica isključuje rotacije oko osi koje leže u ravnini poligona.
 (Iako je poligon ravninski lik ovdje ga zamišljamo u 3D prostoru.)
 
 Specifično svojstvo cikličkih grupa je da je sve elemente grupe moguće
-dobiti uzastopnim množenjem jednog od njih sa samim sobom.
-Tako npr. uzastopnim množenjem rotacije za kut 2$\pi/3$ sa samom sobom dobivamo ostale
+dobiti uzastopnim komponiranjem ("množenjem") jednog od njih sa samim sobom.
+Tako npr. uzastopnim komponiranjem rotacije za kut 2$\pi/3$ sa samom sobom dobivamo ostale
 dvije rotacije koje sačinjavaju grupu C$_3$: rotaciju za 4$\pi/3$ i
 rotaciju za 0 radijana. 
-Ukoliko označimo ``generirajuću'' rotaciju grupe C$_n$ (onu za kut 2$\pi/n$) simbolom 
+Ukoliko označimo "generirajuću" rotaciju grupe C$_n$ (onu za kut 2$\pi/n$) simbolom 
 $c$ onda možemo pisati
 \begin{equation}
  \text{C}_n = \{c,c^2, \ldots , c^n=e \}
 \label{eq:cn}
 \end{equation}
 odnosno grupu C$_n$ možemo alternativno definirati kao grupu generiranu
-elementom $c$ sa svojstvom $c^n=e$ i pisati kao definicioni izraz:
+elementom $c$ sa svojstvom $c^n=e$ i pisati kao definicioni izraz
 \begin{equation}
  {\rm C}_n = {\rm gp}(c) \;, \qquad c^n=e \;.
 \label{eq:cngp}
 \end{equation}
+\begin{equation}
+ {\rm C}_n = \langle c \: | \: c^n=e \rangle \;.
+\label{eq:cngp}
+\end{equation}
+Ovakvo navođenje generatora i njegovih (ili njihovih ako ih ima više, vidi kasnije)
+svojstava je kompaktni način definiranja grupe poznat i kao \emph{prezentacija}
+grupe. (Što nikako ne treba miješati s \emph{reprezentacijom} grupe što je nevezani
+pojam kojeg ćemo kasnije definirati!)
 
 Treću mogućnost za definiciju ove i drugih grupa pruža nam grupna tablica množenja
 (poznata i kao Cayleyjeva tablica).
 Naime, obzirom da je apstraktna grupa potpuno određena time da se navede
 skup elemenata koji je sačinjavaju te time da se potpuno specificira kako
 se ti elementi množe (tj. kakva je binarna operacija u grupi), grupu C$_3$, npr.,
-je moguće definirati naprosto kao grupu koja zadovoljava slijedeću tablicu
+je moguće definirati naprosto kao skup elemenata koji zadovoljavaju slijedeću tablicu
 množenja:
 
 \begin{equation}
@@ -206,19 +246,19 @@ Može se pokazati da jedini elementi tih grupa mogu biti kompozicije
 rotacija za 60$^\circ$ i 90$^\circ$ te inverzije $\vec{r}\to -\vec{r}$.
 (cf. Crystallographic restriction theorem)
    
-\end{primjer}
 
 
 
 \begin{primjer}[Dihedralna grupa D$_n$]
 Dihedralna grupa D$_n$ je grupa simetrija rotacija pravilnog poligona s $n$ stranica.
-Prma slici
+Prema slici
 
 \centerline{\includegraphics[scale=1.0]{pics/D3}}
 
 elementi grupe su rotacije $e, c$ i  $c^2$ baš kao kod grupe C$_n$, te
 dodatno rotacije $b_1, b_2$ i $b_3$ za kut $\pi$ oko triju horizontalnih
 osi.
+\end{primjer}
 
 Uočimo sada neka svojstva množenja u toj grupi. Kao prvo, vrijedi
 da je $b_2 = c b_1 c^{-1}$ tj. da su $b_2$ i $b_1$ međusobno
@@ -269,7 +309,6 @@ Ova definicija se generalizira ovako (vidi zadatke)
 D$_2$ poznatu i kao
 \emph{Kleinova četvorna grupa} (njem. \emph{Vierergruppe}), 
 za koju nemamo odgovarajući poligon kao objekt grupe simetrija.
-\end{primjer}
 
 
 \section{Podgrupe}
@@ -302,7 +341,7 @@ $g_1 \in g_2 H$, uspostavlja \emph{relaciju ekvivalencije}%
 \footnote{Općenito, \emph{relacija ekvivalencije} je binarna relacija $a\sim b$ između
 elemenata nekog
 skupa koja ima slijedeća svojstva
-\begin{enumerate}[(i)]
+\begin{enumerate}
 \item $a\sim a \quad \forall a$ \qquad (refleksivnost)
 \item $a\sim b \imp b\sim a$   \qquad (simetričnost)
 \item $a\sim b \quad \textrm{i}\quad  b\sim c \imp a\sim c$  \qquad (tranzitivnost)
@@ -343,7 +382,7 @@ skup.
 \begin{primjer}[D$_3$]
 Promotrimo podgrupu $H=\{e, c, c^2\}=$C$_3$ grupe $G={\rm D}_3$.
 Dvije lijeve susjedne klase su
-\begin{enumerate}[1)]
+\begin{enumerate}
 \item $eH=H=\{e, c, c^2\}$ \; \text{i}
 \item $bH=\{b, bc, bc^2\}$ \;,
 \end{enumerate}
@@ -412,7 +451,7 @@ postoji $g\in G \td a=gbg^{-1}$.
 
 
 Konjugacija je također relacija ekvivalencije:
-\begin{enumerate}[(i)]
+\begin{enumerate}
 
 \item $a=e^{-1} a e  \imp a\sim a$
 \item $a=g^{-1} b g  \imp  b= g^{-1} a (g^{-1})^{-1}$
@@ -438,7 +477,7 @@ da su one sastavljenje od \emph{cijelih} klasa konjugacije.
 
 \begin{primjer}[D$_3$]
 Klase konjugacije  od D$_3$ su:
-\begin{enumerate}[-]
+\begin{enumerate}
 \item $(e)$
 \item $(c, c^{2})$
 \item $(b, bc, bc^2)$
@@ -501,7 +540,7 @@ Kernel od $f:A\to B$ je normalna podgrupa od $A$. (DZ: Uvjerite se u to.)
 \begin{teorem}[Teorem o izomorfizmu]
 \label{th:izomorfizam}
 Ako je $f:G\to G'$ homomorfizam s kernelom $K$, onda vrijedi
-\begin{enumerate}[a)]
+\begin{enumerate}
 \item Svaki element susjedne klase $gK$ se preslikava u isti element $f(g)$.
 \item Slika homomorfizma $f(G)$ je izomorfna kvocijentnoj grupi po kernelu $G/K$.
 \end{enumerate}
@@ -550,7 +589,7 @@ samo ako je kernel $K=\{e\}$.
 
 \subsection*{Zadaci}
 
-\begin{enumerate}[{1}.1]
+\begin{enumerate}[label=\arabic{chapter}.\arabic*.]
 \item Dokažite da su jedinični i inverzni element grupe jedinstveni.
 \item Konstrukcijom grupne tablice množenja pokažite da postoji samo
 jedna grupa reda 3.
