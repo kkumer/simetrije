@@ -29,12 +29,7 @@
     \fancyhead[RO,LE]{\bfseries \thepage}
     \fancyhead[CO]{\rightmark}
     \fancyhead[CE]{\leftmark}
-%% The following has to be declared in all included files
-%    \fancyfoot[C]{\mbox{$$RCSfile: tikk.tex,v $$}}
-%    \fancyfoot[RO,LE]{\mbox{$$Revision: 1.3 $$}}
-%    \fancyfoot[LO,RE]{\mbox{$$Date: 2001/10/22$$}}
     \renewcommand{\headrulewidth}{0.4pt}
-    \renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
 %% END Fancy headings
@@ -66,14 +61,11 @@
 \DeclareMathOperator{\Tr}{Tr}
 
 
-{
-\theoremstyle{break}
-\newtheorem{definicija}{Definicija}
-}
 {\theorembodyfont{\upshape}
 \theoremstyle{break}
-\newtheorem{primjer}{Primjer}
-\newtheorem{teorem}{Teorem}
+\newtheorem{teorem}{Teorem}[section]
+\newtheorem{primjer}[teorem]{Primjer}
+\newtheorem{definicija}[teorem]{Definicija}
 }
 %Defining \vec to make a symbol bold
 \if@mathematic
@@ -94,9 +86,9 @@
 \begin{document}
 
 \begin{titlepage}
-\title{SIMETRIJE U FIZICI}
+\title{Grupe, simetrije i tenzori u fizici}
 \author{Krešimir Kumerički}
-\date{Zagreb, 2012.}
+\date{Zagreb, 2024.}
 \maketitle
 \end{titlepage}
  \thispagestyle{empty}
@@ -107,16 +99,16 @@
 \tableofcontents
 }
 %\cleardoublepage
-\include{predgovor}
+%\include{predgovor}
 \include{1_grupe}
 \include{2_reprezentacije}
-\include{3_irreps}
-\include{4_klasicna}
-\include{5_Lieve_grupe}
-\include{6_rotacije}
-\include{7_sun}
-\include{8_lorentz}
+%\include{3_irreps}
+%\include{4_klasicna}
+%\include{5_Lieve_grupe}
+%\include{6_rotacije}
+%\include{7_sun}
+%\include{8_lorentz}
 %\include{9_diskretne}
-\include{literatura}
+%\include{literatura}
 
 \end{document}
