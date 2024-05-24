@@ -1,0 +1,1019 @@
+%TGIF 4.1.27
+state(0,37,100.000,0,0,0,16,1,9,1,1,0,0,0,0,1,0,'Times-Bold',1,103680,0,2,1,5,0,0,1,1,0,16,0,0,1,1,1,1,1088,1408,1,0,2880,0).
+%
+% @(#)$Header$
+% %W%
+%
+unit("1 pixel/pixel").
+color_info(13,65535,0,[
+	"magenta", 65535, 0, 65535, 65535, 0, 65535, 1,
+	"red", 65535, 0, 0, 65535, 0, 0, 1,
+	"green", 0, 65535, 0, 0, 65535, 0, 1,
+	"blue", 0, 0, 65535, 0, 0, 65535, 1,
+	"yellow", 65535, 65535, 0, 65535, 65535, 0, 1,
+	"pink", 65535, 49931, 53052, 65535, 49344, 52171, 1,
+	"cyan", 0, 65535, 65535, 0, 65535, 65535, 1,
+	"CadetBlue", 22885, 40569, 42649, 24415, 40606, 41120, 1,
+	"white", 65535, 65535, 65535, 65535, 65535, 65535, 1,
+	"black", 0, 0, 0, 0, 0, 0, 1,
+	"DarkSlateGray", 10402, 19764, 18724, 12079, 20303, 20303, 1,
+	"#0000ff", 0, 0, 65535, 0, 0, 65280, 1,
+	"#ff00ff", 65535, 0, 65535, 65280, 0, 65280, 1
+]).
+script_frac("0.6").
+fg_bg_colors('black','white').
+page(1,"",1,'').
+poly('black','',4,[
+	50,250,200,250,260,170,50,250],0,2,1,1,0,0,0,0,0,0,0,'2',0,0,
+    "0","",[
+    0,10,4,0,'10','4','0'],[0,10,4,0,'10','4','0'],[
+]).
+poly('black','',2,[
+	175,225,175,135],1,4,1,2,0,0,0,0,0,0,0,'4',0,0,
+    "0","",[
+    0,14,6,0,'14','6','0'],[0,14,6,0,'14','6','0'],[
+]).
+icon([
+polygon('yellow','',5,[
+	189,139,253,139,253,123,189,123,189,139],0,1,0,0,616,0,0,0,0,0,'1',0,
+    "00",[
+]),
+xbm('black','',189,139,206,153,0,656,0,17,14,0,0,1,298000,685000,315000,699000,0,0,1,0,0,0,0,
+    "Mon Dec 10 18:01:03 2001","/tmp/TgifgIhgjp.eps",77,[
+    "%!PS-Adobe-2.0 EPSF-1.2",
+    "%!PS (but not EPSF; comments have been disabled)",
+    "%DVIPSWebPage: (www.radicaleye.com)",
+    "%DVIPSCommandLine: dvips -N -n 1 -o /tmp/TgifgIhgjp.ps /tmp/TgifgIhgjp",
+    "%DVIPSParameters: dpi=600, compressed",
+    "%DVIPSSource:  TeX output 2001.12.10:1800",
+    "%!",
+    "/TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S",
+    "N}B/A{dup}B/TR{translate}N/isls false N/vsize 11 72 mul N/hsize 8.5 72",
+    "mul N/landplus90{false}def/@rigin{isls{[0 landplus90{1 -1}{-1 1}ifelse 0",
+    "0 0]concat}if 72 Resolution div 72 VResolution div neg scale isls{",
+    "landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div hsize",
+    "mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul TR[",
+    "matrix currentmatrix{A A round sub abs 0.00001 lt{round}if}forall round",
+    "exch round exch]setmatrix}N/@landscape{/isls true N}B/@manualfeed{",
+    "statusdict/manualfeed true put}B/@copies{/#copies X}B/FMat[1 0 0 -1 0 0]",
+    "N/FBB[0 0 0 0]N/nn 0 N/IEn 0 N/ctr 0 N/df-tail{/nn 8 dict N nn begin",
+    "/FontType 3 N/FontMatrix fntrx N/FontBBox FBB N string/base X array",
+    "/BitMaps X/BuildChar{CharBuilder}N/Encoding IEn N end A{/foo setfont}2",
+    "array copy cvx N load 0 nn put/ctr 0 N[}B/sf 0 N/df{/sf 1 N/fntrx FMat N",
+    "df-tail}B/dfs{div/sf X/fntrx[sf 0 0 sf neg 0 0]N df-tail}B/E{pop nn A",
+    "definefont setfont}B/Cw{Cd A length 5 sub get}B/Ch{Cd A length 4 sub get",
+    "}B/Cx{128 Cd A length 3 sub get sub}B/Cy{Cd A length 2 sub get 127 sub}",
+    "B/Cdx{Cd A length 1 sub get}B/Ci{Cd A type/stringtype ne{ctr get/ctr ctr",
+    "1 add N}if}B/id 0 N/rw 0 N/rc 0 N/gp 0 N/cp 0 N/G 0 N/CharBuilder{save 3",
+    "1 roll S A/base get 2 index get S/BitMaps get S get/Cd X pop/ctr 0 N Cdx",
+    "0 Cx Cy Ch sub Cx Cw add Cy setcachedevice Cw Ch true[1 0 0 -1 -.1 Cx",
+    "sub Cy .1 sub]/id Ci N/rw Cw 7 add 8 idiv string N/rc 0 N/gp 0 N/cp 0 N{",
+    "rc 0 ne{rc 1 sub/rc X rw}{G}ifelse}imagemask restore}B/G{{id gp get/gp",
+    "gp 1 add N A 18 mod S 18 idiv pl S get exec}loop}B/adv{cp add/cp X}B",
+    "/chg{rw cp id gp 4 index getinterval putinterval A gp add/gp X adv}B/nd{",
+    "/cp 0 N rw exit}B/lsh{rw cp 2 copy get A 0 eq{pop 1}{A 255 eq{pop 254}{",
+    "A A add 255 and S 1 and or}ifelse}ifelse put 1 adv}B/rsh{rw cp 2 copy",
+    "get A 0 eq{pop 128}{A 255 eq{pop 127}{A 2 idiv S 128 and or}ifelse}",
+    "ifelse put 1 adv}B/clr{rw cp 2 index string putinterval adv}B/set{rw cp",
+    "fillstr 0 4 index getinterval putinterval adv}B/fillstr 18 string 0 1 17",
+    "{2 copy 255 put pop}for N/pl[{adv 1 chg}{adv 1 chg nd}{1 add chg}{1 add",
+    "chg nd}{adv lsh}{adv lsh nd}{adv rsh}{adv rsh nd}{1 add adv}{/rc X nd}{",
+    "1 add set}{1 add clr}{adv 2 chg}{adv 2 chg nd}{pop nd}]A{bind pop}",
+    "forall N/D{/cc X A type/stringtype ne{]}if nn/base get cc ctr put nn",
+    "/BitMaps get S ctr S sf 1 ne{A A length 1 sub A 2 index S get sf div put",
+    "}if put/ctr ctr 1 add N}B/I{cc 1 add D}B/bop{userdict/bop-hook known{",
+    "bop-hook}if/SI save N @rigin 0 0 moveto/V matrix currentmatrix A 1 get A",
+    "mul exch 0 get A mul add .99 lt{/QV}{/RV}ifelse load def pop pop}N/eop{",
+    "SI restore userdict/eop-hook known{eop-hook}if showpage}N/@start{",
+    "userdict/start-hook known{start-hook}if pop/VResolution X/Resolution X",
+    "1000 div/DVImag X/IEn 256 array N 2 string 0 1 255{IEn S A 360 add 36 4",
+    "index cvrs cvn put}for pop 65781.76 div/vsize X 65781.76 div/hsize X}N",
+    "/p{show}N/RMat[1 0 0 -1 0 0]N/BDot 260 string N/Rx 0 N/Ry 0 N/V{}B/RV/v{",
+    "/Ry X/Rx X V}B statusdict begin/product where{pop false[(Display)(NeXT)",
+    "(LaserWriter 16/600)]{A length product length le{A length product exch 0",
+    "exch getinterval eq{pop true exit}if}{pop}ifelse}forall}{false}ifelse",
+    "end{{gsave TR -.1 .1 TR 1 1 scale Rx Ry false RMat{BDot}imagemask",
+    "grestore}}{{gsave TR -.1 .1 TR Rx Ry scale 1 1 false RMat{BDot}",
+    "imagemask grestore}}ifelse B/QV{gsave newpath transform round exch round",
+    "exch itransform moveto Rx 0 rlineto 0 Ry neg rlineto Rx neg 0 rlineto",
+    "fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B/M{S p",
+    "delta add tail}B/b{S p tail}B/c{-4 M}B/d{-3 M}B/e{-2 M}B/f{-1 M}B/g{0 M}",
+    "B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p -3 w}B/n{",
+    "p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{0 S",
+    "rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end",
+    "TeXDict begin 39158280 55380996 1000 600 600 (/tmp/TgifgIhgjp.dvi)",
+    "@start",
+    "%DVIPSBitmapFont: Fa cmmib10 20.74 1",
+    "/Fa 1 81 df<0303BC12F84BF3FFE04B1CFCF8FF8021E021F821FE6F777E92C7000702F8",
+    "C8001F81500300810D3F804D070F800D038050828E4D7380A2508323805FA2501AC0A25F",
+    "A297CBFCA294B6FC9DB6FC61A25E55158061A25E551500616A5E555C616A4C626A4F4D5C",
+    "A24C505C555C4F97C7FC9CB55A4C4F5C545C4F040F5C545C4C077F148053B6C8FC96C900",
+    "0F14FC52B612F093BD12C09DC9FC1FFC1FE054CAFC4B1AE00BF0CBFC4ED0FCA25D60A35D",
+    "60A35D60A35D60A35D60A35D60A392B6FC95D1FCA35C5FA35C5FA35C5FA35C4A5C003FB9",
+    "12F0488485BAFCA2617E6C608A7679F57C>80 D E",
+    "%EndDVIPSBitmapFont",
+    "end",
+    "TeXDict begin",
+    "",
+    "1 0 bop 1874 714 a Fa(P)p eop end",
+    "userdict /end-hook known{end-hook}if"],
+    "1fff007070070780f0780f0700e0f00e1e01ff801e0001c0001c0003c0003c00
+     0ff000",[
+])
+],
+"eq4",615,0,0,0,0,[
+attr("", "not_rigid", 0, 1, 1,
+text('blue',189,147,1,0,1,81,16,624,13,3,0,0,0,0,2,81,16,0,0,"",0,0,0,0,160,'',[
+minilines(81,16,0,0,0,0,0,[
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,81,13,3,0,-1,0,0,0,0,0,
+	"not_rigid")])
+])
+])])),
+attr("eq=", "", 0, 1, 1,
+text('blue',189,43,6,0,1,81,96,635,13,3,0,0,0,0,2,81,96,0,0,"",0,0,0,0,56,'',[
+minilines(81,96,0,0,0,0,0,[
+mini_line(27,13,3,0,0,0,[
+str_block(0,27,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,27,13,3,0,-1,0,0,0,0,0,
+	"eq=")])
+]),
+mini_line(54,13,3,0,0,0,[
+str_block(0,54,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,54,13,3,0,-1,0,0,0,0,0,
+	"\\LARGE")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,81,13,3,0,-1,0,0,0,0,0,
+	"\\boldmath")])
+]),
+mini_line(18,13,3,0,0,0,[
+str_block(0,18,13,3,0,-3,0,0,0,[
+str_seg('blue','Courier',0,80640,18,13,3,0,-3,0,0,0,0,0,
+	"\\[")])
+]),
+mini_line(36,13,3,0,0,0,[
+str_block(0,36,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,36,13,3,0,-1,0,0,0,0,0,
+	"   P")])
+]),
+mini_line(18,13,3,0,0,0,[
+str_block(0,18,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,18,13,3,0,-4,0,0,0,0,0,
+	"\\]")])
+])
+])])),
+attr("file_name=", "/tmp/TgifgIhgjp", 0, 1, 1,
+text('blue',189,27,1,0,1,225,16,622,13,3,0,0,0,0,2,225,16,0,0,"",0,0,0,0,40,'',[
+minilines(225,16,0,0,0,0,0,[
+mini_line(225,13,3,0,0,0,[
+str_block(0,225,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,225,13,3,0,-1,0,0,0,0,0,
+	"file_name=/tmp/TgifgIhgjp")])
+])
+])])),
+attr("cleanup=", "", 0, 1, 1,
+text('blue',189,-77,3,0,1,540,48,621,13,3,0,0,0,0,2,540,48,0,0,"",0,0,0,0,-64,'',[
+minilines(540,48,0,0,0,0,0,[
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,72,13,3,0,-1,0,0,0,0,0,
+	"cleanup=")])
+]),
+mini_line(540,13,3,0,0,0,[
+str_block(0,540,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,540,13,3,0,-2,0,0,0,0,0,
+	"    rm -f $(file_name).tex $(file_name).aux $(file_name).dvi")])
+]),
+mini_line(513,13,3,0,0,0,[
+str_block(0,513,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,513,13,3,0,-2,0,0,0,0,0,
+	"        $(file_name).log $(file_name).ps $(file_name).eps")])
+])
+])])),
+attr("cmd=", "", 0, 1, 1,
+text('blue',189,-157,5,0,1,702,80,620,13,3,0,0,0,0,2,702,80,0,0,"",0,0,0,0,-144,'',[
+minilines(702,80,0,0,0,0,0,[
+mini_line(36,13,3,0,0,0,[
+str_block(0,36,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,36,13,3,0,-1,0,0,0,0,0,
+	"cmd=")])
+]),
+mini_line(108,13,3,0,0,0,[
+str_block(0,108,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,108,13,3,0,-4,0,0,0,0,0,
+	"    cd /tmp;")])
+]),
+mini_line(459,13,3,0,0,0,[
+str_block(0,459,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,459,13,3,0,-4,0,0,0,0,0,
+	"    xterm -geom 40x8+200+400 -e latex $(file_name);")])
+]),
+mini_line(702,13,3,0,0,0,[
+str_block(0,702,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,702,13,3,0,-4,0,0,0,0,0,
+	"    xterm -geom 40x8+200+400 -e dvips -N -n 1 -o $(file_name).ps $(file_name);")])
+]),
+mini_line(657,13,3,0,0,0,[
+str_block(0,657,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,657,13,3,0,-2,0,0,0,0,0,
+	"    xterm -geom 40x8+200+400 -e pstoepsi $(file_name).ps $(file_name).eps")])
+])
+])])),
+attr("exec=", "", 0, 1, 1,
+text('blue',189,-277,8,0,1,477,128,619,13,3,0,0,0,0,2,477,128,0,0,"",0,0,0,0,-264,'',[
+minilines(477,128,0,0,0,0,0,[
+mini_line(45,13,3,0,0,0,[
+str_block(0,45,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,45,13,3,0,-1,0,0,0,0,0,
+	"exec=")])
+]),
+mini_line(378,13,3,0,0,0,[
+str_block(0,378,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,378,13,3,0,-4,0,0,0,0,0,
+	"    mktemp(\"/tmp/TgifXXXXXX\",\"file_name\");")])
+]),
+mini_line(468,13,3,0,0,0,[
+str_block(0,468,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,468,13,3,0,-4,0,0,0,0,0,
+	"    write_attr_into_file(header,\"$(file_name).tex\");")])
+]),
+mini_line(441,13,3,0,0,0,[
+str_block(0,441,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,441,13,3,0,-4,0,0,0,0,0,
+	"    append_attr_into_file(eq,\"$(file_name).tex\");")])
+]),
+mini_line(477,13,3,0,0,0,[
+str_block(0,477,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,477,13,3,0,-4,0,0,0,0,0,
+	"    append_attr_into_file(footer,\"$(file_name).tex\");")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,162,13,3,0,-4,0,0,0,0,0,
+	"    launch(\"cmd\");")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"    update_eps_child(\"$(file_name).eps\");")])
+]),
+mini_line(189,13,3,0,0,0,[
+str_block(0,189,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,189,13,3,0,-4,0,0,0,0,0,
+	"    launch(\"cleanup\")")])
+])
+])])),
+attr("header=", "", 0, 1, 1,
+text('#ff00ff',365,-26,11,0,1,270,176,618,13,3,0,0,0,0,2,270,176,0,0,"",0,0,0,0,-13,'',[
+minilines(270,176,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	"header=")])
+]),
+mini_line(261,13,3,0,0,0,[
+str_block(0,261,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,261,13,3,0,-4,0,0,0,0,0,
+	"\\documentstyle[12pt]{article}")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,162,13,3,0,-1,0,0,0,0,0,
+	"\\oddsidemargin=0in")])
+]),
+mini_line(144,13,3,0,0,0,[
+str_block(0,144,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,144,13,3,0,-1,0,0,0,0,0,
+	"\\textwidth=6.5in")])
+]),
+mini_line(126,13,3,0,0,0,[
+str_block(0,126,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,126,13,3,0,-1,0,0,0,0,0,
+	"\\topmargin=0in")])
+]),
+mini_line(153,13,3,0,0,0,[
+str_block(0,153,13,3,0,-2,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,153,13,3,0,-2,0,0,0,0,0,
+	"\\textheight=609pt")])
+]),
+mini_line(117,13,3,0,0,0,[
+str_block(0,117,13,3,0,-2,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,117,13,3,0,-2,0,0,0,0,0,
+	"\\parskip=14pt")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,270,13,3,0,-4,0,0,0,0,0,
+	"\\setlength{\\unitlength}{0.5cm}")])
+]),
+mini_line(153,13,3,0,0,0,[
+str_block(0,153,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,153,13,3,0,-4,0,0,0,0,0,
+	"\\pagestyle{empty}")])
+]),
+mini_line(144,13,3,0,0,0,[
+str_block(0,144,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,144,13,3,0,-4,0,0,0,0,0,
+	"\\begin{document}")])
+]),
+mini_line(9,13,3,0,0,0,[
+str_block(0,9,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,9,13,3,0,-1,0,0,0,0,0,
+	"%")])
+])
+])])),
+attr("footer=", "", 0, 1, 1,
+text('#ff00ff',189,-26,3,0,1,126,48,617,13,3,0,0,0,0,2,126,48,0,0,"",0,0,0,0,-13,'',[
+minilines(126,48,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	"footer=")])
+]),
+mini_line(9,13,3,0,0,0,[
+str_block(0,9,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,9,13,3,0,-1,0,0,0,0,0,
+	"%")])
+]),
+mini_line(126,13,3,0,0,0,[
+str_block(0,126,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,126,13,3,0,-4,0,0,0,0,0,
+	"\\end{document}")])
+])
+])]))
+]).
+poly('black','',2,[
+	25,255,290,205],0,1,1,668,0,0,0,0,0,0,0,'1',0,0,
+    "0","",[
+    0,8,3,0,'8','3','0'],[0,8,3,0,'8','3','0'],[
+]).
+poly('black','',48,[
+	273,219,273,218,273,217,273,216,273,215,273,214,273,213,273,212,
+	273,211,273,210,273,209,272,209,272,208,272,207,272,206,272,205,
+	272,204,272,203,272,202,272,201,272,200,273,199,274,199,274,198,
+	275,198,275,197,276,197,277,197,277,196,278,196,278,195,279,195,
+	280,195,281,194,282,194,283,194,284,194,285,194,286,194,287,194,
+	288,194,288,195,289,195,289,196,290,196,290,197,291,198,291,199],0,1,1,669,0,0,0,0,0,0,0,'1',0,0,
+    "000000000000","",[
+    0,8,3,0,'8','3','0'],[0,8,3,0,'8','3','0'],[
+]).
+poly('black','',14,[
+	287,198,288,198,289,198,289,199,290,199,291,199,291,198,292,198,
+	292,197,292,196,293,196,293,195,293,194,293,193],0,1,1,670,0,0,0,0,0,0,0,'1',0,0,
+    "0000","",[
+    0,8,3,0,'8','3','0'],[0,8,3,0,'8','3','0'],[
+]).
+icon([
+polygon('yellow','',5,[
+	289,209,353,209,353,193,289,193,289,209],0,1,0,0,676,0,0,0,0,0,'1',0,
+    "00",[
+]),
+xbm('black','',289,209,297,225,0,720,0,8,16,0,0,1,303000,684000,311000,700000,0,0,1,0,0,0,0,
+    "Mon Dec 10 18:03:12 2001","/tmp/Tgifb1AqfI.eps",79,[
+    "%!PS-Adobe-2.0 EPSF-1.2",
+    "%!PS (but not EPSF; comments have been disabled)",
+    "%DVIPSWebPage: (www.radicaleye.com)",
+    "%DVIPSCommandLine: dvips -N -n 1 -o /tmp/Tgifb1AqfI.ps /tmp/Tgifb1AqfI",
+    "%DVIPSParameters: dpi=600, compressed",
+    "%DVIPSSource:  TeX output 2001.12.10:1803",
+    "%!",
+    "/TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S",
+    "N}B/A{dup}B/TR{translate}N/isls false N/vsize 11 72 mul N/hsize 8.5 72",
+    "mul N/landplus90{false}def/@rigin{isls{[0 landplus90{1 -1}{-1 1}ifelse 0",
+    "0 0]concat}if 72 Resolution div 72 VResolution div neg scale isls{",
+    "landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div hsize",
+    "mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul TR[",
+    "matrix currentmatrix{A A round sub abs 0.00001 lt{round}if}forall round",
+    "exch round exch]setmatrix}N/@landscape{/isls true N}B/@manualfeed{",
+    "statusdict/manualfeed true put}B/@copies{/#copies X}B/FMat[1 0 0 -1 0 0]",
+    "N/FBB[0 0 0 0]N/nn 0 N/IEn 0 N/ctr 0 N/df-tail{/nn 8 dict N nn begin",
+    "/FontType 3 N/FontMatrix fntrx N/FontBBox FBB N string/base X array",
+    "/BitMaps X/BuildChar{CharBuilder}N/Encoding IEn N end A{/foo setfont}2",
+    "array copy cvx N load 0 nn put/ctr 0 N[}B/sf 0 N/df{/sf 1 N/fntrx FMat N",
+    "df-tail}B/dfs{div/sf X/fntrx[sf 0 0 sf neg 0 0]N df-tail}B/E{pop nn A",
+    "definefont setfont}B/Cw{Cd A length 5 sub get}B/Ch{Cd A length 4 sub get",
+    "}B/Cx{128 Cd A length 3 sub get sub}B/Cy{Cd A length 2 sub get 127 sub}",
+    "B/Cdx{Cd A length 1 sub get}B/Ci{Cd A type/stringtype ne{ctr get/ctr ctr",
+    "1 add N}if}B/id 0 N/rw 0 N/rc 0 N/gp 0 N/cp 0 N/G 0 N/CharBuilder{save 3",
+    "1 roll S A/base get 2 index get S/BitMaps get S get/Cd X pop/ctr 0 N Cdx",
+    "0 Cx Cy Ch sub Cx Cw add Cy setcachedevice Cw Ch true[1 0 0 -1 -.1 Cx",
+    "sub Cy .1 sub]/id Ci N/rw Cw 7 add 8 idiv string N/rc 0 N/gp 0 N/cp 0 N{",
+    "rc 0 ne{rc 1 sub/rc X rw}{G}ifelse}imagemask restore}B/G{{id gp get/gp",
+    "gp 1 add N A 18 mod S 18 idiv pl S get exec}loop}B/adv{cp add/cp X}B",
+    "/chg{rw cp id gp 4 index getinterval putinterval A gp add/gp X adv}B/nd{",
+    "/cp 0 N rw exit}B/lsh{rw cp 2 copy get A 0 eq{pop 1}{A 255 eq{pop 254}{",
+    "A A add 255 and S 1 and or}ifelse}ifelse put 1 adv}B/rsh{rw cp 2 copy",
+    "get A 0 eq{pop 128}{A 255 eq{pop 127}{A 2 idiv S 128 and or}ifelse}",
+    "ifelse put 1 adv}B/clr{rw cp 2 index string putinterval adv}B/set{rw cp",
+    "fillstr 0 4 index getinterval putinterval adv}B/fillstr 18 string 0 1 17",
+    "{2 copy 255 put pop}for N/pl[{adv 1 chg}{adv 1 chg nd}{1 add chg}{1 add",
+    "chg nd}{adv lsh}{adv lsh nd}{adv rsh}{adv rsh nd}{1 add adv}{/rc X nd}{",
+    "1 add set}{1 add clr}{adv 2 chg}{adv 2 chg nd}{pop nd}]A{bind pop}",
+    "forall N/D{/cc X A type/stringtype ne{]}if nn/base get cc ctr put nn",
+    "/BitMaps get S ctr S sf 1 ne{A A length 1 sub A 2 index S get sf div put",
+    "}if put/ctr ctr 1 add N}B/I{cc 1 add D}B/bop{userdict/bop-hook known{",
+    "bop-hook}if/SI save N @rigin 0 0 moveto/V matrix currentmatrix A 1 get A",
+    "mul exch 0 get A mul add .99 lt{/QV}{/RV}ifelse load def pop pop}N/eop{",
+    "SI restore userdict/eop-hook known{eop-hook}if showpage}N/@start{",
+    "userdict/start-hook known{start-hook}if pop/VResolution X/Resolution X",
+    "1000 div/DVImag X/IEn 256 array N 2 string 0 1 255{IEn S A 360 add 36 4",
+    "index cvrs cvn put}for pop 65781.76 div/vsize X 65781.76 div/hsize X}N",
+    "/p{show}N/RMat[1 0 0 -1 0 0]N/BDot 260 string N/Rx 0 N/Ry 0 N/V{}B/RV/v{",
+    "/Ry X/Rx X V}B statusdict begin/product where{pop false[(Display)(NeXT)",
+    "(LaserWriter 16/600)]{A length product length le{A length product exch 0",
+    "exch getinterval eq{pop true exit}if}{pop}ifelse}forall}{false}ifelse",
+    "end{{gsave TR -.1 .1 TR 1 1 scale Rx Ry false RMat{BDot}imagemask",
+    "grestore}}{{gsave TR -.1 .1 TR Rx Ry scale 1 1 false RMat{BDot}",
+    "imagemask grestore}}ifelse B/QV{gsave newpath transform round exch round",
+    "exch itransform moveto Rx 0 rlineto 0 Ry neg rlineto Rx neg 0 rlineto",
+    "fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B/M{S p",
+    "delta add tail}B/b{S p tail}B/c{-4 M}B/d{-3 M}B/e{-2 M}B/f{-1 M}B/g{0 M}",
+    "B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p -3 w}B/n{",
+    "p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{0 S",
+    "rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end",
+    "TeXDict begin 39158280 55380996 1000 600 600 (/tmp/Tgifb1AqfI.dvi)",
+    "@start",
+    "%DVIPSBitmapFont: Fa cmmi12 20.74 1",
+    "/Fa 1 99 df<157F0103B57E90B6FC4892C9FCA4C75B141FA35DA2143FA25DA2147FA25D",
+    "A214FFA25DA25BA25DA25BA25DA25BA292CAFCA25BA25CA2131FA25CEE1FF8013F91B5FC",
+    "030314C0DAF80F8092391FF03FF8017F90397F800FFC9239FE0003FEDAF1F86D7EECF3F0",
+    "9026FFF7C06D1380DAFF8015C092C8127F4A16E0485B4AED3FF05CA2484916F85C5CA25A",
+    "19FC91C9FCA25AA25B187F121FA25BA2003FEFFFF8A25BA2007F5E19F05BA25F00FF18E0",
+    "5BA24D13C0A25B4D1380A219005F60A24D5AA2494B5A6D5E17FF60007F4B5B605E003F4B",
+    "90C7FC6D4A5A5F001F4B5A6D4A5A000F4B5A6C6C4A5A6C6C010390C8FC4B5A6CB4EB1FFC",
+    "6C9038C0FFF0013FB512C06D91C9FC010713FC010013C03E7A79F748>98",
+    "D E",
+    "%EndDVIPSBitmapFont",
+    "end",
+    "TeXDict begin",
+    "",
+    "1 0 bop 1914 714 a Fa(b)p eop end",
+    "userdict /end-hook known{end-hook}if"],
+    "70f0306060607ee6c3c7c686868cf820",[
+])
+],
+"eq4",675,0,0,0,0,[
+attr("", "not_rigid", 0, 1, 1,
+text('blue',289,217,1,0,1,81,16,678,13,3,0,0,0,0,2,81,16,0,0,"",0,0,0,0,230,'',[
+minilines(81,16,0,0,0,0,0,[
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,81,13,3,0,-1,0,0,0,0,0,
+	"not_rigid")])
+])
+])])),
+attr("eq=", "", 0, 1, 1,
+text('blue',289,113,5,0,1,54,80,697,13,3,0,0,0,0,2,54,80,0,0,"",0,0,0,0,126,'',[
+minilines(54,80,0,0,0,0,0,[
+mini_line(27,13,3,0,0,0,[
+str_block(0,27,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,27,13,3,0,-1,0,0,0,0,0,
+	"eq=")])
+]),
+mini_line(54,13,3,0,0,0,[
+str_block(0,54,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,54,13,3,0,-1,0,0,0,0,0,
+	"\\LARGE")])
+]),
+mini_line(18,13,3,0,0,0,[
+str_block(0,18,13,3,0,-3,0,0,0,[
+str_seg('blue','Courier',0,80640,18,13,3,0,-3,0,0,0,0,0,
+	"\\[")])
+]),
+mini_line(36,13,3,0,0,0,[
+str_block(0,36,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,36,13,3,0,-1,0,0,0,0,0,
+	"   b")])
+]),
+mini_line(18,13,3,0,0,0,[
+str_block(0,18,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,18,13,3,0,-4,0,0,0,0,0,
+	"\\]")])
+])
+])])),
+attr("file_name=", "/tmp/Tgifb1AqfI", 0, 1, 1,
+text('blue',289,97,1,0,1,225,16,680,13,3,0,0,0,0,2,225,16,0,0,"",0,0,0,0,110,'',[
+minilines(225,16,0,0,0,0,0,[
+mini_line(225,13,3,0,0,0,[
+str_block(0,225,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,225,13,3,0,-2,0,0,0,0,0,
+	"file_name=/tmp/Tgifb1AqfI")])
+])
+])])),
+attr("cleanup=", "", 0, 1, 1,
+text('blue',289,-7,3,0,1,540,48,681,13,3,0,0,0,0,2,540,48,0,0,"",0,0,0,0,6,'',[
+minilines(540,48,0,0,0,0,0,[
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,72,13,3,0,-1,0,0,0,0,0,
+	"cleanup=")])
+]),
+mini_line(540,13,3,0,0,0,[
+str_block(0,540,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,540,13,3,0,-2,0,0,0,0,0,
+	"    rm -f $(file_name).tex $(file_name).aux $(file_name).dvi")])
+]),
+mini_line(513,13,3,0,0,0,[
+str_block(0,513,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,513,13,3,0,-2,0,0,0,0,0,
+	"        $(file_name).log $(file_name).ps $(file_name).eps")])
+])
+])])),
+attr("cmd=", "", 0, 1, 1,
+text('blue',289,-87,5,0,1,702,80,682,13,3,0,0,0,0,2,702,80,0,0,"",0,0,0,0,-74,'',[
+minilines(702,80,0,0,0,0,0,[
+mini_line(36,13,3,0,0,0,[
+str_block(0,36,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,36,13,3,0,-1,0,0,0,0,0,
+	"cmd=")])
+]),
+mini_line(108,13,3,0,0,0,[
+str_block(0,108,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,108,13,3,0,-4,0,0,0,0,0,
+	"    cd /tmp;")])
+]),
+mini_line(459,13,3,0,0,0,[
+str_block(0,459,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,459,13,3,0,-4,0,0,0,0,0,
+	"    xterm -geom 40x8+200+400 -e latex $(file_name);")])
+]),
+mini_line(702,13,3,0,0,0,[
+str_block(0,702,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,702,13,3,0,-4,0,0,0,0,0,
+	"    xterm -geom 40x8+200+400 -e dvips -N -n 1 -o $(file_name).ps $(file_name);")])
+]),
+mini_line(657,13,3,0,0,0,[
+str_block(0,657,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,657,13,3,0,-2,0,0,0,0,0,
+	"    xterm -geom 40x8+200+400 -e pstoepsi $(file_name).ps $(file_name).eps")])
+])
+])])),
+attr("exec=", "", 0, 1, 1,
+text('blue',289,-207,8,0,1,477,128,683,13,3,0,0,0,0,2,477,128,0,0,"",0,0,0,0,-194,'',[
+minilines(477,128,0,0,0,0,0,[
+mini_line(45,13,3,0,0,0,[
+str_block(0,45,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,45,13,3,0,-1,0,0,0,0,0,
+	"exec=")])
+]),
+mini_line(378,13,3,0,0,0,[
+str_block(0,378,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,378,13,3,0,-4,0,0,0,0,0,
+	"    mktemp(\"/tmp/TgifXXXXXX\",\"file_name\");")])
+]),
+mini_line(468,13,3,0,0,0,[
+str_block(0,468,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,468,13,3,0,-4,0,0,0,0,0,
+	"    write_attr_into_file(header,\"$(file_name).tex\");")])
+]),
+mini_line(441,13,3,0,0,0,[
+str_block(0,441,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,441,13,3,0,-4,0,0,0,0,0,
+	"    append_attr_into_file(eq,\"$(file_name).tex\");")])
+]),
+mini_line(477,13,3,0,0,0,[
+str_block(0,477,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,477,13,3,0,-4,0,0,0,0,0,
+	"    append_attr_into_file(footer,\"$(file_name).tex\");")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,162,13,3,0,-4,0,0,0,0,0,
+	"    launch(\"cmd\");")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"    update_eps_child(\"$(file_name).eps\");")])
+]),
+mini_line(189,13,3,0,0,0,[
+str_block(0,189,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,189,13,3,0,-4,0,0,0,0,0,
+	"    launch(\"cleanup\")")])
+])
+])])),
+attr("header=", "", 0, 1, 1,
+text('#ff00ff',465,44,11,0,1,270,176,684,13,3,0,0,0,0,2,270,176,0,0,"",0,0,0,0,57,'',[
+minilines(270,176,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	"header=")])
+]),
+mini_line(261,13,3,0,0,0,[
+str_block(0,261,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,261,13,3,0,-4,0,0,0,0,0,
+	"\\documentstyle[12pt]{article}")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,162,13,3,0,-1,0,0,0,0,0,
+	"\\oddsidemargin=0in")])
+]),
+mini_line(144,13,3,0,0,0,[
+str_block(0,144,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,144,13,3,0,-1,0,0,0,0,0,
+	"\\textwidth=6.5in")])
+]),
+mini_line(126,13,3,0,0,0,[
+str_block(0,126,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,126,13,3,0,-1,0,0,0,0,0,
+	"\\topmargin=0in")])
+]),
+mini_line(153,13,3,0,0,0,[
+str_block(0,153,13,3,0,-2,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,153,13,3,0,-2,0,0,0,0,0,
+	"\\textheight=609pt")])
+]),
+mini_line(117,13,3,0,0,0,[
+str_block(0,117,13,3,0,-2,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,117,13,3,0,-2,0,0,0,0,0,
+	"\\parskip=14pt")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,270,13,3,0,-4,0,0,0,0,0,
+	"\\setlength{\\unitlength}{0.5cm}")])
+]),
+mini_line(153,13,3,0,0,0,[
+str_block(0,153,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,153,13,3,0,-4,0,0,0,0,0,
+	"\\pagestyle{empty}")])
+]),
+mini_line(144,13,3,0,0,0,[
+str_block(0,144,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,144,13,3,0,-4,0,0,0,0,0,
+	"\\begin{document}")])
+]),
+mini_line(9,13,3,0,0,0,[
+str_block(0,9,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,9,13,3,0,-1,0,0,0,0,0,
+	"%")])
+])
+])])),
+attr("footer=", "", 0, 1, 1,
+text('#ff00ff',289,44,3,0,1,126,48,685,13,3,0,0,0,0,2,126,48,0,0,"",0,0,0,0,57,'',[
+minilines(126,48,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	"footer=")])
+]),
+mini_line(9,13,3,0,0,0,[
+str_block(0,9,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,9,13,3,0,-1,0,0,0,0,0,
+	"%")])
+]),
+mini_line(126,13,3,0,0,0,[
+str_block(0,126,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,126,13,3,0,-4,0,0,0,0,0,
+	"\\end{document}")])
+])
+])]))
+]).
+poly('black','',2,[
+	175,250,175,325],1,4,1,724,0,0,2,0,0,0,0,'4',0,0,
+    "0","",[
+    0,14,6,0,'14','6','0'],[0,14,6,0,'14','6','0'],[
+]).
+icon([
+polygon('yellow','',5,[
+	189,304,253,304,253,288,189,288,189,304],0,1,0,0,729,0,0,0,0,0,'1',0,
+    "00",[
+]),
+xbm('black','',189,304,261,326,0,773,0,72,22,0,0,1,270000,680000,342000,702000,0,0,1,0,0,0,0,
+    "Mon Dec 10 18:05:03 2001","/tmp/TgifJZ92pQ.eps",98,[
+    "%!PS-Adobe-2.0 EPSF-1.2",
+    "%!PS (but not EPSF; comments have been disabled)",
+    "%DVIPSWebPage: (www.radicaleye.com)",
+    "%DVIPSCommandLine: dvips -N -n 1 -o /tmp/TgifJZ92pQ.ps /tmp/TgifJZ92pQ",
+    "%DVIPSParameters: dpi=600, compressed",
+    "%DVIPSSource:  TeX output 2001.12.10:1804",
+    "%!",
+    "/TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S",
+    "N}B/A{dup}B/TR{translate}N/isls false N/vsize 11 72 mul N/hsize 8.5 72",
+    "mul N/landplus90{false}def/@rigin{isls{[0 landplus90{1 -1}{-1 1}ifelse 0",
+    "0 0]concat}if 72 Resolution div 72 VResolution div neg scale isls{",
+    "landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div hsize",
+    "mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul TR[",
+    "matrix currentmatrix{A A round sub abs 0.00001 lt{round}if}forall round",
+    "exch round exch]setmatrix}N/@landscape{/isls true N}B/@manualfeed{",
+    "statusdict/manualfeed true put}B/@copies{/#copies X}B/FMat[1 0 0 -1 0 0]",
+    "N/FBB[0 0 0 0]N/nn 0 N/IEn 0 N/ctr 0 N/df-tail{/nn 8 dict N nn begin",
+    "/FontType 3 N/FontMatrix fntrx N/FontBBox FBB N string/base X array",
+    "/BitMaps X/BuildChar{CharBuilder}N/Encoding IEn N end A{/foo setfont}2",
+    "array copy cvx N load 0 nn put/ctr 0 N[}B/sf 0 N/df{/sf 1 N/fntrx FMat N",
+    "df-tail}B/dfs{div/sf X/fntrx[sf 0 0 sf neg 0 0]N df-tail}B/E{pop nn A",
+    "definefont setfont}B/Cw{Cd A length 5 sub get}B/Ch{Cd A length 4 sub get",
+    "}B/Cx{128 Cd A length 3 sub get sub}B/Cy{Cd A length 2 sub get 127 sub}",
+    "B/Cdx{Cd A length 1 sub get}B/Ci{Cd A type/stringtype ne{ctr get/ctr ctr",
+    "1 add N}if}B/id 0 N/rw 0 N/rc 0 N/gp 0 N/cp 0 N/G 0 N/CharBuilder{save 3",
+    "1 roll S A/base get 2 index get S/BitMaps get S get/Cd X pop/ctr 0 N Cdx",
+    "0 Cx Cy Ch sub Cx Cw add Cy setcachedevice Cw Ch true[1 0 0 -1 -.1 Cx",
+    "sub Cy .1 sub]/id Ci N/rw Cw 7 add 8 idiv string N/rc 0 N/gp 0 N/cp 0 N{",
+    "rc 0 ne{rc 1 sub/rc X rw}{G}ifelse}imagemask restore}B/G{{id gp get/gp",
+    "gp 1 add N A 18 mod S 18 idiv pl S get exec}loop}B/adv{cp add/cp X}B",
+    "/chg{rw cp id gp 4 index getinterval putinterval A gp add/gp X adv}B/nd{",
+    "/cp 0 N rw exit}B/lsh{rw cp 2 copy get A 0 eq{pop 1}{A 255 eq{pop 254}{",
+    "A A add 255 and S 1 and or}ifelse}ifelse put 1 adv}B/rsh{rw cp 2 copy",
+    "get A 0 eq{pop 128}{A 255 eq{pop 127}{A 2 idiv S 128 and or}ifelse}",
+    "ifelse put 1 adv}B/clr{rw cp 2 index string putinterval adv}B/set{rw cp",
+    "fillstr 0 4 index getinterval putinterval adv}B/fillstr 18 string 0 1 17",
+    "{2 copy 255 put pop}for N/pl[{adv 1 chg}{adv 1 chg nd}{1 add chg}{1 add",
+    "chg nd}{adv lsh}{adv lsh nd}{adv rsh}{adv rsh nd}{1 add adv}{/rc X nd}{",
+    "1 add set}{1 add clr}{adv 2 chg}{adv 2 chg nd}{pop nd}]A{bind pop}",
+    "forall N/D{/cc X A type/stringtype ne{]}if nn/base get cc ctr put nn",
+    "/BitMaps get S ctr S sf 1 ne{A A length 1 sub A 2 index S get sf div put",
+    "}if put/ctr ctr 1 add N}B/I{cc 1 add D}B/bop{userdict/bop-hook known{",
+    "bop-hook}if/SI save N @rigin 0 0 moveto/V matrix currentmatrix A 1 get A",
+    "mul exch 0 get A mul add .99 lt{/QV}{/RV}ifelse load def pop pop}N/eop{",
+    "SI restore userdict/eop-hook known{eop-hook}if showpage}N/@start{",
+    "userdict/start-hook known{start-hook}if pop/VResolution X/Resolution X",
+    "1000 div/DVImag X/IEn 256 array N 2 string 0 1 255{IEn S A 360 add 36 4",
+    "index cvrs cvn put}for pop 65781.76 div/vsize X 65781.76 div/hsize X}N",
+    "/p{show}N/RMat[1 0 0 -1 0 0]N/BDot 260 string N/Rx 0 N/Ry 0 N/V{}B/RV/v{",
+    "/Ry X/Rx X V}B statusdict begin/product where{pop false[(Display)(NeXT)",
+    "(LaserWriter 16/600)]{A length product length le{A length product exch 0",
+    "exch getinterval eq{pop true exit}if}{pop}ifelse}forall}{false}ifelse",
+    "end{{gsave TR -.1 .1 TR 1 1 scale Rx Ry false RMat{BDot}imagemask",
+    "grestore}}{{gsave TR -.1 .1 TR Rx Ry scale 1 1 false RMat{BDot}",
+    "imagemask grestore}}ifelse B/QV{gsave newpath transform round exch round",
+    "exch itransform moveto Rx 0 rlineto 0 Ry neg rlineto Rx neg 0 rlineto",
+    "fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B/M{S p",
+    "delta add tail}B/b{S p tail}B/c{-4 M}B/d{-3 M}B/e{-2 M}B/f{-1 M}B/g{0 M}",
+    "B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p -3 w}B/n{",
+    "p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{0 S",
+    "rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end",
+    "TeXDict begin 39158280 55380996 1000 600 600 (/tmp/TgifJZ92pQ.dvi)",
+    "@start",
+    "%DVIPSBitmapFont: Fa cmbx12 20.74 1",
+    "/Fa 1 62 df<001FC112F8007F20FEA2C3FCA46C20FEA2001F20F8D5FCB3AA001FC112F8",
+    "007F20FEA2C3FCA46C20FEA2001F20F8803075C297>61 D E",
+    "%EndDVIPSBitmapFont",
+    "%DVIPSBitmapFont: Fb cmbsy10 20.74 1",
+    "/Fb 1 55 df<1D1FF53F80F5FFC01EE064A264A25213C0641E80641E0064525A651CFF65",
+    "63515B65636563515B9AC7FC63641B7F515A64626462505B646264625090C8FC631A7F63",
+    "1AFF634F5B61636163614F5B98C9FC6162197F4F5A626062604E5B626062604E90CAFC61",
+    "187F6118FF4D5B615F615F4D5B615F96CBFC5F604D5A17FF605E605E4C5B605E605E4C90",
+    "CCFC5F167F5F16FF4B5B5F5D5F5D4B5B5F5D94CDFC5D4B5A5E15FF5E5C5E4A5B5C5E5C5E",
+    "5C4A90CEFC5D147F5D14FF495B5D5B5D5B495B5D5B92CFFC5B495A5C13FF5C5A485B5C5A",
+    "5C5A485B91D0FC5A5B127F5B485AA25BA25B127FEA3F806CD1FC639F65FA00>54",
+    "D E",
+    "%EndDVIPSBitmapFont",
+    "%DVIPSBitmapFont: Fc cmbsy10 14.4 1",
+    "/Fc 1 49 df<EC03E0EC0FF8EC1FFE4A7E4A138091B5FC16C05BA45BA3491480A216005B",
+    "5DA25D5B5DA2495BA25D5B5DA25D90B5FC92C7FCA2485BA25C5A5CA25C5A5CA2485BA25C",
+    "5A91C8FCA25B123F5BA2485AA25B12FF5BA2EA3FC0120FEA0180223F7CC229>48",
+    "D E",
+    "%EndDVIPSBitmapFont",
+    "%DVIPSBitmapFont: Fd cmmib10 20.74 1",
+    "/Fd 1 81 df<0303BC12F84BF3FFE04B1CFCF8FF8021E021F821FE6F777E92C7000702F8",
+    "C8001F81500300810D3F804D070F800D038050828E4D7380A2508323805FA2501AC0A25F",
+    "A297CBFCA294B6FC9DB6FC61A25E55158061A25E551500616A5E555C616A4C626A4F4D5C",
+    "A24C505C555C4F97C7FC9CB55A4C4F5C545C4F040F5C545C4C077F148053B6C8FC96C900",
+    "0F14FC52B612F093BD12C09DC9FC1FFC1FE054CAFC4B1AE00BF0CBFC4ED0FCA25D60A35D",
+    "60A35D60A35D60A35D60A35D60A392B6FC95D1FCA35C5FA35C5FA35C5FA35C4A5C003FB9",
+    "12F0488485BAFCA2617E6C608A7679F57C>80 D E",
+    "%EndDVIPSBitmapFont",
+    "end",
+    "TeXDict begin",
+    "",
+    "1 0 bop 1645 714 a Fd(P)1797 643 y Fc(0)1897 714 y Fb(6)p",
+    "Fa(=)55 b Fd(P)p eop end",
+    "userdict /end-hook known{end-hook}if"],
+    "00000e00000000000000000e00000000000000000c0000180000001fff1c0000
+     18003ffe07071c000038000e0e070798000030000e0f0f07b0000070001e0f0f
+     0730000060001e0e0e0f000000c0001c1e0e1e0001fffe001c3c1ff800000180
+     003ff01e0000000380003c001c00000003000038001c000001fffe0038003c00
+     0001fffe0078003c0000000c00007800ff0000001c0001fe0000000000180000
+     0000000000003000000000000000007000000000000000006000000000000000
+     004000000000",[
+])
+],
+"eq4",728,0,0,0,0,[
+attr("", "not_rigid", 0, 1, 1,
+text('blue',189,312,1,0,1,81,16,731,13,3,0,0,0,0,2,81,16,0,0,"",0,0,0,0,325,'',[
+minilines(81,16,0,0,0,0,0,[
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,81,13,3,0,-1,0,0,0,0,0,
+	"not_rigid")])
+])
+])])),
+attr("eq=", "", 0, 1, 1,
+text('blue',189,208,6,0,1,279,96,750,13,3,0,0,0,0,2,279,96,0,0,"",0,0,0,0,221,'',[
+minilines(279,96,0,0,0,0,0,[
+mini_line(27,13,3,0,0,0,[
+str_block(0,27,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,27,13,3,0,-1,0,0,0,0,0,
+	"eq=")])
+]),
+mini_line(54,13,3,0,0,0,[
+str_block(0,54,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,54,13,3,0,-1,0,0,0,0,0,
+	"\\LARGE")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,81,13,3,0,-1,0,0,0,0,0,
+	"\\boldmath")])
+]),
+mini_line(18,13,3,0,0,0,[
+str_block(0,18,13,3,0,-3,0,0,0,[
+str_seg('blue','Courier',0,80640,18,13,3,0,-3,0,0,0,0,0,
+	"\\[")])
+]),
+mini_line(279,13,3,0,0,0,[
+str_block(0,279,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,279,13,3,0,-1,0,0,0,0,0,
+	"   P'\\unboldmath\\neq\\boldmath P")])
+]),
+mini_line(18,13,3,0,0,0,[
+str_block(0,18,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,18,13,3,0,-4,0,0,0,0,0,
+	"\\]")])
+])
+])])),
+attr("file_name=", "/tmp/TgifJZ92pQ", 0, 1, 1,
+text('blue',189,192,1,0,1,225,16,733,13,3,0,0,0,0,2,225,16,0,0,"",0,0,0,0,205,'',[
+minilines(225,16,0,0,0,0,0,[
+mini_line(225,13,3,0,0,0,[
+str_block(0,225,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,225,13,3,0,-1,0,0,0,0,0,
+	"file_name=/tmp/TgifJZ92pQ")])
+])
+])])),
+attr("cleanup=", "", 0, 1, 1,
+text('blue',189,88,3,0,1,540,48,734,13,3,0,0,0,0,2,540,48,0,0,"",0,0,0,0,101,'',[
+minilines(540,48,0,0,0,0,0,[
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,72,13,3,0,-1,0,0,0,0,0,
+	"cleanup=")])
+]),
+mini_line(540,13,3,0,0,0,[
+str_block(0,540,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,540,13,3,0,-2,0,0,0,0,0,
+	"    rm -f $(file_name).tex $(file_name).aux $(file_name).dvi")])
+]),
+mini_line(513,13,3,0,0,0,[
+str_block(0,513,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,513,13,3,0,-2,0,0,0,0,0,
+	"        $(file_name).log $(file_name).ps $(file_name).eps")])
+])
+])])),
+attr("cmd=", "", 0, 1, 1,
+text('blue',189,8,5,0,1,702,80,735,13,3,0,0,0,0,2,702,80,0,0,"",0,0,0,0,21,'',[
+minilines(702,80,0,0,0,0,0,[
+mini_line(36,13,3,0,0,0,[
+str_block(0,36,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,36,13,3,0,-1,0,0,0,0,0,
+	"cmd=")])
+]),
+mini_line(108,13,3,0,0,0,[
+str_block(0,108,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,108,13,3,0,-4,0,0,0,0,0,
+	"    cd /tmp;")])
+]),
+mini_line(459,13,3,0,0,0,[
+str_block(0,459,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,459,13,3,0,-4,0,0,0,0,0,
+	"    xterm -geom 40x8+200+400 -e latex $(file_name);")])
+]),
+mini_line(702,13,3,0,0,0,[
+str_block(0,702,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,702,13,3,0,-4,0,0,0,0,0,
+	"    xterm -geom 40x8+200+400 -e dvips -N -n 1 -o $(file_name).ps $(file_name);")])
+]),
+mini_line(657,13,3,0,0,0,[
+str_block(0,657,13,3,0,-2,0,0,0,[
+str_seg('blue','Courier',0,80640,657,13,3,0,-2,0,0,0,0,0,
+	"    xterm -geom 40x8+200+400 -e pstoepsi $(file_name).ps $(file_name).eps")])
+])
+])])),
+attr("exec=", "", 0, 1, 1,
+text('blue',189,-112,8,0,1,477,128,736,13,3,0,0,0,0,2,477,128,0,0,"",0,0,0,0,-99,'',[
+minilines(477,128,0,0,0,0,0,[
+mini_line(45,13,3,0,0,0,[
+str_block(0,45,13,3,0,-1,0,0,0,[
+str_seg('blue','Courier',0,80640,45,13,3,0,-1,0,0,0,0,0,
+	"exec=")])
+]),
+mini_line(378,13,3,0,0,0,[
+str_block(0,378,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,378,13,3,0,-4,0,0,0,0,0,
+	"    mktemp(\"/tmp/TgifXXXXXX\",\"file_name\");")])
+]),
+mini_line(468,13,3,0,0,0,[
+str_block(0,468,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,468,13,3,0,-4,0,0,0,0,0,
+	"    write_attr_into_file(header,\"$(file_name).tex\");")])
+]),
+mini_line(441,13,3,0,0,0,[
+str_block(0,441,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,441,13,3,0,-4,0,0,0,0,0,
+	"    append_attr_into_file(eq,\"$(file_name).tex\");")])
+]),
+mini_line(477,13,3,0,0,0,[
+str_block(0,477,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,477,13,3,0,-4,0,0,0,0,0,
+	"    append_attr_into_file(footer,\"$(file_name).tex\");")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,162,13,3,0,-4,0,0,0,0,0,
+	"    launch(\"cmd\");")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"    update_eps_child(\"$(file_name).eps\");")])
+]),
+mini_line(189,13,3,0,0,0,[
+str_block(0,189,13,3,0,-4,0,0,0,[
+str_seg('blue','Courier',0,80640,189,13,3,0,-4,0,0,0,0,0,
+	"    launch(\"cleanup\")")])
+])
+])])),
+attr("header=", "", 0, 1, 1,
+text('#ff00ff',365,139,11,0,1,270,176,737,13,3,0,0,0,0,2,270,176,0,0,"",0,0,0,0,152,'',[
+minilines(270,176,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	"header=")])
+]),
+mini_line(261,13,3,0,0,0,[
+str_block(0,261,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,261,13,3,0,-4,0,0,0,0,0,
+	"\\documentstyle[12pt]{article}")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,162,13,3,0,-1,0,0,0,0,0,
+	"\\oddsidemargin=0in")])
+]),
+mini_line(144,13,3,0,0,0,[
+str_block(0,144,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,144,13,3,0,-1,0,0,0,0,0,
+	"\\textwidth=6.5in")])
+]),
+mini_line(126,13,3,0,0,0,[
+str_block(0,126,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,126,13,3,0,-1,0,0,0,0,0,
+	"\\topmargin=0in")])
+]),
+mini_line(153,13,3,0,0,0,[
+str_block(0,153,13,3,0,-2,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,153,13,3,0,-2,0,0,0,0,0,
+	"\\textheight=609pt")])
+]),
+mini_line(117,13,3,0,0,0,[
+str_block(0,117,13,3,0,-2,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,117,13,3,0,-2,0,0,0,0,0,
+	"\\parskip=14pt")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,270,13,3,0,-4,0,0,0,0,0,
+	"\\setlength{\\unitlength}{0.5cm}")])
+]),
+mini_line(153,13,3,0,0,0,[
+str_block(0,153,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,153,13,3,0,-4,0,0,0,0,0,
+	"\\pagestyle{empty}")])
+]),
+mini_line(144,13,3,0,0,0,[
+str_block(0,144,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,144,13,3,0,-4,0,0,0,0,0,
+	"\\begin{document}")])
+]),
+mini_line(9,13,3,0,0,0,[
+str_block(0,9,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,9,13,3,0,-1,0,0,0,0,0,
+	"%")])
+])
+])])),
+attr("footer=", "", 0, 1, 1,
+text('#ff00ff',189,139,3,0,1,126,48,738,13,3,0,0,0,0,2,126,48,0,0,"",0,0,0,0,152,'',[
+minilines(126,48,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	"footer=")])
+]),
+mini_line(9,13,3,0,0,0,[
+str_block(0,9,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,9,13,3,0,-1,0,0,0,0,0,
+	"%")])
+]),
+mini_line(126,13,3,0,0,0,[
+str_block(0,126,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,126,13,3,0,-4,0,0,0,0,0,
+	"\\end{document}")])
+])
+])]))
+]).

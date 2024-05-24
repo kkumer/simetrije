@@ -1,0 +1,561 @@
+%Fancy RCS footer:
+     \fancyfoot[C]{\texttt{8\_lorentz.tex}}
+     \fancyfoot[RO,LE]{\mbox{$$Revision: 1.4 $$}}
+     \fancyfoot[LO,RE]{\mbox{$$Date: 2012-05-07$$}}
+% Correcting the title chapter page
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    \fancyhead[RO,LE]{\bfseries \thepage}
+    \fancyhead[CO]{\rightmark}
+    \fancyhead[CE]{\leftmark}
+     \fancyfoot[C]{\texttt{8\_lorentz.tex}}
+     \fancyfoot[RO,LE]{\mbox{$$Revision: 1.4 $$}}
+     \fancyfoot[LO,RE]{\mbox{$$Date: 2012-05-07$$}}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.4pt}}
+
+\chapter{Lorentzova i Poincar\'{e}ova simetrija}
+
+\section{Lorentzova grupa}
+\label{sec:lorentz}
+
+\textbf{Princip relativnosti:} Postoji skup ekvivalentnih koordinatnih
+sustava u međusobnom jednolikom pravocrtnom gibanju (tzv. \emph{skup
+inercijalnih sustava}) takvih da fizikalni zakoni i pojave u svima njima
+izgledaju isto. (Promatrač ne može eksperimentalno detektirati da 
+se giba, ako se giba jednoliko. Mirovanje nije apsolutno.)
+
+\secret{- toga su na ovaj ili onaj način bili svjesni Kopernik, Galilei, Newton}
+
+- Princip relativnosti je princip simetrije $\to$ 3-parametarski skup
+transformacija simetrije. Transformacije preslikavaju inercijalne
+sustave jedan u drugi.
+
+- Da bismo znali o kojoj se grupi radi (i da li se uopće radi o grupi),
+moramo znati kako se kombiniraju transformacije među inercijalnim sustavima.
+
+Kako je poznato, iz principa relativnosti slijedi da
+transformacije iz sustava $S=\{t,x,y,x\}$ u sustav $S'=\{t',x',y',x'\}$, 
+tzv. \emph{Lorentzovi potisci}, imaju oblik\footnote{U
+standardnoj literaturi se pri izvodu Lorentzovih potisaka osim principa
+relativnosti obično koristi i postulat o konstantnosti brzine svjetlosti
+u svim sustavima.  No, ovaj drugi postulat je zapravo suvišan, vidi
+Mermin, Am. J. Phys. \textbf{52}(2) (1984) 119 ili J. D. Jackson,
+\emph{Classical Electrodynamics}, 3rd ed.(!), exercises 11.1 i 11.2}
+\begin{align}
+t' &= \gamma \big(t-\frac{\beta}{c}z\big) \\
+z' &= \gamma \big(z-\beta ct \big) \\
+x' &= x \\
+y' &= y  \;,
+\end{align}
+gdje je uzeto da se je brzina relativnog gibanja dvaju sustava duž
+$z$-osi, $\vec{v}=v\hat{\vec{z}}$, te su uvedene standardne pokrate
+\begin{displaymath}
+ \beta \equiv \frac{v}{c} \;; \qquad \qquad \gamma\equiv\frac{1}{
+\sqrt{1-\beta^2}} \;.
+\end{displaymath}
+Ove transformacije djeluju na 4-dim vektorskom prostoru koji
+se zove \emph{prostor Minkowskog} i kojeg sačinjavaju tzv.
+\emph{Lorentzovi vektori}: 
+\begin{align}
+x^\mu \qquad  \mu&=0,1,2,3  \qquad x^0=ct, x^1=x, x^2=y, x^3=z \\
+x^\mu &= (ct, \vec{x}) \\
+x_\mu &= (ct,-\vec{x}) = g_{\mu\nu} x^\nu
+\qquad x_0=ct, x_1=-x, x_2=-y, x_3=-z \\
+g &= 
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 &-1 & 0 & 0 \\
+0 & 0 &-1 & 0 \\
+0 & 0 & 0 &-1
+\end{pmatrix}
+\end{align}
+Izraženo preko ovih Lorentzovih 4-vektora, Lorentzovi potisci
+poprimaju oblik 
+\begin{align}
+x^{0'} &= \gamma (x^0 - \beta x^3 ) \\
+x^{1'} &= x^1 \\
+x^{2'} &= x^2  \\
+x^{3'} &= \gamma (x^3 -\beta x^0 ) \;,
+\end{align}
+ili u kompaktnom matričnom obliku
+\begin{equation}
+ x^{\mu'} = \Lambda^{\mu}_{\;\nu} x^\nu \;, \qquad
+\Lambda^{\mu}_{\;\nu} =
+\begin{pmatrix}
+\gamma & 0 & 0 & -\beta\gamma \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+-\beta\gamma & 0 & 0 & \gamma
+\end{pmatrix} \;.
+\end{equation}
+4-vektori poput $x^\mu$ imaju dakle jednostavna transformacijska
+svojstva pri Lorentzovim potiscima i očekujemo da će se jednadžbe
+relativističke fizike ``izgrađivati'' od takvih vektora te odgovarajućih
+skalara i tenzora, baš kao što se u nerelativističkoj fizici jednadžbe
+izgrađuju od 3-vektora i drugih tenzora s dobrim transformacijskim 
+svojstvima pri prostornim rotacijama.
+
+Matrice $\Lambda$ ovise o parametrima Lorentzovog
+potiska kojeg je prirodno parametrizirati vektorom brzine $\vec{v}$ pojedinog
+inercijalnog sustava u odnosu na neki referentni sustav.
+ Vidimo da Lorentzovi potisci $\Lambda(\vec{v})$ čine 3-parametarski
+skup. Da li je on grupa? Kako ćemo pokazati u slijedećem
+odjeljku odgovor je ne. Kompozicija dva Lorentzova potiska nije
+nužno također Lorentzov potisak već može biti i kompozicija
+Lorentzovog potiska s prostornom rotacijom:
+\begin{equation}
+ \Lambda(\vec{v}_2) \circ \Lambda(\vec{v}_1)
+  = R(\vec{v}_2,\vec{v}_1) \circ \Lambda(\vec{v}_2,\vec{v}_1) \;.
+\end{equation}
+
+Lako se vidi da i $\Lambda$ i $R$ ostavljaju invarijantnim
+skalarni produkt $(x,y)\equiv x^{0}y^0 - \vec{x}\cdot\vec{y}$. Skup \emph{svih}
+transformacija koje čuvaju ovaj skalarni produkt u prostoru Minkowskog
+čini grupu O(1,3) koja se obično naziva \emph{opća Lorentzova grupa}.
+Grupa prostornih rotacija SO(3)=$\{R(\unitn, \theta)\}$ 
+je podgrupa, a skup Lorentzovih
+potisaka $\{\Lambda(\vec{v})\}$ je podskup ove grupe.
+
+Specifično razlikovanje "gornjih" i "donjih" indeksa 4-vektora u
+specijalnoj teoriji relativnosti služi samo jednostavnom zapisu
+skalarnog produkta u prostoru Minkowskog kod kojeg su članovi
+prostornih koordinata suprotnog predznaka od člana vremenske koordinate:
+\begin{equation}
+ (x,y) = x^\mu y_\mu = x^0 y^0 - \vec{x}\cdot\vec{y} \;.
+\end{equation}
+U \emph{općoj} teoriji relativnosti to razlikovanje dviju vrsta
+koordinata prelazi u razlikovanje dviju vrsta vektora 
+(\emph{kovarijantni} i \emph{kontravarijantni} vektori), odnosno,
+još preciznije jezikom diferencijalne geometrije razlikujemo 
+\emph{vektore} i \emph{1-forme}, ali ovdje nam te finese ne igraju
+nikakvu ulogu.
+
+\subsubsection*{Struktura grupe O(1,3)}
+
+Za transformirani 4-vektor $x' = \Lambda x$ vrijedi
+\begin{align}
+ {x'}^2 &= g_{\mu\nu} {x'}^\mu {x'}^\nu \\
+        &= ({x^0}', {x^1}', {x^2}', {x^3}')
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 &-1 & 0 & 0 \\
+0 & 0 &-1 & 0 \\
+0 & 0 & 0 &-1
+\end{pmatrix}
+\begin{pmatrix}
+{x^0}' \\ {x^1}' \\ {x^2}' \\ {x^3}'
+\end{pmatrix} \\
+  &= {x'}^{\top} g x' = x^\top \Lambda^\top g \Lambda x \\
+  &= x^2 = x^\top g x
+\end{align}
+pa usporedbom dobivamo alternativnu definiciju opće Lorentzove grupe
+kao grupe svih matrica $\Lambda$ sa svojstvom
+\begin{equation}
+   \Lambda^\top g \Lambda = g
+\label{deflambda}
+\end{equation}
+Uzimanjem determinante ove matrične jednadžbe, uz svojstva
+da je $\det A^\top = \det A$ i $\det g = -1$ dobijemo 
+\begin{equation}
+   (\det \Lambda)^2 = 1 \imp  \det\Lambda = \pm 1 \;.
+\label{detL}
+\end{equation}
+Nadalje, raspišimo tu matričnu jednadžbu po komponentama
+\begin{equation}
+ \underbrace{(\Lambda^\top)_{\mu}^{\;\nu}}_{\Lambda^{\nu}_{\:\mu}}
+g_{\nu\rho}\Lambda^{\rho}_{\:\sigma} = g_{\mu\sigma}
+\end{equation}
+i pogledajmo komponentu $\mu=\sigma=0$:
+\begin{align}
+1 &= g_{\nu\rho} \Lambda^{\nu}_{\:0} \Lambda^{\rho}_{\:0}  \\
+  &= (\Lambda^{0}_{\:0})^2 - \sum_{i=1}^{3}(\Lambda^{i}_{\:0})^2 \;.
+\end{align}
+Slijedi da je $(\Lambda^{0}_{\:0})^2 = 1 + \sum_{i=1}^{3}(\Lambda^{i}_{\:0})^2$
+odnosno da je $(\Lambda^{0}_{\:0})^2 \geq 1$ što daje dvije mogućnosti:
+\begin{equation}
+    \Lambda^{0}_{\:0}\geq 1  \qquad\text{ili}\qquad \Lambda^{0}_{\:0}\leq -1 \;.
+\end{equation}
+Zajedno s dvije iz (\ref{detL}) imamo dakle četiri mogućnosti koje vode
+na četiri odvojene komponente povezanosti od O(1,3): \\
+
+\begin{center}
+\begin{tabular}{cccc}
+\hline
+$\det\Lambda$ & $\Lambda^{0}_{\:0}$ & oznaka & napomena  \\ \hline
+    1         &  $\geq 1$   & $\mathcal{L}^{\uparrow}_{+}$ & sadrži 1 \\
+ -1           &  $\geq 1$   & $\mathcal{L}^{\uparrow}_{-}$ & 
+$= P \mathcal{L}^{\uparrow}_{+} $ \\
+ 1           &  $\leq -1$   & $\mathcal{L}^{\downarrow}_{+}$ & 
+$= - \mathcal{L}^{\uparrow}_{+} = PT \mathcal{L}^{\uparrow}_{+} $\\
+ -1           &  $\leq -1$   & $\mathcal{L}^{\downarrow}_{-}$ & 
+$= T \mathcal{L}^{\uparrow}_{+} $  \\ \hline
+\end{tabular}
+\end{center}
+gdje je
+\begin{align}
+ P=g:  (t\to t, 
+\vec{x}\to -\vec{x}) \qquad &\quad \text{(paritet)} \label{eq:paritet} \\
+ T=-g:  (t\to -t, 
+\vec{x}\to \vec{x}) \qquad  &\quad \text{(vremenska inverzija)} \;.
+\end{align}
+
+- $\mathcal{L}^{\uparrow}_{+} \cup \mathcal{L}^{\downarrow}_{+}$
+ --- (prava) Lorentzova grupa --- SO(1,3)
+
+- $\mathcal{L}^{\uparrow}_{+} \cup\mathcal{L}^{\uparrow}_{-}$
+ --- ortokrona Lorentzova grupa
+
+- $\mathcal{L}^{\uparrow}_{+}$ --- prava ortokrona Lorentzova grupa
+
+\secret{Topološki, $\mathcal{L}^{\uparrow}_{+} = \mathbb{R}^3 \times SO(3)$
+i riječ je o nekompaktnoj grupi tako da su joj (izuzev trivijalne)
+konačnodimenzionalne reprezentacije neunitarne, a unitarne
+reprezentacije beskonačnodimenzionalne.}
+
+
+\section{Generatori i reprezentacije Lorentzove grupe}
+
+\label{id:5}
+Kao i kod rotacija, sustave u prirodi treba klasificirati prema
+njihovim transformacijskim svojstvima pri Lorentzovim transformacijama
+tj. prema pripadnosti reprezentacijama Lorentzove
+grupe. Kao i kod rotacija, poželjno je usredotočiti se na \emph{algebru}
+grupe s generatorima $L$:
+\begin{equation}
+ \Lambda \in SO(1,3) \qquad \Lambda= e^L
+\end{equation}
+Iz definicionog svojstva (\ref{deflambda}) dobijemo $L^\top g = -g L$,
+što uz činjenicu da je $g^\top = g$ daje $(gL)^\top = -gL$ odnosno
+vidimo da je $gL$ antisimetrična matrica. To znači da ako $L$
+parametriziramo na slijedeći način:
+\begin{align}
+ gL &= 
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 &-1 & 0 & 0 \\
+0 & 0 &-1 & 0 \\
+0 & 0 & 0 &-1
+\end{pmatrix}
+\begin{pmatrix}
+L_{00} & L_{01} & L_{02} & L_{03}\\
+L_{10} &\hdotsfor{3} \\
+\hdotsfor{4} \\
+\hdotsfor{3} & L_{33}
+\end{pmatrix} \\[1ex]
+&= 
+\begin{pmatrix}
+L_{00} & L_{01} & L_{02} & L_{03}\\
+-L_{10} & -L_{11} & -L_{12} &\hdotsfor{1} \\
+-L_{20} & -L_{21} & \hdotsfor{2} \\
+\hdotsfor{3} & -L_{33}
+\end{pmatrix}
+\end{align}
+svojstvo antisimetrije $gL$ traži
+\begin{align}
+L_{0i} &= L_{i0} \\
+L_{ij} &= - L_{ji} \;.
+\end{align}
+tj.
+\begin{equation}
+ L = \begin{pmatrix}
+0 & L_{01} & L_{02} & L_{03}\\
+L_{01} & 0 & L_{12} & L_{13}\\
+L_{02} & -L_{12} & 0& L_{23} \\
+L_{03} & -L_{13} &-L_{23} & 0
+\end{pmatrix} \;,
+\end{equation}
+gdje tri parametra $L_{01}$, $L_{02}$ i $L_{03}$ opisuju Lorentzove
+potiske, a tri parametra $L_{12}$, $L_{13}$ i $L_{23}$ prostorne rotacije.
+Umjesto ovih šest parametara pogodno je koristiti parametre
+$\theta_i$ i $\zeta_i$,  definirane na slijedeći način:
+\begin{equation}
+ L = -i (\theta_i J_i + \zeta_i K_i)  \qquad i=1,2,3  \;,
+\label{eq:LJK}
+\end{equation}
+gdje su $J_i$ već dobro poznati generatori rotacija, samo prošireni
+na četverodimenzionalni prostor Minkowskog:
+\begin{equation}
+ J_1 =
+\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -i \\
+0 & 0 & i & 0
+\end{pmatrix} \quad
+ J_2 =
+\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & i \\
+0 & 0 & 0 & 0 \\
+0 & -i & 0 & 0
+\end{pmatrix} \quad
+J_3 =
+\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & -i & 0 \\
+0 & i & 0 & 0 \\
+0 & 0 & 0 & 0
+\label{eq:defJi}
+\end{pmatrix}
+\end{equation}
+dok su $K_i$ generatori Lorentzovih potisaka
+\begin{equation}
+K_1 =
+\begin{pmatrix}
+0 & -i & 0 & 0 \\
+-i & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \quad
+K_2=
+\begin{pmatrix}
+0 & 0 & -i & 0 \\
+0 & 0 & 0 & 0 \\
+-i & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \quad
+K_3 =
+\begin{pmatrix}
+0 & 0 & 0 & -i \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+-i & 0 & 0 & 0
+\end{pmatrix} \;.
+\label{eq:defKi}
+\end{equation}
+
+Treba primijetiti kako operatori $K_i$ nisu hermitski tako da odgovarajuće
+transformacije $\exp(-i\zeta_i K_i)$ neće biti unitarne. To je posljedica
+nekompaktnosti Lorentzove grupe --- parametri potiska poprimaju
+vrijednosti iz nekompaktnog intervala $[0,c)$.
+
+Pogledajmo sada algebru grupe SO(1,3). Lako se vidi da su
+komutacijske relacije:
+\begin{align}
+[J_i, J_j] &= i\epsilon_{ijk} J_k  \label{eq:LK1}\\
+[K_i, K_j] &= -i\epsilon_{ijk} J_k \\
+[J_i, K_j] &= i\epsilon_{ijk} K_k \;. \label{eq:LK3}
+\end{align}
+Prva relacija je dobro poznata algebra grupe prostornih rotacija SO(3).
+Druga relacija govori da podskup Lorentzovih potisaka nije zatvoren
+i ne čini grupu, kako smo najavili u prošlom odjeljku. Treća
+relacija govori da tri generatora potisaka $K_i$ čine vektor obzirom
+na rotacije.
+
+Ove komutacijske relacije su vrlo slične onima iz odjeljka \ref{so4} gdje smo 
+rastavili grupu SO(4) na direktan produkt SU(2)$\otimes$SU(2) identificirajući
+kombinacije generatora koji zatvaraju dvije neovisne podgrupe.
+Slično ćemo postupiti i ovdje te definirati
+\begin{equation}
+  \vec{J}^{(\pm)} \equiv \fhalf \big(\vec{J}\pm i \vec{K} \big) \;,
+\end{equation}
+odnosno $\vec{J}=\vec{J}^{(+)}+\vec{J}^{(-)}$, $\vec{K} = -i
+(\vec{J}^{(+)}-\vec{J}^{(-)})$. Primijetite dodatni ``$i$'' obzirom
+na situaciju u odjeljku \ref{so4}.
+Uz ovakve definicije imamo dvije odvojene algebre
+\begin{align}
+[J_{i}^{(+)}, J_{j}^{(+)}] &= i \epsilon_{ijk} J_{k}^{(+)} \\
+[J_{i}^{(-)}, J_{j}^{(-)}] &= i \epsilon_{ijk} J_{k}^{(-)} \\
+[J_{i}^{(+)}, J_{j}^{(-)}] &= 0  \;.
+\end{align}
+Ovo ipak ne znači  da O(1,3) ima istu algebru kao i SU(2)$\otimes$SU(2),
+jer gore nismo radili \emph{realne} linearne kombinacije generatora.
+Svejedno, za klasifikaciju ireducibilnih reprezentacija Lorentzove
+grupe možemo kao i u odjeljku \ref{so4} koristiti parove
+\begin{equation}
+(j^{(+)}, j^{(-)})  \qquad j^{(+)}, j^{(-)} = 0, \fhalf, 1, \dotsc .
+\end{equation}
+Tako imamo trivijalnu (0,0) reprezentaciju i objekte koji se
+transformiraju prema njoj zovemo Lorentzovi skalari. Slijedeće
+dvije su tzv. \emph{Weylove} reprezentacije ($\fhalf$, 0) i
+(0, $\fhalf$) prema kojima bi se transformirali bezmaseni
+fermioni ako takvi postoje .
+Obični 4-vektori poput $x^\mu$ pripadaju ireducibilnoj
+reprezenaciji $(\fhalf, \fhalf)$.
+
+Za masivne fermione pogodno je proširiti SO(1,3) Lorentzovu
+grupu s operacijom pariteta i onda promatrati IRREPse obzirom
+na ovu veću grupu\footnote{Masivno stanje impulsa $\vec{p}$
+moguće je ``prestići'' Lorentzovim potiskom dovoljno velikog
+parametra brzine $\vec{v}$, što rezultira stanjem koje izgleda
+kao stanje impulsa $-\vec{p}$; ekvivalentno djelovanju pariteta
+na originalno stanje.}. Operator pariteta (\ref{eq:paritet}) 
+matrično izgleda kao
+\begin{equation}
+ P = P^{-1} =
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix} \;,
+\end{equation}
+i eksplicitnim djelovanjem na (\ref{eq:defJi}) i (\ref{eq:defKi}) 
+je vidljivo da se pri paritetu generatori rotacije
+transformiraju kao pseudovektori (vidi odjeljak \ref{sec:pseudovektori}),
+\begin{equation}
+   P^{-1} J_i P = J_i \;,
+\end{equation}
+a generatori Lorentzovih potisaka kao pravi polarni vektori,
+\begin{equation}
+   P^{-1} K_i P = - K_i \;.
+\end{equation}
+Slijedi da je 
+\begin{equation}
+ P^{-1} J^{(\pm)}_i P = J^{(\mp)} \;.
+\end{equation}
+Promotrimo sada neko konkretno stanje $\ket{(\fhalf,0)}$, koje je 
+dublet obzirom na transformacije iz ($\fhalf$, 0), 
+a singlet obzirom na (0, $\fhalf$):
+\begin{align}
+\vec{J}^{(+)^2} \ket{(\fhalf,0)}& = \fhalf(\fhalf+1) \ket{(\fhalf,0)} \\
+\vec{J}^{(-)^2} \ket{(\fhalf,0)}& = 0 \;.
+\end{align}
+Kojoj reprezentaciji pripada paritetom transformirano stanje
+$P \ket{(\fhalf,0)}$? To ustanovimo djelujući na to stanje
+s $\vec{J}^{(\pm)^2}$:
+\begin{align}
+\vec{J}^{(-)^2} P \ket{(\fhalf,0)}& = 
+P P^{-1} J^{(-)}_i P P^{-1} J^{(-)}_i P \ket{(\fhalf,0)}
+= P \vec{J}^{(+)^2} \ket{(\fhalf,0)}  \nonumber \\
+  & = \fhalf(\fhalf+1) P \ket{(\fhalf,0)} \\
+\vec{J}^{(+)^2} P \ket{(\fhalf,0)}& = 0 \;.
+\end{align}
+Zaključujemo da stanje $P \ket{(\fhalf,0)}$ pripada IRREP (0, $\fhalf$).
+Dakle, proširivanjem SO(1,3) Lorentzove grupe s paritetom,
+(0, $\fhalf$) i ($\fhalf$,0) više nisu svaka zasebno IRREPs, već
+IRREP postaje reprezentacija $(\fhalf, 0) \oplus (0, \fhalf)$, poznata
+kao Diracova reprezentacija.
+
+
+Slično, tenzor elektromagnetskog polja $F^{\mu\nu}$ pripada
+6-dimenzionalnoj reducibilnoj reprezentaciji (1,0)$\oplus$(0,1).
+
+
+Kao što smo u poglavlju \ref{rotacije} i od samih operatora tražili
+dobro definirana tenzorska svojstva obzirom na rotacije
+(npr. tri generatora $J_i$ čine vektor obzirom na rotacije), tako
+je i u kontekstu Lorentzove simetrije moguće generatore i
+same elemente grupe definirati na način koji manifestno pokazuje
+kovarijantnost obzirom na Lorentzove transformacije.
+Dakle, želimo relacije poput (\ref{eq:LJK}) i (\ref{eq:LK1})--(\ref{eq:LK3}) 
+zapisati u 4-komponentnoj notaciji, putem Lorentzovih tenzora.
+To postižemo definiranjem antisimetričnih generatora $J^{\mu\nu}$ kao
+\begin{align}
+J^{mn}& = \epsilon^{mni} J^i \\
+J^{i0}& = K^i \;.
+\label{eq:defJmn}
+\end{align}
+(Podsjetimo se da grčki indeksi idu $\alpha,\beta = 0,1,2,3$, a 
+latinski $i,m = 1,2,3$.)  
+Sada je element Lorentzove grupe dan kao
+\begin{equation}
+ \Lambda = \exp\left(-\frac{i}{2} \omega_{\rho\sigma} J^{\rho\sigma}\right)
+\label{eq:4DLorentz}
+\end{equation}
+a komutacijske relacije (\ref{eq:LK1})--(\ref{eq:LK3}) se ujedinjuju u
+\begin{equation}
+i [ J^{\mu\nu}, J^{\rho\sigma}] = g^{\mu\rho} J^{\nu\sigma}
+- g^{\nu\rho} J^{\mu\sigma} + g^{\sigma\mu} J^{\rho\nu}
+- g^{\sigma\nu} J^{\rho\mu} \;.
+\label{eq:4DLorKom}
+\end{equation}
+
+Na kraju, matrični elementi generatora Lorentzove grupe u
+4-dim definicionoj ($\fhalf$, $\fhalf$) reprezentaciji dani su kao
+\begin{equation}
+\tensor{(J^{\mu\nu})}{^\alpha_\beta} = i \big(
+g^{\mu\alpha}\tensor{\delta}{^\nu_\beta} - \tensor{\delta}{^\mu_\beta}
+g^{\nu\alpha} \big) \;.
+\label{eq:4DJmn}
+\end{equation}
+
+S druge strane matrični elementi Lorentzove grupe u
+Diracovoj reprezentaciji
+$(\fhalf, 0) \oplus (0, \fhalf)$
+(koja je isto 4-dim) dani su kao
+\begin{equation}
+ J^{\mu\nu} = \frac{i}{4} [\gamma^\mu, \gamma^\nu] \;,
+\label{eq:DiracJ}
+\end{equation}
+Gdje su $\gamma^\mu$ tzv. Diracove gama matrice definirane
+antikomutacijskim relacijama
+\begin{equation}
+ \gamma^\mu\gamma^\nu + \gamma^\nu \gamma^\mu
+\equiv \{\gamma^\mu, \gamma^\nu\} = 2 g^{\mu\nu}
+\label{eq:DiracGamma}
+\end{equation}
+Jedan mogući izbor za ove matrice je
+\begin{equation}
+\gamma^0 = \left(\begin{array}{rr} 0 & -1 \\
+                        -1 & 0 \end{array}\right)
+\;, \quad
+\gamma^i = \left(\begin{array}{rr} 0 & \sigma^i \\
+                        -\sigma^i & 0 \end{array}\right) \;,
+\end{equation}
+gdje su $\sigma^i$ Paulijeve matrice (\ref{eq:PaulijeveMatrice}).
+
+\section{Poincar\'{e}ova grupa$^*$}
+
+
+Poincar\'{e}ova (poznata i kao nehomogena Lorentzova) grupa je
+direktni produkt Lorentzove grupe i grupe translacija u prostoru
+i vremenu. Elementi te grupe djeluju na vektore u 4-dim prostoru
+Minkowskog kao
+\begin{equation}
+  x^\mu \longrightarrow \tensor{\Lambda}{^\mu_\nu} x^\nu + a^\mu
+\label{eq:defPoin}
+\end{equation}
+gdje su $a^\mu$ četiri parametra translacija u prostor-vremenu.
+Riječ je očito o deset-parametarskoj grupi gdje povrh generatora
+Lorentzove grupe ($J^i$ i $K^i$) imamo i impuls $P^i$ kao
+generator translacija u prostoru i Hamiltonijan $H$ kao
+generator translacija u vremenu.
+Algebra ove grupe je algebra Lorentzove grupe SO(1,3) (\ref{eq:4DLorKom}) 
+i dodatno
+\begin{align}
+[H, H]& = [H, P^i] = [P^i, P^j] = 0 \label{eq:Poi1} \\
+[H, J_i]& = 0  \label{eq:Poi2}\\
+[K^i, H]& = i P^i  \label{eq:PoiPuzzle} \\
+[J^i, P^j]& = i \epsilon^{ijk} P^k \\
+[K^i, P^j]& = i H \delta^{ij} \;,
+\label{eq:PoinKom}
+\end{align}
+što je moguće ujedinjeno napisati u 4-dim notaciji kao
+\begin{equation}
+i [P^\mu, J^{\rho\sigma}] = g^{\mu\sigma}P^\rho - g^{\mu\rho}P^{\sigma} \;.
+\label{eq:4DPoinKom}
+\end{equation}
+Npr.
+\begin{displaymath}
+[H, K^i] = [P^0, J^{i0}] = -i(g^{0 0}P^i - g^{0i}P^0) =  -i P^i \;.
+\end{displaymath}
+Relacije  (\ref{eq:Poi1}) i (\ref{eq:Poi2}) govore da su impuls i
+moment impulsa očuvani pri translacijama. Zanimljivo je da relacija
+(\ref{eq:PoiPuzzle}) govori kako generatori Lorentzovih potisaka
+$K^i$ ne komutiraju s Hamiltonijanom što sugerira da ne odgovaraju
+očuvanim veličinama. To je pomalo zbunjujuće jer Noetherin teorem
+nam govori kako bi simetrija obzirom na 10-parametarsku Poincar\'{e}ovu grupu
+trebala rezultirati s deset očuvanih veličina, a ovako imamo samo
+7: energija, tri komponente impulsa i tri komponente momenta impulsa.
+Razrješenje je u tome da Noetherini očuvani naboji
+(pokušajte ih eksplicitno odrediti) koji
+odgovaraju Lorentzovim potiscima jesu formalno očuvani (vremenska
+derivacija iščezava), ali eksplicitno ovise o vremenskoj 
+koordinati\footnote{Slično kao što npr. $J_z = x P_y - y P_z$ 
+eksplicitno ovisi o prostornim $x$ i $y$ koordinatama.}
+pa nisu od praktične koristi. 
+
+\subsection*{Zadaci}
+
+\begin{enumerate}[{\thechapter}.1]
+\item Uvjerite se eksplicitno da (\ref{eq:4DLorKom}) sadrži npr. (\ref{eq:LK3}).
+
+\item Uvjerite se eksplicitno da (\ref{eq:4DJmn}) daje npr. (\ref{eq:defKi}).
+
+\item Uvjerite se da generatori $J^{\mu\nu}$ definirani putem
+(\ref{eq:DiracJ}) i (\ref{eq:DiracGamma}) zadovoljavaju komutacijske
+relacije Lorentzove grupe (\ref{eq:4DLorKom}).
+
+\end{enumerate}

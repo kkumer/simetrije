@@ -1,0 +1,1338 @@
+%Fancy RCS footer:
+     \fancyfoot[C]{\texttt{6\_rotacije.tex}}
+     \fancyfoot[RO,LE]{\mbox{$$Revision: 1.10 $$}}
+     \fancyfoot[LO,RE]{\mbox{$$Date: 2012-02-24 $$}}
+% Correcting the title chapter page
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    \fancyhead[RO,LE]{\bfseries \thepage}
+    \fancyhead[CO]{\rightmark}
+    \fancyhead[CE]{\leftmark}
+     \fancyfoot[C]{\texttt{6\_rotacije.tex}}
+     \fancyfoot[RO,LE]{\mbox{$$Revision: 1.10 $$}}
+     \fancyfoot[LO,RE]{\mbox{$$Date: 2012-02-24  $$}}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.4pt}}
+
+\chapter{Rotacije i moment impulsa u kvantnoj mehanici}
+\label{rotacije}
+
+\section{Ireducibilne reprezentacije grupe SO(2)}
+
+Teorija reprezentacija za kompaktne grupe je drastično različita
+ od one za nekompaktne grupe
+
+ \emph{Kompaktne} Lieve grupe su one čiji parametri poprimaju
+   vrijednosti iz zatvorenih konačnih intervala:\footnote{
+  Pojam kompaktnosti općenito zna biti vrlo netrivijalan, ali za
+   naše Lieve grupe koje su \emph{linearne} tj. posjeduju barem
+   jednu vjernu konačnodimenzionalnu reprezentaciju vrijedi ova
+ pojednostavljena definicija.}
+\begin{displaymath}
+         p \in [a, b]\;,  \quad a,b\neq \pm \infty
+\end{displaymath}
+
+\textbf{Primjeri:}
+\begin{itemize}
+\item grupa translacija nije kompaktna jer parametri translacije
+      nisu ograničeni: $p \in (-\infty, \infty)$
+\item Lorentzova grupa nije kompaktna jer parametar Lorentzovog
+      potiska dolazi iz otvorenog intervala: $v \in [0,c)$
+\item grupa SO(2) je kompaktna: $\phi\in[0, 2\pi=0]\equiv[0,2\pi)$
+\item grupa SO(1,1) nije kompaktna
+\end{itemize}
+
+Ključna prednost kompaktnosti je činjenica da su kontinuirane funkcije
+na kompaktnom skupu integrabilne pa 
+velik broj teorema o konačnim grupama vrijedi i za kompaktne Lieve
+grupe, uz zamjenu (u dokazima i iskazima):
+\begin{displaymath}
+    \frac{1}{n} \sum_{g} \longrightarrow \int \rmd g \;,
+\end{displaymath}
+gdje integral, zahvaljujući kompaktnosti, konvergira.
+
+- Mjeru integrala treba izabrati tako da vrijedi
+\begin{displaymath}
+  \int dg f(g) = \int dg f(hg) = \int dg f(gh) \quad \forall h \in G \;.
+\end{displaymath}
+Integraciju koja ima to svojstvo zovemo \emph{invarijantna}.  
+Takvo nam je svojstvo
+trebalo za dokaze teorema o reprezentacijama. Uvijek je moguće izabrati
+mjeru tako da integracija bude invarijantna.
+
+- Tako možemo ``preuzeti'' iz teorije reprezentacije konačnih grupa
+  teorem da su sve reprezentacije ekvivalentne unitarnima. (To nam
+ je važno jer je unitarnost željeno svojstvo transformacija kvantnomehaničkih
+ stanja.)
+
+- Specijalno, svi IRREPSi od SO(2) su ekvivalentni unitarnima, pa se,
+  kao što smo to radili i kod konačnih grupa, smijemo ograničiti na
+  unitarne IRREPSe bez gubitka općenitosti. 
+
+- SO(2) je Abelova $\imp$ svi IRREPsi su 1D, što uz unitarnost 
+($uu^\dagger = uu^* = |u|^2=1$) znači:
+\begin{displaymath}
+D(\phi)=e ^{-i f(\phi)} \;,  f(\phi) \in \mathbb{R} \;.
+\end{displaymath}
+
+Zahtjev homomorfnosti s grupom rotacija, koja je aditivna, dalje
+povlači
+\begin{displaymath}
+   f(\phi_1)+f(\phi_2) = f(\phi_1+\phi_2)
+\end{displaymath}
+što znači da je $f(\phi)=m\phi$, $m\in\mathbb{R}$.
+Na kraju, zahtjev periodičnosti daje:
+
+- $D^{(m)}(\phi)=D^{(m)}(\phi + 2\pi) \imp m \in \mathbb{Z}$
+
+- Dakle, imamo prebrojivo beskonačno 1D IRREPsa, i označavamo
+  ih cijelim brojem $m$.
+
+- Karakteri: $\chi^{(m)}(\phi)=D^{(m)}(\phi)=e^{-\rmis m \phi}$
+
+- Ortogonalnost:
+\begin{displaymath}
+(\chi^{(m)}, \chi^{(m')})=\int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
+ e^{\rmis m \phi}e^{-\rmis m' \phi} = \delta_{mm'}
+\end{displaymath}
+
+- (D.Z. Uvjerite se da je ovakva integracija invarijantna u gornjem smislu.)
+
+
+- Koeficijenti u razvoju direktnog produkta dvaju IRREPsa:
+\begin{displaymath}
+  \Gamma^{(m)}\otimes\Gamma^{(n)} =
+  \sum \oplus\: a_{k}\Gamma^{(k)} 
+\end{displaymath}
+\begin{eqnarray*}
+a_{k} & = & (\chi^{(k)}, \chi^{(m)}\chi^{(n)}) \\
+      & = & \int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
+    e^{\rmis k \phi}e^{-\rmis m \phi}e^{-\rmis n \phi} = \delta_{k,m+n}
+\end{eqnarray*}
+tj.
+\begin{displaymath}
+  \Gamma^{(m)}\otimes\Gamma^{(n)} =
+  \sum_{k} \oplus\: \delta_{k,m+n}\Gamma^{(k)} = \Gamma^{(m+n)}
+\end{displaymath}
+
+- Rastav reducibilne reprezentacije:
+\begin{displaymath}        
+ D_{\rm 2D} (\phi) = \left( 
+\begin{array}{cc}        
+\cos\phi & -\sin\phi \\
+\sin\phi & \cos\phi
+\end{array}                
+\right) \qquad \chi_{\rm 2D}=2\cos\phi
+\end{displaymath}
+\begin{eqnarray*}
+a_k & = & (\chi^{(k)}, \chi_{\rm 2D}) \\
+    & = & \int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
+   e^{\rmis k \phi} 2\cos\phi  \\
+ & = & \int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
+  e^{\rmis k \phi} ( e^{\rmis  \phi} + e^{-\rmis  \phi}) \\
+ & = & \delta_{k,-1} + \delta_{k, 1}
+\end{eqnarray*}
+Znači postoji $S$ [pronađite za D.Z.] takva da
+\begin{displaymath}
+  S D_{\rm 2D} (\phi) S^{-1} = \left(
+\begin{array}{cc}        
+e^{\rmis  \phi} &  0 \\
+0 & e^{- \rmis  \phi}
+\end{array}                
+\right) 
+\end{displaymath}
+
+\subsubsection*{Digresija: Projektivne reprezentacije$^*$}
+
+- U QM postoje sustavi za koje $m = 1/2, 3/2, 5/2, \ldots$ tj.
+  $D^{(m)}(\phi)=-D^{(m)}(\phi + 2\pi)$
+
+
+Po definiciji, reprezentacija $\Gamma=\{D(\phi)\}$ grupe G mora zadovoljavati:
+\begin{displaymath}
+    D(\phi_1)D(\phi_2)=D(\phi_1\circ_{\textrm{\tiny G}}\phi_2)
+        =D(\phi_1 + \phi_2)
+\end{displaymath}
+dok za $m = 1/2, 3/2, 5/2, \ldots$ imamo npr.
+\begin{displaymath}
+ D(\pi) D(\pi) = e^{i m \pi}e^{i m \pi} = e^{2 i m \pi}=-1
+\neq D(2\pi)=1 \;.
+\end{displaymath}
+Riječ je o tome da se u QM $D(\phi_1)D(\phi_2)\ket{\alpha}$ i
+$D(\phi_1 + \phi_2)\ket{\alpha}$ smiju razlikovati za fazu
+a da i dalje opisuju isto fizikalno stanje.
+
+Tako na QM stanjima dopuštamo reprezentiranje grupe i tzv.
+\emph{projektivnim reprezentacijama} s ``olabavljenim'' uvjetom homomorfizma:
+\begin{displaymath}
+   D(g_1)D(g_2)=e^{i \phi(g_1,g_2)}D(g_1 g_2) \;.
+\end{displaymath}
+
+- O grupi ovisi hoće li ona imati i projektivnih REP, a o fizikalnom
+sustavu hoće li se transformirati obzirom na projektivne REP ili ne.
+
+- Jedan od načina da grupa ima i projektivne reprezentacije je da
+  ne bude jednostavno povezana.
+
+SO(3) je dvostruko povezana i dopušta dvije faze: $\pm 1$. Fermioni
+su čestice koje se transformiraju projektivno.
+
+SO(2) je beskonačno povezana i ima beskonačno mogućih faza. No, sustavi
+koje razmatramo su 3D i čak i pod 2D rotacijama mogu samo promijeniti
+predznak tj. SO(2) je ovdje samo podgrupa od SO(3).
+
+\section{Ireducibilne reprezentacije grupe SO(3) tj. SU(2)}
+
+- Grupa SO(3) nije Abelova i IRREPSi više nisu 1D pa konstrukcija nije
+tako laka kao za SO(2).
+
+- Lakše je konstruirati reprezentacije SO(3) \emph{algebre}, a onda
+  eksponencijacijom dobiti reprezentacije grupe.
+
+- Algebru čine tri generatora grupe, $X_1, X_2, X_3$, eksplicitno navedena u
+(\ref{eq:SO3generators}), sa komutacijskim relacijama
+\begin{equation}
+          [X_i, X_j] = \epsilon_{ijk} X_k
+\end{equation}
+ali mi ćemo raditi s malo drugačije izraženom algebrom, preko kvantnomehaničkih operatora
+momenta impulsa, $J_1, J_2, J_3$, $J_i=\rmi \hbar X_i$ koji zadovoljavaju
+\begin{equation}
+          [J_i, J_j] = i \hbar \epsilon_{ijk} J_k
+\label{eq:SU2algebra}
+\end{equation}
+ 
+Elementi grupe su $e^{\phi\unitn\cdot\vec{X}}=e^{(-i/\hbar)\phi\unitn\cdot
+ \vec{J}}$ što se slaže sa odjeljkom \ref{sec:lievealgebre}.
+
+- Iz unitarnosti reprezentacije ondmah slijedi da su $J_i$ hermitski, kao
+  što i treba biti. Znači da su njihove svojstvene vrijednosti realne.
+
+- Operator $\vec{J}^2 = J_{x}^2 + J_{y}^2 + J_{z}^2$ je Casimirov
+  (cf. odjeljak 4.2) tj. komutira sa svim elementima algebre:
+\begin{equation}
+   [\jsq, J_{i}^2]=0\;, \quad i=1,2,3
+\end{equation}
+
+- Kako nas zanimaju IRREPSi, iz druge Schurove leme slijedi da $\jsq$
+mora biti proporcionalan jediničnom operatoru: $\jsq \propto \Eins$.
+Tako se svojstvena vrijednost od $\jsq$ ne mijenja kroz cijelu IRREP i
+zgodna je za njeno označavanje. Usporedimo sad IRREPse grupe rotacija
+na običnom 3D prostoru i na prostoru kvantnomehaničkih stanja.
+
+\begin{itemize}
+\item  IRREP na 3D euklidskom prostoru:
+\begin{displaymath}
+   D^{(3D)}_{ij}(\unitn, \phi) r_j = \text{lin. komb. od}\: \hat{x}, \hat{y}, \hat{z}
+\end{displaymath}
+   $\unitn, \phi$ --- parametri \\
+  $3D$ --- oznaka IRREPsa \\
+  $r_j$ --- koordinate vektora $r_x, r_y, r_z$
+
+\item IRREPsi rotacija na Hilbertovom prostoru:
+\begin{displaymath}
+   D^{(\beta)}(\unitn,\phi) \ket{\beta, m} =
+ e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{\beta, m} =
+\text{lin. komb. od}\: \ket{\beta, m_1}, \ket{\beta, m_2}, \dots
+\end{displaymath}
+$\beta$ --- indeks IRREPsa (na $\vec{J}$ često implicitan, no
+ ponekad se piše $\vec{J}^{(\beta)}$) \\
+$ m $ --- ``koordinata'' koja razlikuje vektore unutar istog IRREPsa.\\
+ Vektori baze prostora na koji djeluje IRREP $\beta$ su definirani slijedećim
+relacijama:
+\begin{eqnarray}
+  \jsq \ket{\beta, m} &=& \beta \hbar^2 \ket{\beta, m} \;.  \\
+  J_z \ket{\beta, m} &=& m \hbar \ket{\beta, m} \;.
+\end{eqnarray}
+\end{itemize}
+
+Sada ćemo eksplicitno konstruirati IRREPse od $SU(2)$, koristeći
+isključivo komutacijske relacije (\ref{eq:SU2algebra}).
+\secret{Ova konstrukcija se radi na kvantnoj pa se može
+preskočiti i samo rekapitulirati sažetak na kraju ovog odjeljka.}
+Prvo definiramo operatore \emph{podizanja i spuštanja}
+\begin{displaymath}
+    J_{\pm} = J_x \pm i J_y \;, \qquad [\jsq, J_\pm] =0
+\end{displaymath}
+ 
+\begin{eqnarray*}
+ [J_z, J_\pm]& = & [J_z, J_x] \pm i [J_z, J_y] = i\hbar J_y \pm i (-i\hbar J_x)
+ \\ & = & \pm \hbar (J_x \pm i J_y) = \pm \hbar J_\pm
+\end{eqnarray*}
+
+Slično (pokažite):
+\begin{displaymath}
+ [J_+, J_-] = 2 \hbar J_z
+\end{displaymath}
+
+ Djelovanjem ovih operatora dizanja i spuštanja na vektore neke IRREP,
+ostajemo naravno u toj istoj IRREP:
+\begin{displaymath}
+   \jsq(J_{\pm}\ket{\beta, m})=J_{\pm}\jsq\ket{\beta, m}=\beta\hbar^2
+    (J_{\pm}\ket{\beta, m}) \;,
+\end{displaymath}
+ali svojstvena vrijednost od $J_z$ se mijenja:
+\begin{equation}
+J_z(J_{\pm}\ket{\beta, m})=([J_z,J_{\pm}]+J_{\pm}J_z)\ket{\beta, m}=
+\hbar(m\pm 1)J_{\pm}\ket{\beta, m} \;,
+\label{jzjpm}
+\end{equation}
+tj.
+\begin{displaymath}
+    J_{\pm}\ket{\beta, m}\propto \ket{\beta, m\pm 1} \;.
+\end{displaymath}
+
+
+Do kuda  može ići to dizanje i spuštanje tj. koliko različitih vrijednosti
+može poprimiti $m$?
+
+Tvrdnja: $m^2 \leq \beta$
+
+Dokaz: $J_{\pm}^{\dagger}=J_{\mp}$, jer $J^{\dagger}_{x,y,z}=J_{x,y,z}$.
+\begin{eqnarray*}
+ \frac{1}{2}(J_+ J_{+}^{\dagger} + J_{+}^{\dagger}J_+)& = &
+ \frac{1}{2}(J_+ J_{-}+ J_- J_+) \\
+& = & \frac{1}{2} \left[ (J_x + i J_y)(J_x - i J_y) + \textrm{h. c.} \right]
+\\ & = & \frac{1}{2} \left[ J_{x}^2 + i J_y J_x - i J_x J_y + J_{y}^2
+  + J_{x}^2 - i J_y J_x + i J_x J_y + J_{x}^2 \right] \\
+& = & J_{x}^2 + J_{y}^2 = \jsq - J_{z}^2
+\end{eqnarray*}
+No,
+\begin{displaymath}
+\bra{\beta, m}J_{+}^{\dagger}J_+ \ket{\beta, m} =
+\bra{J_{+}\beta, m}J_{+}\beta, m\rangle  \geq 0 \quad \textrm{i isto za}
+J_+ J_{+}^{\dagger}
+\end{displaymath}
+Slijedi da je
+\begin{displaymath}
+\bra{\beta, m}(\jsq - J_{z}^2)\ket{\beta, m}=
+\bra{\beta, m}(\beta\hbar^2 - m^2\hbar^2)\ket{\beta, m} =
+(\beta - m^2)\hbar^2 \geq 0
+\end{displaymath}
+Q.E.D.
+
+Dakle, za svaki $\beta$ postoji $m_{\textrm{\scriptsize max}}$ tako da 
+\begin{displaymath}
+ J_+ \ket{\beta, m_{\textrm{\scriptsize max}}} = 0
+\end{displaymath}
+(To je jedini način da (\ref{jzjpm}) ostane vrijediti.)
+
+$m_{\textrm{\scriptsize max}}(\beta)$=?
+
+\begin{displaymath}
+J_- J_+ \ket{\beta, m_{\textrm{\scriptsize max}}} = 0
+\end{displaymath}
+\begin{eqnarray*}
+J_- J_+ =(J_x - i J_y)(J_x - i J_y)
+   & = &J_{x}^2 + J_{y}^2 +i (J_x J_y - J_y J_x) \\
+ & = & J_{x}^2 + J_{y}^2 - \hbar J_z \\
+ & = & \jsq - J_{z}^2 - \hbar J_z
+\end{eqnarray*}
+Pa je
+\begin{displaymath}
+ (\jsq - J_{z}^2 - \hbar J_z)\ket{\beta, m_{\textrm{\scriptsize max}}}
+ = (\beta\hbar^2 - m_{\textrm{\scriptsize max}}^2 \hbar^2 
+                 - m_{\textrm{\scriptsize max}}   \hbar^2 )
+\ket{\beta, m_{\textrm{\scriptsize max}}} = 0 \;,
+\end{displaymath}
+pa kako $\ket{\beta, m_{\textrm{\scriptsize max}}}$ nije nul-vektor
+slijedi da je
+\begin{displaymath}
+    \beta = m_{\textrm{\scriptsize max}} ( m_{\textrm{\scriptsize max}} +1)\;.
+\end{displaymath}
+
+Iz maločas dokazane činjenice da je $m^2 \le \beta$ slijedi također
+da ni spuštanje vrijednosti $m$ operatorom spuštanja ne može ići
+unedogled već da mora postojati $m_{\textrm{\scriptsize min}}$
+sa svojstvom
+\begin{displaymath}
+    J_- \ket{\beta, m_{\textrm{\scriptsize min}}} = 0 \;,
+\end{displaymath}
+iz čega postupkom analognim ovom gore dolazimo do
+\begin{displaymath}
+    \beta = m_{\textrm{\scriptsize min}} ( m_{\textrm{\scriptsize min}} -1)\;.
+\end{displaymath}
+
+Izjednačivši ove dvije vrijednosti za $\beta$ 
+\begin{displaymath}
+            m_{\textrm{\scriptsize max}} ( m_{\textrm{\scriptsize max}} +1)
+= m_{\textrm{\scriptsize min}} ( m_{\textrm{\scriptsize min}} -1)
+\end{displaymath}
+dobijemo kvadratnu jednadžbu za $m_{\textrm{\scriptsize min}}$ od čija
+dva rješenja $m_{\textrm{\scriptsize min}}=m_{\textrm{\scriptsize max}}+1$
+i $m_{\textrm{\scriptsize min}} = - m_{\textrm{\scriptsize max}}$ ovo
+prvo ne dolazi u obzir jer je $m_{\textrm{\scriptsize max}}$ po pretpostavci
+najveća moguća vrijednost za $m$. Tako imamo, uvodeći oznaku
+$j=m_{\textrm{\scriptsize max}}$,
+\begin{displaymath}
+               -j = m_{\textrm{\scriptsize min}} \le m \le 
+ m_{\textrm{\scriptsize max}} = j   \;.
+\end{displaymath}
+
+Nadalje, kako operatori $J_\pm$ dižu ili spuštaju $m$ točno za 1, mora
+biti $m_{\textrm{\scriptsize max}} = m_{\textrm{\scriptsize min}} +n $,
+gdje je $n\in \mathbb{N}_{0}$, tj. $j = -j +n  \imp j=n/2$
+\begin{displaymath}
+  j= 0, \frac{1}{2}, 1, \frac{3}{2}, 2, \ldots \;.
+\end{displaymath}
+
+  Vrijednost $\beta = j(j+1)$ je ista za cijelu IRREP i uobičajenije
+je upravo $j$ koristiti za označavanje IRREPa:
+\begin{displaymath}
+  \ket{\beta, m} \longrightarrow \ket{j, m} \;,
+\end{displaymath}
+gdje $m$ poprima vrijednosti
+\begin{displaymath}
+   m= -j, -j+1, \ldots, j-1, j
+\end{displaymath}
+i gdje vektori baze IRREPa $\ket{j, m}$ zadovoljavaju
+\begin{eqnarray*}
+ \jsq \ket{j, m}& = & \hbar^2 j(j+1)\ket{j, m} \quad \mbox{i} \\
+ J_z \ket{j, m} & =  &\hbar m \ket{j, m} \;.
+\end{eqnarray*}
+Tako smo koristeći isključivo komutacijske relacije algebre grupe rotacija
+konstruirali sve njene ireducibilne reprezentacije!
+
+Kako je ta algebra zajednička i grupi $SO(3)$ i grupi $SU(2)$ dobili
+smo i reprezentacije s polucjelobrojnim momentom impulsa $j$.
+
+Još nas zanima i točno djelovanje operatora $J_\pm$ na vektore baze:
+\begin{displaymath}
+     J_+ \ket{j, m} = c_{jm} \ket{j, m+1} \;.
+\end{displaymath}
+Zahvaljujući ortonormiranosti:
+\begin{eqnarray*}
+ |c_{jm}|^2 & = & \bra{j, m} J_- J_+ \ket{j, m} \\
+            & = & \bra{j, m}(\jsq - J_{z}^2 - \hbar J_z \ket{j, m} \\
+& = & \bra{j, m}(\hbar^2 j(j+1) - \hbar^2 m^2 - \hbar^2 m \ket{j, m}  \\
+            & = & \hbar^2[j(j+1)-m(m+1)] \\
+            & = & \hbar^2 (j-m)(j+m+1)
+\end{eqnarray*}
+Faza od $c_{jm}$ je neodređena i prema tzv. Condon-Shortley konvenciji
+odabire se realan i pozitivan $c_{jm}$:
+\begin{displaymath}
+  J_+ \ket{j, m} = \hbar \sqrt{(j-m)(j+m+1)} \ket{j, m+1} \;.
+\label{jplus}
+\end{displaymath}
+Slično, [pokažite]
+\begin{displaymath}
+  J_- \ket{j, m} = \hbar \sqrt{(j+m)(j-m+1)} \ket{j, m-1} \;.
+\label{jminus}
+\end{displaymath}
+
+Ove relacije nam omogućuju da odredimo matrične elemente operatora
+momenta impulsa između proizvoljnih stanja. Također, eksponencijacijom
+možemo odrediti matrične elemente samih operatora rotacija:
+\begin{displaymath}
+    \bra{j,m'} D^{(j)}(\hat{\vec{n}},\phi) \ket{j, m} \quad - \quad
+\text{Wignerove D-funkcije}
+\end{displaymath}
+Za konkretne primjere vidi vježbe.
+
+\textbf{Sažetak:}
+
+\begin{itemize}
+\item  Operatori momenta impulsa $J_x, J_y$ i $J_z$ te njihove kombinacije
+$\jsq, J_\pm, \ldots$ za dani $j$, tj. za danu ireducibilnu reprezentaciju
+grupe rotacija, djeluju na ($2j+1$)-dimenzionalnom vektorskom prostoru
+razapetom vektorima $\ket{j, m}$, $m=-j, -j+1, \ldots, j-1, j$.
+
+\item operatori $D^{(j)}=e^{-i \vec{J}\cdot\unitn\phi/\hbar}$ čine
+  reprezentaciju grupe rotacija na ($2j+1$)-dimenzionalnom  Hilbertovom
+  vektorskom prostoru kvantnomehaničkih stanja
+
+\item $J_{\pm}$ povezuju svih $2j+1$ vektora $\ket{j, m}$ tj.
+  reprezentacija je stvarno ireducibilna
+
+\item baza vektorskog prostora $\ket{j, m}$, $m=-j, -j+1, \ldots, j-1, j$ 
+ se obično naziva \emph{multiplet}. (Neki autori tako zovu cijeli
+ vektorski prostor.)
+  \begin{itemize}
+\item  $j=0$ : \emph{singlet}
+\item  $j=\frac{1}{2}$ : \emph{dublet}
+\item  $j=1$ : \emph{triplet}
+\item  $\cdots$ 
+\end{itemize}
+\end{itemize}
+
+\textbf{Orbitalni moment impulsa:}
+
+- Specijalna vrsta momenta impulsa koja je oblika $\vec{L} = \vec{r}
+  \times \vec{p}$
+
+- Kao posljedica toga (ne sasvim trivijalna \secret{cf. Kaplan and Wu, 
+Chinese J. of Phys. \textbf{9} (1971) 31; Gatland, Am. J. Phys.
+\textbf{74} (2006) 191.}), svojstvene vrijednosti su 
+ isključivo  cjelobrojne:
+\begin{displaymath}
+     \vec{L}^2 \ket{l, m} = \hbar^2 l(l+1) \ket{l,m} \qquad l=0,1,2,\ldots
+\end{displaymath}
+i označavaju se s $l$, a ne $j$.
+
+- Iz povijesnih razloga vezanih uz atomsku fiziku, stanja s $l=0,1,2,\ldots$
+se često nazivaju $S, P, D,\ldots$ stanja, a $m$ se ponekad naziva
+\emph{magnetski} kvantni broj (zbog svoje uloge u Zeemanovom efektu).
+
+\section{Zbrajanje momenata impulsa i Clebsch-Gordanovi koeficijenti}
+
+Sustav od dvije čestice, sa spinovima $j_1$ i $j_2$ u stanju 
+$\ket{j_1, m_1; j_2, m_2}$ ima svojstva:
+\begin{align*}
+\vec{J}_{1}^2 \ket{j_1, m_1; j_2, m_2} &= j_1(j_1+1)\hbar^2 
+  \ket{j_1, m_1; j_2, m_2} \\
+\vec{J}_{2}^2 \ket{j_1, m_1; j_2, m_2} &= j_2(j_2+1)\hbar^2 
+  \ket{j_1, m_1; j_2, m_2} \\
+J_{1z}\ket{j_1, m_1; j_2, m_2} &= m_1 \hbar \ket{j_1, m_1; j_2, m_2}\\
+J_{2z}\ket{j_1, m_1; j_2, m_2} &= m_2 \hbar \ket{j_1, m_1; j_2, m_2}
+\end{align*}
+\begin{align*}
+\ket{j_1, m_1} &\in V_1\\
+\ket{j_2, m_2} &\in V_2\\
+\ket{j_1, m_1; j_2, m_2}&\equiv\ket{j_1, m_1}\ket{j_2, m_2} \in V_1\otimes V_2
+\end{align*}
+Na vektorskom
+prostoru $V_1$ grupa rotacija reprezentirana je operatorima $D^{(j_1)}=
+\exp(-i\vec{J}_1\cdot\hat{\vec{n}}\theta/\hbar)$ (i slično za $V_2$),
+a na $V_1\otimes V_2$ operatorima
+$D^{(j_1)}\otimes D^{(j_2)}$.
+
+Međutim, $D^{(j_1)}\otimes D^{(j_2)}$ je općenito reducibilna reprezentacija
+koja nema dobro definiran spin. $\ket{j_1, m_1; j_2, m_2}$ nije nužno svojstveno
+stanje od $\vec{J}^2 = (\vec{J}_1 + \vec{J}_2)^2$ --- operatora ukupnog spina
+sustava.
+
+Rastav na IRREPSE:
+\begin{displaymath}
+  D^{(j_1)}\otimes D^{(j_2)} =
+  \sum_J \oplus\: a_{J}D^{(J)} \quad
+   \textrm{ - Clebsch-Gordanov razvoj }
+\end{displaymath}
+
+\begin{displaymath}
+a_J = \left( \chi^{(J)}, \chi^{(j_1)} \chi^{(j_2)} \right)
+\end{displaymath}
+
+Za općeniti račun skalarnih umnožaka karaktera trebali bismo
+znati invarijantno integrirati u grupnom prostoru (cf. Jones,
+Appendix C ili Hamermesh 9-2), ali ovdje ćemo potrebni rezulatat
+dobiti i bez toga, uz par matematičkih trikova:
+
+Kao reprezentante klasa biramo rotacije oko $z$-osi.
+\begin{equation}
+\begin{split}
+ \chi^{(j)}(\phi) &= \Tr D^{(j)}(\phi) = \Tr e^{(-i/\hbar)J_3 \phi} \\
+ &= \Tr \textrm{diagonal}\left( e^{-i j\phi }, e^{-i (j-1)\phi}, \ldots,
+e^{-i(-j)\phi}\right)\\
+&= e^{-ij\phi } + e^{-i (j-1)\phi} + \cdots + e^{-i(-j)\phi}\\
+&= \text{geom. red s omjerom članova $e^{i j\phi}$} \\
+&= e^{-i j\phi} \frac{1- (e^{i j\phi})^{2j+1}}{1-e^{i\phi}}
+= \frac{e^{-i(j+1/2)\phi} - e^{i(j+1/2)\phi}}{e^{-i\phi/2}-e^{i\phi/2}}\\
+&= \frac{\sin(j+1/2)\phi}{\sin\phi/2}
+\end{split}
+\end{equation}
+
+
+Odredimo sada koeficijente $a_J$ Clebsch-Gordanovog razvoja. Pretpostavimo
+prvo da je $j_1 \ge j_2$.
+\begin{equation}
+\begin{split}
+\chi^{(j_1)}(\phi)\chi^{(j_2)}(\phi)&=
+ \frac{e^{+i(j_1+1/2)\phi} - e^{-i(j_1+1/2)\phi}}{2i\sin\phi/2}
+\sum_{m=-j_2}^{j_2}e^{i m \phi}\\
+&= \frac{1}{2 i \sin\phi/2} \sum_{m=-j_2}^{j_2}
+\left[ e^{i(j_1+m+1/2)\phi} - e^{-i(j_1-m+1/2)\phi}\right]\\
+&= (\text{zamjena $m\to -m$ u drugom članu}) \\
+&=\sum_{m=-j_2}^{j_2} \frac{\sin(j_1+m+1/2)\phi}{\sin\phi/2}\\
+&=\sum_{m=-j_2}^{j_2} \chi^{(j_1 + m)}(\phi) \qquad (J\equiv j_1 +m) \\
+&=\sum_{J=j_1-j_2}^{J=j_1+j_2} \chi^{(J)}(\phi) \;.
+\end{split}
+\end{equation}
+($J$ mora biti pozitivan da bi bio labela neke IRREPS. Zato smo
+tražili $j_1\ge j_2$.)
+Za slučaj $j_2 \ge j_1$ imali bi sve isto, uz zamjenu $j_1 \leftrightarrow
+j_2$. Slijedi da općenito možemo pisati:
+\begin{displaymath}
+ \chi^{(j_1)}(\phi)\chi^{(j_2)}(\phi)=
+\sum_{J=|j_1-j_2|}^{J=j_1+j_2} \chi^{(J)}(\phi)
+\end{displaymath}
+Dakle,
+\begin{displaymath}
+ a_J = \left(\chi^{(J)}, \chi^{(j_1)}\chi^{(j_2)}\right) =
+ \sum_{J'=|j_1-j_2|}^{J'=j_1+j_2} 
+\underbrace{\left(\chi^{(J)}, \chi^{(J')}\right)}_{\delta_{JJ'}}
+\end{displaymath}
+odnosno,
+\begin{equation}
+D^{(j_1)} \otimes D^{(j_2)} = \sum_{J=|j_1-j_2|}^{J=j_1+j_2} 
+\oplus D^{(J)}
+\end{equation}
+
+Npr. $D^{(1/2)}\otimes D^{(1)} = D^{(1/2)} \oplus D^{(3/2)}$.
+
+- Ovo da se svaka ireducibilna reprezentacija pojavljuje najviše jednom
+je veliko pojednostavljenje svojstveno grupi rotacija.
+
+- D.Z. Uvjerite se da se dimenzije dobro zbrajaju tj. da je 
+\begin{displaymath}
+    \sum_{J=|j_1-j_2|}^{J=j_1+j_2} (2J+1) = (2j_1+1)(2j_2+1)
+\end{displaymath}
+
+No, za primjene je zanimljivije zbrajanje stanja!
+
+$\ket{j_1, m_1; j_2, m_2}$ su vektori koji su baza od $V_1 \otimes V_2$ i
+koji su svojstveni vektori operatora $\{\jsqj, \jsqd, J_{1z}, J_{2z}\}$. No,
+postoji i baza $\ket{j_1, j_2; J, M}\equiv\ket{J, M}$
+tog istog prostora koju čine svojstveni vektori operatora
+$\{\jsqj, \jsqd, \jsq, J_z\}$.
+
+- D.Z. Uvjerite se da je
+\begin{displaymath}
+   [\jsq, \jsqj] = [\jsq, \jsqd] = 0
+\end{displaymath}
+
+- Dvije baze su naravno povezane:
+\begin{equation*}
+\ket{J, M} = \underbrace{\sum_{m_1,m_2}\ket{j_1, m_1; j_2, m_2}
+\bra{j_1, m_1; j_2, m_2}}_{=1}
+\ket{J, M}
+\end{equation*}
+\begin{equation}
+ \bra{j_1, m_1; j_2, m_2} J, M\rangle \equiv C^{JM}_{j_1m_1j_2m_2}
+\quad \text{Clebsch-Gordanovi koeficijenti}
+\end{equation}
+
+\subsubsection{Svojstva Clebsch-Gordanovih koeficijenata$^*$}
+\begin{itemize}
+\item $C^{JM}_{j_1m_1j_2m_2}=0$ ako nije $|j_1-j_2|\le J\le j_1 + j_2$. \\
+Dokaz: očito iz rastava $D^{(j_1)}\otimes D^{(j_2)}$.
+
+\item $C^{JM}_{j_1m_1j_2m_2}=0$ ako nije $M=m_1+m_2$.\\
+Dokaz: 
+\begin{gather}
+\vec{J}=\vec{J}_{1}+\vec{J}_{2} \imp J_z-J_{1z}-J_{2z}=0 \\
+\bra{j_1, m_1; j_2, m_2}(J_z-J_{1z}-J_{2z})\ket{J, M} = 0 \\
+(M-m_1-m_2)\bra{j_1, m_1; j_2, m_2} J, M\rangle = 0
+\end{gather}
+
+\item CG-koeficijenti imaju neodređenu fazu. Standardni izbor je
+da se uzme $C^{JJ}_{j_1 j_1 j_2 (J-j_1)}$ realan i pozitivan.
+Kao (netrivijalna) posljedica toga, svi CG-koeficijenti ispadaju realni.
+
+\item
+\begin{displaymath}
+ \sum_{JM} C^{JM}_{j_1m_1j_2m_2} C^{JM}_{j_1m'_1j_2m'_2} =
+\delta_{m_1 m'_1} \delta_{m_2 m'_2}
+\end{displaymath}
+
+\item
+\begin{displaymath}
+  \sum_{m_1, m_2} C^{JM}_{j_1m_1j_2m_2}C^{J'M'}_{j_1m_1j_2m_2} =
+ \delta_{JJ'}\delta_{MM'}
+\end{displaymath}
+
+\item
+\begin{displaymath}
+ \ket{J, M} = \sum_{m_1, m_2} C^{JM}_{j_1m_1j_2m_2}\ket{j_1, m_1; j_2, m_2}
+\end{displaymath}
+(Isti koeficijenti pretvaraju baze u oba smjera.). Za dokaz, 
+pomnožiti s $\sum_{J,M}C^{JM}_{j_1m'_1j_2m'_2}$ i koristiti svojstva
+ortogonalnosti.
+
+\item
+\begin{displaymath}
+ C^{JM}_{j_1m_1j_2m_2} = (-1)^{J-j_1 -j_2} C^{JM}_{j_2 m_2 j_1 m_1}
+\end{displaymath}
+\secret{Netrivijalno, cf. Cornwell}
+\end{itemize}
+
+\subsubsection{Izračunavanje Clebsch-Gordanovih koeficijenata$^*$}
+\label{tripletsinglet}
+
+Primjer: 
+ $D^{(1/2)}\otimes D^{(1/2)} = D^{(1)} \oplus D^{(0)}$.
+
+Prva baza: $\ket{1/2, m_1; 1/2, m_2}\equiv\ket{m_1, m_2}$.
+$m_{1,2}=\pm 1/2$ $\imp$ 4 stanja
+
+Druga baza: $\ket{J, M}$. $M=-1, 0, 1$ za $J=1$ i $M=0$ za $J=0$.
+$\imp 3+1=4$ stanja.
+
+\begin{equation*}
+\begin{split}
+ \ket{1,1} &= \sum_{m_1, m_2}C^{1 1}_{\fhalf m_1 \fhalf m_2}\ket{m_1, m_2}\\
+& (M=m_1+m_2=1 \imp m_1=m_2=\fhalf )\\
+&= C^{1 1}_{\fhalf \fhalf \fhalf \fhalf}\ket{\fhalf, \fhalf}
+\end{split}
+\end{equation*}
+
+To što su oba stanja normirana povlači da je $|C^{1 1}_{\fhalf \fhalf
+\fhalf \fhalf}|=1$. Već smo odabrali da je $C\in\mathbb{R}$, a sada
+još biramo i da je pozitivan: 
+$C^{1 1}_{\fhalf \fhalf \fhalf \fhalf}=1$.
+\begin{displaymath}
+    \ket{1, 1} = \ket{\fhalf, \fhalf}
+\end{displaymath}
+
+Sada, da bismo dobili ostale CG-koeficijente,
+djelujemo s $J_- = J_{1-}+J_{2-}$ na obje strane ove jednadžbe:
+
+\begin{align*}
+J_- \ket{1, 1}&=\hbar \sqrt{(1+1)(1-1+1)} \ket{1,0} =\hbar\sqrt{2}\ket{1, 0}\\
+J_{1-} \ket{\fhalf, \fhalf}&=\hbar\ket{-\fhalf, \fhalf}\\
+J_{2-} \ket{\fhalf, \fhalf}&=\hbar\ket{\fhalf, -\fhalf}\\
+\end{align*}
+
+Slijedi
+\begin{displaymath}
+ \ket{1, 0} = \frac{1}{\sqrt{2}}\left(\ket{\fhalf, -\fhalf}+
+\ket{-\fhalf, \fhalf}\right)
+\end{displaymath}
+tj.
+\begin{displaymath}
+C^{1 0}_{\fhalf -\fhalf \fhalf \fhalf}=
+C^{1 0}_{\fhalf  \fhalf \fhalf -\fhalf} = \frac{1}{\sqrt{2}}
+\end{displaymath}
+
+Nadalje,
+\begin{displaymath}
+    \ket{1, -1} = \ket{-\fhalf, -\fhalf} \imp
+C^{1 -1}_{\fhalf -\fhalf \fhalf -\fhalf}= 1
+\end{displaymath}
+D.Z. - Dobiti ovo s $J_-$.
+
+Na kraju, napišimo, imajući u vidu da $M=m_1+m_2$
+\begin{displaymath}
+ \ket{0,0} = \alpha\ket{\fhalf, -\fhalf}+\beta\ket{-\fhalf, \fhalf} \;,
+\end{displaymath}
+gdje su $\alpha$ i $\beta$  koeficijenti koje treba odrediti.
+Djelovanjem s $J_-$ na obje strane imamo:
+\begin{equation}
+\begin{split}
+0 &= \alpha\ket{-\fhalf, -\fhalf} + \beta\ket{-\fhalf, -\fhalf} + 0 + 0\\
+&= (\alpha+\beta)\ket{-\fhalf, -\fhalf} \imp \beta=-\alpha
+\end{split}
+\end{equation}
+$\imp$
+\begin{displaymath}
+   \ket{0,0}=\alpha\left(\ket{\fhalf, -\fhalf}-\ket{-\fhalf, \fhalf}
+\right)
+\end{displaymath}
+Normalizacija i izbor faze daju $\alpha=1/\sqrt{2}$ tj.
+\begin{displaymath}
+ C^{0 0}_{\fhalf \fhalf \fhalf -\fhalf}=
+ -C^{0 0}_{\fhalf -\fhalf \fhalf \fhalf}= \frac{1}{\sqrt{2}}.
+\end{displaymath}
+
+- Svi ostali koeficijenti su nula.
+
+- Za CG-koeficijente postoje tablice i računalni programi. Za
+  generalnu formulu vidi Hamermesh 9-8.
+
+Dosad rečeno nam opisuje ponašanje proizvoljnog kvantnomehaničkog
+stanja pri rotaciji:
+\begin{itemize}
+\item $\ket{j, m}$ stanja se transformiraju pod IRREPsima - $D$-funkcije
+\item složenija stanja reduciramo pomoću Clebsch-Gordanovih koeficijenata
+\end{itemize}
+
+
+\section{Tenzorski operatori i Wigner-Eckartov teorem}
+\label{sect:tenzorskioperatori}
+
+U prošla dva odjeljka smo naučili rotirati kvantnomehanička stanja.
+Da bismo potpuno ovladali primjenama rotacijske simetrije u
+kvantnoj mehanici
+potrebno je znati i kako se pri rotacijama ponašaju kvantnomehanički
+operatori.
+
+\subsubsection{Primjer: Skalarni operator $S$}
+
+ - $D(R) S D(R)^{-1} = S$ --- invarijantan na rotacije (po definiciji)
+
+\begin{equation}
+\begin{split}
+ e^{-i\vec{J}\cdot\unitn \phi/\hbar} S e^{-i\vec{J}\cdot\unitn \phi/\hbar}
+  &= \left(1-\frac{i}{\hbar}\vec{J}\cdot\unitn \phi\right)S
+\left(1+\frac{i}{\hbar}\vec{J}\cdot\unitn \phi\right) + O(\phi^2) \\
+&= S - \frac{i}{\hbar}(\vec{J}S - S\vec{J})\cdot\unitn\phi \\
+&= S \qquad \imp \qquad [\vec{J}, S] = 0
+\end{split}
+\end{equation}
+(Analogno kao što očuvani operatori tj. operatori invarijantni na
+translacije u vremenu komutiraju s hamiltonijanom --- generatorom translacija
+u vremenu.)
+
+Matrični elementi od $S$? (Obično je najzanimljivije znati neke informacije
+o matričnim elementima operatora.)
+\begin{displaymath}
+   \bra{j' m'}S\ket{j m} = \text{?}
+\end{displaymath}
+\begin{align*}
+\bra{j' m'}S\vec{J}^2 \ket{jm} &= \bra{j' m'}\vec{J}^2 S\ket{jm} \\
+j(j+1)\hbar^2 \bra{j' m'}S \ket{jm} &= j'(j'+1)\hbar^2 \bra{j' m'}S \ket{jm}\\
+(j-j')(\underbrace{j+j'+1}_{\neq 0})\bra{j' m'}S \ket{jm} &= 0 \\
+    &\imp \bra{j' m'}S \ket{jm} \propto \delta_{jj'}
+\end{align*}
+Slično (D.Z), 
+\begin{displaymath}
+            \bra{j' m'}S \ket{jm} \propto \delta_{mm'} \;.
+\end{displaymath}
+Znači, samo
+\begin{displaymath}
+               \bra{j m}S \ket{jm} \neq 0 \qquad \qquad \text{Izborno pravilo}
+\end{displaymath}
+Promotrimo li sada matrične elemente od $SJ_+$ možemo dobiti dodatne
+informacije:
+\begin{align*}
+\bra{j m} S J_+ \ket{j m-1} = \underbrace{\bra{j m} J_+}_{\bra{J_jm}}
+S \ket{j m-1} \\
+\hbar \sqrt{(j-m+1)(j+m)} \bra{j m}S \ket{jm} &=
+\hbar \sqrt{(j+m)(j-m+1)} \bra{j m-1}S \ket{jm-1} \\
+ \bra{j m}S \ket{jm} &= \bra{j m-1}S \ket{jm-1}
+\end{align*}
+Dakle, matrični element $\bra{j m}S \ket{jm}$ ne ovisi o $m$!
+Običaj je u tom slučaju pisati
+\begin{displaymath}
+ \bra{j' m'}S \ket{jm} = \delta_{jj'} \delta_{mm'}
+ \underbrace{\bra{j' }|S| \ket{j}}_{\text{tzv. \emph{reducirani
+ matrični element}}}
+\end{displaymath}
+Za dati $j$, umjesto $(2j+1)^2$ matričnih elemenata, dovoljno je
+izračunati jedan!
+
+Za poopćenje ovog na složenije operatore treba promatrati operatore koji
+se dobro transformiraju na rotacije \secret{tj. za koje znamo komutacijske
+relacije s $\vec{J}$} --- \emph{tenzorski operatori}.
+Podsjetimo se: Stanja koja se ``dobro'' transformiraju pri rotacijama
+su $\ket{jm}$ sa svojstvom
+\begin{displaymath}
+ D(r) \ket{jm} = \sum_{m'} \ket{jm'}\bra{jm'}D(R)\ket{jm}
+               = \sum_{m'} D^{j}_{mm'}\ket{jm'}
+\end{displaymath}
+
+\begin{definicija}[Ireducibilni sferični tenzorski operator]
+Ireducibilni sferični tenzorski operator $T^{(k)}$ ranga $k$, sa
+$2k+1$ komponenata $T^{(k)}_q$, $q=-k,-k+1,\ldots,k$ je operator
+koji zadovoljava
+\begin{equation}
+ D(R) T^{(k)}_q D(R)^{-1} = \sum_{q'=-k}^{k} D^{(k)}_{q'q}(R)
+      T^{(k)}_{q'}
+\end{equation}
+\end{definicija}
+
+
+Ekvivalentno, sferične tenzore možemo definirati zahtjevima
+\begin{align}
+[J_z, T^{(k)}_q ] &= \hbar q T^{(k)}_q \\
+[J_\pm, T^{(k)}_q] &= \hbar \sqrt{(k\mp q)(k\pm q +1)} T^{(k)}_{q\pm 1}
+\end{align}
+(D.Z. pokažite ekvivalentnost ovih definicija. Naputak: Napišite originalnu
+definiciju u infinitezimalnom obliku.)
+
+Npr. $J_z$ i $\,\mp (1/\sqrt{2})J_\pm$ formiraju sferični tenzor ranga 1.
+(D.Z. pokažite to!)
+
+
+N.B. "Komponente" sferičnog tenzora su također operatori. Ne dolaziti u
+zabunu s komponentama matrica --- brojevima. Ove "komponente" sferičnog
+tenzora se naravno također mogu napisati u matričnom obliku i onda one
+imaju svoje komponente tj. matrične elemente koji jesu brojevi.
+
+N.B. $D^{(j)}$ nije tenzorski operator ranga $j$.
+
+\begin{teorem}[Wigner-Eckart]
+Matrični elementi tenzorskih operatora između svojstvenih stanja momenata
+impulsa zadovoljavaju relaciju
+\begin{equation}
+ \bra{j'm'}T^{(k)}_q \ket{jm} = C^{j'm'}_{jmkq}
+\frac{\bra{j'}|T^{(k)}|\ket{j}}{\sqrt{2j+1}} \;,
+\end{equation}
+gdje je $\bra{j'}|T^{(k)}|\ket{j}$ tzv. \emph{reducirani matrični element}
+koji ne ovisi o $m, q$ i $m'$.
+\end{teorem}
+Za dokaz vidi literaturu.
+
+Posljedica ovog teorema je da izračunavanje jednog jedinog matričnog elementa
+(npr. za slučaj $m'=q=m=0$) onda omogućuje trivijalno određivanje svih ostalih
+pomoću tablica Clebsch-Gordanovih koeficijenata.
+
+\subsubsection{Primjer: skalarni operator}
+\begin{displaymath}
+S=T^{(0)}_0 \imp \bra{j'm'}|T^{(0)}_0\ket{jm} = C^{j'm'}_{jm00}
+\frac{\bra{j'}|T^{(0)}|\ket{j}}{\sqrt{2j+1}}
+\end{displaymath}
+pa svojstva Clebsch-Gordanovih koeficijenata automatski daju rezultate
+iz uvoda ovog odjeljka:
+\begin{itemize}
+\item $m+0 = m' \imp m=m'$
+\item $|j-0|\leq j' \leq j+0 \imp j=j'$
+\end{itemize}
+
+\subsubsection{Primjer: Izborna pravila za dipolno zračenje}
+
+\begin{displaymath}
+\text{Amplituda}\propto\bra{n'l'm'}\vec{E}\cdot\vec{x}\ket{nlm} =
+\vec{E}\cdot\bra{n'l'm'}\vec{x}\ket{nlm}
+\end{displaymath}
+$\vec{E}$ --- vanjsko polje (nije operator). $\vec{x}$ --- tenzor ranga
+1 (vektor); $x^{(1)}_q$, $x_z \leftrightarrow 
+x^{(1)}_0$, $x_{x,y}\leftrightarrow x^{(1)}_{\pm 1}$
+Teorem $\imp$
+\begin{displaymath}
+ \bra{n'l'm'}x^{(1)}_q \ket{nlm} = C^{l'm'}_{lm1q}
+\frac{\bra{n'l'}|x^{(1)}|\ket{nl}}{\sqrt{2l+1}} \;,
+\end{displaymath}
+\begin{itemize}
+\item $|l-1|\leq l' \leq l+1 \imp \Delta l = \pm 1,0$
+\item $m+q = m' \imp$
+  \begin{itemize}
+  \item \text{za} $\vec{E} = E\hat{\vec{z}} \qquad m'=m$
+  \item \text{za} $\vec{E} = E\hat{\vec{x}},E\hat{\vec{y}} \qquad m'=m\pm 1$
+   \end{itemize}
+$\imp \Delta m = \pm 1, 0$
+\end{itemize}
+(Usput, dodatna simetrija koju ima ovaj sustav, simetrija pariteta, zabranjuje
+$\delta l = 0$ prijelaze.)
+
+\secret{- Vidi se veza ovog sa zakonima očuvanja momenta impulsa koji
+također impliciraju ovo gore.}
+
+\subsection{Veza kartezijevih i sferičnih tenzora}
+\label{sect:sfericniVSkartezijevi}
+
+Tenzore smo (definicija \ref{def:tenzor}) definirali kao objekte koji se pri rotaciji
+transformiraju kao npr.:
+\begin{displaymath}
+   T_{ij} \longrightarrow  R_{ii'}R_{jj'}T_{i'j'} \qquad \text{(tenzor ranga 2)}
+\end{displaymath}
+To su \emph{kartezijevi} tenzori.
+
+\emph{Kartezijevi} tenzori ranga 1 tj. uobičajeni kartezijevi vektori
+se također mogu definirati kao trojke operatora koje zadovoljavaju
+komutacijske relacije
+\begin{equation}
+ [J_i, V_j] = i\hbar \epsilon_{ijk} V_k
+\end{equation}
+
+Problem kartezijevih tenzora je da nisu ireducibilni. To se ne
+vidi na tenzorima ranga 0 ili 1 koji jesu ireducibilni i jednaki
+su odgovarajućim sferičnim tenzorima do na drugačije kombinacije
+komponenata. Konkretno:
+\begin{equation}
+T^{(0)}_0 \: \text{\small (sferični tenzor ranga 0 tj. skalar)}
+ = T      \: \text{\small (kartezijev tenzor ranga 0 tj. skalar)}
+\end{equation}
+Za operatore ranga 1 (vektore) imamo već spomenute relacije
+\begin{equation}
+T^{(1)}_0 = T_z \;, \quad T^{(1)}_{\pm 1} = \mp \frac{1}{\sqrt{2}}
+(T_x \pm i T_y) \;,
+\label{eq:kartvektor}
+\end{equation}
+i rotacije očito miješaju sve tri komponente kartezijevog tenzora
+$\vec{T}$. Međutim, kartezijev tenzor ranga 2, $T_{ij}$, više nije
+ireducibilan; njegovih 9 komponenti se može organizirati u
+kombinacije koje se međusobno ne miješaju pri rotacijama. 
+Kao prvo, trag tenzora $\mathrm{Tr} T = T_{ii}$ je invarijantan
+na rotacije:
+\begin{align}
+ T_{ii} = \delta_{ij} T_{ij} \longrightarrow
+\delta_{ij} R_{i i'} R_{j j'} T_{i' j'}& = (R_{j i'} R_{j j'}) T_{i' j'}
+= (R^{\mathrm{T}} R)_{i' j'} T_{i' j'} \\
+& = \delta_{i' j'} T_{i' j'} = T_{i' i'} \;,
+\end{align}
+gdje smo u predzadnjem koraku upotrijebili svojstvo ortogonalnosti
+matrica rotacije. Dakle, trag 
+ $T_{xx} + T_{yy} + T_{zz}$ je skalar tj. tenzor ranga 0.
+Nadalje, kartezijev tenzor $T_{ij}$, baš kao i svaku matricu, možemo
+rastaviti na antisimetrični i simetrični dio:
+\begin{equation}
+  T_{ij} = \fhalf (T_{ij} - T_{ji}) + \fhalf (T_{ij} + T_{ji}) \;.
+\label{eq:SplA}
+\end{equation}
+Lako je uočiti da rotacije ne miješaju ove dvije komponente:
+rotacija (anti)si\-met\-ri\-čne matrice daje (anti)simetričnu matricu.
+(Vidi zadatak \thechapter.\ref{zad:antisim}).
+Tako tri nezavisne antisimetrične kombinacije, $(T_{xy}-T_{yx})/2$,
+$(T_{yz}-T_{zy})/2$ i $(T_{zx} - T_{xz})/2$, čine sferični tenzor
+prvog ranga tj. vektor, što se vidi po broju komponenata i po
+činjenici da je ovaj tročlani skup ireducibilan tj. rotacije
+pretvaraju jedan element u drugi.
+Simetrični dio ima šest komponenata, $T_{xx}$, $T_{yy}$, $T_{zz}$,
+$(T_{xy}+T_{yx})/2$, $(T_{yz}+T_{zy})/2$ i $(T_{zx} + T_{xz})/2$, 
+ali treba uočiti da je zbroj prvih triju jednak tragu za kojeg
+znamo da je posebno ireducibilan 
+pa ga treba eliminirati da bi se dobilo pet
+nezavisnih komponenata koje čine sferični tenzor drugog ranga.
+Dakle, konačni rastav kartezijevog tenzora drugog ranga na
+ireducibilne tenzore ranga 0, 1 i 2 je
+\begin{equation}
+T_{ij} = \frac{1}{3}\delta_{ij}T_{kk} +
+  \fhalf (T_{ij} - T_{ji}) + 
+ \bigg[\fhalf (T_{ij} + T_{ji}) - \frac{1}{3}\delta_{ij}T_{kk} \bigg] \;,
+\end{equation}
+gdje faktor $1/3$ osigurava da zadnji član bude traga nula.
+(Cf. Sakurai odjeljak 3.10)
+
+\section{Degeneracija nivoa vodikovog atoma i SO(4) simetrija}
+\label{so4}
+
+
+Vidjeli smo u odjeljku \ref{degeneracija} da postojanje operatora
+simetrije $\{U(g) \td g\in G \}$, $[U(g), H] = 0$ povlači degeneraciju
+energijskih nivoa koji odgovaraju stanjima $\{U(g)\ket{\alpha} \td g\in
+G \}$. Tamo je to bilo ilustrirano na primjeru konačnih grupa. Zanimljiv
+primjer degeneracije kao posljedice kontinuirane sferne simetrije su
+nivoi u vodikovom atomu. Hamiltonijan (u CGS sustavu jedinica)
+\begin{equation}
+    H = \frac{p^2}{2m} - \frac{e^2}{r} \;.
+\label{hatom}
+\end{equation}
+je rotacijski simetričan i kao posljedica toga komutira s operatorom
+rotacija
+\begin{equation}
+     [H, D(\vec{n},\phi)] = 0 \;.
+\end{equation}
+To povlači da svih $2l+1$ stanja date ireducibilne reprezentacije
+grupe rotacija s kvantnim brojem $l$
+\begin{equation}
+   \big\{\ket{nlm} \td m\in\{-l, -l+1, ..., l \}\big\} = 
+   \big\{ D(g)\ket{nlm} \td g \in SO(3) \big\}
+\end{equation}
+ima istu energiju, kako smo već spominjali u odjeljku \ref{reprezentacije}.
+
+Međutim, poznato je da energije stanja vodikovog atoma ne
+ovise ni o kvantnom broju $l$ i da $n^2$ stanja
+\begin{equation}
+\big\{\ket{nlm} \td l=\{0, 1, \ldots, n-1\}; m\in\{-l, -l+1, \ldots, l \}\big\} 
+\end{equation}
+imaju istu energiju\footnote{Ovdje radimo s pojednostavljenim modelom vodikovog atoma
+opisanim hamiltonijanom (\protect\ref{hatom}). U realnom vodikovom atomu
+postoje i dodatni članovi u hamiltonijanu, poput člana interakcije spina
+i orbite, koji razbijaju ovu degeneraciju i čine da energije nivoa ovise
+i o orbitalnom kvantnom broju $l$ --- tzv. \emph{fina struktura} vodikovog
+spektra.}
+\begin{equation}
+    E_n = - \frac{e^4 m}{2 \hbar^2 n^2}  \;.
+\end{equation}
+Dakle, umjesto $2l+1$-struke degeneracije koju očekujemo kao posljedicu
+rotacijske simetrije imamo veću, $n^2$-struku degeneraciju. Ovakva
+situacija obično znači da sustav ima veću simetriju nego što smo
+originalno očekivali. Koju to simetriju, pored rotacijske, ima
+sustav opisan hamiltonijanom (\ref{hatom})?
+Da bismo istražili to pitanje vratit ćemo se u područje klasične
+fizike gdje se javlja slična situacija u problemu dva tijela čiji
+je hamiltonijan
+\begin{equation}
+    H = \frac{p^2}{2m} - \frac{e_{M}^2}{r} \quad ; \quad 
+ e_{M}^2 \equiv G M m \;.
+\end{equation}
+matematički ekvivalentan onom vodikovog atoma.
+
+Kod problema dva tijela rotacijska simetrija i njoj odgovarajući zakon
+očuvanja momenta impulsa ($\vec{L}$=const.) manifestiraju se kroz
+činjenicu da putanja sustava (elipsa) ostaje cijelo vrijeme u istoj
+ravnini.  Međutim, i ovdje se javlja zanimljiva dodatna simetrija ---
+putanja je zatvorena elipsa i
+smjer perihela elipse je također konstantan\footnote{Ovo
+vrijedi u klasičnoj Newtonovoj teoriji gravitacije. Poznato je da
+Einsteinova teorija gravitacije korigira ovaj rezultat i da položaj perihela
+elipse nije konstantan već vrlo polako precesira.}.
+Odgovarajući očuvani vektor je tzv. \emph{Laplace-Runge-Lenzov}
+vektor
+\begin{equation}
+  \vec{M} = \vec{v}\times\vec{L} - \frac{e_{M}^2}{r}\vec{r} \;.
+\label{lrl}
+\end{equation}
+Njegovo očuvanje ($\vec{M}$=const.), slijedi iz drugog Newtonovog
+zakona uz malo elementarne vektorske algebre.
+Prije svega primijetimo da je
+\begin{displaymath}
+ \frac{\dd \hat{\vec{r}}}{\dd t} = \frac{\dd}{\dd t} \frac{\vec{r}}{r} =
+ \frac{r \vec{v} - \vec{r}
+\frac{\vec{r}\cdot\vec{v}}{r}}{r^2} \;,
+\end{displaymath}
+gdje smo iskoristili $\vec{r}\cdot\vec{v} = \dd (\vec{r}\cdot\vec{r})/2\dd t
+= r dr/dt $.
+
+Sad deriviramo (\ref{lrl}) po vremenu, uz korištenje 
+($\dd \vec{v}/ \dd t = \vec{F}/m = - (e_{M}^2 \vec{r})/(mr^3)$):
+\begin{displaymath}
+\begin{split}
+\frac{\dd \vec{M}}{\dd t} &=
+\frac{\dd \vec{v}}{\dd t} \times \vec{L} + \vec{v}\times
+\underbrace{\frac{\dd \vec{L}}{\dd t}}_{=0} - e_{M}^2 \frac{\dd \hat{\vec{r}}}
+{\dd t} \\
+&= -\frac{e_{M}^2}{mr^3} \underbrace{\vec{r}\times\vec{L}}_{(\vec{r}\cdot 
+\vec{p})\vec{r} - r^2 \vec{p}} -
+    \frac{e_{M}^2}{mr^3} \Big[ r^2\vec{p} - \vec{r}(\vec{r}\cdot\vec{p})\Big] \\
+&= 0
+\end{split}
+\end{displaymath}
+Primjetite kako je za ovaj izvod ključno da je $\vec{F}\propto 1/r^2$.
+
+Također, uočite da su $\vec{M}$ i $\vec{L}$ okomiti
+($\vec{M}\cdot\vec{L}=0$, trivijalno).
+
+Posebno je zanimljivo kako sad nakon što smo identificirali ovaj
+dodatni očuvani vektor (\ref{lrl}) možemo lako riješiti problem
+dvaju tijela:
+
+\begin{equation}
+\begin{split}
+ \vec{r}\cdot\vec{M} &= \underbrace{\vec{r}\cdot(\vec{v}\times\vec{L})}_{
+\vec{L}\cdot(\vec{r}\cdot\vec{v})} - \frac{e_{M}^2}{r} r^2
+= \frac{L^2}{m} - e_{M}^2 r \\
+&= r M \cos \theta
+\end{split}
+\end{equation}
+gdje je $\theta$ kut kojeg zatvara $\vec{r}$ prema konstantnom vektoru
+$\vec{M}$. Ovu jednadžbu možemo prepisati u obliku
+\begin{equation}
+\frac{1}{r} = \frac{e_{M}^2 m}{L^2} \left(1+\frac{M}{e_{M}^2} \cos\theta\right)
+\end{equation}
+što prepoznajemo kao polarnu jednadžbu elipse ekscentriciteta $e=M/e_{M}^2$
+(usp. npr. Goldstein, jedn. (3-51)). Dakle riješili smo problem i
+dobili trajektoriju sustava bez ikakvog rješavanja diferencijalne
+jednadžbe gibanja!
+
+Možemo li sad ova saznanja primjeniti u kvantnoj mehanici na naš
+početni problem dodatne degeneracije nivoa vodikovog atoma?
+Postoji li kvantnomehanički operator koji bi bio analogon 
+Laplace-Runge-Lenzovog vektora (\ref{lrl})? Naivni pokušaj
+s operatorom
+\begin{equation}
+  \vec{M} = \frac{\vec{p}}{m}\times\vec{L} - e^2\frac{\vec{r}}{r} \;.
+\end{equation}
+ne prolazi jer ovaj operator, zbog 
+\begin{displaymath}
+    (\vec{p}\times\vec{L})^\dagger = - \vec{L}\times\vec{p} \;,
+\end{displaymath}
+nije hermitski. Stoga je potrebno definirati kvantni
+Laplace-Runge-Lenzov vektor ovako:
+\begin{equation}
+  \vec{M} = \frac{1}{2m}\big(\vec{p}\times\vec{L}- \vec{L}\times\vec{p}\big) 
+- e^2\frac{\vec{r}}{r} \;.
+\end{equation}
+
+Uz podosta računa (vidi Greiner\&M\"{u}ller, ex. 14.4--14.8) 
+pokazuje se da vrijedi
+\begin{align}
+ [\vec{M}, H] &= 0 \;, \tag{A} \\
+ \vec{L}\cdot\vec{M} &= 0 \;, \tag{B} \\
+\vec{M}^2 &= \frac{2 H}{m}(\vec{L}^2 + \hbar^2) + e^4  \;, \tag{C} \\
+ [L_i, M_j] &= i\hbar \epsilon_{ijk} M_k \;, \tag{D} \\
+[M_i, M_j] &= i \hbar \epsilon_{ijk} \left(- \frac{2H}{m}\right) L_k \tag{E} \;.
+\end{align}
+
+(A) kaže da je $\vec{M}$ očuvan i u kvantnomehaničkom slučaju, a (D) da
+je $M$ kartezijev vektor u smislu odjeljka \ref{sect:tenzorskioperatori}.
+(Klasični analogon jednadžbe (C) je $\vec{M}^2 = 2E\vec{L}^2/m + e_{M}^4$.)
+
+Definirajmo sada operator 
+\begin{equation}
+\vec{M}' \equiv \left(- \frac{2H}{m}\right)^{-\fhalf} \vec{M} \;.
+\end{equation}
+Uočite da je izraz u zagradi pozitivno definitan jer je spektar operatora $H$
+cijeli negativan buduči da radimo s vezanim stanjima vodikovog atoma.
+Ovakav reskalirani operator $\vec{M}'$ zadovoljava sada komutacijske
+relacije
+\begin{equation}
+[M'_i, M'_j] = i \hbar \epsilon_{ijk}  L_k \tag{E'} \;.
+\end{equation}
+i pomoću njega možemo definirati dva nova operatora
+\begin{align}
+\vec{I} &= \fhalf \big(\vec{L} + \vec{M}'\big) \\
+\vec{K} &= \fhalf \big(\vec{L} - \vec{M}'\big) \;.
+\end{align}
+(Odnosno $\vec{L} = \vec{I} + \vec{K}$ i
+$\vec{M}' =  \vec{I} - \vec{K}$.)
+Uporabom relacija (D) i (E') te standardnih komutacijskih
+relacija za moment impulsa $\vec{L}$ lako se vidi da ova 
+dva operatora zadovoljavaju komutacijske relacije
+\begin{align}
+[I_i, I_j] &= i \hbar \epsilon_{ijk}  I_k \\
+[K_i, K_j] &= i \hbar \epsilon_{ijk}  K_k \\
+[I_i, K_j] &= 0
+\end{align}
+što znači da i $I_i$ i $K_i$ generiraju svaki svoju
+algebru grupe SO(3) tj. da je ukupna grupa simetrija vodikovog
+atoma SO(3)$\times$SO(3)\footnote{Vrijedi grupni identitet
+SO(3)$\times$SO(3) = SO(4). Otud naslov ovog odjeljka. 
+SO(4) je grupa generirana s 6
+generatora $L_{\mu\nu}=x_\mu p_\nu - x_\nu p_\mu$; $\mu, \nu = 1,2,3,4$;
+$[x_\mu, p_\nu] = i\hbar \delta_{\mu\nu}$. Definiramo li
+$L_i = \fhalf \epsilon_{ijk} L_{jk}$ i $M'_i = L_{4i}$, $i,j,k = 1,2,3$,
+dobijemo gornje komutacijske relacije.}
+
+Sad možemo upotrijebiti naše poznavanje svojstava reprezentacija
+grupe SO(3). Činjenica da $I_i$ i $K_i$ zadovoljavaju
+iste komutacijske relacije kao i moment impulsa povlači da
+su svojstvene vrijednosti od $\vec{I}^2$ $i(i+1)\hbar^2$,
+a od $\vec{K}^2$ $k(k+1)\hbar^2$, uz 
+$i, k = 0, 1/2, 1, 3/2, ...$.
+
+Dodatni uvjet na ove svojstvene vrijednosti je relacija (B) koja
+daje:
+\begin{equation}
+0 = \vec{L}\cdot\vec{M}' = (\vec{I})^2 - (\vec{K})^2
+  = i(i +1)\hbar^2 - k(k +1)\hbar^2 \;,
+\label{j1j2}
+\end{equation}
+odnosno $i = k\equiv j$. (Alternativno rješenje jednadžbe (\ref{j1j2})
+$i = - (k +1 )$ nije moguće jer daje negativne svojstvene vrijednosti
+za $i$ ili $k$.)
+
+Prepišimo sada jednadžbu (C) pomoću novih operatora. Množenjem (C)
+s $(-2H/m)^{-1}$ dobije se
+
+\begin{equation}
+   \vec{M'}^2 = -(\vec{L}^2 + \hbar^2) - \frac{me^4}{2H}
+\end{equation}
+
+ili
+
+\begin{align}
+ -\frac{me^4}{2}H^{-1} &= \vec{M'}^{2} + \vec{L}^2 + \hbar^2 \\
+&=\big[\vec{I} - \vec{K}\big]^2 + 
+\big[\vec{I} + \vec{K}\big]^2  + \hbar^2\\
+&=2\big[\vec{I}^2 + \vec{K}^2 \big]^2 + \hbar^2  \;.
+\end{align}
+
+To znači da za svojstvena stanja energije i momenta impulsa vrijedi
+\begin{equation}
+-\frac{me^4}{2}E^{-1} = 2\big[i(i +1)\hbar^2 + k(k+1)\hbar^2 
+\big]^2 + \hbar^2   = \hbar^2 \big[ 4j(j+1) +1 \big] = \hbar^2 (2j+1)^2
+\end{equation}
+što daje spektar
+\begin{equation}
+   E = - \frac{m e^4}{2\hbar^2 (2j+1)^2} \;.
+\end{equation}
+Uvedemo li kvantni broj $n\equiv 2j+1$, onda iz $j=0,1/2, 1,\ldots$
+slijedi $n=1,2,3,\ldots$ i ovo prepoznajemo kao ispravni izraz
+za spektar vodikovog atoma.
+
+Kako je ``pravi'' angularni moment $\vec{L}=\vec{I} +
+\vec{K}$ njegove svojstvene vrijednosti dane su pravilima
+za zbrajanje momenata impulsa tj.
+\begin{equation}
+    |j - j| \leq l \leq j + j
+\end{equation}
+tj. $l \leq 2j \leq n-1$, što je poznati rezultat. Također, $l$
+automatski ispada cjelobrojan. Dakle i kvantnomehanički spektar
+vodikovog atoma smo našli bez rješavanja Schr\"{o}dingerove
+jednadžbe!
+
+\secret{Usporediti algebarski i pristup preko diferencijalnih
+jednadžbi. Heisenberg vs. Schr\"{o}dinger. cf. priča u Futuri.}
+
+\textbf{Degeneracija.} Da se još jednom uvjerimo da je degeneracija
+svakog nivoa $n^2$-struka  možemo brojati stanja u bazi koja
+dijagonalizira operatore $H$, $\vec{L}^2$ i $L_z$, što je
+uobičanjena $\ket{nlm}$ baza. Tu za dati $n$ imamo sve skupa
+\begin{equation}
+ \sum_{l=0}^{n-1} (2l+1) =\frac{n}{2}\big(1+2(n-1)+1)\big) = n^2
+\end{equation}
+degeneriranih stanja.
+
+Alternativna baza je ona koja dijagoalizira operatore
+$\vec{I}^2=\vec{K}^2$, $I_z$ i $K_z$ čije vektore možemo
+označiti kao $\ket{j,m_i, m_k}$ i koja daje degeneraciju
+\begin{equation}
+    \sum_{m_i=-j}^{j}\sum_{m_k=-j}^{j} 1 = (2j+1)^2 = n^2 \;,
+\end{equation}
+u skladu s prvim računom.
+
+\emph{Literatura}: Schiff(68), Sect. 30, Greiner\&M\"{u}ller, Jones,
+\secret{L.C. Biedenhorn, The ``Sommerfeld Puzzle'' Revisited and
+Resolved, Foundation of Physics, \textbf{13} (1983) 13-34}
+
+\subsection*{Zadaci}
+
+\begin{enumerate}[{6}.1]
+
+\item
+Odredite $\bra{j, m'}J_{i} \ket{j, m} \equiv (J_i)_{m' m}$ za 
+$j=1/2$ i $j=1$
+
+\item
+Pokažite da vrijedi: 
+\begin{equation}
+\bra{j, m'} D^{(j)}(\phi, \theta, \psi) \ket{j, m} = e^{-im'\phi-im\psi}
+\bra{j, m'} e^{-i J_y \theta /\hbar} \ket{j, m} \;,
+\end{equation}
+gdje su $\phi$, $\theta$ i $\psi$ tri Eulerova kuta,
+te odredite eksplicitno ove matrične elemente za $j=1/2$.
+
+\item
+Izrazite stanje $\ket{\vec{J}\cdot\unitn, +}$ definirano svojstvom
+\begin{displaymath}
+    \vec{J}\cdot\unitn \ket{\vec{J}\cdot\unitn, +} =
+  \frac{\hbar}{2} \ket{\vec{J}\cdot\unitn, +}
+\end{displaymath}
+preko stanja baze $\ket{j=1/2, m=\pm 1/2}$.
+
+\item
+Koja je vjerojatnost da mjerenje projekcije spina na $z$-os za stanje iz
+prošlog zadatka da rezultat $\hbar/2$?
+
+\item 
+Neka je $\ket{\unitn}$ svojstveno stanje operatora usmjerenja u 3D
+prostoru. Uočite da je
+\begin{displaymath}
+     \bra{n}lm\rangle = Y^{m}_l (\unitn) = Y^{m}_l (\theta, \phi) \;.
+\end{displaymath}
+Promatrajući operator $D(\phi,\theta,0)$ koji rotira $\ket{\hat{\vec{z}}}$
+u $\ket{\unitn}$ pokažite da vrijedi
+\begin{displaymath}
+    D^{l}_{m0}(\phi,\theta,0)=\sqrt{\frac{4\pi}{2l+1}}
+ Y^{m^*}_l (\theta, \phi)\;.
+\end{displaymath}
+
+\item
+Promotrite stanje $\ket{\text{rot}_y(\beta)}$, dobiveno rotacijom stanja
+$\ket{l=2, m=0}$ za kut $\beta$ oko $y$-osi. Pronađite vjerojatnosti da
+mjerenje projekcije momenta impulsa na $z$-os da vrijednosti
+$m'=0,\pm 1, \pm 2$.
+
+\item Čestica spina $1/2$ je u $D$ stanju orbitalnog momenta impulsa
+($l=2$). Koja su moguća stanja ukupnog momenta impulsa? Koje su energije
+tih stanja ako je hamiltonijan 
+\[ H = A + B \vec{L}\cdot\vec{S} + C \vec{L}^2 \]
+gdje su $A$, $B$ i $C$ poznate konstante?
+
+\item
+Izrazite komponente sferičnog vektora $r^{(1)} = (r^{(1)}_{-1}, r^{(1)}_{0},
+r^{(1)}_{1})$ preko kartezijevih komponenata $r_x, r_y, r_z$ tj. izvedite
+relaciju (\ref{eq:kartvektor}).
+
+\item Neka je poznato da za sferični vektorski operator $\sigma$ vrijedi
+\[  \bra{\fhalf, \fhalf} \sigma_0 \ket{\fhalf, \fhalf} = 1 \;. \]
+Izračunajte sve ostale matrične elemente ovog operatora između stanja
+s $j = 1/2$.
+
+\item Pronađite izborna pravila za zračenje u kristalu s $C_{3v}$
+simetrijom za zračenje polarizirano (a) duž $z$-osi i (b) duž
+$x$ ili $y$ osi. \secret{(Hammermesh)}
+
+\item 
+Tri matrice, $M_x$, $M_y$, i $M_z$, svaka $256\times 256$, zadovoljavaju
+komutacijske relacije $[M_i, M_j] = i \sum_{k} \epsilon_{ijk} M_k$.
+Svojstvene vrijednosti od $M_z$ su:
+\begin{center}
+\begin{tabular}[h]{l|ccccccccc}
+\hline
+svojstvena vrijednost & 2 & -2 & 3/2 & -3/2 & 1 & -1 & 1/2 & -1/2 & 0 \\ \hline
+koliko puta se pojavljuje & 1 & 1 & 8 & 8 & 28 & 28 & 56 & 56 & 70 \\ \hline
+\end{tabular}
+\end{center}
+Navedite svojstvene vrijednosti matrice $M^2 \equiv M_{x}^2 + M_{y}^2 + M_{z}^2$
+i broj njihovih pojavljivanja.
+
+\item Pokažite da se sve komponente tenzorskog operatora 
+$T^{(J)}_M$ mogu dobiti iz $T^{(J)}_J$ uzastopnom primjenom operatora $J_-$:
+\[ T^{(J)}_M = C(J,M) [J_-, [J_-, \dots [J_-, T^{(J)}_J]. . .]] \;. \]
+Koliki je $C(J,M)$?
+
+\item \label{zad:antisim} Pokažite da se simetrični i antisimetrični
+dijelovi tenzora drugog ranga ne miješaju pri rotacijama.
+
+\end{enumerate}

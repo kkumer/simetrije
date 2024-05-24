@@ -1,0 +1,46 @@
+\voffset=-15mm
+\setlength{\evensidemargin}{20mm}
+\setlength{\oddsidemargin}{20mm}
+\def\maketitle{\begin{titlepage}
+\let\footnotesize\small 
+\let\footnoterule\relax
+\setcounter{page}{1}
+%\null
+\begin{center}
+  {\Large SVEUČILIŠTE U ZAGREBU\\
+   \vskip 3pt
+   \large PRIRODOSLOVNO--MATEMATIČKI FAKULTET\\
+  \vskip 3pt
+   \Large FIZIČKI ODSJEK\\
+  \null}
+\end{center}
+\vskip 80pt
+\begin{center}
+  {\LARGE \lineskip .75em
+  \begin{tabular}[t]{c}\@author
+  \end{tabular}\par}
+  \vskip 3em
+%%%%%%% Slika
+%\centerline{\includegraphics[scale=1.0]{pics/dayNight.eps}}
+{\Huge \textbf{Grupe, simetrije i tenzori u fizici}}
+%{\huge \@title \par}
+\vskip 3em{\Large Bilješke za predavanja}
+\end{center}
+\par
+\@thanks
+\vfill
+%\vskip 125pt
+\vskip 70pt
+%%%%%%%Dodajem grb
+\centerline{\includegraphics[scale=0.5]{pics/unigrb.eps}}
+%%%%%%%%%%%%%%%%
+\vskip 30pt
+\begin{center}
+{\large \@date \par}
+\end{center}
+%\null
+\include{colophon}
+\end{titlepage}
+\setcounter{footnote}{0}
+\let\thanks\relax
+ \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\maketitle\relax}

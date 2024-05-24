@@ -1,0 +1,94 @@
+\newpage
+
+\begin{tabular}{c|c}
+  & Klase konjugacije \\ \hline
+\begin{turn}{90} IRREPs \end{turn} & {\Huge $\chi$}
+\end{tabular}
+
+\textbf{\Large Pravila za konstrukciju tablice karaktera}
+
+\begin{enumerate}
+
+\item Broj ireducibilnih reprezentacija jednak je broju klasa konjugacije 
+  grupe. Iz ovoga slijedi da tablica ima jednak broj redova i stupaca. 
+  Broj klasa pronalazimo "pješke," analizom grupe.
+
+\item $\sum_{\alpha} d_{\alpha}^2 = n$ često ima jedinstveno rješenje koje
+  određuje dimenzionalnosti $d_{\alpha}$ ireducibilnih reprezentacija.
+
+\item Jedinični element grupe je klasa za sebe, a reprezentiran je uvijek
+  jediničnom matricom $D^{(\alpha)}(e)=\Eins$ čiji je 
+   karakter $\chi^{(\alpha)}(e)=d_{\alpha}$.
+  Ovo određuje jedan (konvencionalno prvi) stupac tablice.
+
+\item Uvijek postoji trivijalna jednodimenzionalna ireducibilna
+   reprezentacija  $D(g)=\chi(g)=1  \;
+    \forall g\in G$.
+  Dakle jedan red (konvencionalno prvi) se sastoji od samih jedinica.
+
+\item Za jednodimenzionalne reprezentacije vrijedi $D(g)=\chi(g)$ pa
+  sami karakteri reprezentiraju grupu i njihovo množenje mora odražavati
+  množenje odgovarajućih elemenata grupe.
+
+\item  \[\sum_{i=1}^{k} k_{i} \chi^{(\alpha)}_{i} \chi^{(\beta) *}_{i} =
+    n \delta^{\alpha\beta}\] 
+(\emph{Redovi} tablice su ortogonalni i, kad se uzmu u obzir težinski
+  faktori $k_i$, normirani su na $n$)
+
+\item  \[\sum_{\alpha=1}^{k} k_{i} \chi^{(\alpha)}_{i} \chi^{(\alpha) *}_{j} =
+    n \delta_{ij} \] 
+(\emph{Stupci} tablice su ortogonalni i, kad se uzmu u obzir težinski
+  faktori $k_i$, normirani su na $n$)
+
+\end{enumerate}
+
+Pravila je najbolje primjenjivati po redu jer su ona s većim rednim
+brojem teža za primjenu i rjeđe nužna za kompletiranje tablice.
+
+\newpage
+
+\textbf{\Large Kristalografske oznake}
+
+\textbf{Ireducibilne reprezentacije} $\Gamma^{(\alpha)}$ se obično označavaju
+velikim slovima i to tako da se 1D reprezentacije označavaju slovima
+$A$ i $B$, 2D reprezentacije slovom $E$, 3D reprezentacije slovom $T$
+itd. Par kompleksno konjugiranih 1D reprezentacija se smatra jednom
+2D reprezentacijom (jer ih povezuje vremenska inverzija) tako da se
+one udružuju vitičastom zagradom i označavaju s $E$.
+
+\textbf{Klase konjugacije} se obično označavaju simbolom $mC_n$ gdje je $m$
+broj elemenata klase, a $C_n$ tipični predstavnik klase označen
+Sch\"{o}nfliesovim simbolom:
+
+\begin{tabular}{rcl}
+$E$ & = & identiteta \\
+$C_n$ & = & rotacija za $2\pi/n$ \\
+$\sigma$ & = & refleksija preko ravnine \\
+$\sigma_{h}$ & = & refleksija preko ``horizontalne'' ravnine tj. ravnine
+  okomite da os najveće  \\ && rotacijske simetrije \\
+$\sigma_{v}$ & = & refleksija preko ``vertikalne'' ravnine tj. ravnine
+  koja sadrži os najveće \\ &&rotacijske simetrije \\
+$\sigma_{d}$ & = & refleksija preko ``dijagonalne'' ravnine tj. ravnine
+  koja sadrži os najveće \\ && rotacijske simetrije i raspolavlja kut između
+  dvije $C_2$ osi okomite na tu os. \\ &&(Specijalni slučaj $\sigma_{v}$.) \\
+$S_n$  & = & rotacija za $2\pi/n$ kombinirana s refleksijom preko ravnine
+   okomite na \\ && os te rotacije (Ove dvije operacije komutiraju.) \\
+$i$ & = &  $S_2 \;\, = \;\,$  inverzija $\vec{r} \to -\vec{r}$
+\end{tabular}
+
+\textbf{Točkaste grupe} kristala se označavaju slijedećim
+Sch\"{o}nfliesovim oznakama:
+
+\begin{tabular}{rcl}
+$C_n$ & = & grupe s jednom $C_n$ osi simetrije \\
+$C_{nv}$ & = & grupe s jednom $C_n$ osi i $n$ $\sigma_v$
+   refleksijskih ravnina  \\
+$C_{nh}$ & = & $C_n$ os,  $\sigma_h$ refleksija $+$ dodaci \\
+$S_{n}$ & = & $S_n$ os \\
+$D_{n}$ & = & $C_n$ os i $n$ $C_2$ osi okomitih na nju \\
+$D_{nd}$ & = & elementi od $D_{n}$ i $\sigma_d$ ravnine refleksije \\
+$D_{nh}$ & = & elementi od $D_{n}$ i $\sigma_h$ ravnina refleksije \\
+$T$  & = & tetrahedralna grupa \\
+$O$  & = & oktahedralna grupa \\
+$\cdots$ && $\cdots \quad$ itd. vidi literaturu \\
+\end{tabular}
