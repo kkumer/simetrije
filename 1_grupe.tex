@@ -161,17 +161,13 @@ Tako npr. uzastopnim komponiranjem rotacije za kut 2$\pi/3$ sa samom sobom dobiv
 dvije rotacije koje sačinjavaju grupu C$_3$: rotaciju za 4$\pi/3$ i
 rotaciju za 0 radijana. 
 Ukoliko označimo "generirajuću" rotaciju grupe C$_n$ (onu za kut 2$\pi/n$) simbolom 
-$c$ onda možemo pisati
+$c$ onda je skup elemenata grupe
 \begin{equation}
- \text{C}_n = \{c,c^2, \ldots , c^n=e \}
+ \{c,c^2, \ldots , c^n=e \} \;,
 \label{eq:cn}
 \end{equation}
 odnosno grupu C$_n$ možemo alternativno definirati kao grupu generiranu
 elementom $c$ sa svojstvom $c^n=e$ i pisati kao definicioni izraz
-\begin{equation}
- {\rm C}_n = {\rm gp}(c) \;, \qquad c^n=e \;.
-\label{eq:cngp}
-\end{equation}
 \begin{equation}
  {\rm C}_n = \langle c \: | \: c^n=e \rangle \;.
 \label{eq:cngp}
@@ -188,7 +184,6 @@ skup elemenata koji je sačinjavaju te time da se potpuno specificira kako
 se ti elementi množe (tj. kakva je binarna operacija u grupi), grupu C$_3$, npr.,
 je moguće definirati naprosto kao skup elemenata koji zadovoljavaju slijedeću tablicu
 množenja:
-
 \begin{equation}
 \begin{array}{c|ccc}
 g_1\backslash\ g_2 & e & c & c^2 \\ \hline
@@ -198,6 +193,18 @@ g_1\backslash\ g_2 & e & c & c^2 \\ \hline
 \end{array}
 \label{eq:cntab}
 \end{equation}
+Konvencija je da prvi redak i stupac tablice odgovaraju množenju
+s jediničnim elementom što zapravo čini naslovni redak i stupac
+suvišnim i ovu je tablicu moguće i jednostavnije zapisati samo kao
+\begin{equation}
+\begin{array}{|ccc}
+ \hline
+ e & c & c^2 \\
+ c & c^2 & e \\
+ c^2 & e & c
+\end{array}
+\label{eq:cntabsimple}
+\end{equation}
 
 Grupne tablice množenja zadovoljavaju tzv. svojstvo latinskog
 kvadrata poznato i kao
@@ -206,15 +213,15 @@ Svaki element grupe se pojavljuje jednom i samo jednom u svakom stupcu
 ili retku grupne tablice množenja.
 \end{teorem}
 
-\emph{Dokaz}: Zamislimo suprotno tj. da se u nekom retku
+\emph{Dokaz}: Pretpostavimo suprotno tj. da se u nekom retku
 dvaput pojavi isti element, recimo $a$. To znači da je $a$ moguće
 dobiti množenjem prvog elementa iz tog retka, neka je to $k$, s
 dvama različitim elementima, recimo $m$ i $n$: $km=a$ i $kn=a$. To bi značilo
-da je $km=kn$, a egzistencija inverza omogućuje ``skraćivanje''
+da je $km=kn$, a egzistencija inverza omogućuje "skraćivanje"
 ovakvih relacija tj. množenje slijeva s $k^{-1}$ pa
 dobivamo $m=n$ što je kontradiktorno jer smo pretpostavili da su
-$m$ i $n$ različiti elementi. Slično bi bilo za ponavljanje istog
-elementa dvaput u istom stupcu.
+$m$ i $n$ različiti elementi. Do slične bi kontradikcije dovela
+pretpostavka  ponavljanja istog elementa dvaput u istom stupcu.\qed
 
 Treba uočiti da nam binarna operacija definirana tablicom množenja
 koja je u standardnom obliku gdje prvi redak i stupac odgovaraju
@@ -230,24 +237,23 @@ može biti mukotrpna. Od pomoći je procedura poznata kao Lightov
 test asocijativnosti.}.
 
 
-Ove dvije alternativne definicije (\ref{eq:cngp}) i (\ref{eq:cntab}) 
-naglašavaju apstraktnu prirodu grupe (ne treba
-nam trokut kao objekt grupe simetrija).
+Ove dvije alternativne definicije grupe putem prezentacije (\ref{eq:cngp}) ili
+putem tablice množenja (\ref{eq:cntabsimple}) 
+naglašavaju apstraktnu prirodu grupe jer se nigdje ne oslanjaju
+na ideju da je C$_3$ grupa simetrija trokuta.
 
-Inače, C$_n$, za $n=2,3,4,6$ spada u kristalografske \emph{točkaste grupe} kakvih
-ima ukupno 32\footnote{U 3D prostoru. U 2D prostoru postoji 10, a u
-1D prostoru samo dvije točkaste grupe.}. 
-To su grupe prostornih simetrija savršenih beskonačnih
-periodičnih kristala koje ostavljaju jednu točku nepomičnom. (Za
+Inače, C$_n$, za $n=2,3,4$ i $6$, spada u kristalografske \emph{točkaste grupe} kakvih
+ima ukupno 32\footnote{U trodimenzionalnom prostoru. U dvodimenzionalnom prostoru postoji 10, a u
+jednodimenzionalnom prostoru samo dvije točkaste grupe.}. 
+Točkaste grupe su grupe prostornih simetrija savršenih beskonačnih
+periodičnih kristala koje ostavljaju barem jednu točku nepomičnom. (Za
 razliku od npr. translacije za konstantu rešetke koja je isto simetrija
 kristala, ali nijednu točku ne ostavlja na mjestu.)
   
 Može se pokazati da jedini elementi tih grupa mogu biti kompozicije
-rotacija za 60$^\circ$ i 90$^\circ$ te inverzije $\vec{r}\to -\vec{r}$.
-(cf. Crystallographic restriction theorem)
+rotacija za 60$^\circ$ i 90$^\circ$ te inverzije $\vec{r}\to -\vec{r}$
+(cf. \emph{Crystallographic restriction theorem}).
    
-
-
 
 \begin{primjer}[Dihedralna grupa D$_n$]
 Dihedralna grupa D$_n$ je grupa simetrija rotacija pravilnog poligona s $n$ stranica.
@@ -255,13 +261,13 @@ Prema slici
 
 \centerline{\includegraphics[scale=1.0]{pics/D3}}
 
-elementi grupe su rotacije $e, c$ i  $c^2$ baš kao kod grupe C$_n$, te
-dodatno rotacije $b_1, b_2$ i $b_3$ za kut $\pi$ oko triju horizontalnih
+vidimo da su elementi grupe rotacije $e, c$ i  $c^2$ baš kao kod grupe C$_n$, te
+dodatno rotacije $b_1, b_2$ i $b_3$ za kut 180$^\circ$ oko triju horizontalnih
 osi.
 \end{primjer}
 
 Uočimo sada neka svojstva množenja u toj grupi. Kao prvo, vrijedi
-da je $b_2 = c b_1 c^{-1}$ tj. da su $b_2$ i $b_1$ međusobno
+da je $b_2 = c b_1 c^{-1}$ i kažemo da su $b_2$ i $b_1$ međusobno
 \emph{konjugirani} preko elementa $c$. Da je to tako vidi
 se iz slike:
 
@@ -269,14 +275,15 @@ se iz slike:
 
 Na sličan način se možemo uvjeriti da je $b_2 = b_1 c $
 i $b_3 = b_1 c^2 $, odnosno da 
-$c$ i $b\equiv b_1$ generiraju sve ostale transformacije
+$c$ i $b\equiv b_1$ generiraju sve ostale transformacije pa
+elemente grupe možemo zapisati kao
 \begin{equation}
-{\rm D}_3=\{e,c,c^2,b,bc,bc^2\} \;.
+ \{e,c,c^2,b,bc,bc^2\} \;.
 \label{eq:d3el}
 \end{equation}
-To sugerira da bismo grupu D$_3$ mogli definirati kao
+To sugerira da bismo grupu D$_3$ mogli probati definirati prezentacijom
 \begin{equation}
- {\rm D}_3={\rm gp}(c, b) \;, \qquad c^3 = b^2 = e  \;,
+    {\rm D}_3 \stackrel{?}{=} \langle c, b \: | \: c^3 = b^2 = e \rangle \;,
 \label{eq:d3gp1}
 \end{equation}
 no ova definicija nije kompletna jer nam nedostaje još
@@ -285,28 +292,33 @@ za grupu C$_n$ koja je Abelova). Njega dobijemo tako da
 iskombiniramo dvije gore dobivene relacije: 
 $b_2 = c b_1 c^{-1} = b c$ i pomnožimo zdesna s $c$:
 \begin{equation}
-c b = b c^2
+c b = b c^2  \;.
 \label{eq:d3com}
 \end{equation}
 Ova relacija sad omogućuje da proizvoljan umnožak elemenata
 grupe (npr. $b c b^2 c^5 b$ svedemo na oblik $b^\alpha c^\beta$ gdje
 je $\alpha<2$ i $\beta<3$, tj. na jedan od elemenata iz (\ref{eq:d3el}).
-Za kompaktan zapis definicije grupe D$_3$ koji će se onda moći
+Za kompaktan zapis prezentacije grupe D$_3$ koji će se onda moći
 lako generalizirati i na ostale D$_n$ grupe, množimo gornju
 komutacijsku relaciju (\ref{eq:d3com}) slijeva s $b$ i zdesna s $c$
 i dobivamo  $ bcbc \equiv (bc)^2 = b^2 c^3 = e$ pa možemo
 pisati
 \begin{equation}
- {\rm D}_3={\rm gp}(c,b) \;, \qquad c^3 = b^2 = (bc)^2 = e
+ {\rm D}_3= \langle c,b \: | \: c^3 = b^2 = (bc)^2 = e \rangle \;.
 \label{eq:d3gp}
 \end{equation}
 Ova definicija se generalizira ovako (vidi zadatke)
 \begin{equation}
- {\rm D}_n={\rm gp}(c,b) \;, \qquad c^n = b^2 = (bc)^2 = e
+ {\rm D}_n= \langle c,b \: | \: c^n = b^2 = (bc)^2 = e \rangle \;,
 \label{eq:dngp}
 \end{equation}
-što onda možemo iskoristiti i da bismo definirali grupu
-D$_2$ poznatu i kao
+ili, ekvivalentno i praktičnije za komutiranje elemenata prilikom množenja
+\begin{equation}
+    {\rm D}_n= \langle c,b \: | \: c^n = b^2 = e, cb = b c^{n-1} \rangle \;,
+\label{eq:dngp}
+\end{equation}
+što onda sadrži i definiciju grupe
+D$_2$ poznate i kao
 \emph{Kleinova četvorna grupa} (njem. \emph{Vierergruppe}), 
 za koju nemamo odgovarajući poligon kao objekt grupe simetrija.
 
