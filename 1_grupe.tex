@@ -315,7 +315,7 @@ Ova definicija se generalizira ovako (vidi zadatke)
 ili, ekvivalentno i praktičnije za komutiranje elemenata prilikom množenja
 \begin{equation}
     {\rm D}_n= \langle c,b \: | \: c^n = b^2 = e, cb = b c^{n-1} \rangle \;,
-\label{eq:dngp}
+\label{eq:dngpcom}
 \end{equation}
 što onda sadrži i definiciju grupe
 D$_2$ poznate i kao
@@ -325,18 +325,23 @@ za koju nemamo odgovarajući poligon kao objekt grupe simetrija.
 
 \section{Podgrupe}
 
+Za operacije s grupama i njihovu klasifikaciju centralni je pojam \emph{podgrupe}:
+
 \begin{definicija}[Podgrupa]
 Podgrupa $H$ grupe $G$ je neprazni podskup $H\subset G$ koji i sam
 tvori grupu obzirom na grupnu operaciju definiranu na $G$.
-Podgrupu $H\neq\{e\}\neq G$ zovemo \emph{prava} podgrupa i pišemo $H<G$.
 \end{definicija}
 
-\begin{primjer}
+Svaka grupa ima trivijalne podgrupe $H=\{e\}$ i $H=G$, a
+podgrupu koja je različita od ovih dviju trivijalnih
+zovemo \emph{prava} podgrupa i pišemo $H<G$.
+
+\begin{primjer} \label{th:c2c3}
 C$_2$=\{e, b\} i C$_3$=\{e, c, c$^2$\} su prave podgrupe od D$_3$
 \end{primjer}
 
 \begin{primjer}
-Grupa translacija i točkasta grupa su podgrupe grupe prostornih
+Grupa translacija i točkasta grupa su podgrupe grupe svih prostornih
 simetrija kristala.
 \end{primjer}
 
@@ -358,27 +363,34 @@ skupa koja ima slijedeća svojstva
 \item $a\sim b \imp b\sim a$   \qquad (simetričnost)
 \item $a\sim b \quad \textrm{i}\quad  b\sim c \imp a\sim c$  \qquad (tranzitivnost)
 \end{enumerate}
-Primjeri relacija ekvivalencije su: ``osoba $a$ je rođena na isti dan kad i osoba $b$''
-ili ``trokut $a$ je sličan trokutu $b$'', dok npr. ``broj $a$ je veći ili jednak
-broju $b$'' nije relacija ekvivalencije jer nije simetrična.
+Primjeri relacija ekvivalencije su: "osoba $a$ je rođena na isti dan kad i osoba $b$"
+ili "trokut $a$ je sličan trokutu $b$", dok npr. "broj $a$ je veći ili jednak
+broju $b$" nije relacija ekvivalencije jer nije simetrična.
 (Ona je antisimetrična. Binarna relacija na skupu koja je refleksivna, antisimetrična
 i tranzitivna zove se \emph{relacija uređaja}.)
-Svaka relacija ekvivalencije cijepa skup na disjunktne \emph{klase ekvivalencije}.
-} između ta dva elementa u grupi G, $g_1 \sim g_2$.
+Svaka relacija ekvivalencije cijepa skup na disjunktne podskupove 
+koji se zovu \emph{klase ekvivalencije}.} između ta dva elementa u grupi G, $g_1 \sim g_2$.
 
 Susjedne klase po nekoj podgrupi $H$ su međusobno disjunktne i
-sve imaju isti broj elemenata (jednak redu od $H$, zahvaljujući
-Teoremu o razmještaju) pa tako
-definiraju jednu particiju grupe G:
+zahvaljujući Teoremu o razmještaju sve imaju isti broj elemenata (jednak redu od $H$)
+pa tako definiraju jednu particiju grupe G:
 
 \centerline{\includegraphics[scale=1.0]{pics/lagrange}}
 
+Na slici je kao prva postavljena lijeva susjedna klasa po jediničnom
+elementu $eH = H$. Zbog navedene disjunktnosti klasa i jedinstvenosti
+jediničnog elementa ostale susjedne klase naravno ne sadrže jedinični element i
+samim time one nisu podgrupe. 
 Promatrajući ovu sliku lako se uvjerimo u točnost Lagrangeovog
 teorema:
 
 \begin{teorem}[Lagrange]
 Red podgrupe dijeli red grupe.
 \end{teorem}
+
+Tako u Primjeru \ref{th:c2c3} redovi podgrupa C$_2$ i C$_3$, 2 i 3, dijele red
+grupe D$_3$, 6. Skup čiji su elementi predstavljeni kvadratičima na gornjoj slici
+ima svoj naziv:
 
 \begin{definicija}[Kvocijentni skup]
 Skup svih različitih lijevih susjednih klasa 
@@ -388,18 +400,17 @@ Skup svih različitih lijevih susjednih klasa
 zove se \emph{lijevi kvocijentni skup grupe} $G$ po podgrupi $H$.
 \end{definicija}
 
-Potpuno analogno se definiraju desna susjedna klasa i desni kvocijentni
-skup.
+Potpuno analogno se definiraju \emph{desna susjedna klasa} i \emph{desni kvocijentni skup}.
 
 \begin{primjer}[D$_3$]
-Promotrimo podgrupu $H=\{e, c, c^2\}=$C$_3$ grupe $G={\rm D}_3$.
+    Promotrimo podgrupu $H=\mathrm{C}_3=\{e, c, c^2\}$ grupe $G=\mathrm{D}_3$.
 Dvije lijeve susjedne klase su
 \begin{enumerate}
 \item $eH=H=\{e, c, c^2\}$ \; \text{i}
 \item $bH=\{b, bc, bc^2\}$ \;,
 \end{enumerate}
-a kvocijentni skup je D$_3$/C$_3=\{eH, bH\}$. Postoji i kvocijentni 
-skup D$_3$/C$_2$
+a kvocijentni skup je $\mathrm{D}_3/\mathrm{C}_3=\{eH, bH\}$. Postoji i kvocijentni 
+skup $\mathrm{D}_3/\mathrm{C}_2$
 \end{primjer}
 
 \begin{definicija}[Normalna podgrupa]
@@ -407,10 +418,13 @@ Podgrupa za koju vrijedi $gH=Hg$, $\forall g\in G$, zovemo
 \emph{normalna} ili \emph{invarijantna}.
 \end{definicija}
 
-\begin{primjer}[D$_3$]
-$G=D_3$, $H=C_3$. $bC_3 = C_3 b$, \ldots (za ostale $g\in D_3$ trivijalno)
-Dakle, $C_3$  je normalna podgrupa od $D_3$. S druge strane
-$C_2 = \{e, b\}$ nije normalna jer npr. $c C_2 \neq C_2 c$.
+\begin{primjer}[$\mathrm{D}_3$]
+    $G=\mathrm{D}_3$, $H=\mathrm{C}_3$. Eksplicitnim množenjem se uvjerimo da
+    je $b\mathrm{C}_3 = \mathrm{C}_3 b$, a za ostale elemente $g\in \mathrm{D}_3$ jednakost
+    lijevih i desnih susjednih klasa je trivijalna.
+    Dakle, $\mathrm{C}_3$  je normalna podgrupa od $\mathrm{D}_3$. S druge strane
+    $\mathrm{C}_2 = \{e, b\}$ nije normalna podgrupa od $\mathrm{D}_3$
+    jer npr. $c \mathrm{C}_2 \neq \mathrm{C}_2 c$.
 \end{primjer}
 
 Očito je da su za normalnu podgrupu $H$ lijevi i desni kvocijentni skupovi
@@ -419,21 +433,27 @@ identični  $G/H$ = $H\backslash$G
 Grupe koje nemaju normalnih podgrupa zovu se \emph{jednostavne},
 a one koje nemaju normalnih Abelovih podgrupa zovu se \emph{polujednostavne}.
 
-Kvocijentni skup po normalnoj podgrupi čini grupu obzirom na
-binarnu operaciju
+Na kvocijentnom skupu po normalnoj podgrupi moguće je definirati
+binarnu operaciju "množenja" susjednih klasa putem\footnote{%
+Kako ista susjedna klasa može biti definirana različitim
+elementima $g_1 H = k_1 H$, ovdje je netrivijalno pokazati da 
+ovako definirani umnožak ne ovisi o izboru elementa tj. da
+je u svakom slučaju $(g_1 g_2)H  = (k_1 g_2)H$. Za dokaz
+toga vidi literaturu.}
 \begin{displaymath}
-       (g_1H)(g_2H)=(g_1 g_2)H
+       (g_1H)(g_2H)=(g_1 g_2)H \;.
 \end{displaymath}
-Uvjerite se da su zadovoljeni aksiomi grupe.
+Uvjerite se da obzirom na ovako definirano množenje
+susjednih klasa, kvocijentni skup čini grupu.
 
 
-\begin{primjer}[D$_{3}$/C$_3$]
+\begin{primjer}[$\mathrm{D}_{3}$/$\mathrm{C}_3$]
 Tablica množenja u ovom kvocijentnom skupu je definirana relacijama
 \begin{align}
-(eH)(eH) &= ee H = eH \\
-(eH)(bH) &= bH  \\
-(bH)(eH) &= bH  \\
-(bH)(bH) &= eH 
+    (e\mathrm{C}_3)(e\mathrm{C}_3) &= ee \mathrm{C}_3 = e\mathrm{C}_3\\
+    (e\mathrm{C}_3)(b\mathrm{C}_3) &= b\mathrm{C}_3  \\
+    (b\mathrm{C}_3)(e\mathrm{C}_3) &= b\mathrm{C}_3  \\
+    (b\mathrm{C}_3)(b\mathrm{C}_3) &= e\mathrm{C}_3 
 \end{align}
 
 Lijevi i desni kvocijentni skupovi su jednaki
@@ -442,7 +462,7 @@ Lijevi i desni kvocijentni skupovi su jednaki
 {\rm C}_3\backslash{\rm D}_{3} &= \{\{e,c,c^2\}, \{b, cb=bc^2, c^2b=bc\}\}
     = D_{3}/C_3
 \end{align*}
-i imaju grupnu strukturu jednaku grupi C$_2$.
+i imaju grupnu strukturu jednaku grupi $\mathrm{C}_2$.
 
 \end{primjer}
 
@@ -452,7 +472,7 @@ S druge strane
 {\rm C}_2\backslash{\rm D}_{3} &= \{\{e,b\}, \{c, bc\}, \{c^2, bc^2\}\}
     \neq {\rm D}_{3}/{\rm C}_2
 \end{align*}
-i D$_{3}$/C$_2$ nije grupa.
+i $\mathrm{D}_{3}$/$\mathrm{C}_2$ nije grupa.
 
 
 \begin{definicija}[Konjugirani elementi]
