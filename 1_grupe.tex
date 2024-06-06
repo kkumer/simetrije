@@ -15,10 +15,9 @@ Moć teorije grupa leži u njenoj apstraktnosti koju je poznati fizičar Arthur
 Eddington ilustrirao 
 riječima
 \begin{quote}
- \emph{We need a super-mathematics in which the operations are as unknown as the
- quantities they operate on, and a super-mathematician who does not know what
- he is doing when he performs these operations. Such a super-mathematics is the
-Theory of Groups.}
+\emph{Potrebna nam je super-matematika u kojoj su operacije jednako nepoznate kao i
+veličine na koje te operacije djeluju, te super-matematičar koji ne zna što radi kada
+izvodi te operacije. Takva super-matematika je teorija grupa.}
 \end{quote}
 Možda je Eddingtonova karakterizacija teorije grupa kao "super-matematike" malo pretjerana, jer
 teorija grupa je čvrsti dio standardne matematike, ali točno je da je upotrebljivost
@@ -334,7 +333,7 @@ tvori grupu obzirom na grupnu operaciju definiranu na $G$.
 
 Svaka grupa ima trivijalne podgrupe $H=\{e\}$ i $H=G$, a
 podgrupu koja je različita od ovih dviju trivijalnih
-zovemo \emph{prava} podgrupa i pišemo $H<G$.
+zovemo \emph{prava} podgrupa.
 
 \begin{primjer} \label{th:c2c3}
 C$_2$=\{e, b\} i C$_3$=\{e, c, c$^2$\} su prave podgrupe od D$_3$
@@ -370,6 +369,8 @@ broju $b$" nije relacija ekvivalencije jer nije simetrična.
 i tranzitivna zove se \emph{relacija uređaja}.)
 Svaka relacija ekvivalencije cijepa skup na disjunktne podskupove 
 koji se zovu \emph{klase ekvivalencije}.} između ta dva elementa u grupi G, $g_1 \sim g_2$.
+To između ostalog znači i da bilo koji element klase možemo jednako koristiti
+kao reprezentanta klase tj. da ako je $g_k \in gH$ onda je $g_{k}H = gH$.
 
 Susjedne klase po nekoj podgrupi $H$ su međusobno disjunktne i
 zahvaljujući Teoremu o razmještaju sve imaju isti broj elemenata (jednak redu od $H$)
@@ -400,7 +401,8 @@ Skup svih različitih lijevih susjednih klasa
 zove se \emph{lijevi kvocijentni skup grupe} $G$ po podgrupi $H$.
 \end{definicija}
 
-Potpuno analogno se definiraju \emph{desna susjedna klasa} i \emph{desni kvocijentni skup}.
+Potpuno analogno se definiraju \emph{desna susjedna klasa} $Hg$
+i \emph{desni kvocijentni skup} $H\backslash G$.
 
 \begin{primjer}[D$_3$]
     Promotrimo podgrupu $H=\mathrm{C}_3=\{e, c, c^2\}$ grupe $G=\mathrm{D}_3$.
@@ -416,6 +418,7 @@ skup $\mathrm{D}_3/\mathrm{C}_2$
 \begin{definicija}[Normalna podgrupa]
 Podgrupa za koju vrijedi $gH=Hg$, $\forall g\in G$, zovemo
 \emph{normalna} ili \emph{invarijantna}.
+\label{tm:normalnapodgrupa}
 \end{definicija}
 
 \begin{primjer}[$\mathrm{D}_3$]
@@ -428,27 +431,48 @@ Podgrupa za koju vrijedi $gH=Hg$, $\forall g\in G$, zovemo
 \end{primjer}
 
 Očito je da su za normalnu podgrupu $H$ lijevi i desni kvocijentni skupovi
-identični  $G/H$ = $H\backslash$G
+identični  $G/H$ = $H\backslash$G.
 
-Grupe koje nemaju normalnih podgrupa zovu se \emph{jednostavne},
-a one koje nemaju normalnih Abelovih podgrupa zovu se \emph{polujednostavne}.
-
-Na kvocijentnom skupu po normalnoj podgrupi moguće je definirati
-binarnu operaciju "množenja" susjednih klasa putem\footnote{%
-Kako ista susjedna klasa može biti definirana različitim
-elementima $g_1 H = k_1 H$, ovdje je netrivijalno pokazati da 
-ovako definirani umnožak ne ovisi o izboru elementa tj. da
-je u svakom slučaju $(g_1 g_2)H  = (k_1 g_2)H$. Za dokaz
-toga vidi literaturu.}
-\begin{displaymath}
-       (g_1H)(g_2H)=(g_1 g_2)H \;.
-\end{displaymath}
-Uvjerite se da obzirom na ovako definirano množenje
-susjednih klasa, kvocijentni skup čini grupu.
+Zanimljivo je pitanje u kojim okolnostima i sam kvocijentni skup čini grupu.
+Za to je potrebno definirati binarnu operaciju elemenata kvocijentnog
+skupa tj. "množenja" susjednih klasa.
+Prirodno je pokušati s definicijom množenja dvije klase $A$ i 
+$B$ "svaki element sa svakim":
+\begin{equation}\label{eq:ABmult}
+    A B =\{ab \td a \in A \:\text{i}\: b \in B\} \;.
+\end{equation}
+Pitanje je međutim predstavlja li ovako definirano množenje skupova $A$ i $B$
+konzistentnu definiciju množenja susjednih klasa tj. je li $AB$ nužno susjedna
+klasa, ukoliko su to $A$ i $B$? To zahtijeva prvi aksiom definicije
+grupe. Lako se možemo uvjeriti da tako definirano množenje \emph{ne} funkcionira
+na kvocijentnom skupu $\mathrm{D}_3 / \mathrm{C}_2$, gdje je $\mathrm{C}_2 = \{e, b\}$.
+Npr. umnožak susjednih klasa $e\mathrm{C}_2 = \{e, b\}$ i $c\mathrm{C}_2=\{c, bc^2\}$
+je $\{e, bc, bc^2, b^2 c^2 = c^2\}$ što je skup koji nije susjedna klasa!
+S druge pak strane množenje susjednih klasa u kvocijentnom skupu
+$\mathrm{D}_3 / \mathrm{C}_3$ uvijek rezultira susjednom klasom. Razlog tome je
+što je $\mathrm{C}_3$ \emph{normalna} podgrupa, a za normalnu podgrupu $H$ 
+množenje klasa možemo provesti kao:
+\begin{equation}
+       (g_1H)(g_2H) = g_1 (H g_2) H = g_1 (g_2 H) H = g_1 g_2 H H
+       = (g_1 g_2) H\;,
+\end{equation}
+gdje smo u drugom koraku iskoristili normalnost podgrupe $H$ i gdje je
+$(g_1 g_2) H$ nužno susjedna klasa jer je $g_1 g_2 \in G$.
+Lako se uvjeriti da su i ostali aksiomi grupe zadovoljeni pa zaključujemo
+da kvocijentni skup po normalnoj podgrupi čini grupu koju zovemo
+\emph{kvocijentna grupa}\footnote{Nešto je teže
+    uvjeriti se u činjenicu da bi i drugačiji pokušaji definiranja množenja
+    susjednih klasa od (\ref{eq:ABmult}) doveli do nužnosti da podgrupa
+bude normalna. Npr. mogli bi umjesto oslanjanja na (\ref{eq:ABmult}) 
+\emph{definirati} množenje susjednih klasa kao $(g_1 H) \ast (g_2 H) = (g_1 g_2) H$.
+Tako bi prvi aksiom grupe naizgled bio osiguran samom definicijom binarne operacije.
+No pokazuje se da je ovakva definicija množenja susjednih klasa konzistentna, u smislu
+da ne ovisi o izboru reprezentirajućih elemenata $g_1$ i $g_2$, i opet samo ako je
+podgrupa normalna.}
 
 
 \begin{primjer}[$\mathrm{D}_{3}$/$\mathrm{C}_3$]
-Tablica množenja u ovom kvocijentnom skupu je definirana relacijama
+Tablica množenja u ovom kvocijentnom skupu je dana relacijama
 \begin{align}
     (e\mathrm{C}_3)(e\mathrm{C}_3) &= ee \mathrm{C}_3 = e\mathrm{C}_3\\
     (e\mathrm{C}_3)(b\mathrm{C}_3) &= b\mathrm{C}_3  \\
@@ -463,28 +487,34 @@ Lijevi i desni kvocijentni skupovi su jednaki
     = D_{3}/C_3
 \end{align*}
 i imaju grupnu strukturu jednaku grupi $\mathrm{C}_2$.
-
+\label{pr:D3oC3}
 \end{primjer}
 
-S druge strane
+S druge strane $\mathrm{C}_2$ nije normalna, lijevi i desni kvocijentni
+skupovi
 \begin{align*}
 {\rm D}_{3}/{\rm C}_2 &= \{\{e,b\}, \{c, cb=bc^2\}, \{c^2, c^2b=bc\}\} \\
 {\rm C}_2\backslash{\rm D}_{3} &= \{\{e,b\}, \{c, bc\}, \{c^2, bc^2\}\}
     \neq {\rm D}_{3}/{\rm C}_2
 \end{align*}
-i $\mathrm{D}_{3}$/$\mathrm{C}_2$ nije grupa.
+nisu jednaki i $\mathrm{D}_{3}$/$\mathrm{C}_2$ nije grupa.
 
+Grupe koje nemaju normalnih podgrupa zovu se \emph{jednostavne},
+a one koje nemaju normalnih Abelovih podgrupa zovu se \emph{polujednostavne}.
+
+Za normalne grupe iz definicije \ref{tm:normalnapodgrupa} slijedi odmah i
+da je $g H g^{-1} = H, \forall g\in G$. Zanimljivo je promatrati djelovanje
+ove operacije $g \ldots g^{-1}$ i na skupove koji nisu podgrupa te
+na pojedine elemente grupe:
 
 \begin{definicija}[Konjugirani elementi]
 Dva elementa $a$ i $b$ grupe $G$ su \emph{konjugirani} ukoliko
-postoji $g\in G \td a=gbg^{-1}$.
+postoji $g\in G$ takav da je $a=gbg^{-1}$.
+\label{tm:konjugacija}
 \end{definicija}
-
-
 
 Konjugacija je također relacija ekvivalencije:
 \begin{enumerate}
-
 \item $a=e^{-1} a e  \imp a\sim a$
 \item $a=g^{-1} b g  \imp  b= g^{-1} a (g^{-1})^{-1}$
 \item $a=g b g^{-1}$, $b=hch^{-1}$, \\
@@ -495,26 +525,26 @@ Konjugacija je također relacija ekvivalencije:
 
 Konjugacija (baš kao i svaka relacija ekvivalencije) definira
 particiju skupa na klase.
-
 \begin{displaymath}
    \text{klasa od $a$} = \{ b \td b=gag^{-1},\quad g\in G\}
 \end{displaymath}
 
-Klasa od $e=\{e\}$ što povlači da klase, izuzev ove trivijalne, nisu podgrupe.
+Klasa od $e=\{e\}$ što znači da klase, izuzev ove trivijalne, nisu podgrupe.
 
 Za Abelove grupe svaki element je klasa za sebe.
 
-Normalne podgrupe zadovoljavaju $gHg^{-1}=H$, $\forall g\in G$. Slijedi
+Kako normalne podgrupe zadovoljavaju $gHg^{-1}=H$, $\forall g\in G$, slijedi
 da su one sastavljenje od \emph{cijelih} klasa konjugacije.
 
 \begin{primjer}[D$_3$]
-Klase konjugacije  od D$_3$ su:
+Tri klase konjugacije  od D$_3$ su:
 \begin{enumerate}
 \item $(e)$
 \item $(c, c^{2})$
 \item $(b, bc, bc^2)$
 \end{enumerate}
-i odgovaraju rotacijama za različite kuteve. Konjugirajući elementi
+i odgovaraju rotacijama za različite kuteve: $0^\circ$, $120^\circ$ i
+$180^\circ$. Konjugirajući elementi
 preslikavaju međusobno osi rotacije. Normalna podgrupa $C_3$ se
 sastoji od cijelih klasa (prve dvije), dok podgrupa $C_2=\{e,b\}$ nema
 to svojstvo i nije normalna.
@@ -523,6 +553,12 @@ to svojstvo i nije normalna.
 
 \section{Homomorfizam i izomorfizam grupa}
 
+Vidjeli smo u primjeru \ref{pr:D3oC3} kako kvocijentna grupa $\mathrm{D}_3/\mathrm{C}_3$
+ima isti broj elemenata i istu tablicu množenja kao grupa $\mathrm{C}_2$. Dakle u
+apstraktnom smislu teorije grupa te su grupe identične.  Za prepoznavanje takvih
+situacija, umjesto uspoređivanja grupnih tablica množenja pogodnije je identificirati
+preslikavanje s jedne grupe na drugu koje "čuva" grupnu strukturu. Takvo preslikavanje
+se naziva \emph{homomorfizam}:
 \begin{definicija}[Homomorfizam]
 Neka su $G$ i $H$ grupe, a $f:G\to H$ preslikavanje koje komutira
 s grupnom operacijom tj. za koje vrijedi
@@ -532,6 +568,26 @@ s grupnom operacijom tj. za koje vrijedi
 Onda kažemo da je $f$ \emph{homomorfizam} grupe $G$ u grupu $H$.
 \end{definicija}
 
+\begin{primjer}
+    Preslikavanje s grupe $\mathrm{D}_3$ na kvocijentnu grupu
+    $\mathrm{D}_3/\mathrm{C}_3$ definirano kao 
+    \[
+        f(g) = g\mathrm{C}_3 \,,
+    \] je homomorfizam jer
+    \[
+        f(a) f(b) = (a \mathrm{C}_3) (b \mathrm{C}_3 ) =
+        (a b) \mathrm{C}_3 = f(a b)
+    .\] 
+\end{primjer}
+\begin{primjer}
+    Preslikavanje s grupe $\mathrm{C}_3$ na trivijalnu grupu $\mathrm{C}_1 = \{e\}$
+    koja sadrži samo jedinični element, definirano kao $f(g) = e,
+    \forall g\in\mathrm{C}_3$, je homomorfizam.
+    Vidimo da homomorfizam općenito ne mora biti injekcija tj. da se više
+    elemenata može preslikavati u isti element.
+    \label{pr:C3toC1}
+\end{primjer}
+
 Homomorfizam koji je i bijekcija zovemo \emph{izomorfizam} i
 pišemo $A\cong B$ ili $A=B$.
 
@@ -539,7 +595,9 @@ Izomorfne grupe su s apstraktnog stanovišta jednake (imaju
 istu tablicu množenja).
 
 \begin{primjer}[C$_2$]
-Grupa C$_2$ je izomorfna grupama $(\{1, -1\},\cdot$) i
+Grupa C$_2$ je, osim već spomenutog izomorfizma s
+kvocijentnom grupom $\mathrm{D}_3/\mathrm{C}_3$, izomorfna i
+s grupama $(\{1, -1\},\cdot$) i
 $\left(\left\{
 \begin{pmatrix}
 1 & 0 \\ 0 & 1
@@ -551,24 +609,32 @@ $\left(\left\{
 \end{primjer}
 
 \emph{Slika} homomorfizma $f(A)$ (skup svih elemenata u $B$ koji imaju original u $A$) 
-je podgrupa od $B$: $f(A)< B$ (DZ: Uvjerite se u to.)
+je podgrupa od $B$. Uvjerite se u to.
 
-\centerline{\includegraphics[scale=0.8]{pics/homomorfizam}}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.6\textwidth]{pics/homomorfizam}
+    \caption{Kernel $K$ homomorfizma $f:A\toB$ je podgrupa grupe $A$,
+    a slika $f(A)$ homomorfizma je podgrupa grupe $B$.}
+    \label{fig:kernelslika}
+\end{figure}
+
 
 Slika $f(e_A)$ jediničnog elementa $e_A$ iz $A$ je jedinični element $e_B$ u $B$ jer
 množenjem relacije
 $$ f(e_A) f(b) = f(e_A b) = f(b) $$
 s desna s $f(b)^{-1}$ dobivamo
 $$ f(e_A) = f(b) f(b)^{-1} = e_B \;. $$
-No moguće je da se i drugi elementi iz $A$ osim jediničnog preslikavaju u 
-jedinični element u $B$.
-\emph{Kernel} homomorfizma je skup svih elemenata od $A$ koji se
+No moguće je da se i drugi elementi iz $A$ osim jediničnog $e_A$ preslikavaju u 
+jedinični element $e_B$ u $B$ (u primjeru \ref{pr:C3toC1} se svi tako preslikavaju).
+\emph{Kernel} homomorfizma se naziva skup svih elemenata od $A$ koji se
 preslikavaju u jedinični element iz $B$.
 $$ K \equiv {\rm ker}(f) \equiv \{ k\in A \; | \; f(k) = e_B \} \;. $$
+Kernel od $f:A\to B$ je normalna podgrupa od $A$. Uvjerite se u to.
 
-Kernel od $f:A\to B$ je normalna podgrupa od $A$. (DZ: Uvjerite se u to.)
-
-
+Kernel je iznimno korisna podgrupa, između ostalog i zahvaljujući sljedećem
+važnom teoremu:
 \begin{teorem}[Teorem o izomorfizmu]
 \label{th:izomorfizam}
 Ako je $f:G\to G'$ homomorfizam s kernelom $K$, onda vrijedi
@@ -579,7 +645,7 @@ Ako je $f:G\to G'$ homomorfizam s kernelom $K$, onda vrijedi
 \end{teorem}
 (Skup $G/K$ je grupa jer je $K$ normalna podgrupa.)
 
-Dokaz$^{*}$\secret{Cornwell '84, 2.6}: Pridruživanje je $f(g)\leftrightarrow gK$.
+\emph{Dokaz}$^{*}$\secret{Cornwell '84, 2.6}: Pridruživanje je $f(g)\leftrightarrow gK$.
 Pokažimo da je to pridruživanje dobro definirano i bijekcija te da čuva grupnu
 strukturu.
 
