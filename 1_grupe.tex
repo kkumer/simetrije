@@ -112,8 +112,8 @@ Primjeri: ($\mathbb{R}\backslash\{0\}$, $\cdot$), GL(2)
 \end{itemize}
 
 \begin{primjer}[Grupa simetrija]
-Skup svih transformacija simetrije tj. transformacija koje ostavljaju
-neki objekt nepromijenjen nužno tvore grupu obzirom na binarnu
+Skup svih transformacija simetrije nekog konkretnog objekta tj. transformacija koje ostavljaju
+taj objekt nepromijenjen nužno tvore grupu obzirom na binarnu
 operaciju kompozicije transformacija $\circ$:
 \begin{enumerate}
 \item zatvorenost: ako ni $g_1$ ni $g_2$ ne mijenjaju objekt, ne mijenja
@@ -254,13 +254,11 @@ rotacija za 60$^\circ$ i 90$^\circ$ te inverzije $\vec{r}\to -\vec{r}$
 (cf. \emph{Crystallographic restriction theorem}).
    
 
-\begin{primjer}[Dihedralna grupa D$_n$]
-Dihedralna grupa D$_n$ je grupa simetrija rotacija pravilnog poligona s $n$ stranica.
-Prema slici
-
-\centerline{\includegraphics[scale=1.0]{pics/D3}}
-
-vidimo da su elementi grupe rotacije $e, c$ i  $c^2$ baš kao kod grupe C$_n$, te
+\begin{primjer}[Dihedralna grupa $\mathrm{D}_3$]
+    Dihedralna grupa $\mathrm{D}_3$ je grupa simetrija rotacija pravilnog poligona s tri
+    stranice tj. trokuta.  Prema slici\\[2ex]
+    \centerline{\includegraphics[scale=1.0]{pics/D3}}
+vidimo da su elementi grupe rotacije $e, c$ i  $c^2$ baš kao kod grupe $\mathrm{C}_3$, te
 dodatno rotacije $b_1, b_2$ i $b_3$ za kut 180$^\circ$ oko triju horizontalnih
 osi.
 \end{primjer}
@@ -287,7 +285,7 @@ To sugerira da bismo grupu D$_3$ mogli probati definirati prezentacijom
 \end{equation}
 no ova definicija nije kompletna jer nam nedostaje još
 i pravilo za komutiranje elemenata (koje nam nije trebalo
-za grupu C$_n$ koja je Abelova). Njega dobijemo tako da
+za grupu C$_3$ koja je Abelova). Njega dobijemo tako da
 iskombiniramo dvije gore dobivene relacije: 
 $b_2 = c b_1 c^{-1} = b c$ i pomnožimo zdesna s $c$:
 \begin{equation}
@@ -306,7 +304,8 @@ pisati
  {\rm D}_3= \langle c,b \: | \: c^3 = b^2 = (bc)^2 = e \rangle \;.
 \label{eq:d3gp}
 \end{equation}
-Ova definicija se generalizira ovako (vidi zadatak \ref{zad:Dn})
+Ova definicija se generalizira na grupu simetrija poligona s $n$
+stranica ovako (vidi zadatak \ref{zad:Dn})
 \begin{equation}
  {\rm D}_n= \langle c,b \: | \: c^n = b^2 = (bc)^2 = e \rangle \;,
 \label{eq:dngp}
@@ -374,8 +373,7 @@ kao reprezentanta klase tj. da ako je $g_k \in gH$ onda je $g_{k}H = gH$.
 
 Susjedne klase po nekoj podgrupi $H$ su međusobno disjunktne i
 zahvaljujući Teoremu o razmještaju sve imaju isti broj elemenata (jednak redu od $H$)
-pa tako definiraju jednu particiju grupe G:
-
+pa tako definiraju jednu particiju grupe G:\\[2ex]
 \centerline{\includegraphics[scale=1.0]{pics/lagrange}}
 
 Na slici je kao prva postavljena lijeva susjedna klasa po jediničnom
@@ -463,12 +461,12 @@ da kvocijentni skup po normalnoj podgrupi čini grupu koju zovemo
 \emph{kvocijentna grupa}\footnote{Nešto je teže
     uvjeriti se u činjenicu da bi i drugačiji pokušaji definiranja množenja
     susjednih klasa od (\ref{eq:ABmult}) doveli do nužnosti da podgrupa
-bude normalna. Npr. mogli bi umjesto oslanjanja na (\ref{eq:ABmult}) 
+bude normalna. Npr. mogli bismo umjesto oslanjanja na (\ref{eq:ABmult}) 
 \emph{definirati} množenje susjednih klasa kao $(g_1 H) \ast (g_2 H) = (g_1 g_2) H$.
 Tako bi prvi aksiom grupe naizgled bio osiguran samom definicijom binarne operacije.
 No pokazuje se da je ovakva definicija množenja susjednih klasa konzistentna, u smislu
 da ne ovisi o izboru reprezentirajućih elemenata $g_1$ i $g_2$, i opet samo ako je
-podgrupa normalna.}
+podgrupa normalna, nakon čega ta definicija postaje ekvivalentna definiciji (\ref{eq:ABmult}).}
 
 
 \begin{primjer}[$\mathrm{D}_{3}$/$\mathrm{C}_3$]
