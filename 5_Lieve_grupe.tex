@@ -291,12 +291,15 @@ $\quad \alpha,\beta \in \mathbb{R} (\mathbb{C} \to \textrm{kompleksna L.a.})$
 Za vektorske prostore matrica, gdje je Liev produkt definiran kao
 komutator $[X,Y]=XY-YX$, svojstva 2--4 su automatski ispunjena.
 
-\textbf{Teorem (Ado)}: Svaka apstraktna Lieva algebra je izomorfna nekoj
- Lievoj algebri matrica s komutatorom kao Lievim produktom. \emph{(Bez
+\textbf{Teorem (Ado)}: Svaka konačno-dimenzionalna apstraktna Lieva algebra je izomorfna nekoj
+ Lievoj algebri konačno-dimenzionalnih matrica s komutatorom kao Lievim produktom. \emph{(Bez
 dokaza.)}
 
-Dakle, ograničavajući se na Lieve grupe \emph{matrica} ništa ne gubimo
-na općenitosti.
+Dakle, ograničavajući se na Lieve grupe \emph{matrica} ne gubimo mnogo
+na općenitosti jer sve Lieve algebre koje ćemo sresti u ovoj knjizi su
+konačno-dimenzionalne\footnote{Istina, u fizici nekad nalazimo i primjenu beskonačno-dimenzionalnih
+algebri za koje teorem ne vrijedi. Jedan primjer je tzv. Virasorova algebra važna
+u teoriji superstruna.}.
 
 - Lieve algebre ponekad označavamo isto kao i Lieve grupe, ali malim slovima:
   $X_1$, $X_2$ i $X_3$ su baza Lieve algebre so(3).
@@ -452,14 +455,18 @@ ulogu ima formula
 \begin{split}
   e^A e^B &= \exp\Bigg\{A+B+\frac{1}{2}[A,B]+\frac{1}{12}\Big(\big[A,[A,B]\big]+
  \big[B,[B,A]\big]\Big)+\cdots \Bigg\} \\
-          &= f(A,B,[A,B]) \qquad \text{\emph{(Baker-Campbell-Hausdorff ili BCH formula)}}
+          &= f(A,B,[A,B]) \qquad \text{\emph{(Baker-Campbell-Hausdorff ili BCH teorem)}}
 \end{split}
 \end{equation}
 
 Ovaj red konvergira u određenoj okolini jedinice (ne nužno infinitezimalnoj!)
 u kojoj onda algebra \emph{potpuno} određuje grupu.
 
-(D.Z. Provjerite BCH formulu.)
+To je dubok rezultat i puni dokaz BCH teorema obično zahtijeva napredne matematičke
+pojmove. Relativno pristupačan algebarski dokaz može se pronaći u knjizi
+Stilvell, \emph{Naive Lie Theory}.
+
+(D.Z. Provjerite BCH formulu do gore navedenog reda.)
 
 Pitanje: Da li istoj Lievoj algebri mogu pripadati različite Lieve grupe?
 
