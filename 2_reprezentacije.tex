@@ -8,14 +8,40 @@
 
 \chapter{Reprezentacije grupa}
 
+Premda smo glavne primjere grupa u prošlom poglavlju,
+cikličke grupe $\mathrm{C}_n$ i dihedralne grupe $\mathrm{D}_n$,
+definirali kao grupe simetrija poligona,
+naglašavali smo da je to samo pomoćni korak i da je stvarna
+narav grupe apstraktna, potpuno definirana svojstvima binarne
+operacije nad elementima skupa.
+No prava moć teorije grupa, i ne samo u fizici, ipak dolazi kroz
+konkretne realizacije grupe kao skupa transformacija
+nekog sustava. Za te potrebe, sustave ćemo
+prikazivati kao elemente vektorskih prostora, a elementi
+grupe će biti operatori nad tim prostorima.
+To pokriva sve važne situacije u fizici, a najvažnije
+i najnetrivijalnije primjene bit će u \emph{kvantnoj} fizici gdje
+je odgovarajući vektorski prostor Hilbertov prostor kvantnomehaničkih
+stanja. Najvažnije pitanje kojim ćemo se baviti je određivanje na koje je
+sve načine moguće reprezentirati neku grupu kao skup operatora nad
+nekim prostorom.
+To će onda dati jednu važnu klasifikaciju sustava a time i odgovor na pitanje
+na koje se sve načine neka simetrija može javljati u prirodi.
+
+
+
 \section{Vektorski prostori i operatori na njima}
+
+Očekuje se da je čitaoc već upoznat s osnovama matematičke
+teorije vektorskih prostora, no u ovom ćemo odjeljku ipak ponoviti
+osnovne pojmove.
 
 \begin{definicija}[Vektorski prostor]
 Vektorski prostor (ili linearni prostor) $V$ nad poljem $F$ je aditivna grupa
 (grupna operacija je zbrajanje vektora $\vec{x}+\vec{y}$) na
 kojoj je definirana operacija \emph{množenja skalarom} iz $F$ tako
 da su zadovoljeni aksiomi:
-\begin{enumerate}[1)]
+\begin{enumerate}
 \item Zatvorenost: $a\vec{x}\in V \quad \forall a\in F,\; \vec{x}\in V$
 \item Kvaziasocijativnost: $a(b\vec{x})=(ab)\vec{x} \quad
  \forall a,b \in F,\; \vec{x}\in V$
@@ -29,60 +55,59 @@ da su zadovoljeni aksiomi:
 \end{enumerate}
 \end{definicija}
 
-- Iz aksioma slijedi da je zbrajanje vektora u $V$  komutativno tj.
- $\vec{x} + \vec{y} = \vec{y} + \vec{x} $
-
-- Polje $F$ je obično $\mathbb{C}$ ili $\mathbb{R}$ pa govorimo o
+Iz aksioma slijedi da je zbrajanje vektora u $V$  komutativno tj.
+ $\vec{x} + \vec{y} = \vec{y} + \vec{x} $.
+Za naše potrebe, polje $F$ je obično polje kompleksnih ili 
+realnih brojeva, $\mathbb{C}$ ili $\mathbb{R}$, pa govorimo o
  \emph{kompleksnom} ili \emph{realnom} vektorskom prostoru.
-
-- \emph{Baza} = skup $\{\vec{e}_{i}\}$ linearno neovisnih vektora koji 
- razapinju $V$ tj. svaki vektor iz $V$ se može prikazati kao linearna
- kombinacija vektora $\{\vec{e}_{i}\}$
-
-- \emph{Dimenzija} vektorskog prostora = broj vektora njegove baze
+\emph{Baza} vektorskog prostora je skup $\{\vec{e}_{i}\}$ linearno nezavisnih vektora koji 
+\emph{razapinju} $V$ tj. svaki vektor iz $V$ se može prikazati kao linearna
+ kombinacija vektora baze $\{\vec{e}_{i}\}$.
+\emph{Dimenzija} vektorskog prostora definirana je kao broj vektora njegove baze (teorem
+je da sve baze imaju isti broj vektora).
 
 \begin{primjer}[3D euklidski prostor]
-``Klasičan'' realni vektorski prostor. Kartezijeva baza:
+Riječ je o "klasičnom" realnom vektorskom prostoru u kojem vrijedi osnovnoškolska
+geometrija. Jedna moguća baza je Kartezijeva
 $\vec{e}_{1}=\hat{\vec{x}}, \vec{e}_{2}=\hat{\vec{y}}, 
-   \vec{e}_{3}=\hat{\vec{z}}$
-\begin{displaymath}
+   \vec{e}_{3}=\hat{\vec{z}}$, tako da je
+\begin{equation}
+    \vec{r} = x \hat{\vec{x}} + y \hat{\vec{y}} + z \hat{\vec{z}} \;.
+\end{equation}
+Proizvoljni vektor često prikazujemo i kao stupac njegovih triju komponenata
+u konkretnoj bazi:
+\begin{equation}
 \vec{r}= \left(
 \begin{array}{c}
 x \\
 y \\
 z
-\end{array} \right)
-\end{displaymath}
+\end{array} \right) \;.
+\end{equation}
 \end{primjer}
 
-\begin{primjer}[Hilbertov prostor kvantnomehaničkih stanja H atoma]
+\begin{primjer}[Hilbertov prostor kvantnomehaničkih stanja vodikovog atoma]
 
-- Schr\"{o}dingerova jednadžba: $H\psi(\vec{x})=E\psi(\vec{x})$
-
-- Rješenja za vodikov atom $\psi_{nlm}(\vec{x})$ (stacionarna
-  stanja), predstavljaju
-  bazu beskonačnodimenzionalnog Hilbertovog vektorskog prostora
-  mogućih kvantnomehaničkih stanja vodikovog atoma.
-
-- Vektor u tom prostoru je proizvoljna superpozicija stacionarnih
-  stanja:
-
-\begin{displaymath}
+Rješenja vremenski nezavisne Schr\"{o}dingerove diferencijalne jednadžbe 
+\begin{equation}
+H\psi(\vec{x})=E\psi(\vec{x}) \;,
+\end{equation}
+gdje je $H$ hamiltonijan za vodikov atom, označavamo 
+$\psi_{nlm}(\vec{x})$ i nazivamo stacionarna stanja. Ovdje je
+$m \in \{-l, -l+1, \ldots, l\}$, $l \in \{0, 1, \ldots, n-1\}$,
+a $n \in \{1, 2, \ldots, \infty\}$. Stacionarnih stanja ima
+beskonačno i ona predstavljaju
+bazu beskonačnodimenzionalnog Hilbertovog vektorskog prostora
+svih mogućih kvantnomehaničkih stanja vodikovog atoma.
+Vektor u tom prostoru je proizvoljna superpozicija stacionarnih
+stanja
+\begin{equation}
        \psi(\vec{x})=\sum_{n=1}^{\infty}\sum_{l=0}^{n-1}
-  \sum_{m=-l}^{l}  a_{nlm}  \psi_{nlm}(\vec{x})
-\end{displaymath}
-- $a_{nlm}$ - proizvoljni kompleksni koeficijenti (Ovo je dakle
- kompleksan vektorski prostor.)
+  \sum_{m=-l}^{l}  a_{nlm}  \psi_{nlm}(\vec{x}) \;,
+\end{equation}
+gdje su $a_{nlm}$ proizvoljni kompleksni koeficijenti. Ovo je dakle
+kompleksni vektorski prostor.
 
-- alternativna ``baza'': $\psi_{\vec{x}_0}(\vec{x})=\delta(\vec{x}-\vec{x}_0)$, 
-   $\vec{x}_0 \in \mathbb{R}^3$ u kojoj proizvoljno stanje promatramo
-  ne kao superpoziciju svojstvenih stanja energije, već kao superpoziciju
-  svojstvenih stanja položaja elektrona.\footnote{
-  Ova ``baza'' sugerira da je prostor neprebrojivo beskonačno 
-  dimenzionalan, ali
-   to nije slučaj jer je \emph{separabilan} --- svaki je vektor moguće proizvoljno
-  dobro aproksimirati kao linearnu kombinaciju vektora prebrojivo 
-  beskonačne baze. Cf. Reed and Simon, Vol. I}
 \end{primjer}
 
 \begin{definicija}[Linearni operator]
@@ -94,20 +119,22 @@ sa svojstvom
  $\forall a,b\in F,\; \vec{x}, \vec{y} \in V$, je \emph{linearan}.
 \end{definicija}
 
-- U datoj bazi $\{\vec{e}_{i}\}$, operator $T$ možemo prikazati
- kao matricu s elementima $T_{ij}$ definiranu relacijom
-  $ T\vec{e}_j = \sum_{i} T_{ij} \vec{e}_i \equiv T_{ij} \vec{e}_i$, 
-odnosno relacijom 
-  $ T_{ij} \equiv  \vec{e}_i  T \vec{e}_j$.
+U datoj bazi $\{\vec{e}_{i}\}$, operator $T$ možemo prikazati
+kao matricu s elementima $T_{ij}$ definiranu relacijom
+$ T\vec{e}_j = \sum_{i} T_{ij} \vec{e}_i \equiv T_{ij} \vec{e}_i$, 
+gdje uvodimo tzv. Einsteinovu sumacijsku konvenciju po kojoj se
+zbrajanje po dvaput ponovljenom indeksu podrazumijeva i znak
+sume se ne piše.
 
-- Onda je djelovanje na vektor $\vec{x}=x_i \vec{e}_i$ dano s
-  $(T \vec{x})_i = T_{ij} x_j$.
-
-- Ovdje smo definirali tzv. Einsteinovu sumacijsku konvenciju po kojoj
-  se sumiranje po dvaput ponovljenom indeksu podrazumijeva i znak
-  sume se izostavlja.
+Djelovanje operatora $T$ na vektor $\vec{x}=x_i \vec{e}_i$ rezultira
+vektorom $T\vec{x}$  s komponentama $(T \vec{x})_i = T_{ij} x_j$.
 
 \begin{primjer}[Operator rotacije u euklidskom prostoru]
+Operatori rotacije nad raznim vektorskim prostorima će nam biti važan primjer jer
+je riječ o transformacijama s kojima imamo mnogo neposrednog iskustva,
+a istovremeno su vrlo netrivijalne i dobar primjer za velik dio
+teorije grupa i njenih reprezentacija.
+Rotacija oko $z$-osi za kut $\theta$ je
 \begin{equation*}
 R_{z,\theta}\vec{r}=
 \begin{pmatrix}
@@ -122,13 +149,21 @@ x \\ y \\ z
 \end{primjer}
 
 \begin{primjer}[Hamiltonijan]
-$H \psi(\vec{x}) = E \psi(\vec{x}) $
+Kvantnomehanički hamiltonijan je važan primjer linearnog operatora
+na Hilbertovom prostoru: $H \psi(\vec{x}) = E \psi(\vec{x}) $.
+Vidjet ćemo da njegova važna značajka nije to što bi on sam bio element neke
+grupe simetrija, nego to što je pomoću njega moguće generirati
+elemente grupe vremenskih translacija.
 \end{primjer}
+
+Na vektorskim prostorima koji su nam od značaja, osim zbrajanja vektora i
+množenja skalarom često je moguće definirati i dodatne operacije, a
+možda najvažnija je skalarni produkt.
 
 \begin{definicija}[Skalarni produkt]
 Skalarni produkt na vektorskom prostoru $V$ je preslikavanje
 $(\,\;,\;):V\times V \to \mathbb{C}$ sa svojstvima:
-\begin{enumerate}[1)]
+\begin{enumerate}
 \item $(\vec{x}, \vec{y}) = (\vec{y}, \vec{x})^*$
 \item $(\vec{z}, a \vec{x} +b \vec{y})= a(\vec{z},\vec{x})+b(\vec{z},\vec{y})$
 \item $(\vec{x}, \vec{x})\ge 0\,, \quad (\vec{x}, \vec{x})=0 \imp \vec{x}=\vec{0}$
@@ -137,23 +172,24 @@ $\forall \vec{x}, \vec{y}, \vec{z} \in V$ i $a,b \in\mathbb{C}$.
 \label{def:skalarniprodukt}
 \end{definicija}
 
-- Posljedica definicije: $(a \vec{x}, \vec{y})= a^* (\vec{x}, \vec{y})$.
-(Moguća je i alternativna definicija skalarnog produkta kod koje je
-$(\vec{x}, a \vec{y}) = a^* (\vec{x}, \vec{y})$, ali ona se u fizici
-rijetko rabi.)
+Posljedica definicije je da vrijedi $(a \vec{x}, \vec{y})= a^* (\vec{x}, \vec{y})$.
+Moguća je i alternativna definicija skalarnog produkta kod koje je
+$(\vec{x}, a \vec{y}) = a^* (\vec{x}, \vec{y})$. Ona se u fizici
+rijetko rabi, ali je dominantna u matematičkim tekstovima.
 
-- Primjeri: $\vec{x}\cdot \vec{y}$ u 3D euklidskom prostoru ili
+Primjeri skalarnog produkta su standardno množenje
+vektora $\vec{x}\cdot \vec{y}$ u 3D euklidskom prostoru ili "preklop"
+valnih funkcija
 $(\psi_1, \psi_2) = \int \psi_{1}^{*}(\vec{x}) \psi_{2}(\vec{x}) d^3 x$
 u Hilbertovom prostoru kvantnomehaničkih stanja.
 
-- Skalarni produkt omogućuje prirodnu definiciju \emph{norme} vektora
+Skalarni produkt omogućuje prirodnu definiciju \emph{norme} vektora
   kao $\lVert x\rVert \equiv \sqrt{(x, x)}$.
+Vektorski prostor s definiranom operacijom skalarnog produkta se
+ zove \emph{unitarni prostor}. Alternativno se za takav prostor
+ koriste i nazivi pre-Hilbertov ili  euklidski prostor.
 
-- Vektorski prostor s definiranom operacijom skalarnog produkta se
- zove \emph{unitarni prostor}. Alternativni nazivi: pre-Hilbertov,
-  euklidski prostor.
-
-- Ortonormirana baza vektorskog prostora je baza $\{\vec{e}_i\}$
+Ortonormirana baza vektorskog prostora je baza $\{\vec{e}_i\}$
 takva da je $(\vec{e}_i, \vec{e}_j)=\delta_{ij}$ i uvijek ju je moguće
 naći u unitarnom prostoru.
 
@@ -162,15 +198,15 @@ Unitarni operator $U$ je operator takav da je $(U\vec{x}, U\vec{y})
 =(\vec{x}, \vec{y})$, $\forall \vec{x}, \vec{y}$. 
 \end{definicija}
 
-- Kažemo da
-unitarni operator čuva skalarni produkt. Obzirom da su skalarni
+Kažemo da
+unitarni operator "čuva" skalarni produkt. Obzirom da su skalarni
 produkt i norma vektora u kvantnomehaničkom Hilbertovom prostoru
-stanja povezani sa vjerojatnostima, te kako je očuvanje vjerojatnosti
-prirodan zahtjev na operatore transformacije kvantnomehaničkih
+stanja povezani sa vjerojatnostima ishoda mjerenja, te kako je očuvanje vjerojatnosti
+prirodan zahtjev na operatore transformacija kvantnomehaničkih
 stanja, ti će operatori tipično biti reprezentirani unitarnim
 operatorima.
 
-- U ortonormiranoj bazi unitarni operator je predstavljen unitarnom
+U ortonormiranoj bazi unitarni operator je predstavljen unitarnom
  matricom tj. matricom sa svojstvom $U^{\dagger}U=1$ gdje je
 $U^{\dagger}\equiv U^{T^*}$ hermitski konjugirana matrica.
 
@@ -181,7 +217,7 @@ definiran tako da vrijedi $(D\vec{x}, \vec{y})
 =(\vec{x}, D^\dagger \vec{y})$, $\forall \vec{x}, \vec{y}$.
 \end{definicija}
 
-- U ortonormiranoj bazi hermitski konjugirani operator je predstavljen
+U ortonormiranoj bazi hermitski konjugirani operator je predstavljen
 hermitski konjugiranom matricom.
 
 \begin{definicija}[Hermitski operator]
@@ -191,30 +227,33 @@ je u ortonormiranoj bazi prikazan hermitskom matricom za koju
 vrijedi $H^\dagger = H$.
 \end{definicija}
 
-- Hermitski konjugirani operator operatora $D$ se naziva i 
- adjungirani operator operatoru $D$ (engl. \emph{adjoint}), a hermitski
- operator se naziva i auto-adjungirani (engl. \emph{self-adjoint}).
- Zapravo postoji suptilna matematička razlika između hermitskog
- i auto-adjungiranog operatora, ali fizičari je obično zanemaruju.
+Hermitski konjugirani operator operatora $D$ se naziva i 
+adjungirani operator operatoru $D$ (engl. \emph{adjoint}), a hermitski
+operator se naziva i auto-adjungirani (engl. \emph{self-adjoint}).
+Zapravo postoji suptilna matematička razlika između hermitskog
+i auto-adjungiranog operatora, ali fizičari je obično zanemaruju.
 
 \begin{teorem}
 Svojstvene vrijednosti hermitskog operatora su realne.
 \end{teorem}
 
-\emph{Dokaz:} Neka je $A \vec{x} = \lambda \vec{x}$ za $\vec{x}\neq \vec{0}$%
+\emph{Dokaz:} Uzmimo $\vec{x}\neq \vec{0}$ za koji je $A \vec{x} = \lambda \vec{x}$%
 \footnote{Egzistencija takvog vektora slijedi iz fundamentalnog teorema algebre}.
 Skalarnim množenjem s $\vec{x}$ imamo $\lambda(\vec{x}, \vec{x}) =
 (\vec{x}, A\vec{x}) = (A\vec{x},\vec{x}) = \lambda^{\ast}(\vec{x},\vec{x})$,
-iz čega slijedi $\lambda^{\ast}=\lambda$.
+iz čega slijedi $\lambda^{\ast}=\lambda$ jer je kraćenje (\vec{x},\vec{x})
+omogućeno trećim svojstvom definicije (\ref{def:skalarniprodukt})
+skalarnog produkta.\qed
 
-- Ovo svojstvo se odražava u činjenici da su kvantnomehanički operatori koji
-  odgovaraju opservabilnim fizikalnim veličinama redovito hermitski.
+Ovo svojstvo se odražava u činjenici da su kvantnomehanički operatori koji
+odgovaraju opservabilnim fizikalnim veličinama (koje su redovito realni
+brojevi) redovito hermitski.
 
-- I unitarne i hermitske matrice $T$ se mogu dijagonalizirati transformacijom
-  $S^{-1} T S = D$, gdje je $S$ unitarna matrica.
+I unitarne i hermitske matrice $T$ se mogu dijagonalizirati transformacijom
+$S^{-1} T S = D$, gdje je $S$ unitarna matrica.
 
 \section{Definicija reprezentacije i osnovna svojstva}
-\label{reprezentacije}
+\label{sec:reprezentacije}
 
 \begin{definicija}[Reprezentacija grupe] 
 Reprezentacija grupe $G=\{g_{i}\}$ je homomorfizam s $G$ na
@@ -222,43 +261,38 @@ grupu linearnih operatora
 $\Gamma=\{D(g_{i})\}$, na nekom vektorskom prostoru $V$.
 \end{definicija}
 
-- Dakle, reprezentacija je preslikavanje $G \to \Gamma$, gdje
-  se pojedini elementi preslikavaju kao $g_{i} \mapsto D(g_i)$.
+Dakle, reprezentacija je preslikavanje $G \to \Gamma$, gdje
+se pojedini elementi preslikavaju kao $g_{i} \mapsto D(g_i)$.
+Operatori $D(g_i)$ su pak preslikavanja $D(g_i):V \to V$, gdje
+se pojedini vektori preslikavaju kao $\vec{x} \mapsto \vec{x}' = D(g_i) \vec{x}$.
 
-- Operatori $D(g_i)$ su pak preslikavanja $D(g_i):V \to V$, gdje
-  se pojedini vektori preslikavaju kao $\vec{x} \mapsto \vec{x}' = D(g_i) \vec{x}$.
+U žargonu se pojam "reprezentacija" zna odnositi ne samo na
+gornji homomorfizam već i na samu grupu $\Gamma$, pa čak i na vektorski
+prostor $V$. No to ne bi smjelo dovoditi do zabune.
 
-- Kolokvijalno se pojam ``reprezentacija'' zna odnositi ne samo na
-  gornji homomorfizam već i na grupu $\Gamma$, pa čak i na vektorski
-  prostor $V$.
-
-- \emph{Dimenzija} reprezentacije je dimenzija vektorskog prostora $V$ na koji operatori djeluju.
-
-- Kako se  operatori mogu u nekoj bazi predstaviti kao kvadratne matrice u literaturi
- se često rabi alternativna definicija reprezentacije kao preslikavanja na grupu
- matrica.
-
-- Iz uvjeta homomorfizma
+\emph{Dimenzija} reprezentacije je dimenzija vektorskog prostora $V$ na koji operatori djeluju.
+Kako se  operatori mogu u nekoj bazi predstaviti kao kvadratne matrice u literaturi
+ se često rabi alternativna definicija reprezentacije kao preslikavanja s
+ apstraktne grupe na grupu matrica.
+Iz uvjeta homomorfizma
 \begin{displaymath}
            D(g_1) D(g_2) = D(g_1 g_2)
 \end{displaymath}
 slijede razne stvari poput činjenice da je jedinični element uvijek reprezentiran
-jediničnom matricom: $D(g)D(e)=D(ge)=D(g) \imp D(e)=1$.
+jediničnom matricom jer $D(g)D(e)=D(ge)=D(g)$ povlači $D(e)=1$.
 
-- Uobičajena oznaka za operatore iz reprezentacije je slovo $D$ od
-  njemačke riječi "Darstellung" (reprezentacija). Primjenu teorije reprezentacija
+Uobičajena oznaka za operatore iz reprezentacije je slovo $D$ od
+njemačke riječi "\emph{Darstellung}" (reprezentacija). Primjenu teorije reprezentacija
   grupa na fiziku je u velikoj mjeri razvio E. P. Wigner.
 
-- Ukoliko je grupa operatora $\Gamma$ \emph{izomorfna} grupi $G$, 
-  reprezentaciju zovemo \emph{vjerna}
+Ukoliko je grupa operatora $\Gamma$ \emph{izomorfna} grupi $G$, 
+  reprezentaciju zovemo \emph{vjerna}.
 
   
-\begin{primjer}[REP C$_3$ na 3D euklidskom prostoru]
-C$_3=\{e, c, c^2\}$. Kao reprezentirajuće operatore možemo uzeti
-operatore rotacije ---  tako smo i došli do grupe C$_3$:
-$D(c)$ = rotacija za 2$\pi$/3 oko $z$-osi.
-
-
+\begin{primjer}[Reprezentacija grupe C$_3$ na 3D euklidskom prostoru]
+\label{pr:repC3}
+C$_3=\{e, c, c^2\}$. Kako je pokazano gore, jedinični element je
+nužno reprezentiran jediničnom matricom
 \begin{displaymath}
 D(e)=\left(
 \begin{array}{ccc}
@@ -267,114 +301,150 @@ D(e)=\left(
 0 & 0 & 1
 \end{array}\right)
 \end{displaymath}
+Za operator $D(c)$ u koji se preslikava element $c$, možemo
+uzeti operator rotacije za 2$\pi$/3 oko $z$-osi.
+Prilikom specifikacije matričnog zapisa operatora, 
+treba razlikovati tzv. \emph{aktivne} transformacije kod
+koji se mijenjaju vektori, a baza ostaje ista, te \emph{pasivne} kod
+kojih vektori ostaju isti, a baza se mijenja. Oba pristupa su
+regularna, ali tipično vode do nekih različitih predznaka u izrazima
+pa treba pripaziti.
 
-- Aktivne transformacije: mijenjaju se vektori, baza ostaje ista
+\noindent
+\begin{minipage}[c]{0.3\textwidth}
+    \centering
+    Aktivna transformacija:
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    {\includegraphics[width=0.8\textwidth]{pics/aktivne}}
+\end{minipage}
 
-- Pasivne transformacije: vektori ostaju isti, baza se mijenja
-
-- Ako se ne kaže drukčije, naše će transformacije biti aktivne
-  (taj je pristup "fizikalniji")
-
-\centerline{\includegraphics{pics/aktivne}}
-
-\label{pgC3matrice}
+Ako se ne kaže drukčije, transformacije u ovoj knjizi su "aktivne"
+i u tom slučaju
 \begin{equation}
-D(c)=\left(
+\begin{split}
+    D(c)& =\left(
 \begin{array}{ccc}
 \cos(2\pi/3) & -\sin(2\pi/3) & 0 \\
 \sin(2\pi/3) & \cos(2\pi/3) & 0 \\
 0 & 0 & 1
-\end{array}\right)
-=\left(
+\end{array}\right) \\
+  & =\left(
 \begin{array}{ccc}
 -1/2 & -\sqrt{3}/2 & 0 \\
 \sqrt{3}/2 & -1/2 & 0 \\
 0 & 0 & 1
-\end{array}\right)
+\end{array}\right) \:,
 \label{eq:Rc}
+\end{split}
 \end{equation}
-
-\begin{displaymath}
+te na kraju
+\begin{equation}
 D(c^2)=
 \left(
 \begin{array}{ccc}
 -1/2 & \sqrt{3}/2 & 0 \\
 -\sqrt{3}/2 & -1/2 & 0 \\
 0 & 0 & 1
-\end{array}\right) = D(c)^2
-\end{displaymath}
-
+\end{array}\right) = D(c)^2  \:.
+\end{equation}
+Lako se provjeri da vrijedi definiciona relacija (\ref{eq:cngp}) grupe
+$D(c)^3 = 1$.
 \end{primjer}
 
-- Ovo naravno nije jedina REP. Mogli smo uzeti rotacije za iste
-kuteve oko bilo koje druge osi.
+Ovo naravno nije jedina moguća reprezentacija grupe $\mathrm{C}_3$.
+Mogli smo uzeti rotacije za iste kuteve oko bilo koje druge osi i
+tako dobiti beskonačno drugačijih reprezentacija.
 
-\begin{primjer}[REP C$_3$ na  vektorskom prostoru stanja H atoma]
+\begin{primjer}[Reprezentacija grupe C$_3$ na  vektorskom prostoru stanja vodikovog atoma]
 
-- $\psi'(\vec{x})=D(c)\psi(\vec{x})$  $D(c)$=?
+Operator koji reprezentira element $c\in\mathrm{C}_3$ će biti
+operator $D(c)$ koji transformira valne funkcije vodikovog atoma
+\begin{equation}
+\psi'(\vec{x})=D(c)\psi(\vec{x}) \:.
+\end{equation}
+Kako može izgledati takav operator? Strogo uzevši, dovoljno bi bilo pronaći
+bilo kakav
+operator koji zadovoljava definiciono stvojstvo $D(c)^3 = 1$, ali
+pogodno je da to bude upravo operator rotacije za kut 2$\pi$/3.
+Neka je $\psi(\vec{x})=\psi_{nlm}(\vec{x})$, dakle gledamo rotaciju
+stacionarnih stanja:
+\begin{gather}
+\psi_{nlm}(\vec{x}) \stackrel{D(c)}{\mapsto}  \psi'_{nlm}(\vec{x}) \\
+   \psi'_{nlm}(\vec{x}) = \sum_{n'=1}^{\infty}\sum_{l'=0}^{n'-1}
+  \sum_{m'=-l'}^{l'}  D_{(nlm)(n'l'm')}(c)\,  \psi_{n'l'm'}(\vec{x}) \;. 
+  \label{eq:nlmexp}
+\end{gather}
+Ovdje smo iskoristili to da stacionarna stanja čine bazu prostora pa je
+transformirano stanje moguće napisati kao linearnu kombinaciju stacionarnih
+stanja. Koeficijente $D_{(nlm)(n'l'm')}(c)$ u toj linearnoj kombinaciji
+možemo zamisliti kao elemente beskonačnodimenzionalne matrice u beskonačno
+dimenzionalnoj bazi čiji su vektori indeksirani trojkom brojeva $(nlm)$, analogno
+$3\times 3$ matricama rotacije $D_{(i)(j)}$ u 3D euklidskom prostoru iz prošlog
+primjera.
 
-- Neka je $\psi(\vec{x})=\psi_{nlm}(\vec{x})$. Dakle, gledamo što
-  se događa sa stacionarnim stanjima. 
-
+Neka $D(c)$ opet bude rotacija oko $z$-osi.
+Rotacija čuva energiju pa se u razvoju (\ref{eq:nlmexp}) mogu pojavljivati 
+samo koeficijenti s istim energijskim kvantnim brojem tj. mora biti $n'=n$. 
+Na isti način, očuvanje \emph{iznosa} momenta impulsa vodi na $l'=l$. Rotacija
+jedino može promijeniti projekciju momenta impulsa $m$ tako da imamo
 \begin{displaymath}
-       \psi_{nlm}(\vec{x}) \stackrel{c}{\mapsto} \psi'_{nlm}(\vec{x})=
-    \sum_{n'=1}^{\infty}\sum_{l'=0}^{n'-1}
-  \sum_{m'=-l'}^{l'}  D_{(nlm)(n'l'm')}(c)  \psi_{n'l'm'}(\vec{x})
+D_{(nlm)(n'l'm')}(c)=\delta_{nn'}\delta_{ll'}D^{(l)}_{mm'}(c) \:.
 \end{displaymath}
-
-- Neka je $D(c)$ rotacija za $2\pi/3$ oko $z$-osi.
-
-- Rotacija čuva energiju ($n'=n$) i moment impulsa ($l'=l$), tj. jedino
-  može promijeniti projekciju momenta impulsa $m$ tako da imamo
-\begin{displaymath}
-D_{(nlm)(n'l'm')}(c)=\delta_{nn'}\delta_{ll'}D^{(l)}_{mm'}(c)
-\end{displaymath}
+Ovdje je oznaka $(l)$ u $D^{(l)}$ podsjetnik da matrica ovisi o $l$ u najmanju
+ruku tako što su njene dimenzije $(2l+1)\times (2l+1)$. Uvrštavanjem ovog u
+(\ref{eq:nlmexp}) dobivamo veliko pojednostavljenje
 \begin{displaymath}
 \psi'_{nlm}(\vec{x})=  \sum_{m'=-l}^{l} D^{(l)}_{mm'}(c) \: \psi_{nlm'}(\vec{x})
 \end{displaymath}
-
-- Npr. za $l=1$ i za bilo koji $n$ (vidjet ćemo u 5. poglavlju)
+tj. relevantna matrica rotacije je konačna.
+To je dokud možemo doći u ovom trenutku. U poglavlju \ref{ch:rotacije} ćemo
+vidjeti da npr. za $l=1$ i za bilo koji $n$ matrica rotacije ima oblik
 \begin{equation*}
 D^{(1)}_{mm'}(c)=\delta_{mm'}e^{ -i 2\pi m/3} =
 \begin{pmatrix}
 e^{-i2\pi/3} & 0 & 0 \\
-0 &  0 & 0 \\
+0 &  1 & 0 \\
 0 & 0 & e^{i 2\pi/3}
 \end{pmatrix}
 \end{equation*}
-
-- Rotacija oko $z$-osi ne mijenja niti $m$.
-
-- $D^{(l)}_{mm'}(g)$,  $g\in$C$_3$ su $(2l+1)\times(2l+1)$ matrice 
- (tzv. Wignerove rotacijske matrice) i čine jednu REP grupe C$_3$
-
-- Za svaki $l$ imamo drugačiju reprezentaciju $\imp$ beskonačno mnogo
-  reprezentacija
-
+tj. da rotacija oko $z$-osi ne mijenja niti $m$, što je logično.
+Za svaki $l$ imamo drugačiju $(2l+1)$-dimenzionalnu reprezentaciju i
+očito ih ima beskonačno mnogo jer $l$ općenito nije ograničen.
 \end{primjer}
 
-- Da bismo naučili konstruirati takve reprezentacije treba nam
-  formalna teorija reprezentacija grupa.
+Oba ova primjera su nas dovela do beskonačnog broja različitih
+reprezentacija.
+Da bismo uveli red treba nam općenita formalna teorija reprezentacija grupa.
 
 
-- Npr. svaka grupa G ima tzv. \emph{trivijalnu} reprezentaciju
+Jedan primjer tvrdnji koje vrijede sasvim općenito je
+da svaka grupa G ima tzv. \emph{trivijalnu} reprezentaciju
+kod koje je svakom elementu pridružen jedinični operator
 \begin{displaymath}
-             D(g)=1 \quad \forall g \in G
+             D(g)=1 \quad \forall g \in G  \;.
 \end{displaymath}
-gdje je 1 jedinična matrica na vektorskom prostoru proizvoljne
-dimenzionalnosti ($\imp$ beskonačno reprezentacija) $\to$ redukcija
- na IRREPse.
+Odgovarajući vektorski prostor može biti proizvoljne
+dimenzionalnosti pa se čini da i ovih trivijalnih reprezentacija 
+ima beskonačno različitih, ali očito je da one nisu različite
+na neki zanimljiv i važan način. Formalna teorija reprezentacija
+će nam omogućiti da smatramo različitima samo reprezentacije koje
+su različite na netrivijalan način.
 
-- Jednodimenzionalne reprezentacije su posebno jednostavne jer
- kompozicija operatora (množenje matrica) postaje množenje
+Za zagrijavanje, uvjerimo se u istinitost još jedne općenite tvrdnje,
+koja vrijedi za jednodimenzionalne reprezentacije.
+One su posebno jednostavne jer
+ kompozicija operatora (množenje matrica) postaje obično množenje
  brojeva.
-
-- Za konačne grupe 1D REP imaju svojstvo $|D(g)|=1$. Naime,
-  red $n$ svakog elementa je konačan: $g^n=e \imp D(g^n)=
-  D(g)^n=D(e)=1 \imp D(g)$ je $n$-ti korijen jedinice pa može
+Za konačne grupe sve jednodimenzionalne reprezentacije imaju svojstvo $|D(g)|=1$.
+Naime, zbog konačnosti grupe, red $n$ svakog elementa 
+(vidi Zadatak \ref{zad:redel}) je konačan. Svojstvo homomorfizma
+reprezentacije onda povlači da iz $g^n=e$ slijedi $D(g^n)=
+  D(g)^n=D(e)=1$, odnosno broj $D(g)$ je $n$-ti korijen jedinice pa može
   biti samo
 \begin{equation*}
- D(g)= e^{i 2\pi k/n} \quad k\in\{0,1,\ldots, n-1\} \imp |D(g)|=1
+ D(g)= e^{i 2\pi k/n} \quad k\in\{0,1,\ldots, n-1\} \imp |D(g)|=1 \:.
 \end{equation*}
 
 \section{Ekvivalentne reprezentacije}
@@ -851,7 +921,7 @@ izuzev $\{0\}$ i samog sebe.
 
 \subsection*{Zadaci}
 
-\begin{enumerate}[{2}.1]
+\begin{enumerate}[label=\arabic{chapter}.\arabic*.]
 
 \item Konstruirajte tri različite jednodimenzionalne reprezentacije
 grupe C$_3$.
