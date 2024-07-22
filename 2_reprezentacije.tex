@@ -420,7 +420,7 @@ Da bismo uveli red treba nam općenita formalna teorija reprezentacija grupa.
 
 
 Jedan primjer tvrdnji koje vrijede sasvim općenito je
-da svaka grupa G ima tzv. \emph{trivijalnu} reprezentaciju
+da svaka grupa $G$ ima tzv. \emph{trivijalnu} reprezentaciju
 kod koje je svakom elementu pridružen jedinični operator
 \begin{displaymath}
              D(g)=1 \quad \forall g \in G  \;.
@@ -430,7 +430,7 @@ dimenzionalnosti pa se čini da i ovih trivijalnih reprezentacija
 ima beskonačno različitih, ali očito je da one nisu različite
 na neki zanimljiv i važan način. Formalna teorija reprezentacija
 će nam omogućiti da smatramo različitima samo reprezentacije koje
-su različite na netrivijalan način.
+su različite na "zanimljiv" način.
 
 Za zagrijavanje, uvjerimo se u istinitost još jedne općenite tvrdnje,
 koja vrijedi za jednodimenzionalne reprezentacije.
@@ -449,23 +449,27 @@ reprezentacije onda povlači da iz $g^n=e$ slijedi $D(g^n)=
 
 \section{Ekvivalentne reprezentacije}
 
-\begin{definicija}[Ekvivalentne REP]
-Dvije REP $\Gamma_{1}=\{D^{(1)}\}$ i $\Gamma_{2}=\{D^{(2)}\}$ su
+Vidjeli smo kako element $c \in \mathrm{C}_3$ možemo reprezentirati na
+euklidskom prostoru matricom rotacije za kut 2$\pi$/3 oko bilo
+koje osi i tako dobiti beskonačno mnogo različitih reprezentacija te
+grupe. No očito je da su sve te reprezentacije u nekom smislu
+ekvivalentne. Na tom tragu je sljedeća definicija.
+
+\begin{definicija}[Ekvivalentne reprezentacije]
+Dvije reprezentacije grupe $G$, $\Gamma_{1}=\{D^{(1)}\}$ i $\Gamma_{2}=\{D^{(2)}\}$ su
 \emph{ekvivalentne} ako postoji konstantni nesingularni operator
-S takav da je
+$S$ takav da je
 \begin{displaymath}
         D^{(1)}(g) = S D^{(2)}(g) S^{-1} \quad \forall g \in G
 \end{displaymath}
 \end{definicija}
-($S$ ne ovisi o $g$)
+Ovdje se pod konstantnošću operatora $S$ misli da on ne ovisi o $g$.
+Lako se uvjeriti da ovakva definicija uspostavlja relaciju ekvivalencije
+u smislu definicije iz fusnote na stranici \pageref{fn:ekviv}.
 
-- $S$ --- operacija sličnosti $\imp$ "slične REP"
-
-- Provjeriti da je ovo relacija ekvivalencije.
-
-- Pokazat ćemo da su ekvivalentne REP zapravo ista REP izražena
-  u drugoj bazi. (Slično kao što su konjugirane rotacije rotacije
-  oko istog kuta, ali različitih osi.)
+Pokazat ćemo sada da su ekvivalentne reprezentacije zapravo ista
+reprezentacija izražena u drugoj bazi. 
+(Slično kao što su konjugirane rotacije rotacije oko istog kuta, ali različitih osi.)
 
 - $D:V \to V$
 
