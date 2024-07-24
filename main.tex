@@ -75,8 +75,8 @@
 \newcommand{\bbtensor}[1]{\mathbb{#1}}
 \newcommand{\slot}{\rule{1em}{1pt}}
 
-\usepackage[perpage,symbol*]{footmisc}
-%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%\usepackage[perpage,symbol*]{footmisc}   % this produces multiply defined labels
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \DeclareMathOperator{\Tr}{Tr}
 
@@ -115,7 +115,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2ex}
 
-%\includeonly{predgovor}
+\includeonly{1_grupe,2_reprezentacije}
 \begin{document}
 
 \begin{titlepage}
@@ -135,13 +135,13 @@
 %\include{predgovor}
 \include{1_grupe}
 \include{2_reprezentacije}
-%\include{3_irreps}
-%\include{4_klasicna}
-%\include{5_Lieve_grupe}
-%\include{6_rotacije}
-%\include{7_sun}
-%\include{8_lorentz}
-%\include{9_diskretne}
+\include{3_irreps}
+\include{4_klasicna}
+\include{5_Lieve_grupe}
+\include{6_rotacije}
+\include{7_sun}
+\include{8_lorentz}
+\include{9_diskretne}
 
 \printbibliography
 
