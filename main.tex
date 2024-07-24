@@ -17,6 +17,18 @@
 \usepackage{csquotes}
 \MakeOuterQuote{"}
 
+%% BEGIN bibliography specification
+\usepackage[backend=biber,
+            style=alphabetic]{biblatex}
+\addbibresource{literatura.bib}
+% Printing the annotation after bibitem
+\DeclareFieldFormat{annotation}{\par\textit{#1}}
+\renewbibmacro*{finentry}{%
+  \setunit{\finentrypunct}%
+  \printfield{annotation}%
+  \finentry
+}
+%% END bibliography specification
 
 
 %% Colour version which is nice on-screen:
@@ -26,7 +38,7 @@
 %% B/W version which for printing, without links:
 %\usepackage{url}
 %% This is needed to get links breaking in combination with hyperref
-\usepackage{breakurl}
+\usepackage{xurl}
 
 %% BEGIN Fancy headings
 \usepackage{fancyhdr}
@@ -38,6 +50,7 @@
     \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\setlength{\headheight}{14pt}
 %% END Fancy headings
 
 
@@ -129,6 +142,7 @@
 %\include{7_sun}
 %\include{8_lorentz}
 %\include{9_diskretne}
-%\include{literatura}
+
+\printbibliography
 
 \end{document}

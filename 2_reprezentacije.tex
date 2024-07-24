@@ -437,7 +437,8 @@ koja vrijedi za jednodimenzionalne reprezentacije.
 One su posebno jednostavne jer
  kompozicija operatora (množenje matrica) postaje obično množenje
  brojeva.
-Za konačne grupe sve jednodimenzionalne reprezentacije imaju svojstvo $|D(g)|=1$.
+Za konačne grupe sve jednodimenzionalne reprezentacije imaju svojstvo $|D(g)|=1$
+za svaki $g \in G$.
 Naime, zbog konačnosti grupe, red $n$ svakog elementa 
 (vidi Zadatak \ref{zad:redel}) je konačan. Svojstvo homomorfizma
 reprezentacije onda povlači da iz $g^n=e$ slijedi $D(g^n)=
@@ -467,61 +468,62 @@ Ovdje se pod konstantnošću operatora $S$ misli da on ne ovisi o $g$.
 Lako se uvjeriti da ovakva definicija uspostavlja relaciju ekvivalencije
 u smislu definicije iz fusnote na stranici \pageref{fn:ekviv}.
 
-Pokazat ćemo sada da su ekvivalentne reprezentacije zapravo ista
-reprezentacija izražena u drugoj bazi. 
-(Slično kao što su konjugirane rotacije rotacije oko istog kuta, ali različitih osi.)
+Pokazat ćemo sada da u slučaju ekvivalentnih reprezentacija jednu
+možemo pretvoriti u drugu prelaskom iz jedne u drugu bazu vektorskog
+prostora (pa su u tom smislu one "iste"). Uzmimo neki konkretni operator
+$D:V \to V$ iz jedne reprezentacije, koji djeluje na vektorskom prostoru
+$V$ i općenito transformira vektore
+\begin{equation}
+D:\vec{u}\mapsto \vec{v}
+\end{equation}
+Uzmimo neku bazu $\{\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n\}\quad$ prostora
+$V$ i u njoj će vektor $\vec{u}$ imati komponente $u_i$, 
+$\vec{u} =  u_i \vec{e}_i$.
+Linearni operator $D$ je potpuno definiran svojim djelovanjem na
+vektore baze, a to daje i njegove komponente $D_{ij}$ u toj bazi
+\begin{equation}
+D \vec{e}_j = (\textrm{linearna kombinacija od } \vec{e}_j) = D_{ij}
+  \vec{e}_i \:.
+\end{equation}
+Ovaj operator sad djeluje na proizvoljni vektor kao
+  $D\vec{u}=D( u_j \vec{e}_j)= u_j D_{ij} \vec{e}_i$ 
+i ako pišemo $D\vec{u}=\vec{v}=v_i \vec{e}_i$, onda je
+$v_i = D_{ij} u_j$, ili u matričnom obliku $v=Du$.
 
-- $D:V \to V$
+Uzmimo sad neku drugu bazu $\{\vec{f}_1, \vec{f}_2, \ldots, \vec{f}_n\}$
+istog vektorskog prostora $V$.
+Obzirom na tu bazu, operator $D$ ima neke druge komponente, označimo ih
+$D'_{ij}$ tako da je
+\begin{align}
+    D \vec{f}_j& = D'_{ij} \vec{f}_i  \:, \\
+    v'_i& = D'_{ij} u'_j \:.
+\end{align}
+No, i vektori stare baze su vektori pa se mogu izraziti kao linearna
+kombinacija vektora nove baze $\vec{e}_i = S_{ji} \vec{f}_j$.
+Tako je vektor $\vec{u}=u_i \vec{e}_i = u_i S_{ji} \vec{f}_j$ tj.
+njegove komponente u novoj bazi su
+$u'_j = u_i S_{ji}$, a isto bi bilo i za vektor $\vec{v}$,  $v'_j = v_i S_{ji}$.
+U matričnom obliku $v'=Sv$ ili  $v=S^{-1}v'$.
+Tako je na kraju matrično
+\begin{equation}
+v'=Sv=SDu=SDS^{-1}u' \:,
+\end{equation}
+odnosno $\imp D'=SDS^{-1}$ i tako vidimo da operator $S$ koji povezuje
+ekvivalentne reprezentacije nije ništa drugo nego operator koji povezuje
+dvije baze u kojima te reprezentacije izgledaju isto.\qed
 
-- $D:\vec{u}\mapsto \vec{v}$
+Zadatak će nam biti identificirati i klasificirati reprezentacije koji
+\emph{nisu} ekvivalentne u ovom smislu. Drugim riječima, cijelu klasu
+ekvivalentnih reprezentacija smatrat ćemo jednom te istom reprezentacijom.
+Srećom, da bismo odredili jesu li dvije reprezentacije ekvivalentne
+nije nužno tražiti transformaciju $S$. Postoje elegantnije metode
+poput upotrebe tzv. \emph{karaktera} reprezentacija
+(vidi odjeljak \ref{sec:ortogonalnost}).
 
-- $V$ ima neku bazu $\{\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n\}\quad$
+Uočimo još da kako su jednodimenzionalne reprezentacije zapravo brojevi koji
+automatski komutiraju slijedi da su takve reprezentacije ili identične ili
+neekvivalentne.
 
-- $\vec{u} = \sum_{i} u_i \vec{e}_i \equiv u_i \vec{e}_i$
-  \hfill (Einsteinova sumacijska konvencija)
-
-- Linearni operator je potpuno definiran svojim djelovanjem na
-  vektore baze:
-
-- $D \vec{e}_j = (\textrm{lin. komb. od } \vec{e}_j) = D_{ij}
-  \vec{e}_i$
-
-- Ovaj operator sad djeluje na proizvoljni vektor ovako:\\
-  $D\vec{u}=D( u_j \vec{e}_j)= u_j D_{ij} \vec{e}_i$
-
-- Ako pišemo $D\vec{u}=\vec{v}=v_i \vec{e}_i$, onda je\\
-   $v_i = D_{ij} u_j$, ili u matričnom obliku $v=Du$
-
-- U nekoj drugoj bazi $\{\vec{f}_1, \vec{f}_2, \ldots, \vec{f}_n\}$
-  operator $D$ ima neke druge komponente:
-
-- $D \vec{f}_j = D'_{ij} \vec{f}_i$
-
-- $v'_i = D'_{ij} u'_j$
-
-- No, i vektori stare baze su vektori pa se mogu izraziti kao\\
-  $\vec{e}_i = S_{ji} \vec{f}_j$
-
-- $\vec{u}=u_i \vec{e}_i = u_i S_{ji} \vec{f}_j$
-
-- $u'_j = u_i S_{ji}$; $v'_j = v_i S_{ji}$
-
-- U matričnom obliku: $v'=Sv$; $v=S^{-1}v'$
-
-- $v'=Sv=SDu=SDS^{-1}u'$
-
-- $\imp D'=SDS^{-1}$ Ekvivalentne reprezentacije se sastoje od istih 
-  operatora, ali izraženih u različitim bazama. (Zapravo smo pokazali
-da u drugoj bazi operator $D$ izgleda kao $S D S^{-1}$. Idući unatrag
-dobijemo ono što tražimo.)
-
-- Jednodimenzionalne reprezentacije su zapravo brojevi koji automatski
-  komutiraju pa slijedi da su takve reprezentacije ili identične ili
-  neekvivalentne.
-
-- Da bismo identificirali da li su dvije reprezentacije ekvivalentne
-  nije nužno tražiti transformaciju $S$. Postoje elegantnije metode
-  poput upotrebe karaktera reprezentacija (vidi odjeljak \ref{sec:ortogonalnost}).
 
 \section{Zbroj i produkt reprezentacija}
 
@@ -688,7 +690,7 @@ A=\left( \begin{array}{cc}
 
 - Vrijedi $(A\otimes B)(C\otimes D)=(AC)\otimes(BD)$
 
-- (Dokaz ovoga vidi u \cite{Jones98})
+- (Dokaz ovoga vidi u \cite{Jones:1998})
 
 - Ako imamo dvije reprezentacije grupe G: $\Gamma_1$ i $\Gamma_2$,
 onda je i skup $\Gamma=\Gamma_1 \otimes \Gamma_2 = \{D(g)\}=
@@ -903,7 +905,7 @@ ako imaju neko od slijedećih svojstava
 \begin{itemize}
 \item unitarnost (u drugom koraku dokaza nismo koristili konačnost)
 \item kompaktnost,  $(1/g)\sum_g \to \int_g dg$
-\item povezanost, nekompaktnost i polujednostavnost (cf. \cite{Cornwell84}, p.79)
+\item povezanost, nekompaktnost i polujednostavnost (cf. \cite[79]{Cornwell:1997})
 \end{itemize}
 
 
