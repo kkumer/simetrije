@@ -293,14 +293,15 @@ Ukoliko je grupa operatora $\Gamma$ \emph{izomorfna} grupi $G$,
 \label{pr:repC3}
 C$_3=\{e, c, c^2\}$. Kako je pokazano gore, jedinični element je
 nužno reprezentiran jediničnom matricom
-\begin{displaymath}
+\begin{equation}
 D(e)=\left(
 \begin{array}{ccc}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
 \end{array}\right)
-\end{displaymath}
+\label{eq:c3rep1}
+\end{equation}
 Za operator $D(c)$ u koji se preslikava element $c$, možemo
 uzeti operator rotacije za 2$\pi$/3 oko $z$-osi.
 Prilikom specifikacije matričnog zapisa operatora, 
@@ -336,8 +337,8 @@ i u tom slučaju
 \sqrt{3}/2 & -1/2 & 0 \\
 0 & 0 & 1
 \end{array}\right) \:,
-\label{eq:Rc}
 \end{split}
+\label{eq:c3rep2}
 \end{equation}
 te na kraju
 \begin{equation}
@@ -348,6 +349,7 @@ D(c^2)=
 -\sqrt{3}/2 & -1/2 & 0 \\
 0 & 0 & 1
 \end{array}\right) = D(c)^2  \:.
+\label{eq:c3rep3}
 \end{equation}
 Lako se provjeri da vrijedi definiciona relacija (\ref{eq:cngp}) grupe
 $D(c)^3 = 1$.
@@ -358,7 +360,7 @@ Mogli smo uzeti rotacije za iste kuteve oko bilo koje druge osi i
 tako dobiti beskonačno drugačijih reprezentacija.
 
 \begin{primjer}[Reprezentacija grupe C$_3$ na  vektorskom prostoru stanja vodikovog atoma]
-
+    \label{ex:C3}
 Operator koji reprezentira element $c\in\mathrm{C}_3$ će biti
 operator $D(c)$ koji transformira valne funkcije vodikovog atoma
 \begin{equation}
@@ -516,16 +518,41 @@ Zadatak će nam biti identificirati i klasificirati reprezentacije koji
 \emph{nisu} ekvivalentne u ovom smislu. Drugim riječima, cijelu klasu
 ekvivalentnih reprezentacija smatrat ćemo jednom te istom reprezentacijom.
 Srećom, da bismo odredili jesu li dvije reprezentacije ekvivalentne
-nije nužno tražiti transformaciju $S$. Postoje elegantnije metode
+nije nužno tražiti odgovarajuću transformaciju $S$. Postoje elegantnije metode
 poput upotrebe tzv. \emph{karaktera} reprezentacija
 (vidi odjeljak \ref{sec:ortogonalnost}).
 
-Uočimo još da kako su jednodimenzionalne reprezentacije zapravo brojevi koji
+Uočimo još da obzirom da su jednodimenzionalne reprezentacije zapravo brojevi koji
 automatski komutiraju slijedi da su takve reprezentacije ili identične ili
 neekvivalentne.
 
 
 \section{Zbroj i produkt reprezentacija}
+
+U potrazi za "elementarnim" reprezentacijama grupe nije dovoljno razmatrati samo
+klase neekvivalentnih reprezentacija. Usporedimo li na primjer
+trodimenzionalnu reprezentaciju
+grupe $\mathrm{C}_3$ iz primjera \ref{ex:C3} s dvodimenzionalnom reprezentacijom
+generiranom matricom
+\begin{equation}
+  D(c) = \left(
+\begin{array}{cc}
+-1/2 & -\sqrt{3}/2  \\
+\sqrt{3}/2 & -1/2 
+\end{array}\right) \;,
+    \label{eq:c3rep2D}
+\end{equation}
+vidimo da premda te reprezentacije nisu ekvivalentne, razlika
+među njima je isto u nekom smislu trivijalna.
+Sve što 3D reprezentacija
+donosi, pored rotacija $x-y$ ravnine koje su prisutne i u 2D inačici,
+je trivijalno djelovanje na $z$-os.
+Definirat ćemo sada operacije zbrajanja i množenja reprezentacija koje
+će nam onda omogućiti definiranje "elementarnih" reprezentacija koje se
+neće moći prikazati kao kombinacija nižedimenzionalnih reprezentacija.
+Te "elementarne" reprezentacije (zvat ćemo ih \emph{ireducibilne}) će onda
+zbrajanjem i množenjem moći generirati sve ostale reprezentacije,
+slično kao što prosti brojevi generiraju sve ostale.
 
 \subsection*{Direktni zbroj reprezentacija}
 
@@ -991,7 +1018,7 @@ Pet funkcija $f(x,y)$
 čine bazu peterodimenzionalnog vektorskog prostor $V$. Neka je $\Gamma=
 \{D(g)\}$
 reprezentacija grupe $D_3$ na $V$ definirana uobičajenim transformacijama
-dvodimenzionalnih vektora $(x,y)$, kao u (\ref{eq:Rc}). To npr. znači:
+dvodimenzionalnih vektora $(x,y)$, kao u (\ref{eq:c3rep2}). To npr. znači:
 \begin{align*}
    D(c): x^3y &\mapsto \bigg(x\cos\frac{2\pi}{3}-y\sin\frac{2\pi}{3}\bigg)^3
 \bigg(x\sin\frac{2\pi}{3}+y\cos\frac{2\pi}{3}\bigg) \\
