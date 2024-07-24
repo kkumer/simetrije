@@ -535,11 +535,11 @@ trodimenzionalnu reprezentaciju
 grupe $\mathrm{C}_3$ iz primjera \ref{ex:C3} s dvodimenzionalnom reprezentacijom
 generiranom matricom
 \begin{equation}
-  D(c) = \left(
-\begin{array}{cc}
+  D(c) = 
+\begin{pmatrix}
 -1/2 & -\sqrt{3}/2  \\
 \sqrt{3}/2 & -1/2 
-\end{array}\right) \;,
+\end{pmatrix} \;,
     \label{eq:c3rep2D}
 \end{equation}
 vidimo da premda te reprezentacije nisu ekvivalentne, razlika
@@ -558,186 +558,190 @@ slično kao što prosti brojevi generiraju sve ostale.
 
 Kvadratnu matricu oblika
 \begin{displaymath}
-   \left(
-   \begin{array}{cccccc}
+   \begin{pmatrix}
         A_1 & & & & & \\
         & A_2 & & & &  \\
         & & \cdot & & & \\
         & & &  \cdot  & & \\
         & & & &  \cdot   & \\
         & & & &  & A_n  \\
-\end{array}
-   \right)
+   \end{pmatrix}
 \end{displaymath}
 gdje su $A_i$ kvadratne matrice matrice
 zovemo \emph{blok-dijagonalna} ili \emph{blok} matrica.
-
-- Produkt dviju matrica iste blok-strukture:
-\begin{displaymath}
-\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!   \left(
-   \begin{array}{cccccc}
+Produkt dviju matrica iste blok-strukture:
+\begin{multline*}
+   \begin{pmatrix}
         A_1 & & & & & \\
         & A_2 & & & &  \\
         & & \cdot & & & \\
         & & &  \cdot  & & \\
         & & & &  \cdot   & \\
         & & & &  & A_n  \\
-\end{array}
-   \right)
-   \left(
-   \begin{array}{cccccc}
+\end{pmatrix}
+   \begin{pmatrix}
         B_1 & & & & & \\
         & B_2 & & & &  \\
         & & \cdot & & & \\
         & & &  \cdot  & & \\
         & & & &  \cdot   & \\
         & & & &  & B_n  \\
-\end{array}
-   \right)  \\
-   =\left(
-   \begin{array}{cccccc}
+\end{pmatrix}
+  \\[2ex]
+   = \begin{pmatrix}
         A_1 B_1 & & & & & \\
         & A_2 B_2 & & & &  \\
         & & \cdot & & & \\
         & & &  \cdot  & & \\
         & & & &  \cdot   & \\
         & & & &  & A_n C_n  \\
-\end{array}
-   \right)
-\end{displaymath}
+\end{pmatrix}
+\end{multline*}
 ima istu blok strukturu kao i te matrice.
-
-- Promotrimo sada dvije reprezentacije grupe $G$: $\Gamma_{1}=\{D^{(1)}(g)\}$
-  dimenzije $d_1$ i $\Gamma_{2}=\{D^{(2)}(g)\}$ dimenzije $d_2$.
-  Tada je skup matrica 
-\begin{displaymath}
-   \Gamma = \{D(g)\}= \left\{ \left(
-   \begin{array}{cc}
+Promotrimo sada dvije reprezentacije grupe $G$,
+reprezentaciju $\Gamma_{1}=\{D^{(1)}(g)\}$
+dimenzije $d_1$ i reprezentaciju $\Gamma_{2}=\{D^{(2)}(g)\}$ dimenzije $d_2$.
+Tada je skup matrica 
+\begin{equation}
+   \Gamma = \{D(g)\}= \left\{ 
+   \begin{pmatrix}
      D^{(1)}(g) & 0 \\
        0  & D^{(2)}(g)
-\end{array} \right) \right\}
-\end{displaymath}
-također reprezentacija grupe $G$.
-
-- Dokaz:
-\begin{displaymath}
+\end{pmatrix} \right\}
+\label{eq:zbrojrep}
+\end{equation}
+također reprezentacija grupe $G$ jer je
+\begin{multline*}
 D(g)D(h)=
-\left(
-   \begin{array}{cc}
+   \begin{pmatrix}
      D^{(1)}(g) & 0 \\
        0  & D^{(2)}(g)
-\end{array} \right) 
-\left(
-   \begin{array}{cc}     
+\end{pmatrix}
+   \begin{pmatrix}
      D^{(1)}(h) & 0 \\
        0  & D^{(2)}(h)
-\end{array} \right) 
-\end{displaymath}
-\begin{displaymath}
-=\left(
-   \begin{array}{cc}     
+\end{pmatrix}  \\[2ex]
+   =\! \begin{pmatrix}
      D^{(1)}(g)D^{(1)}(h) & 0 \\
        0  & D^{(2)}(g)D^{(2)}(h)
-\end{array} \right) 
-=\left(
-   \begin{array}{cc}     
+\end{pmatrix} 
+\!=\!
+   \begin{pmatrix}
      D^{(1)}(gh) & 0 \\
        0  & D^{(2)}(gh)
-\end{array} \right) 
-=D(gh)
-\end{displaymath}
+\end{pmatrix} 
+=D(gh) \,,
+\end{multline*}
 zahvaljujući gornjem svojstvu množenja blok matrica i činjenici
 da su $\Gamma_1$ i $\Gamma_2$ reprezentacije.
-
-- Rezultirajuću reprezentaciju zovemo \emph{direktni zbroj}
+Rezultirajuću reprezentaciju $\Gamma$ zovemo \emph{direktni zbroj}
 reprezentacija $\Gamma_1$ i $\Gamma_2$ i pišemo
 \begin{displaymath}
 \Gamma = \Gamma_1 \oplus \Gamma_2
 \end{displaymath}
-
-- Dimenzija zbroja je zbroj dimenzija: $d=d_1 + d_2$
-
-- Možemo zbrajati proizvoljan broj reprezentacija:
+Iz (\ref{eq:zbrojrep}) se vidi da je
+dimenzija zbroja reprezentacija jednaka zbroju njihovih dimenzija, $d=d_1 + d_2$.
+Možemo zbrajati proizvoljan broj reprezentacija
 \begin{displaymath}
-\Gamma = \Gamma_1 \oplus \Gamma_2 \oplus \cdots \oplus \Gamma_n
+\Gamma = \Gamma_1 \oplus \Gamma_2 \oplus \cdots \oplus \Gamma_n \,,
 \end{displaymath}
-
-- Vektorski prostor na koji djeluje zbroj reprezentacija je
-  $V=V_1 \oplus V_2$ --- prostor razapet vektorima
+a vektorski prostor na koji djeluje zbroj reprezentacija je
+  $V=V_1 \oplus V_2$, što je prostor razapet vektorima
   $\{e_1, e_2, \ldots, e_m, f_1, f_2, \ldots, f_n\}$ gdje je
-  $\{e_1, e_2, \ldots, e_m\}$ jedna baza od $V_1$, a
+  $\{e_1, e_2, \ldots,$ $e_m\}$ jedna baza od $V_1$, a
   $\{f_1, f_2, \ldots, f_n\}$ jedna baza od $V_2$.
 
-- Primjer: $z$-pravac $\oplus$ $xy$-ravnina = 3D euklidski prostor
+\begin{primjer}[Reprezentacija grupe $\mathrm{C}_3$ na 
+      3D euklidskom prostoru]
+Ovaj slučaj smo diskutirali na početku ovog odjeljka. Sad vidimo
+da je 3D reprezentacija iz (\ref{eq:c3rep1}--\ref{eq:c3rep3}) koja
+djeluje na 3D euklidskom prostoru
+direktan zbroj 2D reprezentacije generirane s (\ref{eq:c3rep2D})
+koja djeluje na 2D euklidsku ravninu i
+trivijalne 1D reprezentacije $D(g) = 1$, $\forall g\in \mathrm{C}_3$
+koja djeluje na 1D vektorskom prostoru koji odgovara pravcu $z$-osi.
+\end{primjer}
 
-- Primjer: vektorski prostor stacionarnih vezanih stanja vodikovog
-atoma $\psi_{nlm}$ $\oplus$ vektorski prostor dvočestičnog stanja
-nevezanog elektrona i protona (cca. produkt dva ravna vala ako
-zanemarimo interakciju)
 
-- Vidjet ćemo da su zanimljive one reprezentacije koje se ne mogu
-  prikazati kao zbroj manjedimenzionalnih reprezentacija.
+\begin{primjer}[Stanja sustava jednog elektrona i protona]
+Stanja kvantnomehaničkog sustava jednog elektrona i jednog protona
+čine vektorski prostor koji je direktan zbroj
+vektorskog prostora stacionarnih \emph{vezanih} stanja vodikovog
+atoma $\psi_{nlm}$ (diskretne negativne energije) i vektorskog prostora dvočestičnog stanja
+\emph{nevezanih} elektrona i protona (kontinuum pozitivnih energija).
+Kad bismo zanemarili interakciju, ovaj drugi prostor bi bio produkt 
+dva ravna vala. U ovom trenutku još nemamo dovoljno znanja konstruirati
+općenitu reprezentaciju grupe $\mathrm{C}_3$ na ovom prostoru ili diskutirati
+njenu reducibilnost na zbroj manjih reprezentacija, ali očito
+je riječ o beskonačnodimenzionalnoj reprezentaciji. 
+\end{primjer}
+
 
 \subsection*{Direktni produkt reprezentacija}
 
 \emph{Kroneckerov} ili \emph{direktni produkt} kvadratnih matrica 
 $A$ i $B$ je kvadratna matrica $C=A\otimes B$ čije su komponente
 \begin{displaymath}
-          C_{ij,kl}=A_{ik}B_{jl}
+          C_{ij,kl}=A_{ik}B_{jl} \,.
 \end{displaymath}
-
--Npr, neka su $A$ i $B$ dvodimenzionalne matrice
+Dakle retci matrice $C$ su indeksirani svim parovima $(ij)$ indeksa
+redaka matrica $A$ i $B$ i stupci analogno.
+Na primjer, neka su $A$ i $B$ dvodimenzionalne matrice
 \begin{displaymath}
-A=\left( \begin{array}{cc}
+A= \begin{pmatrix}
     A_{11} & A_{12} \\
     A_{21} & A_{22}
-\end{array} \right) \quad
-B=\left( \begin{array}{cc}
+\end{pmatrix} \qquad \text{i} \qquad
+B= \begin{pmatrix}
     B_{11} & B_{12} \\
     B_{21} & B_{22}
-\end{array}\right)  
+\end{pmatrix} \,.
 \end{displaymath}
-Onda je njihov direktni produkt matrica
+Tada je njihov direktni produkt matrica
 \begin{displaymath}
 C=A\otimes B= 
-A=\left( \begin{array}{cc}
+ \begin{pmatrix}
     A_{11} B & A_{12} B \\
     A_{21} B & A_{22} B
-\end{array} \right) =
-\left(
-\begin{array}{cccc}
+\end{pmatrix} =
+\begin{pmatrix}
   A_{11}B_{11} & A_{11}B_{12} & A_{12}B_{11} & A_{12}B_{12} \\
   A_{11}B_{21} & A_{11}B_{22} & A_{12}B_{21} & A_{12}B_{22} \\
   A_{21}B_{11} & A_{21}B_{12} & A_{22}B_{11} & A_{22}B_{12} \\
   A_{21}B_{21} & A_{21}B_{22} & A_{22}B_{21} & A_{22}B_{22} 
-\end{array} \right)
+\end{pmatrix} \,.
 \end{displaymath}
 
-- Dimenzija produkta je produkt dimenzija.
-
-- Vrijedi $(A\otimes B)(C\otimes D)=(AC)\otimes(BD)$
-
-- (Dokaz ovoga vidi u \cite{Jones:1998})
-
-- Ako imamo dvije reprezentacije grupe G: $\Gamma_1$ i $\Gamma_2$,
+Vidljivo je da je dimenzija produkta jednaka produktu dimenzija.
+Za množenje dviju matrica iz produktne reprezentacije
+vrijedi $(A\otimes B)(C\otimes D)=(AC)\otimes(BD)$
+(za dokaz ovoga vidi npr. \cite{Jones:1998}).
+Zahvaljujući tom identitetu, ako imamo dvije reprezentacije grupe G,
+reprezentaciju $\Gamma_{1}=\{D^{(1)}(g)\}$
+ i reprezentaciju $\Gamma_{2}=\{D^{(2)}(g)\}$,
 onda je i skup $\Gamma=\Gamma_1 \otimes \Gamma_2 = \{D(g)\}=
-\{D^{(1)}(g)\otimes D^{(2)}(g)\}$ također REP od G:
+\{D^{(1)}(g)\otimes D^{(2)}(g)\}$ također reprezentacija od G.
+Naime, zadovoljen je uvjet homomorfizma jer je
+\begin{multline*}
+D(g)D(h)=(D^{(1)}(g)\otimes D^{(2)}(g))\: (D^{(1)}(h)\otimes
+  D^{(2)}(h)) \\
+  = (D^{(1)}(g)D^{(1)}(h))\otimes
+ (D^{(2)}(g)D^{(2)}(h)) \\
+ = D^{(1)}(gh)\otimes D^{(2)}(gh) = D(gh) \,.
+\end{multline*}
 
-- $D(g)D(h)=(D^{(1)}(g)\otimes D^{(2)}(g))(D^{(1)}(h)\otimes
-  D^{(2)}(h)) = (D^{(1)}(g)D^{(1)}(h))\otimes
- (D^{(2)}(g)D^{(2)}(h)) = D^{(1)}(gh)\otimes D^{(2)}(gh) = D(gh)$
 
-
-- Ako $\Gamma_1$ djeluje na vektorskom prostoru $V_1$ razapetom
-vektorima $\{e_1, e_2, \ldots, e_m\}$, a $\Gamma_2$ na vektorskom
+Ako $\Gamma_1$ djeluje na vektorskom prostoru $V_1$ razapetom
+vektorima $\{e_1, e_2, \ldots,$ $e_m\}$, a $\Gamma_2$ na vektorskom
 prostoru $V_2$ razapetom vektorima $\{f_1, f_2, \ldots, f_n\}$,
 onda $\Gamma=\Gamma_1 \otimes \Gamma_2$ djeluje na vektorskom
 prostoru $V=V_1 \otimes V_2$ razapetom vektorima
 $\{e_{i}\otimes f_{j}, i=1,\ldots, m; j=1,\ldots, n\}$,
 dimenzije $d=mn$.
 
-- Npr. u QM ako imamo dva vodikova atoma koja ne djeluju jedan
-na drugog (kao u npr. H$_2$ molekuli) njihove će valne funkcije 
+\begin{primjer}[Dva vodikova atoma]
+Uzmimo kvantnomehanički sustav dva vodikova atoma koja ne djeluju jedan
+na drugog (aproksimacija H$_2$ molekule). Njihove će valne funkcije 
 biti vektori u dva Hilbertova prostora:
 $\psi_{1}(\vec{x})\in \mathcal{H}_1$ i 
 $\psi_{2}(\vec{x})\in \mathcal{H}_2$.
@@ -745,13 +749,16 @@ Združeni sustav ta dva atoma možemo promatrati kao jedan vektor
 $\psi_{1}(\vec{x})\psi_{2}(\vec{x}) \in \mathcal{H}_1
 \otimes \mathcal{H}_2$ gdje je baza od ovog direktnog
 produkta Hilbertovih prostora razapeta vektorima
-$(\psi_{nlm}(\vec{x})\psi_{n'l'm'}(\vec{x}))$.
-Ako atomi djeluju jedan na drugog, valna funkcija će biti
-$\psi(x_1, x_2) \in \mathcal{H}_1\otimes \mathcal{H}_2$.
+$\psi_{nlm}(\vec{x})\psi_{n'l'm'}(\vec{x})$.
+\end{primjer}
+
 
 \section{Reducibilnost reprezentacija}
 
-\begin{definicija}[Reducibilna REP]
+Ključno je pitanje za datu reprezentaciju, a pogotovo za reprezentaciju
+nastalu direktnim produktom, može li se ona prikazati kao direktan
+zbroj nižedimenzionalnih reprezentacija. 
+\begin{definicija}[Reducibilna reprezentacija]
 Reprezentacija $\Gamma$ grupe $G$ koja djeluje na vektorskom
 prostoru $V$  je \emph{reducibilna} ukoliko postoji netrivijalni
 potprostor $V_{1}$ od $V$ koji je invarijantan na $\Gamma$, tj.
@@ -759,92 +766,100 @@ potprostor $V_{1}$ od $V$ koji je invarijantan na $\Gamma$, tj.
     D(g)V_{1}\subset V_{1} \quad \forall g \in G \;.
 \end{displaymath}
 \end{definicija}
-
-- Tada u bazi $\{\vec{e}_1, \ldots, \vec{e}_{m+n} \}$, gdje je baza od
-$V_1$ $\{\vec{e}_1, \ldots, \vec{e}_{m} \}$, reprezentacija
-poprima oblik
-\begin{displaymath}
- D(g) = \left(
-\begin{array}{cc}
+Ukoliko je reducibilna,
+onda u bazi $\{\vec{e}_1, \ldots, \vec{e}_{m+n} \}$, gdje prvih $m$
+vektora $\{\vec{e}_1, \ldots, \vec{e}_{m} \}$ čini bazu od
+$V_1$, reprezentacija poprima oblik
+\begin{equation}
+ D(g) = \begin{pmatrix}
   D^{(1)}(g) & C(g) \\
      0       & D^{(2)}(g) 
-\end{array} \right)
-\end{displaymath}
-gdje je $D^{(1)}(g)$ $m\times m$, $D^{(2)}(g)$ $n\times n$,
-a $C(g)$ $m\times n$ matrica, te dim $V=m+n$ i dim $V_1=m$.
+\end{pmatrix}
+\label{eq:reducibilnarep}
+\end{equation}
+gdje su $D^{(1)}(g)$ $m\times m$, $D^{(2)}(g)$ $n\times n$,
+a $C(g)$ $m\times n$ matrice, te je dim $V=m+n$ i dim $V_1=m$.
+Obratno, ako postoji baza u kojoj reprezentacija poprima
+gornji oblik (\ref{eq:reducibilnarep}), reprezentacija je reducibilna
+u što se lako uvjeriti množenjem proizvoljnog vektora iz $V_1$ matricom
+takvog oblika.
+Nadalje, $\Gamma_1=\{D^{(1)}\}$ i $\Gamma_2=\{D^{(2)}\}$ su u tom
+slučaju također reprezentacije grupe $G$.
 
-- Obratno, ako postoji baza u kojoj reprezentacija poprima
-gornji oblik, reprezentacija je reducibilna.
-
-- $\Gamma_1=\{D^{(1)}\}$ i $\Gamma_2=\{D^{(2)}\}$ su također REP
- od $G$.
-
-Dokaz:
+\emph{Dokaz}:
 \begin{eqnarray*}
-D(g)D(h)&=&\left(
-\begin{array}{cc}
+D(g)D(h)&=&
+\begin{pmatrix}
  D^{(1)}(g) & C(g) \\ 0 & D^{(2)}(g)
-\end{array}\right)
-\left(
-\begin{array}{cc}
+\end{pmatrix}
+\begin{pmatrix}
  D^{(1)}(h) & C(h) \\ 0 & D^{(2)}(h)
-\end{array}\right)  \\
-&=& \left(
-\begin{array}{cc}
+\end{pmatrix}  \\[1ex]
+&=&
+\begin{pmatrix}
   D^{(1)}(g)D^{(1)}(h) &  D^{(1)}(g)C(h)+C(g)D^{(2)}(h) \\
        0               &   D^{(2)}(g)D^{(2)}(h)  
-\end{array} \right) \\
-&=& D(gh) \quad \textrm{jer je $\Gamma$ REP}  \\
-&=& \left(
-\begin{array}{cc}
+   \end{pmatrix}  \\[1ex]
+&=& D(gh) \qquad \textrm{(jer je $\Gamma$ reprezentacija)}  \\[1ex]
+&=& 
+\begin{pmatrix}
  D^{(1)}(gh) & C(gh) \\ 0 & D^{(2)}(gh)
-\end{array}\right)  
+\end{pmatrix}
 \end{eqnarray*}
-Odakle slijedi
+Usporedbom drugog i četvrtog reda slijedi
 \begin{eqnarray*}
 D^{(1)}(gh) &=& D^{(1)}(g)D^{(1)}(h) \\
 D^{(2)}(gh) &=& D^{(2)}(g)D^{(2)}(h) \\
 \end{eqnarray*}
-tj. $\Gamma_1$ i $\Gamma_2$ su REPs.
+tj. $\Gamma_1$ i $\Gamma_2$ su reprezentacije.\qed
 
-\begin{primjer}[REP C$_3$ na 3D euklidskom prostoru]
+\begin{primjer}[Reprezentacija grupe $\mathrm{C}_3$ na 
+      3D euklidskom prostoru]
 
+Sve tri matrice ove reprezentacije (\ref{eq:c3rep1})--(\ref{eq:c3rep3}) su oblika:
 \begin{displaymath}
- D(g)= \left( 
-\begin{array}{ccc}
+ D(g)= 
+\begin{pmatrix}
  \cos\theta & -\sin\theta & 0 \\
  \sin\theta& \cos\theta & 0 \\
     0 & 0 & 1 
-\end{array}
-\right) \quad \forall g \in \textrm{C}_3
+\end{pmatrix}
+\quad \forall g \in \textrm{C}_3 \,.
 \end{displaymath}
-2D prostor $V_1$ razapet vektorima $\hat{\vec{x}}$ i $\hat{\vec{y}}$
-je invarijantan na $\Gamma$ $\imp \Gamma$ je reducibilna.
-
-- Štoviše, $C(g)=0$ u ovom primjeru tj. vektorski prostor je
-  rastavljiv na direktnu sumu dva potprostora koja su oba
-invarijantna. To nas vodi na pojam potpune reducibilnosti.
+Dakle 2D prostor $V_1$ razapet vektorima $\hat{\vec{x}}$ i $\hat{\vec{y}}$
+je invarijantan na djelovanje svih ovakvih matrica
+pa slijedi da je reprezentacija reducibilna.
 \end{primjer}
 
-\begin{definicija}[Potpuno reducibilna REP]
+Štoviše, $C(g)=0$ u ovom gore primjeru, i matrice su
+blok-dijagonalne što znači da je vektorski prostor
+rastavljiv na direktnu sumu dva potprostora koja su oba
+invarijantna. To nas vodi na pojam \emph{potpune} reducibilnosti.
+
+\begin{definicija}[Potpuno reducibilna reprezentacija]
 Ako pored $V_1$ postoji i drugi invarijantni potprostor $V_2$ 
 tako da je $V=V_1 \oplus V_2$ tada reprezentaciju $\Gamma$
 možemo rastaviti na direktni zbroj $\Gamma=\Gamma_1
 \oplus \Gamma_2$ i kažemo da je ona \emph{potpuno reducibilna}.
 \end{definicija}
 
+Od velike je važnosti sljedeći Maschkeov teorem.
 
 \begin{teorem}[Maschke]
-Sve reducibilne reprezentacije konačne grupe su i potpuno
-reducibilne.
+Sve reducibilne reprezentacije konačnih grupa su i potpuno reducibilne.
 \end{teorem}
 
-Dokaz u dva koraka:\\
-1) Svaka REP konačne grupe je ekvivalentna nekoj unitarnoj REP\\
-2) Svaka \emph{unitarna} reducibilna REP je potpuno reducibilna
+\emph{Dokaz}. Dokaz teorema ćemo provesti u dva koraka u kojima ćemo
+pokazati da vrijede sljedeće dvije tvrdnje koje zajedno
+povlače teorem.
+\begin{enumerate}
+    \item Svaka reprezentacija konačne grupe je ekvivalentna nekoj unitarnoj reprezentaciji
+    \item Svaka \emph{unitarna} reducibilna reprezentacija je potpuno reducibilna
+\end{enumerate}
+Prvi korak je i sam po sebi važan obzirom na važnost unitarnih transformacija
+u kvantnoj mehanici.
 
-
-\emph{Korak 1:} Definiramo ``grupni'' skalarni produkt dvaju
+\emph{Korak 1:} Definirajmo tzv. "grupni" skalarni produkt dvaju
 vektora iz $V$ na slijedeći način:
 \begin{equation*}
 \{\vec{x}, \vec{y}\} \equiv \frac{1}{n}\sum_{g\in G} \big( D(g)\vec{x},
@@ -853,7 +868,7 @@ vektora iz $V$ na slijedeći način:
 gdje je $n$ red grupe G, a $(\;\,,\;)$ uobičajeni skalarni produkt na $V$.
 Sumacija ide preko svih elemenata grupe G.
 Grupni skalarni produkt $\{\;\,,\;\}$ zadovoljava sve aksiome skalarnog
-produkta. (Provjerite!)
+produkta iz definicije \ref{def:skalarniprodukt}. (Provjerite to!)
 Sada vrijedi
 \begin{equation*}
 \begin{split}
@@ -862,16 +877,18 @@ Sada vrijedi
 &\stackrel{\text{($D$ je rep.)}}= \frac{1}{n}\sum_g \big( D(gh)\vec{x} , D(gh)\vec{y} \big) \\
 &=  gh\to k\;;\quad \text{teorem o razmještaju}\;;\quad \sum_g \to \sum_k \\
 &= \frac{1}{n}\sum_k \big( D(k) \vec{x}, D(k) \vec{y} \big) \\
-&= \{\vec{x}, \vec{y}\} 
+&= \{\vec{x}, \vec{y}\} \,.
 \end{split}
 \end{equation*}
 
 Dakle, operatori $D(g)$ su unitarni obzirom na grupni skalarni produkt
-$\{\;\,,\;\}$. No, nas nas zanima unitarnost obzirom na obični
+$\{\;\,,\;\}$. No nas nas zanima unitarnost obzirom na obični
 skalarni produkt $(\;\,,\;)$.
-Uzmimo sada da je
+Da bismo to pokazali, uzmimo sada da je
 \begin{align*}
-\{\vec{e}_i\} \quad &\text{ortonormirana baza obzirom na} \quad (\;\,,\;) \\
+\{\vec{e}_i\} \quad &\text{ortonormirana baza\footnote{Ortonormirana baza
+    je baza za koju vrijedi $(\vec{e}_i, \vec{e}_j) = \delta_{ij}$ i
+moguće ju je odrediti npr. Gram-Schmidtovim postupkom ortonomalizacije.}obzirom na} \quad (\;\,,\;) \\
 \{\vec{f}_i\} \quad &\text{ortonormirana baza obzirom na} \quad \{\;\,,\;\}
 \end{align*}
 i $S$ operator koji povezuje baze: $S\vec{e}_i = \vec{f}_i$. Tada je
@@ -886,15 +903,15 @@ i $S$ operator koji povezuje baze: $S\vec{e}_i = \vec{f}_i$. Tada je
 \end{equation*}
 tj. $S$ povezuje grupni i obični skalarni produkt. Ako sada pomoću
 ovog operatora $S$ definiramo
-ekvivalentnu reprezentaciju $U(g)\equiv S^{-1}DS$ imamo
+ekvivalentnu reprezentaciju $U(g)\equiv S^{-1}D(g)S$ imamo
 \begin{equation*}
 \begin{split}
 \big( U(g)\vec{x}, U(g)\vec{y}\big) &=
 \big( S^{-1}D(g)S \vec{x}, S^{-1}D(g)S \vec{y}\big) \\
 &= \{ D(g) S \vec{x}, D(g) S \vec{y} \} 
  \qquad \text{\small[$S$ povezuje skalarne produkte]}\\
-&= \{ S \vec{x}, S \vec{y} \} \qquad
-\text{\small[$D(g)$ je unitaran obzirom na grupni skalarni produkt]}\\
+&= \{ S \vec{x}, S \vec{y} \} \quad
+\text{\small[$D(g)$ je unitaran obzirom na grupni produkt]}\\
 &= (\vec{x}, \vec{y}) \qquad \text{\small[$S$ povezuje skalarne produkte]}
 \end{split}
 \end{equation*}
