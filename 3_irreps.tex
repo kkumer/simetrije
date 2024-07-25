@@ -1,31 +1,22 @@
-%% The following has to be declared in all included files
-
-\fancyfoot[C]{\mbox{\texttt{3\_irreps.tex}}}
-\fancyfoot[RO,LE]{\mbox{$$Revision: 1.9 $$}}
-\fancyfoot[LO,RE]{\mbox{$$Date: 2011-10-24  $$}}
 % Correcting the title chapter page
 \fancypagestyle{plain}{%
     \fancyhf{}
     \fancyhead[RO,LE]{\bfseries \thepage}
     \fancyhead[CO]{\rightmark}
     \fancyhead[CE]{\leftmark}
-     \fancyfoot[C]{\texttt{3\_irreps.tex}}
-     \fancyfoot[RO,LE]{\mbox{$$Revision: 1.9 $$}}
-     \fancyfoot[LO,RE]{\mbox{$$Date: 2011-10-24  $$}}
-    \renewcommand{\headrulewidth}{0.4pt}
-    \renewcommand{\footrulewidth}{0.4pt}}
+    \renewcommand{\headrulewidth}{0.4pt}}
 
 
 \chapter{Svojstva ireducibilnih reprezentacija}
 
-\section{Schurove leme i relacije ortogonalnosti}
+\section{Schurove leme}
 
 Sva ključna svojstva ireducibilnih reprezentacija slijede iz 
 dvije Schurove leme.
 
 \begin{teorem}[Prva Schurova lema]
 Neka operator S povezuje dvije  ireducibilne
-reprezentacije $\Gamma=\{D(g)\}$ i $\Gamma'=\{D'(g)\}$:
+reprezentacije $\Gamma=\{D(g)\}$ i $\Gamma'=\{D'(g)\}$ u smislu da je
 \begin{displaymath}
   SD(g)=D'(g)S  \quad \forall g\in G  \;.
 \end{displaymath}
@@ -39,69 +30,67 @@ da je $S$ singularan, ali ne i nul-operator je isključena.)
 
 \centerline{\includegraphics[scale=0.8]{pics/schur.eps}}
 
-\textbf{Dokaz}$^{*}$: 
+\emph{Dokaz.}
+Neka su $V$ i $V'$ vektorski prostori na kojima djeluju $\Gamma$ i $\Gamma'$.
+Slika $S(V)$ prostora $V$, $S(V)=\{S\vec{x} \td x \in V \}$, je potprostor od $V'$. 
+Sva potrebna svojstva
+$S(V)$ nasljeđuje od $V'$, a zatvorenost i egzistencija inverza su 
+posljedice linearnosti operatora $S$.
+Dodatno, $S(V)$ je \emph{invarijantni} potprostor od $V'$ jer
+$$D'(g)S\vec{x}=SD(g)\vec{x} \in S(V)\,.$$
 
--$S\vec{x}=\vec{y}\in V'$
-
--$S(V)=\{S\vec{x} \td x \in V \}$ je potprostor od $V'$ (Sva potrebna svojstva
-  $S(V)$  nasljeđuje od  $V'$, a zatvorenost i egzistencija inverza su 
- posljedice linearnosti operatora $S$.)
-
-
--$D'(g)S\vec{x}=SD(g)\vec{x} \in S(V) \imp  S(V)$ je invarijantni
-   potprostor od $V'$
-
--Kako je $\{D'(g)\}$ IRREP, $\imp S(V)=\{\vec{0'}\}$ ili $S(V)=V'$
+Kako je $\{D'(g)\}$ ireducibilna, iz
+definicije ireducibilnosti \ref{def:irrep} slijedi
+da je ili $S(V)=\{\vec{0'}\}$ ili $S(V)=V'$.
 
 \begin{enumerate}
-\item $ S(V)=\{\vec{0'}\} \imp  S=0$
+\item Ako je $S(V)=\{\vec{0'}\}$ tj. svi vektori domene operatora $S$
+    preslikavaju se u nul-vektor, to znači da je $S$ nul-operator,  $S=0$.
+    To je prva od dvije mogućnosti iz prve Schurove leme.
 
-\item $S(V)=V'$ tj. $S$ je surjekcija -- Promotrimo Ker($S$) 
-
-  - Ker($S$) je potprostor od $V$ (trivijalno, linearnost od $S$)
-
-  - $\vec{k}\in$Ker($S$) $\imp S D(g) \vec{k} = D'(g)S\vec{k} =
-    \vec{0'} \imp D\vec{k} \in $Ker($S$) $\imp$ Ker($S$) je
-    invarijantni potprostor; $\{D(g)\}$ je IRREP $\imp
-    $Ker($S$)$=\{\vec{0}\}$ ili Ker($S$)=$V$
-
-  - Ker($S$)$=V$ ne može biti jer onda ne bi bilo $S(V)=V'$ već
-      $S(V)=\vec{0'}$
-
-  - $\imp $Ker($S$)$=\{\vec{0}\}$ pa je $S$ i injekcija te ima inverz
-    $\imp D(g)=S^{-1}D'(g)S$
-
-
+\item Neka je $S(V)=V'$ tj. $S$ je surjekcija. Promotrimo 
+    kernel Ker($S$) koji je zahvaljujući linearnosti od $S$
+    potprostor od $V$.
+    Uzmimo proizvoljni vektor $\vec{k}$ iz Ker($S$).
+    Po pretpostavci leme je 
+    $$ S D(g) \vec{k} = D'(g)S\vec{k} = \vec{0'}$$
+    što znači da je i $D\vec{k}$ element kernela Ker($S$), odnosno
+    i kernel je \emph{invarijantni} potprostor, baš kao i slika.
+    Sad, kako je $\{D(g)\}$ ireducibilna slijedi da je ili
+    Ker($S$)=$\{\vec{0}\}$ ili Ker($S$)=$V$.
+    Ker($S$)$=V$ ne može biti jer onda ne bi bilo $S(V)=V'$ nego bi bilo
+      $S(V)=\vec{0'}$.
+    Zaključujemo da je Ker($S$)$=\{\vec{0}\}$ pa je $S$ i injekcija (cf.
+    teorem \ref{th:izomorfizam} o izomorfizmu) te ima inverz
+    i onda iz pretpostavke leme slijedi $D(g)=S^{-1}D'(g)S$, tj.
+    dvije su reprezentacije ekvivalentne, što je druga mogućnost leme.\qed 
 \end{enumerate}
 
 \begin{teorem}[Druga Schurova lema]
 Operator koji komutira sa svim operatorima neke ireducibilne 
-reprezentacije je nužno proporcionalan jediničnom operatoru
-(identiteti).
+reprezentacije
 \begin{displaymath}
-  D(g)S=SD(g) \quad \forall g\in G \imp S = \lambda \Eins
+  D(g)S=SD(g) \quad \forall g\in G
 \end{displaymath}
+je nužno proporcionalan jediničnom operatoru
+(identiteti), $S = \lambda \Eins$.
 \end{teorem}
 
-\textbf{Dokaz:}$^{*}$ \\
-
-- $\exists \vec{x}\neq\vec{0} \td S\vec{x}=\lambda\vec{x}$ (Egzistencija barem
-  jednog takvog vektora je ne sasvim trivijalan rezultat iz linearne algebre:
-  Egzistenciju garantira postojanje rješenja karakteristične
-  jednadžbe $\det(S - \lambda \Eins)=0$, što je opet garantirano fundamentalnim
-   teoremom algebre, za $\lambda \in \mathbb{C}$.)
-
-- $\imp (S-\lambda\Eins)\vec{x}=0 \imp (S-\lambda\Eins)$
-  je singularna matrica (neki vektor $\neq \vec{0}$ preslikava u
-  $\vec{0'}$ pa nije injekcija)
-
-- No, $[S-\lambda\Eins, D(g)]=0 \imp S-\lambda\Eins =0$
-  po prvoj lemi. Slijedi $S=\lambda\Eins$.
+\emph{Dokaz.} Iz fundamentalnog teorema algebre slijedi da $S$ ima
+barem jedan svojstveni vektor tj. da postoji
+$\vec{x}\neq\vec{0}$ takav da je $S\vec{x}=\lambda\vec{x}$.
+To možemo zapisati i u obliku $(S-\lambda\Eins)\vec{x}=0$ što
+znači da je $(S-\lambda\Eins)$
+singularna matrica (neki vektor $\neq \vec{0}$ preslikava u
+$\vec{0'}$ pa nije injekcija).
+No, $[S-\lambda\Eins, D(g)]=0$
+jer jedinični operator komutira trivijalno, a $S$ komutira po pretpostavci leme.
+No onda je po prvoj Schurovoj lemi $S-\lambda\Eins$ nul-operator jer smo upravo vidjeli
+da nije regularan. Iz $S-\lambda\Eins=0$ onda odmah slijedi $S=\lambda\Eins$.\qed
 
 
 
-
-\subsubsection*{Relacije ortogonalnosti}
+\section{Relacije ortogonalnosti i karakteri}
 \label{sec:ortogonalnost}
 
 Promotrimo sada dvije IRREPs: $\Gamma_{\alpha}$ i $\Gamma_{\beta}$.

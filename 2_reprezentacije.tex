@@ -546,7 +546,7 @@ vidimo da premda te reprezentacije nisu ekvivalentne, razlika
 među njima je isto u nekom smislu trivijalna.
 Sve što 3D reprezentacija
 donosi, pored rotacija $x-y$ ravnine koje su prisutne i u 2D inačici,
-je trivijalno djelovanje na $z$-os.
+je trivijalno djelovanje na $z$-os tj. dodatnu trivijalnu 1D reprezentaciju.
 Definirat ćemo sada operacije zbrajanja i množenja reprezentacija koje
 će nam onda omogućiti definiranje "elementarnih" reprezentacija koje se
 neće moći prikazati kao kombinacija nižedimenzionalnih reprezentacija.
@@ -761,7 +761,8 @@ zbroj nižedimenzionalnih reprezentacija.
 \begin{definicija}[Reducibilna reprezentacija]
 Reprezentacija $\Gamma$ grupe $G$ koja djeluje na vektorskom
 prostoru $V$  je \emph{reducibilna} ukoliko postoji netrivijalni
-potprostor $V_{1}$ od $V$ koji je invarijantan na $\Gamma$, tj.
+potprostor $V_{1}$ od $V$ koji je \emph{invarijantan} na $\Gamma$,
+što znači da vrijedi
 \begin{displaymath}
     D(g)V_{1}\subset V_{1} \quad \forall g \in G \;.
 \end{displaymath}
@@ -856,7 +857,7 @@ povlače teorem.
     \item Svaka reprezentacija konačne grupe je ekvivalentna nekoj unitarnoj reprezentaciji
     \item Svaka \emph{unitarna} reducibilna reprezentacija je potpuno reducibilna
 \end{enumerate}
-Prvi korak je i sam po sebi važan obzirom na važnost unitarnih transformacija
+Tvrdnja iz prvog koraka je i sama po sebi zanimljiva obzirom na važnost unitarnih transformacija
 u kvantnoj mehanici.
 
 \emph{Korak 1:} Definirajmo tzv. "grupni" skalarni produkt dvaju
@@ -886,11 +887,12 @@ $\{\;\,,\;\}$. No nas nas zanima unitarnost obzirom na obični
 skalarni produkt $(\;\,,\;)$.
 Da bismo to pokazali, uzmimo sada da je
 \begin{align*}
-\{\vec{e}_i\} \quad &\text{ortonormirana baza\footnote{Ortonormirana baza
-    je baza za koju vrijedi $(\vec{e}_i, \vec{e}_j) = \delta_{ij}$ i
-moguće ju je odrediti npr. Gram-Schmidtovim postupkom ortonomalizacije.}obzirom na} \quad (\;\,,\;) \\
-\{\vec{f}_i\} \quad &\text{ortonormirana baza obzirom na} \quad \{\;\,,\;\}
+\{\vec{e}_i\} \quad &\text{ortonormirana baza\footnotemark obzirom na} \quad (\;\,,\;) \,, \\
+\{\vec{f}_i\} \quad &\text{ortonormirana baza obzirom na} \quad \{\;\,,\;\} \,,
 \end{align*}
+\footnotetext{Ortonormirana baza
+je baza za koju vrijedi $(\vec{e}_i, \vec{e}_j) = \delta_{ij}$ i
+moguće ju je odrediti npr. Gram-Schmidtovim postupkom ortonomalizacije.}
 i $S$ operator koji povezuje baze: $S\vec{e}_i = \vec{f}_i$. Tada je
 \begin{equation*}
 \begin{split}
@@ -915,23 +917,22 @@ ekvivalentnu reprezentaciju $U(g)\equiv S^{-1}D(g)S$ imamo
 &= (\vec{x}, \vec{y}) \qquad \text{\small[$S$ povezuje skalarne produkte]}
 \end{split}
 \end{equation*}
-Dakle $U(g)$ je unitarna reprezentacija.
+Dakle $U(g)$ je unitarna reprezentacija. (Preciznije, $\Gamma = \{U(g) \td g\in G\}$
+je unitarna reprezentacija.)
 
 \emph{Korak 2:} Treba pokazati da je reducibilna unitarna reprezentacija
 uvijek potpuno reducibilna. Ako je $U(g)$ reducibilna to znači da postoji
-$V_1$ takav da 
-$\forall\vec{x} \in V_1$ i $\forall g\;  U(g) \vec{x} \in V_1 $.
-
+potprostor $V_1$ takav da je  $U(g) \vec{x} \in V_1$,
+$\forall\vec{x} \in V_1$ i $\forall g\in G$.
 Izaberimo sada ortonormiranu bazu $\{\vec{e}_i\}$ tako da 
 $\{\vec{e}_i, i=1,\ldots, n\}$ razapinju $V_1$, a
 $\{\vec{e}_i, i=n+1,\ldots, n+m \}$ su preostali vektori koji kompletiraju
 bazu od $V$. Vektori $\{\vec{e}_i, i=n+1,\ldots, n+m \}$ razapinju $V_2$ ---
 ortogonalni komplement od $V_1$. 
-
 Da bi se pokazala potpuna reducibilnost
 reprezentacije $U(g)$ treba pokazati da  je i $V_2$ invarijantan na djelovanje
 reprezentacije tj. da 
-$\forall\vec{y} \in V_2$ i $\forall g$ vrijedi $U(g) \vec{y} \in V_2$.
+$\forall\vec{y} \in V_2$ i $\forall g \in G$ vrijedi $U(g) \vec{y} \in V_2$.
 
 Zbog unitarnosti $U(g)$ vrijedi $(U(g) \vec{y} , U(g)\vec{x}) = 
 (\vec{y}, \vec{x})$,
@@ -941,31 +942,35 @@ $\vec{y} \in V_2$. Dakle, $(U(g)\vec{y}, \vec{x}')=(\vec{y}, U(g)^{-1}\vec{x}')
 =0$ zbog ortogonalnosti $\vec{y}$ i $\vec{x}$.
 No zbog invarijantnosti $V_1$ i $\vec{x}'$ je element od $V_1$. Dakle iz
 $(U(g) \vec{y} , \vec{x}') = 0$ i usljed proizvoljnosti $\vec{y}\in V_2$
-i $\vec{x}'\in V_1$ slijedi da je i $V_2$ invarijantan. Q.E.D.
+i $\vec{x}'\in V_1$ slijedi da je i $V_2$ invarijantan.\qed
 
 
-- Osim za konačne grupe ovaj teorem vrijedi i za kontinuirane (Lieve) grupe
+U prvom dijelu dokaza, definicija grupnog skalarnog produkta i manipulacije
+koje smo radili funkcioniraju samo za konačne grupe. No teorem vrijedi i 
+za kontinuirane (Lieve) grupe (koje ćemo upoznati u poglavlju \ref{ch:lie}),
 ako imaju neko od slijedećih svojstava
 \begin{itemize}
 \item unitarnost (u drugom koraku dokaza nismo koristili konačnost)
-\item kompaktnost,  $(1/g)\sum_g \to \int_g dg$
-\item povezanost, nekompaktnost i polujednostavnost (cf. \cite[79]{Cornwell:1997})
+\item kompaktnost (vidi definiciju \ref{def:kompaktnost})
+\item povezanost (vidi definiciju \ref{def:povezanost}), nekompaktnost i polujednostavnost (cf. \cite[79]{Cornwell:1997})
 \end{itemize}
+Srećom, većina kontinuiranih grupa od interesa za fiziku imaju neka od ovih svojstava.
 
 
 \begin{definicija}[Ireducibilna reprezentacija]
 Reprezentacija $\Gamma$ na vektorskom prostoru $V$ je
-\emph{ireducibilna} (IRREP) ako $V$ nema invarijantnih potprostora
+\emph{ireducibilna} ako $V$ nema invarijantnih potprostora
 izuzev $\{0\}$ i samog sebe.
+\label{def:irrep}
 \end{definicija}
-
-
-- Identifikacija svih mogućih IRREPsa date grupe te rastav
-  proizvoljne reprezentacije na direktni zbroj IRREPsa
+Posljedično, ireducibilnu reprezentaciju nije moguće promjenom baze 
+dovesti u blok-dijagonalnu formu s više od jednog bloka.
+Dva glavna zadatka teorije grupa, kojima će biti posvećeno sljedeće poglavlje,
+je identifikacija svih ireducibilnih reprezentacija date grupe te rastav
+njene proizvoljne reprezentacije na direktni zbroj ireducibilnih:
 \begin{displaymath}
-  \Gamma = \sum_{i} \oplus\, \Gamma_{i}
+  \Gamma = \sum_{i} \oplus\, \Gamma_{i} \;.
 \end{displaymath}
-  su nam glavni zadaci za slijedeće poglavlje.
 
 
 
