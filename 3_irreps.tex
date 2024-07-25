@@ -261,7 +261,7 @@ Za unitarnu reprezentaciju vrijedi $\chi(g^{-1}) = \Tr D(g^{-1})= \Tr D^{\dagger
 
 
 Uzmimo sada trag po obje matrice
-u teoremu o ortogonalnosti \ref{th:ortogonalnost} množenjem
+u teoremu o ortogonalnosti \ref{tm:ortogonalnost} množenjem
 s $\delta_{ij}\delta_{kl}$ pa dobijemo
 \begin{displaymath}
 \sum_g \chi^{(\alpha)}(g) \chi^{(\beta)}(g)^* = 
@@ -314,16 +314,24 @@ upravo jednak broju njenih klasa konjugacije!
 
 \section{Tablice karaktera}
 
-\emph{Tablica karaktera} neke grupe je tablica strukture
-
-\begin{tabular}{c|c}
-  & Klase konjugacije \\ \hline
-\begin{turn}{90} IRREPs \end{turn} & {\Huge $\chi$}
+\emph{Tablica karaktera} neke grupe je tablica karaktera svih njenih
+ireducibilnih reprezentacija.
+\begin{center}
+    \setlength{\tabcolsep}{12pt}
+    \renewcommand{\arraystretch}{2.0}
+\begin{tabular}{c|cccccc}
+               & \multicolumn{6}{c}{Klase konjugacije} \\ \hline
+  $\Gamma_{\alpha}$ & $\chi_{1}^{(\alpha)}$ & $\chi_{2}^{(\alpha)}$ & $\cdot$ &
+       $\cdot$ & $\cdot$ & $\chi_{k}^{(\alpha)}$ \\
+  $\Gamma_{\beta}$  & $\chi_{1}^{(\beta)}$  & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$  & $\cdot$ \\
+     $\cdot$ &  $\cdot$   & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$  & $\cdot$ \\
+     $\cdot$ &  $\cdot$   & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$  & $\cdot$ \\
 \end{tabular}
-
-Ona često daje dovoljno informacija za praktične primjene, a može
-se pomoću slijedećih pravila konstruirati i bez eksplicitnog
-poznavanja matrica reprezentacije.
+    \renewcommand{\arraystretch}{1.0}
+\end{center}
+Vidjet ćemo da tablica često daje dovoljno informacija za praktične primjene, a može
+se, pomoću slijedećih pravila, konstruirati i bez eksplicitnog
+poznavanja samih matrica reprezentacija.
 
 \subsection*{Pravila za konstrukciju tablice karaktera}
 
@@ -333,8 +341,9 @@ poznavanja matrica reprezentacije.
   grupe. Iz ovoga slijedi da tablica ima jednak broj redova i stupaca. 
   Broj klasa pronalazimo "pješke," analizom grupe.
 
-\item $\sum_{\alpha} d_{\alpha}^2 = n$ često ima jedinstveno rješenje koje
-  određuje dimenzionalnosti $d_{\alpha}$ ireducibilnih reprezentacija.
+\item Obzirom  da su dimenzije vektorskih prostora prirodni brojevi,
+    uvjet $\sum_{\alpha} d_{\alpha}^2 = n$ često ima jedinstveno rješenje koje
+    određuje dimenzionalnosti $d_{\alpha}$ svih ireducibilnih reprezentacija.
 
 \item Jedinični element grupe je klasa za sebe, a reprezentiran je uvijek
   jediničnom matricom $D^{(\alpha)}(e)=\Eins$ čiji je 
@@ -342,13 +351,12 @@ poznavanja matrica reprezentacije.
   Ovo određuje jedan (konvencionalno prvi) stupac tablice.
 
 \item Uvijek postoji trivijalna jednodimenzionalna ireducibilna
-   reprezentacija  $D(g)=\chi(g)=1  \;
-    \forall g\in G$.
+   reprezentacija  $D(g)=\chi(g)=1$, $\forall g\in G$.
   Dakle jedan red (konvencionalno prvi) se sastoji od samih jedinica.
 
 \item Za jednodimenzionalne reprezentacije vrijedi $D(g)=\chi(g)$ pa
-  sami karakteri reprezentiraju grupu i njihovo množenje mora odražavati
-  množenje odgovarajućih elemenata grupe.
+  sami karakteri reprezentiraju grupu i njihovo množenje mora biti
+  homomorfno množenju odgovarajućih elemenata grupe.
 
 \item  \[\sum_{i=1}^{k} k_{i} \chi^{(\alpha)}_{i} \chi^{(\beta) *}_{i} =
     n \delta^{\alpha\beta}\] 
@@ -365,92 +373,134 @@ poznavanja matrica reprezentacije.
 Pravila je najbolje primjenjivati po redu jer su ona s većim rednim
 brojem teža za primjenu i rjeđe nužna za kompletiranje tablice.
 
+\begin{primjer}[Tablica karaktera grupe $\mathrm{D}_3$]
 
-\begin{primjer}[$D_3$]
+Grupa ima tri klase konjugacije (vidi primjer \ref{pr:klaseD3}):
 
-Klase konjugacije su (vidi raniji primjer iz odjeljka 1.2):
+\begin{center}
+\begin{enumerate}[label=$K_{\mathrm{\arabic{enumi}}}$]
+ \item $ = \{e\}$
+ \item $ = \{c, c^2\}$
+ \item $ =  \{ b, bc, bc^2 \}$
+\end{enumerate}
+\end{center}
 
-$K_1=\{e\}$
-
-$K_2 = \{c, c^2\}$
-
-$K_3 = \{ b, bc, bc^2 \}$
-
-1. pravilo $\imp$ 3 IRREPsa
-
-2. $\imp$ $\sum_{\alpha=1}^{3} d_{\alpha}^2 = d_{1}^2 + d_{2}^2
-   + d_{3}^2 = n = 6 $ \\
-     $\imp d_1 = d_2 =1, d_3=2 $
-
-3. $\imp$ prvi stupac: 1, 1, 2
-
-4. $\imp$ prvi red: 1, 1, 1
-
+Iz pravila 1) onda znamo da D$_{3}$ ima tri ireducibilne reprezentacije
+i tablica karaktera će biti $3 \times 3$
+\begin{center}
 \begin{tabular}{c|ccc}
-  & $K_1$ & 2$K_2$  & 3$K_3$ \\ \hline
+  & $K_1$ & $2 K_2$  & $ 3 K_3$ \\ \hline
 $\Gamma_1$ &   &  &   \\
 $\Gamma_2$ &   &  &   \\
  $\Gamma_3$  &   &  &  
 \end{tabular}
+\end{center}
+Ovdje smo prema običaju uz naziv klase stavili i broj njenih elemenata. To je
+korisno imati pri ruci jer su to težinski faktori potrebni za primjenu
+pravila 6) i 7).
+Pravilo 2) vodi na jednadžbu
+ $$\sum_{\alpha=1}^{3} d_{\alpha}^2 = d_{1}^2 + d_{2}^2
+   + d_{3}^2 = n = 6 $$
+koja, do na permutacije, ima samo jedno rješenje u skupu prirodnih brojeva
+ $$ d_1 = d_2 = 1\,,\quad d_3=2 \,. $$
+Dakle, dvije su reprezentacije jednodimenzionalne. Običaj je organizirati
+tablicu tako da dimenzionalnost raste idući dolje po retcima.
+Po pravilu 3) prvi stupac su karakteri jediničnih matrica tj. dimenzionalnosti
+reprezentacija
+\begin{center}
+\begin{tabular}{c|ccc}
+  & $K_1$ & $2 K_2$  & $ 3 K_3$ \\ \hline
+$\Gamma_1$ & 1 &  &   \\
+$\Gamma_2$ & 1 &  &   \\
+ $\Gamma_3$  & 2 &  &  
+\end{tabular}
+\end{center}
+a po pravilu 4) prvi red pripada trivijalnoj reprezentaciji čiji su svi karakteri
+jedinice:
+\begin{center}
+\begin{tabular}{c|ccc}
+  & $K_1$ & $2 K_2$  & $ 3 K_3$ \\ \hline
+$\Gamma_1$ & 1 & 1 & 1   \\
+$\Gamma_2$ & 1 &  &   \\
+ $\Gamma_3$  & 2 &  &  
+\end{tabular}
+\end{center}
+Primjena pravila 5) nije sasvim algoritamska, ali od koristi je promatrati
+umnoške karaktera različitih klasa. Npr. $\chi^{(2)}(b)\chi^{(2)}(c)=\chi^{(2)}(bc)$
+po svojstvu homomorfizma. Kako elementi $b$ i $bc$ pripadaju istoj klasi,
+$\chi^{(2)}(b)=\chi^{(2)}(bc)$
+i možemo ih skratiti s obje strane (ne mogu biti nula jer je npr. 
+$\chi^{(2)}(b)^2 = \chi^{(2)}(b^2) =
+\chi^{(2)}(e) = 1$) i slijedi da je $\chi^{(2)}(c)=1$. Upravo smo pokazali i da je 
+  $\chi^{(2)}(b)^2=1$ tj. $\chi^{(2)}(b)=\pm 1$.
+Sad se oslanjamo na pravilo 6) da bi zaključili da kad bi bilo 
+$\chi^{(2)}(b)=1$ prva dva reda bi bila jednaka, a ne
+ortogonalna. Tako znamo da je $ \chi^{(2)}(b)=-1$:
+\begin{center}
+\begin{tabular}{c|ccc}
+  & $K_1$ & $2 K_2$  & $ 3 K_3$ \\ \hline
+$\Gamma_1$ & 1 & 1 & 1   \\
+$\Gamma_2$ & 1 & 1 & -1   \\
+ $\Gamma_3$  & 2 & a  & b  
+\end{tabular}
+\end{center}
+Ovdje smo s $a$ i $b$ označili zadnja dva nepoznata elementa tablice koje ćemo
+odrediti pomoću pravila 6) tj. ortogonalnosti trećeg retka s prvim i drugim,
+gdje treba paziti na težinske faktore. Imamo
+\begin{align*}
+    \sum_{i=1}^{3} k_{i} \chi^{(3)}_{i} \chi^{(1) *}_{i}& =
+      2+2a+3b=0 \,, \\
+    \sum_{i=1}^{3} k_{i} \chi^{(3)}_{i} \chi^{(2) *}_{i}& =
+      2+2a-3b=0  \,,
+\end{align*}
+što su dvije jednadžbe s dvije nepoznanice i s rješenjem $a=-1, b=0$.
+Tako smo odredili cijelu tablicu. Običaj je za označavanje ireducibilnih
+reprezentacija i klasa konjugacija koristiti kristalografske
+oznake. Mi ćemo koristiti Sch\"{o}nfliesove oznake iz priloga \ref{sec:kristalografija} 
+pa konačna tablica izgleda ovako:
 
-5. $\chi^{(2)}(b)\chi^{(2)}(c)=\chi^{(2)}(bc), \chi(b)=\chi(bc)$ \\
-  $\imp \chi(c)=1$ \\
-  $\chi(b)\chi(b)=\chi(b^2)=\chi(e)=1 \imp \chi(b)=\pm 1 $
-
-6. Kad bi bilo $\chi^{(2)}(b)=1$ prva dva reda bi bila jednaka, a ne
-   ortogonalna. $\imp \chi^{(2)}(b)=-1$.
-
-   $\sum_{i=1}^{3} k_{i} \chi^{(3)}_{i} \chi^{(1) *}_{i} =
-      2+2a+3b=0$ \\
-   $\sum_{i=1}^{3} k_{i} \chi^{(3)}_{i} \chi^{(2) *}_{i} =
-      2+2a-3b=0$ \\
-   $\imp a=-1, b=0$
-
-- obično se za označavanje IRREPsa i klasa koriste kristalografske
-   oznake iz priloga.
- 
-
+\begin{center}
 \begin{tabular}{c|ccc}
   & E & 2$C_3$  & 3$C_2$ \\ \hline
 $A_1$ & 1 & 1& 1 \\
 $A_2$ & 1 & 1&-1 \\
  $E$  & 2 &-1& 0
 \end{tabular}
-
+\end{center}
+Uvjerite se da je i pravilo 7), ortogonalnost stupaca tablice, zadovoljeno.
 \end{primjer}
 
-\begin{primjer}[$C_3$]
+\begin{primjer}[Tablica karaktera grupe C$_3$]
 
-Abelova grupa, svaki element je klasa : $e, c, c^2$
-
-Dakle, tri klase i $d_{1}^2+d_{2}^2+d_{3}^2 = n =3$ pa su
-sve tri IRREP 1D.
-
-Prvi red i prvi stupac: sve jedinice
-
-5. pravilo: $\chi(c)^3=\chi(c^3)=\chi(e)=1 \imp \chi(c)=
-  \exp(2\pi i k/3), k=0, 1, 2 $
-
-$\chi(c)=1, \omega=e^{2\pi i/3}, \omega^2$
-
+Grupa C$_3$=$\{e, c, c^2\}$ je Abelova pa je svaki element klasa za sebe.
+Dakle imamo tri klase i tri ireducibilne reprezentacije,
+a iz pravila 2) slijedi $d_{1}^2+d_{2}^2+d_{3}^2 = n =3$
+i vidimo da su sve tri jednodimenzionalne.
+Pravila 3) i 4) nas vode na to da su prvi red i prvi stupac
+tablice same jedinice.
+Pravilo 5) se može upotrijebiti da se zaključi da
+je$\chi(c)^3=\chi(c^3)=\chi(e)=1$ iz čega slijedi da su $\chi(c)$
+kubni korijeni jedinice $\chi(c) = \exp(2\pi i k/3), k=0, 1, 2$,
+odnosno mogućnosti su $\chi(c)=1, \omega=e^{2\pi i/3}, \omega^2$.
+Uvjeti ortogonalnosti redaka i stupaca nas onda vode na
+strukturu:
+\begin{center}
 \begin{tabular}{c|ccc}
   & E & $c=C_3$  & $c^2=C_{3}^2$ \\ \hline
-$D^{(1)}$ & 1 & 1& 1 \\
-$D^{(2)}$ & 1 & $\omega$ &$\omega^2$  \\
- $D^{(3)}$  & 1 &$\omega^2$ & $\omega$ 
+$\Gamma_{1}$ & 1 & 1& 1 \\
+$\Gamma_{2}$  & 1 & $\omega$ &$\omega^2$  \\
+$\Gamma_{3}$  & 1 &$\omega^2$ & $\omega$ 
 \end{tabular}
-
-- provjeriti ortogonalnost
-
-$\omega^2 = \omega^* \imp$ $D^{(2)}$ i $D^{(3)}$ su kompleksno
-konjugirane reprezentacije. (Sve smo to već vidjeli ranije u
-vježbama.)
+\end{center}
+Kako je $\omega^2 = \omega^* $ vidimo da
+su $\Gamma_2$ i $\Gamma_3$ međusobno kompleksno
+konjugirane reprezentacije (cf. zadatak \ref{zad:complex}).
+\end{primjer}
 
 
 Zgodno je uočiti da neabelovska grupa $D_3$ ima i dvodimenzionalnu, dakle matričnu,
 ireduciblinu reprezentaciju. To je logično jer neabelovsko svojstvo ne može biti
 vjerno reprezentirano jednodimenzionalnim reperezentacijama.
-\end{primjer}
 
 \section{Dekompozicija reducibilnih reprezentacija}
 
@@ -902,7 +952,7 @@ tj. degeneracija je samo djelomično ukinuta.
 \end{primjer}
 
 \section{Dodatak: \emph{Kristalografske oznake}}
-
+\label{sec:kristalografija}
 \textbf{Ireducibilne reprezentacije} $\Gamma^{(\alpha)}$ se obično označavaju
 velikim slovima i to tako da se 1D reprezentacije označavaju slovima
 $A$ i $B$, 2D reprezentacije slovom $E$, 3D reprezentacije slovom $T$
