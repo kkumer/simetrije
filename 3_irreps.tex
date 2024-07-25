@@ -93,21 +93,21 @@ da nije regularan. Iz $S-\lambda\Eins=0$ onda odmah slijedi $S=\lambda\Eins$.\qe
 \section{Relacije ortogonalnosti i karakteri}
 \label{sec:ortogonalnost}
 
-Promotrimo sada dvije IRREPs: $\Gamma_{\alpha}$ i $\Gamma_{\beta}$.
-Ako je $\alpha\neq\beta$ podrazumijevamo da su reprezentacije
-neekvivalentne.
-
+Promotrimo dvije ireducibilne reprezentacije, $\Gamma_{\alpha}$ i $\Gamma_{\beta}$,
+koje djeluju na vektorskim prostorima $V^{(\alpha)}$ i $V^{(\beta)}$,
+dimenzija $d_\alpha$ i $d_\beta$.
+Ako je $\alpha\neq\beta$ podrazumijevat ćemo da su reprezentacije neekvivalentne.
+Promotrimo i proizvoljni operator $A$ koji preslikava s $V^{(\beta)}$ na  $V^{(\alpha)}$.
+Dakle imamo
 \begin{align*}
-D^{(\alpha)} &: V^{(\alpha)} \to V^{(\alpha)} \\
-D^{(\beta)}  &: V^{(\beta)}  \to V^{(\beta)} \\
-A          &: V^{(\beta)} \to V^{(\alpha)} \qquad \text{proizvoljni operator}
+D^{(\alpha)} &: V^{(\alpha)} \to V^{(\alpha)}\,, \\
+D^{(\beta)}  &: V^{(\beta)}  \to V^{(\beta)} \,, \\
+A          &: V^{(\beta)} \to V^{(\alpha)} \,.
 \end{align*}
-
-Definirajmo matricu:
+Definirajmo sada matricu
 \begin{equation*}
-B\equiv \sum_{g\in G} D^{(\alpha)}(g) A D^{(\beta)}(g^{-1}) \;,
+B\equiv \sum_{g\in G} D^{(\alpha)}(g) A D^{(\beta)}(g^{-1}) \;.
 \end{equation*}
-gdje je $A$ proizvoljna matrica odgovarajućih dimenzija.
 Pokazat ćemo da $B$ zadovoljava pretpostavke Schurovih lema.
 Uzimimo proizvoljni element $h\in G$. Tada vrijedi:
 \begin{equation*}
@@ -128,19 +128,19 @@ iz prve Schurove leme slijedi da je $B=0$. Ako je pak $\alpha=\beta$, tj.
 $D^{(\alpha)}(h)=D^{(\beta)}(h)$ onda iz druge Schurove leme
 slijedi $B=\lambda \Eins$.
 Ove se dvije tvrdnje mogu kompaktno ujediniti u relaciju
-\begin{displaymath}
+\begin{equation}
   B = \sum_g D^{(\alpha)}(g) A D^{(\beta)}(g^{-1}) =
  \lambda^{(\alpha)}_A \delta^{\alpha\beta} \Eins \;,
-\end{displaymath}
+\end{equation}
 odnosno, po komponentama,
-\begin{displaymath}
+\begin{equation}
 \sum_g D^{(\alpha)}_{ir}(g) A_{rs} D^{(\beta)}_{sl}(g^{-1})
- = \lambda_{A}^{(\alpha)} \delta^{\alpha\beta} \Eins_{il}
-\end{displaymath}
-
-$A$ je bila proizvoljna matrica. Uzmimo sada konkretnije na mjesto $A$
+ = \lambda_{A}^{(\alpha)} \delta^{\alpha\beta} \Eins_{il} \,.
+ \label{eq:ortpokomp}
+\end{equation}
+$A$ je ovdje bila proizvoljna matrica. Uzmimo sada konkretnije na mjesto $A$
 matricu $A^{(j,k)}$ koja je svugdje nula osim što joj je
-element $A^{(j,k)}_{jk}=1$:
+element $A^{(j,k)}_{jk}=1$
 \begin{displaymath}
  A^{(j,k)}=
 \begin{array}{cc}
@@ -156,29 +156,29 @@ element $A^{(j,k)}_{jk}=1$:
   & \cdot & \\
   & \cdot & \\
   & \cdot & \\
-\end{pmatrix}
+\end{pmatrix} \,,
 \end{array}
 \end{displaymath}
 \begin{displaymath}
-A^{(j,k)}_{rs}=\delta_{rj}\delta{sk} 
+A^{(j,k)}_{rs}=\delta_{rj}\delta_{sk} \,.
 \end{displaymath}
 
-Upotrebom te matrice u gornjoj relaciji dobivamo
-\begin{displaymath}
+Upotrebom te matrice u gornjoj relaciji (\ref{eq:ortpokomp})  dobivamo
+\begin{equation}
 \sum_g D^{(\alpha)}_{ij}(g) D^{(\beta)}_{kl}(g^{-1}) = 
  \lambda^{(\alpha)}_{jk} \delta^{\alpha\beta} \Eins_{il} \;.
-\end{displaymath}
-
+\end{equation}
 Sada treba odrediti $\lambda_{jk}$. 
 Stavimo ovdje $\alpha =\beta$ i uzmimo trag po $il$ indeksima
+množenjem s $\delta_{il}$,
 \begin{displaymath}
 \sum_g D^{(\alpha)}_{ij}(g) D^{(\alpha)}_{ki}(g^{-1}) = 
  \lambda^{(\alpha)}_{jk} \delta^{\alpha\alpha}\, \textrm{dim}(V^{(\alpha)})
- \equiv \lambda^{(\alpha)}_{jk} d_{\alpha}
+ \equiv \lambda^{(\alpha)}_{jk} d_{\alpha} \,.
 \end{displaymath}
 S druge strane, to je također jednako
 \begin{displaymath}
- \sum_g D(g^{-1}g)_{kj}= \sum_g \Eins_{kj} = \delta_{kj} \sum_g 
+ \sum_g D(g^{-1}g)_{kj}=\sum_g D(e)_{kj}= \sum_g \Eins_{kj} = \delta_{kj} \sum_g 
  = \delta_{kj} n \;.
 \end{displaymath}
 Ovdje je $n$ red grupe G.
@@ -188,25 +188,27 @@ Slijedi da je
 \end{displaymath}
 što daje \emph{temeljni teorem o ortogonalnosti} matrica ireducibilnih
 reprezentacija:
+\begin{teorem}[Ortogonalnost matrica ireducibilnih reprezentacija]
 \begin{displaymath}
 \sum_g D^{(\alpha)}_{ij}(g) D^{(\beta)}_{kl}(g^{-1}) =
  \frac{n}{d_{\alpha}}\delta^{\alpha\beta}\delta_{il}\delta_{kj} \;.
 \end{displaymath}
+\label{tm:ortogonalnost}
+\end{teorem}
 
-
-
-Nadalje, uvijek možemo uzeti da je $D^{(\alpha)}(g)$ unitarna matrica
+Nadalje, uvijek možemo uzeti da je $D^{(\beta)}(g)$ unitarna matrica
+i u tom slučaju je
 \begin{displaymath}
 \sum_g D^{(\alpha)}_{ij}(g) D^{(\beta)}_{lk}(g)^* =
  \frac{n}{d_{\alpha}}\delta^{\alpha\beta}\delta_{il}\delta_{kj} \;.
 \end{displaymath}
 Stavimo ovdje $\alpha=\beta$ i promotrimo skup od $d^{2}_\alpha$ vektora
 $\vec{x}_{ij}$ iz novog $n$-dimenzionalnog vektorskog prostora,  čije
-su komponente dane komponentama matrica reprezentacije:
+su komponente dane komponentama svih matrica reprezentacije:
 \begin{displaymath}
 \vec{x}_{ij} \equiv
 (D^{(\alpha)}_{ij}(g_1), D^{(\alpha)}_{ij}(g_2), \ldots, 
-D^{(\alpha)}_{ij}(g_n))
+D^{(\alpha)}_{ij}(g_n)) \,.
 \end{displaymath}
 (Ne miješati ovaj
 prostor s $V^{\alpha}$ koji je dimenzije $d_\alpha$!) Zbog
@@ -215,59 +217,60 @@ prostor s $V^{\alpha}$ koji je dimenzije $d_\alpha$!) Zbog
  =\frac{n}{d_{\alpha}}\delta_{il}\delta_{kj}
 \end{displaymath}
 vektori $\vec{x}_{ij}$ su međusobno ortogonalni.
-
 Za neku drugu ireducibilnu reprezentaciju 
 $\Gamma_{(\alpha')}$ imamo novih $d_{\alpha'}^{2}$
 vektora  koji su ortogonalni međusobno, ali i obzirom na prvih
-$d_{\alpha}^{2}$ vektora. Treća IRREP daje novih $d_{\alpha''}^{2}$ itd.
-No, maksimalan broj ortogonalnih vektora u $n$-dimenzionalnom vektorskom
-prostoru je $n$ 
+$d_{\alpha}^{2}$ vektora. Treća ireducibilna reprezentacija daje novih $d_{\alpha''}^{2}$ itd.
+No znamo da je općenito maksimalan broj ortogonalnih 
+vektora u $n$-dimenzionalnom vektorskom prostoru upravo $n$.
+Tako slijedi
+\begin{equation}
+\sum_{\alpha} d_{\alpha}^{2} \leq n   \,,
+\label{eq:sumdlen}
+\end{equation}
+pa kako je svaka ireducibilna reprezentacija barem jednodimenzionalna
+imamo $\sum_{\alpha} d_\alpha \leq n$ tj.
+broj ireducibilnih reprezentacija je manji ili jednak broju elemenata grupe.
+Štoviše, vrijedi (npr. \cite{Hamermesh:1989}) da je nejednakost
+(\ref{eq:sumdlen}) saturirana tj.
 \begin{displaymath}
-\sum_{\alpha} d_{\alpha}^{2} \leq n  
+\sum_{\alpha} d_{\alpha}^2 = n \;.
 \end{displaymath}
-pa kako je svaka IRREP barem 1D imamo $\sum_{\alpha} d_\alpha \leq n$ tj.
-broj IRREPsa je manji ili jednak broju elemenata grupe..
-
-Štoviše, vrijedi (vidi literaturu):
-\begin{displaymath}
-\sum_{\alpha} d_{\alpha}^2 = n
-\end{displaymath}
-
-Da bismo odredili broj IRREPsa grupe, treba nam pojam \emph{karaktera}
-reprezentacije.
-
+Da bismo odredili broj članova u ovoj relaciji tj.
+broj (neekvivalentnih) ireducibilnih reprezentacija grupe, treba nam
+pojam \emph{karaktera} reprezentacije.
 \begin{definicija}[Karakter reprezentacije]
 Karakter $\chi$ reprezentacije $\Gamma=\{D(g)\}$ grupe $G$ je skup
 $\chi=\{\chi(g) = \Tr D(g) \td  g\in G\}$.
 \end{definicija}
-
-Svojstva:
-
-- $\Tr S D(g) S^{-1} = \Tr D(g)$ - zbog cikličnosti traga
-  $\imp$ ekvivalentne REP imaju iste karaktere
-
-- Bez dokaza: vrijedi i obrat: isti karakteri $\imp$ ekvivalentne REP
-  (Ali taj obrat se ne poopćuje na beskonačne kontinuirane grupe, osim
+Prvo važno svojstvo je da ekvivalentne reprezentacije imaju iste
+karaktere jer zbog cikličnosti traga
+imamo $\Tr S D(g) S^{-1} = \Tr D(g)$.
+Bez dokaza navedimo da vrijedi i obrat: jednakost karaktera implicira
+da su reprezentacije ekvivalentne.
+(Usput, taj obrat se \emph{ne} poopćuje na beskonačne kontinuirane grupe, osim
   ukoliko nisu kompaktne, vidi \cite[302]{Cornwell:1997})
-
-- $\chi(g)=\Tr D(g) = \Tr D(h) D(g) D^{-1}(h) = \Tr D(hgh^{-1})$
-  $\to$ konjugirani elementi imaju iste karaktere (Oprez: Treba
+Zahvaljujući cikličnosti traga vidimo i da je
+$\chi(g)=\Tr D(g) = \Tr D(h) D(g) D^{-1}(h) = \Tr D(hgh^{-1})$
+  tj. konjugirani elementi imaju iste karaktere (Oprez: Treba
   razlikovati karakter reprezentacije $\chi$ od njegove komponente
   $\chi(g)$ koju isto često zovemo karakter --- karakter elementa.)
 
-- za unitarnu REP $\chi(g^{-1}) = \Tr D(g^{-1})= \Tr D^{\dagger}
-    = \chi^{*}(g)$
+Za unitarnu reprezentaciju vrijedi $\chi(g^{-1}) = \Tr D(g^{-1})= \Tr D^{\dagger}
+    = \chi^{*}(g)$.
 
 
-Teorem o ortogonalnosti  /$\delta_{ij}\delta_{kl}$
+Uzmimo sada trag po obje matrice
+u teoremu o ortogonalnosti \ref{th:ortogonalnost} množenjem
+s $\delta_{ij}\delta_{kl}$ pa dobijemo
 \begin{displaymath}
 \sum_g \chi^{(\alpha)}(g) \chi^{(\beta)}(g)^* = 
 \frac{n}{d_{\alpha}} \delta^{\alpha\beta} \delta_{ik}\delta_{ki} =
 \frac{n}{d_{\alpha}} \delta^{\alpha\beta} d_{\alpha} =
-n \delta^{\alpha\beta} 
+n \delta^{\alpha\beta} \;.
 \end{displaymath}
 
-Definiramo li skalarni produkt karaktera
+Definiramo li skalarni produkt karaktera na sljedeći način
  \begin{displaymath}
 (\chi, \phi) \equiv \frac{1}{n} \sum_g \chi(g) \phi(g)^* = (\phi, \chi) \;,
 \end{displaymath}
@@ -275,7 +278,8 @@ imamo
 \begin{displaymath}
 (\chi^{(\alpha)}, \chi^{(\beta)}) = \delta^{\alpha\beta}
 \end{displaymath}
-tj. karakteri neekvivalentnih IRREPsa su ortonormirani.
+tj. karakteri neekvivalentnih ireducibilnih reprezentacija su ortonormirani
+obzirom na taj skalarni produkt.
 
 Neka je sada $k_i$ broj elemenata u $i$-toj klasi konjugacije grupe $G$.
 Tada, budući da su karakteri svih elemenata jedne klase konjugacije
@@ -285,15 +289,15 @@ isti imamo
  \chi^{(\alpha)}_i \chi^{(\beta)*}_{i} = \delta^{\alpha\beta} \;.
 \end{displaymath}
 što je iskaz ortogonalnosti vektora u $k$-dimenzionalnom vektorskom
-prostoru, gdje su sada vektori
+prostoru, gdje je $k$ broj klasa konjugacije grupe. Ortogonalni vektori su
 \begin{displaymath}
 \vec{\chi}^{(\alpha)} = (\chi^{(\alpha)}_1, \chi^{(\alpha)}_2, \ldots,
- \chi^{(\alpha)}_{k})
+ \chi^{(\alpha)}_{k}) \,.
 \end{displaymath}
-Svaka IRREP daje jedan takav $k$-dimenzionalni vektor.
+Svaka ireducibilna reprezentacija daje jedan takav $k$-dimenzionalni vektor.
 Istim logičkim slijedom kao i ranije ova ortogonalnost vodi na zaključak 
 da je broj
-IRREPsa  manji ili jednak broju klasa konjugacije. Štoviše, vrijedi
+ireducibilnih reprezentacija  manji ili jednak broju klasa konjugacije. Štoviše, vrijedi
 (vidi literaturu) ortogonalnost vektora:
 \begin{displaymath}
 \vec{\chi}_i = (\chi^{(\alpha)}_i, \chi^{(\beta)}_i, \ldots)
@@ -301,11 +305,12 @@ IRREPsa  manji ili jednak broju klasa konjugacije. Štoviše, vrijedi
 tj.
 \begin{displaymath}
 \frac{1}{n} \sum_{\alpha} k_i \chi^{(\alpha)}_i \chi^{(\alpha)*}_j =
-\delta_{ij}
+\delta_{ij} \,,
 \end{displaymath}
 što na isti način daje suprotnu nejednakost da je broj klasa konjugacije manji
-ili jednak broju IRREPsa.
-Dakle, broj IRREPsa je upravo jednak broju klasa konjugacije!
+ili jednak broju ireducibilnih reprezentacija.
+Zaključujemo da je broj ireducibilnih reprezentacija grupe 
+upravo jednak broju njenih klasa konjugacije!
 
 \section{Tablice karaktera}
 
