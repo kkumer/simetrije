@@ -229,9 +229,9 @@ Tako slijedi
 \label{eq:sumdlen}
 \end{equation}
 pa kako je svaka ireducibilna reprezentacija barem jednodimenzionalna
-imamo $\sum_{\alpha} d_\alpha \leq n$ tj.
+i\-ma\-mo $\sum_{\alpha} d_\alpha \leq n$ tj.
 broj ireducibilnih reprezentacija je manji ili jednak broju elemenata grupe.
-Štoviše, vrijedi (npr. \cite{Hamermesh:1989}) da je nejednakost
+Štoviše, vrijedi (vidi npr. \cite{Hamermesh:1989}) da je nejednakost
 (\ref{eq:sumdlen}) saturirana tj.
 \begin{displaymath}
 \sum_{\alpha} d_{\alpha}^2 = n \;.
@@ -341,7 +341,7 @@ poznavanja samih matrica reprezentacija i uzimanja njihovih tragova.
   grupe. Iz ovoga slijedi da tablica ima jednak broj redova i stupaca. 
   Broj klasa pronalazimo "pješke," analizom grupe.
 
-\item Obzirom  da su dimenzije vektorskih prostora prirodni brojevi,
+\item Kako su dimenzije vektorskih prostora prirodni brojevi,
     uvjet da je zbroj kvadrata dimenzija ireducibilnih reprezentacija
     jednak broju elemenata grupe, $\sum_{\alpha} d_{\alpha}^2 = n$, često ima jedinstveno rješenje koje
     određuje dimenzionalnosti $d_{\alpha}$ svih ireducibilnih reprezentacija.
@@ -830,7 +830,7 @@ operatora $A$ koji djeluju u tom prostoru:
    A' = U^{-1} A U \,.
 \end{equation}
 Malo opsežniju rekapitulaciju relevatnih osnova može se naći u dodatku
-\ref{app:kvantna}, gdje je i objašnjeno da su operatori transformacije $U$
+\ref{sec:qm}, gdje je i objašnjeno da su operatori transformacije $U$
 redovito unitarni. To sve vrijedi bez obzira na to je li transformacija
 simetrija ili nije.
 
@@ -888,9 +888,10 @@ dobiti vektor izvan tog potprostora (invarijantnost) te također da
 je transformacijama bilo kojeg vektora baze moguće dobiti baš sve
 ostale (ireducibilnost)}.
 Takav potprostor naziva se \emph{multiplet}, a u literaturi se
-vrlo često izraz multiplet koristi i za samu bazu ovog potprostora..
+vrlo često izraz multiplet koristi i za samu bazu ovog potprostora.
 
-Dakle, poznavajući sve ireducibilne reprezentacije grupe simetrija nekog kvantnomehaničkog
+Vidimo da poznavajući sve ireducibilne reprezentacije grupe simetrija nekog
+kvantnomehaničkog
 sustava možemo odrediti mogućnosti degeneracije njegovih stanja.
 One su upravo jednake dimenzionalnostima ireducibilnih reprezentacija.
 Obrnuto, ako u prirodi uočimo degeneraciju, od koristi je identificirati
@@ -994,36 +995,70 @@ zapravo SO(4)=SO(3)$\otimes$SO(3) što će onda kompletno objasniti
 opaženu degeneraciju nivoa vodikovog atoma.
 \end{primjer}
 
+Tako teorija grupa omogućuje neke spoznaje o spektru sustava
+čak i ako ne znamo riješiti njegovu Schr\"{o}dingerovu jednadžbu.
+No i onda kada znamo riješiti Schro\"{o}dingerovu
+jednadžbu sustava, teorija grupa nam može biti od pomoći
+da bolje razumijemo rješenje ili da si uštedimo dio posla jer
+na primjer ako znamo da su neki nivoi degenerirani, dovoljno je izračunati
+energiju samo jednog od njih.
+
 \subsection*{Cijepanje energijskih nivoa}
 
-Zamislimo sada da neka smetnja $V$  promijeni hamiltonijan
+Vidjeli smo kako struktura grupe simetrija sustava diktira moguće
+ireducibilne reprezentacije, a one pak diktiraju mogućnost 
+degeneracija u energijskom spektru sustava. Zanimljivo je promotriti
+što se događa sa spektrom ukoliko se simetrija sustava promijeni.
+Razlog promjeni može biti na primjer promjena kristalne strukture
+zbog promjene temperature ili promjena simetrije zbog uključivanja
+vanjskog električnog ili magnetskog polja.
+Konkretno, zamislimo da uvođenje vanjskog potencijala $V$  promijeni hamiltonijan
+sustava
 \begin{displaymath}
-    H_0 \to H = H_0 + V \;,
+    H_0 \to H = H_0 + V \;.
 \end{displaymath}
-tako da je ukupni hamiltonijan $H$ invarijantan na manju grupu $H<G$.
-(Npr. slabo električno polje u Starkovom efektu mijenja Hamiltonijan
-vodikovog atoma tako da mu doda član proprocionalan električnom polju
-i od originalne sferne simetrije preostaje samo aksijalna.)
+Ukoliko znamo riješiti sustav opisan osnovnim hamiltonijanom $H_0$, te
+ukoliko je smetnja $V$ slaba ($V\ll H_0$), tehnikama računa smetnje
+moguće je  odrediti promjene energijskih nivoa. No, ukoliko je takav
+pristup težak ili nemoguć, već i tehnike teorije grupa mogu dati neki uvid
+u promjene u spektru sustava. 
 
-IRREPsi od $G$ nisu nužno i IRREPsi od $H$. Smanjenje broja transformacija
-$U(h)$, $h\in H$ može učiniti da neki potprosotri postanu invarijantni
+Pretpostavimo da je originalni hamiltonijan $H_0$ invarijantan na
+grupu simetrija $G$. Uvođenje smetnje $V$ će u najvećem broju
+slučajeva smanjiti simetriju tako da će ukupni hamiltonijan $H$ 
+biti sada invarijantan na manju grupu $H<G$. To je jasno jer 
+hamiltonijan $H_0$ komutira sa svim operatorima koji reprezentiraju
+grupu simetrija $G$. Ako hamiltonijanu dodamo novi član $V$, neki operatori iz
+tog skupa $\{U(g) \td g\in G\}$ tipično neće komutirati i s $H_0 + V$.
+Na primjer, električno polje u Starkovom efektu mijenja Hamiltonijan
+vodikovog atoma tako da mu doda član proprocionalan električnom polju
+i od originalne pune sferne simetrije na sve rotacije 3D prostora,
+preostaje samo aksijalna simetrija na rotacije oko smjera polja.
+
+Ireducibilne reprezentacije grupe $G$ nisu nužno i ireducibilne
+reprezentacije grupe $H$. Smanjenje broja transformacija
+$U(h)$, $h\in H$ može učiniti da neki potprostori postanu invarijantni
 iako nisu bili invarijantni na potpun skup transformacija $U(g)$, $g\in G$.
-Tako su neke IRREPs od G reducibilne obzirom na H i nema razloga da 
-nivoi koji odgovaraju dotičnim IRREPsima od G ostanu
-degenerirani
+Tako su neke ireducibilne reprezentacije od $G$ reducibilne obzirom na $H$
+i nema razloga da energijski nivoi koji odgovaraju dotičnim reprezentacijama
+od $G$ ostanu degenerirani nakon uvođenja smetnje.
 
 \centerline{\includegraphics[scale=1.0]{pics/splitting.eps}}
  
-Poznavajući dekompoziciju $IRREP^{(G)}$ na $IRREP^{(H)}$
+Poznavajući dekompoziciju ireducibilne reprezentacije $IRREP^{(G)}$
+grupe $G$ na ireducibilne reprezentacije  $IRREP^{(H)}$ grupe $H$
 \begin{displaymath}
    IRREP^{(G)}=(\text{reducibilna REP})^{(H)}=
  IRREP^{(H)}_1 \oplus IRREP^{(H)}_2 \oplus \cdots
 \end{displaymath}
-možemo odrediti strukturu cijepanja. Za određivanje iznosa cijepanja
-koriste se metode kvantnomehaničkog računa smetnje.
+možemo odrediti strukturu cijepanja. Za određivanje \emph{iznosa} cijepanja
+trebat će tipično ipak koristiti metode kvantnomehaničkog računa smetnje.
 
-\begin{primjer}[Cijepanje $T$-nivoa tetrahedralne grupe $T$]
+\begin{primjer}[Cijepanje $T$-nivoa tetrahedralne grupe T]
 
+Ireducibilna reprezentacija $T$, tetrahedralne grupe T, je
+trodimenzionalna, pa će odgovarajući nivo biti trostruko degeneriran
+(tri različita kvantna stanja će imati istu energiju).
 Karakter $T$-nivoa tetrahedralne grupe je
 \begin{displaymath}
 \begin{tabular}{c|cccc}
@@ -1032,11 +1067,19 @@ Karakter $T$-nivoa tetrahedralne grupe je
 \end{tabular}
 \end{displaymath}
 
-Neka npr. sada kristal doživi fazni prijelaz tako da se
-simetrija smanji a) $T\to D_2$ ili b) $T\to C_{3v}$. Pogledajmo
-što se događa s gornjim četverostruko degeneriranim nivoom.
+Zamislimo da sada kristal s tetrahedranom grupom simetrija doživi
+fazni prijelaz tako da se
+simetrija smanji a) $\mathrm{T}\to \mathrm{D}_2$ ili b) $\mathrm{T}\to
+\mathrm{C}_{3v}$. Pogledajmo
+što se događa s gornjim trostruko degeneriranim nivoom.
 
-a)
+a) $\mathrm{T}\to \mathrm{D}_2$. Uspoređujući strukture dvaju grupa,
+vidimo da transformacije iz klasa $C_3$ i $C_{3}'$ više nisu simetrije
+jer u grupi $\mathrm{D}_2$ uopće nema transformacija $C_3$ tipa koje
+su reda 3. Isto tako, tri transformacije iz klase $C_2$ su i dalje
+simetrije, ali više nisu u jednoj klasi konjugacije nego su sve tri
+u zasebnim klasama. Tako vidimo da karakteri $T$-nivoa odgovaraju
+karakterima grupe D$_2$ kako je prikazano na sljedećoj tablici
 
 \begin{displaymath}
 \begin{tabular}{c|cccc}
@@ -1049,126 +1092,33 @@ $B_3$ & 1 & -1&-1  & 1\\ \hline \hline
 \end{tabular}
 \end{displaymath}
 
-Uobičajenim metodama dekompozicije reducibilnih reprezentacija
-dobivamo:
+Sada provodimo dekompoziciju reprezentacije $T$ koja je u kontekstu
+grupe D$_2$ reduciblilna
 \begin{displaymath}
    T = a_1 A_1 \oplus b_1 B_1 \oplus b_2 B_2 \oplus b_3 B_3
 \end{displaymath}
-
+Mulitiplicitete određujemo skalarnim množenjem redaka gornje tablice:
 \begin{align*}
-a_1 &= \frac{1}{n}\sum_k \chi^{(A_1)}(k) \chi^{(T)^*}(k) =
- \frac{1}{4}\big(1\cdot3 + 1\cdot(-1) + 1\cdot(-1) + 1\cdot(-1)\big) = 0 \\
-b_1 =b_2 = b_3 &= 1
+a_1 &= \frac{1}{n}\sum_k \chi^{(A_1)}(k) \chi^{(T)^*}(k)  \\
+    &= \frac{1}{4}\big(1\cdot3 + 1\cdot(-1) + 1\cdot(-1) + 1\cdot(-1)\big) = 0 \\
+b_1 &= b_2 = b_3 = 1
 \end{align*}
+Dakle degeneracija je potpuno ukinuta
 \begin{displaymath}
   \imp   T =  B_1 \oplus B_2 \oplus B_3
 \end{displaymath}
-Dakle degeneracija je potpuno ukinuta
 
 \centerline{\includegraphics[scale=1.0]{pics/splittingT.eps}}
 
-b) Isti postupak daje
+b) $\mathrm{T}\to \mathrm{C}_{3v}$. Sličnim postupkom dobivamo
 \begin{displaymath}
         T = A_2 \oplus E \;,
 \end{displaymath}
-tj. degeneracija je samo djelomično ukinuta.
+tj. degeneracija je samo djelomično ukinuta
 
 \centerline{\includegraphics[scale=1.0]{pics/splittingT2.eps}}
 
 \end{primjer}
-
-\section{Dodatak: \emph{Kristalografske oznake}}
-\label{sec:kristalografija}
-\textbf{Ireducibilne reprezentacije} $\Gamma^{(\alpha)}$ se obično označavaju
-velikim slovima i to tako da se 1D reprezentacije označavaju slovima
-$A$ i $B$, 2D reprezentacije slovom $E$, 3D reprezentacije slovom $T$
-itd. Par kompleksno konjugiranih 1D reprezentacija se smatra jednom
-2D reprezentacijom (jer ih povezuje vremenska inverzija) tako da se
-one udružuju vitičastom zagradom i označavaju s $E$.
-
-\textbf{Klase konjugacije} se obično označavaju simbolom $mC_n$ gdje je $m$
-broj elemenata klase, a $C_n$ tipični predstavnik klase označen
-Sch\"{o}nfliesovim simbolom:
-
-\begin{tabular}{rcl}
-$E$ & = & identiteta \\
-$C_n$ & = & rotacija za $2\pi/n$ \\
-$\sigma$ & = & refleksija preko ravnine \\
-$\sigma_{h}$ & = & refleksija preko ``horizontalne'' ravnine tj. ravnine
-  okomite da os najveće  \\ && rotacijske simetrije \\
-$\sigma_{v}$ & = & refleksija preko ``vertikalne'' ravnine tj. ravnine
-  koja sadrži os najveće \\ &&rotacijske simetrije \\
-$\sigma_{d}$ & = & refleksija preko ``dijagonalne'' ravnine tj. ravnine
-  koja sadrži os najveće \\ && rotacijske simetrije i raspolavlja kut između
-  dvije $C_2$ osi okomite na tu os. \\ &&(Specijalni slučaj $\sigma_{v}$.) \\
-$S_n$  & = & rotacija za $2\pi/n$ kombinirana s refleksijom preko ravnine
-   okomite na \\ && os te rotacije (Ove dvije operacije komutiraju.) \\
-$i$ & = &  $S_2 \;\, = \;\,$  inverzija $\vec{r} \to -\vec{r}$
-\end{tabular}
-
-\textbf{Točkaste grupe} kristala se označavaju slijedećim
-Sch\"{o}nfliesovim oznakama:
-
-\begin{tabular}{rcl}
-$C_n$ & = & grupe s jednom $C_n$ osi simetrije \\
-$C_{nv}$ & = & grupe s jednom $C_n$ osi i $n$ $\sigma_v$
-   refleksijskih ravnina  \\
-$C_{nh}$ & = & $C_n$ os,  $\sigma_h$ refleksija $+$ dodaci \\
-$S_{n}$ & = & $S_n$ os \\
-$D_{n}$ & = & $C_n$ os i $n$ $C_2$ osi okomitih na nju \\
-$D_{nd}$ & = & elementi od $D_{n}$ i $\sigma_d$ ravnine refleksije \\
-$D_{nh}$ & = & elementi od $D_{n}$ i $\sigma_h$ ravnina refleksije \\
-$T$  & = & tetrahedralna grupa \\
-$O$  & = & oktahedralna grupa \\
-$\cdots$ && $\cdots \quad$ itd. vidi literaturu \\
-\end{tabular}
-
-\section{Dodatak: \emph{Aksijalni vektori (pseudovektori)} \label{sec:aksijalni}}
-\label{sec:pseudovektori}
-
-\emph{Aksijalni} ili \emph{pseudovektori} su objekti koji se pri rotacijama transformiraju
-isto kao i obični (tzv. \emph{polarni}) vektori, ali pri refleksijama i inverzijama
-imaju još i dodatnu promjenu predznaka.
-
-Inverzija običnim vektorima u 3D euklidskom prostoru mijenja
-predznak $i: \vec{r} \to - \vec{r}$ i može se reprezentirati dijagonalnom
-matricom $i = -\Eins = {\rm diag}(-1, -1, -1)$. 
-
-No, vektorski produkt dvaju polarnih vektora, npr. vektora položaja $\vec{r}$
-i impulsa $\vec{p}$ posljedično \emph{ne mijenja} predznak:
-
-\[  \vec{L}\equiv \vec{r}\times\vec{p} \; \stackrel{i}{\longrightarrow} \;
-  (-\vec{r}) \times (-\vec{p}) =  \vec{r}\times\vec{p} = \vec{L}  \;,
-\]
-
-što znači da je $\vec{L}$ (moment impulsa) aksijalni vektor. (U fizici su
-veličine vezane uz vrtnju, poput momenta impulsa ili momenta sile, 
-često reprezentirane aksijalnim vektorima. Isto vrijedi za veličine
-vezane uz magnetizam koji je obično rezultat kruženja (mikro ili makro) struja.)
-
-Da bi se naglasila njihova različitost,
-ponegdje u literaturi se aksijalne vektore ne crta kao usmjerene crte
-(strelice), već kao crte s ``aksijalnim strelicama'' (cf. 
-\cite{Bronstejn:2004} p. 186)
-
-\centerline{\includegraphics[scale=0.8]{pics/aksijalni_vektor.eps}}
-
-Slično definiramo \emph{pseudoskalarne} veličine kao one koje su skalari
-obzirom na rotacije, ali mijenjaju predznak pri refleksijama i inverzijama.
-Npr. miješani produkt polarnih vektora je pseudoskalar:
-
-\[
-P = (\vec{r}_1 \times \vec{p}) \cdot \vec{r}_2  \; \stackrel{i}{\longrightarrow} \;
-  - (\vec{r}_1 \times \vec{p}) \cdot \vec{r}_2 = - P
-\]
-
-Magnetski moment, definiran kao $\vec{M} = \frac{1}{2} \int \vec{r}
-\times \vec{J} dV$ za gustoću struje $J$, odnosno kao
-$\vec{M} = \frac{1}{2} q \vec{r} \times \vec{v}$ za točkasti
-naboj $q$, je dakle aksijalni vektor.
-
-Za još detalja o pseudovektorima i drugim pseudo-veličinama vidi
-npr. \cite{Arfken:1995}.
 
 \subsection*{Zadaci}
 
@@ -1193,9 +1143,8 @@ gdje je $k_i$ broj elemenata u klasi konjugacije $i$.
 \item Izrazite reprezentaciju $\Gamma$ grupe $C_{4v}$ koja ima
 karaktere
 \begin{displaymath}
-  \chi(E)=5\;,\quad \chi(C_2)=1\;,\quad \chi(C_4)=-1\;,\quad
-  \chi(\sigma_v)=1\;,\quad \chi(\sigma_d)=-3\;,
+  \chi(E)=5\;,\; \chi(C_2)=1\;,\; \chi(C_4)=-1\;,\;
+  \chi(\sigma_v)=1\;,\; \chi(\sigma_d)=-3\;,
 \end{displaymath}
 kao zbroj IRREPsa.
 \end{enumerate}
-
