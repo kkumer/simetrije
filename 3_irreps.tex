@@ -331,7 +331,7 @@ ireducibilnih reprezentacija.
 \end{center}
 Vidjet ćemo da tablica često daje dovoljno informacija za praktične primjene, a može
 se, pomoću slijedećih pravila, konstruirati i bez eksplicitnog
-poznavanja samih matrica reprezentacija.
+poznavanja samih matrica reprezentacija i uzimanja njihovih tragova.
 
 \subsection*{Pravila za konstrukciju tablice karaktera}
 
@@ -342,7 +342,8 @@ poznavanja samih matrica reprezentacija.
   Broj klasa pronalazimo "pješke," analizom grupe.
 
 \item Obzirom  da su dimenzije vektorskih prostora prirodni brojevi,
-    uvjet $\sum_{\alpha} d_{\alpha}^2 = n$ često ima jedinstveno rješenje koje
+    uvjet da je zbroj kvadrata dimenzija ireducibilnih reprezentacija
+    jednak broju elemenata grupe, $\sum_{\alpha} d_{\alpha}^2 = n$, često ima jedinstveno rješenje koje
     određuje dimenzionalnosti $d_{\alpha}$ svih ireducibilnih reprezentacija.
 
 \item Jedinični element grupe je klasa za sebe, a reprezentiran je uvijek
@@ -374,7 +375,7 @@ Pravila je najbolje primjenjivati po redu jer su ona s većim rednim
 brojem teža za primjenu i rjeđe nužna za kompletiranje tablice.
 
 \begin{primjer}[Tablica karaktera grupe $\mathrm{D}_3$]
-
+    \label{pr:karakteriD3}
 Grupa ima tri klase konjugacije (vidi primjer \ref{pr:klaseD3}):
 
 \begin{center}
@@ -425,7 +426,8 @@ $\Gamma_2$ & 1 &  &   \\
  $\Gamma_3$  & 2 &  &  
 \end{tabular}
 \end{center}
-Primjena pravila 5) nije sasvim algoritamska, ali od koristi je promatrati
+Drugi redak možemo kompletirati korištenjem pravila 5) obzirom da je $\Gamma_2$
+jednodimenzionalna. Uporaba pravila nije sasvim algoritamska, ali od koristi je promatrati
 umnoške karaktera različitih klasa. Npr. $\chi^{(2)}(b)\chi^{(2)}(c)=\chi^{(2)}(bc)$
 po svojstvu homomorfizma. Kako elementi $b$ i $bc$ pripadaju istoj klasi,
 $\chi^{(2)}(b)=\chi^{(2)}(bc)$
@@ -435,7 +437,7 @@ $\chi^{(2)}(b)^2 = \chi^{(2)}(b^2) =
   $\chi^{(2)}(b)^2=1$ tj. $\chi^{(2)}(b)=\pm 1$.
 Sad se oslanjamo na pravilo 6) da bi zaključili da kad bi bilo 
 $\chi^{(2)}(b)=1$ prva dva reda bi bila jednaka, a ne
-ortogonalna. Tako znamo da je $ \chi^{(2)}(b)=-1$:
+ortogonalna. Tako znamo da je $ \chi^{(2)}(b)=-1$ i imamo
 \begin{center}
 \begin{tabular}{c|ccc}
   & $K_1$ & $2 K_2$  & $ 3 K_3$ \\ \hline
@@ -456,9 +458,8 @@ gdje treba paziti na težinske faktore. Imamo
 što su dvije jednadžbe s dvije nepoznanice i s rješenjem $a=-1, b=0$.
 Tako smo odredili cijelu tablicu. Običaj je za označavanje ireducibilnih
 reprezentacija i klasa konjugacija koristiti kristalografske
-oznake. Mi ćemo koristiti Sch\"{o}nfliesove oznake iz priloga \ref{sec:kristalografija} 
+oznake. Mi ćemo koristiti tzv. Sch\"{o}nfliesove oznake iz priloga \ref{sec:kristalografija} 
 pa konačna tablica izgleda ovako:
-
 \begin{center}
 \begin{tabular}{c|ccc}
   & E & 2$C_3$  & 3$C_2$ \\ \hline
@@ -481,7 +482,7 @@ tablice same jedinice.
 Pravilo 5) se može upotrijebiti da se zaključi da
 je$\chi(c)^3=\chi(c^3)=\chi(e)=1$ iz čega slijedi da su $\chi(c)$
 kubni korijeni jedinice $\chi(c) = \exp(2\pi i k/3), k=0, 1, 2$,
-odnosno mogućnosti su $\chi(c)=1, \omega=e^{2\pi i/3}, \omega^2$.
+odnosno mogućnosti su $\chi(c)=1, \omega\equiv e^{2\pi i/3}, \omega^2$.
 Uvjeti ortogonalnosti redaka i stupaca nas onda vode na
 strukturu:
 \begin{center}
@@ -495,6 +496,10 @@ $\Gamma_{3}$  & 1 &$\omega^2$ & $\omega$
 Kako je $\omega^2 = \omega^* $ vidimo da
 su $\Gamma_2$ i $\Gamma_3$ međusobno kompleksno
 konjugirane reprezentacije (cf. zadatak \ref{zad:complex}).
+Kompleksna konjugacija je sama po sebi isto svojevrsna transformacija
+simetrije. Ukoliko proširimo razmatranje i na tu transformaciju $\Gamma_2$
+i $\Gamma_3$ prestaju biti ireducibilne i zato se često te dvije reprezentacije
+zajedno smatraju jednom dvodimenzionalnom ireducibilnom reprezentacijom $E$.
 \end{primjer}
 
 
@@ -504,128 +509,182 @@ vjerno reprezentirano jednodimenzionalnim reperezentacijama.
 
 \section{Dekompozicija reducibilnih reprezentacija}
 
-Uzmimo neku reprezentaciju $\Gamma$. Po definiciji,
+Konstrukcijom tablice karaktera smo istovremeno i identificirali sve ireducibilne
+reprezentacije grupe. Preostaje nam drugi zadatak obećan na kraju prošlog poglavlja,
+a to je naučiti kako proizvoljnu reprezentaciju reducirati na direktan zbroj
+ireducibilnih.  Uzmimo neku, moguće reducibilnu, reprezentaciju $\Gamma$. Općenito
 \begin{displaymath}
-  \Gamma = \Gamma^{(1)}\oplus\Gamma^{(2)}\oplus\cdots =
-     \sum_{\alpha}  a_{\alpha} \Gamma^{\alpha}
+  \Gamma = \Gamma_{1}\oplus\Gamma_{2}\oplus\cdots =
+     \sum_{\alpha} \oplus a_{\alpha} \Gamma_{\alpha}
 \end{displaymath}
-gdje su $\Gamma^{\alpha}$ IRREPsi i
+gdje su $\Gamma_{\alpha}$ ireducibilne reprezentacije i
 gdje je $a_{\alpha}$ \emph{multiplicitet} (broj pojavljivanja) 
-IRREPsa $\Gamma^{\alpha}$ u $\Gamma$.
-
-
-Tr / $ \imp  \chi_i = \sum_{\alpha}  a_{\alpha} \chi^{(\alpha)}_i \quad 
-  \forall i$
-
-$\sum_{i=1}^{k} k_i \chi^{(\beta)*}_i /  \imp $
-
-$\sum_{i=1}^{k} k_i \chi_i \chi^{(\beta)*}_i =
+$\Gamma_{\alpha}$ u $\Gamma$.
+Uzmemo li sad trag nekog operatora iz $\Gamma$ iz  $i$-te klase konjugacije
+imajući u vidu blok-dijagonalnu formu direktnog zbroja vidimo da je
+\begin{equation}
+  \chi_i = \sum_{\alpha}  a_{\alpha} \chi^{(\alpha)}_i \quad 
+  \forall i  \,.
+\end{equation}
+Sada pomnožimo ovu realaciju s $k_i \chi^{(\beta)*}_i$, gdje je $\Gamma_{\beta}$
+neka konkretna ireducibilna reprezentacija, te prosumiramo po svim klasama
+i iskoristimo ortogonalnost karaktera ireducibilnih reprezentacija
+\begin{equation}
+\sum_{i=1}^{k} k_i \chi_i \chi^{(\beta)*}_i =
 \sum_{\alpha}  a_{\alpha} \sum_{i=1}^{k} k_i\chi^{(\alpha)}_i \chi^{(\beta)*}_i
-=\sum_{\alpha}  a_{\alpha} n \delta^{\alpha \beta} = n a_{\beta} $
-
-
-\begin{displaymath}
+=\sum_{\alpha}  a_{\alpha} n \delta^{\alpha \beta} = n a_{\beta} \,.
+\end{equation}
+Tako dobivamo izraz za multiplicitet pojedine ireducibilne reprezentacije u
+rastavu proizvoljne reprezentacije
+\begin{equation}
 a_{\alpha} = \frac{1}{n} \sum_{i=1}^{k}  k_i \chi_i \chi^{(\alpha)*}_i
-= (\chi^{(\alpha)}, \chi)
-\end{displaymath}
+\equiv (\chi^{(\alpha)}, \chi) \,,
+\label{eq:multiplicitet}
+\end{equation}
+gdje smo uveli skalarni produkt karaktera $(\;,\;)$.
 
-\begin{primjer}[REP $\Gamma_V$ od $D_3$ na 3D euklidskom prostoru]
-Pod $\Gamma_V$ misli se "vektorska" REP, tj. REP koja djeluje
-na pravim 3D vektorima, za razliku od "nepravih" aksijalnih pseudovektora.
-$D^{V}(e)=\textrm{diag}(1,1,1)$
-\begin{displaymath}
-D^{V}(c)=\left(
-\begin{array}{ccc}
+\begin{primjer}[Reprezentacija $\Gamma_V$ grupe D$_3$ na 3D euklidskom prostoru]
+Promotrimo reprezentaciju grupe D$_3$ na standardnom trodimenzionalnom
+vektorskom prostoru. (Oznaka $V$ implicira da mislimo na prave (polarne)
+vektore, za razliku od "nepravih", aksijalnih ili pseudovektora koje obično
+označavamo s $A$, vidi odjeljak \ref{sec:aksijalni}.) Kako nam trebaju samo
+karakteri, dovoljno je promatrati po jednog reprezentanta svake od triju klasa
+(vidi primjer \ref{pr:klaseD3}).
+Jedinični element je naravno reprezentiran jediničnom matricom
+$D^{(V)}(e)=\textrm{diag}(1,1,1)$ s karakterom 3.
+Za reprezentanta klase $\{c, c^2\}$ možemo uzeti matricu rotacije
+za 2$\pi$/3 oko $z$-osi
+\begin{equation}
+D^{(V)}(c)=
+\begin{pmatrix}
 -1/2 & -\sqrt{3}/2 & 0 \\
 \sqrt{3}/2 & -1/2 & 0 \\
 0 & 0 & 1
-\end{array}\right)
-D^{V}(b)=\left(
-\begin{array}{ccc}
+\end{pmatrix} \,.
+\end{equation}
+Za reprezentanta zadnje klase $\{b, bc, bc^2\}$ možemo uzeti matricu
+rotacije za kut $\pi$ oko $y$-osi  koja naprosto izvrće $x$ i $z$
+komponente vektora
+\begin{equation}
+D^{(V)}(b)=
+\begin{pmatrix}
 -1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & -1
-\end{array}\right) \textrm{ - rotacija za $\pi$ oko y}
-\end{displaymath}
-... je reducibilna reprezentacija. Koji je njen rastav na IRREPse?
-$\chi=(3,0,-1)$
-
-$a_{A_1} = (\chi, \chi^{(A_1)})=\frac{1}{n}\sum_{i=1}^{3} k_i \chi_i \chi^{(A_1)*}_i
- = \frac{1}{6}(1\cdot 3\cdot 1 + 2\cdot 0\cdot 1 + 3\cdot (-1) \cdot 1)=0$
-
-$a_{A_2} = (\chi, \chi^{(A_2)})
-=\frac{1}{6}(1\cdot 3\cdot 1 + 2\cdot 0\cdot 1 + 3\cdot (-1)\cdot(-1))=1$
-
-$a_{E} = (\chi, \chi^{(E)})
-=\frac{1}{6}(1\cdot 3\cdot 2 + 2\cdot 0\cdot (-1) + 3\cdot (-1)\cdot 0)=1$
-
-$\Gamma_V  = A_2 \oplus E $
-
-Koji su invarijantni potprostori?
-
+\end{pmatrix} \,.
+\label{eq:DVbD3}
+\end{equation}
+Uzimajući tragove, vidimo da je cijeli karakter ove reprezentacije
+$\chi=(3,0,-1)$.
+Kako smo u primjeru \ref{pr:karakteriD3} upoznali sve ireducibilne
+reprezentacije, dvije jednodimenzionalne i jednu dodimenzionalnu,
+znamo da je $\Gamma_V$ reducibilna. Njen rastav dobijemo izračunom 
+multipliciteta svake pojedine od tri
+ireducibilne reprezentacije pomoću skalarnog produkta (\ref{eq:multiplicitet}):
+\begin{align*}
+    a_{A_1}& = (\chi, \chi^{(A_1)})=\frac{1}{n}\sum_{i=1}^{3} k_i \chi_i \chi^{(A_1)*}_i \\
+ & = \frac{1}{6}(1\cdot 3\cdot 1 + 2\cdot 0\cdot 1 + 3\cdot (-1) \cdot 1)=0\\
+    a_{A_2}& = (\chi, \chi^{(A_2)}) \\
+ & =\frac{1}{6}(1\cdot 3\cdot 1 + 2\cdot 0\cdot 1 + 3\cdot (-1)\cdot(-1))=1\\
+    a_{E}& = (\chi, \chi^{(E)}) \\
+ & =\frac{1}{6}(1\cdot 3\cdot 2 + 2\cdot 0\cdot (-1) + 3\cdot (-1)\cdot 0)=1
+\end{align*}
+Tako konačno imamo
+\begin{equation}
+\Gamma_V  = A_2 \oplus E \,.
+\end{equation}
+Od interesa je odrediti i invarijantne potprostore na koje djeluju
+$A_2$ i $E$.
 $V^{(A_2)}$ je očito razapet vektorom $\hat{\vec{z}}$, a $\hat{\vec{x}}$ i
 $\hat{\vec{y}}$ razapinju 2D potprostor $V^{(E)}$. (Primijetite razliku
-prema $C_3$ kod koje je svaki vektor $\vec{v}=a\hat{\vec{z}}$ invarijantan.
-$\to$ dipolni momenti.)
+prema $C_3$ kod koje je dodatno i svaki pojedini vektor $\vec{v}=a\hat{\vec{z}}$ invarijantan.)
 \end{primjer}
 
 
-Direktan zbroj dviju IRREPsa je po definiciji reducibilna REP.
-Što je s direktnim produktom?
-
-Pokazali smo ranije da je direktan produkt dviju reprezentacija
-$\Gamma^{(1)} \otimes \Gamma^{(2)}$ grupe G također reprezentacija
-grupe G. Ona je u općenitom slučaju reducibilna:
-
+Pokazali smo da su i direktni zbroj i direktni produkt reprezentacija
+isto reprezentacije grupe. Po definiciji, direktni zbroj ireducibilnih
+reprezentacija je reducibilan.
+Što je s direktnim produktom  $\Gamma_{\alpha} \otimes \Gamma_{\beta}$?
+On je općenito reducibilan i njegov rastav na ireducibilne reprezentacija
+nazivamo \emph{Clebsch-Gordanov razvoj}:
 \begin{displaymath}
-  \Gamma^{(\alpha)}\otimes\Gamma^{(\beta)} =
-  \sum \oplus\: a_{\gamma}\Gamma^{(\gamma)} \quad
-   \textrm{ - Clebsch-Gordanov razvoj }
+  \Gamma_{\alpha}\otimes\Gamma_{\beta} =
+  \sum \oplus\: a_{\gamma}\Gamma_{\gamma}  \,.
+\end{displaymath}
+Karakter direktnog produkta je produkt karaktera (lako se vidi iz
+matričnog zapisa direktnog produkta) pa odmah vidimo da je
+\begin{displaymath}
+a_{\gamma}  = (\chi^{(\gamma)}, \chi^{(\alpha)}\chi^{(\beta)}) \,.
 \end{displaymath}
 
-
-Karakter direktnog produkta je produkt karaktera (očito ako pogledamo
-matrični izgled direktnog produkta).$\imp$
-\begin{displaymath}
-a_{\gamma}  = (\chi^{(\gamma)}, \chi^{(\alpha)}\chi^{(\beta)}) \quad
-\end{displaymath}
-
-\begin{primjer}[$E\otimes E$ u $D_3$]
-$\chi(E)=(2, -1, 0) \imp \chi(E\otimes E)=(4, 1, 0)$
-
-$a_{A_1}=\frac{1}{6}(1\cdot 1\cdot 4+2\cdot 1\cdot 1+3\cdot 1\cdot 0)=1$
-
-$a_{A_2}=\frac{1}{6}(1\cdot 1\cdot 4+2\cdot 1\cdot 1+3\cdot (-1)\cdot 0)=1$
-
-$a_{E}=\frac{1}{6}(1\cdot 2\cdot 4+2\cdot (-1)\cdot 1+3\cdot 0\cdot 0)=1$
-
-$E\otimes E = A_1 \oplus A_2 \oplus E $
+\begin{primjer}[Clebsch-Gordanov razvoj $E\otimes E$ reprezentacije grupe D$_3$]
+Iz tablice karaktera grupe D$_3$, vidi primjer \ref{pr:karakteriD3}, znamo
+da je karakter dvodimenzionalne reprezentacije $\chi(E)=(2, -1, 0)$,
+pa je onda karakter direktnog produkta
+$ \chi(E\otimes E)=(4, 1, 0)$.
+Multipliciteti pojedinih ireducibilnih reprezentacija su
+\begin{align*}
+    a_{A_1}& =\frac{1}{6}(1\cdot 1\cdot 4+2\cdot 1\cdot 1+3\cdot 1\cdot 0)=1 \\
+    a_{A_2}& =\frac{1}{6}(1\cdot 1\cdot 4+2\cdot 1\cdot 1+3\cdot (-1)\cdot 0)=1 \\
+    a_{E}& =\frac{1}{6}(1\cdot 2\cdot 4+2\cdot (-1)\cdot 1+3\cdot 0\cdot 0)=1
+\end{align*}
+što znači da je Clebsch-Gordanov razvoj
+\begin{equation}
+E\otimes E = A_1 \oplus A_2 \oplus E  \,.
+\end{equation}
+Dimenzionalnosti se slažu jer je dimenzija $E\otimes E$ jednaka $2\cdot 2=4$, a dimenzionalnost
+$A_1 \oplus A_2 \oplus E$ također jednaka $1+1+2=4$.
 \end{primjer}
+
+Clebsch-Gordanov razvoj je od velike važnosti u primjenama teorije
+grupa na fizikalne sustave. On  daje odgovor na pitanje
+kako se sve može transformirati združeni sustav, ukoliko znamo kako
+se transformiraju podsustavi. Sljedeći odjeljci daju neke druge fizikalne
+primjene rastavljanja reducibilnih reprezentacija koje nisu nastale
+direktnim produktom pa nije riječ o Clebsch-Gordanovom razvoju.
 
 \section{Primjena: \emph{Dipolni momenti kristala}}
 
-Da bi kristal mogao imati permanentni magnetski ili električni dipolni
-moment te veličine moraju biti invarijantne na grupu G simetrije
+Kristali su fizikalni sustavi koji su bogati simetrijama. Tu se
+ističu simetrije na translacije za cijeli broj jediničnih vektora
+osnovne kristalne čelije (kristal se za te potrebe zamišlja kao beskonačan),
+te tzv. \emph{točkaste} grupe simetrija koje ostavljaju jednu točku
+kristala nepomičnom i izlistane su u odjeljku \ref{sec:kristalografija}.
+Postoje i složenije kombinacije ovih transformacija za što treba pogledati
+specijaliziranu literaturu. Usredotočimo se na neki kristal koji
+ima točkastu grupu simetrija $G$. Cikličke i dihedralne grupe koje smo
+dosad upoznali su mogući kandidati. Važno je pitanje fizike možemo li odrediti
+neka makroskopska svojstva kristala (poput toplinske vodljivosti,
+permanentne magnetičnosti itd.) poznavajući njegovu kristalnu strukturu.
+U načelu, odogovor možemo dobiti rješavanjem Schr\"{o}dingerove jednadžbe,
+ali to je često preteško. Tu nam je od pomoći poznavanje simetrija
+kristala. Jer svaka fizikalna veličina koja opisuje kristal mora
+biti invarijantna na sve simetrije kristala i to često znatno
+ograničava mogućnosti.
+
+Pogledajmo kako to funkcionira na primjeru
+permanentnog magnetskog ili električnog dipolnog
+momenta. Da bi kristal mogao imati neiščezavajući
+električni dipolni moment
+te veličina mora biti invarijantna na grupu simetrije
 kristala.
-
-Dipolni momenti su \emph{vektori} 3D euklidskog vektorskog prostora. Slijedi
-da je za egzistenciju dipolnih momenata nužno postojanje vektora 
-invarijantnih na djelovanje grupe.
-
-Npr. za kristal s $C_3$ simetrijom vektor $\vec{P}$ je invarijantan i
-to može biti smjer dipolnog  momenta takvog kristala. $\vec{P}\neq 0$
-ne narušava $C_3$ simetriju.
+Kako je električni dipolni moment \emph{vektor} 3D euklidskog vektorskog prostora,
+slijedi da je nužno postojanje vektora invarijantnih na djelovanje grupe simetrija.
+Na primjer, za kristal s C$_3$ simetrijom vektor $\vec{P}$ usmjeren
+kao na sljedećoj slici je invarijantan i
+to može biti smjer dipolnog momenta takvog kristala. $\vec{P}\neq 0$
+ne narušava C$_3$ simetriju.
 
 \centerline{\includegraphics[scale=1.0]{pics/dipol.eps}}
 
-S druge strane, veća $D_3$ simetrija ukida takvu mogućnost. $b$-rotacija
+S druge strane, veća D$_3$ simetrija ukida takvu mogućnost. $b$-rotacija
 mijenja $\vec{P}\to-\vec{P}$ pa bi $\vec{P}\neq 0$ narušilo simetriju.
 
 \centerline{\includegraphics[scale=1.0]{pics/nodipol.eps}}
 
-Simetrični kristal ne može "proizvesti" nesimetrični dipolni moment.
+Atomi simetričnog kristala ne mogu proizvesti nesimetrični dipolni moment.
 
-Grupno-teorijski iskaz ovog: \emph{Reprezentacija grupe $G$ na vektorskom
+Grupno-teorijski iskaz ovoga je da \emph{reprezentacija grupe $G$ na vektorskom
 prostoru (potencijalnih) vektora dipolnog momenta mora biti trivijalna tj.
 identiteta}:
 \begin{displaymath}
@@ -633,41 +692,54 @@ identiteta}:
 \end{displaymath}
 Dakle, da bi kristal mogao imati $\vec{P}\neq 0$, reprezentacija grupe $G$ na 
 3D euklidskom vektorskom prostoru mora 
-u svojoj dekompoziciji na IRREPse sadržavati identitetu.
+u svojoj dekompoziciji na ireducibilne reprezentacije sadržavati identitetu,
+a odgovarajući invarijantni potprostor je prostor mogućih vektora dipolnog momenta.
 
-Vidjeli smo u prošlom odjeljku da je REP $\Gamma_V$ od $D_3$ na 3D
-euklidskom vektorskom prostoru
+Vidjeli smo u prošlom odjeljku da se reprezentacija $\Gamma_V$ grupe D$_3$ na 3D
+euklidskom vektorskom prostoru rastavlja na ireducibilne kao
 \begin{displaymath}
-             \Gamma_V = A_2 \oplus E \;.
+             \Gamma_V = A_2 \oplus E \;,
 \end{displaymath}
-Nema $A_1$ (identitete) $\imp$ nema dipolnog momenta.
-
-S druge strane, za $C_3$ imamo (D.Z.)
+pa kako u tom rastavu nema trivijalne reprezentacije $A_1$, zaključujemo
+da kristal sa D$_3$ simetrijom ne može imati električni dipolni moment.
+S druge strane, uvjerite se da za C$_3$ vrijedi
 \begin{displaymath}
-             \Gamma_V = A_1 \oplus E \;.
+             \Gamma_V = A_1 \oplus E \;,
 \end{displaymath}
-$\imp$ postoji mogućnost dipolnog momenta.
+gdje je $A_1$ trivijalna reprezentacija
+pa u ovom slučaju postoji mogućnost električnog dipolnog momenta.
 
-\textbf{Aksijalni vektori}
 
-Kad grupa pored rotacija sadrži i refleksije ($\sigma$, $S_n$, $i$) treba
-uzeti u obzir činjenicu da je magnetski moment $\vec{M}$ aksijalni
+Kad grupa simetrija pored rotacija sadrži i refleksije ($\sigma$, $S_n$, $i$,
+vidi odjeljak \ref{sec:kristalografija}) treba
+uzeti u obzir činjenicu da je magnetski moment $\vec{M}$ \emph{aksijalni}
 vektor (vidi Dodatak \ref{sec:aksijalni})
 koji se pri takvim transformacijama ponaša obrnuto od običnog
-(polarnog) vektora električnog dipolnog momenta:
+(polarnog) vektora električnog dipolnog momenta.
+Tako npr. refleksija preko horizontalne ravnine $\sigma_h$ će promijeniti
+predznak vertikalno usmjerenog električnog, ali ne i
+magnetskog dipolnog dipolnog momenta:
 
 \centerline{\includegraphics[scale=0.8]{pics/aksijal1.eps}}
 
+Isto tako, refleksija preko vertikalne ravnine $\sigma_v$ neće promijeniti
+predznak vertikalno usmjerenog električnog, ali hoće
+magnetskog dipolnog dipolnog momenta\footnote{ 
+Usput, razmislite zašto ogledalo izvrće lijevo-desno, a ne i gore-dolje? Promatrajući
+operaciju refleksije preko vertikalnog ogledala koje leži
+u $x-z$ ravnini $\sigma_v:(x, y, z)\mapsto (x, -y, z)$
+čini se da bi ta dva smjera trebala biti ekvivalentna.}.
+
 \centerline{\includegraphics[scale=0.8]{pics/aksijal2.eps}}
 
-(D.Z. Razmislite zašto ogledalo izvrće lijevo-desno, a ne i gore-dolje? kad je
-$\sigma_{v_{\mbox{\tiny ogledalo u $x-z$ ravnini}}}:(x, y, z)\to (x, -y, z)$?)
 
-\begin{primjer}[Kristal s $C_{3v}$ simetrijom]
-
-Grupa $C_{3v}$ je izomorfna grupi $D_3$, jedino što $b$ nije rotacija
+Uzmimo kao primjer kristal s C$_{3v}$ simetrijom.
+Grupa C$_{3v}$ je izomorfna grupi D$_3$, jedino što $b$ nije rotacija
 za $\pi/2$ oko horizontalne osi već refleksija oko vertikalne ravnine
-koja sadrži $C_3$ os.
+koja sadrži $C_3$ os\footnote{Vidimo da ovdje grupe ne razmatramo sasvim 
+apstraktno nego koristimo različite oznake za jednu te istu apstraktnu
+grupu imajući u vidu zapravo različite reprezentacije na euklidskom
+vektorskom prostoru.}.
 
 Reprezentacija elemenata $e, c$ i  $c^2$ je kao u primjeru \ref{pr:repC3},
 \begin{displaymath}
@@ -679,29 +751,26 @@ D(c)=
 0 & 0 & 1
 \end{array}\right) \;, \ldots
 \end{displaymath}
-s karakterima $\chi^{V}(e)=\mbox{dim}\Gamma_{V}=3$, $\chi^{V}(c)=0$,
+s karakterima $\chi^{(V)}(e)=\mbox{dim}\Gamma_{V}=3$, $\chi^{(V)}(c)=0$,
 a ako osi izberemo kao na slici
+
 \centerline{\includegraphics[scale=0.8]{pics/C3vravnina.eps}}
+
 onda je 
 
 \begin{displaymath}
-D^{V}(b)=
-\left(
-\begin{array}{ccc}
+D^{(V)}(b)=
+\begin{pmatrix}
 -1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{array}\right) 
+\end{pmatrix}
 \end{displaymath}
-s karakterom $\chi^{V}(b)=1$.
-
-(Za $D_3$  grupu bi bilo $D^{V}(b)=diag(-1, 1, -1)$, s karakterom
-$\chi^{V}(b)=-1$.)
-
-Kako je grupa izomorfna grupi $D_3$ ima istu tablicu karaktera (usput, obrat
-ne vrijedi, $Q$ i $T_d$ imaju iste tablice, a nisu izomorfne). Dakle,
-imamo:
-
+s karakterom $\chi^{(V)}(b)=1$ (usporedite s (\ref{eq:DVbD3})).
+Kako je grupa C$_{3v}$ izomorfna grupi D$_3$ ima istu tablicu karaktera\footnote{Obrat
+ne vrijedi, npr. Q i T$_d$ imaju iste tablice karaktera, a nisu izomorfne.}. Dakle,
+imamo
+\begin{center}
 \begin{tabular}{c|ccc}
   & E & 2$C_3$  & 3$C_2$ \\ \hline
 $A_1$ & 1 & 1& 1 \\
@@ -709,106 +778,138 @@ $A_2$ & 1 & 1&-1 \\
  $E$  & 2 &-1& 0 \\ \hline
  $\Gamma_V$ & 3 & 0 & 1
 \end{tabular}
+\end{center}
 
-Iz ovog onda slijedi
+iz čega slijedi
 \begin{displaymath}
-   \Gamma_{V} = A_1  \oplus E
+   \Gamma_{V} = A_1  \oplus E \,.
 \end{displaymath}
-
-- U rastavu se javlja $A_1$ $\imp$ moguć je permanentni \emph{električni}
- dipolni
+Kako se u rastavu javlja trivijalna reprezentacija $A_1$  slijedi
+da je za ovaj kristal moguć permanentni \emph{električni} dipolni
 moment.
 
-
-Za aksijalne vektore, reprezentacije elemenata $e, c, c^2$ su iste kao i
-gore, ali za $D^{A}(b)$ imamo suprotno od $D^{V}(b)$:
-
+Za aksijalne vektore, reprezentacije elemenata $e, c$ i $c^2$ su iste kao i
+gore, jer rotacije ne razlikuju polarne i aksijalne vektore. 
+Međutim refleksija $D^{(V)}(b)$ je reprezentirana
+suprotno\footnote{Oblik matrice se može naći i iz razmatranja djelovanja $\sigma_{v}$ na
+aksijalni vektor $\vec{c}=\vec{a}\times\vec{b}$ gdje 
+su $\vec{a}$ i $\vec{b}$ pravi
+vektori. Imamo $\sigma_{v}:(a_x, a_y, a_z)\mapsto (-a_x, a_y, a_z)$ i
+ analogno $\sigma_{v}:(b_x, b_y, b_z)\mapsto (-b_x, b_y, b_z)$ pa je
+ $\sigma_{v}:(c_x, c_y, c_z)\mapsto (c_x, -c_y, -c_z)$.} 
+od $D^{(V)}(b)$
 \begin{displaymath}
-D^{A}(b)=
-\left(
-\begin{array}{ccc}
+D^{(V)}(b)=
+\begin{pmatrix}
 1 & 0 & 0 \\
 0 & -1 & 0 \\
 0 & 0 & -1
-\end{array}\right) 
+\end{pmatrix}
 \end{displaymath}
-s karakterom $\chi^{A}(b)=-1$.
-(Oblik matrice se može naći i iz razmatranja djelovanja $\sigma_{v}$ na
-aksijalni vektor $\vec{c}=\vec{a}\times\vec{b}$ gdje 
-su $\vec{a}$ i $\vec{b}$ pravi
-vektori: $\sigma_{v}:(a_x, a_y, a_z)\to (-a_x, a_y, a_z)$,
- $\sigma_{v}:(b_x, b_y, b_z)\to (-b_x, b_y, b_z)$
-$\imp$  $\sigma_{v}:(c_x, c_y, c_z)\to (c_x, -c_y, -c_z)$.)
+s karakterom $\chi^{(A)}(b)=-1$.
 
-Dakle, ukupni karakter je $\chi^{A}=(3, 0, -1)$ odnosno
+Dakle, ukupni karakter reprezentacije je $\chi^{(A)}=(3, 0, -1)$ odnosno
 \begin{displaymath}
-      \Gamma_{A} = A_2 \oplus E
+      \Gamma_{A} = A_2 \oplus E \,.
 \end{displaymath}
-
-Tu nema identitete $A_1$ pa ne može biti ni permanetnog \emph{magnetskog}
+Tu se ne pojavljuje trivijalna $A_1$ pa ne može biti ni permanentnog \emph{magnetskog}
 dipolnog momenta.
-\end{primjer}
 
 \section{Primjena: \emph{Degeneracija i cijepanje energijskih nivoa}}
-\label{degeneracija}
+\label{sec:degeneracija}
 
-Transformacije u kvantnoj mehanici:
-\begin{align*}
- \psi' &= U \psi \qquad &\text{za stanja --- vektore} \\
-   A' &= U^{-1} A U \qquad &\text{za operatore}
-\end{align*}
-$U$ --- operator transformacije. Kvantnomehanički sustav, zadan
+U kvantnoj mehanici stanja sustava su reprezentirana vektorima
+$|\alpha\rangle$ u Hilbertovom vektorskom prostoru. Transformacije
+sustava realiziramo djelovanjem odgovarajućih operatora $U$ na tom prostoru
+\begin{equation}
+ |\alpha'\rangle = U |\alpha\rangle \,,
+\end{equation}
+ili, ekvivalentno, transformacijom sličnosti drugih 
+operatora $A$ koji djeluju u tom prostoru:
+\begin{equation}
+   A' = U^{-1} A U \,.
+\end{equation}
+Malo opsežniju rekapitulaciju relevatnih osnova može se naći u dodatku
+\ref{app:kvantna}, gdje je i objašnjeno da su operatori transformacije $U$
+redovito unitarni. To sve vrijedi bez obzira na to je li transformacija
+simetrija ili nije.
+
+Kvantnomehanički sustav, zadan
 hamiltonijanom $H_0$, je \emph{simetričan} obzirom na skup transformacija
 $\{ U(g_1), U(g_2), \ldots, U(g_n)\}$ ako transformacije ne mijenjaju
-hamiltonijan (on, možemo reći, putem Schr\"{o}dingerove jednadžbe definira "izgled"
-sustava)
-\begin{displaymath}
-U^{-1}(g) H_{0} U(g) = H_{0} \quad \forall  g \in \{g_1,\ldots, g_n\}\;.
-\end{displaymath}
-Ekvivalentno, tada $U(g)$ i $H_0$ komutiraju:
-\begin{displaymath}
+hamiltonijan. 
+\begin{equation}
+    H_{0}' = U^{-1}(g) H_{0} U(g) = H_{0} \quad \forall  g \in \{g_1,\ldots, g_n\}\;.
+ \label{eq:invH0}
+\end{equation}
+Naime, možemo reći da putem Schr\"{o}dingerove jednadžbe 
+hamiltonijan definira sustav. Transformirani sustav će u slučaju da
+je transformacija simetrija imati isti skup rješenja Schr\"{o}dingerove jednadžbe,
+s istim energijama.
+Ekvivalentno, iz (\ref{eq:invH0}) se vidi da tada operator
+simetrije $U(g)$ i hamiltonijan $H_0$ komutiraju
+\begin{equation}
   H_{0}U(g)=U(g)H_0 \quad \forall  g \in \{g_1,\ldots, g_n\} \;.
-\end{displaymath}
-Skup svih operatora s ovim svojstvom čini grupu (provjerite!) tj.
+  \label{eq:comHU}
+\end{equation}
+Skup svih operatora s ovim svojstvom čini grupu (provjerite da su
+zadovoljeni svi aksiomi grupe!) tj.
 reprezentaciju grupe $G=\{g_1,\ldots, g_n\}$ na prostoru kvantnomehaničkih 
 stanja.
 
-Stanje sustava s dobro definiranom energijom $\psi_n(\vec{x})$ zove se
+Stanje sustava $|n\rangle$ s dobro definiranom energijom  zove se
 \emph{stacionarno stanje} i dano je kao rješenje vremenski 
-neovisne Schr\"{o}dingerove jednadžbe
+neovisne Schr\"{o}dingerove jednadžbe tj. kao svojstveno stanje hamiltonijana
 \begin{displaymath}
-  H_0 \psi_n(\vec{x}) = E_n \psi(\vec{x}) \;.
+  H_0 |n\rangle = E_n | n \rangle \;.
 \end{displaymath}
-Energija transformiranih stanja $\psi'_n(\vec{x}) = U(g)\psi_n(\vec{x})$ je
-odgovarajuća svojstvena vrijednost hamiltonijana
+Energija transformiranih stanja $|n'\rangle = U(g)|n\rangle$ je
+odgovarajuća svojstvena vrijednost hamiltonijana pa zahvaljujući
+(\ref{eq:comHU}) imamo
 \begin{displaymath}
-  H_0 \psi'_n(\vec{x}) = H_0 U(g)\psi_n(\vec{x}) = U(g) H_0 \psi_n(\vec{x}) =
- U(g) E_n \psi_n(\vec{x}) = E_n \psi'_n(\vec{x}) \;.
+  H_0 |n'\rangle = H_0 U(g)|n\rangle = U(g) H_0 |n\rangle =
+ U(g) E_n |n\rangle = E_n |n'\rangle \;.
 \end{displaymath}
-Dakle sva stanja $\psi'_n(\vec{x}) = U(g)\psi_n(\vec{x})$, $\forall g$ imaju
-istu energiju $E_n$. Pojavu kad više stanja ima istu energiju 
+Dakle sva stanja $|n'\rangle = U(g)|n\rangle$, za sve $g\in G$ imaju
+istu energiju $E_n$! Pojavu kad više stanja ima istu energiju 
 nazivamo \emph{degeneracija}.
 
-Skup stanja $\{U(g)\psi_n(\vec{x}) \,|\, g\in G\}$ dobivenih transformacijama
-datog stanja $\psi_n(\vec{x})$ razapinje
+Skup stanja $\{U(g)|n \rangle \,|\, g\in G\}$ dobivenih transformacijama
+datog stanja $|n\rangle$ razapinje
 potprostor vektorskog prostora svih stanja sustava. On je
-po definiciji invarijantan na djelovanje reprezentacije $\{ U(g) \}$.
+po konstrukciji invarijantan na djelovanje reprezentacije $\{ U(g) \}$.
 Također, reprezentacija $\{ U'(g) \}$ dobivena redukcijom reprezentacije
-$\{ U(g) \}$ na ovaj potprostor je ireducibilna što slijedi
-iz načina na koji smo konstruirali potprostor.
-Takav potprostor naziva se \emph{multiplet}\footnote{Često ze izraz
-multiplet koristi i za samu bazu ovog potprostora.}.
+$\{ U(g) \}$ na ovaj potprostor je ireducibilna što isto slijedi
+iz načina na koji smo konstruirali potprostor\footnote{Čitaoc će jako
+profitirati ako pažljivo razmisli o ove dvije tvrdnje i detaljno se
+uvjeri u njih tako da se uvjeri da djelovanjem operatora $\{ U(g) \}$
+na vektore baze potprostora $\{U(g)|n \rangle \}$ nije moguće
+dobiti vektor izvan tog potprostora (invarijantnost) te također da
+je transformacijama bilo kojeg vektora baze moguće dobiti baš sve
+ostale (ireducibilnost)}.
+Takav potprostor naziva se \emph{multiplet}, a u literaturi se
+vrlo često izraz multiplet koristi i za samu bazu ovog potprostora..
 
-Dakle, poznavajući sve IRREPse grupe simetrija nekog kvantnomehaničkog
-sustava možemo odrediti mogućnosti degeneracije njegovih stanja ---
-one su jednake dimenzionalnostima IRREPsa.
+Dakle, poznavajući sve ireducibilne reprezentacije grupe simetrija nekog kvantnomehaničkog
+sustava možemo odrediti mogućnosti degeneracije njegovih stanja.
+One su upravo jednake dimenzionalnostima ireducibilnih reprezentacija.
+Obrnuto, ako u prirodi uočimo degeneraciju, od koristi je identificirati
+simetriju koja tu degeneraciju uzrokuje. Jednakost energija, dakle jednakost
+realnih brojeva, teško može biti slučajna. Kad tako odredimo simetrije,
+to nam može pomoći u određivanju strukture sustava i interakcija koje
+njime upravljaju jer sve to mora biti u skladu sa simetrijama.
 
-\begin{primjer}[oktahedralna grupa O]
+\begin{primjer}[Sustav s oktahedralnom grupom simetrija]
 
-- IRREPsi: $\underbrace{A_1, A_2}_{1D}, \underbrace{E}_{2D},
-            \underbrace{T_1, T_2}_{3D}$
-
-- $\imp$ očekujemo jedno-, dvo- i trostruko degenerirane nivoe.
+Ireducibilne reprezentacije oktahedralne grupe O pronađemo
+u dodatku {sec:tablice} gdje vidimo 
+da ta grupa ima dvije jednodimenzionalne
+ireducibilne reprezentacije $A_1$ i $A_2$, jednu
+dvodimenzionalnu $E$ i dvije trodimenzionalne $T_1$ i  $T_2$.
+Očekujemo dakle da sustav ima jedno-, dvo- i trostruko degenerirane
+energijske nivoe.
+Recimo, energijski spektar i pripadajuće valne funkcije sustava mogle
+bi biti organizirane ovako:
 
 \hspace*{2cm}
 \rule{3cm}{1pt}\hspace*{-3cm}%
@@ -833,9 +934,9 @@ $\psi_{E,1}, \psi_{E,2}$
 \rule{3cm}{1pt}\hspace*{12pt}%
 $\psi_{A_2}$
 
-$\psi_{A_2}'$ i $\psi_{A_2}$ su linearno neovisne funkcije.
-Pronađemo li neki nivo s prevelikom degeneracijom,
-npr\\
+Ovdje su $\psi_{A_2}'$ i $\psi_{A_2}$ linearno neovisne funkcije.
+Pronađemo li ipak mjerenjima neki nivo s prevelikom degeneracijom,
+npr.
 
 \hspace*{2cm}
 \rule{3cm}{1pt}\hspace*{-3cm}%
@@ -844,28 +945,53 @@ npr\\
 $\psi_{E,1}, \psi_{E,2}, \psi_{A_1}$
 
 to gotovo uvijek znači da nismo dobro identificirali grupu simetrija
-tj. da sustav ima veću simetriju nego što smo mislili.
+tj. da sustav ima veću simetriju nego što smo mislili. U ovom slučaju
+vjerojatno postoji transformacija čiji operator komutira s hamiltonijanom i
+koji povezuje degenerirana stanja, npr.
+\begin{displaymath}
+ U(h) \psi_{E,1} = \psi_{A_1} \,,
+\end{displaymath}
+gdje $h$ nije element oktahedralne grupe O nego tek treba otkriti veću grupu kojoj
+on pripada i kojoj je O podgrupa.
 
 \end{primjer}
 
 
-\begin{primjer}[Vodikov atom]
+\begin{primjer}[Sferna simetrija i vodikov atom]
 
-Stacionarna stanja su $\psi_{nlm}(\vec{x})$. G=SO(3) --- sferna simetrija.
-U 6. poglavlju ćemo vidjeti da su multipleti oblika
+
+Ukoliko zanemarimo interakcije višeg reda (poput interakcije spina i orbite) i
+promatramo samo osnovni hamiltonijan vodikovog atoma po kojem se elektron nalazi u kulonskom 
+električnom polju jezgre u ishodištu, vidimo da sustav ima sfernu simetriju --- simetriju
+na sve rotacije 3D prostora oko ishodišta. Odgovarajuća grupa simetrija je
+beskonačnog reda i zove se SO(3).
+U poglavlju \ref{ch:rotacije} ćemo naučiti da su multipleti te SO(3)
+simetrije $(2l+1)$-dimenzionalni.
+Stoga očekujemo $(2l+1)$-struko degenerirane nivoe za svaki $l$. 
+Važno je razumjeti da je to općenita algebarska posljedica sferne simetrije.
+Svaki sferno-simetrični sustav, bez obzira na njegov konkretni sastav
+i hamiltonijan, imat će prirodno pridruženi kvantni broj $l$
+i odgovarajuće $(2l+1)$-struko degenerirane energijske nivoe u svojem spektru.
+
+I zaista, rješavanjem Schr\"{o}dingerove jednadžbe za vodikov atom
+dobivamo rješenja koja labeliramo
+s trima kvantnim brojevima  $\psi_{nlm}(\vec{x}) = \langle \vec{x} | nlm \rangle$. 
+i stanja
 \begin{displaymath}
-   \{ \psi_{nl(-l)}, \psi_{nl(-l+1)}, \ldots, \psi_{nll}\} \qquad 
-\text{($2l+1$ stanja)} \;.
+   \{ \psi_{nl(-l)}, \psi_{nl(-l+1)}, \ldots, \psi_{nll}\} \;,
 \end{displaymath}
-$\imp$ očekujemo $(2l+1)$-struko degenerirane nivoe za svaki $l$. No,
-znamo da je zapravo degeneracija $n^2$-struka. Svaka ljuska ima $n^2$
-stanja energije
+zaista jesu degenerirana.
+No dodatno cijela ljuska s konkretnom vrijednošću kvantnog broja $n$, a
+koja sadrži $n^2$ stanja s $l \in \{0, 1, \ldots, n-1\}$
+ima istu energiju
 \begin{displaymath}
   E_n \propto \frac{1}{n^2} \qquad \text{neovisno o $l$}
 \end{displaymath}
-``Slučajna'' degeneracija nivoa s različitim $l$. U 6. poglavlju
-ćemo vidjeti da je razlog tome 
-postojanje veće simetrije SO(4)=SO(3)$\otimes$SO(3).
+Dakle, degeneracija je veća od one koju bismo očekivali samo zbog
+sferne simetrije SO(3).
+U odjeljku \ref{sec:so4}  ćemo vidjeti da je relevantna simetrija
+zapravo SO(4)=SO(3)$\otimes$SO(3) što će onda kompletno objasniti
+opaženu degeneraciju nivoa vodikovog atoma.
 \end{primjer}
 
 \subsection*{Cijepanje energijskih nivoa}
@@ -1016,7 +1142,7 @@ i impulsa $\vec{p}$ posljedično \emph{ne mijenja} predznak:
 \]
 
 što znači da je $\vec{L}$ (moment impulsa) aksijalni vektor. (U fizici su
-veličine koje opisuju rotacije, poput momenta impulsa ili momenta sile, 
+veličine vezane uz vrtnju, poput momenta impulsa ili momenta sile, 
 često reprezentirane aksijalnim vektorima. Isto vrijedi za veličine
 vezane uz magnetizam koji je obično rezultat kruženja (mikro ili makro) struja.)
 
@@ -1037,8 +1163,8 @@ P = (\vec{r}_1 \times \vec{p}) \cdot \vec{r}_2  \; \stackrel{i}{\longrightarrow}
 \]
 
 Magnetski moment, definiran kao $\vec{M} = \frac{1}{2} \int \vec{r}
-\otimes \vec{J} dV$ za gustoću struje $J$, odnosno kao
-$\vec{M} = \frac{1}{2} q \vec{r} \otimes \vec{v}$ za točkasti
+\times \vec{J} dV$ za gustoću struje $J$, odnosno kao
+$\vec{M} = \frac{1}{2} q \vec{r} \times \vec{v}$ za točkasti
 naboj $q$, je dakle aksijalni vektor.
 
 Za još detalja o pseudovektorima i drugim pseudo-veličinama vidi
