@@ -1,4 +1,18 @@
+% Correcting the title chapter page
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    \fancyhead[RO,LE]{\bfseries \thepage}
+    \fancyhead[CO]{\rightmark}
+    \fancyhead[CE]{\leftmark}
+    \renewcommand{\headrulewidth}{0.4pt}}
+
 \appendix
+
+\cleardoublepage
+\vspace*{8cm}
+\thispagestyle{empty}
+\flushright{\Huge \bfseries Dodaci}
+\cleardoublepage
 
 \chapter{Kristalografske oznake i grupe}
 \label{sec:kristalografija}
