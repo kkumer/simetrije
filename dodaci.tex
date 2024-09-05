@@ -268,3 +268,144 @@ Ovo je sadržaj tzv. Wignerovog teorema, a u osnovi
 je posljedica zahtjeva za očuvanjem vjerojatnosti i
 načela superpozicije u kvantnoj mehanici.
 
+\chapter{Tenzori kao matematički strojevi}
+\label{sec:tenzorKaoStroj}
+
+Tenzore možemo promatrati kao neku vrstu \emph{matematičkih strojeva}
+\cite{MTW}
+čiji "input" su jedan ili više vektora, a "output" vektor ili
+skalar. 
+
+Praktično, problemi kojima se bavimo se gotovo uvijek daju formulirati
+u obliku "\emph{Znamo te i te vektore koji opisuju sustav. Koliki
+je $s$ ili $\vec{v}$ tog sustava?}", gdje su $s$ i $\vec{v}$ neki
+zanimljivi skalari ili vektori (energija, impuls, položaj, \dots).
+
+Označimo tip tenzora $\bbtensor{T}$ s uređenim parom $(0, n)$ ukoliko 
+$\bbtensor{T}$ predstavlja stroj čiji input je $n$ vektora, a output skalar,
+a s $(1, n)$ ukoliko je output vektor. Takav stroj
+možemo skicirati kao
+\begin{equation}
+   \bbtensor{T}(\underbrace{\slot, \slot, \slot, \dots}_{n \times})  \;,
+\end{equation}
+
+gdje su ``$\rule{1em}{1pt}$'' mjesta gdje treba staviti konkretne vektore
+koje će onda stroj ``preraditi'' u rezultirajući skalar ili vektor
+
+\begin{equation}
+   \bbtensor{T}(\vec{v}_1, \vec{v}_2, \dots) = s \quad \text{ili} \quad \vec{v} \;.
+\end{equation}
+
+Na primjer, klasični vektor \emph{sile} možemo interpretirati kao
+$(0, 1)$ tenzor $\bbtensor{SILA}(\slot)$ sa svojstvom da kad mu
+u njegov slot stavimo vektor brzine dobijemo skalar snage:
+\begin{equation}
+   \bbtensor{SILA}(\vec{v}) = P
+\end{equation}
+gdje je unutranji ``mehanizam'' stroja dan jednadžbom $P = \vec{F}\cdot\vec{v}$.
+
+Primjer $(0,2)$ tenzora je metrički tenzor $\bbtensor{G}(\slot, \slot)$,
+čiji je mehanizam takav da kad u njegove slotove stavimo dva vektora
+dobijemo njihov skalarni produkt:
+
+\begin{equation}
+   \bbtensor{G}(\vec{a}, \vec{b}) = \vec{a}\cdot\vec{b} \;.
+\end{equation}
+
+Ono što se često naziva tenzorom drugog ranga (matrica brojeva) su
+samo komponente tenzora u nekoj bazi, koje se
+dobiju kad se pravom apstraktnom tenzoru u njegove input slotove
+stave jedinični bazni vektori, npr,
+
+\begin{equation}
+   \bbtensor{G}(\vec{e}_i, \vec{e}_j) = g_{ij} \;.
+\label{eq:Gkomponente}
+\end{equation}
+
+Tenzor gustoće vodljivosti iz prošlog odjeljka je dakle
+tipa $(1,1)$, odnosno $\sigma(\slot)$, jer imamo
+$\sigma(\vec{E}) = \vec{j}$, dakle jedan vektor kao input
+i drugi kao output.
+
+Totalno antisimetrični tenzor (Levi-Civita) u tri dimenzije je
+tenzor oblika $(1, 2)$, u svom obliku u kojem nam daje
+vektorski produkt dvaju vektora
+\begin{equation}
+   \bbtensor{LEVICIVITA}(\vec{a}, \vec{b}) = \vec{a}\times\vec{b} \;,
+\end{equation}
+ali on može biti u obliku $(0, 3)$ kad daje mješani produkt 
+triju vektora
+\begin{equation}
+   \bbtensor{LEVICIVITA}'(\vec{a}, \vec{b}, \vec{c}) =
+ (\vec{a}\times\vec{b})\cdot\vec{c} \;,
+\end{equation}
+gdje ta dva oblika nisu identična.
+
+U elektrodinamici (koja je teorija koja poštuje specijalnu teoriju
+relativnosti), javlja se $(1,1)$ tenzor $\bbtensor{FARADAY}$, ali koji
+nije tenzor obzirom na rotacije
+već obzirom na relativističke transformacije u četverodimenzionalnom
+prostoru Minkowskog. Taj tenzor daje četverovektor Lorentzove sile
+kad mu se kao input stavi četverovektor brzine
+$\bbtensor{FARADAY}(\vec{u)} = F_{\rm Lorentz}$, odnosno u uobičajenom
+zapisu po komponentama $\mu, \nu = 0,1,2,3$, 
+$F^{\mu}_{\rm Lorentz} = d p^{\mu}/d\tau = e F^{\mu}_{\,\nu} u^\nu$.
+
+\secret{
+Riemannov tenzor zakrivljenosti plohe spomenut u prošlom odjeljku 
+je $(1, 3)$ tenzor
+koji kad dobije vektore brzine dvaju čestica i njihove udaljenost,
+daje ubrzanje kojim se one približavaju ili udaljavaju na toj plohi.}
+
+\subsubsection*{Apstraktna indeksna notacija}
+
+Indeksi na tenzorima najčešće označavaju kompenente tog tenzora
+u nekoj bazi, vidi (\ref{eq:Gkomponente}). Međutim, moguće ih
+je upotrebljavati i samo kao zamjenu za ove slotove koji su
+nespretni za zapisivanje.
+
+Tako npr.  za $(0, n)$ tenzor imamo korespondenciju
+\begin{equation}
+\bbtensor{T}(\slot,\slot,\slot, \dots)  \longrightarrow T_{abc\dots} \;,
+\end{equation}
+gdje se vektori onda zapisuju kao $V^a$ i npr.  $T_{ab}V^{a}V^{b}$ je
+broj (skalar) dobiven ``kontrakcijom'' tenzora drugog ranga sa
+dva vektora, uz konvenciju da se kontrakcija uvijek radi s jednim
+gornjim i jednim donjim indeksom. Tenzor $(1,n)$ tipa bi onda bio
+$T^{a}_{bcd\dots}$, a vektor $V^a$ je tenzor $(1,0)$ tipa (input
+je ništa ili broj, a output je vektor).
+
+Promotrimo sada objekt  $\bbtensor{G}(\vec{V},\slot)$, tj, metrički
+tenzor s popunjenim jednim slotom, tj. $g_{ab}V^a$. Očito je da
+taj objekt, ako ga kontrahiramo s još jednim vektorom $W^{b}$, daje skalar.
+Dakle riječ je o tenzoru tipa $(0, 1)$, kojeg stoga možemo skraćeno
+zapisati kao $V_a$.
+
+Dakle tek taj objekt $V_a$, koji nije isto što i $V^a$, se može
+skalarno množiti s vektorima da bi se dobio skalar. To što u praksi
+u trodimenzionalnom vektorskom prostoru množimo skalarno vektore
+međusobno je samo zato što je u tom prostoru metrički tenzor
+jednak jediničnom 
+\begin{displaymath}
+g = \text{diag}(1, 1, 1) =
+\begin{pmatrix}
+1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+\end{pmatrix}
+\end{displaymath}
+pa je \emph{po komponentama} $V^a$ jednak $V_a$.
+
+U četverodimenzionalnom prostoru Minkowskog 
+$g = \text{diag}(1, -1, -1, -1)$ pa $V^a$ i $V_a$ više nisu
+ista stvar, ali to ne moramo jako naglašavati; dovoljno je
+pri skalarnom množenju paziti na predznake:
+$g_{\mu \nu} a^{\mu} a^{\nu} = a_{\mu} a^{\mu} = (a^{0})^2 
+- \vec{a}\cdot\vec{a}$.
+
+No, u općenitom zakrivljenom prostoru s općenitim metričkim
+tenzorom moramo strogo razlikovati vektor $V^a$ i objekt
+$V_a$ (za kojeg postoji i specijalno ime: \emph{1-forma}).
+Npr. u Hilbertovom prostoru Diracov ``ket'' $|\alpha\rangle$ je
+vektor, a ``bra'' $\langle\alpha|$ je 1-forma. Više o ovome
+vidi u knjigama iz diferencijalne geometrije.
+
+

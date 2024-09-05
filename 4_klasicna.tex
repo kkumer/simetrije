@@ -9,38 +9,68 @@
 \chapter{Simetrije u klasičnoj i kvantnoj mehanici}
 \label{ch:klasicna}
 
+U prošlim poglavljima smo izložili teoriju \emph{konačnih} grupa i njihovih reprezentacija.
+Teorija kontinuiranih \emph{beskonačnih} grupa ima svojih posebnosti pa kako
+bismo olakšali izlaganje i razumijevanje veza s fizikom, prvo ćemo
+prodiskutirati neke općenitije aspekte realizacije simetrija u klasičnoj
+i kvantnoj mehanici. Očekuje se da čitaoc vlada osnovama kvantne mehanike,
+a kratki podsjetnik dan je u dodatku \ref{sec:qm}.
+
+
 \section{Transformacije i tenzori}
 
-\begin{definicija}
+Vidjeli smo upravo u odjeljcima \ref{sec:dipolni} i \ref{sec:degeneracija} kako
+simetrije imaju netrivijalne posljedice na moguća makroskopska
+svojstva kristala. U tim primjerima sam fizikalni objekt, kristal, je bio
+simetričan tj. isti prije i poslije djelovanja transformacije rotacije.
+To i jest uobičajeno laičko razumijevanje značenja riječi \emph{simetrija}. Međutim,
+mnoge važne realizacije simetrija u prirodi nisu na razini pojedinih
+fizikalnih sustava, nego na razini zakona prirode. Na primjer, zakoni mehanike
+i gravitacije su simetrični na sve rotacije, ali Sunčev sustav to nije.
+Na rotacije su simetrični i zakoni kvantne mehanike, ali pojedini atomi općenito
+nisu.
+Svejedno, mnoga svojstva Sunčevog sustava i atoma su diktirana simetrijama
+zakona koji tim sustavima upravljaju.
+U kasnijim poglavljima ćemo na konkretnim primjerima vidjeti kako se simetrije
+prirode odražavaju u konkretnim općenito nesimetričnim sustavima, no
+sad ćemo najprije uspostaviti relevantnu terminologiju i pomoću nje još
+malo produbiti ovu generičku ideju.
+
+
+\begin{definicija}[invarijantnost i kovarijantnost]
 Fizikalna veličina je \emph{invarijantna} na neku transformaciju ako se
 pri toj transformaciji ne mijenja.
 
-Jednadžba koja opisuje fizikalni sustav je \emph{kovarijantna}
+Jednadžba koja opisuje fizikalni sustav je \emph{kovarijantna}\footnote{%
+Pojmovi kovarijantnosti i kontravarijantnosti
+komponenata vektora i tenzora koje srećemo u teoriji relativnosti
+("gornji" i "donji" indeksi), a zapravo potječu iz diferencijalne 
+geometrije nemaju veze s ovom kovarijantnosti.  To su samo homonimi.}
 na neku transformaciju ako se pri toj transformaciji 
 njen \emph{oblik} ne mijenja.
 \end{definicija}
 
-Primjer: masa i naboj su invarijantne na rotacije.
 
-Primjer: Newtonove jednadžbe za sustav dva tijela koja gravitiraju
+Tako su na primjer masa ili naboj primjeri veličina invarijantnih na rotacije.
+S druge strane, Newtonove jednadžbe za sustav dva tijela koja gravitiraju
 \begin{eqnarray}
  m_1 \ddot{\vec{r}}_1 & = & G \frac{m_1 m_2}{|\vec{r}_2 - \vec{r}_1|^3}
-    (\vec{r}_2 - \vec{r}_1) \label{eq:newton1} \\
+    (\vec{r}_2 - \vec{r}_1) \label{eq:newton1} \,, \\
  m_2 \ddot{\vec{r}}_2 & = & G \frac{m_1 m_2}{|\vec{r}_1 - \vec{r}_2|^3}
-    (\vec{r}_1 - \vec{r}_2)
+    (\vec{r}_1 - \vec{r}_2) \,,
 \end{eqnarray}
-su kovarijantne pri rotacijama. Uvjerimo se u to.
-Rotiramo za neki kut:
+su kovarijantne pri rotacijama. Uvjerimo se u to tako da zarotiramo
+sustav za neki kut $\theta$ oko osi usmjerene u smjeru jediničnog vektora $\hat{\vec{n}}$.
+Pritom se koordinate položaja prvog tijela mijenjaju kao
 \begin{align*}
 (\vec{r}_{1})_i \to (\vec{r}_{1}')_i &= \sum_j R_{ij}(\hat{\vec{n}},\theta) 
-   (\vec{r}_{1})_j \;, \qquad& \text{(po komponentama)}\\
-\text{tj.}\qquad \vec{r}_{1}\to \vec{r}_{1}' &= R(\hat{\vec{n}},\theta) 
-   \vec{r}_{1}\;, \qquad& \text{(matrično)}
+   (\vec{r}_{1})_j \;, \qquad& \text{(zapis po komponentama)}\\
+\vec{r}_{1}\to \vec{r}_{1}' &= R(\hat{\vec{n}},\theta) 
+   \vec{r}_{1}\;, \qquad& \text{(matrični zapis)}
 \end{align*}
-i isto za $\vec{r}_2$.
-
+i isto za položaj drugog tijela $\vec{r}_2$.
 Ovdje je $R(\hat{\vec{n}},\theta)$ standardna matrica rotacije u trodimenzionalnom
-prostoru, npr. za rotaciju oko $z$-osi
+prostoru. Na primjer, za rotaciju oko $z$-osi je
 \begin{equation}
 R(\hat{\vec{z}},\theta) = \begin{pmatrix}
 \cos\theta &  -\sin\theta &  0 \\
@@ -49,10 +79,9 @@ R(\hat{\vec{z}},\theta) = \begin{pmatrix}
 \end{pmatrix} \;.
 \label{eq:matrot}
 \end{equation}
-
-Sada iz (\ref{eq:newton1}) slijedi da je u transformiranim koordinatama
-jednadžba za npr. $\vec{r}'_1$ 
-\begin{equation*}
+Sada iz (\ref{eq:newton1}) slijedi da je nakon transformacije
+jednadžba gibanja za npr. $\vec{r}'_1$ 
+\begin{equation}
 \begin{split}
 m_1 \ddot{\vec{r}}'_1 &= m_1 R \ddot{\vec{r}}_1 \\
    &= G \frac{m_1 m_2}{|\vec{r}_2 - \vec{r}_1|^3}
@@ -62,377 +91,287 @@ m_1 \ddot{\vec{r}}'_1 &= m_1 R \ddot{\vec{r}}_1 \\
    &= G \frac{m_1 m_2}{|\vec{r}'_2 - \vec{r}'_1|^3}
     (\vec{r}'_2 - \vec{r}'_1) \;,
 \end{split}
-\end{equation*}
+\label{eq:kovarijantniNewton}
+\end{equation}
 i isto za $\vec{r}'_2$, gdje smo radi jednostavnosti prestali
-pisati argumente matrice rotacije $R = R(\vec{n},\theta)$.
+pisati argumente matrice rotacije $R = R(\vec{n},\theta)$
+i gdje smo u zadnjem redu iskoristili svojstvo da se iznos
+vektora pri rotacijama ne mijenja.
 Dakle, jednadžbe zarotiranog sustava imaju isti oblik
 (kovarijantne su) premda su konkrentne vektorske veličine
 u njima različite tj. $\vec{r}'_{1,2} \neq \vec{r}_{1,2}$.
+Drugim riječima, zarotirani sustav poštuje iste zakone kao
+i originalni. Trećim riječima, nikakvim eksperimentima stanovnici
+drugog zarotiranog sustava ne mogu zaključiti da je sustav zarotiran.
+Četvrtim riječima, u prirodi su svi smjerovi ekvivalentni.
 
 Ova i daljnja diskusija podrazumijevaju da govorimo o \emph{aktivnim}
-transformacijama koje djeluju na sam fizikalni sustav. U \emph{pasivnom}
-pristupu u kojem transformiramo samo koordinatni sustav
+transformacijama koje djeluju na sam fizikalni sustav (vidi
+str. \pageref{aktivna}). U \emph{pasivnom}
+pristupu u kojem transformiramo samo koordinatni sustav,
 ovako napisane jednadžbe su \emph{invarijantne} jer
 ako $\vec{r}$ i $\vec{F}$ promatramo kao elemente vektorskog prostora,
 a ne kao trojke koordinata tih vektora u nekoj bazi, onda rotacija
 koordinatnog sustava ne mijenja same vektore i ono sto je onda
 \emph{kovarijantno} je zapis tih jednadžbi po komponentama:
-        
 \begin{displaymath}
        m  \ddot{x}_{i} =  F_{i} \;.
 \end{displaymath}
 
-
-Kako prepoznajemo kovarijantne jednadžbe?
-
-\begin{eqnarray*}
- \nabla\times\vec{B}=\vec{J}+\frac{\partial \vec{E}}{\partial t}
-    &\textrm{ima oblik}&  \textrm{vektor=vektor + vektor} \\
- \nabla\cdot\vec{E}=\rho
-    &\textrm{ima oblik}&  \textrm{skalar=skalar} \\
-\end{eqnarray*}
-
- Što je skalar? Što je vektor?
-
-Za razmatranje kovarijantnosti jednadžbi pri rotacijama određujuće svojstvo 
+Kod konstrukcije fizikalnih teorija simetrije prirode će se odražavati
+u kovarijantnosti jednadžbi gibanja pa je
+važno razviti vještinu prepoznavanja jesu li neke jednadžbe
+kovarijantne obzirom na neke transformacije ili nisu. Pogledajmo na primjer
+Maxwellove jednadžbe klasične elektrodinamike
+\begin{align}
+    \nabla \cdot \mathbf{E}  &= \frac{\rho}{\varepsilon_0} \,, \label{eq:maxwell1} \\
+\nabla \cdot \mathbf{B}  &= 0 \,, \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}  \,,\\
+\nabla \times \mathbf{B} &= \mu_0 \left(\mathbf{J} + 
+    \varepsilon_0  \frac{\partial \mathbf{E}}{\partial t} \right) \,. \label{eq:maxwell4}
+\end{align}
+Gledajući matematičku strukturu članova tih jednadžbi vidimo da je ona
+\begin{align*}
+    \text{skalar} &= \text{skalar} \,, \\
+    \text{skalar} &= \text{skalar}  \,,\\
+    \text{vektor} &= \text{vektor}  \,,\\
+    \text{vektor} &= \text{vektor} + \text{vektor} \,.
+\end{align*}
+Vidimo da su svi članovi svake pojedine jednadžbe istovrsni i slično kao kod
+Newtonovih jednadžbi (\ref{eq:kovarijantniNewton}) jednadžbe zarotiranog
+sustava će biti istog oblika, dakle Maxwellove jednadžbe su kovarijantne
+na rotacije.
+Za ovakvo razmatranje kovarijantnosti jednadžbi pri rotacijama određujuće svojstvo 
 vektora nije to što je on opisan trojkom brojeva ili 
-to što je on element nekog vektorskog prostora već je ključno na koji
-se način on transformira pri rotacijama:
+to što je on element nekog matematičkog vektorskog prostora već je ključno na koji
+se način on transformira pri rotacijama. Skalari se transformiraju trivijalno i
+zapravo su invarijantni, dok vektore moramo množiti matricom rotacije:
 
 \vspace*{2ex}
 \centerline{\includegraphics[scale=0.8]{pics/skalarvektor.eps}}
 
-\begin{eqnarray*}
- \rho(\vec{r}) \to \rho'(\vec{r}') = \rho(\vec{r}) & : & \textrm{skalar} \\
-  E_i(\vec{r}) \to E'_i(\vec{r}') = \sum_j R_{ij}E_j(\vec{r})
-   & : & \textrm{vektor} \;,
-\end{eqnarray*}
+\begin{align*}
+    \rho(\vec{r}) &\to \rho'(\vec{r}') = \rho(\vec{r}) \qquad &\textrm{(skalar)} \,, \\
+    E_i(\vec{r}) &\to E'_i(\vec{r}') = \sum_j R_{ij}E_j(\vec{r}) 
+                 &\textrm{(vektor)} \,,
+\end{align*}
 gdje je $R_{ij}$ ista matrica (poput (\ref{eq:matrot})) koja rotira
-vektor položaja $\vec{r}$.
-
-  Ovo se poopćuje na veličine sa složenijim transformacijskim svojstima,
+vektor položaja $\vec{r}$. To da se svi vektori rotiraju pomoću identične
+matrice je ključno i u ovom kontekstu predstavlja svojevrsnu definiciju
+vektora
+\begin{center}
+    {vektor} $\equiv$ {objekt koji se pri rotacijama transformira množenjem matricom}
+    $R(\hat{\vec{n}}, \theta)$.
+\end{center}
+Ovo se poopćuje na veličine sa složenijim transformacijskim svojstima,
 \emph{tenzore}. 
-
-\begin{definicija}
+\begin{definicija}[Tenzor]
 \label{def:tenzor}
-
 \emph{Tenzor $n$-tog ranga} (pri rotacijama)  jest veličina $\bbtensor{T}$  koja
 se transformira kao
-
 \begin{displaymath}
- \bbtensor{T}_{i_1 i_2 \ldots i_n}(\vec{r}) \to \bbtensor{T}'_{i_1 i_2 \ldots i_n}(\vec{r}') =
+ \qquad \bbtensor{T}_{i_1 i_2 \ldots i_n}(\vec{r}) \to \bbtensor{T}'_{i_1 i_2 \ldots i_n}(\vec{r}') =
 \sum_{j_1, j_2, \ldots, j_n}
   R_{i_1 j_1}  R_{i_2 j_2} \ldots  R_{i_n j_n} \bbtensor{T}_{j_1 j_2 \ldots j_n}(\vec{r})
  \; . 
 \end{displaymath}
 \end{definicija}
 
+Vidiomo da su skalari tenzori nultog, a vektori tenzori prvog ranga.
+Komponente tenzora drugog ranga $\bbtensor{T}_{ij}$
+možemo po želji prikazati matricom.
 
-Primjeri:
-\begin{itemize}
-\item skalari su tenzori nultog ranga
-\item vektori su tenzori prvog ranga.
-\item Ohmov zakon u neizotropnom sredstvu (npr. kristalu): 
+\begin{primjer}[Tenzor vodljivosti]
+U neizotropnom sredstvu (npr. kristalu), smjer struje $\vec{j}$ ne mora biti isti
+kao i smjer narinutog električnog polja $\vec{E}$. U tom slučaju Ohmov zakon
+glasi
 \begin{equation*}
 j_i = \sum_j \sigma_{ij} E_j
 \end{equation*}
-$\sigma_{ij}$ --- tenzor električne vodljivosti (tenzor drugog ranga)
+i uključuje tenzor drugog ranga $\sigma_{ij}$ --- tenzor električne vodljivosti.
+\end{primjer}
 
-\item $F_{\mu\nu}$ --- tenzor elektromagnetskog polja (tenzor drugog
-ranga, ali obzirom na Lorentzove transformacije)
+Tenzorsko svojstvo je vezano uz tip transformacije. Tako postoje
+npr. Lorentzovi tenzori obzirom na Lorentzove tranformacije
+(vidi odjeljak \ref{sec:lorentz}), izovektori obzirom na
+izospinske transformacije u subnuklearnoj fizici (vidi odjeljak
+\ref{sec:izospin}) i drugi.
+Kad se tip transformacije ne specificira obično se misli se na rotacije.
 
-\item Zakrivljenost $n$-dimenzionalnih ploha se standardno opisuje
-tzv. Riemannovim tenzorom $R_{abcd}$  (tenzor četvrtog ranga)
-\end{itemize}
+\begin{primjer}[Tenzor elektromagnetskog polja]
+ Maxwellove jednadžbe (\ref{eq:maxwell1}--\ref{eq:maxwell4}) su očito
+ (nekad se kaže \emph{manifestno}) kovarijantne pri rotacijama kako
+ je diskutirano gore. Einsteinu je za razvoj specijalne teorije relativnosti
+ bila centralna kovarijantnost tih jednadžbi i pri Lorentzovim
+ transformacijama. I premda Maxwellove jednadžbe jesu kovarijantne
+ i pri Lorentzovim transformacijama, ta kovarijantnost
+ nije manifestna sve dok se sve veličine ne
+ zapišu pomoću Lorentzovih tenzora. Tada se gustoća naboja $\rho$ i
+ struje $\vec{j}$ ujedinjuju u četverovektor (Lorentzov tenzor prvog
+ ranga) $j^{\mu}$, $\mu=0, 1, 2, 3$, dok se električno i magnetsko
+ polje ujedinjuju u Lorentzov tenzor drugog ranga
+ $F_{\mu\nu}$ kojeg nazivamo tenzor elektromagnetskog polja ili
+  ponekad Faradayjev tenzor. Tada jednadžbe (\ref{eq:maxwell1}) i (\ref{eq:maxwell4})
+  možemo zapisati u manifestno kovarijantnom obliku
+  \begin{equation}
+      \partial_{\mu} F^{\mu\nu} = \mu_0 j^{\nu} \;,
+      \label{eq:maxwell4D}
+  \end{equation}
+  što je eksplicitno pokazano u većini modernih udžbenika 
+  elektrodinamike poput \cite{Zangwill:2012}.
+\end{primjer}
+
+\begin{primjer}[Riemannov tenzor]
+Zakrivljenost $n$-dimenzionalnih ploha se standardno opisuje
+tzv. Riemannovim tenzorom $R_{abcd}$  (tenzor četvrtog ranga),
+gdje je od posebne važnosti za fiziku Riemannov tenzor prostorvremena
+koji ima ključnu ulogu u Einsteinovoj općoj teoriji relativnosti.
+\end{primjer}
 
 
-
- Komponente tenzora drugog ranga možemo prikazati matricom.
-
- Tenzorsko svojstvo je vezano uz tip transformacije. Tako postoje
-npr. Lorentzovi vektori (četvero-vektori), izovektori, itd.  Kad se tip
-transformacije ne specificira misli se na rotacije (gornji
-vektori su vektori obzirom na rotacije). 
-
- Da bi jednadžba bila kovarijantna svi njeni članovi se moraju transformirati
+Da bi jednadžba bila kovarijantna svi njeni članovi se moraju transformirati
 na isti način. (Kažemo: moraju se transformirati kovarijantno.)
 To znači da moraju pripadati istoj reprezentaciji grupe transformacija.
 ("Pripadati" u smislu da na svakog djeluje ista reprezentacija. Nisu oni
 sami reprezentacije!)
-
-
-\emph{Napomena:}  Pojmovi kovarijantnosti i kontravarijantnosti
-komponenata vektora i tenzora koje srećemo u teoriji relativnosti
-(``gornji'' i ``donji'' indeksi, vidi slijedeći odjeljak), a 
-zapravo potječu iz diferencijalne 
-geometrije nemaju veze s ovom kovarijantnosti.  To su samo homonimi.
  
- Kakve su posljedice kovarijantnosti jednadžbi gibanja na njihova
+Kakve su posljedice kovarijantnosti jednadžbi gibanja na njihova
 rješenja?
 
-  Pojedina rješenja sama za sebe naravno nisu invarijantna, ali 
+Pojedina rješenja sama za sebe naravno nisu invarijantna, ali 
 kovarijantnost jednadžbi gibanja implicira da transformacijom rješenja
 dobijemo također dobro rješenje.
-
-Primjer: dva gravitirajuća tijela s reduciranom koordinatom $\vec{r}
-= \vec{r}_1 - \vec{r}_2$. 
-Rješenje jednadžbi gibanja je funkcija $\vec{r}(t)$ --- elipsa u prostoru.
-Međutim, translatirana elipsa $\vec{r}_{1,2}(t)+\vec{a}$ i zarotirana
-elipsa $R\vec{r}_{1,2}(t)$ su isto dobra rješenja za svaki $\vec{a}$ i $R$
+Na primjer, sustav dva gravitirajuća tijela s reduciranom koordinatom $\vec{r}
+= \vec{r}_1 - \vec{r}_2$ ima kao
+rješenje jednadžbi gibanja funkciju $\vec{r}(t)$ koja opsuje elipsa u prostoru.
+Sama ta elipsa nije invarijantna na translacije ili rotacije,
+međutim, translatirana elipsa $\vec{r}(t)+\vec{a}$ i zarotirana
+elipsa $R\vec{r}(t)$ su isto dobra rješenja za svaki $\vec{a}$ i $R$
 u što se lako uvjerimo uvrštavanjem u Newtonove jednadžbe.
-
 To da translacijom (rotacijom) rješenja također dobijemo rješenje je posljedica
 homogenosti (izotropije) prostora.
-
 Provedemo li unatrag ovaj logički sljed vidimo da homogenost
 (izotropija) prostora zahtjeva da jednadžbe gibanja budu kovarijantne
-obzirom na translacije (rotacije).
+obzirom na translacije (rotacije). Konstrukcija fizikalnih teorija se
+često svodi na to da identificiramo sve relevantne simetrije i nakon toga
+jednadžbe gibanja slažemo od članova kovarijantnih na sve te simetrije\footnote{%
+    U tom su smislu posebno moćne tzv. baždarne simetrije koje u
+    određenom smislu vode na jednu jedinstvenu jednadžbu teorije.
+To je omogućilo konstrukciju standardnog modela fizike elementarnih čestica
+u drugoj polovici XX. stoljeća koji je još uvijek važeća
+teorija svih temeljnih prirodnih sila izuzev gravitacije.}.
 
 
-Protuprimjer: vremenska inverzija (diskretna grupa = $Z_2$) \\
-  S jedne strane gornje Newtonove jednadžbe su kovarijantne i obzirom na vremensku
-inverziju. I stvarno, vremenski invertirano rješenje dvaju gravitirajućih
+\begin{primjer}[Vremenska inverzija]
+Promotrimo transformaciju inverzije vremena $t \to -t$.
+S jedne strane gornje Newtonove jednadžbe su kovarijantne i obzirom na tu vremensku
+inverziju, zahvaljujući tome što je diferencijacija po vremenu drugog reda. 
+I stvarno, vremenski invertirano rješenje dvaju gravitirajućih
 tijela u gibanju je također dobro rješenje tj. mogući slučaj u prirodi.
-No, vremenska inverzija plina koji slobodno izlazi iz plinske boce nije
-moguć događaj što ukazuje na to da priroda nije simetrična na vremensku inverziju i
+No, kao protuprimjer, vremenska inverzija plina koji slobodno izlazi iz plinske boce nije
+moguć događaj što ukazuje na to da priroda nije općenito simetrična na vremensku inverziju i
 jednadžbe koje opisuju ekspanziju plina ne bi smjele biti kovarijantne
-na takvu inverziju. Koje su to jednadžbe? ($\to$Problem strijele vremena.)
+na takvu inverziju. Neka čitaoc razmisli o (ne)kovarijantnosti drugog
+zakona termodinamike na ovu transformaciju.
+\end{primjer}
+
+Za potrebe ove knjige definicija \ref{def:tenzor} daje sve što
+je potrebno znati o pojmu tenzora. Dodatak \ref{sec:tenzorKaoStroj} daje
+jedan drugačiji pogled koji može pomoći u razumijevanju tog
+svepristutnog pojma.
 
 
-% \subsection*{Očuvanje veličina i simetrije}
-% 
-%  Lagrange-Hamiltonova formulacija klasične mehanike je pogodnija od
-% Newtonove za formalizaciju principa simetrije.
-% 
-% \begin{description}
-% \item[a)] prostorne translacije \\
-%   \begin{displaymath}
-%   \vec{r}\to\vec{r}'=\vec{r}+\delta\vec{r} \qquad \textrm{grupa} 
-%            (\mathbb{R}^{3},+)
-%  \end{displaymath}
-% \begin{displaymath}
-%  \delta L = L(\vec{r}', \dot{\vec{r}}', t) -  L(\vec{r}, \dot{\vec{r}}, t)
-%  =0
-% \end{displaymath}
-% \begin{displaymath}
-%  \delta L = \frac{\pd L}{\pd r_i} \delta r_i =0
-% \imp \frac{\pd L}{\pd r_i}=0 \quad i=1,2,3 \;,
-% \end{displaymath}
-% jer \emph{homogenost prostora} traži da promjena lagranžijana bude nula
-% za proizvoljan pomak $\delta r_i$.  Kao posljedica toga, lagranžijan
-% $L(\vec{r},\dot{\vec{r}},t)=L(\dot{\vec{r}},t)$ ne ovisi eksplicitno
-% o koordinati $\vec{r}$.
-% 
-% Sada Euler-Lagrangeove jednadžbe,
-% \begin{displaymath}
-%   \frac{\pd L}{\pd r_i}-\frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=0
-% \end{displaymath}
-% daju zakon očuvanja impulsa:
-% \begin{displaymath}
-% \frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=
-% \frac{d}{d t} p_i =0  \imp \vec{p}=\textrm{const.} \;.
-% \end{displaymath}
-% 
-% \secret{Razjasniti što je s ZSI u sustavu dva tijela. Naizgled lagranžijan
-% je funkcija od $r$, jer je $V\propto 1/r$.}
-% 
-% \item[b)] vremenske translacije
-%  \begin{displaymath}
-%   t \to t'=t+\delta t \qquad \textrm{grupa} (\mathbb{R},+)
-% \end{displaymath}
-% \begin{displaymath}
-%  \frac{d L}{d t}=0
-% \end{displaymath}
-% Lagranžijan $L(\vec{r},\dot{\vec{r}},t)=L(\vec{r},\dot{\vec{r}})$ ne
-% ovisi eksplicitno o vremenu $\to$ \emph {homogenost vremena}
-% \begin{displaymath}
-%  \frac{d L}{d t}=\frac{\pd L}{\pd r_i} \frac{\pd r_q}{\pd t} +
-%                  \frac{\pd L}{\pd \dot{r}_i} \frac{\pd \dot{r}_i}{\pd t}
-% =\frac{d}{d t}\left(\frac{\pd L}{pd \dot{r}_i}\dot{r}_i \right)
-% =\frac{d}{d t}(p_i \dot{r}_i)
-% \end{displaymath}
-% \begin{displaymath}
-%  \imp \frac{d}{d t} (p_i \dot{r}_i - L)=\frac{d}{d t} H =0
-%  \imp E = \textrm{const}
-% \end{displaymath}
-% 
-%   Energija je očuvana i to ne samo za izolirane sustave već i za sustave
-% u konstantnom vanjskom polju.
-% 
-%  G(t) $\imp$ perpetuum mobile \secret{(http://www.emmynoether.com)}
-% 
-% \item[c)] prostorne rotacije \\
-%   \begin{displaymath}
-%   \vec{r}\to\vec{r}'=\vec{r}+\delta\phi\, \unitn\times\vec{r} 
-% \qquad \text{grupa SO(3)}
-%  \end{displaymath}
-% \centerline{\includegraphics[scale=0.8]{pics/infrotacija.eps}}
-% \begin{displaymath}
-%  \delta L = \frac{\pd L}{\pd r_i}\delta{r_i} +
-%             \frac{\pd L}{\pd \dot{r}_i}\delta{\dot{r}_i}
-% = \dot{p}_i \delta\phi(\unitn\times\vec{r})_i +
-%         p_i \delta\phi(\unitn\times\dot{\vec{r}})_i
-% \end{displaymath}
-% što zahvaljujući svojstvu cikličnosti miješanog vektorskog produkta
-% prelazi u 
-% \begin{displaymath}
-% \delta L = \delta\phi \hat{n}_i (\vec{r}\times\dot{\vec{p}}+
-%   \dot{\vec{r}}\times\vec{p})_i
-% =\delta\phi \hat{n}_i \frac{d}{d t} (\vec{r}\times\vec{p})_i=0
-% \end{displaymath}
-% \emph{Izotropija prostora} znači da je varijacija lagranžijana
-% neovisna o smjeru $\unitn$ pa je
-% \begin{displaymath}
-%   \vec{L}=\vec{r}\times\vec{p}=\textrm{const}
-% \end{displaymath}
-% \end{description}
-% 
-% 
-% \textbf{Noetherin teorem}: Ako je sustav invarijantan na $n$-parametarsku
-% grupu transformacija onda postoji $n$ konstanti gibanja.
-% 
+\section{Očuvanje veličina i simetrije}
 
-\section{Tenzori kao matematički strojevi$^{*}$}
+Lagrange-Hamiltonova formulacija klasične mehanike je pogodnija od
+Newtonove za formalizaciju principa simetrije.
 
-Tenzore možemo promatrati kao neku vrstu \emph{matematičkih strojeva}
-čiji ``input'' su jedan ili više vektora, a ``output'' vektor ili
-skalar. 
-
-Praktično, problemi kojima se bavimo se gotovo uvijek daju formulirati
-u obliku ``\emph{Znamo te i te vektore koji opisuju sustav. Koliki
-je $s$ ili $\vec{v}$ tog sustava?}'', gdje su $s$ i $\vec{v}$ neki
-zanimljivi skalari ili vektori (energija, impuls, položaj, \dots).
-
-Označimo tip tenzora $\bbtensor{T}$ s uređenim parom $(0, n)$ ukoliko 
-$\bbtensor{T}$ predstavlja stroj čiji input je $n$ vektora, a output skalar,
-a s $(1, n)$ ukoliko je output vektor. Takav stroj
-možemo skicirati kao
-\begin{equation}
-   \bbtensor{T}(\underbrace{\slot, \slot, \slot, \dots}_{n \times})  \;,
-\end{equation}
-
-gdje su ``$\rule{1em}{1pt}$'' mjesta gdje treba staviti konkretne vektore
-koje će onda stroj ``preraditi'' u rezultirajući skalar ili vektor
-
-\begin{equation}
-   \bbtensor{T}(\vec{v}_1, \vec{v}_2, \dots) = s \quad \text{ili} \quad \vec{v} \;.
-\end{equation}
-
-Na primjer, klasični vektor \emph{sile} možemo interpretirati kao
-$(0, 1)$ tenzor $\bbtensor{SILA}(\slot)$ sa svojstvom da kad mu
-u njegov slot stavimo vektor brzine dobijemo skalar snage:
-\begin{equation}
-   \bbtensor{SILA}(\vec{v}) = P
-\end{equation}
-gdje je unutranji ``mehanizam'' stroja dan jednadžbom $P = \vec{F}\cdot\vec{v}$.
-
-Primjer $(0,2)$ tenzora je metrički tenzor $\bbtensor{G}(\slot, \slot)$,
-čiji je mehanizam takav da kad u njegove slotove stavimo dva vektora
-dobijemo njihov skalarni produkt:
-
-\begin{equation}
-   \bbtensor{G}(\vec{a}, \vec{b}) = \vec{a}\cdot\vec{b} \;.
-\end{equation}
-
-Ono što se često naziva tenzorom drugog ranga (matrica brojeva) su
-samo komponente tenzora u nekoj bazi, koje se
-dobiju kad se pravom apstraktnom tenzoru u njegove input slotove
-stave jedinični bazni vektori, npr,
-
-\begin{equation}
-   \bbtensor{G}(\vec{e}_i, \vec{e}_j) = g_{ij} \;.
-\label{eq:Gkomponente}
-\end{equation}
-
-Tenzor gustoće vodljivosti iz prošlog odjeljka je dakle
-tipa $(1,1)$, odnosno $\sigma(\slot)$, jer imamo
-$\sigma(\vec{E}) = \vec{j}$, dakle jedan vektor kao input
-i drugi kao output.
-
-Totalno antisimetrični tenzor (Levi-Civita) u tri dimenzije je
-tenzor oblika $(1, 2)$, u svom obliku u kojem nam daje
-vektorski produkt dvaju vektora
-\begin{equation}
-   \bbtensor{LEVICIVITA}(\vec{a}, \vec{b}) = \vec{a}\times\vec{b} \;,
-\end{equation}
-ali on može biti u obliku $(0, 3)$ kad daje mješani produkt 
-triju vektora
-\begin{equation}
-   \bbtensor{LEVICIVITA}'(\vec{a}, \vec{b}, \vec{c}) =
- (\vec{a}\times\vec{b})\cdot\vec{c} \;,
-\end{equation}
-gdje ta dva oblika nisu identična.
-
-U elektrodinamici (koja je teorija koja poštuje specijalnu teoriju
-relativnosti), javlja se $(1,1)$ tenzor $\bbtensor{FARADAY}$, ali koji
-nije tenzor obzirom na rotacije
-već obzirom na relativističke transformacije u četverodimenzionalnom
-prostoru Minkowskog. Taj tenzor daje četverovektor Lorentzove sile
-kad mu se kao input stavi četverovektor brzine
-$\bbtensor{FARADAY}(\vec{u)} = F_{\rm Lorentz}$, odnosno u uobičajenom
-zapisu po komponentama $\mu, \nu = 0,1,2,3$, 
-$F^{\mu}_{\rm Lorentz} = d p^{\mu}/d\tau = e F^{\mu}_{\,\nu} u^\nu$.
-
-\secret{
-Riemannov tenzor zakrivljenosti plohe spomenut u prošlom odjeljku 
-je $(1, 3)$ tenzor
-koji kad dobije vektore brzine dvaju čestica i njihove udaljenost,
-daje ubrzanje kojim se one približavaju ili udaljavaju na toj plohi.}
-
-\subsubsection*{Apstraktna indeksna notacija}
-
-Indeksi na tenzorima najčešće označavaju kompenente tog tenzora
-u nekoj bazi, vidi (\ref{eq:Gkomponente}). Međutim, moguće ih
-je upotrebljavati i samo kao zamjenu za ove slotove koji su
-nespretni za zapisivanje.
-
-Tako npr.  za $(0, n)$ tenzor imamo korespondenciju
-\begin{equation}
-\bbtensor{T}(\slot,\slot,\slot, \dots)  \longrightarrow T_{abc\dots} \;,
-\end{equation}
-gdje se vektori onda zapisuju kao $V^a$ i npr.  $T_{ab}V^{a}V^{b}$ je
-broj (skalar) dobiven ``kontrakcijom'' tenzora drugog ranga sa
-dva vektora, uz konvenciju da se kontrakcija uvijek radi s jednim
-gornjim i jednim donjim indeksom. Tenzor $(1,n)$ tipa bi onda bio
-$T^{a}_{bcd\dots}$, a vektor $V^a$ je tenzor $(1,0)$ tipa (input
-je ništa ili broj, a output je vektor).
-
-Promotrimo sada objekt  $\bbtensor{G}(\vec{V},\slot)$, tj, metrički
-tenzor s popunjenim jednim slotom, tj. $g_{ab}V^a$. Očito je da
-taj objekt, ako ga kontrahiramo s još jednim vektorom $W^{b}$, daje skalar.
-Dakle riječ je o tenzoru tipa $(0, 1)$, kojeg stoga možemo skraćeno
-zapisati kao $V_a$.
-
-Dakle tek taj objekt $V_a$, koji nije isto što i $V^a$, se može
-skalarno množiti s vektorima da bi se dobio skalar. To što u praksi
-u trodimenzionalnom vektorskom prostoru množimo skalarno vektore
-međusobno je samo zato što je u tom prostoru metrički tenzor
-jednak jediničnom 
+\begin{description}
+\item[a)] prostorne translacije \\
+  \begin{displaymath}
+  \vec{r}\to\vec{r}'=\vec{r}+\delta\vec{r} \qquad \textrm{grupa} 
+           (\mathbb{R}^{3},+)
+ \end{displaymath}
 \begin{displaymath}
-g = \text{diag}(1, 1, 1) =
-\begin{pmatrix}
-1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
-\end{pmatrix}
+ \delta L = L(\vec{r}', \dot{\vec{r}}', t) -  L(\vec{r}, \dot{\vec{r}}, t)
+ =0
 \end{displaymath}
-pa je \emph{po komponentama} $V^a$ jednak $V_a$.
+\begin{displaymath}
+ \delta L = \frac{\pd L}{\pd r_i} \delta r_i =0
+\imp \frac{\pd L}{\pd r_i}=0 \quad i=1,2,3 \;,
+\end{displaymath}
+jer \emph{homogenost prostora} traži da promjena lagranžijana bude nula
+za proizvoljan pomak $\delta r_i$.  Kao posljedica toga, lagranžijan
+$L(\vec{r},\dot{\vec{r}},t)=L(\dot{\vec{r}},t)$ ne ovisi eksplicitno
+o koordinati $\vec{r}$.
 
-U četverodimenzionalnom prostoru Minkowskog 
-$g = \text{diag}(1, -1, -1, -1)$ pa $V^a$ i $V_a$ više nisu
-ista stvar, ali to ne moramo jako naglašavati; dovoljno je
-pri skalarnom množenju paziti na predznake:
-$g_{\mu \nu} a^{\mu} a^{\nu} = a_{\mu} a^{\mu} = (a^{0})^2 
-- \vec{a}\cdot\vec{a}$.
+Sada Euler-Lagrangeove jednadžbe,
+\begin{displaymath}
+  \frac{\pd L}{\pd r_i}-\frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=0
+\end{displaymath}
+daju zakon očuvanja impulsa:
+\begin{displaymath}
+\frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=
+\frac{d}{d t} p_i =0  \imp \vec{p}=\textrm{const.} \;.
+\end{displaymath}
 
-No, u općenitom zakrivljenom prostoru s općenitim metričkim
-tenzorom moramo strogo razlikovati vektor $V^a$ i objekt
-$V_a$ (za kojeg postoji i specijalno ime: \emph{1-forma}).
-Npr. u Hilbertovom prostoru Diracov ``ket'' $|\alpha\rangle$ je
-vektor, a ``bra'' $\langle\alpha|$ je 1-forma. Više o ovome
-vidi u knjigama iz diferencijalne geometrije.
+\secret{Razjasniti što je s ZSI u sustavu dva tijela. Naizgled lagranžijan
+je funkcija od $r$, jer je $V\propto 1/r$.}
+
+\item[b)] vremenske translacije
+ \begin{displaymath}
+  t \to t'=t+\delta t \qquad \textrm{grupa} (\mathbb{R},+)
+\end{displaymath}
+\begin{displaymath}
+ \frac{d L}{d t}=0
+\end{displaymath}
+Lagranžijan $L(\vec{r},\dot{\vec{r}},t)=L(\vec{r},\dot{\vec{r}})$ ne
+ovisi eksplicitno o vremenu $\to$ \emph {homogenost vremena}
+\begin{displaymath}
+ \frac{d L}{d t}=\frac{\pd L}{\pd r_i} \frac{\pd r_q}{\pd t} +
+                 \frac{\pd L}{\pd \dot{r}_i} \frac{\pd \dot{r}_i}{\pd t}
+=\frac{d}{d t}\left(\frac{\pd L}{pd \dot{r}_i}\dot{r}_i \right)
+=\frac{d}{d t}(p_i \dot{r}_i)
+\end{displaymath}
+\begin{displaymath}
+ \imp \frac{d}{d t} (p_i \dot{r}_i - L)=\frac{d}{d t} H =0
+ \imp E = \textrm{const}
+\end{displaymath}
+
+  Energija je očuvana i to ne samo za izolirane sustave već i za sustave
+u konstantnom vanjskom polju.
+
+ G(t) $\imp$ perpetuum mobile \secret{(http://www.emmynoether.com)}
+
+\item[c)] prostorne rotacije \\
+  \begin{displaymath}
+  \vec{r}\to\vec{r}'=\vec{r}+\delta\phi\, \unitn\times\vec{r} 
+\qquad \text{grupa SO(3)}
+ \end{displaymath}
+\centerline{\includegraphics[scale=0.8]{pics/infrotacija.eps}}
+\begin{displaymath}
+ \delta L = \frac{\pd L}{\pd r_i}\delta{r_i} +
+            \frac{\pd L}{\pd \dot{r}_i}\delta{\dot{r}_i}
+= \dot{p}_i \delta\phi(\unitn\times\vec{r})_i +
+        p_i \delta\phi(\unitn\times\dot{\vec{r}})_i
+\end{displaymath}
+što zahvaljujući svojstvu cikličnosti miješanog vektorskog produkta
+prelazi u 
+\begin{displaymath}
+\delta L = \delta\phi \hat{n}_i (\vec{r}\times\dot{\vec{p}}+
+  \dot{\vec{r}}\times\vec{p})_i
+=\delta\phi \hat{n}_i \frac{d}{d t} (\vec{r}\times\vec{p})_i=0
+\end{displaymath}
+\emph{Izotropija prostora} znači da je varijacija lagranžijana
+neovisna o smjeru $\unitn$ pa je
+\begin{displaymath}
+  \vec{L}=\vec{r}\times\vec{p}=\textrm{const}
+\end{displaymath}
+\end{description}
 
 
-
-\emph{Literatura}: Misner, Thorne and Wheeler, \emph{Gravitation},
+\textbf{Noetherin teorem}: Ako je sustav invarijantan na $n$-parametarsku
+grupu transformacija onda postoji $n$ konstanti gibanja.
 
 \section{Prostorne transformacije kvantnomehaničkih sustava}
 
