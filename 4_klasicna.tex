@@ -137,12 +137,19 @@ Gledajući matematičku strukturu članova tih jednadžbi vidimo da je ona
     \text{vektor} &= \text{vektor}  \,,\\
     \text{vektor} &= \text{vektor} + \text{vektor} \,.
 \end{align*}
-Vidimo da su svi članovi svake pojedine jednadžbe istovrsni i slično kao kod
-Newtonovih jednadžbi (\ref{eq:kovarijantniNewton}) jednadžbe zarotiranog
-sustava će biti istog oblika, dakle Maxwellove jednadžbe su kovarijantne
+Zapravo je ovdje riječ o skalarnim i vektorskim \emph{poljima}, dakle veličinama
+koje imaju neku skalarnu odnosno vektorsku vrijednost u svakoj točki prostora.
+To je pogodan primjer jer su kvantnomehaničke valne funkcije
+i kvantna polja, što će nam kasnije biti od velikog interesa, isto polja u tom smislu.
+
+Vidimo da su svi članovi svake pojedine gornje jednadžbe istovrsni i sličnim
+razmatranjem kao kod
+Newtonovih jednadžbi (\ref{eq:kovarijantniNewton}) lako se uvjeriti da
+će jednadžbe zarotiranog
+sustava biti istog oblika. Dakle Maxwellove jednadžbe su kovarijantne
 na rotacije.
-Za ovakvo razmatranje kovarijantnosti jednadžbi pri rotacijama određujuće svojstvo 
-vektora nije to što je on opisan trojkom brojeva ili 
+Treba uočiti da za ovakvo razmatranje kovarijantnosti jednadžbi pri rotacijama određujuće svojstvo 
+vektora nije to što je on opisan trojkom brojeva niti
 to što je on element nekog matematičkog vektorskog prostora već je ključno na koji
 se način on transformira pri rotacijama. Skalari se transformiraju trivijalno i
 zapravo su invarijantni, dok vektore moramo množiti matricom rotacije:
@@ -158,7 +165,7 @@ zapravo su invarijantni, dok vektore moramo množiti matricom rotacije:
 gdje je $R_{ij}$ ista matrica (poput (\ref{eq:matrot})) koja rotira
 vektor položaja $\vec{r}$. To da se svi vektori rotiraju pomoću identične
 matrice je ključno i u ovom kontekstu predstavlja svojevrsnu definiciju
-vektora
+vektora:
 \begin{center}
     {vektor} $\equiv$ {objekt koji se pri rotacijama transformira množenjem matricom}
     $R(\hat{\vec{n}}, \theta)$.
@@ -177,7 +184,7 @@ se transformira kao
 \end{displaymath}
 \end{definicija}
 
-Vidiomo da su skalari tenzori nultog, a vektori tenzori prvog ranga.
+Vidimo da su skalari tenzori nultog, a vektori tenzori prvog ranga.
 Komponente tenzora drugog ranga $\bbtensor{T}_{ij}$
 možemo po želji prikazati matricom.
 
@@ -192,8 +199,8 @@ i uključuje tenzor drugog ranga $\sigma_{ij}$ --- tenzor električne vodljivost
 \end{primjer}
 
 Tenzorsko svojstvo je vezano uz tip transformacije. Tako postoje
-npr. Lorentzovi tenzori obzirom na Lorentzove tranformacije
-(vidi odjeljak \ref{sec:lorentz}), izovektori obzirom na
+npr. \emph{Lorentzovi tenzori} obzirom na Lorentzove tranformacije
+(vidi odjeljak \ref{sec:lorentz}), \emph{izotenzori} obzirom na
 izospinske transformacije u subnuklearnoj fizici (vidi odjeljak
 \ref{sec:izospin}) i drugi.
 Kad se tip transformacije ne specificira obično se misli se na rotacije.
@@ -201,7 +208,7 @@ Kad se tip transformacije ne specificira obično se misli se na rotacije.
 \begin{primjer}[Tenzor elektromagnetskog polja]
  Maxwellove jednadžbe (\ref{eq:maxwell1}--\ref{eq:maxwell4}) su očito
  (nekad se kaže \emph{manifestno}) kovarijantne pri rotacijama kako
- je diskutirano gore. Einsteinu je za razvoj specijalne teorije relativnosti
+ je upravo bilo diskutirano. Einsteinu je za razvoj specijalne teorije relativnosti
  bila centralna kovarijantnost tih jednadžbi i pri Lorentzovim
  transformacijama. I premda Maxwellove jednadžbe jesu kovarijantne
  i pri Lorentzovim transformacijama, ta kovarijantnost
@@ -233,20 +240,21 @@ Da bi jednadžba bila kovarijantna svi njeni članovi se moraju transformirati
 na isti način. (Kažemo: moraju se transformirati kovarijantno.)
 To znači da moraju pripadati istoj reprezentaciji grupe transformacija.
 ("Pripadati" u smislu da na svakog djeluje ista reprezentacija. Nisu oni
-sami reprezentacije!)
+sami reprezentacije!) Tenzori različitih rangova pripadaju različitim
+reprezentacijama. Zanimljivo je pitanje, kojim ćemo se baviti
+u poglavlju \ref{ch:rotacije}, jesu li te reprezentacije reducibilne.
  
 Kakve su posljedice kovarijantnosti jednadžbi gibanja na njihova
 rješenja?
-
 Pojedina rješenja sama za sebe naravno nisu invarijantna, ali 
 kovarijantnost jednadžbi gibanja implicira da transformacijom rješenja
 dobijemo također dobro rješenje.
 Na primjer, sustav dva gravitirajuća tijela s reduciranom koordinatom $\vec{r}
 = \vec{r}_1 - \vec{r}_2$ ima kao
-rješenje jednadžbi gibanja funkciju $\vec{r}(t)$ koja opsuje elipsa u prostoru.
+rješenje jednadžbi gibanja funkciju $\vec{r}(t)$ koja opisuje elipsu.
 Sama ta elipsa nije invarijantna na translacije ili rotacije,
 međutim, translatirana elipsa $\vec{r}(t)+\vec{a}$ i zarotirana
-elipsa $R\vec{r}(t)$ su isto dobra rješenja za svaki $\vec{a}$ i $R$
+elipsa $R\vec{r}(t)$ su isto dobra rješenja za bilo koji $\vec{a}$ i $R$
 u što se lako uvjerimo uvrštavanjem u Newtonove jednadžbe.
 To da translacijom (rotacijom) rješenja također dobijemo rješenje je posljedica
 homogenosti (izotropije) prostora.
@@ -256,7 +264,7 @@ obzirom na translacije (rotacije). Konstrukcija fizikalnih teorija se
 često svodi na to da identificiramo sve relevantne simetrije i nakon toga
 jednadžbe gibanja slažemo od članova kovarijantnih na sve te simetrije\footnote{%
     U tom su smislu posebno moćne tzv. baždarne simetrije koje u
-    određenom smislu vode na jednu jedinstvenu jednadžbu teorije.
+    određenom smislu vode na jednu jedinstvenu jednadžbu gibanja.
 To je omogućilo konstrukciju standardnog modela fizike elementarnih čestica
 u drugoj polovici XX. stoljeća koji je još uvijek važeća
 teorija svih temeljnih prirodnih sila izuzev gravitacije.}.
@@ -265,14 +273,19 @@ teorija svih temeljnih prirodnih sila izuzev gravitacije.}.
 \begin{primjer}[Vremenska inverzija]
 Promotrimo transformaciju inverzije vremena $t \to -t$.
 S jedne strane gornje Newtonove jednadžbe su kovarijantne i obzirom na tu vremensku
-inverziju, zahvaljujući tome što je diferencijacija po vremenu drugog reda. 
+inverziju, zahvaljujući tome što je diferencijacija po vremenu koja
+se tamo javlja uvijek parnog (drugog) reda. 
 I stvarno, vremenski invertirano rješenje dvaju gravitirajućih
 tijela u gibanju je također dobro rješenje tj. mogući slučaj u prirodi.
 No, kao protuprimjer, vremenska inverzija plina koji slobodno izlazi iz plinske boce nije
 moguć događaj što ukazuje na to da priroda nije općenito simetrična na vremensku inverziju i
 jednadžbe koje opisuju ekspanziju plina ne bi smjele biti kovarijantne
-na takvu inverziju. Neka čitaoc razmisli o (ne)kovarijantnosti drugog
-zakona termodinamike na ovu transformaciju.
+na takvu inverziju. Neka se čitaoc eskplicitno uvjeri u nekovarijantnost drugog
+zakona termodinamike na vremensku inverziju i time će dobiti zadovoljavajuće
+razumijevanje ove situacije. Stvarno razumijevanje načina na koji je narušena
+ova simetrija u zakonima mehanike čestica plina (dakle ne termodinamike) 
+predstavlja zloglasni problem strijele vremena \cite{Zeh:2007}.
+
 \end{primjer}
 
 Za potrebe ove knjige definicija \ref{def:tenzor} daje sve što
@@ -281,105 +294,86 @@ jedan drugačiji pogled koji može pomoći u razumijevanju tog
 svepristutnog pojma.
 
 
-\section{Očuvanje veličina i simetrije}
+\section{Simetrije i zakoni očuvanja}
 
-Lagrange-Hamiltonova formulacija klasične mehanike je pogodnija od
-Newtonove za formalizaciju principa simetrije.
+U prošlom smo odjeljku promatrali simetrije Newtonovih klasičnih jednadžbi
+gibanja. Ispostavlja se međutim da je
+Lagrange-Hamiltonova formulacija klasične mehanike znatno pogodnija od
+Newtonove za formalizaciju principa simetrije. Naime, centralni objekt
+te formulacije je integral lagranžijana tj. akcija
+\begin{equation}
+    S = \int  L\, dt
+    \label{eq:akcija}
+\end{equation}
+koja je invarijantni skalar obzirom na sve simetrije teorije. Razmatranje
+je li akcija invarijantna je znantno lakše od razmatranja jesu li jednadžbe
+gibanja kovarijantne. Osim toga, u relativističkoj kvantnoj fizici
+(kvantnoj teoriji polja), u skladu s načelima relativistike,
+vrijeme prestaje imati posebnu ulogu i jednadžbe gibanja
+u vremenu se rijetko koriste. 
 
-\begin{description}
-\item[a)] prostorne translacije \\
-  \begin{displaymath}
-  \vec{r}\to\vec{r}'=\vec{r}+\delta\vec{r} \qquad \textrm{grupa} 
-           (\mathbb{R}^{3},+)
- \end{displaymath}
-\begin{displaymath}
+No, ostanimo još nakratko u svijetu klasične fizike i podsjetimo se da je jedna
+od važnih posljedica simetrija u prirodi postojanje očuvanih veličina.
+To je posebno lagano vidjeti u Lagrangeovoj formulaciji kako ćemo sada
+vidjeti na primjeru simetrija na prostorne translacije.
+
+Prostorne translacije su transformacije oblika
+\begin{equation}
+\vec{r}\to\vec{r}'=\vec{r}+\delta\vec{r} \,,
+\end{equation}
+koje čine grupu $(\mathbb{R}^{3},+)$, no grupnoteorijska svojstva nam ovdje
+neće biti bitna, do na činjenicu da ona ima beskonačno elemenata parametriziranih
+s tri realna broja. Da bi akcija (\ref{eq:akcija}) bila invarijantna potrebno
+je da i sam lagranžijan $L$  bude invarijantan\footnote{Strogo uzevši, akcija
+    općenito može biti invarijantna i bez da je lagranžijan invarijantan, no to uključuje
+    egzotične efekte na rubovima integracije kakvi se ne javljaju u sustavima
+    koje ovdje razmatramo.}, odnosno da je promjena lagranžijana
+\begin{equation}
  \delta L = L(\vec{r}', \dot{\vec{r}}', t) -  L(\vec{r}, \dot{\vec{r}}, t)
- =0
-\end{displaymath}
-\begin{displaymath}
- \delta L = \frac{\pd L}{\pd r_i} \delta r_i =0
-\imp \frac{\pd L}{\pd r_i}=0 \quad i=1,2,3 \;,
-\end{displaymath}
+ =0 \,.
+\end{equation}
+U infinitezimalnom slučaju, ta je promjena
+\begin{equation}
+    \delta L =  \sum_{i=1}^{3} \frac{\pd L}{\pd r_i} \delta r_i =0 \;,
+\end{equation}
+iz čega slijedi da je
+\begin{equation}
+ \frac{\pd L}{\pd r_i}=0 \,, \quad i=1,2,3 \,,
+\end{equation}
 jer \emph{homogenost prostora} traži da promjena lagranžijana bude nula
 za proizvoljan pomak $\delta r_i$.  Kao posljedica toga, lagranžijan
 $L(\vec{r},\dot{\vec{r}},t)=L(\dot{\vec{r}},t)$ ne ovisi eksplicitno
 o koordinati $\vec{r}$.
-
-Sada Euler-Lagrangeove jednadžbe,
-\begin{displaymath}
-  \frac{\pd L}{\pd r_i}-\frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=0
-\end{displaymath}
-daju zakon očuvanja impulsa:
+Sada Euler-Lagrangeove jednadžbe gibanja,
+\begin{equation}
+  \frac{\pd L}{\pd r_i}-\frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=0 \,,
+\end{equation}
+daju zakon očuvanja impulsa
 \begin{displaymath}
 \frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=
-\frac{d}{d t} p_i =0  \imp \vec{p}=\textrm{const.} \;.
+\frac{d}{d t} p_i =0  \;,
 \end{displaymath}
+odnosno vektor impulsa $\vec{p}$ je konstanta gibanja.
 
-\secret{Razjasniti što je s ZSI u sustavu dva tijela. Naizgled lagranžijan
-je funkcija od $r$, jer je $V\propto 1/r$.}
+Na sličan način, homogenost vremena znači invarijantnost lagranžijana
+na vremenske translacije (jednoparametarska grupa),
+što daje zakon očuvanja energije, a izotropija prostora povlači
+invarijantnost lagranžijana na prostorne rotacije (troparametarska
+grupa) što daje zakon očuvanja momenta impulsa.
+Sve ovo gore su samo posebni primjeri sljedećeg općeg teorema.
 
-\item[b)] vremenske translacije
- \begin{displaymath}
-  t \to t'=t+\delta t \qquad \textrm{grupa} (\mathbb{R},+)
-\end{displaymath}
-\begin{displaymath}
- \frac{d L}{d t}=0
-\end{displaymath}
-Lagranžijan $L(\vec{r},\dot{\vec{r}},t)=L(\vec{r},\dot{\vec{r}})$ ne
-ovisi eksplicitno o vremenu $\to$ \emph {homogenost vremena}
-\begin{displaymath}
- \frac{d L}{d t}=\frac{\pd L}{\pd r_i} \frac{\pd r_q}{\pd t} +
-                 \frac{\pd L}{\pd \dot{r}_i} \frac{\pd \dot{r}_i}{\pd t}
-=\frac{d}{d t}\left(\frac{\pd L}{pd \dot{r}_i}\dot{r}_i \right)
-=\frac{d}{d t}(p_i \dot{r}_i)
-\end{displaymath}
-\begin{displaymath}
- \imp \frac{d}{d t} (p_i \dot{r}_i - L)=\frac{d}{d t} H =0
- \imp E = \textrm{const}
-\end{displaymath}
-
-  Energija je očuvana i to ne samo za izolirane sustave već i za sustave
-u konstantnom vanjskom polju.
-
- G(t) $\imp$ perpetuum mobile \secret{(http://www.emmynoether.com)}
-
-\item[c)] prostorne rotacije \\
-  \begin{displaymath}
-  \vec{r}\to\vec{r}'=\vec{r}+\delta\phi\, \unitn\times\vec{r} 
-\qquad \text{grupa SO(3)}
- \end{displaymath}
-\centerline{\includegraphics[scale=0.8]{pics/infrotacija.eps}}
-\begin{displaymath}
- \delta L = \frac{\pd L}{\pd r_i}\delta{r_i} +
-            \frac{\pd L}{\pd \dot{r}_i}\delta{\dot{r}_i}
-= \dot{p}_i \delta\phi(\unitn\times\vec{r})_i +
-        p_i \delta\phi(\unitn\times\dot{\vec{r}})_i
-\end{displaymath}
-što zahvaljujući svojstvu cikličnosti miješanog vektorskog produkta
-prelazi u 
-\begin{displaymath}
-\delta L = \delta\phi \hat{n}_i (\vec{r}\times\dot{\vec{p}}+
-  \dot{\vec{r}}\times\vec{p})_i
-=\delta\phi \hat{n}_i \frac{d}{d t} (\vec{r}\times\vec{p})_i=0
-\end{displaymath}
-\emph{Izotropija prostora} znači da je varijacija lagranžijana
-neovisna o smjeru $\unitn$ pa je
-\begin{displaymath}
-  \vec{L}=\vec{r}\times\vec{p}=\textrm{const}
-\end{displaymath}
-\end{description}
-
-
-\textbf{Noetherin teorem}: Ako je sustav invarijantan na $n$-parametarsku
+\begin{teorem}[Noether]
+Ako je sustav invarijantan na $n$-parametarsku
 grupu transformacija onda postoji $n$ konstanti gibanja.
+\end{teorem}
 
-\section{Prostorne transformacije kvantnomehaničkih sustava}
+\section{Prostorne transformacije kvantnih sustava}
 
 (Iz pedagoških razloga, u ovom odjeljku ćemo kvantnomehanička stanja 
 opisivati uobičajenim valnim funkcijama $\psi_{\alpha}(\vec{r},t)$, a ne
 apstraktnim Diracovim ketovima $\ket{\alpha}$.)
 
-\subsection{Kontinuirane prostorne translacije$^*$}
+\subsection{Kontinuirane prostorne translacije}
 
 \centerline{\includegraphics{pics/qmtranslacija.eps}}
 
@@ -431,7 +425,7 @@ reprezentaciji.)
 % a sada ekstrahiramo faktor $-i/h$ kako bismo imali izravnu korespondenciju
 % između generatora grupe i odgovarajuće fizikalne veličine.
  
-\subsection{Prostorne translacije - Blochov teorem$^*$}
+\subsection{Prostorne translacije - Blochov teorem}
 
 \emph{Kristal} je sustav atoma koji je invarijantan na translacije 
 za bilo koji vektor oblika:
@@ -574,7 +568,7 @@ na grupno-teorijski pristup tj. korespondenciju s reprezentacijama
 grupe translacija.
 
 
-\subsection{Vremenske translacije$^*$}
+\subsection{Vremenske translacije}
 
 Slično kao kod prostorne imamo
 \begin{displaymath}
