@@ -115,9 +115,9 @@ ako $\vec{r}$ i $\vec{F}$ promatramo kao elemente vektorskog prostora,
 a ne kao trojke koordinata tih vektora u nekoj bazi, onda rotacija
 koordinatnog sustava ne mijenja same vektore i ono sto je onda
 \emph{kovarijantno} je zapis tih jednadžbi po komponentama:
-\begin{displaymath}
+\begin{equation}
        m  \ddot{x}_{i} =  F_{i} \;.
-\end{displaymath}
+\end{equation}
 
 Kod konstrukcije fizikalnih teorija simetrije prirode će se odražavati
 u kovarijantnosti jednadžbi gibanja pa je
@@ -177,12 +177,12 @@ Ovo se poopćuje na veličine sa složenijim transformacijskim svojstima,
 \label{def:tenzor}
 \emph{Tenzor $n$-tog ranga} (pri rotacijama)  jest veličina $\bbtensor{T}$  koja
 se transformira kao
-\begin{displaymath}
+\begin{equation}
  \qquad \bbtensor{T}_{i_1 i_2 \ldots i_n}(\vec{r}) \to \bbtensor{T}'_{i_1 i_2 \ldots i_n}(\vec{r}') =
 \sum_{j_1, j_2, \ldots, j_n}
   R_{i_1 j_1}  R_{i_2 j_2} \ldots  R_{i_n j_n} \bbtensor{T}_{j_1 j_2 \ldots j_n}(\vec{r})
  \; . 
-\end{displaymath}
+\end{equation}
 \end{definicija}
 
 Vidimo da su skalari tenzori nultog, a vektori tenzori prvog ranga.
@@ -351,10 +351,10 @@ Sada Euler-Lagrangeove jednadžbe gibanja,
   \frac{\pd L}{\pd r_i}-\frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=0 \,,
 \end{equation}
 daju zakon očuvanja impulsa
-\begin{displaymath}
+\begin{equation}
 \frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=
 \frac{d}{d t} p_i =0  \;,
-\end{displaymath}
+\end{equation}
 odnosno vektor impulsa $\vec{p}$ je konstanta gibanja.
 
 Na sličan način, homogenost vremena znači invarijantnost lagranžijana
@@ -430,13 +430,13 @@ i zbrojimo:
 gdje je eksponencijacija diferencijalnog (ili bilo kakvog drugog) operatora
 definirana naznačenom beskonačnom sumom (vidi i dodatak \ref{sec:expmat}).
 Usporedbom vidimo da je operator translacije u 1D
-\begin{displaymath}
+\begin{equation}
 U_r(a)= e^{-a \pd / \pd  x} \,,
-\end{displaymath}
+\end{equation}
 odnosno, u trodimenzionalnom prostoru ćemo imati
-\begin{displaymath}
+\begin{equation}
 U_r(\vec{a})= e^{-\vec{a}\cdot\nabla} \;.
-\end{displaymath}
+\end{equation}
 Poznavajući kvantnomehaničku korespondenciju $-i\hbar\nabla \leftrightarrow
 \vec{p}$ imamo konačno općeniti (neovisan o bazi) operator translacije
 \begin{equation}
@@ -516,77 +516,91 @@ da je on kvantnomehanički analogon klasičnom impulsu sustava.
 
 \subsection{Vremenske translacije}
 
-Slično kao kod prostorne imamo
-\begin{displaymath}
- \psi'_{\alpha}(x,t) = \psi_{\alpha}(x,t-\tau) = U_{t}(\tau)\psi_{\alpha}(x,t)
-\end{displaymath}
-I opet Taylorovim razvojem
-\begin{equation*}
+Potpuno analogno translaciji u jednodimenzionalnom prostoru
+možemo definirati operator translacije u vremenu $U_{t}(\tau)$
+tako da je valna funkcija transformiranog sustava dana kao
+\begin{equation}
+ \psi'_{\alpha}(x,t) = \psi_{\alpha}(x,t-\tau) = U_{t}(\tau)\psi_{\alpha}(x,t)\,.
+\end{equation}
+I opet Taylorovim razvojem dobivamo
+\begin{equation}
 \begin{split}
  \psi_{\alpha}(x,t-\tau)&=\psi_{\alpha}(x,t)-\tau\frac{\pd\psi_{\alpha}(x,t)}
 {\pd t}+\ldots \\
-&=e^{-\tau \pd / \pd  t} \psi_{\alpha}(x,t)
+&=e^{-\tau \pd / \pd  t} \psi_{\alpha}(x,t) \;,
 \end{split}
-\end{equation*}
-Sada korespondencijom $i\hbar\pd /\pd t \leftrightarrow H$
-imamo
-\begin{displaymath}
-U_t(\tau)= e^{(i/h)H\tau} \;,
-\end{displaymath}
-ali ovo vrijedi samo za $H$ konstantan u vremenu (kakav on jest u većini
-nama zanimljivih slučajeva). Za diskusiju vidi Sakurai, sect. 2.1.
+\end{equation}
+te kvantnomehanička korespondencija $i\hbar\pd /\pd t \leftrightarrow H$
+daje
+\begin{equation}
+U_t(\tau)= e^{(i/h)H\tau} \;.
+\end{equation}
+Ovo vrijedi samo za $H$ konstantan u vremenu, kakav on jest u većini
+nama zanimljivih slučajeva (za ostale slučajeve
+vidi diskusiju u \cite{Sakurai:2011}, odjeljak 2.1).
 
-\paragraph{Vremenska evolucija}
-Vremenska translacija daje sustav koji ima isto ponašanje u vremenskom
+Vremenska \emph{translacija} je transformacija koja daje
+stanje sustava koji ima isto ponašanje u vremenskom
 trenutku $t+\tau$ kao originalni sustav u trenutku $t$. Vremenska
-\emph{evolucija} nekog sustava se isto može dobiti iz ovog gore, ako
-primijetimo da je
-\begin{displaymath}
+\emph{evolucija} je pak transformacija koja 
+daje stanje sustava u trenutku $t+\tau$ djelujući na stanje
+tog istog sustava u ranijem trenutku $t$.
+Operator vremenske evolucije se može dobiti iz upravo
+navedenog, ako primijetimo da je
+\begin{equation}
 \psi_{\alpha}(x,t-\tau)=e^{(i/h)H\tau}\psi_{\alpha}(x,t)
-\end{displaymath}
+\end{equation}
 pa zamjenom $\tau\equiv t-t'$ imamo 
-\begin{displaymath}
+\begin{equation}
 \psi_{\alpha}(x,t')=e^{-(i/h)H(t'-t)}\psi_{\alpha}(x,t)
-\end{displaymath}
-
+\end{equation}
 Vrijedi dakle
-\begin{displaymath}
+\begin{equation}
 U_{\text{evolucija}}(t' -t)=U^{-1}_{\text{translacija}}(t' -t)
 =U_{\text{translacija}}(t -t') \;.
-\end{displaymath}
+\end{equation}
 
-
-\paragraph{Očuvane veličine} 
-Promotrimo operator $A$ takav da je
+Promotrimo sada operator $A$ takav da je
 $[H,A]=0$. Neka je $\psi(x,t)$ svojstveno stanje od $A$ tj.
-\[
+\begin{equation}
   A\psi(x,t) = a \psi(x,t)
-\]
+\end{equation}
 Tada to isto stanje nakon vremena $(t'-t)$ zadovoljava
-\[
+\begin{equation}
   A\psi(x,t')= A e^{-(i/h)H(t'-t)} \psi(x,t) =
  e^{-(i/h)H(t'-t)} A \psi(x,t) = a \psi(x,t')
-\]
-tj. $A$ je očuvana veličina. Npr. za slobodnu česticu $H=p^2/2m$ 
-$\imp$ 
-\[
+\end{equation}
+tj. $A$ je očuvana veličina. Zaključujemo da su
+veličine čiji operatori komutiraju s Hamiltonijanom očuvane u vremenu.
+Npr. za slobodnu česticu $H=p^2/2m$ i
+\begin{equation}
    [H,p]=\frac{1}{2m}[p^2,p]=0
-\]
-i impuls je očuvan.
+\end{equation}
+pa je impuls očuvan.
 
-Veličine koje komutiraju s Hamiltonijanom su očuvane u vremenu.
+
 
 \subsection{Rotacije}
 
-\centerline{\includegraphics[scale=0.8]{pics/infrotacija.eps}}
-Infinitezimalna rotacija je (vidi sliku):
-  \begin{displaymath}
-  \vec{r}\to\vec{r}'=\vec{r}+\delta\phi\, \unitn\times\vec{r}  \;.
- \end{displaymath}
-To znači da, po analogiji s translacijama, valna funkcija zarotiranog
-sustava treba zadovoljavati
+Rotacije u prostoru su transformacije čija nam je važnost
+enormna. Konceptualno, unitarni operator $\mathcal{D}(\hat{\vec{n}}, \phi)$
+rotacije\footnote{Koristit ćemo
+  tradicionalni simbol $\mathcal{D}$ koji dolazi od njemačke
+riječi \emph{Drehung} = rotacija.} za kut $\phi$ oko osi $\hat{\vec{n}}$ dobivamo
+istim postupkom kao i operatore translacije u prostoru i vremenu,
+jedino intrinsična trodimenzionalnost i nekomutativnost rotacija
+malo komplicira izvod.
 
-\begin{equation*}
+\centerline{\includegraphics[scale=0.8]{pics/infrotacija.eps}}
+
+Stoga ćemo se odmah usredotočiti na infinitezimalnu rotaciju koja (vidi sliku)
+transformira vektor položaja kao
+  \begin{equation}
+  \vec{r}\to\vec{r}'=\vec{r}+\delta\phi\, \unitn\times\vec{r}  \;.
+ \end{equation}
+To znači da valna funkcija zarotiranog
+sustava treba zadovoljavati
+\begin{equation}
 \begin{split}
 \psi_{\alpha}'(\vec{r}, t)&=\psi_{\alpha}(R(\hat{\vec{n}},\delta \phi)^{-1}
 \vec{r}, t) \\
@@ -598,7 +612,7 @@ sustava treba zadovoljavati
  &= \left(1-\frac{i}{\hbar}\vec{L}\cdot\hat{\vec{n}}\delta\phi \right)
   \psi_{\alpha}(\vec{r}, t)
 \end{split}
-\end{equation*}
+\end{equation}
 
 Rotaciju za konačni kut dobijemo kompozicijom N rotacija za $\delta\phi / N$
 gdje $N\to\infty$:
@@ -608,14 +622,27 @@ gdje $N\to\infty$:
 \left(1-\frac{i}{\hbar}\vec{L}\cdot\hat{\vec{n}}\delta\phi \right)^N
 = e^{-(i/\hbar)\vec{L}\cdot\hat{\vec{n}}\phi}
 \end{equation}
-
-Izotropija prostora povlači očuvanje momenta impulsa: $[H,L_{i}]=0$.
-
-Operatori $L_i$, $i=x,y,z$ zadovoljavaju komutacijske relacije
+I opet, ove relacije definiraju operatore $L_i$ kao generatore rotacija,
+a kasnija razmatranja pokazuju da je riječ upravo o operatoru koji
+odgovara momentu impulsa sustava.
+Ukoliko vrijedi $[H,L_{i}]=0$ (a vrijedit će ukoliko neki vanjski utjecaji
+ne naruše izotropiju prostora) moment impulsa će biti očuvan.
+Poznato je da operatori $L_i$, $i=x,y,z$ zadovoljavaju komutacijske relacije
 \begin{equation}
-   [L_x, L_y] = i\hbar  L_z  \qquad \text{i ciklične zamjene}
+    [L_i, L_j] = i\hbar \epsilon_{ijk}  L_k \,,
 \end{equation}
-%(Vidi vježbe za izvod ovog i definiciju $\epsilon_{ijk}$.)
+gdje smo upotrijebili Levi-Civita ili totalno antisimetrični pseudotenzor
+trećeg reda definiran
+svojim komponentama $\epsilon_{ijk}$ tako da je
+\begin{displaymath}
+\epsilon_{ijk}=
+\begin{cases}
+1& \text{ako je $(i,j,k)$ parna permutacija od $(1,2,3)$}, \\
+-1& \text{ako je $(i,j,k)$ je neparna permutacija od $(1,2,3)$}, \\
+0& \text{inače, tj. ako su dva ili sva tri indeksa ista}.
+\end{cases} 
+\end{displaymath}
+Npr. $\epsilon_{231}=1$, $\epsilon_{213}=-1$, $\epsilon_{221}=0$, itd.
 
 \section{Spin$^*$}
 
@@ -626,20 +653,20 @@ Kakva je situacija u kvantnoj mehanici?
 
 Promotrimo rotaciju vektora valnih funkcija:
 
-\begin{displaymath}
+\begin{equation}
   \vec{\Psi}(\vec{r},t) \equiv (\psi_{x}(\vec{r}, t),
  \psi_{y}(\vec{r}, t), \psi_{z}(\vec{r}, t))
-\end{displaymath}
+\end{equation}
 
 Ovakav vektor će nam biti zanimljiv npr. pri razmatranju čestice koja se vrti 
 oko svoje osi i kod koje nas ne zanima samo 
 njen položaj u prostoru već i njena orijentacija.
 
 Kao i ranije, tražimo operator s djelovanjem
-\begin{displaymath}
+\begin{equation}
   \vec{\Psi}'(\vec{r},t) = \mathcal{D}
 (\vec{\hat{n}},\phi) \vec{\psi}(\vec{r},t) \;,
-\end{displaymath}
+\end{equation}
 gdje je $\vec{\Psi}'(\vec{r},t)$ valna funkcija zarotiranog sustava.
 
 \centerline{\includegraphics{pics/spin.eps}}
@@ -668,9 +695,9 @@ R(\hat{\vec{n}}, \delta\phi)^{-1}\vec{r},t) \\
 Imamo dodatni član $\delta\phi \hat{\vec{n}}\times\vec{\Psi}(\vec{r},t)$
 kojeg ćemo drugačije napisati pomoću tripleta matrica definiranih na
 slijedeći način:
-\begin{displaymath}
+\begin{equation}
 (S_j)_{ik} = i\hbar\epsilon_{ijk} \quad j=1,2,3 \;.
-\end{displaymath}
+\end{equation}
 Konkretno
 \begin{align}
 S_1& =i\hbar
@@ -693,14 +720,14 @@ S_3& = i\hbar
 \end{pmatrix} = i\hbar X_3 
 \end{align}
 Uz tako definirane matrice imamo
-\begin{displaymath}
+\begin{equation}
 \begin{split}
 [\hat{\vec{n}}\times\vec{\Psi}]_i &=
 \epsilon_{ijk}\hat{n}_j\Psi_k \\
 &= -\frac{i}{\hbar}\hat{n}_j (S_j)_{ik}\Psi_k\\
 &= -\frac{i}{\hbar}(\hat{\vec{n}}\cdot\vec{S})_{ik}\Psi_k \;,
 \end{split}
-\end{displaymath}
+\end{equation}
 što znači
 \begin{equation*}
 \mathcal{D}(\vec{\hat{n}},\phi)\vec{\Psi}(\vec{r}, t)=
@@ -890,10 +917,10 @@ U_{r}(\vec{a}) \psi(\vec{r}, t)$ također zadovoljavati Schr\"{o}dingerovu
 jednadžbu ako i samo ako je $[H, \vec{p}] = 0$
 
 \item Koristeći fundamentalne kvantnomehaničke komutatore
-\begin{displaymath}
+\begin{equation}
  [x_i, p_j] = i\hbar \delta_{ij}\;, \qquad
  [x_i, x_j] = [p_i, p_j] = 0 \;,
-\end{displaymath}
+\end{equation}
 te svojstva Levi-Civita tenzora, izračunajte komutacijske
 relacije angularnog momenta $[L_i, L_j]$.
 
