@@ -572,18 +572,22 @@ Tada to isto stanje nakon vremena $(t'-t)$ zadovoljava
 \end{equation}
 tj. $A$ je očuvana veličina. Zaključujemo da su
 veličine čiji operatori komutiraju s Hamiltonijanom očuvane u vremenu.
-Npr. za slobodnu česticu $H=p^2/2m$ i
+Npr. za slobodnu česticu $H=p^2/2m$ i zbog (\ref{eq:ppkomutacija}) imamo
 \begin{equation}
    [H,p]=\frac{1}{2m}[p^2,p]=0
 \end{equation}
-pa je impuls očuvan.
+pa je impuls očuvana veličina.
 
 
 
 \subsection{Rotacije}
 
 Rotacije u prostoru su transformacije čija nam je važnost
-enormna. Konceptualno, unitarni operator $\mathcal{D}(\hat{\vec{n}}, \phi)$
+enormna i zbog važnih primjena u fizici kojima je posvećeno
+poglavlje \ref{ch:rotacije} i zbog toga što su one paradigmatski
+slučaj na kojem se može izložiti većina gradiva teorije kontinuiranih grupa,
+kao u poglavlju \ref{ch:lie}.
+Konceptualno, unitarni operator $\mathcal{D}(\hat{\vec{n}}, \phi)$
 rotacije\footnote{Koristit ćemo
   tradicionalni simbol $\mathcal{D}$ koji dolazi od njemačke
 riječi \emph{Drehung} = rotacija.} za kut $\phi$ oko osi $\hat{\vec{n}}$ dobivamo
@@ -614,13 +618,14 @@ sustava treba zadovoljavati
 \end{split}
 \end{equation}
 
-Rotaciju za konačni kut dobijemo kompozicijom N rotacija za $\delta\phi / N$
+Rotaciju za konačni kut dobijemo kompozicijom N rotacija za $\delta\phi = \phi / N$
 gdje $N\to\infty$:
 
 \begin{equation}
 \mathcal{D}(\hat{\vec{n}}, \phi)=\lim_{N\to\infty}
 \left(1-\frac{i}{\hbar}\vec{L}\cdot\hat{\vec{n}}\delta\phi \right)^N
 = e^{-(i/\hbar)\vec{L}\cdot\hat{\vec{n}}\phi}
+\label{eq:rotD}
 \end{equation}
 I opet, ove relacije definiraju operatore $L_i$ kao generatore rotacija,
 a kasnija razmatranja pokazuju da je riječ upravo o operatoru koji
@@ -630,8 +635,10 @@ ne naruše izotropiju prostora) moment impulsa će biti očuvan.
 Poznato je da operatori $L_i$, $i=x,y,z$ zadovoljavaju komutacijske relacije
 \begin{equation}
     [L_i, L_j] = i\hbar \epsilon_{ijk}  L_k \,,
+    \label{eq:Lkomutacija}
 \end{equation}
-gdje smo upotrijebili Levi-Civita ili totalno antisimetrični pseudotenzor
+gdje smo upotrijebili Levi-Civita ili totalno antisimetrični pseudotenzor\footnote{Za
+razliku između običnih i pseudotenzora vidi dodatak \ref{sec:aksijalni}.}
 trećeg reda definiran
 svojim komponentama $\epsilon_{ijk}$ tako da je
 \begin{displaymath}
@@ -644,39 +651,44 @@ svojim komponentama $\epsilon_{ijk}$ tako da je
 \end{displaymath}
 Npr. $\epsilon_{231}=1$, $\epsilon_{213}=-1$, $\epsilon_{221}=0$, itd.
 
-\section{Spin$^*$}
+\section{Spin}
 
-Klasična fizika $\to$ različita transformacijska svojstva pri
-rotacijama $\to$ \emph{tenzori}.
-
-Kakva je situacija u kvantnoj mehanici?
-
-Promotrimo rotaciju vektora valnih funkcija:
-
+U odjeljku \ref{sec:tenzori} vidjeli smo kako veličine u klasičnoj fizici
+možemo kategorizirati prema njihovim različitim transformacijskim svojstvima,
+recimo na rotacije. Tu smo upoznali tenzore, gdje ovisno o rangu tenzora,
+trebamo ga množiti različitim brojem rotacijskih matrica da bismo zapisali
+tenzor zarotiranog sustava. Tako očekujemo da i u kvantnoj mehanici jedan
+te isti operator
+iz (\ref{eq:rotD}) ne može ostvariti
+rotaciju proizvoljnog kvantnog sustava.
+Uvjerimo se da je to zaista tako
+promatrajući rotaciju sustava opisanog vektorskom trojkom valnih funkcija
 \begin{equation}
   \vec{\Psi}(\vec{r},t) \equiv (\psi_{x}(\vec{r}, t),
- \psi_{y}(\vec{r}, t), \psi_{z}(\vec{r}, t))
+ \psi_{y}(\vec{r}, t), \psi_{z}(\vec{r}, t)) \,.
+ \label{eq:psitrojka}
 \end{equation}
-
-Ovakav vektor će nam biti zanimljiv npr. pri razmatranju čestice koja se vrti 
-oko svoje osi i kod koje nas ne zanima samo 
-njen položaj u prostoru već i njena orijentacija.
-
-Kao i ranije, tražimo operator s djelovanjem
+Takav opis bit će potreban za opis kvantnog stanja čestice za koju nam nije
+važan samo njen položaj u prostoru nego i njena orijentacija.
+Kao i ranije, tražimo operator $\mathcal{D}(\hat{\vec{n}}, \phi)$, moguće
+različit od onog iz (\ref{eq:rotD}), s djelovanjem
 \begin{equation}
   \vec{\Psi}'(\vec{r},t) = \mathcal{D}
-(\vec{\hat{n}},\phi) \vec{\psi}(\vec{r},t) \;,
+(\vec{\hat{n}},\phi) \vec{\Psi}(\vec{r},t) \;,
 \end{equation}
 gdje je $\vec{\Psi}'(\vec{r},t)$ valna funkcija zarotiranog sustava.
 
 \centerline{\includegraphics{pics/spin.eps}}
 
-Iz slike vidimo:
+Ukoliko se trojka valnih funkcija iz (\ref{eq:psitrojka}) transformira
+pri rotacijama kao standardni vektor, dakle pomoću iste matrice $R(\hat{\vec{n}}, \phi)$
+iz odjeljka \ref{sec:tenzori}, iz gornje slike vidimo da zbog promjene
+orijentacije čestice treba biti
 \begin{gather*}
 \vec{\Psi}'(\vec{r}',t)=R \vec{\Psi}(\vec{r},t) \\
 \vec{\Psi}'(\vec{r},t)=R \vec{\Psi}(R^{-1}\vec{r},t) 
 \end{gather*}
-pa imamo, slično kao kod rotacije jednokomponentne funkcije:
+pa imamo, sličnim postupkom kao i ranije
 \begin{equation*}
 \begin{split}
 \mathcal{D}(\vec{\hat{n}},\delta\phi)\vec{\Psi}(\vec{r}, t)&=
@@ -692,9 +704,10 @@ R(\hat{\vec{n}}, \delta\phi)^{-1}\vec{r},t) \\
 \delta\phi \hat{\vec{n}}\times\vec{\Psi}(\vec{r},t) + O(\delta\phi^2)
 \end{split}
 \end{equation*}
-Imamo dodatni član $\delta\phi \hat{\vec{n}}\times\vec{\Psi}(\vec{r},t)$
-kojeg ćemo drugačije napisati pomoću tripleta matrica definiranih na
-slijedeći način:
+Vidimo da se obzirom na rotaciju jednokomponentne valne funkcije u prošlom
+odjeljku pojavio dodatni član $\delta\phi \hat{\vec{n}}\times\vec{\Psi}(\vec{r},t)$
+kojeg ćemo sada zapisati pomoću tripleta matrica $S_{j}$,
+definiranih pomoću Levi-Civita pseudotenzora (vidi zadatak \ref{zad:levicivita}):
 \begin{equation}
 (S_j)_{ik} = i\hbar\epsilon_{ijk} \quad j=1,2,3 \;.
 \end{equation}
@@ -705,19 +718,19 @@ S_1& =i\hbar
 0 & 0 & 0 \\
 0 & 0 &-1 \\
 0 & 1 & 0
-\end{pmatrix} = i\hbar X_1 \\
+\end{pmatrix} = i\hbar X_1 \,,\\
 S_2& = i\hbar
 \begin{pmatrix}
 0 & 0 & 1 \\
 0 & 0 & 0 \\
 -1 & 0 & 0
-\end{pmatrix} = i\hbar X_2 \\
+\end{pmatrix} = i\hbar X_2 \,, \\
 S_3& = i\hbar
 \begin{pmatrix}
 0 & -1 & 0 \\
 1 & 0 & 0\\
 0 & 0 & 0
-\end{pmatrix} = i\hbar X_3 
+\end{pmatrix} = i\hbar X_3 \,.
 \end{align}
 Uz tako definirane matrice imamo
 \begin{equation}
@@ -732,37 +745,55 @@ Uz tako definirane matrice imamo
 \begin{equation*}
 \mathcal{D}(\vec{\hat{n}},\phi)\vec{\Psi}(\vec{r}, t)=
  \left(1-\frac{i}{\hbar}(\vec{L}+\vec{S})\cdot\hat{\vec{n}}\delta\phi \right)
-  \Psi(\vec{r}, t)
+  \Psi(\vec{r}, t) \,,
 \end{equation*}
-odnosno, za konačne rotacije:
+odnosno, operator konačne rotacije ovakvog kvantnog sustava jest
 \begin{equation}
 \mathcal{D}(\hat{\vec{n}}, \phi)=
- e^{-(i/\hbar)(\vec{L}+\vec{S})\cdot\hat{\vec{n}}\phi}
+ e^{-(i/\hbar)(\vec{L}+\vec{S})\cdot\hat{\vec{n}}\phi} \,.
+ \label{eq:rotDJ}
 \end{equation}
 
-Matrice $S_i$ također zadovoljavaju komutacijske relacije angularnog
-momenta.
+Hermitske matrice $S_i$ zadovoljavaju iste komutacijske relacije
+(\ref{eq:Lkomutacija}) kao i operatori $L_i$ i predstavljaju operatore tzv.
+\emph{intrinsičnog}  momenta impulsa poznatog pod nazivom \emph{spin},
+za razliku od tzv. \emph{orbitalnog} momenta impulsa kojem odgovaraju
+operatori $L_i = (\vec{r}\times\vec{p})_{i}$.
+Invarijantnost na rotacije, tj. komutiranje hamiltonijana s operatorom
+(\ref{eq:rotDJ}), će onda značiti da je očuvana veličina zapravo
+\begin{equation}
+\vec{J}=\vec{L}+\vec{S} \,,
+\end{equation}
+$[H, \vec{J}] = 0$, koju nazivamo \emph{ukupni} moment impulsa, dok je sasvim moguće
+da pojedinačno $[H, \vec{L}] \neq 0$ i $[H, \vec{S}] \neq 0$, kao što se na
+primjer manifestira u pojavi tzv. vezanja spina i orbite u atomu.
+(Elektron usljed orbitiranja "vidi" magnetsko polje
+jezgre koje interagira s njegovim magnetskim momentom koji je posljedica
+intrinsične vrtnje tj. spina.)
 
-\secret{.... (Adjungirane REP  --- strukturne konstante) ...}
-
-$\vec{S}$ - intrinsični angularni moment (spin)
-
-$\vec{J}=\vec{L}+\vec{S}$  - ukupni angularni moment
-
-Za izolirani sustav $[H, \vec{J}] = 0$, ali moguće je da je
-$[H, \vec{L}] \neq 0$, $[H, \vec{S}] \neq 0$, npr. pri vezanju spina
-i orbite u atomu. (Elektron usljed orbitiranja ``vidi'' magnetsko polje
-jezgre koje interagira s njegovim magnetskim momentom.)
-
-Vidimo da se trokomponentna valna funkcija transformira drugačije
-od jednokomponentne. Koje su još mogućnosti? Treba nam općenita teorija
+No, ni netom definirani trodimenzionalni operator spina nije najopćenitiji mogući.
+U poglavlju \ref{ch:rotacije} vidjet ćemo da ovaj primjer opisuje
+vrlo specifičnu situaciju, tzv. česticu spina 1 (točnije $\hbar$),
+dok za drugačije iznose intrinsične vrtnje čestica trebamo drugačije
+operatore, drugih dimenzionalnosti (npr. spin elektrona koji je iznosa 1/2 
+bit će opisan dvodimenzionalnim operatorom).
+Za te ćemo potrebe razviti općenitu teoriju
 reprezentacija grupe rotacija u kvantnoj mehanici.
+
+Vrijedno je još na kraju uočiti matematičku razliku konačnodimenzionalnog
+operatora spina $\vec{S}$ i operatora orbitalnog momenta impulsa $\vec{L}$
+kojeg reprezentiramo kao diferencijalni operator $\vec{L} = -i\hbar 
+\vec{r}\times\nabla $, i kojeg nije moguće egzaktno reprezentirati
+konačnodimenzionalnom matricom. To se lako vidi iz nekonzistentnosti
+koju bi onda dobili djelovanjem traga na
+(\ref{eq:xpkomutacija}) gdje zbog cikličnosti traga lijeva strana
+iščezava, a desna ne.
 
 \section{Primjena: Blochov teorem}
 
 U ovom ćemo odjeljku pokazati kako primjena teorije grupa elegantno
-vodi na važna svojstva valnih funkcija kristala.
-\emph{Kristal} je ovdje definiran kao (beskonačni) 
+vodi na važna svojstva valnih funkcija elektrona u kristalu.
+\emph{Kristal} je ovdje definiran kao beskonačni trodimenzionalni
 sustav atoma koji je invarijantan na translacije 
 za bilo koji vektor oblika:
 \begin{equation}
@@ -785,17 +816,19 @@ Ovakav zahtjev zamišlja topologiju kristala kao hiper-torusa, što je
 dovoljno realistično jer nas ionako topologija ili površinska svojstva
 kristala ovdje ne zanimaju, već samo svojstva ``bulk'' materijala poput
 specifičnog toplinskog kapaciteta ili električne vodljivosti.
-(Specifični toplinski kapacitet bakra je isti bez obzira da li je riječ
-o ravnoj žici, petlji, ploči ili pak torusu.)}.
+(\emph{Specifični} toplinski kapacitet bakra je naravno isti bez obzira da li je riječ
+o ravnoj žici, ploči, beskonačnoj kocki ili pak torusu.)}.
 
 To dalje znači da operatori translacije zadovoljavaju
 \begin{equation}
-       U_{r}(N_j \vec{a}_j) = U_{r}(0) = 1 \qquad  j=1,2,3
+       U_{r}(N_j \vec{a}_j) = U_{r}(0) = 1 \,,  
+       \label{eq:Uperiod}
 \end{equation}
+za svaki $j=1,2,3$ ponaosob (ne sumira se po $j$ u (\ref{eq:Uperiod}),
 i odgovarajuća translacijska grupa simetrija ima $N\equiv N_1 N_2 N_3$
 elemenata. Kako translacije komutiraju ova grupa je Abelova što
 znači da ima $N$ ireducibilnih reprezentacija koje su
-sve jednodimenzionalne (cf. npr. Zadatak 3.2).
+sve jednodimenzionalne (cf. npr. Zadatak \ref{zad:1Dabelrep}).
 Elementi grupe su generirani translacijom za primitivne vektore
 $U_{r}(\vec{a}_j)$  pa tako imamo
 \begin{equation}
@@ -818,7 +851,7 @@ operatorima oblika
 \label{blochirreps}
 \end{align}
 tj. s $N$ različitih operatora kako i očekujemo za grupu s $N$ IRREPsa.
-Svaka od tih IRREPsa se onda može označiti s trojkom brojeva $(p_1, p_2, p_3)$
+Svaka od tih IRREPsa se onda može označiti ("labelirati") s trojkom brojeva $(p_1, p_2, p_3)$
 gdje svaki od brojeva $p_j$ može poprimiti bilo koju vrijednost iz
 skupa $\{0, 1, 2, \ldots ,N_j -1\}$.
 Operator translacije $U_{r}(\vec{t}_{\vec{n}})$ je u konkretnom IRREPsu 
@@ -857,8 +890,8 @@ IRREPsu mora biti kao i kod svih operatora translacije (\ref{eq:optrans})
 \psi_{\vec{k}}(\vec{r} - \vec{t}_{\vec{n}}) \;.
 \label{bloch}
 \end{equation}
-Kako je riječ o običnim brojevima (a ne recimo diferencijalnim
-operatorima) dobili smo razmjerno jednostavan uvjet koje valne funkcije
+Kako je riječ o običnim brojevima (a ne recimo o diferencijalnim
+operatorima) dobili smo razmjerno jednostavan uvjet koji valne funkcije
 u kristalu moraju zadovoljavati da bi bile svojstvene funkcije operatora
 translacije. Takve funkcije se nazivaju \emph{Blochove funkcije}, a
 $\vec{k}$ je Blochov valni vektor.
@@ -874,38 +907,46 @@ onda odmah iz (\ref{bloch}) dobijemo uvjet
 \end{equation}
 dakle Blochove funkcije su oblika 
 $e^{+i \vec{k}\cdot \vec{r}} u_{\vec{k}}(\vec{r})$,
-gdje je $u_{\vec{k}}(\vec{r})$ periodička funkcija na rešetci. Isto,
-\secret{Blochove funkcije su svojstvene funkcije operatora translacije na rešetci.?}
-
+gdje je $u_{\vec{k}}(\vec{r})$ periodička funkcija na rešetci.
 S druge strane, operator translacije na rešetci komutira s Hamiltonijanom
 \begin{equation}
-    [H, U_{r}^{(\vec{k})} (\vec{t}_{\vec{n}}) ] = 0 \;.
+    [H, U_{r}^{(\vec{k})} (\vec{t}_{\vec{n}}) ] = 0 \;,
 \end{equation}
+kako i očekujemo od operatora simetrije.
 Komutiranje s kinetičkim dijelom je trivijalno jer su i kinetički dio
-hamiltonijana i operator translacije funkcije samo impulsa. 
-Komutiranje s potencijalom
-je posljedica periodičnosti $V(\vec{r}) = V(\vec{r}-\vec{t}_{\vec{n}})$.
-(Pokažite ovo! \secret{$U_{r}^{\dagger}(\vec{t}_{\vec{n}})
-A(\vec{r}) U_{r}(\vec{t}_{\vec{n}}) = A(\vec{r}-\vec{t}_{\vec{n}})$
-za svaki operator $A(\vec{r})$, pa onda tvrdnja slijedi za $A=V$.})
+hamiltonijana i operator translacije funkcije samo impulsa koji
+komutiraju međusobno.  Komutiranje s potencijalom je manje trivijalno
+i posljedica je periodičnosti $V(\vec{r}) = 
+V(\vec{r}+\vec{t}_{\vec{n}})$\footnote{Po analogiji s
+    (\ref{eq:defUr}) za svaki operator $A(\vec{r})$ vrijedi
+    $U_{r}^{-1}(\vec{t}_{\vec{n}})
+A(\vec{r}) U_{r}(\vec{t}_{\vec{n}}) = A(\vec{r}+\vec{t}_{\vec{n}})$,
+pa onda to vrijedi i za $A=V$ pa iz toga i iz periodičnosti $V$ odmah slijedi tražena
+komutativnost.}.
 Posljedica komutiranja dvaju operatora je da oni imaju zajedničke
 svojstvene funkcije. To onda povlači
-
-\textbf{Blochov teorem}: Valne funkcije periodičke rešetke mogu se
-izabrati kao Blochove funkcije.
+\begin{teorem}[Bloch]
+Valne funkcije periodičke rešetke mogu se izabrati kao Blochove funkcije.
+\end{teorem}
 
 Ovo onda olakšava rješavanje Schr\"{o}dingerove jednadžbe
 za rešetku jer je potrebno naći samo funkcije $u_{\vec{k}}(\vec{r})$ za
 svaki $\vec{k}$,
-a njihova periodičnost umnogome pojednostavljuje taj zadatak.
-Vidi fiziku čvrstog stanja za primjere. U fizici čvstog stanja se
-također obično izvodi Blochov teorem. Ovdje je naglasak dan
+a njihova periodičnost umnogome pojednostavljuje taj zadatak,
+kako svjedoče brojni primjeri iz fizike čvrstog stanja.
+Blochov teorem se obično izvodi i u udžbenicima fizike čvrstog
+stanja, no ovdje smo dali naglasak
 na grupno-teorijski pristup tj. korespondenciju s reprezentacijama
 grupe translacija.
+
 \subsection*{Zadaci}
 
 \begin{enumerate}[label=\arabic{chapter}.\arabic*.]
 
+\item \label{zad:kronecker} Kroneckerov simbol $\delta_{ij}$, $i,j \in \{1, 2, 3\}$ je tenzor drugog ranga
+    obzirom na rotacije. Tenzori su općenito definirani kao veličine 
+    \emph{kovarijantne} pri datim transformacijama. Pokažite da je $\delta_{ij}$
+    također i \emph{invarijantan}.
 \item Pokažite da je operator translacije kvantnomehaničkog stanja,
  $U_{r}(\vec{a}) = \exp \{-\frac{i}{\hbar} \vec{p}\cdot \vec{a} \}$
 unitaran. Razmotrite situaciju u koordinatnoj reprezentaciji gdje
@@ -928,4 +969,7 @@ relacije angularnog momenta $[L_i, L_j]$.
 relacije angularnog momenta.
 
 \item Pokažite da je $[\vec{J}^2, J_i] = 0$.
+\item \label{zad:levicivita} Uvjerite se da se pomoću Levi-Civita tenzora mogu elegantno zapisati
+    vektorski produkt i determinanta matrice: $\epsilon_{ijk}a_{j}b_{k}
+    = (\vec{a}\times\vec{b})_{i}$, $\epsilon_{ijk}A_{il}A_{jm}A_{kn} = \det A \: \epsilon_{lmn}$.
 \end{enumerate}
