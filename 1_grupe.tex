@@ -554,11 +554,10 @@ Tri klase konjugacije  od D$_3$ su:
 \end{enumerate}
 i odgovaraju rotacijama za različite kuteve: $0^\circ$, $120^\circ$ i
 $180^\circ$. Konjugirajući elementi
-preslikavaju međusobno osi rotacije. Normalna podgrupa $C_3$ se
-sastoji od cijelih klasa (prve dvije), dok podgrupa $C_2=\{e,b\}$ nema
+preslikavaju međusobno osi rotacije. Normalna podgrupa $\mathrm{C}_3$ se
+sastoji od cijelih klasa (prve dvije), dok podgrupa $\mathrm{C}_2=\{e,b\}$ nema
 to svojstvo i nije normalna.
 \end{primjer}
-
 
 \section{Homomorfizam i izomorfizam grupa}
 
@@ -707,6 +706,33 @@ ima vrlo pravilni obrazac preslikavanja prikazan na sljedećoj slici\\[2ex]
 Drugi korolar je da je $f$ izomorfizam ako i
 samo ako je kernel $K=\{e\}$.
 
+Pojam kvocijentne grupe nam daje ideju svojevrsnog "dijeljenja" jedne
+grupe drugom.
+Nameće se pitanje, ukoliko je, kako smo vidjeli, 
+$\mathrm{D}_{3}$/$\mathrm{C}_3 = \mathrm{C}_2$, možemo li u nekom smislu
+smatrati da je $\mathrm{C}_3 \times \mathrm{C}_2 = \mathrm{D}_3$?
+Odgovor je da to nije moguće općenito, ali jest u situaciji kad su
+\emph{obje} grupe normalne podgrupe produktne grupe, što u primjeru
+$\mathrm{D}_3$ nije slučaj.
+
+\begin{definicija}[Direktni produkt grupa]
+Ako imamo dvije grupe (G, $\star$) i (H, $\circ$), onda je njihov
+\emph{direktni produkt} grupa G$\times$H čiji su elementi svi uređeni
+parovi $(g, h)$, $g \in \mathrm{G}$, $h \in \mathrm{H}$, a 
+binarna operacija $\cdot$ je definirana prirodno po komponentama
+\begin{equation}
+    (g_1, h_1) \cdot (g_2, h_2) = (g_1 \star g_2, h_1 \circ h_2) \,.
+    \label{eq:Gproduct}
+\end{equation}
+\end{definicija}
+
+Lako se uvjeriti da su zadovoljeni svi aksiomi grupe. Strogo 
+uzevši, gore tražene normalne podgrupe od G$\times$H nisu baš G i H nego
+    $\mathrm{G}' = \{ (g, 1) \td g \in G \}$ i
+    $\mathrm{H}' = \{ (1, h) \td h \in H \}$,
+ali one su izomorfne grupama G i H pa je sve prirodno i konzistentno.
+Čitaoc se lako može uvjeriti da je na primjer
+$\mathrm{C}_2 \times \mathrm{C}_2 = \mathrm{D}_2$.
 
 \subsection*{Zadaci}
 
