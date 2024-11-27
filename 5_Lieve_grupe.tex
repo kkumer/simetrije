@@ -12,94 +12,177 @@
 \section{Kontinuirane grupe}
 
 
-- \emph{Konačne grupe} imaju binarnu operaciju (tablicu množenja)
-koja zadovoljava četiri aksioma.
+U prva tri poglavlja smo upoznali \emph{konačne grupe} kao skupove
+konačnog broja elemenata na kojima je definirana binarna operacija (tablica množenja)
+koja zadovoljava četiri aksioma (vidi definiciju \ref{def:grupa}). 
+U fizici elemente grupe povezujemo
+s transformacijama simetrije i pripadajući skup operatora transformacija
+zovemo reprezentacija grupe. Pokazali smo da reprezentacije konačnih grupa
+zadovoljavaju neka netrivijalna svojstva koja se onda odražavaju
+i na netrivijalnim svojstvima fizikalnih objekata poput kristala.
+No cijelim putem, a posebice u prošlom poglavlju, vidjeli smo da neke
+od najvažnijih simetrija, poput rotacija i translacija prostora,
+nisu konačne. Za razliku od kristala, prazan prostor ili električno
+polje naboja u ishodištu su simetrični na rotaciju oko bilo koje
+osi (kroz ishodište), kojih ima beskonačno, i za bilo koji kut, kojih
+isto ima beskonačno. Dakle, odgovarajuća grupa će imati beskonačni
+broj elemenata. Tako za nju nećemo moći napisati grupnu tablicu
+množenja, a čini se problematično i to da smo se u dokazivanju
+najvažnijih teorema teorije reprezentacija oslanjali na konačnost
+grupe.
 
-- elementima pridružujemo operatore $\to$ REPs i IREPS $\to$ moćni teoremi
+Srećom, uz tu komplikaciju svoje beskonačnosti, navedene grupe obično donose
+i iskupljujuće svojstvo \emph{kontinuiranosti} koje nam onda dodatno
+stavlja na raspolaganje moćne matematičke teorije infinitezimalnog računa,
+tj. realne i kompleksne analize te diferencijalne geometrije i topologije.
+Zahvaljujući tome matematička teorija kontinuiranih grupa je u nekim aspektima
+čak i jednostavnija od teorije konačnih grupa\footnote{Najspektakularniji
+    primjer je potpuna klasifikacija grupa koju je za kontinuirane
+    grupe dovršio još E. Cartan i koja se često izlaže u jednom poglavlju
+    čak i udžbenika za studente fizike, poput \cite{Jones:1998}, dok je
+    klasifikacija konačnih grupa dovršena tek krajem 20. stoljeća i razbacana
+je na tisuće stranica specijalizirane matematičke literature.}.
 
-- dokazi teorema o REPs su zasnovani na svojstvu konačnosti grupe
 
-- Što ćemo s beskonačnim grupama (rotacija, translacija, Lorentzove transf.)?
-
-Pristup:
-
-- elementima konačne grupe možemo pridružiti konačan skup točaka u nekom
- prostoru $\to$ \emph{grupni prostor}
+U nedostatku mogućnosti da pojedinačno navedemo sve elemente beskonačnih
+grupa, za razmatranje istih uvodimo važan pojam \emph{grupnog prostora}.
+Za konačne grupe \emph{grupni prostor} je naprosto skup točaka koji
+nema neka dodatna svojstva povrh svojstava koji mu daju aksiomi grupe
+(dakle, ne smatramo da su te točke elementi nekog pravca, ravnine
+ili višedimenzionalnog prostora):
 
 \centerline{\includegraphics[scale=1.0]{pics/grupni_prostor.eps}}
 
-- za \emph{kontinuirane beskonačne grupe} grupni prostor je tzv.
- \emph{mnogostrukost} tj. prostor lokalno sličan $\mathbb{R}^n$.
+S druge strane za \emph{kontinuirane beskonačne grupe} grupni prostor je
+kontinuum točaka koji ima dodatna matematička svojstva. 
+Ovisno o razini općenitosti, ta dodatna svojstva dolaze pod
+nazivima \emph{topološki prostor} ili \emph{diferencijabilna mnogostrukost},
+za čije je matematički korektno specificiranje potrebno uvesti
+niz sofisticiranih matematičkih koncepata (vidi npr. 
+\cite{Smolic:2024}). Za naše potrebe dovoljno je reći da su grupni
+prostori lokalno slični prostoru $\mathbb{R}^n$,
+tj. da ih je lokalno moguće parametrizirati $n$-torkom realnih\footnote{Matematičari
+    poznaju i grupe čiji grupni prostor se parametrizira kompleksnim
+    brojevima, no mi ovdje takve grupe nećemo sresti.}
+brojeva. Najbolje je to razjasniti na primjerima.
 
-\secret{-Stroga def.: n-dim mnogostrukost je Husdorffov topološki
-prostor u kojem je okolina svake točke homeomorfna $\mathbb{R}^n$.
-(pravac, sfera, M\"{o}bius, dvostruki stožac nije, ...). Ideja je
-generalizirati uobičajene plohe, ali bez uklapanja (embeddinga).}
 
-- Npr. grupa rotacija oko neke osi $G=\{R(\theta) | \theta\in[0,2\pi)\}$
-  ima kao grupnu mnogostrukost kružnicu (lokalno slična $\mathbb{R}^1$)
+Grupa $\{R(\unitn, \theta) \td \theta\in[0,2\pi)\}$ svih rotacija oko zadane osi
+$\unitn$ ima kao grupnu mnogostrukost kružnicu jer točke na kružnici možemo parametrizirati
+kao $(r\cos\theta, r\sin\theta)$ i tako uspostaviti bijektivno preslikavanje
+između točaka kružnice i elemenata grupe. 
+Ovdje je radijus $r$ nebitan, svaka kružnica je ekvivalentna kao
+grupni prostor. Štoviše, ni oblik nije ključan pa bi i elipsa mogla poslužiti.
+No kako se u računima oslanjamo na parametrizaciju grupe pomoću
+kuta $\theta$ bit će računski najjednostavnije držati se kružnice.
+Sa stanovišta teorije grupa, jedina bitna svojstva su kontinuiranost krivulje
+koja odražava kontinuiranost grupe i \emph{topologija} kružnice tj. činjenica da 
+kontinuiranim povećavanjem kuta rotacije do $2\pi$ dolazimo natrag do jediničnog
+elementa, tj. rotacije za nula stupnjeva.
+Upravo ta parametrizacija jednim realnim brojem $\theta$ je ono na što
+se misli kad se kaže da je grupna mnogostrukost lokalno slična $\mathbb{R}^1$).
+No sličnosti nije globalna zbog različite topologije kružnice
+i $\mathbb{R}^1$.
 
 \centerline{\includegraphics[scale=1.0]{pics/mnogostrukost.eps}}
 
-- Npr. grupa translacija u ravnini: $\vec{x}\to\vec{x}+\vec{t}$,
-  $\vec{t}=(t_1, t_2)$, $t_1, t_2 \in (-\infty, \infty)$ ima kao
- grupnu mnogostrukost ravninu = $\mathbb{R}^2$
+Kao drugi primjer promotrimo grupu svih translacija u ravnini $\vec{x}\to\vec{x}+\vec{t}$,
+dakle translacija za bilo koji vektor $\vec{t}=(t_1, t_2)$.
+Ovdje je elemente grupe prirodno parametrizirati dvama
+realnim brojevima $t_1, t_2 \in (-\infty, \infty)$ i očito je da je
+ grupna mnogostrukost ravnina tj. $\mathbb{R}^2$. Ovdje naravno treba
+ razlikovati ravninu koja je vektorski prostor na kojem djeluje grupa
+ (tj. strogo uzevši njena reprezentacija) i grupni prostor za koji uopće
+ nije nužno da ima svojstva vektorskog prostora.
 
-- Elemente grupe označavamo s $n$ realnih brojeva (tzv. \emph{parametara}) 
-  $(a_1, a_2, \ldots, a_n)$ koji određuju odgovarajuću točku na 
-  grupnoj mnogostrukosti, te govorimo o \emph{$n$-parametarskoj grupi}.
+Kako vidimo iz ova dva primjera, elemente kontinuiranih grupa identificiramo
+s točkama $n$-dimenzionalne grupne mnogostrukosti koju
+parametriziramo s $n$ realnih brojeva
+  $(a_1, a_2, \ldots, a_n)$,
+te onda govorimo o \emph{$n$-parametarskoj} ili \emph{$n$-dimenzionalnoj} grupi.
+Zahvaljajući toj identifikaciji
+elemente grupe ćemo označavati kao $g(a_1, a_2, \ldots, a_n)$, odnosno
+skraćeno $g(a)$.
 
-- element grupe: $g(a_1, a_2, \ldots, a_n)\equiv g(a)$ (Npr. $R(\theta)$)
+Promotrimo sada četiri aksioma grupe u svjetlu ove diskusije.
+\begin{enumerate}
+\item Zatvorenost: $g(c)=g(a)g(b) \in G$. Umjesto tablice množenja koja
+    je definirala grupnu operaciju, sada nam treba funkcija, tzv.
+    funkcija kompozicije
+    \[\phi: G\times G \to G \quad  \text{tako da je} \quad c=\phi(a,b) \]
+    (Npr. za rotacije oko date osi imamo $R(\theta) = R(\theta_1) R(\theta_2)$
+    gdje je funkcija kompozicije  $\theta = \phi(\theta_1, \theta_2) =
+    (\theta_1 + \theta_2)\, \mathrm{mod}\, 2\pi$ .)
 
-- Aksiomi grupe:
+\item Asocijativnost: $g(a)\big[g(b)g(c)\big]=\big[g(a)g(b)\big]g(c)$ što
+    znači da funkcija kompozicije mora zadovoljavati
+    $\imp \phi(a, \phi(b,c))=\phi(\phi(a,b),c) $.
 
-1) Zatvorenost: $g(c)=g(a)g(b) \in G$
+\item Identiteta: postoji parametar $a^0$ takav da je 
+       $g(a^0)g(a)=g(a)g(a^0)=g(a)$ za sve parametre $a$.
+    Običaj je grupnu mnogostrukost parametrizirati tako da bude $a^0=(0, 0, \ldots, 0)
+     \equiv 0$ tj. $g(0)=e$ što onda znači da za funkciju
+     kompozicije vrijedi $\phi(0,a)=\phi(a,0)=a$.
 
-    umjesto tablice množenja imamo funkciju $\phi: G\times G \to G \quad 
-      c=\phi(a,b)$
+\item Inverz: $\forall a\quad \exists \bar{a} \td g(a)g(\bar{a})=
+        g(\bar{a})g(a)=g(0)=e$ tj. $g(\bar{a})=g(a)^{-1}$. To znači
+        da postoji tzv. funkcija inverza
+        \[ \psi:G\to G   \quad  \text{tako da je} \quad \bar{a}=\psi(a) \,. \]
 
-2) Asocijativnost $g(a)[g(b)g(c)]=[g(a)g(b)]g(c)$ 
-    $\imp \phi(a, \phi(b,c))=\phi(\phi(a,b),c) $
+\end{enumerate}
 
-3) Identiteta: $\exists a^0 \td g(a^0)g(a)=g(a)g(a^0)=g(a)\quad \forall a$
-
-    - reparametrizacijom mnogostrukosti možemo izabrati $a^0=(0, 0, \ldots, 0)
-     \equiv 0$, $g(0)=e$ $\imp \phi(0,a)=\phi(a,0)=a$
-
-4) Inverz: $\forall a\quad \exists \bar{a} \td g(a)g(\bar{a})=
-        g(\bar{a})g(a)=g(0)=e$
-
-    - $g(\bar{a})=g(a)^{-1}$
-
-    - $\bar{a}=\psi(a) \quad \psi:G\to G$
-
-
-Zasad nismo zatražili nikakvu povezanost između grupnih i topoloških
-svojstava grupe. 
-
+Sami aksiomi grupe ne traže nikakvu povezanost između grupnih i topoloških
+svojstava grupe. To znači da bi točke grupne mnogostrukosti mogle u načelu biti
+pridružene elementima grupe na proizvoljan diskontinuirani pa čak i "ispremješani"
+način. Međutim za grupe od interesa preslikavanja između grupne mnogostrukosti
+i grupe su "glatka" i takve grupe onda zovemo Lieve.
 
 \begin{definicija}[Lieva grupa]
-  Lieva grupa je kontinuirana grupa za koju su funkcije kompozicije
-($\phi$) i inverza($\psi$) analitičke. (Često se još zahtijeva i
-povezanost s jedinicom.)
+  Lieva grupa je grupa za koju su funkcije kompozicije
+($\phi$) i inverza($\psi$) diferencijabilne\footnote{Strogo uzevši, 
+    diferencijabilnost funkcija nije nužna nego je dovoljna
+ kontinuiranost. Ta vrlo netrivijalna činjenica da algebarski aksiomi
+ grupe osiguravaju da kontinuirane funkcije nužno budu i diferencijabilne
+ je sadržaj rješenja 5. Hilbertovog problema.}.
 \end{definicija}
 
-
-Zahtjev da su te funkcije analitičke (te da je mnogostrukost
-analitička) daje Lievim grupama mnoštvo važnih svojstava.
-
-\secret{Strogo uzevši, analitičnost funkcije $\phi$ nije nužna tj. dovoljna
-je kontinuiranost. (Ta činjenica je sadržaj rješenja 5. Hilbertovog
-problema.)}
-
+Zahtjev da su te funkcije diferencijabilne daje Lievim grupama mnoštvo važnih svojstava,
+kako ćemo vidjeti u sljedećem odjeljku.
+Ova svojstva se ogledaju
+u činjenici da je element $g(a)$ "blizu" elementa $g(a+\delta a)$ te da
+da je $\phi(a+\delta a, b)$
+"blizu" $\phi(a,b)$ tj. te su vrijednosti povezane Taylorovim redom.
 \centerline{\includegraphics[scale=1.0]{pics/lieva_mnogostrukost.eps}}
+Tako Lieve grupe spajaju ideje iz algebre, analize i geometrije.
 
-Kontinuiranost grupe (preciznije, analitičnost mnogostrukosti) se ogleda
-u činjenici da je element $g(a)$ ``blizu'' elementa $g(a+\delta a)$ dok
-analitičnost funkcije kompozicije znači da je $\phi(a+\delta a, b)$
-''blizu'' $\phi(a,b)$ tj. te su vrijednosti povezane Taylorovim redom.
+Analiza općenitih Lievih grupa, koja se oslanja samo na ovu definiciju
+je matematički dosta zahtjevna. Srećom praktički sve Lieve grupe koje se javljaju
+u fizici mogu se vjerno reprezentirati matricama i mi ćemo se baviti
+samo takvim tzv. matričnim Lievim grupama. Smanjenje općenitosti je neznatno\footnote{Za
+    znatiželjne, primjeri ne-matričnih Lievih grupa su uvijek egzotični
+    poput tzv. metaplektičkih grupa ili kvocijentne grupe Heisenbergove grupe po
+    svojoj specifičnoj normalnoj podgrupi.},
+a rad s matricama je značajno lakši od rada s diferencijabilnim mnogostrukostima.
+Na primjer, matrice odmah dolaze parametrizirane svojim elementima. Tu je važno
+ne pomiješati dimezionalnost matrične grupe s dimenzionalnošću njenih matrica.
+Kako je rečeno gore, dimenzionalnost grupe je jednaka broju \emph{nezavisnih realnih}
+parametara koji specificiraju element grupe tj. matricu. Tako je grupa rotacija
+u ravnini dana dvodimenzionalnim matricama
+\begin{equation}
+    \left\{ \begin{pmatrix}
+        \cos\phi & -\sin\phi \\
+        \sin\phi & \cos\phi 
+    \end{pmatrix} 
+     \td \phi \in [0, 2\pi) \right\} \,,
+    \label{eq:so2}
+\end{equation}
+ali to je jednodimenzionalna grupa jer je svaka matrica potpuno određena
+jednim realnim parametrom $\phi$. Matrične grupe imaju svoja klasična
+imena pa se tako grupa iz (\ref{eq:so2}) zove \SO{2}, što dolazi
+od \emph{specijalna} ($\det M = 1$) \emph{ortogonalna} ($M^\mathsf{T} M = 1$) 
+grupa $2\times 2$ matrica.
 
-Tako Lieve grupe spajaju ideje iz algebre i geometrije.
+
 
 \section{Lieve algebre}
 \label{sec:lievealgebre}
