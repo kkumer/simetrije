@@ -249,17 +249,17 @@ te kako transpozicija ne mijenja determinantu, vidimo da je $(\det R)^2 = 1$,
 pa determinanta ortogonalne matrice može biti samo 1 ili -1.
 Matrice s determinantom -1, poput 
 \begin{equation}
-    \begin{pmatrix}
-    -1 & 0 & 0 \\
-     0 & 1 & 0 \\
-     0 & 0 & 1 
-    \end{pmatrix}
+\begin{pmatrix}
+\cos\phi & -\sin\phi & 0 \\
+\sin\phi & \cos\phi & 0 \\
+0 & 0 & -1 \end{pmatrix} \,,
 \end{equation}
-daju transformaciju koja je refleksija preko neke ravnine koja
-prolazi ishodištem (u gornjem primjeru je to $y$-$z$ ravnina). Refleksije također čuvaju
+daju transformaciju koja je kombinacija rotacije i refleksije preko
+neke ravnine kroz ishodište (u ovom primjeru to je $x$-$y$ ravnina).
+Refleksije također čuvaju
 udaljenosti, ali ne čuvaju orijentaciju (lijevi vijak se
 se pretvara u desni). Tako je grupa svih rotacija dana skupom ortogonalnih
-matrica determinante 1 i naziva se specijalna ortogonalna grupa \SO{3}.
+matrica determinante 1 i naziva se \emph{specijalna} ortogonalna grupa \SO{3}.
 U odjeljku \ref{sec:primjeriLie} dokazat ćemo da je ta grupa troparametarska,
 no to je i odmah jasno ako znamo da su rotacije potpuno specificirane pomoću
 tri Eulerova kuta.
@@ -374,7 +374,7 @@ generira grupu \SO{3}\footnote{Pažljivi čitaoc će možda u ovom automatskom
 pa bi i njihovi generatori trebali biti antisimetrični, no njihova determinanta
 je -1. Stvar je u tome da refleksije nije moguće generirati kompozicijom
 infinitezimalnih transformacija tj. one nemaju generatore. O tome će još biti
-govora kasnije.
+govora kasnije.\label{fus:refleksija}
 }.
 
 Skup generatora $\calA$ ima i dodatna svojstva. Kao prvo, on je
@@ -612,92 +612,183 @@ bude proporcionalan jediničnom i ispostavlja se da je koeficijent proporcionaln
 zgodan za označavanje ireducibilnih reprezentacija kako ćemo vidjeti u sljedećem poglavlju.
 
 
-Dosad smo 
+
+\section{Veza Lievih grupa i Lievih algebri}
+
+Vidjeli smo da u slučaju grupe \SO{3} 
+\emph{svaki} element grupe možemo prikazati kao eksponencijal nekog
+elementa njene Lieve algebre \soAlg{3}.
+Pitanje je vrijedi li to lijepo svojstvo za sve Lieve grupe.
+Kako smo već dali naslutiti na nekoliko mjesta upotrijebom riječi "skoro",
+ne vrijedi sasvim. U ovom ćemo odjeljku, uglavnom ćemo
+bez dokaza iskazati i pomoću primjera ilustrirati tvrdnje koje 
+pobliže oslikavaju vezu između Lievih grupa i njihovih algebri.
+Za to je prvo potrebno uvesti neke pojmove koji opisuju topološka
+svojstva grupe.
+\begin{definicija}[Povezanost]
+Lieva grupa je \emph{povezana} ako njen grupni prostor ne možemo
+rastaviti na disjunktne komponente tj. ako se svake dvije točke 
+mogu povezati linijom čije sve točke pripadaju grupnom prostoru.
+(Ovo je intuitivna "fizičarska" definicija. Prava definicija uključuje napredne
+matematičke ideje iz topologije.)
+\label{def:povezanost}
+\end{definicija}
+Podskup kojeg čine svi elementi grupe koji se
+kontinuiranom linijom u grupnoj mnogostrukosti mogu povezati s
+jediničnim elementom nazivamo \emph{komponenta povezanosti jedinice}.
+Ukoliko je grupa povezana komponenta povezanosti jedinice je naravno
+jednaka cijeloj grupi. Ukoliko grupa nije povezana, komponenta povezanosti
+jedinice je prava podgrupa cijele grupe. \emph{Dokaz}: Pretpostavimo
+suprotno tj. da komponenta povezanosti jedinice nije podgrupa. Kako je
+jedinični element po definiciji u toj komponenti te kako je asocijativnost
+nasljeđena od cijele grupe to bi značilo ili da postoje njena dva elementa čiji
+umnožak nije u komponenti povezanosti jedinice ili neki element čiji inverz nije u 
+toj komponenti.
+Promotrimo sada dva elementa $a$ i $b$ koji jesu, a čiji umnožak $ab$ nije u komponenti
+povezanosti jedinice, te promotrimo trajektoriju $g(t)$, $t\in[0,1]$,
+definiranu tako da je $g(0)=a$, a $g(1)=e$. Trajektorija dakle
+kontinuirano povezuje $a$ s jediničnim elementom $e$.
+Pomičući se kontinuirano po toj trajektoriji prema jedinici
+umnožak $g(t)b$ će cijelo vrijeme ostati izvan komponente povezanosti jedinice
+zbog odvojenosti njegovog dijela grupnog prostora i kontinuiranosti
+funkcije kompozicije (umnožak $g(t)b$ ne može "preskočiti" sa svoje odvojene
+komponente na komponentu jedinice). No kad dođemo do jediničnog elementa
+umnožak je $g(1)b = eb = b$ što po pretpostavci jest element komponente jedinice
+i imamo kontradikciju. Na sličan način se do kontradikcije dođe u slučaju inverza.\qed
+
+Eksponencijacijom generatora grupe \SO{3} dolazimo do konačnih rotacija
+$\exp(\phi \vec{X}\cdot\unitn)$ trajektorijom koja ide od jediničnog
+elementa $\phi=0$ kontinuiranom putanjom kroz grupni prostor, kompozicijom rotacija za
+infinitezimalne kuteve. Kako je eksponencijalna funkcija kontinuirana
+funkcija svojih argumenata (čak i kad su argumenti matrice), te kako
+je determinanta također kontinuirana funkcija, u slučaju grupe \O{3},
+za čije elemente smo vidjeli da imaju determinantu ili +1 ili -1,
+jasno je da eksponencijacijom algebre možemo dobiti (a u slučaju \O{3}
+i dobivamo) samo elemente s determinantom +1, dakle prave rotacije.
+Matrice koje imaju determinantu -1 nekad se 
+nazivaju \emph{neprave} rotacije i pripadaju drugoj komponenti povezanosti.
+
+Neprave rotacije se mogu na jedinstven
+način prikazati kao umnožak običnih rotacija iz \SO{3} i operatora inverzije
+\begin{equation}
+I = \begin{pmatrix}
+-1 & 0 & 0 \\ 
+0  &-1 & 0 \\
+0  & 0 & -1
+\end{pmatrix} \,.
+\end{equation}
+Naime, uzmemo li proizvoljnu nepravu rotaciju $\tilde{R}$ tada
+je zahvaljujući Binet-Cauchyjevom teoremu determinanta matrice
+$I \tilde{R}$ svakako +1 pa je ta matrica prava rotacija $I\tilde{R} = R$
+i onda je $\tilde{R} = I R$. Tako je cijeli taj skup (nije podgrupa!)
+kojeg čine neprave rotacije zapravo jednak umnošku $I\SO{3}$ i vidimo da
+se cijela ortogonalna grupa sastoji od točno dvije disjunktne komponente
+\begin{equation}
+    \O{3} = \SO{3} + I\SO{3}\,,
+\end{equation}
+koje su, promatrane kao dijelovi grupnog prostora, topološki identične.
+Zanimljivo pitanje točnog izgleda ovog grupnog prostora raspravit ćemo malo
+kasnije u ovom poglavlju.
 
 
+Iz gornje diskusije, odnosno imajući u vidu kontinuiranost funkcije
+eksponencijacije, jasno da najbolje čemu se možemo nadati u
+slučaju općenite Lieve grupe je da
+eksponencijacijom njene algebre dobijemo komponentu povezanosti
+jedinice. No je li barem to uvijek moguće?
+Kako smo pokazali, svakoj Lievoj grupi jednoznačno pripada neka Lieva algebra
+konstrukcijom kao u (\ref{eq:defXi}). Možemo li, obratno, svakom
+elementu $g$  komponente povezanosti jedinice pridružiti jedinstveni
+element $X$ algebre takav da je $g = e^{X}$?
 
+Prije nego damo odgovor na to pitanje, skrenimo pažnju na to da je
+povezivanje elemenata algebre i elemenata grupe exponencijacijom
+(odnosno u drugom smjeru inverznom funkcijom logaritma) samo dio
+posla. Potrebno je pokazati i da je binarna grupna operacija potpuno
+određena operacijama s odgovarajućim elementima algebre. Kako
+dakle izračunati $e^X e^Y$? Imajuči u vidu definiciju eksponencijacije
+to je
+\begin{equation}
+   e^X e^Y = \left(\sum_{k=0}^{\infty} \frac{X^k}{k!}\right)
+             \left(\sum_{n=0}^{\infty} \frac{Y^n}{n!}\right)
+    \,,
+\end{equation}
+i nije odmah jasno da se desna strana može dobiti eksponencijacijom nekog
+elementa algebre, osim u jednostavnom slučaju Abelove grupe kad je 
+$[X, Y]=0$ (vidi zadatak \ref{zad:abelovaalgebra}) pa se članovi
+gornjih suma mogu isto kao kod eksponencijacije običnih brojeva
+iskombinirati u $\sum (X+Y)^{n}/n! = \exp(X+Y)$. Za općenite
+nekomutirajuće grupe to nije slučaj, nego vrijedi važan
+rezultat teorije Lievih grupa
+\begin{teorem}[Baker-Campbell-Hausdorff]
+    \[ e^X e^Y = e^Z \,, \]
+  gdje je 
+  \[ Z = X + Y + \text{red višestrukih komutatora $X$ i $Y$.} \]
+\end{teorem}
+Prvi članovi BCH formule su
+\begin{align}
+    Z& = X + Y + \frac{1}{2}[X, Y] + \frac{1}{12}[X, [X, Y]] 
+       - \frac{1}{12}[Y, [X, Y]] \nonumber \\
+     &   - \frac{1}{24}[X, [Y, [X, Y]]] + \frac{1}{720}[Y, [Y, [Y, [X, Y]]]] 
+         + \cdots \,,
+\end{align}
+i ključna netrivijalnost je da su \emph{svi} članovi reda dati preko
+ovakvih višestrukih komutatora pa je jasno da je $Z$ element Lieve algebre.
+(Podsjetimo se da je u algebri definirano zbrajanje elemenata $X+Y$ i njihov
+ komutator $[X, Y]$, ali ne i množenje $X Y$.)
+BCH red konvergira u nekoj okolini jediničnog elementa (ne nužno infinitezimalnoj)
+i u toj okolini je grupa potpuno i jedinstveno određena algebrom.
+Eksponencijacija povezuje elemente grupe i algebre, a BCH formula
+operacije u algebri (zbrajanje i komutator) s grupnom operacijom (množenje).
+Dokaz i razmatranje radijusa konvergencije BCH formule
+obično zahtijeva napredne matematičke
+pojmove. Relativno pristupačan algebarski dokaz može se pronaći
+u \cite{Stilwell:2008}.
 
-
-
-\section{Veza Lievih grupa i Lievih algebri$^*$}
-
-U slučaju grupe SO(3) smo, zahvaljujući Eulerovom teoremu, vidjeli da
-\emph{svaki} element grupe možemo prikazati kao eksponencijal jednog
-elementa iz Lieve algebre so(3).
-
-Pitanje je da li se ovo poopćava na proizvoljnu Lievu grupu.
-
-Odgovor je: Skoro, ali ne sasvim. Vrijedi \emph{(bez dokaza)}:
-
-1) Svakoj Lievoj grupi jednoznačno pripada neka Lieva algebra. Svaki 
-  se element iz neke male (ne nužno infinitezimalne!) okoline 
-  jediničnog elementa grupe može
-  prikazati u obliku $e^{t X}$ gdje je $t$ realni parametar, a $X$ element
-  te Lieve algebre.
-
-2) Ako je Lieva grupa kompaktna, onda se "mala okolina" proširuje na
-   čitavu komponentu povezanosti jedinice.
-
+Za veliku kategoriju Lievih grupa vrijedi da se svi elementi iz 
+komponente povezanosti jedinice mogu prikazati u obliku
+$e^{X}$ gdje je $X$ element
+Lieve algebre. Dovoljan uvjet je da grupa ima svojstvo \emph{kompaktnosti}
 \begin{definicija}[Kompaktnost]
 Lieva grupa je \emph{kompaktna} ako njeni parametri variraju po zatvorenim intervalima.
-(Ovo je priručna "fizičarska" definicija. Prava definicija uključuje napredne
+(Ovo je intuitivna "fizičarska" definicija. Prava definicija uključuje napredne
 matematičke ideje iz topologije.)
 \label{def:kompaktnost}
 \end{definicija}
-
-Na primjer SO(3) je kompaktna, a grupa translacija nije. SO(n) i SU(n) su
- kompaktne, a najzanimljivije su nam za QM.
-
-\begin{definicija}[Povezanost]
-Lieva grupa je \emph{povezana} ako njen grupni prostor ne možemo
-rastaviti na disjunktne sastojke tj. ako se svake dvije točke 
-mogu povezati trajektorijom čije sve točke pripadaju grupnom prostoru.
-(I ovo je priručna "fizičarska" definicija. Prava definicija uključuje napredne
-matematičke ideje iz topologije i dva navedena svojstva (nemogućnost rastava
-na disjunktne podskupove i povezanost trajektorijama nisu strogo uzevši
-ekvivalentna).)
-\label{def:povezanost}
-\end{definicija}
-
-
-\emph{komponenta povezanosti jedinice} = svi elementi grupe koji se
-kontinuiranom linijom u grupnoj mnogostrukosti mogu povezati s
-jediničnim elementom\\
- Npr. sve obične rotacije su u komponenti povezanosti
-jedinice, dok refleksije nisu.
-
-\secret{Ako nije kompaktna, svejedno se elementi iz komponente
+Mnoge grupe koje će nas interesirati, poput
+\SO{n} i \SU{n} su kompaktne, jer njihovi parametri tipično variraju
+po intervalima poput $\phi \in [0, 2\pi)$. Iznimka je
+grupa translacija, čiji parametri variraju po intervalu $(-\infty,
+\infty)$ i grupa Lorentzovih transformacija, čiji parametar
+potiska varira $v \in [0, c)$, gdje $c$ nije uključen i stoga
+je interval otvoren i nekompaktan\footnote{Radi
+    kompletnosti spomenimo da ako Lieva grupa nije kompaktna, 
+    svejedno se elementi iz komponente
 povezanosti jedinice mogu prikazati kao konačan umnožak eksponencijala
-$e^{t_1 X_1} e^{t_2 X_2}\cdots e^{t_n X_n}$}
+$e^{X_1} e^{X_2}\cdots e^{X_n}$.
+Treba razlikovati situaciju gdje se svaki element
+grupe (ili njenog podskupa) može dobiti eksponencijacijom (exp
+je surjektivna) i situaciju gdje se on može se dobiti na jedinstven način 
+(exp je i injektivna).
+Injektivnost je zahtjevnije svojstvo. 
+Treba uočiti da se algebra grupe SO(2) preslikava na grupu neinjektivno,
+pa nijedna grupa koja
+je sadrži kao podrgrupu, kao SO(3), SU(2) etc., neće biti injektivno pokrivena
+exponencijacijom. Surjektivnost je lakše postići.
+Za to je dovoljna kompaktnost,
+a može i jednostruka povezanost.}.
 
-Što se \emph{strukture} grupe tiče tj. njene ``tablice množenja'', važnu
-ulogu ima formula
-\begin{equation}
-\begin{split}
-  e^A e^B &= \exp\Bigg\{A+B+\frac{1}{2}[A,B]+\frac{1}{12}\Big(\big[A,[A,B]\big]+
- \big[B,[B,A]\big]\Big)+\cdots \Bigg\} \\
-          &= f(A,B,[A,B]) \qquad \text{\emph{(Baker-Campbell-Hausdorff ili BCH teorem)}}
-\end{split}
-\end{equation}
 
-Ovaj red konvergira u određenoj okolini jedinice (ne nužno infinitezimalnoj!)
-u kojoj onda algebra \emph{potpuno} određuje grupu.
-
-To je dubok rezultat i puni dokaz BCH teorema obično zahtijeva napredne matematičke
-pojmove. Relativno pristupačan algebarski dokaz može se pronaći u knjizi
-Stilvell, \emph{Naive Lie Theory}.
-
-(D.Z. Provjerite BCH formulu do gore navedenog reda.)
-
-Pitanje: Da li istoj Lievoj algebri mogu pripadati različite Lieve grupe?
-
-Primjer grupa SO(3) i SU(2) koje imaju istu algebru sugerira da je to moguće. 
-(Ako SO(3) i SU(2) nisu izomorfne grupe, a vidjet ćemo na vježbama da nisu.)
-
-Da bismo precizno opisali vezu između Lievih grupa s istom algebrom, treba
-nam pojam \emph{povezanosti}
-
-\begin{definicija}[Povezanost]
+Dakle, Lieva algebra skoro potpuno određuje barem komponentu povezanosti
+jediničnog elementa Lieve grupe koju generira eksponecijacijom.
+Međutim, primjer grupa \SO{3} i \SO{2} koje su obje povezane i koje
+imaju istu (izomorfnu) algebru, ali ipak nisu izomorfne, pokazuje
+da neka svojstva grupe nisu određena algebrom, tj. da "skoro" iz
+prošle rečenice ipak nije "potpuno."
+Riječ je o globalnim topološkim svojstvima grupe i
+da bismo precizno opisali vezu između Lievih grupa s istom algebrom, treba
+nam još jedan pojam iz topologije.
+\begin{definicija}[Jednostavna (jednostruka) povezanost]
   Neka je G povezana grupa (ako nije, možemo promatrati samo komponentu
 povezanosti jedinice). Promotrimo skup svih zatvorenih krivulja u grupnoj 
 mnogostrukosti. Podijelimo skup  na klase ekvivalencije koje čine 
@@ -1068,6 +1159,18 @@ za vektore $\vec{a}$, $\vec{b}$ i \vec{c}
 \tag{i} e^{-\frac{i}{2}\vec{\sigma}\cdot\unitn \theta} &=
 \cos \frac{\theta}{2}-i\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \quad\in SU(2)
 \end{align*}
+
+\item \label{zad:abelovaalgebra} Za Abelovu grupu vrijedi $g_1 g_2 g_{1}^{-1} g_{2}^{-1} = e$,
+    gdje se objekt $g_1 g_2 g_{1}^{-1} g_{2}^{-1}$ naziva \emph{komutator} elemenata grupe.
+    Ako je $g_1$ generiran elementom algebre $g_1 = e^{s X}$, a $g_2 = e^{t Y}$, gdje su
+    $s$ i $t$ realni parametri, pokažite da je
+\begin{equation}
+\frac{\partial^2}{\partial s \, \partial t} \bigg|_{s=t=0} \big( \exp(sX) \exp(tY)
+\exp(-sX) \exp(-tY) \big) = [X, Y] \,,
+\end{equation}
+i time da je algebra $\calA$ Abelove grupe trivijalna $[X, Y] = 0$, za svake $X, Y \in \calA$.
+
+\item Provjerite eksplicitno BCH formulu do kubičnog člana.
 
 \item Pokažite da je grupa SU(2) homomorfna grupi SO(3) i da je homomorfizam
        2 na 1 (dvama elementima iz SU(2) je pridružen jedan element iz SO(3)).
