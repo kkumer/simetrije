@@ -40,6 +40,29 @@ Ch. 5.
  - Klasične Weylove grupe i exceptional grupe
 
 
+\rule{3cm}{0.5pt}
+
+Bliska povezanost grupe \SU{2} s grupom rotacija \SO{3} sugerira da
+bi ona mogla imati i fizikalni značaj. Trikovi s pojasom (Zakretanjem
+originalno vodoravnog pojasa držanjem za kopču kreiramo jednu zatvorenu putanju
+u grupi \SO{3}: kut i smjer su dani zakrenutošću pojedinog intervala
+pojasa i njegovom udaljenošću od ravnog vodoravnog položaja. 
+Kopča mora biti vodoravna kao i zavezani drugi kraj pojasa da bi
+oba kraja odgovarala identiteti. Jednom zakrenuti pojas nikakvim kontinuiranim
+transformacijama (koje drže kopču vodoravnom) ne možemo izravnati pojas; dvaput
+zakrenuti pojas možemo izravnati prebacivanjem remena preko kopče.)
+ ili konobarevim
+pladnjem pokazuju da rotacije za 360$^\circ$ zaista nisu uvijek u svakom pogledu
+identične rotaciji za 0$^\circ$, dok one za 720$^\circ$ stupnjeva to jesu.
+Također, Hamiltonova demonstracija da se komponiranje rotacija prirodnije
+izvodi pomoću kvaterniona (skup kvaterniona je ekvivalentan \SU{2} grupi) 
+dodatno sugerira da ta grupa nije sasvim apstraktna.
+  I stvarno, pokazuje se da se neki sustavi u prirodi (tzv. fermionski
+sustavi) trasformiraju pri rotacijama kao reprezentacije \SU{2} grupe
+(vidi 6. poglavlje)
+i to je i eksperimentalno potvrđeno npr. u eksperimentima s neutronskom
+interferometrijom. \secret{(cf. Sakurai)}
+
 ...
 
 Klasifikacija jednostavnih Lievih grupa na klasicne i posebne (G2, F4, E678)

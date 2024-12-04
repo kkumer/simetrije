@@ -326,7 +326,7 @@ e^{\phi X_3} = \exp\Bigg\{
 0 & 0 & 1 \end{pmatrix} \,.
 \end{equation}
 Tako vidimo da zaista svaki element ove jednoparametarske podgrupe
-od SO(3) možemo dobiti eksponencijacijom generatora.
+od \SO{3} možemo dobiti eksponencijacijom generatora.
 Nadalje, u skladu s Eulerovim teoremom iz mehanike\footnote{Svaki pomak krutog
 tijela kod kojeg jedna točka ostaje nepomična je ekvivalentan \emph{jednoj}
 rotaciji oko fiksne osi koja prolazi kroz tu točku.} svaka \SO{3} rotacija 
@@ -517,7 +517,7 @@ samo na bazu Lieve algebre, a ne i na ostatak vektorskog prostora, pa će u žar
 reći da tri matrice iz (\ref{eq:SO3generators}) "čine algebru" ove grupe.
 
 
-\begin{primjer}[strukturne konstante od SO(3)]
+\begin{primjer}[strukturne konstante od \SO{3}]
 Eksplicitnim računom lako se uvjerimo da je
  \begin{align}
      [X_i,X_j]& =0 \quad\text{za}\quad i=j \,,  \\
@@ -549,7 +549,7 @@ matrica $S:\calA\to\calA'$ takva da je
 Ako je $S$ još i bijekcija $\calA$ i $\calA'$ su \emph{izomorfne}. Dakle,
 važno je da preslikavanje  bude konzistentno s operacijom komutatora.
 
-\begin{primjer}[Lieva algebra grupe SU(2) tj. \suAlg{2}]
+\begin{primjer}[Lieva algebra grupe \SU{2} tj. \suAlg{2}]
     \SU{2} je grupa svih unitarnih $2\times 2$ matrica jedinične determinante.
     Identičnim zaključivanjem kao za \SO{3}, samo uz zamjenu traspozicije
     hermitskom konjugacijom $X^\mathsf{T} \to X^\mathsf{\dagger}$ lako
@@ -620,10 +620,15 @@ Vidjeli smo da u slučaju grupe \SO{3}
 elementa njene Lieve algebre \soAlg{3}.
 Pitanje je vrijedi li to lijepo svojstvo za sve Lieve grupe.
 Kako smo već dali naslutiti na nekoliko mjesta upotrijebom riječi "skoro",
-ne vrijedi sasvim. U ovom ćemo odjeljku, uglavnom ćemo
-bez dokaza iskazati i pomoću primjera ilustrirati tvrdnje koje 
+ne vrijedi sasvim. U ovom ćemo odjeljku, uglavnom
+bez dokaza, iskazati i pomoću primjera ilustrirati tvrdnje koje 
 pobliže oslikavaju vezu između Lievih grupa i njihovih algebri.
-Za to je prvo potrebno uvesti neke pojmove koji opisuju topološka
+Za većinu primjena u fizici i u ostatku knjige, uglavnom ćemo
+se fokusirati na algebre i reprezentacije algebri, tako da (razmjerno
+zahtjevno) gradivo ovog odjeljka nije nužno za razumijevanje sljedećih
+poglavlja.
+
+Prvo je potrebno uvesti neke pojmove koji opisuju topološka
 svojstva grupe.
 \begin{definicija}[Povezanost]
 Lieva grupa je \emph{povezana} ako njen grupni prostor ne možemo
@@ -734,8 +739,11 @@ Prvi članovi BCH formule su
 \end{align}
 i ključna netrivijalnost je da su \emph{svi} članovi reda dati preko
 ovakvih višestrukih komutatora pa je jasno da je $Z$ element Lieve algebre.
-(Podsjetimo se da je u algebri definirano zbrajanje elemenata $X+Y$ i njihov
- komutator $[X, Y]$, ali ne i množenje $X Y$.)
+(Podsjetimo se da je u Lievoj algebri definirano zbrajanje elemenata $X+Y$ i njihov
+ komutator $[X, Y]$, ali ne i množenje\footnote{Ako gledamo matrične
+    Lieve algebre množenje zapravo jest definirano, ali algebra općenito nije zatvorena
+    na to množenje. Npr. umnožak dvije antisimetrične matrice iz \soAlg{3} 
+    općenito \emph{nije} antisimetrična matrica.} $X Y$.)
 BCH red konvergira u nekoj okolini jediničnog elementa (ne nužno infinitezimalnoj)
 i u toj okolini je grupa potpuno i jedinstveno određena algebrom.
 Eksponencijacija povezuje elemente grupe i algebre, a BCH formula
@@ -748,7 +756,7 @@ u \cite{Stilwell:2008}.
 Za veliku kategoriju Lievih grupa vrijedi da se svi elementi iz 
 komponente povezanosti jedinice mogu prikazati u obliku
 $e^{X}$ gdje je $X$ element
-Lieve algebre. Dovoljan uvjet je da grupa ima svojstvo \emph{kompaktnosti}
+Lieve algebre. Dovoljan uvjet je da grupa ima svojstvo \emph{kompaktnosti}.
 \begin{definicija}[Kompaktnost]
 Lieva grupa je \emph{kompaktna} ako njeni parametri variraju po zatvorenim intervalima.
 (Ovo je intuitivna "fizičarska" definicija. Prava definicija uključuje napredne
@@ -771,9 +779,9 @@ grupe (ili njenog podskupa) može dobiti eksponencijacijom (exp
 je surjektivna) i situaciju gdje se on može se dobiti na jedinstven način 
 (exp je i injektivna).
 Injektivnost je zahtjevnije svojstvo. 
-Treba uočiti da se algebra grupe SO(2) preslikava na grupu neinjektivno,
+Treba uočiti da se algebra grupe \SO{2} preslikava na grupu neinjektivno,
 pa nijedna grupa koja
-je sadrži kao podrgrupu, kao SO(3), SU(2) etc., neće biti injektivno pokrivena
+je sadrži kao podgrupu, kao \SO{3}, \SU{2} etc., neće biti injektivno pokrivena
 exponencijacijom. Surjektivnost je lakše postići.
 Za to je dovoljna kompaktnost,
 a može i jednostruka povezanost.}.
@@ -798,42 +806,81 @@ jedna klasa kažemo da je grupa \emph{jednostavno} ili \emph{jednostruko}
 povezana.
 \end{definicija}
 
-\begin{primjer}[U(1)]
-$u u^\dagger = u u^* = 1 \imp |u|=1 \imp u=e^{i\phi} \imp$ grupna
-mnogostrukost je kružnica.
-(Usput, U(1)=SO(2). D.Z.: Pronađite izomorfizam.)
+\begin{primjer}[\SO{2}]
+Vidjeli smo da je grupna
+mnogostrukost grupe \SO{2} kružnica.
 Za zatvorene krivulje promjena kuta $\phi$ duž krivulje je $2n\pi$,
 $n=0,\pm 1, \pm 2, \ldots$. Krivulje s različitim $n$ pripadaju
-različitim klasama povezanosti $\to$ U(1) je beskonačno povezan.
+različitim klasama povezanosti jer je nemoguće kontinuiranim deformacijama
+pretvoriti krivulju $n$ puta "namotanu" oko kružnice u onu $m$ puta namotanu,
+ako je $n \neq m$. Obzirom na beskonačni skup klasa povezanosti,
+kažemo da je $\SO{2}$ je beskonačno povezana.
 
 \centerline{\includegraphics[scale=1.0]{pics/homotopija.eps}}
-
-Digresija: Moguće je na prirodan način definirati zbrajanje (klasa) krivulja 
-obzirom na koje skup ovih klasa čini grupu --- tzv. \emph{fundamentalnu
-grupu} ili \emph{prvu grupu homotopija} $\pi_1$. Ovdje $\pi_1=(\mathbb{Z}, +)$.
-
 \end{primjer}
+Na ovom skupu klasa krivulja može se prirodno
+definirati zbrajanje. Kao reprezentante klasa uzmimo
+krivulje koje počnu i završe u nekoj konkretnoj \emph{baznoj} točki, recimo $\phi=0$.
+Uzmemo li dvije zatvorene krivulje, njihov zbroj definiramo kao krivulju koja se dobije tako da 
+prvo po jednoj krivulji idemo od bazne točke do bazne točke, pa onda
+bez "završavanja" nastavimo tako po drugoj i završimo u baznoj točki.
+Obzirom na takvo zbrajanje (klasa) krivulja, ovaj skup čini grupu
+poznatu pod imenom \emph{fundamentalna grupa} ili \emph{prva grupa homotopija} $\pi_1$. 
+Ta grupa je temeljno topološko obilježje svake grupe. Prema gornjem
+primjeru vidimo da je $\pi_1\left(\SO{2} \right) = (\mathbb{Z}, +)$.
 
-\begin{primjer}[SO(3)]
-Kako izgleda parametarski prostor od SO(3)? Element od SO(3) je definiran
+\begin{primjer}[\SO{3}]
+Svaki element grupe \SO{3} se može na jedinstven način definirati
 smjerom osi rotacije i iznosom kuta rotacije pa se grupna mnogostrukost
 može prikazati kao puna lopta promjera $\pi$ s identificiranim nasuprotnim
-točkama površine sfere:
+točkama njene površine:
 
 \centerline{\includegraphics[scale=0.8]{pics/so3mnogostrukost.eps}}
 
-Svaka rotacija je u pozitivnom smjeru. Rotacije za kuteve $(\pi, 2\pi)$ se dobiju
-suprotno usmjerenim osima. Identifikacija nasuprotnih točaka je posljedica
+Položaj točke u lopti dan je u sfernom koordinatnom sustavu kao
+$(r, \theta, \phi)$. Kutovi $\theta$ i $\phi$ definiraju usmjerenje
+osi rotacije, a udaljenost $r \le \pi$ točke od ishodišta definira kut rotacije.
+Svaka rotacija je u pozitivnom smjeru. Rotacije oko neke osi za 
+kuteve $(\pi, 2\pi)$ se dobiju rotacijom oko
+suprotno usmjerene osi. Identifikacija nasuprotnih točaka je posljedica
 činjenice da je su rotacije za $\pi$ oko suprotno usmjerenih osi
-identične.
+identične pa tek uz takvu identifikaciju imamo ispravnu bijekciju
+između lopte (grupnog prostora) i \SO{3} grupe rotacija. 
+
+Za promatranje
+klasa krivulja kao baznu točku možemo uzeti središte lopte. Sve krivulje
+koje ostaju u unutrašnjosti lopte se mogu kontinuirano deformirati jedna
+u drugu pa pripadaju istoj klasi. Da bi dobili novu klasu promotrimo
+krivulju koja dolazi do površine u točki $A$ i onda se nastavlja u unutrašnjost
+od antipodne točke $A'$. Naglasimo da je krivulja neprekinuta zahvaljujući
+identičnosti $A'=A$.
+Kontinuirane deformacije ove krivulje će uvijek
+zadržati svojstvo prolaska površinskom točkom (kako se $A$ miče, $A'$ se
+miče tako da ostane antipodna) i krivulja se ne može deformirati u krivulje
+iz prve klase koje su cijele u unutrašnjosti lopte. Dakle, dobili smo
+drugu klasu. Ukoliko sad promotrimo krivulje koje prolaze dvama različitim površinskim
+točkama $A$ i $B$, u nadi da ćemo možda dobiti novu klasu, vidimo da je takve
+krivulje moguće deformirati do situacije da se točke stope i krivulja potpuno
+ubaci u unutrašnjost lopte, kako je prikazano na slici.
 
 \centerline{\includegraphics[scale=0.8]{pics/dvostruka_povezanost_so3.eps}}
 
-Dakle, SO(3) je dvostruko povezana.
+Tako te krivulje ne čine novu nego pripadaju prvoj klasi.
+Krivulja kroz tri površinske točke će se istim postupkom moći deformirati u 
+krivulju kroz jednu točku i tako dalje. Dakle, postoje točno dvije klase
+krivulja i kažemo da je  \SO{3} \emph{dvostruko povezana}.
+Njena prva grupa homotopija je time\footnote{Običaj je grupu $(\{+1, -1\}, \cdot)$
+    zvati $\mathbb{Z}_2$ premda bi prema našoj nomenklaturi iz prvog dijela
+    knjige konzistentnije bilo zvati je $\mathrm{C}_2$, dok je $\mathbb{Z}_2$
+    zapravo $\{0, 1\}$ uz operaciju zbrajanja modulo 2, što se onda prirodno
+    generalizira na veće grupe $\mathbb{Z}_n$. No, u svjetlu činjenice da su
+    sve grupe reda dva ionako izomorfne, to nije
+    prebitno.}
+    $\pi_1\left(\SO{3} \right) = \mathbb{Z}_{2} = (\{+1, -1\}, \cdot)$.
 \end{primjer}
 
-\begin{primjer}[SU(2)]
-Grupna mnogostrukost od SU(2) je 3-sfera tj. generalizacija uobičajene
+\begin{primjer}[\SU{2}]
+Grupna mnogostrukost od \SU{2} je 3-sfera tj. generalizacija uobičajene
 sfere (2-sfere) na četverodimenzionalni prostor. (Vidi vježbe za ovo.)
 Može se pokazati da je svaka $n$-sfera s $n>1$ jednostavno povezana.
 \secret{Hamermesh, p.320, stereografskom projekcijom se pokazuje
@@ -847,10 +894,10 @@ grupu H s \emph{diskretnom} jezgrom K onda kažemo da grupa G
 (Prisjetite se teorema \ref{th:izomorfizam} o izomorfizmu.)
 Također, Lieve algebre tih grupa su izomorfne.
 
-\begin{primjer}[SO(3) i SU(2)]
-SO(3) i SU(2) su homomorfne. Sam homomorfizam ćemo konstruirati na 
-vježbama gdje ćemo vidjeti da je on 2-1 s SU(2) na SO(3) tj. jezgra
-K ima dva elementa. Dakle SU(2) pokriva SO(3) dva puta.
+\begin{primjer}[\SO{3} i \SU{2}]
+\SO{3} i \SU{2} su homomorfne. Sam homomorfizam ćemo konstruirati na 
+vježbama gdje ćemo vidjeti da je on 2-1 s \SU{2} na \SO{3} tj. jezgra
+K ima dva elementa. Dakle \SU{2} pokriva \SO{3} dva puta.
 \end{primjer}
 
 \begin{teorem}
@@ -859,8 +906,8 @@ grupa koja je jednostavno povezana --- \emph{univerzalna grupa pokrivanja}.
 Broj pokrivanja jednak je povezanosti od G. \emph{(Bez dokaza)}
 \end{teorem}
 
-Npr. SU(2) je univerzalna grupa pokrivanja za SO(3). Prema
-teoremu o izomorfizmu  SU(2)/$\{1,-1\}$=SO(3).\\[1ex]
+Npr. \SU{2} je univerzalna grupa pokrivanja za \SO{3}. Prema
+teoremu o izomorfizmu  \SU{2}/$\{1,-1\}$=\SO{3}.\\[1ex]
 
 \centerline{\includegraphics[scale=1.0]{pics/so3pokrivanje.eps}}
 
@@ -871,28 +918,6 @@ Općenita situacija je\\[1ex]
 gdje je UCG/$K_i$=G$_i$. Pronalaženjem svih diskretnih invarijantnih
 podgrupa od UCG možemo naći sve grupe njoj lokalno izomorfne.
 
-\rule{3cm}{0.5pt}
-
-Bliska povezanost grupe SU(2) s grupom rotacija SO(3) sugerira da
-bi ona mogla imati i fizikalni značaj. Trikovi s pojasom (Zakretanjem
-originalno vodoravnog pojasa držanjem za kopču kreiramo jednu zatvorenu putanju
-u grupi SO(3): kut i smjer su dani zakrenutošću pojedinog intervala
-pojasa i njegovom udaljenošću od ravnog vodoravnog položaja. 
-Kopča mora biti vodoravna kao i zavezani drugi kraj pojasa da bi
-oba kraja odgovarala identiteti. Jednom zakrenuti pojas nikakvim kontinuiranim
-transformacijama (koje drže kopču vodoravnom) ne možemo izravnati pojas; dvaput
-zakrenuti pojas možemo izravnati prebacivanjem remena preko kopče.)
- ili konobarevim
-pladnjem pokazuju da rotacije za 360$^\circ$ zaista nisu uvijek u svakom pogledu
-identične rotaciji za 0$^\circ$, dok one za 720$^\circ$ stupnjeva to jesu.
-Također, Hamiltonova demonstracija da se komponiranje rotacija prirodnije
-izvodi pomoću kvaterniona (skup kvaterniona je ekvivalentan SU(2) grupi) 
-dodatno sugerira da ta grupa nije sasvim apstraktna.
-  I stvarno, pokazuje se da se neki sustavi u prirodi (tzv. fermionski
-sustavi) trasformiraju pri rotacijama kao reprezentacije SU(2) grupe
-(vidi 6. poglavlje)
-i to je i eksperimentalno potvrđeno npr. u eksperimentima s neutronskom
-interferometrijom. \secret{(cf. Sakurai)}
 
 \section{Primjeri Lievih grupa važnih za fiziku}
 \label{sec:primjeriLie}
@@ -900,7 +925,7 @@ interferometrijom. \secret{(cf. Sakurai)}
 \begin{enumerate}
 \item \textbf{Opća linearna grupa}
 
-$GL(n, \mathbb{C})$ --- skup svih $n\times n$ regularnih ($\det M \neq 0$)
+$\GL{n, \mathbb{C}}$ --- skup svih $n\times n$ regularnih ($\det M \neq 0$)
 kompleksnih matrica
 
 Kako je svaka matrica zadana s $n^2$ nezavisnih kompleksnih brojeva, ova
@@ -912,13 +937,13 @@ koja je izraz koji uključuje tih $2 n^2$ parametara bude \emph{različita} od n
 \det M = f(a_1, a_2 , \dots, a_{2n}) \neq 0
 \end{equation}
 
-Podgrupa ove grupe je grupa $GL(n, \mathbb{R})$ koja očito ima samo
+Podgrupa ove grupe je grupa $\GL{n, \mathbb{R}}$ koja očito ima samo
 $n^2$ parametara.
 
 \item \textbf{Specijalna linearna grupa}
 
 \begin{equation}
-SL(n, \mathbb{C}) = \{ M\in GL(n,\mathbb{C}) \; | \; \det M = 1\}
+\SL{n, \mathbb{C}} = \{ M\in \GL{n,\mathbb{C}} \; | \; \det M = 1\}
 \end{equation}
 
 Ovdje je na svaku matricu postavljen dodatni uvjet
@@ -930,14 +955,14 @@ koji predstavlja jednu kompleksnu, tj. dvije realne jednadžbe koje
 se mogu iskoristiti za eliminaciju dvaju parametera. Tako ova grupa
 ima $2 n^2 - 2$ parametra.
 
-Podgrupa ove grupe je grupa $SL(n, \mathbb{R})$ koja ima 
+Podgrupa ove grupe je grupa $\SL{n, \mathbb{R}}$ koja ima 
 $n^2 - 1$ parametar. (Jednadžba (\ref{eq:SL}) je sad samo jedna
 realna jednadžba, a ne dvije.)
 
 \item \textbf{Unitarna grupa}
 
 \begin{equation}
-U(n) = \{ M\in GL(n,\mathbb{C}) \; | \; M M^{\dagger} = 1\}
+U(n) = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\dagger} = 1\}
 \end{equation}
 
 Prebrojavanje nezavisnih parametara za ovu grupu može se izvesti
@@ -1001,7 +1026,7 @@ smo ovdje uzeli kao definiciono, samo posljedica.
 \item \textbf{Specijalna unitarna grupa}
 
 \begin{equation}
-SU(n) = \{ M\in U(n) \; | \; \det M  = 1\}
+\SU{n} = \{ M\in U(n) \; | \; \det M  = 1\}
 \end{equation}
 
 Za prebrojavanje parametara treba prvo uočiti da je za sve unitarne
@@ -1016,7 +1041,7 @@ ima točno $n^2 - 1$ parametar.
 \item \textbf{Ortogonalna grupa}
 
 \begin{equation}
-O(n, \mathbb{C}) = \{ M\in GL(n,\mathbb{C}) \; | \; M M^{\mathrm{T}} = 1\}
+O(n, \mathbb{C}) = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\mathrm{T}} = 1\}
 \end{equation}
 
 Kod prebrojavanja uvjeta, jedina razlika obzirom na unitarne matrice
@@ -1030,7 +1055,7 @@ $2n + n(n-1)$ parametara i ostaje ih samo $n(n-1)$.
 
 U fizici se najčešće susrećemo s grupom ortogonalnih \emph{realnih} matrica
 \begin{equation}
-O(n) \equiv O(n, \mathbb{R}) = \{ M\in GL(n,\mathbb{R}) \; | \; M M^{\mathrm{T}} = 1\}
+O(n) \equiv O(n, \mathbb{R}) = \{ M\in \GL{n,\mathbb{R}} \; | \; M M^{\mathrm{T}} = 1\}
 \end{equation}
 koja ima $n(n-1)/2$ parametara. (Uvjerite se u to.) Ova grupa čuva
 kvadratnu formu $\sum_i x_i y_i$ (skalarni produkt na realnom
@@ -1039,9 +1064,9 @@ vektorskom prostoru) što se može upotrijebiti kao alternativna definicija.
 \item \textbf{Specijalna ortogonalna grupa}
 
 \begin{equation}
-SO(n, \mathbb{C}) = \{ M\in O(n, \mathbb{C}) \; | \; \det M  = 1\} \;,
+\SO{n, \mathbb{C}} = \{ M\in O(n, \mathbb{C}) \; | \; \det M  = 1\} \;,
 \end{equation}
-i odgovarajuća realna grupe $SO(n)$ imaju isti broj parametara kao
+i odgovarajuća realna grupe $\SO{n}$ imaju isti broj parametara kao
 $O(n, \mathbb{C})$, odnosno $O(n)$. Naime, uvjet ortogonalnosti
 $M M^{\mathrm{T}} = 1$ opet uz primjenu Binet-Cauchyjevog teorema vodi
 na $(\det M)^2 = 1$, odnosno
@@ -1052,7 +1077,7 @@ pa ograničenje na $\det M = 1$ ne smanjuje dimenziju parametarskog prostora.
 
 Čine je $n\times n$ matrice
 \begin{equation}
-U(p, q) = \{ M\in GL(n,\mathbb{C}) \; | \; M^{\dagger} g M = g\} \;,
+U(p, q) = \{ M\in \GL{n,\mathbb{C}} \; | \; M^{\dagger} g M = g\} \;,
 \end{equation}
 gdje je $p+q=n$ i gdje je $g$ dijagonalna matrica oblika
 \begin{equation}
@@ -1073,7 +1098,7 @@ definicije \ref{def:skalarniprodukt}.
 \item \textbf{Pseudo-ortogonalna grupa}
 
 \begin{equation}
-O(p, q) = \{ M\in GL(n,\mathbb{R}) \; | \; M^{\mathrm{T}} g M = g \} \;,
+O(p, q) = \{ M\in \GL{n,\mathbb{R}} \; | \; M^{\mathrm{T}} g M = g \} \;,
 \end{equation}
 gdje je $p+q=n$ i gdje je $g$ dijagonalna matrica iz (\ref{eq:metricg}).
 Ove matrice čuvaju kvadratnu formu oblika
@@ -1083,8 +1108,8 @@ Ove matrice čuvaju kvadratnu formu oblika
 Najpoznatija grupa ove vrste je grupa Lorentzovih transformacija  $O(1,3)$
 (vidi odjeljak \ref{sec:lorentz}).
 
-Specijalnu pseudo-unitarnu grupu $SU(p,q)$ odnosno specijalnu pseudo-ortogonalnu
-grupu $SO(p,q)$ dobivamo ako se u $U(p,q)$ odnosno $O(p, q)$
+Specijalnu pseudo-unitarnu grupu $\SU{p,q}$ odnosno specijalnu pseudo-ortogonalnu
+grupu $\SO{p,q}$ dobivamo ako se u $U(p,q)$ odnosno $O(p, q)$
 ograničimo na matrice s $\det M = 1$.
 
 \end{enumerate}
@@ -1092,12 +1117,12 @@ ograničimo na matrice s $\det M = 1$.
 \subsection{Topološka svojstva Lievih grupa$^*$}
 
 \begin{itemize}
-\item $GL(n, \mathbb{C})$ je očito nekompaktna (svi elementi matrica
+\item $\GL{n, \mathbb{C}}$ je očito nekompaktna (svi elementi matrica
 slobodno poprimaju vrijednosti iz skupa $(-\infty, \infty)$ i povezana
 (kontinuiranim promjenama elemenata svaku matricu možemo pretvoriti u
 jediničnu).
 
-\item $GL(n, \mathbb{R})$ je isto nekompaktna. Što se tiče povezanosti,
+\item $\GL{n, \mathbb{R}}$ je isto nekompaktna. Što se tiče povezanosti,
 treba uočiti da je determinanta kontinuirana funkcija elemenata matrice
 čija je vrijednost realni broj iz $(-\infty, 0) \cup (0, \infty)$
 (zahtjev postojanja inverza isključuje nulu). To znači da kontinuiranim
@@ -1114,7 +1139,7 @@ parametra kuta rotacije do nule, mogu povezati s jediničnom transformacijom.
 Elementi s determinantom $-1$, osim rotacije uključuju i refleksije pa se
 ne mogu kontinuirano povezati s jedinicom.  \label{pag:detO3}
 
-\item $U(n)$ i $SU(n)$ su kompaktne povezane grupe, gdje je $SU(n)$ još i
+\item $U(n)$ i $\SU{n}$ su kompaktne povezane grupe, gdje je $\SU{n}$ još i
 jednostavno povezana.
 
 \item $O(p, q)$ je nekompaktna grupa s četiri komponente povezanosti
@@ -1157,7 +1182,7 @@ za vektore $\vec{a}$, $\vec{b}$ i \vec{c}
 \tag{g} \Tr (\sigma_i \sigma_j) &= 2\delta_{ij} \\
 \tag{h} \sigma_i \sigma_j &= \delta_{ij} 1 + i \epsilon_{ijk}\sigma_k\\
 \tag{i} e^{-\frac{i}{2}\vec{\sigma}\cdot\unitn \theta} &=
-\cos \frac{\theta}{2}-i\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \quad\in SU(2)
+\cos \frac{\theta}{2}-i\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \quad\in \SU{2}
 \end{align*}
 
 \item \label{zad:abelovaalgebra} Za Abelovu grupu vrijedi $g_1 g_2 g_{1}^{-1} g_{2}^{-1} = e$,
@@ -1172,10 +1197,10 @@ i time da je algebra $\calA$ Abelove grupe trivijalna $[X, Y] = 0$, za svake $X,
 
 \item Provjerite eksplicitno BCH formulu do kubičnog člana.
 
-\item Pokažite da je grupa SU(2) homomorfna grupi SO(3) i da je homomorfizam
-       2 na 1 (dvama elementima iz SU(2) je pridružen jedan element iz SO(3)).
+\item Pokažite da je grupa \SU{2} homomorfna grupi \SO{3} i da je homomorfizam
+       2 na 1 (dvama elementima iz \SU{2} je pridružen jedan element iz \SO{3}).
 
-\item Pokažite da je grupna mnogostrukost grupe SU(2) hipersfera u
+\item Pokažite da je grupna mnogostrukost grupe \SU{2} hipersfera u
  četverodimenzionalnom prostoru (tzv. \emph{3-sfera}) definirana
  jednadžbom 
 \begin{displaymath}
@@ -1183,7 +1208,7 @@ x^2+y^2+r^2+s^2=1 \;.
 \end{displaymath}
 
 \item Pokažite da je $(\mathbb{R}, +)$ 
- univerzalna grupa pokrivanja za grupu SO(2).
+ univerzalna grupa pokrivanja za grupu \SO{2}.
 
 \item Pokažite da matrice
 \begin{equation}
@@ -1194,5 +1219,5 @@ x^2+y^2+r^2+s^2=1 \;.
 \end{equation}
 djelujući na vektore $(x, y)$ čuvaju formu $x^2 - y^2$, te da 
 je $\det M(\theta) = 1$, tako da $M(\theta)$ tvore grupu
-$SO(1,1)$.
+$\SO{1,1}$.
 \end{enumerate}
