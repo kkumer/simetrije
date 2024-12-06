@@ -509,7 +509,7 @@ Grupe koje nemaju normalnih podgrupa zovu se \emph{jednostavne}\footnote{Mi se
     koeficijente jednadžbe) s nejednostavnošću pripadajuće grupe simetrija
     skupa rješenja. Onda je dokazavši da su grupe simetrija skupa rješenja za jednadžbe reda
     većeg od 5 jednostavne pokazao da te jednadžbe nisu rješive. To je otkriće predstavljalo
-    kraj teorije algebarskih jednadžbi i rođenje teorije grupa.} ,
+kraj teorije algebarskih jednadžbi i rođenje teorije grupa.\label{fus:galois}} ,
 a one koje nemaju normalnih Abelovih podgrupa zovu se \emph{polujednostavne}.
 
 Za normalne grupe iz definicije \ref{tm:normalnapodgrupa} slijedi odmah i
@@ -616,6 +616,15 @@ $$
 0 & 1 \\ 1 & 0
 \end{pmatrix}
 \right\},\cdot\right)\,.$$
+\end{primjer}
+
+\begin{primjer}
+    Grupa $\mathbb{Z}_n$ je skup cijelih brojeva $\{0, 1, 2, \ldots, n-1\}$,
+    uz binarnu operaciju zbrajanja modulo $n$. Jedinični element je naravno 0,
+    a cijelu grupu generira element 1 i grupa je izomorfna cikličkoj grupi $\mathrm{C}_n$.
+    Stoga mnogi autori cikličke grupe označavaju $\mathbb{Z}_n$, a u primjenama u fizici
+    se često sreće $\mathrm{C}_2$ koju ćemo onda i mi zbog sklada s literaturom
+    nekad zvati $\mathbb{Z}_2$.
 \end{primjer}
 
 \emph{Slika} homomorfizma $f(A)$ (skup svih elemenata u $B$ koji imaju original u $A$) 
@@ -752,11 +761,11 @@ mora biti simetričan.
     (\emph{Naputak}: Odredite transformacije poligona koje odgovaraju elementima $c$ i
  $b$, pa se uvjerite da one zadovoljavaju $c^n = b^2 = (bc)^2 = e$. Usporedite
 broj elementa grupa.)\label{zad:Dn}
-\item Centar $Z$ grupe $G$ je skup svih elemenata koji komutiraju sa svakim
+\item \label{zad:centar} Centar $Z$ grupe $G$ je skup svih elemenata koji komutiraju sa svakim
 elementom grupe tj. $Z=\{z\in G \td zg=gz \; \forall g\in G\}$. Pokažite da
 je $Z$ normalna Abelova podgrupa od $G$.
 \item Odredite klase konjugacije grupe D$_4$.
-\item Pokažite da su sve grupe s prostim brojem elemenata ciklične.
+\item Pokažite da su sve grupe s prostim brojem elemenata cikličke.
 \item \emph{Red} elementa $a$ grupe $G$ je najmanji $n$ takav da je $a^n=e$.
     Pokažite da je red svih elemenata jedne klase konjugacije isti.\label{zad:redel}
 \item Postoji li netrivijalni homomorfizam s grupe D$_4$ na grupu D$_3$?
@@ -764,4 +773,5 @@ je $Z$ normalna Abelova podgrupa od $G$.
 izomorfna grupi C$_2$, gdje je $\mathbb{Z}_e$ grupa parnih cijelih brojeva.
 \item Promotrite grupu nesingularnih kvadratnih $n\times n$ 
 matrica $G=\{M\}$. Pokažite da je $f(M)=\det M$ homomorfizam.
+Koja grupa je kodomena tog homomorfizma?
 \end{enumerate}

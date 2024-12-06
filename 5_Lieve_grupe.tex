@@ -191,6 +191,189 @@ od \emph{specijalna} ($\det M = 1$) \emph{ortogonalna} ($M^\mathsf{T} M = 1$)
 grupa $2\times 2$ matrica.
 
 
+\section{Grupe \SO{3} i \SU{2}}
+\label{sec:so3su2}
+
+Dva važna primjera Lievih grupa na kojima  ćemo ilustrirati većinu rezultata
+su grupa $3 \times 3$ ortogonalnih matrica determinante 1, dakle \SO{3},
+i grupa $2 \times 2$ unitarnih matrica determinante 1, \SU{2}, pa ćemo
+se u ovom odjeljku detaljnije upoznati s ove dvije grupe i njihovom
+međusobnom vezom. No krenimo prvo
+s malo općenitijim razmatranjem transformacija prostora koje
+čuvaju udaljenosti između točaka.
+Takve transformacije nazivaju se \emph{izometrije}. U vektorskim prostorima,
+udaljenost točaka se prirodno definira kao norma razlike vektora do tih točaka,
+pa će transformacije koje čuvaju skalarni produkt vektora $(\vec{x}, \vec{y})$,
+čuvati i udaljenosti jer je norma (iznos) vektora $\sqrt{(\vec{x}, \vec{x})}$.
+Zapišemo li to pomoću matrica vidimo da matrica izometrije $R$ mora zadovoljavati
+\begin{equation}
+    (R\vec{x}, R\vec{y}) = \sum_{ijk} R_{ij}x_{j} \, R_{ik} y_{k} = \sum_{ijk} x_{j} (R^\mathsf{T})_{ji}
+    \, R_{ik} y_{k} = (\vec{x}, R^{\mathsf{T}} R \vec{y}) \stackrel{!}{=} (\vec{x}, \vec{y}) \,,
+\end{equation}
+pa mora biti $R^{\mathsf{T}} R = 1$, a matrice koje to zadovoljavaju
+nazivamo \emph{ortogonalne} jer iz tog svojstva slijedi da su retci i stupci
+tih matrica ortogonalni vektori, štoviše ortonormirani su. Grupa svih
+ortogonalnih $3 \times 3$ matrica se naziva \O{3}.
+
+Kako je prema Binet-Cauchyjevom teoremu $\det R^\mathsf{T} R = \det R^\mathsf{T} \det R$,
+te kako transpozicija ne mijenja determinantu, vidimo da je $(\det R)^2 = 1$,
+pa determinanta ortogonalne matrice može biti samo 1 ili -1.
+Matrice s determinantom -1, poput 
+\begin{equation}
+\begin{pmatrix}
+\cos\phi & -\sin\phi & 0 \\
+\sin\phi & \cos\phi & 0 \\
+0 & 0 & -1 \end{pmatrix} \,,
+\end{equation}
+daju transformacije koja su kombinacija rotacije i refleksije preko
+neke ravnine kroz ishodište (u ovom primjeru to je $x$-$y$ ravnina).
+Refleksije također čuvaju
+udaljenosti, ali ne čuvaju orijentaciju (lijevi vijak se
+se pretvara u desni). Podskup od \O{3} kojeg čine
+matrice determinante 1 čini normalnu podgrupu (uvjerite se u to!)
+koja se naziva \emph{specijalna} ortogonalna grupa \SO{3}.
+
+Elementi komplementa od \SO{3} u \O{3} tj. matrice koje imaju determinantu -1 nekad se 
+nazivaju \emph{neprave} rotacije.
+Neprave rotacije se mogu na jedinstven
+način prikazati kao umnožak običnih rotacija iz \SO{3} i operatora inverzije
+\begin{equation}
+I = \begin{pmatrix}
+-1 & 0 & 0 \\ 
+0  &-1 & 0 \\
+0  & 0 & -1
+\end{pmatrix} \,.
+\end{equation}
+Naime, uzmemo li proizvoljnu nepravu rotaciju $\tilde{R}$ tada
+je $\det (I \tilde{R}) = \det(I) \det(\tilde{R}) = +1 $ pa je $I\tilde{R}$ 
+prava rotacija, $I\tilde{R} = R$,
+i onda je $\tilde{R} = I R$. Tako je cijeli taj skup
+kojeg čine neprave rotacije zapravo jednak umnošku $I\SO{3}$ i vidimo da
+se cijela ortogonalna grupa sastoji od točno dvije komponente
+\begin{equation}
+    \O{3} = \SO{3} + I\SO{3}\,,
+\end{equation}
+od kojih je samo $\SO{3}$ podgrupa. ($I\SO{3}$ ne može biti podgrupa jer ne sadrži
+jedinični element.)
+
+Usredotočimo se sada na grupu $\SO{3}$ i promotrimo izgled njene grupne mnogostrukosti.
+Svaki element grupe \SO{3} se može na jedinstven način definirati
+smjerom osi rotacije i iznosom kuta rotacije pa se grupna mnogostrukost
+može prikazati kao puna lopta promjera $\pi$ s identificiranim nasuprotnim
+(antipodnim) točkama njene površine:
+
+\centerline{\includegraphics[scale=0.8]{pics/so3mnogostrukost.eps}}
+
+Položaj točke u lopti dan je u sfernom koordinatnom sustavu kao
+$(r, \theta, \phi)$. Kutovi $\theta$ i $\phi$ definiraju usmjerenje
+osi rotacije, a udaljenost $r \le \pi$ točke od ishodišta definira kut rotacije.
+Sve te rotacije uzimamo u pozitivnom smjeru. Rotacije u negativnom smjeru,
+odnosno rotacije za 
+kutove $(\pi, 2\pi)$ se dobiju rotacijom za kutove $[0, \pi]$ oko
+suprotno usmjerene osi. Identifikacija nasuprotnih točaka je posljedica
+činjenice da je su rotacije za $\pi$ oko suprotno usmjerenih osi
+identične pa tek uz takvu identifikaciju imamo ispravnu bijekciju
+između lopte (grupnog prostora) i \SO{3} grupe rotacija. 
+
+Kompozicija u grupi \SO{3} je naravno dana umnoškom odgovarajućih matrica,
+ali promatranjem rezultantne matrice općenito nije lako vidjeti kakvoj
+rotaciji ona odgovara, za koji kut i oko koje osi. Odgovor na to pitanje,
+kojim se nećemo ovdje baviti,
+dali su Euler i Rodrigues, ali najelegantniji put do odgovora ide putem
+grupe \SU{2} na koju ćemo se sada usredotočiti.
+Da bismo ustanovili parametrizaciju grupe \SU{2}, a pomoću toga i izgled
+njene grupne mnogostrukosti, promotrimo općenitu $2 \times 2$ kompleksnu
+matricu
+\begin{equation}
+    U = 
+    \begin{pmatrix}
+        a & b \\ c & d
+    \end{pmatrix} \,, \qquad
+    a, b, c, d \in \mathbb{C} \,.
+\end{equation}
+Uvjet unitarnosti daje
+\begin{equation}
+    U U^\dagger = \begin{pmatrix}
+        aa^*+bb^*  & ac^*+bd^* \\
+        ca^*+db^* & c c^* + d d^*
+    \end{pmatrix}
+    \stackrel{!}{=}
+    \begin{pmatrix}
+        1 & 0 \\ 0 & 1
+    \end{pmatrix} \,,
+\end{equation}
+dok uvjet specijalnosti daje
+\begin{equation}
+    \det U = ad - bc = 1 \,.
+\end{equation}
+Elimirajući $d$ iz jednadžbi $ca^*+db^* =0$ i $ad - bc = 1$ dobijemo
+\begin{equation}
+    -\frac{c}{b^*}(aa^* + bb^*) = 1 \,,
+\end{equation}
+pa kako je iz uvjeta unitarnosti $aa^* + bb^* = 1$ dobijemo da je $c=-b^*$.
+Onda odmah iz $ca^*+db^* =0$ slijedi i da je $d = a^*$ pa vidimo da je
+\begin{equation}
+    \SU{2} = \left\{
+        \begin{pmatrix}
+            a & b \\ -b^* & a^*
+    \end{pmatrix} \; \text{uz}\;   |a|^2 + |b|^2 = 1\,;\quad  a,b \in\mathbb{C} \right\} \,.
+    \label{eq:su2ab}
+\end{equation}
+Ova dva kompleksna broja možemo izraziti preko realnih kao $a = x + iy$ i
+$b = r + is$ čime uvjet determinante postaje
+\begin{equation}
+    x^2 + y^2 +r^2 +s^2 = 1 \,,
+    \label{eq:s3sfera}
+\end{equation}
+i na kraju preostaju tri slobodna realna parametra. Dakle, grupa \SU{2} je troparametarska
+ili trodimenzionalna Lieva grupa. Parametre $x, y, r$ i $s$ možemo interpretirati
+kao koordinate točaka u četverodimenzionalnom euklidskom prostoru $\mathbb{R}^4$
+i kako je (\ref{eq:s3sfera}) jednadžba sfere u tom prostoru vidimo da je
+grupna mnogostrukost grupe \SU{2} 3-sfera\footnote{Kružnica je 1-sfera $S^1$,
+    Zemljina površina je približno 2-sfera $S^2$ itd. Interesantan vrlo
+    netrivijalan rezultat teorije grupa je da od svih $S^n$ samo $S^1$ i $S^3$ dopuštaju
+grupnu strukturu tj. mogu biti mnogostrukosti Lieve grupe.} $S^3$.
+
+
+Diskutirajmo sada vezu između grupa \SO{3} i \SU{2}. Za zagrijavanje, možemo
+promotriti sličnu vezu jednostavnijih Abelovih grupa \SO{2} i \U{1}. Grupa \SO{2} je dana
+u (\ref{eq:so2}), a \U{1} je grupa unitarnih $1 \times 1$
+matrica, a to su naravno kompleksni brojevi apsolutne vrijednosti 1, jer uvjet
+unitarnosti je $u^\dagger u = u^* u = |u| = 1$. Tako tu grupu možemo
+parametrizirati kao $u = e^{i\phi}$, $\phi\in [0, 2\pi)$ i jasno je da je
+i grupna mnogostrukost od \U{1} kružnica, kao i za \SO{2}. Štoviše ove dvije
+grupe su očito izomorfne. Taj izomorfizam omogućuje da se mnogi
+trigonometrijski identiteti ravninske geometrije, poput formula za sinus i kosinus dvostrukog kuta,
+mogu znatno lakše izvesti u grupi \U{1} jer je s eksponencijalnom
+funkcijom lakše raditi nego s trigonometrijskima, a na kraju se lako "vratimo
+u \SO{2}" pomoću Eulerove formule $e^{i\phi} = \cos\phi + i\sin\phi$.
+
+Kod grupa \SO{3} i \SU{2} situacija je ipak nešto složenija. Već smo vidjeli
+da su grupne mnogostrukosti vrlo različite, a kako je
+pokazano u Dodatku \ref{sec:su2so3} one
+nisu izomorfne, nego samo homomorfne.
+Konkretno, homomorfno preslikavanje je 2-na-1 tako da je svakim dvama elementima 
+$U$ i $-U$ iz \SU{2} pridružen isti element $R$ iz \SO{3}.
+Pomoću (\ref{eq:su2ab}) i (\ref{eq:s3sfera}) vidimo da množenje matrice $U$
+s -1 odgovara promjeni parametara $(x, y, r, s) \to (-x, -y, -r, -s)$,
+što je inverzija u 4D prostoru, tako da elementima $U$ i $-U$ odgovaraju
+antipodne točke na grupnoj mnogostrukosti $S^3$. No, za razliku od
+grupne mnogostrukosti \SO{2} gdje su antipodne točke površine kugle
+identificirane i odgovaraju jednom elementu grupe, ovdje su antipodne
+točke različite i odgovaraju različitim elementima grupe.
+Zahvaljujući ovom homomorfizmu, rotacije u 3D prostoru mogu se reprezentirati
+i matricama iz SU(2), a ova prividna redundancija dvaju matrica za
+istu rotaciju s pokazuje ključna u kvantnoj mehanici sustava s polucjelobrojnim
+spinom, kako ćemo vidjeti u poglavlju \ref{ch:rotacije}.
+
+Kernel ovog homomorfizma je znači $\{\mathbb{I}, -\mathbb{I}\}$ što je
+grupa $\mathbb{Z}_2$ pa prema
+teoremu o izomorfizmu \ref{th:izomorfizam} imamo
+odnos $\SU{2}/\mathbb{Z}_2 = \SO{3}$.
+
+
+
+
 
 \section{Lieve algebre}
 \label{sec:lievealgebre}
@@ -229,40 +412,11 @@ Ovo ćemo većim dijelom samo pokazati na primjeru grupe rotacija realnog
 trodimenzionalnog euklidskog prostora, a za općeniti
 dokaz čitaoc može konzultirati literaturu poput \cite{Stilwell:2008}.
 
-Transformacije prostora koje čuvaju udaljenosti između točaka, a time
-i iznose (duljine) vektora, nazivaju se \emph{izometrije}. U vektorskim prostorima,
-udaljenost se prirodno definira pomoću skalarnog produkta vektora $(\vec{x}, \vec{y})$
-tako da je iznos vektora $\sqrt{(\vec{x}, \vec{x})}$,
-a izometrije će onda biti transformacije koje čuvaju skalarni produkt. Zapišemo
-li to pomoću matrica vidimo da matrica izometrije $R$ mora zadovoljavati
-\begin{equation}
-    (Rx, Ry) = \sum_{ijk} R_{ij}x_{j} \, R_{ik} y_{k} = \sum_{ijk} x_{j} (R^\mathsf{T})_{ji}
-    \, R_{ik} y_{k} = (x, R^{\mathsf{T}} R y) \stackrel{!}{=} (x, y) \,,
-\end{equation}
-pa mora biti $R^{\mathsf{T}} R = 1$, a matrice koje to zadovoljavaju
-nazivamo \emph{ortogonalne} jer iz tog svojstva slijedi da su retci i stupci
-tih matrica ortogonalni vektori, štoviše ortonormirani su. Grupa svih
-ortogonalnih $3 \times 3$ matrica se naziva \O{3}.
 
-Kako je prema Binet-Cauchyjevom teoremu $\det R^\mathsf{T} R = \det R^\mathsf{T} \det R$,
-te kako transpozicija ne mijenja determinantu, vidimo da je $(\det R)^2 = 1$,
-pa determinanta ortogonalne matrice može biti samo 1 ili -1.
-Matrice s determinantom -1, poput 
-\begin{equation}
-\begin{pmatrix}
-\cos\phi & -\sin\phi & 0 \\
-\sin\phi & \cos\phi & 0 \\
-0 & 0 & -1 \end{pmatrix} \,,
-\end{equation}
-daju transformaciju koja je kombinacija rotacije i refleksije preko
-neke ravnine kroz ishodište (u ovom primjeru to je $x$-$y$ ravnina).
-Refleksije također čuvaju
-udaljenosti, ali ne čuvaju orijentaciju (lijevi vijak se
-se pretvara u desni). Tako je grupa svih rotacija dana skupom ortogonalnih
-matrica determinante 1 i naziva se \emph{specijalna} ortogonalna grupa \SO{3}.
-U odjeljku \ref{sec:primjeriLie} dokazat ćemo da je ta grupa troparametarska,
+U odjeljku \ref{sec:primjeriLie} dokazat ćemo da je grupa \SO{3} troparametarska,
 no to je i odmah jasno ako znamo da su rotacije potpuno specificirane pomoću
-tri Eulerova kuta.
+iznosa kuta rotacije (jedan parametar) i usmjerenja jediničnog vektora osi rotacije (dva parametra)
+ili alternativno pomoću tri Eulerova kuta.
 
 Promotrimo sada jednoparametarsku podgrupu grupe \SO{3} koju čine
 rotacije oko treće tj. $z$-osi.
@@ -273,7 +427,7 @@ rotacije oko treće tj. $z$-osi.
 \sin\phi & \cos\phi & 0 \\
 0 & 0 & 1 
 \end{pmatrix}
- \td \phi \in [0, 2\pi) \right\} = \SO{2} = \subset \SO{3} \,,
+ \td \phi \in [0, 2\pi) \right\} = \SO{2} \subset \SO{3} \,,
 \end{displaymath}
 gdje premda su same matrice $R_3 (\phi)$ trodimenzionalne one su
 naravno izomorfne grupi \SO{2} rotacija $x$-$y$ ravnine.
@@ -549,7 +703,7 @@ matrica $S:\calA\to\calA'$ takva da je
 Ako je $S$ još i bijekcija $\calA$ i $\calA'$ su \emph{izomorfne}. Dakle,
 važno je da preslikavanje  bude konzistentno s operacijom komutatora.
 
-\begin{primjer}[Lieva algebra grupe \SU{2} tj. \suAlg{2}]
+\begin{primjer}[Lieva algebra grupe \SU{2} tj. \suAlg{2}] \label{pr:su2so3Alg}
     \SU{2} je grupa svih unitarnih $2\times 2$ matrica jedinične determinante.
     Identičnim zaključivanjem kao za \SO{3}, samo uz zamjenu traspozicije
     hermitskom konjugacijom $X^\mathsf{T} \to X^\mathsf{\dagger}$ lako
@@ -612,6 +766,21 @@ bude proporcionalan jediničnom i ispostavlja se da je koeficijent proporcionaln
 zgodan za označavanje ireducibilnih reprezentacija kako ćemo vidjeti u sljedećem poglavlju.
 
 
+\begin{primjer}[Algebra grupe \SO{2}]
+    Generator grupe \SO{2} već smo identificirali kao $X_3$ iz
+    \ref{eq:x3so3} kad smo \SO{2}
+    razmatrali kao jednoparametarsku podgrupu grupe \SO{3}.
+    No kakva je struktura njene algebre? Ona je generirana tim
+    jednim generatorom koji naravno komutira sa samim sobom
+    tj. $\soAlg{2} = \{ aX_{3}\,; a \in \mathbb{R} \}$, što je
+    zapravo prostor svih antisimetričnih $2\times 2$ matrica,
+    koji je izomorfan s $\mathbb{R}$.
+    Općenito, za Lieve algebre Abelovih grupa komutator iščezava 
+    (vidi zadatak \ref{zad:abelovaalgebra}) i time
+    je njihova struktura kompletno definirana strukturom vektorskog
+    prostora. \label{pr:so2Alg}
+\end{primjer}
+
 
 \section{Veza Lievih grupa i Lievih algebri}
 
@@ -670,30 +839,9 @@ je determinanta također kontinuirana funkcija, u slučaju grupe \O{3},
 za čije elemente smo vidjeli da imaju determinantu ili +1 ili -1,
 jasno je da eksponencijacijom algebre možemo dobiti (a u slučaju \O{3}
 i dobivamo) samo elemente s determinantom +1, dakle prave rotacije.
-Matrice koje imaju determinantu -1 nekad se 
-nazivaju \emph{neprave} rotacije i pripadaju drugoj komponenti povezanosti.
+Neprave rotacije $I\SO{3}$ koje imaju determinantu -1
+pripadaju drugoj komponenti povezanosti.
 
-Neprave rotacije se mogu na jedinstven
-način prikazati kao umnožak običnih rotacija iz \SO{3} i operatora inverzije
-\begin{equation}
-I = \begin{pmatrix}
--1 & 0 & 0 \\ 
-0  &-1 & 0 \\
-0  & 0 & -1
-\end{pmatrix} \,.
-\end{equation}
-Naime, uzmemo li proizvoljnu nepravu rotaciju $\tilde{R}$ tada
-je zahvaljujući Binet-Cauchyjevom teoremu determinanta matrice
-$I \tilde{R}$ svakako +1 pa je ta matrica prava rotacija $I\tilde{R} = R$
-i onda je $\tilde{R} = I R$. Tako je cijeli taj skup (nije podgrupa!)
-kojeg čine neprave rotacije zapravo jednak umnošku $I\SO{3}$ i vidimo da
-se cijela ortogonalna grupa sastoji od točno dvije disjunktne komponente
-\begin{equation}
-    \O{3} = \SO{3} + I\SO{3}\,,
-\end{equation}
-koje su, promatrane kao dijelovi grupnog prostora, topološki identične.
-Zanimljivo pitanje točnog izgleda ovog grupnog prostora raspravit ćemo malo
-kasnije u ovom poglavlju.
 
 
 Iz gornje diskusije, odnosno imajući u vidu kontinuiranost funkcije
@@ -789,7 +937,7 @@ a može i jednostruka povezanost.}.
 
 Dakle, Lieva algebra skoro potpuno određuje barem komponentu povezanosti
 jediničnog elementa Lieve grupe koju generira eksponecijacijom.
-Međutim, primjer grupa \SO{3} i \SO{2} koje su obje povezane i koje
+Međutim, primjer grupa \SO{3} i \SU{2} koje su obje povezane i koje
 imaju istu (izomorfnu) algebru, ali ipak nisu izomorfne, pokazuje
 da neka svojstva grupe nisu određena algebrom, tj. da "skoro" iz
 prošle rečenice ipak nije "potpuno."
@@ -814,7 +962,7 @@ $n=0,\pm 1, \pm 2, \ldots$. Krivulje s različitim $n$ pripadaju
 različitim klasama povezanosti jer je nemoguće kontinuiranim deformacijama
 pretvoriti krivulju $n$ puta "namotanu" oko kružnice u onu $m$ puta namotanu,
 ako je $n \neq m$. Obzirom na beskonačni skup klasa povezanosti,
-kažemo da je $\SO{2}$ je beskonačno povezana.
+kažemo da je $\SO{2}$ beskonačno povezana.
 
 \centerline{\includegraphics[scale=1.0]{pics/homotopija.eps}}
 \end{primjer}
@@ -830,23 +978,9 @@ Ta grupa je temeljno topološko obilježje svake grupe. Prema gornjem
 primjeru vidimo da je $\pi_1\left(\SO{2} \right) = (\mathbb{Z}, +)$.
 
 \begin{primjer}[\SO{3}]
-Svaki element grupe \SO{3} se može na jedinstven način definirati
-smjerom osi rotacije i iznosom kuta rotacije pa se grupna mnogostrukost
-može prikazati kao puna lopta promjera $\pi$ s identificiranim nasuprotnim
-točkama njene površine:
 
-\centerline{\includegraphics[scale=0.8]{pics/so3mnogostrukost.eps}}
-
-Položaj točke u lopti dan je u sfernom koordinatnom sustavu kao
-$(r, \theta, \phi)$. Kutovi $\theta$ i $\phi$ definiraju usmjerenje
-osi rotacije, a udaljenost $r \le \pi$ točke od ishodišta definira kut rotacije.
-Svaka rotacija je u pozitivnom smjeru. Rotacije oko neke osi za 
-kuteve $(\pi, 2\pi)$ se dobiju rotacijom oko
-suprotno usmjerene osi. Identifikacija nasuprotnih točaka je posljedica
-činjenice da je su rotacije za $\pi$ oko suprotno usmjerenih osi
-identične pa tek uz takvu identifikaciju imamo ispravnu bijekciju
-između lopte (grupnog prostora) i \SO{3} grupe rotacija. 
-
+U prošlom odjeljku smo vidjeli da je grupna mnogostrukost od \SO{3}
+lopta s identificiranim antipodnim točkama površine.
 Za promatranje
 klasa krivulja kao baznu točku možemo uzeti središte lopte. Sve krivulje
 koje ostaju u unutrašnjosti lopte se mogu kontinuirano deformirati jedna
@@ -869,23 +1003,17 @@ Tako te krivulje ne čine novu nego pripadaju prvoj klasi.
 Krivulja kroz tri površinske točke će se istim postupkom moći deformirati u 
 krivulju kroz jednu točku i tako dalje. Dakle, postoje točno dvije klase
 krivulja i kažemo da je  \SO{3} \emph{dvostruko povezana}.
-Njena prva grupa homotopija je time\footnote{Običaj je grupu $(\{+1, -1\}, \cdot)$
-    zvati $\mathbb{Z}_2$ premda bi prema našoj nomenklaturi iz prvog dijela
-    knjige konzistentnije bilo zvati je $\mathrm{C}_2$, dok je $\mathbb{Z}_2$
-    zapravo $\{0, 1\}$ uz operaciju zbrajanja modulo 2, što se onda prirodno
-    generalizira na veće grupe $\mathbb{Z}_n$. No, u svjetlu činjenice da su
-    sve grupe reda dva ionako izomorfne, to nije
-    prebitno.}
+Njena prva grupa homotopija je time
     $\pi_1\left(\SO{3} \right) = \mathbb{Z}_{2} = (\{+1, -1\}, \cdot)$.
 \end{primjer}
 
 \begin{primjer}[\SU{2}]
-Grupna mnogostrukost od \SU{2} je 3-sfera tj. generalizacija uobičajene
-sfere (2-sfere) na četverodimenzionalni prostor. (Vidi vježbe za ovo.)
-Može se pokazati da je svaka $n$-sfera s $n>1$ jednostavno povezana.
-\secret{Hamermesh, p.320, stereografskom projekcijom se pokazuje
-da je $S^n$ bez jedne točke homeomorfan $\mathbb{R}^n$. \emph{``You
-cannot lasso a sphere''}}
+Vidjeli smo u prošlom odjeljku da je
+grupna mnogostrukost \SU{2} 3-sfera tj. generalizacija uobičajene
+sfere (2-sfere) na četverodimenzionalni prostor. 
+Može se pokazati da je svaka $n$-sfera s $n\ge 2$ jednostavno povezana.
+Pravi dokaz zahtijeva nešto znanja toplologije, ali čitatelju će
+moguće ta činijenica biti vrlo intuitivna, a za 2-sferu i očita.
 \end{primjer}
 
 Ako postoji homomorfizam s povezane Lieve grupe G na povezanu Lievu
@@ -895,39 +1023,72 @@ grupu H s \emph{diskretnom} jezgrom K onda kažemo da grupa G
 Također, Lieve algebre tih grupa su izomorfne.
 
 \begin{primjer}[\SO{3} i \SU{2}]
-\SO{3} i \SU{2} su homomorfne. Sam homomorfizam ćemo konstruirati na 
-vježbama gdje ćemo vidjeti da je on 2-1 s \SU{2} na \SO{3} tj. jezgra
-K ima dva elementa. Dakle \SU{2} pokriva \SO{3} dva puta.
+\SO{3} i \SU{2} su homomorfne i kako je pokazano u Dodatku \ref{sec:su2so3} 
+jezgra je $\mathbb{Z}_2$. Dakle \SU{2} pokriva \SO{3} dva puta.
+Kako smo vidjeli u primjeru \ref{pr:su2so3Alg}, algebre ovih
+dviju grupa su izomorfne.
 \end{primjer}
 
-\begin{teorem}
+\begin{teorem}[Univerzalna grupa pokrivanja]
 Među grupama koje pokrivaju povezanu Lievu grupu G, postoji jedinstvena
 grupa koja je jednostavno povezana --- \emph{univerzalna grupa pokrivanja}.
-Broj pokrivanja jednak je povezanosti od G. \emph{(Bez dokaza)}
+Broj pokrivanja jednak je povezanosti od G. 
 \end{teorem}
 
-Npr. \SU{2} je univerzalna grupa pokrivanja za \SO{3}. Prema
-teoremu o izomorfizmu  \SU{2}/$\{1,-1\}$=\SO{3}.\\[1ex]
+
+Tako je \SU{2} je univerzalna grupa pokrivanja za \SO{3}.
 
 \centerline{\includegraphics[scale=1.0]{pics/so3pokrivanje.eps}}
+
+Što se grupa \SO{2} i \U{1} tiče, one su obje izomorfne i beskonačno
+povezane. U primjeru \ref{pr:so2Alg} smo vidjeli da je njihova
+algebra $\mathbb{R}$.
+Njihovu univerzalnu grupu pokrivanja možemo identificirati
+tako da identificiramo jednostavno povezanu Lievu grupu koju
+generira $\mathbb{R}$. Ako se oslonimo na eksponencijaciju
+vidimo da generiramo grupu pozitivnih realnih brojeva
+$\{e^{x}\,; x \in \mathbb{R}\}$ s množenjem kao grupnom operacijom.
+No primjetite da je ta grupa izomorfna grupi $(\mathbb{R}, +)$
+gdje je preslikavanje izomorfizma upravo eksponencijalna funkcija.
+Tako možemo reći da je $R$ sam sebi algebra i sam sebi univerzalna
+grupa pokrivanja, a on je i univerzalna grupa pokrivanja za
+\SO{2} i \U{1}. Odgovarajući homomorfizam $\mathbb{R} \to \U{1}$
+je $x \to e^{ix}$ i kernel je skup $2\pi\mathbb{Z} = \{0, \pm 2\pi,
+\pm 4\pi, \ldots\}$. Riječ je o beskonačnom skupu pa kažemo da
+$\mathbb{R}$ pokriva \U{1} beskonačno puta, što je konzistentno
+s ranije utvrđenom činjenicom da je \U{1} beskonačno povezan.
+Intuitivno je jasno da se pravac na kružnicu namata beskonačno
+puta.
+
 
 Općenita situacija je\\[1ex]
 
 \centerline{\includegraphics[scale=1.0]{pics/ucg.eps}}
 
-gdje je UCG/$K_i$=G$_i$. Pronalaženjem svih diskretnih invarijantnih
-podgrupa od UCG možemo naći sve grupe njoj lokalno izomorfne.
+gdje je UCG/$K_i$=G$_i$. Tako pronalaženjem svih diskretnih normalnih
+podgrupa (kandidata za kernele homomorfizma) jednostavno povezane grupe 
+možemo naći sve grupe koje
+s njom dijele istu Lievu algebru\footnote{To je znatno olakšano teoremom
+koji kaže da su diskretne normalne podgrupe nužno sadržane u
+centru grupe (vidi zadatak \ref{zad:centar}) što znači da svi elementi
+kernela komutiraju sa cijelom grupom.}.
+U zaključku, Lieve algebre u velikoj mjeri određuju Lievu grupu i
+glavna informacija o grupi koju gubimo razmatrajući samo algebru
+je njena topologija. Algebra, koja je određena okolinom jediničnog
+elementa grupe "ne vidi" je li se grupa možda netrivijalno "preklapa"
+na samu sebe daleko od jedinice.
 
 
-\section{Primjeri Lievih grupa važnih za fiziku}
+\section{Klasične Lieve grupe važne za fiziku}
 \label{sec:primjeriLie}
 
-\begin{enumerate}
+\begin{enumerate}[leftmargin=0pt, itemindent=0pt]
+
 \item \textbf{Opća linearna grupa}
 
-$\GL{n, \mathbb{C}}$ --- skup svih $n\times n$ regularnih ($\det M \neq 0$)
+Opću linearnu grupu $\GL{n, \mathbb{C}}$ čini
+skup svih $n\times n$ regularnih ($\det M \neq 0$)
 kompleksnih matrica
-
 Kako je svaka matrica zadana s $n^2$ nezavisnih kompleksnih brojeva, ova
 grupa ima $2 n^2$ realnih parametara. Uvjet regularnosti nije ograničenje
 koje smanjuje broj parametara, jer je samo riječ o zahtjevu da determinanta,
@@ -938,7 +1099,10 @@ koja je izraz koji uključuje tih $2 n^2$ parametara bude \emph{različita} od n
 \end{equation}
 
 Podgrupa ove grupe je grupa $\GL{n, \mathbb{R}}$ koja očito ima samo
-$n^2$ parametara.
+$n^2$ parametara. $\GL{n, \mathbb{R}}$ ima dvije komponente povezanosti,
+jednu čine matrice pozitivne, a drugu matrice negativne komponente.
+Izuzeće determinante nula razdvaja te komponente, ali to nije slučaj
+za $\GL{n, \mathbb{C}}$ koja je povezana (ali ne i jednostavno povezana).
 
 \item \textbf{Specijalna linearna grupa}
 
@@ -953,21 +1117,25 @@ Ovdje je na svaku matricu postavljen dodatni uvjet
 \end{equation}
 koji predstavlja jednu kompleksnu, tj. dvije realne jednadžbe koje
 se mogu iskoristiti za eliminaciju dvaju parametera. Tako ova grupa
-ima $2 n^2 - 2$ parametra.
+ima $2 n^2 - 2$ parametara. Grupa je jednostavno povezana i za fiziku
+je posebno važna grupa $\SL{2, \mathbb{C}}$ koja je univerzalna grupa
+pokrivanja za Lorentzovu grupu na analogan način na koji je \SU{2}
+univerzalna grupa pokrivanja za grupu rotacija \SO{3}.
 
 Podgrupa ove grupe je grupa $\SL{n, \mathbb{R}}$ koja ima 
 $n^2 - 1$ parametar. (Jednadžba (\ref{eq:SL}) je sad samo jedna
-realna jednadžba, a ne dvije.)
+realna jednadžba, a ne dvije.) Ona je povezana, ali ne i jednostavno
+povezana.
 
 \item \textbf{Unitarna grupa}
 
 \begin{equation}
-U(n) = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\dagger} = 1\}
+\U{n} = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\dagger} = 1\}
 \end{equation}
-
 Prebrojavanje nezavisnih parametara za ovu grupu može se izvesti
 na više načina. Uvjet $M M^\dagger = 1$ se može napisati izraženo
-preko komponenti matrica kao:
+preko komponenti matrica kao (u ovom odjeljku ćemo radi jasnoće
+suspregnuti Einsteinovu sumacijsku konvenciju i pisati sume eksplicitno)
 \begin{equation}
 \sum_{j=1}^{n} M_{ij} M_{kj}^* = \delta_{ik}\;,
 \label{eq:unitaritycondition}
@@ -977,7 +1145,7 @@ Jednadžba (\ref{eq:unitaritycondition}) predstavlja $n^2$ kompleksnih
 jednadžbi ali sve one nisu nezavisne. Promotrimo prvo $n$ jednadžbi
 određenih uvjetom $i=k$ (dakle gledamo dijagonalu te matrične jednadžbe):
 \begin{equation}
- \sum_j M_{ij} M^{*}_{ij} = \sum_j |M_{ij}|^2 = 1
+ \sum_j M_{ij} M^{*}_{ij} = \sum_j |M_{ij}|^2 = 1 \,.
 \label{eq:diagonalcondition}
 \end{equation}
 To je $n$ realnih jednadžbi koje se mogu upotrijebiti za eliminiranje
@@ -985,19 +1153,19 @@ $n$ parametara. Dalje možemo gledati jednadžbe određene uvjetom
 $i < k$ (dakle gledamo trokut iznad dijagonale matrične jednadžbe).
 Te su jednadžbe kompleksne i ima ih $n(n-1)/2$ (broj elemenata u 
 spomenutom trokutu). Sve ove jednadžbe su neovisne pa se mogu
-iskoristiti za eliminranje $2 \cdot n(n-1)/2 = n(n-1)$ parametara.
+iskoristiti za eliminiranje $2 \cdot n(n-1)/2 = n(n-1)$ parametara.
 Preostaju jednadžbe za $i >k$ (donji trokut matrice), ali kompleksnom
 konjugacijom odgovarajućih jednadžbi
 \begin{equation}
-\sum_{j=1}^{n} M_{ij} M_{kj}^* = 0\;, \qquad i>k
+\sum_{j=1}^{n} M_{ij} M_{kj}^* = 0\,, \qquad i>k \,,
 \end{equation}
 dobijemo
 \begin{equation}
-\sum_{j=1}^{n} M_{ij}^* M_{kj}  = \sum_{j=1}^{n} = M_{kj} M_{ij}^* = 0\;, \qquad i>k
+\sum_{j=1}^{n} M_{ij}^* M_{kj}  = \sum_{j=1}^{n} = M_{kj} M_{ij}^* = 0\,, \qquad i>k \,,
 \end{equation}
 pa uz preimenovanje indeksa $i \leftrightarrow k$
 \begin{equation}
-\sum_{j=1}^{n} =  M_{ij} M_{kj}^* = 0\;, \qquad k>i
+\sum_{j=1}^{n} =  M_{ij} M_{kj}^* = 0\,, \qquad k>i \,,
 \end{equation}
 vidimo da su ove jednadžbe ekvivalentne ovima iz gornjeg trokuta tj. nisu
 nezavisne.
@@ -1007,18 +1175,21 @@ ostane $2n^2 - n^2 = n^2$ što je broj parametara unitarne grupe.
 vektori. Uvjet normalizacije daje $n$ realnih jednadžbi, a uvjet
 ortonogonalnosti $\binom{n}{2}$ kompleksnih, gdje se treba uvjeriti
 da odgovarajući zahtjevi na stupce nisu nezavisni od ovih na retke.)
+Unitarna grupa je kompaktna i povezana, ali ne i jednostavno. Za $\U{1}$
+smo vidjeli, a i za ostale unitarne grupe
+vrijedi da im je prva grupa homotopije $\pi_{1}(\U{n}) = \mathbb{Z}$.
 
 Važno svojstvo unitarnih matrica je da, ukoliko ih interpretiramo kao
 operatore nad kompleksnim vektorskim prostorima ($\vec{x} \to M\vec{x}$), 
 one čuvaju skalarni produkt
 \begin{align}
-  (x, y)& = \sum_{i=1}^n x_{i}^* y_i  \longrightarrow
+    (\vec{x}, \vec{y})& = \sum_{i=1}^n x_{i}^* y_i  \longrightarrow
    \sum_{ijk} M^{*}_{ij}x^{*}_j M_{ik}y_{k} \nonumber \\
  & = \text{uvrštavanjem
-(\ref{eq:unitaritycondition})} = \sum_{kj} \delta_{kj} x^{*}_j y_k = (x, y)
+ (\ref{eq:unitaritycondition})} = \sum_{kj} \delta_{kj} x^{*}_j y_k = (\vec{x}, \vec{y})
 \label{eq:productinvariance}
 \end{align}
-Lako je pokazati (D.Z.) da se ovo može uzeti kao alternativna definicija
+Lako je pokazati da se ovo može uzeti kao alternativna definicija
 unitarne grupe tj. da se unitarne matrice mogu definirati kao one koje
 čuvaju ovaj skalarni produkt, a onda je svojstvo $M^{\dagger} M = 1$, koje
 smo ovdje uzeli kao definiciono, samo posljedica.
@@ -1036,15 +1207,15 @@ primjenom Binet-Cauchyjevog teorema na definiciju $M M^{\dagger} = 1$
 $\phi\in [0, 2\pi)$.
 Dodatni uvjet za specijalne unitarne matrice $\det M = 1$ je onda
 samo jedna realna jednadžba $\phi = 0$ pa specijalna unitarna grupa
-ima točno $n^2 - 1$ parametar.
+ima točno $n^2 - 1$ parametar. \SU{n} su kompaktne i jednostavno povezane.
 
 \item \textbf{Ortogonalna grupa}
 
 \begin{equation}
-O(n, \mathbb{C}) = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\mathrm{T}} = 1\}
+\O{n, \mathbb{C}} = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\mathrm{T}} = 1\}
 \end{equation}
 
-Kod prebrojavanja uvjeta, jedina razlika obzirom na unitarne matrice
+Kod prebrojavanja parametara, jedina razlika obzirom na unitarne matrice
 je da umjesto ($i=k$) jednadžbi (\ref{eq:diagonalcondition}) 
 koje odgovaraju dijagonali matrične jednadžbe sada imamo
 \begin{equation}
@@ -1055,21 +1226,20 @@ $2n + n(n-1)$ parametara i ostaje ih samo $n(n-1)$.
 
 U fizici se najčešće susrećemo s grupom ortogonalnih \emph{realnih} matrica
 \begin{equation}
-O(n) \equiv O(n, \mathbb{R}) = \{ M\in \GL{n,\mathbb{R}} \; | \; M M^{\mathrm{T}} = 1\}
+\O{n} \equiv \O{n, \mathbb{R}} = \{ M\in \GL{n,\mathbb{R}} \; | \; M M^{\mathrm{T}} = 1\}
 \end{equation}
-koja ima $n(n-1)/2$ parametara. (Uvjerite se u to.) Ova grupa čuva
-kvadratnu formu $\sum_i x_i y_i$ (skalarni produkt na realnom
-vektorskom prostoru) što se može upotrijebiti kao alternativna definicija.
+koja ima $n(n-1)/2$ parametara. Ova grupa čuva
+kvadratnu formu $(\vec{x}, \vec{y}) = \sum_i x_i y_i$ tj. skalarni produkt na realnom
+vektorskom prostoru, što se može upotrijebiti kao alternativna definicija grupe.
 
 \item \textbf{Specijalna ortogonalna grupa}
 
 \begin{equation}
 \SO{n, \mathbb{C}} = \{ M\in O(n, \mathbb{C}) \; | \; \det M  = 1\} \;,
 \end{equation}
-i odgovarajuća realna grupe $\SO{n}$ imaju isti broj parametara kao
-$O(n, \mathbb{C})$, odnosno $O(n)$. Naime, uvjet ortogonalnosti
-$M M^{\mathrm{T}} = 1$ opet uz primjenu Binet-Cauchyjevog teorema vodi
-na $(\det M)^2 = 1$, odnosno
+i odgovarajuća realna grupa $\SO{n}$ imaju isti broj parametara kao
+$\O{n, \mathbb{C}}$, odnosno \O{n}. Naime, uvjet ortogonalnosti
+$M M^{\mathrm{T}} = 1$ vodi na $(\det M)^2 = 1$, odnosno
 na zaključak da ortogonalne matrice imaju determinantu $\det M = \pm 1$,
 pa ograničenje na $\det M = 1$ ne smanjuje dimenziju parametarskog prostora.
 
@@ -1077,7 +1247,7 @@ pa ograničenje na $\det M = 1$ ne smanjuje dimenziju parametarskog prostora.
 
 Čine je $n\times n$ matrice
 \begin{equation}
-U(p, q) = \{ M\in \GL{n,\mathbb{C}} \; | \; M^{\dagger} g M = g\} \;,
+\U{p, q} = \{ M\in \GL{n,\mathbb{C}} \; | \; M^{\dagger} g M = g\} \;,
 \end{equation}
 gdje je $p+q=n$ i gdje je $g$ dijagonalna matrica oblika
 \begin{equation}
@@ -1085,8 +1255,7 @@ gdje je $p+q=n$ i gdje je $g$ dijagonalna matrica oblika
 \underbrace{-1, -1, \dots, -1}_{q \times}) \;.
 \label{eq:metricg}
 \end{equation}
-
-Ova grupa ima isti broj parametara kao i $U(n)$, te
+Ova grupa ima isti broj parametara kao i $\U{n}$, te
 čuva kvadratnu formu oblika
 \begin{equation}
  \sum_{i=1}^{p} x_{i}^* y_{i} - \sum_{i=p+1}^{p+q=n} x_{i}^* y_i 
@@ -1098,54 +1267,74 @@ definicije \ref{def:skalarniprodukt}.
 \item \textbf{Pseudo-ortogonalna grupa}
 
 \begin{equation}
-O(p, q) = \{ M\in \GL{n,\mathbb{R}} \; | \; M^{\mathrm{T}} g M = g \} \;,
+\O{p, q} = \{ M\in \GL{n,\mathbb{R}} \; | \; M^{\mathrm{T}} g M = g \} \;,
 \end{equation}
 gdje je $p+q=n$ i gdje je $g$ dijagonalna matrica iz (\ref{eq:metricg}).
 Ove matrice čuvaju kvadratnu formu oblika
 \begin{equation}
  \sum_{i=1}^{p} x_{i} y_{i} - \sum_{i=p+1}^{p+q=n} x_{i} y_i  \;.
 \end{equation}
-Najpoznatija grupa ove vrste je grupa Lorentzovih transformacija  $O(1,3)$
-(vidi odjeljak \ref{sec:lorentz}).
+Najpoznatija grupa ove vrste je grupa Lorentzovih transformacija  $\O{1,3}$
+(vidi odjeljak \ref{sec:lorentz}). Ove grupe su nekompaktne i imaju
+četiri komponente povezanosti što za 
+konkretan primjer grupe $O(1,3)$ pokazujemo u odjeljku \ref{sec:lorentz}.
 
 Specijalnu pseudo-unitarnu grupu $\SU{p,q}$ odnosno specijalnu pseudo-ortogonalnu
-grupu $\SO{p,q}$ dobivamo ako se u $U(p,q)$ odnosno $O(p, q)$
+grupu $\SO{p,q}$ dobivamo ako se u $\U{p,q}$ odnosno $\O{p, q}$
 ograničimo na matrice s $\det M = 1$.
 
 \end{enumerate}
 
-\subsection{Topološka svojstva Lievih grupa$^*$}
 
-\begin{itemize}
-\item $\GL{n, \mathbb{C}}$ je očito nekompaktna (svi elementi matrica
-slobodno poprimaju vrijednosti iz skupa $(-\infty, \infty)$ i povezana
-(kontinuiranim promjenama elemenata svaku matricu možemo pretvoriti u
-jediničnu).
+U preostalim poglavljima knjige bavit ćemo se sa samo nekoliko grupa
+koje su se pokazale od najveće važnosti za primjene u fizici, no recimo
+ipak nešto o kompletnom katalogu Lievih grupa.
 
-\item $\GL{n, \mathbb{R}}$ je isto nekompaktna. Što se tiče povezanosti,
-treba uočiti da je determinanta kontinuirana funkcija elemenata matrice
-čija je vrijednost realni broj iz $(-\infty, 0) \cup (0, \infty)$
-(zahtjev postojanja inverza isključuje nulu). To znači da kontinuiranim
-promjenama parametara ne možemo matrice s negativnim determinantama
-pretvoriti u jediničnu i ova grupa ima dvije odvojene komponente povezanosti.
+Kao prvo, mi smo ovdje, kao i mnogi autori, posebice fizičari, razlikovali
+Lieve (kontinuirane) grupe i diskretne grupe. To je na ovom nivou pedagoški
+poželjno kako bi se istaknula specifična moć netrivijalnih Lievih algebri tj. infinitezimalne
+okoline jedinice. No, strogo uzevši, i skup diskretnih točaka je
+(0-dimenzionalna) mnogostrukost, a i topološki prostor (s tzv. 
+diskretnom topologijom, vidi \cite{Smolic:2024}) tako da su i diskretne
+i konačne grupe zapravo strogo uzevši Lieve, što nas onda spašava od
+nezgodnih situacija da formiranjem kvocijentnih skupova ne izlazimo
+iz domene Lievih grupa.
 
-\item Na sličan način možemo zaključiti da grupa $O(n)$, gdje je
-determinanta $\pm 1$, isto ima dvije komponenete povezanosti, s time
-da je ova grupa kompaktna --- parametri su kutevi rotacija koji poprimaju
-vrijednosti iz kompaktnih skupova poput $[0, 2\pi\equiv0)$.
-Kad elemente grupe promatramo kao transformacije prostora, elementi
-s determinantom $+1$ su čiste rotacije koje se kontinuirano, smanjivanjem
-parametra kuta rotacije do nule, mogu povezati s jediničnom transformacijom.
-Elementi s determinantom $-1$, osim rotacije uključuju i refleksije pa se
-ne mogu kontinuirano povezati s jedinicom.  \label{pag:detO3}
+Kad je to rečeno, recimo da su kontinuirane kompaktne Lieve grupe
+lakše za potpunu klasifikaciju. Kao prvo,
+bitno je klasificirati jednostavne grupe, jer ukoliko grupa ima normalne
+podgrupe onda se može reducirati uzimanjem kvocijenta po toj podgrupi
+(jednostavne grupe su poput prostih brojeva teorije grupa). W. Killing i \'{E}. Cartan
+su pokazali da algebre tih grupa spadaju u jednu od četiri beskonačne 
+porodice u matematici poznate kao $\mathrm{A}_n, \mathrm{B}_n, \mathrm{C}_n$
+i $\mathrm{D}_n$, gdje već poznajemo
+$\mathrm{A}_n$ kao algebre od $\SU{n+1}$,  $\mathrm{B}_n$ kao algebre od \SO{2n+1},
+$\mathrm{D}_n$ kao algebre od \SO{2n}, a $\mathrm{C}_n$ su algebre tzv. simplektičkih grupa
+$\mathrm{Sp}(n)$ koje isto imaju neke primjene u fizici, ali mi ih ovdje
+nećemo više spominjati. Osim ove četiri porodice postoji još samo
+pet \emph{iznimnih} grupa $\mathrm{G}_2$, $\mathrm{F}_4$,
+$\mathrm{E}_6$, $\mathrm{E}_7$, i $\mathrm{E}_8$ koje nalaze svoju primjenu
+u nekim teorijama unifikacije sila u prirodi i teoriji superstruna.
 
-\item $U(n)$ i $\SU{n}$ su kompaktne povezane grupe, gdje je $\SU{n}$ još i
-jednostavno povezana.
+Kod diskretnih jednostavnih grupa imamo kao prvo cikličke grupe $\mathrm{C}_{p}$
+gdje je $p$ prost broj i koje smo upoznali, 
+zatim alternirajuće grupe $\mathrm{A}_{n\ge 5}$ parnih permutacija skupova
+od $n$ elemenata (pomoću kojih je Galois pokazao nerješivost jednadžbi
+reda većeg od pet) i
+veliku porodicu diskretnih grupa tzv. Lievog tipa koje su konstruirane
+kao standardne Lieve grupe, ali ne nad poljem realnih brojeva nego
+nad konačnim poljima. Povrh toga postoji još samo 26 tzv. \emph{sporadičnih}
+grupa\footnote{Četiri sporadične grupe je pronašao hrvatski matematičar Zvonimir Janko
+i po njemu se zovu $\mathrm{J}_{1, 2, 3, 4}$.} gdje je najveća od njih
+čuvena grupa \emph{čudovište} (engl. \emph{monster}) s
+808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000, 000,000
+ $\approx$ $8\times 10^{53}$
+elemenata. Njena primjena u fizici je samo u domeni spekulacija, no
+neke ideje iz fizike su iskorištene za određivanje svojstava te komplicirane
+grupe.
 
-\item $O(p, q)$ je nekompaktna grupa s četiri komponente povezanosti
-što za konkretan primjer grupe $O(1,3)$ pokazujemo u odjeljku \ref{sec:lorentz}.
 
-\end{itemize}
+
 
 \subsection*{Zadaci za vježbe}
 
@@ -1153,7 +1342,7 @@ jednostavno povezana.
 
 \item \label{zad:O3oSO3} Uvjerite se da je kvocijentna grupa $\O{3}/\SO{3} = \mathrm{C}_{2}$.
 
-\item \label{zad:LeviCivitaProperties} Pokažite da Levi-Civita tenzor ima slijedeća svojstva:
+\item \label{zad:svojstvalevicivite} Pokažite da Levi-Civita tenzor ima slijedeća svojstva:
 \begin{align*}
 \tag{a}\epsilon_{ijk}\epsilon_{imn}&=\delta_{jm}\delta_{kn}-\delta_{jn}\delta_{km}\\
 \tag{b}\epsilon_{ijk}\epsilon_{ijm}&=2\delta_{km} \\
@@ -1170,7 +1359,7 @@ za vektore $\vec{a}$, $\vec{b}$ i \vec{c}
 \end{displaymath}
 \secret{Za slične stvari vidi Evett, Am. J. Phys \textbf{34} (1966) 503.}
 
-\item Pokažite da Paulijeve matrice imaju slijedeća svojstva:
+\item \label{zad:svojstvapaulijevih} Pokažite da Paulijeve matrice imaju slijedeća svojstva:
 \begin{align*}
 \tag{a} \sigma_{i}^2 &= 1 \\
 \tag{b} \sigma_{i}^\dagger &= \sigma_i \\
@@ -1197,18 +1386,6 @@ i time da je algebra $\calA$ Abelove grupe trivijalna $[X, Y] = 0$, za svake $X,
 
 \item Provjerite eksplicitno BCH formulu do kubičnog člana.
 
-\item Pokažite da je grupa \SU{2} homomorfna grupi \SO{3} i da je homomorfizam
-       2 na 1 (dvama elementima iz \SU{2} je pridružen jedan element iz \SO{3}).
-
-\item Pokažite da je grupna mnogostrukost grupe \SU{2} hipersfera u
- četverodimenzionalnom prostoru (tzv. \emph{3-sfera}) definirana
- jednadžbom 
-\begin{displaymath}
-x^2+y^2+r^2+s^2=1 \;.
-\end{displaymath}
-
-\item Pokažite da je $(\mathbb{R}, +)$ 
- univerzalna grupa pokrivanja za grupu \SO{2}.
 
 \item Pokažite da matrice
 \begin{equation}
