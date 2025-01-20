@@ -1,5 +1,5 @@
 
-- Appendix s eksponentom matrica - ili u uvod poglavlja o Lievim grupama!
+- Appendix s eksponentom matrica - ili u uvod poglavlja o Liejevim grupama!
 
 Stilwell
 
@@ -65,17 +65,17 @@ interferometrijom. \secret{(cf. Sakurai)}
 
 ...
 
-Klasifikacija jednostavnih Lievih grupa na klasicne i posebne (G2, F4, E678)
+Klasifikacija jednostavnih Liejevih grupa na klasicne i posebne (G2, F4, E678)
 te (puno teza, Janko, Monster, Ulam: "inifinite we can do right away,
 finite will take more time".) klasifikacija konacnih grupa na 
-A_n, ..., one Lievog tipa i 26 sporadicnih (Ramond).
+A_n, ..., one Liejevog tipa i 26 sporadicnih (Ramond).
 
 MIsc:
 
-- Alternativna definicija Lievih grupa putem matricnih grupa (kompletnih
+- Alternativna definicija Liejevih grupa putem matricnih grupa (kompletnih
 obzirom na konvergentne nizove regularnih matrica)
 
-- primjer ne-matrične Lieve grupe vs. Ado
+- primjer ne-matrične Liejeve grupe vs. Ado
 http://mathoverflow.net/questions/64195/when-is-a-finite-dimensional-real-or-complex-lie-group-not-a-matrix-gro://mail.google.com/mail/u/0?ui=2&ik=deba00d97f&attid=0.1&th=155965795c913fd2&view=fimg&disp=thd&attbid=ANGjdJ8IKeyxYfmmTXx7G8CQkHVTw6YzBIxyPa2jZ24AIcOQAB9LXkN16psrkX0QnPSGV_nh2ZFW0R1gtiDtL99aR3RhViOhKgB5-J03Ypcmu8485Bw4fotcWvW6BUc&ats=2524608000000&sz=w1039-h1712 
 
 - kompaktnost SO(N), O(N), ... i nekompaktnost GL(N). Kontinuirana preslikavanja cuvaju kompaktnost.

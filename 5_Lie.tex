@@ -6,7 +6,7 @@
     \fancyhead[CE]{\leftmark}
     \renewcommand{\headrulewidth}{0.4pt}}
 
-\chapter{Lieve grupe}
+\chapter{Liejeve grupe}
 \label{ch:lie}
 
 \section{Kontinuirane grupe}
@@ -142,10 +142,10 @@ Sami aksiomi grupe ne traže nikakvu povezanost između grupnih i topoloških
 svojstava grupe. To znači da bi točke grupne mnogostrukosti mogle u načelu biti
 pridružene elementima grupe na proizvoljan diskontinuirani pa čak i "ispremješani"
 način. Međutim za grupe od interesa preslikavanja između grupne mnogostrukosti
-i grupe su "glatka" i takve grupe onda zovemo Lieve.
+i grupe su "glatka" i takve grupe onda zovemo Liejeve.
 
-\begin{definicija}[Lieva grupa]
-  Lieva grupa je grupa za koju su funkcije kompozicije
+\begin{definicija}[Liejeva grupa]
+  Liejeva grupa je grupa za koju su funkcije kompozicije
 ($\phi$) i inverza ($\psi$) diferencijabilne\footnote{Strogo uzevši, 
     dovoljna je kontinuiranost funkcija jer ona u ovom slučaju povlači diferencijabilnost.
  Ta vrlo netrivijalna činjenica da algebarski aksiomi
@@ -153,20 +153,20 @@ i grupe su "glatka" i takve grupe onda zovemo Lieve.
  je sadržaj rješenja 5. Hilbertovog problema.}.
 \end{definicija}
 
-Zahtjev da su te funkcije diferencijabilne daje Lievim grupama mnoštvo važnih svojstava,
+Zahtjev da su te funkcije diferencijabilne daje Liejevim grupama mnoštvo važnih svojstava,
 kako ćemo vidjeti u sljedećem odjeljku.
 Ova svojstva se ogledaju
 u činjenici da je element $g(a)$ "blizu" elementa $g(a+\delta a)$ te da
 da je $\phi(a+\delta a, b)$
 "blizu" $\phi(a,b)$ tj. te su vrijednosti povezane Taylorovim redom.
-\centerline{\includegraphics[scale=1.0]{pics/lieva_mnogostrukost.eps}}
-Tako teorija Lievih grupa spaja ideje iz algebre, analize i geometrije.
+\centerline{\includegraphics[scale=1.0]{pics/liejeva_mnogostrukost.eps}}
+Tako teorija Liejevih grupa spaja ideje iz algebre, analize i geometrije.
 
-Analiza općenitih Lievih grupa, koja se oslanja samo na ovu definiciju
-je matematički dosta zahtjevna. Srećom praktički sve Lieve grupe koje se javljaju
+Analiza općenitih Liejevih grupa, koja se oslanja samo na ovu definiciju
+je matematički dosta zahtjevna. Srećom praktički sve Liejeve grupe koje se javljaju
 u fizici mogu se vjerno reprezentirati matricama i mi ćemo se baviti
-samo takvim tzv. matričnim Lievim grupama. Smanjenje općenitosti je neznatno\footnote{Za
-    znatiželjne, primjeri ne-matričnih Lievih grupa su uvijek egzotični
+samo takvim tzv. matričnim Liejevim grupama. Smanjenje općenitosti je neznatno\footnote{Za
+    znatiželjne, primjeri ne-matričnih Liejevih grupa su uvijek egzotični
     poput tzv. metaplektičkih grupa ili kvocijentne grupe Heisenbergove grupe po
 jednoj svojoj specifičnoj normalnoj podgrupi.\label{fus:nematricne}},
 a rad s matricama je značajno lakši od rada s diferencijabilnim mnogostrukostima.
@@ -194,7 +194,7 @@ grupa $2\times 2$ matrica.
 \section{Grupe \SO{3} i \SU{2}}
 \label{sec:so3su2}
 
-Dva važna primjera Lievih grupa na kojima  ćemo ilustrirati većinu rezultata
+Dva važna primjera Liejevih grupa na kojima  ćemo ilustrirati većinu rezultata
 su grupa $3 \times 3$ ortogonalnih matrica determinante 1, dakle \SO{3},
 i grupa $2 \times 2$ unitarnih matrica determinante 1, \SU{2}, pa ćemo
 se u ovom odjeljku detaljnije upoznati s ove dvije grupe i njihovom
@@ -326,13 +326,13 @@ $b = r + is$ čime uvjet determinante postaje
     \label{eq:s3sfera}
 \end{equation}
 i na kraju preostaju tri slobodna realna parametra. Dakle, grupa \SU{2} je troparametarska
-ili trodimenzionalna Lieva grupa. Parametre $x, y, r$ i $s$ možemo interpretirati
+ili trodimenzionalna Liejeva grupa. Parametre $x, y, r$ i $s$ možemo interpretirati
 kao koordinate točaka u četverodimenzionalnom euklidskom prostoru $\mathbb{R}^4$
 i kako je (\ref{eq:s3sfera}) jednadžba sfere u tom prostoru vidimo da je
 grupna mnogostrukost grupe \SU{2} 3-sfera\footnote{Kružnica je 1-sfera $S^1$,
     Zemljina površina je približno 2-sfera $S^2$ itd. Interesantan vrlo
     netrivijalan rezultat teorije grupa je da od svih $S^n$ samo $S^1$ i $S^3$ dopuštaju
-grupnu strukturu tj. mogu biti mnogostrukosti Lieve grupe.} $S^3$.
+grupnu strukturu tj. mogu biti mnogostrukosti Liejeve grupe.} $S^3$.
 
 
 Diskutirajmo sada vezu između grupa \SO{3} i \SU{2}. Za zagrijavanje, možemo
@@ -375,13 +375,13 @@ odnos $\SU{2}/\mathbb{Z}_2 = \SO{3}$.
 
 
 
-\section{Lieve algebre}
-\label{sec:lievealgebre}
+\section{Liejeve algebre}
+\label{sec:liejevealgebre}
 
 Promotrimo sada skup matrica $M(a)\equiv M(a_1, a_2, \ldots, a_n)$ koje
-čine $n$-pa\-ra\-me\-tar\-sku Lievu grupe.
+čine $n$-pa\-ra\-me\-tar\-sku Liejevu grupe.
 Za infinitezimalno male vrijednosti parametara $a_i \to \epsilon_i \ll 1$, zahvaljujući
-svojstvu diferencijabilnosti Lieve grupe možemo razviti oko $a_i = 0$:
+svojstvu diferencijabilnosti Liejeve grupe možemo razviti oko $a_i = 0$:
 \begin{equation}
    M(\epsilon)=M(0)+ \sum_{i=i}^{n}\epsilon_i \frac{\partial M(a_1, \ldots, a_n)}
  {\partial a_i}\Bigg|_{a_1=\ldots =a_n=0} + 0(\epsilon^2) \,,
@@ -404,7 +404,7 @@ element grupe tj. jedinična matrica pa za infinitezimalne transformacije imamo
   M(\epsilon)=\Eins + \sum_{i=i}^{n}\epsilon_i X_i \,. 
 \end{equation}
 
-Centralna spoznaja teorije Lievih grupa je da je struktura \emph{čitave} grupe i
+Centralna spoznaja teorije Liejevih grupa je da je struktura \emph{čitave} grupe i
 njenih reprezentacija skoro sasvim određena
 određena generatorima grupe tj. infinitezimalnom okolinom jediničnog 
 elementa.
@@ -494,7 +494,7 @@ o parametrizaciji grupnog prostora.
 Mogli bismo recimo pokušati konstruirati opću rotaciju kao kompoziciju tri
  Eulerove rotacije i onda deriviranjem po Eulerovim kutovima dobiti
  generatore. No, ima i lakši put koji će olakšati traženje 
- generatora drugih Lievih grupa koje se pojavljuju u fizici\footnote{Recimo
+ generatora drugih Liejevih grupa koje se pojavljuju u fizici\footnote{Recimo
      usput i da bi pristup preko Eulerovih
      bio  problematičan jer su one singularne oko jedinice.}.
 
@@ -597,12 +597,12 @@ jer
 To znači da je i komutator $[X,Y]\in\calA$.
 Dakle, $\calA$ je zatvoren ne samo obzirom na linearne kombinacije već
 i obzirom na komutatore svojih elemenata. Time je on još složenija matematička
-struktura od vektorskog prostora koja se naziva  \emph{Lieva algebra}.
+struktura od vektorskog prostora koja se naziva  \emph{Liejeva algebra}.
 Načinimo kratki odmak od proučavanja samo matričnih grupa i
-definirajmo Lievu algebru nešto općenitije.
-\begin{definicija}[Lieva algebra]
-Lieva algebra $\calA$ je vektorski prostor na kojem je definiran 
-Liev produkt dvaju elemenata $[X,Y]$ (ne mora biti komutator) sa svojstvima
+definirajmo Liejevu algebru nešto općenitije.
+\begin{definicija}[Liejeva algebra]
+Liejeva algebra $\calA$ je vektorski prostor na kojem je definiran 
+Liejev produkt dvaju elemenata $[X,Y]$ (ne mora biti komutator) sa svojstvima
 
 1) zatvorenost: $[X,Y]\in\calA \quad \forall X,Y\in\calA$
 
@@ -613,27 +613,27 @@ $\quad \alpha,\beta \in \mathbb{R} $
 
 4) Jacobijev identitet: $[X, [Y, Z]]+[Y, [Z, X]]+[Z, [X, Y]]=0$
 \end{definicija}
-Za vektorske prostore matrica, gdje je Liev produkt definiran kao
+Za vektorske prostore matrica, gdje je Liejev produkt definiran kao
 komutator (\ref{eq:defkomutator}), svojstva 2--4 su automatski ispunjena.
 Ovo poopćenje od matričnih grupa smo napravili samo zato da kao
 spomenemo da zapravo o nikakvom poopćenju nema govora.
-Naime, kako smo rekli u fusnoti na stranici \pageref{fus:nematricne}, nematrične Lieve grupe
+Naime, kako smo rekli u fusnoti na stranici \pageref{fus:nematricne}, nematrične Liejeve grupe
 su egzotične, ali postoje. No, zahvaljujući sljedećem Adovom teoremu
-nematrične (konačno-dimenzionalne) Lieve algebre ne postoje.
+nematrične (konačno-dimenzionalne) Liejeve algebre ne postoje.
 \begin{teorem}[Ado]
- Svaka konačno-dimenzionalna apstraktna Lieva algebra je izomorfna nekoj
- Lievoj algebri konačno-dimenzionalnih matrica s komutatorom kao Lievim produktom. \emph{(Bez
+ Svaka konačno-dimenzionalna apstraktna Liejeva algebra je izomorfna nekoj
+ Liejevoj algebri konačno-dimenzionalnih matrica s komutatorom kao Liejevim produktom. \emph{(Bez
  dokaza.)}
 \end{teorem}
-Dakle, ograničavajući se na Lieve grupe \emph{matrica} ne gubimo mnogo
-na općenitosti jer sve Lieve algebre koje ćemo sresti u ovoj knjizi su
+Dakle, ograničavajući se na Liejeve grupe \emph{matrica} ne gubimo mnogo
+na općenitosti jer sve Liejeve algebre koje ćemo sresti u ovoj knjizi su
 konačno-dimenzionalne\footnote{Istina, u fizici nekad nalazimo i primjenu beskonačno-dimenzionalnih
 algebri za koje teorem ne vrijedi. Jedan primjer je tzv. Virasorova algebra važna
 u teoriji superstruna.}.
-Lieve algebre se obično označavaju isto kao i pripadajuće Lieve grupe, ali malim gotičkim slovima.
+Liejeve algebre se obično označavaju isto kao i pripadajuće Liejeve grupe, ali malim gotičkim slovima.
 Dakle, $\calA = \soAlg{3}$.
 
-Komutatori elemenata baze Lieve algebre $X_i, i=1,2,\ldots, \textrm{dim}(\calA)$ se
+Komutatori elemenata baze Liejeve algebre $X_i, i=1,2,\ldots, \textrm{dim}(\calA)$ se
 kao i svi ostali elementi od $\calA$ naravno mogu prikazati kao linearna kombinacija baze, dakle
 sebe samih: 
 \begin{equation}
@@ -646,7 +646,7 @@ generatora koju će morati zadovoljavati sve njihove reprezentacije.  Naime, cij
 izlaganje dosad koristilo je $3\times 3$ matrice za definiciju grupe \SO{3} i njene
 algebre \soAlg{3}. To je istovremeno i definicija te grupe i reprezentacija te grupe 
 na 3D euklidskom prostoru.
-Međutim, slično kao i kod konačnih grupa, Lieve grupe imaju i
+Međutim, slično kao i kod konačnih grupa, Liejeve grupe imaju i
 reprezentacije na vektorskim prostorima drugih dimenzionalnosti, što je od velike
 važnosti u primjeni teorije grupa na kvantnomehaničke sustave. I tu će opet biti od interesa
 identificirati sve ireducibilne reprezentacije neke grupe. Koliko ireducibilnih
@@ -656,8 +656,8 @@ vidi odjeljak \ref{sec:ortogonalnost}, onda bismo zaključili da \SO{3} ima besk
 ireducibilnih reprezentacija (jer se uz malo geometrijskog razmišljanja lako uvjerite
 da pojedinu klasu konjugacije čine rotacije oko bilo koje osi za konkretni kut $\phi$).
 I premda je takvo zaključivanje nekorektno jer navedena jednakost broja ireducibilnih
-reprezentacija i klasa konjugacije \emph{ne vrijedi} za Lieve grupe, zaključak jest
-točan --- Lieve grupe tipično imaju beskonačno ireducibilnih reprezentacija.
+reprezentacija i klasa konjugacije \emph{ne vrijedi} za Liejeve grupe, zaključak jest
+točan --- Liejeve grupe tipično imaju beskonačno ireducibilnih reprezentacija.
 Jedna od lako uočljivih razlika prema konačnim grupama je u tome da premda
 \SO{3} ima neprebrojivo beskonačno klasa konjugacije, vidjet ćemo da ima samo prebrojivo
 beskonačno ireducibilnih reprezentacija.
@@ -667,7 +667,7 @@ nego apstraktnijim zaključivanjem u kojem će
 relacija (\ref{eq:defstrukturne}), koju fizičari često zovu "algebra grupe," imati
 centralnu ulogu, kako ćemo vidjeti u sljedećim poglavljima.
 Kad smo već kod terminologije, recimo i to da je fizičarima često interes usredotočen
-samo na bazu Lieve algebre, a ne i na ostatak vektorskog prostora, pa će u žargonu
+samo na bazu Liejeve algebre, a ne i na ostatak vektorskog prostora, pa će u žargonu
 reći da tri matrice iz (\ref{eq:SO3generators}) "čine algebru" ove grupe.
 
 
@@ -695,7 +695,7 @@ odnosno strukturne konstante grupe \SO{3} su $C_{ij}^{k} = \epsilon_{ijk}$.
 \end{primjer}
 
 
-Lieva algebra $\calA'$ je \emph{homomorfna} Lievoj algebri $\calA$ ako postoji 
+Liejeva algebra $\calA'$ je \emph{homomorfna} Liejevoj algebri $\calA$ ako postoji 
 matrica $S:\calA\to\calA'$ takva da je
 \begin{displaymath}
        [S(X), S(Y)]=S([X,Y]) \quad \forall X, Y \in\calA \,.
@@ -703,7 +703,7 @@ matrica $S:\calA\to\calA'$ takva da je
 Ako je $S$ još i bijekcija $\calA$ i $\calA'$ su \emph{izomorfne}. Dakle,
 važno je da preslikavanje  bude konzistentno s operacijom komutatora.
 
-\begin{primjer}[Lieva algebra grupe \SU{2} tj. \suAlg{2}] \label{pr:su2so3Alg}
+\begin{primjer}[Liejeva algebra grupe \SU{2} tj. \suAlg{2}] \label{pr:su2so3Alg}
     \SU{2} je grupa svih unitarnih $2\times 2$ matrica jedinične determinante.
     Identičnim zaključivanjem kao za \SO{3}, samo uz zamjenu traspozicije
     hermitskom konjugacijom $X^\mathsf{T} \to X^\mathsf{\dagger}$ lako
@@ -733,18 +733,18 @@ pa je pridruživanje $X_i \to -i \sigma_i/2$  izomorfizam i
 \soAlg{3}=\suAlg{2}.
 
 Važno je ovdje uočiti da premda su elementi matrica iz \suAlg{2} općenito kompleksni,
-\suAlg{2} je \emph{realna} Lieva algebra, dakle algebra nad poljem $\mathbb{R}$. 
+\suAlg{2} je \emph{realna} Liejeva algebra, dakle algebra nad poljem $\mathbb{R}$. 
 (Linearna kombinacija $\sigma_1 + \sigma_2$ je antihermitska i time pripada \suAlg{2},
 dok $\sigma_1 + i \sigma_2$ to nije!)
 
 Zanimljivo je pitanje što izomorfizam algebri znači za odgovarajuće grupe tj.
-jesu li možda onda i \SO{3} i \SU{2} izomorfne. O tome će biti riječi u sljedećem poglavlju.
+jesu li možda onda i \SO{3} i \SU{2} izomorfne. O tome će biti riječi u sljedećem odjeljku.
 \end{primjer}
 
-Pri analizi reprezentacija Lievih grupa od koristi će biti
+Pri analizi reprezentacija Liejevih grupa od koristi će biti
 tzv. Casimirovi operatori.
 \begin{definicija}[Casimirov operator]
-Ako je skup $\{X_i, i=1,2, ... \}$ baza Lieve algebre onda se polinom
+Ako je skup $\{X_i, i=1,2, ... \}$ baza Liejeve algebre onda se polinom
 u $X_i$ koji komutira sa svim elementima te algebre naziva 
 \emph{Casimirov operator}.
 \end{definicija}
@@ -761,7 +761,7 @@ X_{1}^2 + X_{2}^2 + X_{3}^2 = -2\cdot \Eins \,,
 \end{equation}
     za \suAlg{2}.
 \end{primjer}
-Schurova lema, koja vrijedi i za Lieve grupe, traži da Casimirov operator 
+Schurova lema, koja vrijedi i za Liejeve grupe, traži da Casimirov operator 
 bude proporcionalan jediničnom i ispostavlja se da je koeficijent proporcionalnosti
 zgodan za označavanje ireducibilnih reprezentacija kako ćemo vidjeti u sljedećem poglavlju.
 
@@ -775,23 +775,23 @@ zgodan za označavanje ireducibilnih reprezentacija kako ćemo vidjeti u sljede�
     tj. $\soAlg{2} = \{ aX_{3}\,; a \in \mathbb{R} \}$, što je
     zapravo prostor svih antisimetričnih $2\times 2$ matrica,
     koji je izomorfan s $\mathbb{R}$.
-    Općenito, za Lieve algebre Abelovih grupa komutator iščezava 
+    Općenito, za Liejeve algebre Abelovih grupa komutator iščezava 
     (vidi zadatak \ref{zad:abelovaalgebra}) i time
     je njihova struktura kompletno definirana strukturom vektorskog
     prostora. \label{pr:so2Alg}
 \end{primjer}
 
 
-\section{Veza Lievih grupa i Lievih algebri}
+\section{Veza Liejevih grupa i Liejevih algebri}
 
 Vidjeli smo da u slučaju grupe \SO{3} 
 \emph{svaki} element grupe možemo prikazati kao eksponencijal nekog
-elementa njene Lieve algebre \soAlg{3}.
-Pitanje je vrijedi li to lijepo svojstvo za sve Lieve grupe.
+elementa njene Liejeve algebre \soAlg{3}.
+Pitanje je vrijedi li to lijepo svojstvo za sve Liejeve grupe.
 Kako smo već dali naslutiti na nekoliko mjesta upotrijebom riječi "skoro",
 ne vrijedi sasvim. U ovom ćemo odjeljku, uglavnom
 bez dokaza, iskazati i pomoću primjera ilustrirati tvrdnje koje 
-pobliže oslikavaju vezu između Lievih grupa i njihovih algebri.
+pobliže oslikavaju vezu između Liejevih grupa i njihovih algebri.
 Za većinu primjena u fizici i u ostatku knjige, uglavnom ćemo
 se fokusirati na algebre i reprezentacije algebri, tako da (razmjerno
 zahtjevno) gradivo ovog odjeljka nije nužno za razumijevanje sljedećih
@@ -800,7 +800,7 @@ poglavlja.
 Prvo je potrebno uvesti neke pojmove koji opisuju topološka
 svojstva grupe.
 \begin{definicija}[Povezanost]
-Lieva grupa je \emph{povezana} ako njen grupni prostor ne možemo
+Liejeva grupa je \emph{povezana} ako njen grupni prostor ne možemo
 rastaviti na disjunktne komponente tj. ako se svake dvije točke 
 mogu povezati linijom čije sve točke pripadaju grupnom prostoru.
 (Ovo je intuitivna "fizičarska" definicija. Prava definicija uključuje napredne
@@ -846,10 +846,10 @@ pripadaju drugoj komponenti povezanosti.
 
 Iz gornje diskusije, odnosno imajući u vidu kontinuiranost funkcije
 eksponencijacije, jasno da najbolje čemu se možemo nadati u
-slučaju općenite Lieve grupe je da
+slučaju općenite Liejeve grupe je da
 eksponencijacijom njene algebre dobijemo komponentu povezanosti
 jedinice. No je li barem to uvijek moguće?
-Kako smo pokazali, svakoj Lievoj grupi jednoznačno pripada neka Lieva algebra
+Kako smo pokazali, svakoj Liejevoj grupi jednoznačno pripada neka Liejeva algebra
 konstrukcijom kao u (\ref{eq:defXi}). Možemo li, obratno, svakom
 elementu $g$  komponente povezanosti jedinice pridružiti jedinstveni
 element $X$ algebre takav da je $g = e^{X}$?
@@ -872,7 +872,7 @@ $[X, Y]=0$ (vidi zadatak \ref{zad:abelovaalgebra}) pa se članovi
 gornjih suma mogu isto kao kod eksponencijacije običnih brojeva
 iskombinirati u $\sum (X+Y)^{n}/n! = \exp(X+Y)$. Za općenite
 nekomutirajuće grupe to nije slučaj, nego vrijedi važan
-rezultat teorije Lievih grupa
+rezultat teorije Liejevih grupa
 \begin{teorem}[Baker-Campbell-Hausdorff]
     \[ e^X e^Y = e^Z \,, \]
   gdje je 
@@ -886,10 +886,10 @@ Prvi članovi BCH formule su
          + \cdots \,,
 \end{align}
 i ključna netrivijalnost je da su \emph{svi} članovi reda dati preko
-ovakvih višestrukih komutatora pa je jasno da je $Z$ element Lieve algebre.
-(Podsjetimo se da je u Lievoj algebri definirano zbrajanje elemenata $X+Y$ i njihov
+ovakvih višestrukih komutatora pa je jasno da je $Z$ element Liejeve algebre.
+(Podsjetimo se da je u Liejevoj algebri definirano zbrajanje elemenata $X+Y$ i njihov
  komutator $[X, Y]$, ali ne i množenje\footnote{Ako gledamo matrične
-    Lieve algebre množenje zapravo jest definirano, ali algebra općenito nije zatvorena
+    Liejeve algebre množenje zapravo jest definirano, ali algebra općenito nije zatvorena
     na to množenje. Npr. umnožak dvije antisimetrične matrice iz \soAlg{3} 
     općenito \emph{nije} antisimetrična matrica.} $X Y$.)
 BCH red konvergira u nekoj okolini jediničnog elementa (ne nužno infinitezimalnoj)
@@ -901,12 +901,12 @@ obično zahtijeva napredne matematičke
 pojmove. Relativno pristupačan algebarski dokaz može se pronaći
 u \cite{Stilwell:2008}.
 
-Za veliku kategoriju Lievih grupa vrijedi da se svi elementi iz 
+Za veliku kategoriju Liejevih grupa vrijedi da se svi elementi iz 
 komponente povezanosti jedinice mogu prikazati u obliku
 $e^{X}$ gdje je $X$ element
-Lieve algebre. Dovoljan uvjet je da grupa ima svojstvo \emph{kompaktnosti}.
+Liejeve algebre. Dovoljan uvjet je da grupa ima svojstvo \emph{kompaktnosti}.
 \begin{definicija}[Kompaktnost]
-Lieva grupa je \emph{kompaktna} ako njeni parametri variraju po zatvorenim intervalima.
+Liejeva grupa je \emph{kompaktna} ako njeni parametri variraju po zatvorenim intervalima.
 (Ovo je intuitivna "fizičarska" definicija. Prava definicija uključuje napredne
 matematičke ideje iz topologije.)
 \label{def:kompaktnost}
@@ -918,7 +918,7 @@ grupa translacija, čiji parametri variraju po intervalu $(-\infty,
 \infty)$ i grupa Lorentzovih transformacija, čiji parametar
 potiska varira $v \in [0, c)$, gdje $c$ nije uključen i stoga
 je interval otvoren i nekompaktan\footnote{Radi
-    kompletnosti spomenimo da ako Lieva grupa nije kompaktna, 
+    kompletnosti spomenimo da ako Liejeva grupa nije kompaktna, 
     svejedno se elementi iz komponente
 povezanosti jedinice mogu prikazati kao konačan umnožak eksponencijala
 $e^{X_1} e^{X_2}\cdots e^{X_n}$.
@@ -935,14 +935,14 @@ Za to je dovoljna kompaktnost,
 a može i jednostruka povezanost.}.
 
 
-Dakle, Lieva algebra skoro potpuno određuje barem komponentu povezanosti
-jediničnog elementa Lieve grupe koju generira eksponecijacijom.
+Dakle, Liejeva algebra skoro potpuno određuje barem komponentu povezanosti
+jediničnog elementa Liejeve grupe koju generira eksponecijacijom.
 Međutim, primjer grupa \SO{3} i \SU{2} koje su obje povezane i koje
 imaju istu (izomorfnu) algebru, ali ipak nisu izomorfne, pokazuje
 da neka svojstva grupe nisu određena algebrom, tj. da "skoro" iz
 prošle rečenice ipak nije "potpuno."
 Riječ je o globalnim topološkim svojstvima grupe i
-da bismo precizno opisali vezu između Lievih grupa s istom algebrom, treba
+da bismo precizno opisali vezu između Liejevih grupa s istom algebrom, treba
 nam još jedan pojam iz topologije.
 \begin{definicija}[Jednostavna (jednostruka) povezanost]
   Neka je G povezana grupa (ako nije, možemo promatrati samo komponentu
@@ -1016,11 +1016,11 @@ Pravi dokaz zahtijeva nešto znanja toplologije, ali čitatelju će
 moguće ta činijenica biti vrlo intuitivna, a za 2-sferu i očita.
 \end{primjer}
 
-Ako postoji homomorfizam s povezane Lieve grupe G na povezanu Lievu
+Ako postoji homomorfizam s povezane Liejeve grupe G na povezanu Liejevu
 grupu H s \emph{diskretnom} jezgrom K onda kažemo da grupa G 
 \emph{pokriva} grupu H onoliko puta koliko elemenata ima K.
 (Prisjetite se teorema \ref{th:izomorfizam} o izomorfizmu.)
-Također, Lieve algebre tih grupa su izomorfne.
+Također, Liejeve algebre tih grupa su izomorfne.
 
 \begin{primjer}[\SO{3} i \SU{2}]
 \SO{3} i \SU{2} su homomorfne i kako je pokazano u Dodatku \ref{sec:su2so3} 
@@ -1030,7 +1030,7 @@ dviju grupa su izomorfne.
 \end{primjer}
 
 \begin{teorem}[Univerzalna grupa pokrivanja]
-Među grupama koje pokrivaju povezanu Lievu grupu G, postoji jedinstvena
+Među grupama koje pokrivaju povezanu Liejevu grupu G, postoji jedinstvena
 grupa koja je jednostavno povezana --- \emph{univerzalna grupa pokrivanja}.
 Broj pokrivanja jednak je povezanosti od G. 
 \end{teorem}
@@ -1044,7 +1044,7 @@ Tako je \SU{2} je univerzalna grupa pokrivanja za \SO{3}.
 povezane. U primjeru \ref{pr:so2Alg} smo vidjeli da je njihova
 algebra $\mathbb{R}$.
 Njihovu univerzalnu grupu pokrivanja možemo identificirati
-tako da identificiramo jednostavno povezanu Lievu grupu koju
+tako da identificiramo jednostavno povezanu Liejevu grupu koju
 generira $\mathbb{R}$. Ako se oslonimo na eksponencijaciju
 vidimo da generiramo grupu pozitivnih realnih brojeva
 $\{e^{x}\,; x \in \mathbb{R}\}$ s množenjem kao grupnom operacijom.
@@ -1068,18 +1068,18 @@ Općenita situacija je\\[1ex]
 gdje je UCG/$K_i$=G$_i$. Tako pronalaženjem svih diskretnih normalnih
 podgrupa (kandidata za kernele homomorfizma) jednostavno povezane grupe 
 možemo naći sve grupe koje
-s njom dijele istu Lievu algebru\footnote{To je znatno olakšano teoremom
+s njom dijele istu Liejevu algebru\footnote{To je znatno olakšano teoremom
 koji kaže da su diskretne normalne podgrupe nužno sadržane u
 centru grupe (vidi zadatak \ref{zad:centar}) što znači da svi elementi
 kernela komutiraju sa cijelom grupom.}.
-U zaključku, Lieve algebre u velikoj mjeri određuju Lievu grupu i
+U zaključku, Liejeve algebre u velikoj mjeri određuju Liejevu grupu i
 glavna informacija o grupi koju gubimo razmatrajući samo algebru
 je njena topologija. Algebra, koja je određena okolinom jediničnog
 elementa grupe "ne vidi" je li se grupa možda netrivijalno "preklapa"
 na samu sebe daleko od jedinice.
 
 
-\section{Klasične Lieve grupe važne za fiziku}
+\section{Klasične Liejeve grupe važne za fiziku}
 \label{sec:primjeriLie}
 
 \begin{enumerate}[leftmargin=0pt, itemindent=0pt]
@@ -1288,19 +1288,19 @@ ograničimo na matrice s $\det M = 1$.
 
 U preostalim poglavljima knjige bavit ćemo se sa samo nekoliko grupa
 koje su se pokazale od najveće važnosti za primjene u fizici, no recimo
-ipak nešto o kompletnom katalogu Lievih grupa.
+ipak nešto o kompletnom katalogu Liejevih grupa.
 
 Kao prvo, mi smo ovdje, kao i mnogi autori, posebice fizičari, razlikovali
-Lieve (kontinuirane) grupe i diskretne grupe. To je na ovom nivou pedagoški
-poželjno kako bi se istaknula specifična moć netrivijalnih Lievih algebri tj. infinitezimalne
+Liejeve (kontinuirane) grupe i diskretne grupe. To je na ovom nivou pedagoški
+poželjno kako bi se istaknula specifična moć netrivijalnih Liejevih algebri tj. infinitezimalne
 okoline jedinice. No, strogo uzevši, i skup diskretnih točaka je
 (0-dimenzionalna) mnogostrukost, a i topološki prostor (s tzv. 
 diskretnom topologijom, vidi \cite{Smolic:2024}) tako da su i diskretne
-i konačne grupe zapravo strogo uzevši Lieve, što nas onda spašava od
+i konačne grupe zapravo strogo uzevši Liejeve, što nas onda spašava od
 nezgodnih situacija da formiranjem kvocijentnih skupova ne izlazimo
-iz domene Lievih grupa.
+iz domene Liejevih grupa.
 
-Kad je to rečeno, recimo da su kontinuirane kompaktne Lieve grupe
+Kad je to rečeno, recimo da su kontinuirane kompaktne Liejeve grupe
 lakše za potpunu klasifikaciju. Kao prvo,
 bitno je klasificirati jednostavne grupe, jer ukoliko grupa ima normalne
 podgrupe onda se može reducirati uzimanjem kvocijenta po toj podgrupi
@@ -1321,8 +1321,8 @@ gdje je $p$ prost broj i koje smo upoznali,
 zatim alternirajuće grupe $\mathrm{A}_{n\ge 5}$ parnih permutacija skupova
 od $n$ elemenata (pomoću kojih je Galois pokazao nerješivost jednadžbi
 reda većeg od pet) i
-veliku porodicu diskretnih grupa tzv. Lievog tipa koje su konstruirane
-kao standardne Lieve grupe, ali ne nad poljem realnih brojeva nego
+veliku porodicu diskretnih grupa tzv. Liejevog tipa koje su konstruirane
+kao standardne Liejeve grupe, ali ne nad poljem realnih brojeva nego
 nad konačnim poljima. Povrh toga postoji još samo 26 tzv. \emph{sporadičnih}
 grupa\footnote{Četiri sporadične grupe je pronašao hrvatski matematičar Zvonimir Janko
 i po njemu se zovu $\mathrm{J}_{1, 2, 3, 4}$.} gdje je najveća od njih
@@ -1397,7 +1397,7 @@ i time da je algebra $\calA$ Abelove grupe trivijalna $[X, Y] = 0$, za svake $X,
 djelujući na vektore $(x, y)$ čuvaju formu $x^2 - y^2$, te da 
 je $\det M(\theta) = 1$, tako da $M(\theta)$ tvore grupu
 $\SO{1,1}$.
-\item Grupni prostor kvocijentne grupe $G/H$ Lieve grupe $G$ po diskretnoj normalnoj podgrupi $H$
+\item Grupni prostor kvocijentne grupe $G/H$ Liejeve grupe $G$ po diskretnoj normalnoj podgrupi $H$
     općenito odgovara grupnom prostoru od $G$ u kojem su su sve točke svake susjedne klase po $H$
     identificirane. Tako je grupni prostor $\SU{2}/\mathbb{Z}_2$ 3-sfera s identificiranim
     antipodnim točakama $S^{3}/\mathbb{Z}_2$. 
