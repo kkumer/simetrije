@@ -1,85 +1,75 @@
-%Fancy RCS footer:
-     \fancyfoot[C]{\texttt{6\_rotacije.tex}}
-     \fancyfoot[RO,LE]{\mbox{$$Revision: 1.10 $$}}
-     \fancyfoot[LO,RE]{\mbox{$$Date: 2012-02-24 $$}}
-% Correcting the title chapter page
 \fancypagestyle{plain}{%
     \fancyhf{}
     \fancyhead[RO,LE]{\bfseries \thepage}
     \fancyhead[CO]{\rightmark}
     \fancyhead[CE]{\leftmark}
-     \fancyfoot[C]{\texttt{6\_rotacije.tex}}
-     \fancyfoot[RO,LE]{\mbox{$$Revision: 1.10 $$}}
-     \fancyfoot[LO,RE]{\mbox{$$Date: 2012-02-24  $$}}
-    \renewcommand{\headrulewidth}{0.4pt}
-    \renewcommand{\footrulewidth}{0.4pt}}
+    \renewcommand{\headrulewidth}{0.4pt}}
 
 \chapter{Rotacije i moment impulsa u kvantnoj mehanici}
 \label{ch:rotacije}
 
-\section{Ireducibilne reprezentacije grupe SO(2)}
+Teorija reprezentacija općenitih Liejevih grupa je zahtjevno
+gradivo u koje se nećemo ovdje upuštati. U preostalim
+poglavljima ove knjige posvetit ćemo se samo
+reprezentacijama nekoliko Liejevih grupa posebno važnih
+za fiziku. Prva od njih će biti grupa rotacija u trodimenzionalnom
+euklidskom prostoru \SO{3}, koju ćemo  zvati
+jednostavno "grupa rotacija". Grupa rotacija je od ogromne
+važnosti za cijelu fiziku i radu s njenim reprezentacijama
+se tipično posvećuju središnja poglavlja udžbenika kvantne mehanike,
+obično pod naslovom "teorija momenta impulsa".
+Tako ovo prvo poglavlje ima određeni preklop s tim udžbenicima, ali
+izlaganje će naglasiti upravo grupno-teorijske aspekte.
 
-Teorija reprezentacija za kompaktne grupe je drastično različita
- od one za nekompaktne grupe
+Kasnije ćemo se na dobivene rezultate moći dosta osloniti i
+prilikom razmatranja složenijih grupa poput \SU{N} i
+Lorentzove grupe \SO{1, 3}.
 
- \emph{Kompaktne} Liejeve grupe su one čiji parametri poprimaju
-   vrijednosti iz zatvorenih konačnih intervala:\footnote{
-  Pojam kompaktnosti općenito zna biti vrlo netrivijalan, ali za
-   naše Liejeve grupe koje su \emph{linearne} tj. posjeduju barem
-   jednu vjernu konačnodimenzionalnu reprezentaciju vrijedi ova
- pojednostavljena definicija.}
-\begin{displaymath}
-         p \in [a, b]\;,  \quad a,b\neq \pm \infty
-\end{displaymath}
+\section{Ireducibilne reprezentacije grupe \SO{2}}
 
-\textbf{Primjeri:}
-\begin{itemize}
-\item grupa translacija nije kompaktna jer parametri translacije
-      nisu ograničeni: $p \in (-\infty, \infty)$
-\item Lorentzova grupa nije kompaktna jer parametar Lorentzovog
-      potiska dolazi iz otvorenog intervala: $v \in [0,c)$
-\item grupa SO(2) je kompaktna: $\phi\in[0, 2\pi=0]\equiv[0,2\pi)$
-\item grupa SO(1,1) nije kompaktna
-\end{itemize}
-
+Promotrimo za zagrijavanje jednostavniji slučaj grupe \SO{2}
+rotacija u ravnini. Kao i puna grupa rotacija, \SO{2} je
+\emph{kompaktna} (njen grupni prostor je kružnica).
+Teorija reprezentacija za kompaktne grupe je osjetno lakša
+ od one za nekompaktne grupe.
 Ključna prednost kompaktnosti je činjenica da su kontinuirane funkcije
 na kompaktnom skupu integrabilne pa 
 velik broj teorema o konačnim grupama vrijedi i za kompaktne Liejeve
-grupe, uz zamjenu (u dokazima i iskazima):
-\begin{displaymath}
+grupe, uz zamjenu u dokazima i iskazima:
+\begin{equation}
     \frac{1}{n} \sum_{g} \longrightarrow \int \rmd g \;,
-\end{displaymath}
-gdje integral, zahvaljujući kompaktnosti, konvergira.
-
-- Mjeru integrala treba izabrati tako da vrijedi
-\begin{displaymath}
-  \int dg f(g) = \int dg f(hg) = \int dg f(gh) \quad \forall h \in G \;.
-\end{displaymath}
+\end{equation}
+gdje mjeru integrala valja izabrati tako da vrijedi
+\begin{equation}
+  \int \rmd g f(g) = \int \rmd g f(hg) = \int \rmd g f(gh) \,,
+\end{equation}
+$\forall h \in G$.
 Integraciju koja ima to svojstvo zovemo \emph{invarijantna}.  
-Takvo nam je svojstvo
-trebalo za dokaze teorema o reprezentacijama. Uvijek je moguće izabrati
-mjeru tako da integracija bude invarijantna.
+Invarijantna integracija nam omogućuje zamjenu
+varijabli kakva nam treba za dokaze teorema o reprezentacijama
+(vidi npr. (\ref{eq:gshift})).
+Za grupe koje ćemo ovdje sretati uvijek je moguće je izabrati
+mjeru integracije tako da ona bude invarijantna.
 
-- Tako možemo ``preuzeti'' iz teorije reprezentacije konačnih grupa
-  teorem da su sve reprezentacije ekvivalentne unitarnima. (To nam
+Tako možemo "preuzeti" iz teorije reprezentacije konačnih grupa
+teorem da su sve reprezentacije ekvivalentne unitarnima. (To nam
  je važno jer je unitarnost željeno svojstvo transformacija kvantnomehaničkih
  stanja.)
+Specijalno, sve ireducibilne reprezentacije od \SO{2} su ekvivalentne unitarnima, pa se,
+kao što smo to radili i kod konačnih grupa, smijemo ograničiti na
+unitarne reprezentacije bez gubitka općenitosti. 
 
-- Specijalno, svi IRREPSi od SO(2) su ekvivalentni unitarnima, pa se,
-  kao što smo to radili i kod konačnih grupa, smijemo ograničiti na
-  unitarne IRREPSe bez gubitka općenitosti. 
-
-- SO(2) je Abelova $\imp$ svi IRREPsi su 1D, što uz unitarnost 
-($uu^\dagger = uu^* = |u|^2=1$) znači:
-\begin{displaymath}
-D(\phi)=e ^{-i f(\phi)} \;,  f(\phi) \in \mathbb{R} \;.
-\end{displaymath}
-
-Zahtjev homomorfnosti s grupom rotacija, koja je aditivna, dalje
-povlači
-\begin{displaymath}
+Nadalje, kako je \SO{2} Abelova, sve ireducibilne reprezentacije
+su jednodimenzionalne, što uz unitarnost 
+($uu^\dagger = uu^* = |u|^2=1$) znači da su operatori koji
+su elementi reprezentacija svakako oblika
+\begin{equation}
+D(\phi)=e ^{-i f(\phi)} \;, \qquad f(\phi) \in \mathbb{R} \;.
+\end{equation}
+Zahtjev homomorfnosti s grupom rotacija u ravnini, dalje povlači
+\begin{equation}
    f(\phi_1)+f(\phi_2) = f(\phi_1+\phi_2)
-\end{displaymath}
+\end{equation}
 što znači da je $f(\phi)=m\phi$, $m\in\mathbb{R}$.
 Na kraju, zahtjev periodičnosti daje:
 

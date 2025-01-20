@@ -110,17 +110,17 @@ B\equiv \sum_{g\in G} D^{(\alpha)}(g) A D^{(\beta)}(g^{-1}) \;.
 \end{equation*}
 Pokazat ćemo da $B$ zadovoljava pretpostavke Schurovih lema.
 Uzimimo proizvoljni element $h\in G$. Tada vrijedi:
-\begin{equation*}
+\begin{equation}
 \begin{split}
  D^{(\alpha)}(h)B &= \sum_g D^{(\alpha)}(h) D^{(\alpha)}(g) A
     D^{(\beta)}(g^{-1}) \\
 &= \sum_g D^{(\alpha)}(hg) A D^{(\beta)}(g^{-1}) \\
-&= ( \textrm{zamjenom}\; hg\equiv g' \, , \; g^{-1}=g'^{-1}h ) \\
+&= ( \textrm{zamjenom}\; hg\equiv g' \, , \; g^{-1}=g'^{-1}h )  \label{eq:gshift} \\
 &= \sum_{g'} D^{(\alpha)}(g') A D^{(\beta)}(g'^{-1}h) \\
 &= \sum_{g'} D^{(\alpha)}(g') A D^{(\beta)}(g'^{-1}) D^{(\beta)}(h) \\
 &= B D^{(\beta)}(h)
 \end{split}
-\end{equation*}
+\end{equation}
 
 U slučaju $\alpha\neq\beta$ ($\Gamma_\alpha$ i $\Gamma_\beta$ nisu 
 ekvivalentne),
