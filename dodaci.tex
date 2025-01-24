@@ -274,6 +274,42 @@ Ovo je sadržaj tzv. Wignerovog teorema, a u osnovi
 je posljedica zahtjeva za očuvanjem vjerojatnosti i
 načela superpozicije u kvantnoj mehanici.
 
+Za korektan matematički opis kvantne mehanike, stanja u Hilbertovom
+prostoru nisu dovoljna. Na primjer, svojstvena stanja važnih operatora
+impulsa, $e^{i p x}$, i položaja, $\delta(x - x_0)$, \emph{nisu} elementi
+Hilbertovog prostora. Prvi jer mu je norma beskonačna, a drugi jer mu
+norma nije ni definirana (norma je $\int \rmd x \psi^{*}(x) \psi(x)$,
+a kvadrat Diracove delta funkcije nije definiran).
+Stoga se Hilbertov prostor stanja treba upotpuniti tzv. generaliziranim
+funkcijama poznatim i kao \emph{distribucije}. Distribucije nisu nužno
+definirane svojom vrijednosti u pojedinim točkama nego samo kao funkcionali
+tj. preslikavanja s prostora funkcija na polje kompleksnih brojeva $\mathbb{C}$.
+Klasičan primjer distribucije je Diracova delta funkcija $\delta_{x_0}$ koja je definirana
+kao preslikavanje koje nekoj pitomoj (tzv. \emph{testnoj}) funkciji $f(x)$
+pridružuje broj $\delta_{x_0}(f) = f(x_0)$. Sve "obične" funkcije $g(x)$ su isto
+i distribucije gdje je preslikavanje standardni integral  $\int \rmd x g^{*}(x) f(x)$,
+pa se često takvim integralom formalno zapisuje i djelovanje distribucije
+$\int \rmd x \delta(x-x_0) f(x) = f(x_0)$, ali to je samo formalni zapis
+koji ne odgovara matematičkoj integraciji u smislu Riemanna ili Lebesguea.
+Prostor $\Phi$ testnih funkcija  na koje distribucije mogu smisleno djelovati je
+manji od Hilbertovog (tipično se uzima prostor tzv. Schwartzovih funkcija koje su glatke
+i imaju svojstvo da one same i sve njihove derivacije padaju u beskonačnosti brže od svake potencije),
+dok je prostor
+distribucija $\Phi^{\times}$ kako smo vidjeli veći od Hilbertovog.
+Cijela ta trojka
+\begin{equation}
+    \Phi \subseteq \mathcal{H} \subseteq \Phi^{\times} \;,
+    \label{eq:gelfand}
+\end{equation}
+naziva se \emph{opremljeni} (\emph{rigged}) Hilbertov prostor  ili
+\emph{Gel'fandov triplet} \cite{Ballentine:1998}. Tako, sasvim strogo uzevši, Diracovi
+"ket" simboli predstavljaju elemente ovog najvećeg prostora $\Phi^{\times}$.
+Srećom, ove matematičke finese često nisu ključne i
+manipulacije vektorima kao u konačnodimenzionalnim vektorskim prostorima i distribucijama
+kao običnim funkcijama u velikom broju slučajeva vode na ispravne rezultate.
+
+
+
 \chapter{Tenzori kao matematički strojevi}
 \label{sec:tenzorKaoStroj}
 
