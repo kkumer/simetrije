@@ -22,8 +22,8 @@ Tako ovo prvo poglavlje ima određeni preklop s tim udžbenicima, ali
 izlaganje će naglasiti upravo grupno-teorijske aspekte.
 
 Kasnije ćemo se na dobivene rezultate moći dosta osloniti i
-prilikom razmatranja složenijih grupa poput \SU{N} i
-Lorentzove grupe \SO{1, 3}.
+prilikom razmatranja složenijih grupa poput \SU{N} i, posebice,
+Lorentzove grupe \SO{1, 3} kojoj je grupa rotacija podgrupa.
 
 \section{Ireducibilne reprezentacije grupe \SO{2}}
 
@@ -51,86 +51,129 @@ varijabli kakva nam treba za dokaze teorema o reprezentacijama
 Za grupe koje ćemo ovdje sretati uvijek je moguće je izabrati
 mjeru integracije tako da ona bude invarijantna.
 
-Tako možemo "preuzeti" iz teorije reprezentacije konačnih grupa
-teorem da su sve reprezentacije ekvivalentne unitarnima. (To nam
- je važno jer je unitarnost željeno svojstvo transformacija kvantnomehaničkih
- stanja.)
-Specijalno, sve ireducibilne reprezentacije od \SO{2} su ekvivalentne unitarnima, pa se,
-kao što smo to radili i kod konačnih grupa, smijemo ograničiti na
+Tako možemo "preuzeti" iz teorije reprezentacija konačnih grupa
+teorem da su sve reprezentacije ekvivalentne unitarnima. (To nam je važno
+jer je unitarnost željeno svojstvo transformacija kvantnomehaničkih stanja.)
+Specijalno, sve \emph{ireducibilne} reprezentacije grupe \SO{2} su ekvivalentne unitarnima
+pa se, kao što smo to radili i kod konačnih grupa, smijemo ograničiti na
 unitarne reprezentacije bez gubitka općenitosti. 
 
 Nadalje, kako je \SO{2} Abelova, sve ireducibilne reprezentacije
-su jednodimenzionalne, što uz unitarnost 
-($uu^\dagger = uu^* = |u|^2=1$) znači da su operatori koji
+su jednodimenzionalne (kako smo ustanovili u zadatku \ref{zad:1Dabelrep}),
+što uz unitarnost ($uu^\dagger = uu^* = |u|^2=1$) znači da su operatori koji
 su elementi reprezentacija svakako oblika
 \begin{equation}
 D(\phi)=e ^{-i f(\phi)} \;, \qquad f(\phi) \in \mathbb{R} \;.
 \end{equation}
-Zahtjev homomorfnosti s grupom rotacija u ravnini, dalje povlači
+Kompozicija dvaju rotacija u ravnini za kuteve $\phi_1$ i $\phi_2$ je rotacija za
+kut $\phi_1 + \phi_2$ pa zahtjev da reprezentacija bude
+homomorfna grupi povlači
 \begin{equation}
-   f(\phi_1)+f(\phi_2) = f(\phi_1+\phi_2)
+   D(\phi_2) D(\phi_1) = D(\phi_1+\phi_2) = e^{-i f(\phi_1 + \phi_2)}\;.
 \end{equation}
-što znači da je $f(\phi)=m\phi$, $m\in\mathbb{R}$.
-Na kraju, zahtjev periodičnosti daje:
+S druge strane svojstvo eksponencijalne funkcije daje
+\begin{equation}
+   D(\phi_2) D(\phi_1) = e^{-i f(\phi_2)} e^{-i f(\phi_1)} =  e^{-i f(\phi_1) - i f(\phi_2)}\;,
+\end{equation}
+pa slijedi
+\begin{equation}
+   f(\phi_1)+f(\phi_2) = f(\phi_1+\phi_2) \;,
+\end{equation}
+što znači da je $f(\phi)=m\phi$, $m\in\mathbb{R}$, odnosno
+reprezentacija je skup operatora
+\begin{equation}
+    \Gamma^{(m)} = \{ D^{(m)}(\phi) = e^{-i m \phi} \td  \phi \in [0, 2\pi)\}\,,
+\end{equation}
+s fiksnim $m$.  Na kraju, zahtjev periodičnosti rotacija daje
+\begin{equation}
+D^{(m)}(\phi)=D^{(m)}(\phi + 2\pi) \;,
+\end{equation}
+iz čega odmah slijedi da $m$ mora biti cijeli broj.
+Reprezentacije koje imaju različitu vrijednost $m$ su očito
+neekvivalentne (transformacija sličnosti (\ref{eq:ekvivrep})
+u jednodimenzionalnom slučaju ne mijenja operator).
+Dakle, grupa \SO{2} ima prebrojivo beskonačno ireducibilnih
+reprezentacija i pogodno
+je $m \in \mathbb{Z}$ koristiti kao oznaku (labelu) reprezentacije.
 
-- $D^{(m)}(\phi)=D^{(m)}(\phi + 2\pi) \imp m \in \mathbb{Z}$
-
-- Dakle, imamo prebrojivo beskonačno 1D IRREPsa, i označavamo
-  ih cijelim brojem $m$.
-
-- Karakteri: $\chi^{(m)}(\phi)=D^{(m)}(\phi)=e^{-\rmis m \phi}$
-
-- Ortogonalnost:
+Trag jednodimenzionalnog operatora je jednak njemu samome pa su
+karakteri 
+\begin{equation}
+\chi^{(m)}(\phi)=D^{(m)}(\phi)=e^{-\rmis m \phi} \,,
+\end{equation}
+i oni zadovoljavaju relaciju ortogonalnosti
 \begin{displaymath}
 (\chi^{(m)}, \chi^{(m')})=\int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
- e^{\rmis m \phi}e^{-\rmis m' \phi} = \delta_{mm'}
+ e^{\rmis m \phi}e^{-\rmis m' \phi} = \delta_{mm'} \,,
 \end{displaymath}
+a čitaoc će se lako uvjeriti da je ovakva integracija invarijantna u gornjem smislu.
 
-- (D.Z. Uvjerite se da je ovakva integracija invarijantna u gornjem smislu.)
-
-
-- Koeficijenti u razvoju direktnog produkta dvaju IRREPsa:
+Kao i kod konačnih grupa možemo rastaviti direktni produkt dviju
+ireducibilnih reprezentacija na Clebsch-Gordanov direktni zbroj
 \begin{displaymath}
   \Gamma^{(m)}\otimes\Gamma^{(n)} =
-  \sum \oplus\: a_{k}\Gamma^{(k)} 
+  \sum \oplus\: a_{k}\Gamma^{(k)}  \,,
 \end{displaymath}
+gdje su koeficijenti dani skalarnim produktom odgovarajućih karaktera,
+koji je ovdje integral
 \begin{eqnarray*}
 a_{k} & = & (\chi^{(k)}, \chi^{(m)}\chi^{(n)}) \\
       & = & \int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
-    e^{\rmis k \phi}e^{-\rmis m \phi}e^{-\rmis n \phi} = \delta_{k,m+n}
+    e^{\rmis k \phi}e^{-\rmis m \phi}e^{-\rmis n \phi} = \delta_{k,m+n} \,,
 \end{eqnarray*}
-tj.
+odnosno
 \begin{displaymath}
   \Gamma^{(m)}\otimes\Gamma^{(n)} =
-  \sum_{k} \oplus\: \delta_{k,m+n}\Gamma^{(k)} = \Gamma^{(m+n)}
+  \sum_{k} \oplus\: \delta_{k,m+n}\Gamma^{(k)} = \Gamma^{(m+n)} \;.
 \end{displaymath}
+To da je direktan zbroj jednodimenzionalnih ireducibilnih reprezentacija 
+ireducibilan smo ustanovili već ranije u zadatku \ref{zad:1D1D1D}, a sad vidimo i koja je
+to točno rezultirajuća reprezentacija. Fizikalno, poznato je da je generator
+rotacija operator momenta impulsa, tako da je $m$ iznos momenta impulsa,
+u jedinicama $\hbar$, fizikalnog sustava koji se pri rotacijama transformira
+u skladu s reprezentacijom $\Gamma^{(m)}$. Direktan produkt $\Gamma^{(m)}\otimes\Gamma^{(n)}$
+je reprezentacija rotacija na sustavu dobivenom \emph{združivanjem} dvaju sustava 
+s momentima impulsa $m$ i $n$. Jasno je da će združeni sustav imati impuls $m+n$.
+No, kako znamo iz kvantne mehanike i kako ćemo vidjeti u sljedećem odjeljku, ova
+jednostavna matematika ne vrijedi za punu grupu rotacija u prostoru.
 
-- Rastav reducibilne reprezentacije:
-\begin{displaymath}        
+
+Kako su sve ireducibilne reprezentacije jednodimenzionalne,
+dobro poznata dvodimenzionalna reprezentacija rotacija u ravnini
+\begin{equation}        
  D_{\rm 2D} (\phi) = \left( 
 \begin{array}{cc}        
 \cos\phi & -\sin\phi \\
 \sin\phi & \cos\phi
 \end{array}                
-\right) \qquad \chi_{\rm 2D}=2\cos\phi
-\end{displaymath}
+\right) \,, 
+\end{equation}
+je svakako reducibilna. Kao i gore, redukciju provodimo
+poznavajući karaktere reprezentacije
+\begin{equation}
+    \chi_{\rm 2D}=2\cos\phi \,.
+\end{equation}
+Koeficijenti Clebsch-Gordanovog razvoja su
 \begin{eqnarray*}
 a_k & = & (\chi^{(k)}, \chi_{\rm 2D}) \\
     & = & \int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
    e^{\rmis k \phi} 2\cos\phi  \\
  & = & \int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
   e^{\rmis k \phi} ( e^{\rmis  \phi} + e^{-\rmis  \phi}) \\
- & = & \delta_{k,-1} + \delta_{k, 1}
+ & = & \delta_{k,-1} + \delta_{k, 1} \;.
 \end{eqnarray*}
-Znači postoji $S$ [pronađite za D.Z.] takva da
-\begin{displaymath}
+To znači da postoji $S$ (pronađite ga!) takav da je
+\begin{equation}
   S D_{\rm 2D} (\phi) S^{-1} = \left(
 \begin{array}{cc}        
 e^{\rmis  \phi} &  0 \\
 0 & e^{- \rmis  \phi}
 \end{array}                
-\right) 
-\end{displaymath}
+\right) \,.
+\end{equation}
+Obični ravninski vektori $(x, y)$ nisu svojstveni vektori
+rotacija, što je očito jer ih rotacije mijenjaju. No, "cirkularno
+polarizirane" (valne) funkcije u ravnini to mogu biti.
 
 \subsubsection*{Digresija: Projektivne reprezentacije$^*$}
 
