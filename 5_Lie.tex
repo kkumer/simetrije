@@ -499,12 +499,12 @@ Mogli bismo recimo pokušati konstruirati opću rotaciju kao kompoziciju tri
      bio  problematičan jer su one singularne oko jedinice.}.
 
 Oslonit ćemo se na definiciju \SO{3} kao grupe svih 
-3$\times$3 matrica $R$ sa svojstvom  $RR^{T}=1$ i $\det R=1$.
+3$\times$3 matrica $R$ sa svojstvom  $RR^\mathsf{T}=1$ i $\det R=1$.
 Rotacije za infinitezimalni kut imat će oblik  $R(\epsilon)=1+\epsilon X$,
 gdje je $X$ jedan od generatora. Uvjet ortogonalnosti je sada
-\begin{equation}
- RR^{T}=(1+\epsilon X)(1+\epsilon 
-   X^{T}) = 1+\epsilon (X+X^{T})+0(\epsilon^2) = 1 \,,
+\begin{equation} \label{eq:Xantisim}
+ RR^\mathsf{T}=(1+\epsilon X)(1+\epsilon 
+   X^\mathsf{T}) = 1+\epsilon (X+X^\mathsf{T})+0(\epsilon^2) = 1 \,,
 \end{equation}
 što znači da je $X^\mathsf{T}=-X$ odnosno $X$ je antisimetrična 3$\times$3 matrica.
 Obratno, ako je $X$ antisimetrična, njena eksponencijacija $R = e^X$ daje ortogonalnu
@@ -871,7 +871,7 @@ elementa algebre, osim u jednostavnom slučaju Abelove grupe kad je
 $[X, Y]=0$ (vidi zadatak \ref{zad:abelovaalgebra}) pa se članovi
 gornjih suma mogu isto kao kod eksponencijacije običnih brojeva
 iskombinirati u $\sum (X+Y)^{n}/n! = \exp(X+Y)$. Za općenite
-nekomutirajuće grupe to nije slučaj, nego vrijedi važan
+nekomutirajuće grupe to nije slučaj, nego vrijedi sljedeći važan
 rezultat teorije Liejevih grupa
 \begin{teorem}[Baker-Campbell-Hausdorff]
     \[ e^X e^Y = e^Z \,, \]
@@ -889,7 +889,7 @@ i ključna netrivijalnost je da su \emph{svi} članovi reda dati preko
 ovakvih višestrukih komutatora pa je jasno da je $Z$ element Liejeve algebre.
 (Podsjetimo se da je u Liejevoj algebri definirano zbrajanje elemenata $X+Y$ i njihov
  komutator $[X, Y]$, ali ne i množenje\footnote{Ako gledamo matrične
-    Liejeve algebre množenje zapravo jest definirano, ali algebra općenito nije zatvorena
+    Liejeve algebre množenje samih matrica jest definirano, ali algebra općenito nije zatvorena
     na to množenje. Npr. umnožak dvije antisimetrične matrice iz \soAlg{3} 
     općenito \emph{nije} antisimetrična matrica.} $X Y$.)
 BCH red konvergira u nekoj okolini jediničnog elementa (ne nužno infinitezimalnoj)
@@ -932,7 +932,7 @@ pa nijedna grupa koja
 je sadrži kao podgrupu, kao \SO{3}, \SU{2} etc., neće biti injektivno pokrivena
 exponencijacijom. Surjektivnost je lakše postići.
 Za to je dovoljna kompaktnost,
-a može i jednostruka povezanost.}.
+a može i niže definirana jednostruka povezanost.}.
 
 
 Dakle, Liejeva algebra skoro potpuno određuje barem komponentu povezanosti

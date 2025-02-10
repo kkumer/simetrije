@@ -126,16 +126,16 @@ odnosno
   \Gamma^{(m)}\otimes\Gamma^{(n)} =
   \sum_{k} \oplus\: \delta_{k,m+n}\Gamma^{(k)} = \Gamma^{(m+n)} \;.
 \end{displaymath}
-To da je direktan zbroj jednodimenzionalnih ireducibilnih reprezentacija 
+To da je direktan produkt jednodimenzionalnih ireducibilnih reprezentacija svakako
 ireducibilan smo ustanovili već ranije u zadatku \ref{zad:1D1D1D}, a sad vidimo i koja je
 to točno rezultirajuća reprezentacija. Fizikalno, poznato je da je generator
 rotacija operator momenta impulsa, tako da je $m$ iznos momenta impulsa,
 u jedinicama $\hbar$, fizikalnog sustava koji se pri rotacijama transformira
 u skladu s reprezentacijom $\Gamma^{(m)}$. Direktan produkt $\Gamma^{(m)}\otimes\Gamma^{(n)}$
-je reprezentacija rotacija na sustavu dobivenom \emph{združivanjem} dvaju sustava 
-s momentima impulsa $m$ i $n$. Jasno je da će združeni sustav imati impuls $m+n$.
+je reprezentacija grupe rotacija na sustavu dobivenom \emph{združivanjem} dvaju sustava 
+s momentima impulsa $m$ i $n$. Jasno je da će združeni sustav imati moment impulsa $m+n$.
 No, kako znamo iz kvantne mehanike i kako ćemo vidjeti u sljedećem odjeljku, ova
-jednostavna matematika ne vrijedi za punu grupu rotacija u prostoru.
+jednostavna matematika ne vrijedi za punu grupu rotacija u trodimenzionalnom prostoru.
 
 
 Kako su sve ireducibilne reprezentacije jednodimenzionalne,
@@ -173,19 +173,400 @@ e^{\rmis  \phi} &  0 \\
 \end{equation}
 Obični ravninski vektori $(x, y)$ nisu svojstveni vektori
 rotacija, što je očito jer ih rotacije mijenjaju. No, "cirkularno
-polarizirane" (valne) funkcije u ravnini to mogu biti.
-
-\subsubsection*{Digresija: Projektivne reprezentacije$^*$}
-
-- U QM postoje sustavi za koje $m = 1/2, 3/2, 5/2, \ldots$ tj.
-  $D^{(m)}(\phi)=-D^{(m)}(\phi + 2\pi)$
+polarizirane" funkcije u ravnini poput $x + \rmi y$ to mogu biti.
 
 
-Po definiciji, reprezentacija $\Gamma=\{D(\phi)\}$ grupe G mora zadovoljavati:
+\section{Ireducibilne reprezentacije algebre \soAlg{3} = \suAlg{2}}
+
+Puna grupa rotacija \SO{3} nije Abelova i ireducibilne
+reprezentacije više nisu nužno jednodimenzionalne pa njihova konstrukcija nije
+više tako laka kao za \SO{2}.
+Oslonit ćemo se na spoznaje iz prošlog poglavlja i
+postupak će nam biti da prvo konstruiramo
+reprezentacije \soAlg{3} \emph{algebre} grupe rotacija, a onda
+ćemo eksponencijacijom dobiti odgovarajuće reprezentacije grupe.
+Kako smo vidjeli u primjeru \ref{pr:su2so3Alg}, grupa \SU{2}
+ima istu algebru $\suAlg{2}=\soAlg{3}$, tako da ćemo zapravo
+konstruirati reprezentacije algebre $\suAlg{2}$. Kako odgovarajuće
+grupe \SO{3} i \SU{2} \emph{nisu} izomorfne, morat ćemo pokloniti
+nešto pažnje pitanju koje točno reprezentacije dobivamo eksponencijacijom
+reprezentacija algebre, ali o tom potom.
+
+Algebru čine tri generatora, $X_1, X_2, X_3$, s komutacijskim relacijama
+\begin{equation}
+          [X_i, X_j] = \epsilon_{ijk} X_k \;,
+\end{equation}
+ali mi ćemo odsad nadalje uglavnom raditi s malo drugačijom, "fizičarskom" bazom, definiranom
+kao
+\begin{equation}
+ J_i \equiv \rmi \hbar X_i \,.
+    \label{eq:jfromX}
+\end{equation}
+Naime, kako smo vidjeli u (\ref{eq:Xantisim}) $X_i$ su antisimetrične
+matrice pa će ovako definirani $J_i$ biti hermitski, $J_{i}^{\dagger}
+= - \rmi \hbar X^\mathsf{T} = J_i$, što znači da će u kvantnomehaničkom
+kontekstu odgovarati opservabli, momentu impulsa, i svojstvene vrijednosti
+će mu biti realne.
+Ovi generatori zadovoljavaju komutacijske relacije
+\begin{equation}
+          [J_i, J_j] = i \hbar \epsilon_{ijk} J_k \,,
+\label{eq:SU2algebra}
+\end{equation}
+a da bismo dobili operatore grupe, eksponencijacija će biti oblika
+\begin{equation}
+e^{\phi\unitn\cdot\vec{X}}=e^{(-i/\hbar)\phi\unitn\cdot \vec{J}} \,.
+    \label{eq:expJ}
+\end{equation}
+
+
+Kako je već diskutirano na kraju odjeljka \ref{sec:liejevealgebre},
+operator $\vec{J}^2 = J_{1}^2 + J_{2}^2 + J_{3}^2$ je Casimirov
+tj. komutira sa svim elementima algebre
+\begin{equation}
+   [\jsq, J_{i}^2]=0\;, \quad i=1,2,3 \,,
+\end{equation}
+pa iz druge Schurove leme slijedi da $\jsq$
+mora biti proporcionalan jediničnom operatoru: $\jsq \propto \Eins$.
+Tako je svojstvena vrijednost od $\jsq$ ista za sve vektore neke konkretne 
+ireducibilne reprezentacije i koristit ćemo je za njeno označavanje.
+Za prvotno definiranje grupe rotacija koristili smo njenu standardnu reprezentaciju
+na trodimenzionalnom euklidskom prostoru, no sad nam je cilj pobrojati
+\emph{sve} njene ireducibilne reprezentacije na konačno-dimenzionalnim
+vektorskim prostorima. Te će reprezentacije biti kandidati za moguće
+Hilbertove prostore kvantnomehaničkih stanja pa ćemo s tim u vidu vektore
+označavati Diracovom "ket" oznakom $|\alpha\rangle$, vidi Dodatak \ref{sec:qm}.
+Da bismo izbjegli svaku mogućnost zabune i istovremeno definirali
+naše konvencije, usporedimo sad detaljno reprezentaciju grupe rotacija
+na običnom euklidskom prostoru i reprezentacije, koje tek treba
+pronači i proučiti, na konačno-dimenzionalnom Hilbertovom prostoru kvantnomehaničkih stanja.
+
+Liejeva \emph{grupa} rotacija je parametrizirana s tri realna broja $(\vec{n}, \phi)$.
+Elementi grupe su na trodimenzionalnom euklidskom prostoru reprezentirani $3\times 3$
+matricama $D^{(\mathrm{3D})}$
+čiji tipični elementi su $\cos(\phi)$ ili $\sin(\phi)$ i koje djeluju
+na općeniti vektor $\vec{r}$, izražen preko svojih kartezijevih komponenata $r_i$,
+matričnom operacijom
+\begin{displaymath}
+   D^{(3D)}_{ij}(\unitn, \phi) r_j  \;,
+\end{displaymath}
+a rezultat je novi vektor u tom prostoru koji je linearna kombinacija
+baznih vektora $\hat{x}$, $\hat{y}$ i $\hat{z}$.
+Ovdje je $3D$ iskorišteno kao oznaka ove specifične reprezentacije.
+
+Mi smo u potrazi za svim ireducibilnim reprezentacijama iste te grupe rotacija.
+Djelovanje operatora reprezentacija na Hilbertovom prostoru je definirano
+djelovanjem na vektore baze
+\begin{equation}
+   D^{(\beta)}(\unitn,\phi) \ket{\beta, m} =
+ e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{\beta, m} \,,
+\end{equation}
+gdje je sada $\beta$ oznaka reprezentacije, koja bi u načelu trebala
+stajati i na generatoru $\vec{J} = \vec{J}^{(\beta)}$, ali je tamo obično samo implicitna.
+$ m $ je indeks koji poprima onoliko vrijednosti $m_1$, $m_2$, \ldots, kolika je dimenzionalnost
+Hilbertovog prostora. Tako je njegova baza
+$\ket{\beta, m_1}$, $\ket{\beta, m_2}$, \ldots i rezultat gornje rotacije će
+biti neka linearna kombinacija ovih vektora baze. Kako rekosmo, za oznaku 
+reprezentacija $\beta$ koristit ćemo svojstvenu vrijednost operatora $\jsq$,
+konkretno
+\begin{equation}
+  \jsq \ket{\beta, m} = \beta \hbar^2 \ket{\beta, m} \;.
+  \label{eq:defbeta}
+\end{equation}
+Kao Casimirov operator $\jsq$ komutira sa sva tri $J_i$, ali oni \emph{ne}
+komutiraju međusobno, pa je izborom baze moguće najviše jedan od njih
+dijagonalizirati i standardno se bira $J_{z} = J_{3}$. Tako izabrana baza
+će se sastojati od svojstvenih vektora $\jsq$ i $J_z$ pa označimo 
+njene vektore tako da vrijedi i
+\begin{equation}
+  J_z \ket{\beta, m} = m \hbar \ket{\beta, m} \;.
+  \label{eq:defm}
+\end{equation}
+Kako je iz (\ref{eq:expJ}) vidljivo da je dimenzija $J_i$ jednaka
+dimenziji $\hbar$ (a time i dimenziji momenta impulsa), izbori
+(\ref{eq:defbeta})  i (\ref{eq:defm}) znače da su $\beta$ i $m$
+bezdimenzionalni. 
+
+Sada ćemo eksplicitno konstruirati ireducibilne reprezentacije \suAlg{2}, koristeći
+isključivo komutacijske relacije (\ref{eq:SU2algebra}).
+Prvo definiramo tzv. operatore \emph{podizanja i spuštanja}
+\begin{equation}
+    J_{\pm} \equiv J_x \pm i J_y \,, 
+\end{equation}
+koji naravno isto komutiraju s $\jsq$
+\begin{equation}
+    [\jsq, J_\pm] =0 \,,
+\end{equation}
+dok su komutacijske relacije s $J_z$, 
+\begin{eqnarray*}
+ [J_z, J_\pm]& = & [J_z, J_x] \pm i [J_z, J_y] = i\hbar J_y \pm i (-i\hbar J_x)
+ \\ & = & \pm \hbar (J_x \pm i J_y) = \pm \hbar J_\pm \,.
+\end{eqnarray*}
+Slično (pokažite),
+\begin{displaymath}
+ [J_+, J_-] = 2 \hbar J_z \,.
+\end{displaymath}
+Djelovanjem ovih operatora dizanja i spuštanja na vektore neke ireducibilne
+reprezentacije, ostajemo naravno u toj reprezentaciji
+\begin{displaymath}
+   \jsq(J_{\pm}\ket{\beta, m})=J_{\pm}\jsq\ket{\beta, m}=\beta\hbar^2
+    (J_{\pm}\ket{\beta, m}) \;,
+\end{displaymath}
+ali svojstvena vrijednost od $J_z$ se mijenja i to točno za $\pm 1$
+\begin{equation}
+J_z(J_{\pm}\ket{\beta, m})=([J_z,J_{\pm}]+J_{\pm}J_z)\ket{\beta, m}=
+\hbar(m\pm 1)J_{\pm}\ket{\beta, m} \;,
+\label{jzjpm}
+\end{equation}
+tj.
+\begin{equation}
+    J_{\pm}\ket{\beta, m}\propto \ket{\beta, m\pm 1} \;.
+    \label{eq:jpmpropto}
+\end{equation}
+
+
+Do kuda  može ići to dizanje i spuštanje tj. koliko različitih vrijednosti
+može poprimiti $m$?
+Pokazat ćemo da vrijedi $m^2 \leq \beta$.
+Uočimo prvo da je $J_{\pm}^{\dagger}=J_{\mp}$, jer $J^{\dagger}_{x,y,z}=J_{x,y,z}$.
+Iz toga slijedi
+\begin{eqnarray*}
+ \frac{1}{2}(J_+ J_{+}^{\dagger} + J_{+}^{\dagger}J_+)& = &
+ \frac{1}{2}(J_+ J_{-}+ J_- J_+) \\
+& = & \frac{1}{2} \left[ (J_x + i J_y)(J_x - i J_y) + \textrm{h. c.} \right]
+\\ & = & \frac{1}{2} \left[ J_{x}^2 + i J_y J_x - i J_x J_y + J_{y}^2
+  + J_{x}^2 - i J_y J_x + i J_x J_y + J_{x}^2 \right] \\
+& = & J_{x}^2 + J_{y}^2 = \jsq - J_{z}^2
+\end{eqnarray*}
+Matrični elementi operatora na lijevoj strani ove jednakosti su očito
+pozitivni jer je
+\begin{displaymath}
+\bra{\beta, m}J_{+}^{\dagger}J_+ \ket{\beta, m} =
+\bra{J_{+}\beta, m}J_{+}\beta, m\rangle  \geq 0 ž,,
+\end{displaymath}
+i isto za $J_+ J_{+}^{\dagger}$.
+Slijedi da je
+\begin{displaymath}
+\bra{\beta, m}(\jsq - J_{z}^2)\ket{\beta, m}=
+\bra{\beta, m}(\beta\hbar^2 - m^2\hbar^2)\ket{\beta, m} =
+(\beta - m^2)\hbar^2 \geq 0 \,,
+\end{displaymath}
+što je i trebalo pokazati.
+
+Dakle, za svaki $\beta$ postoji $m_{\textrm{\scriptsize max}}$ tako da 
+\begin{displaymath}
+ J_+ \ket{\beta, m_{\textrm{\scriptsize max}}} = 0 \,,
+\end{displaymath}
+jer to je jedini način da (\ref{jzjpm}) ostane vrijediti.
+Odredimo sada vrijednost $m_{\textrm{\scriptsize max}}$ za datu
+ireducibilnu reprezentaciju $\beta$. Vrijedi
+\begin{eqnarray*}
+J_- J_+ =(J_x - i J_y)(J_x - i J_y)
+   & = &J_{x}^2 + J_{y}^2 +i (J_x J_y - J_y J_x) \\
+ & = & J_{x}^2 + J_{y}^2 - \hbar J_z \\
+ & = & \jsq - J_{z}^2 - \hbar J_z \,.
+\end{eqnarray*}
+No kako je 
+\begin{displaymath}
+J_- J_+ \ket{\beta, m_{\textrm{\scriptsize max}}} = 0 \,,
+\end{displaymath}
+onda je i
+\begin{displaymath}
+ (\jsq - J_{z}^2 - \hbar J_z)\ket{\beta, m_{\textrm{\scriptsize max}}}
+ = (\beta\hbar^2 - m_{\textrm{\scriptsize max}}^2 \hbar^2 
+                 - m_{\textrm{\scriptsize max}}   \hbar^2 )
+\ket{\beta, m_{\textrm{\scriptsize max}}} = 0 \;,
+\end{displaymath}
+pa kako $\ket{\beta, m_{\textrm{\scriptsize max}}}$ nije nul-vektor
+slijedi da je
+\begin{displaymath}
+    \beta = m_{\textrm{\scriptsize max}} ( m_{\textrm{\scriptsize max}} +1)\;.
+\end{displaymath}
+Nadalje, iz maločas dokazane činjenice da je $m^2 \le \beta$ slijedi također
+da ni spuštanje vrijednosti $m$ operatorom spuštanja ne može ići
+unedogled već da mora postojati $m_{\textrm{\scriptsize min}}$
+sa svojstvom
+\begin{displaymath}
+    J_- \ket{\beta, m_{\textrm{\scriptsize min}}} = 0 \;,
+\end{displaymath}
+iz čega postupkom analognim ovom gore dolazimo do
+\begin{displaymath}
+    \beta = m_{\textrm{\scriptsize min}} ( m_{\textrm{\scriptsize min}} -1)\;.
+\end{displaymath}
+Izjednačivši ove dvije vrijednosti za $\beta$ 
+\begin{displaymath}
+            m_{\textrm{\scriptsize max}} ( m_{\textrm{\scriptsize max}} +1)
+= m_{\textrm{\scriptsize min}} ( m_{\textrm{\scriptsize min}} -1)
+\end{displaymath}
+dobijemo kvadratnu jednadžbu za $m_{\textrm{\scriptsize min}}$ od čija
+dva rješenja $m_{\textrm{\scriptsize min}}=m_{\textrm{\scriptsize max}}+1$
+i $m_{\textrm{\scriptsize min}} = - m_{\textrm{\scriptsize max}}$ ovo
+prvo ne dolazi u obzir jer je $m_{\textrm{\scriptsize max}}$ po pretpostavci
+najveća moguća vrijednost za $m$. Tako imamo, uvodeći oznaku
+$j\equiv m_{\textrm{\scriptsize max}}$,
+\begin{displaymath}
+               -j = m_{\textrm{\scriptsize min}} \le m \le 
+ m_{\textrm{\scriptsize max}} = j   \;.
+\end{displaymath}
+
+Nadalje, kako operatori $J_\pm$ dižu ili spuštaju $m$ točno za 1, mora
+biti $m_{\textrm{\scriptsize max}} = m_{\textrm{\scriptsize min}} +n $,
+gdje je $n\in \mathbb{N}_{0}$, tj. $j = -j +n$, odnosno $j=n/2$ pa
+zaključujemo da su jedine moguće vrijednosti za $j$
+\begin{displaymath}
+    j \in \{ 0, \frac{1}{2}, 1, \frac{3}{2}, 2, \ldots \}\;.
+\end{displaymath}
+Kako imamo identitet $\beta = j(j+1)$ možemo umjesto $\beta$ koristiti
+i vrijednost $j$ za označavanje ireducibilnih reprezentacija i to ćemo
+odsad i činiti. U kontekstu teorije reprezentacija grupa, $j$ se naziva
+\emph{spin} i govorimo o \emph{reprezentaciji spina $j$} čak i ukoliko
+razmatramo sustav za koji bi orbitalni moment impulsa
+bio fizikalno primjereniji pojam od spina.
+Dakle mijenjamo oznaku
+\begin{displaymath}
+  \ket{\beta, m} \longrightarrow \ket{j, m} \;,
+\end{displaymath}
+gdje $m$ poprima vrijednosti iz skupa
+\begin{displaymath}
+    m \in \{ -j, -j+1, \ldots, j-1, j\} \,,
+\end{displaymath}
+što je niz od $2j+1$ vrijednosti, pa zaključujemo da je
+reprezentacija spina $j$  $2j+1$-dimenzionalna.
+Kako $J_{\pm}$ povezuju svih $2j+1$ vektora $\ket{j, m}$ 
+reprezentacija je stvarno ireducibilna.
+Tako vidimo da grupa rotacija ima beskonačno ireducibilnih
+reprezentacija, po jednu za svaku vrijednost spina $j$.
+
+Vektori baze IRREPa $\ket{j, m}$ zadovoljavaju
+\begin{eqnarray}
+ \jsq \ket{j, m}& = & \hbar^2 j(j+1)\ket{j, m} \quad \mbox{i} \\
+ J_z \ket{j, m} & =  &\hbar m \ket{j, m} \;, \label{eq:jz}
+\end{eqnarray}
+a sada možemo i kompletirati matrične elemente cijele algebre tako
+da točno ustanovimo djelovanje operatora $J_\pm$ na vektore baze
+tj. da odredimo konstante proporcionalnosti u(\ref{eq:jpmpropto}):
+\begin{equation}
+     J_+ \ket{j, m} = c_{jm} \ket{j, m+1} \;.
+\end{equation}
+Zahvaljujući ortonormiranosti baze imamo
+\begin{eqnarray*}
+ |c_{jm}|^2 & = & \bra{j, m} J_- J_+ \ket{j, m} \\
+            & = & \bra{j, m}(\jsq - J_{z}^2 - \hbar J_z \ket{j, m} \\
+& = & \bra{j, m}(\hbar^2 j(j+1) - \hbar^2 m^2 - \hbar^2 m \ket{j, m}  \\
+            & = & \hbar^2[j(j+1)-m(m+1)] \\
+            & = & \hbar^2 (j-m)(j+m+1) \,.
+\end{eqnarray*}
+Sama faza od $c_{jm}$ je općenito neodređena i prema tzv. Condon-Shortley konvenciji
+odabire se da je $c_{jm}$ realan i pozitivan pa je
+\begin{equation}
+  J_+ \ket{j, m} = \hbar \sqrt{(j-m)(j+m+1)} \ket{j, m+1} \;.
+\label{eq:jplus}
+\end{equation}
+Slično se dobije
+\begin{equation}
+  J_- \ket{j, m} = \hbar \sqrt{(j+m)(j-m+1)} \ket{j, m-1} \;.
+\label{eq:jminus}
+\end{equation}
+Relacije (\ref{eq:jz}) (\ref{eq:jplus}) i (\ref{eq:jminus}) 
+nam omogućuju da odredimo matrične elemente operatora
+momenta impulsa između proizvoljnih stanja i tako kompletno definiraju
+te operatore, a time i cijelu $2j+1$-dimenionalnu ireducibilnu reprezentaciju
+\suAlg{2} algebre. Tako smo (korištenjem samo komutacijskih relacija!) eksplicitno
+konstruirali sve ireducibilne reprezentacije ove algebre. Eksplicitni 
+matrični oblici za niže dimenzije mogu se naći u knjigama iz kvantne
+mehanike.
+
+Baza vektorskog prostora 
+\[\ket{j, m}, m\in\{-j, -j+1, \ldots, j-1, j\}\,,\] 
+se obično naziva \emph{multiplet}, a neki autori tako zovu i cijeli
+vektorski prostor kojeg ta baza razapinje. Tako imamo
+\begin{itemize}
+\item  $j=0$ : \emph{singlet}
+\item  $j=\frac{1}{2}$ : \emph{dublet}
+\item  $j=1$ : \emph{triplet}
+\item  i. t. d.
+\end{itemize}
+gdje ime odražava dimenzionalnost reprezentacije.
+
+
+Važna je značajka svakog sustava u prirodi 
+njegovo ponašanje pri rotacijama. Kvantni sustavi se redovito
+transformiraju prema nekoj konkretnoj ireducibilnoj reprezentaciji grupe
+rotacija\footnote{Izolirani ili elementarni sustavi praktički uvijek, no
+    općenito su moguće i kvantne superpozicije stanja s različitim $j$.}, i
+ tada govorimo da je riječ o sustavu \emph{spina $j$}.
+Jedan od centralnih rezultata kvantne teorije polja je tzv.
+\emph{teorem  veze spina i statistike} koji kaže da se sustavi
+cjelobrojnog spina ponašaju u skladu s Bose-Einsteinovom
+statistikom (i zovemo ih bozonski), a oni polucjelobrojnog spina
+u skladu s Fermi-Diracovom statistikom (i zovemo ih fermionski).
+
+
+\section{Projektivne reprezentacije i orbitalni moment impulsa}
+
+Nakon što smo konstruirali sve ireducibilne reprezentacije \emph{algebre} 
+\suAlg{2}=\soAlg{3}, promotrimo sada detaljnije u kojoj mjeri eksponencijacijom
+odgovarajućih operatora dobivamo reprezentacije \emph{grupa} \SO{3} i \SU{2}.
+Matrični elementi ekponenciranih operatora između standardnih
+$\ket{j, m}$ stanja
+\begin{equation}
+    D^{(j)}_{m'm}(\hat{\vec{z}},\phi)  \equiv  \bra{j,m'} D^{(j)}(\hat{\vec{n}},\phi) \ket{j, m} 
+    =\bra{j,m'} e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{j, m} \,.
+    \label{eq:WignerD}
+\end{equation}
+se nazivaju \emph{Wignerove D-funkcije} i formiraju tzv. \emph{Wignerovu D-matricu}.
+Mogu se pronaći tabelirani u specijaliziranoj literaturi, a postoje
+i zatvoreni analitički izrazi. No razmotrimo u kojoj mjeri oni
+reprezentiraju grupe \SO{3} i \SU{2}. Kako te grupe nisu izomorfne,
+reprezentacije koje čine $D^{(j)}$ sigurno ne mogu općenito biti vjerne.
+
+Slučaj $j=0$ je trivijalan, jer je odgovarajuća reprezentacija $D^{(0)}=\Eins$
+trivijalna i objekte koji se tako transformiraju (zapravo, ne transformiraju)
+nazivamo \emph{skalari}.
+
+Slučajeve $j=1/2$ i $j=1$ smo već sreli. Naime, same grupe nismo definirali
+apstraktno već kao matrične grupe. Te matrice možemo interpretirati kao operatore
+na vektorskim prostorima i tako one istovremeno čine i reprezentaciju grupe.
+$j=1$ je trodimenzionalna reprezentacija i eksplicitnom konstrukcijom
+operatora $J_z$, $J_\pm$ putem formula iz prošlog odjeljka, pa onda linearnim
+kombiniranjem da bi dobili i $J_x$ i $J_y$ (zadatak \ref{zad:matj}), 
+dobivamo upravo generatore iz (\ref{eq:SO3generators}), do na faktor $\rmi\hbar$.
+Tako je $j=1$ \emph{definiciona} reprezentacija grupe \SO{3} i njena najmanja
+vjerna reprezentacija.
+No, ona nije i vjerna reprezentacija grupe \SU{2}, što znamo jer znamo da
+se po dva elementa $U$ i $-U$ iz  \SU{2} preslikavaju u isti element 
+\SO{3}. To je samo još jedna manifestacija činjenice da su te dvije grupe
+iste lokalno (imaju istu algebru), ali ne i globalno.
+
+
+Važniji je slučaj $j=1/2$ reprezentacije. Ona je dvodimenzionalna i
+istim postupkom kao gore lako se uvjerimo da su $J_i$ do na faktor
+dani Paulijevim matricama i eksponencijacijom dobivamo definicionu
+vjernu reprezentaciju grupe \SU{2}. No, je li ona i reprezentacija
+grupe rotacija \SO{3}?
+Da bismo odgovorili na to promotrimo rotaciju 
+stanja spina $j=1/2$ i pozitivne projekcije spina $m=1/2$ za 
+kut $2\pi$ oko $z$-osi
+\begin{equation}
+    e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{\frac{1}{2}, +\frac{1}{2}} =
+    e^{-i\frac{\sigma_3}{2} 2 \pi} \begin{pmatrix} 1 \\ 0 \end{pmatrix} =
+    e^{-i \pi}\ket{\frac{1}{2}, +\frac{1}{2}} =
+    -\ket{\frac{1}{2}, +\frac{1}{2}} \;.
+\end{equation}
+Vidimo da pri toj rotaciji vektor stanja mijenja predznak tj. ne vraća se u početno stanje.
+Tek je operator rotacije za $4\pi$ jednak identiteti.  Čitatelj
+se lako može uvjeriti da će takvo ponašanje imati sve polucjelobrojne
+reprezentacije.
+No po definiciji, reprezentacija $\Gamma=\{D(\phi)\}$ grupe G mora zadovoljavati
+općeniti uvjet homomorfizma s grupom
 \begin{displaymath}
     D(\phi_1)D(\phi_2)=D(\phi_1\circ_{\textrm{\tiny G}}\phi_2)
         =D(\phi_1 + \phi_2)
 \end{displaymath}
+
+Ta promjena faze
+je i eksplicitno dokazana eksperimentima s fermionskim sustavima.
+
+
 dok za $m = 1/2, 3/2, 5/2, \ldots$ imamo npr.
 \begin{displaymath}
  D(\pi) D(\pi) = e^{i m \pi}e^{i m \pi} = e^{2 i m \pi}=-1
@@ -207,303 +588,146 @@ sustavu hoće li se transformirati obzirom na projektivne REP ili ne.
 - Jedan od načina da grupa ima i projektivne reprezentacije je da
   ne bude jednostavno povezana.
 
-SO(3) je dvostruko povezana i dopušta dvije faze: $\pm 1$. Fermioni
+\SO{3} je dvostruko povezana i dopušta dvije faze: $\pm 1$. Fermioni
 su čestice koje se transformiraju projektivno.
 
-SO(2) je beskonačno povezana i ima beskonačno mogućih faza. No, sustavi
+\SO{2} je beskonačno povezana i ima beskonačno mogućih faza. No, sustavi
 koje razmatramo su 3D i čak i pod 2D rotacijama mogu samo promijeniti
-predznak tj. SO(2) je ovdje samo podgrupa od SO(3).
+predznak tj. \SO{2} je ovdje samo podgrupa od \SO{3}.
 
-\section{Ireducibilne reprezentacije grupe SO(3) tj. SU(2)}
+--------------
 
-- Grupa SO(3) nije Abelova i IRREPSi više nisu 1D pa konstrukcija nije
-tako laka kao za SO(2).
-
-- Lakše je konstruirati reprezentacije SO(3) \emph{algebre}, a onda
-  eksponencijacijom dobiti reprezentacije grupe.
-
-- Algebru čine tri generatora grupe, $X_1, X_2, X_3$, eksplicitno navedena u
-(\ref{eq:SO3generators}), sa komutacijskim relacijama
+Među raznim operatorima u kvantnoj mehanici koji zadovoljavaju
+komutacijske relacije \suAlg{2} algebre nailazimo i na važni
+operator \emph{orbitalnog momenta impulsa} oblika 
 \begin{equation}
-          [X_i, X_j] = \epsilon_{ijk} X_k
+\vec{L} = \vec{r} \times \vec{p} \;,
+\label{eq:Lorb}
 \end{equation}
-ali mi ćemo raditi s malo drugačije izraženom algebrom, preko kvantnomehaničkih operatora
-momenta impulsa, $J_1, J_2, J_3$, $J_i=\rmi \hbar X_i$ koji zadovoljavaju
+gdje \suAlg{2} komutacijske relacije slijede izravno iz
+temeljnih kvantnomehaničkih komutacijskih relacija
 \begin{equation}
-          [J_i, J_j] = i \hbar \epsilon_{ijk} J_k
-\label{eq:SU2algebra}
-\end{equation}
- 
-Elementi grupe su $e^{\phi\unitn\cdot\vec{X}}=e^{(-i/\hbar)\phi\unitn\cdot
- \vec{J}}$ što se slaže sa odjeljkom \ref{sec:liejevealgebre}.
-
-- Iz unitarnosti reprezentacije ondmah slijedi da su $J_i$ hermitski, kao
-  što i treba biti. Znači da su njihove svojstvene vrijednosti realne.
-
-- Operator $\vec{J}^2 = J_{x}^2 + J_{y}^2 + J_{z}^2$ je Casimirov
-  (cf. odjeljak 4.2) tj. komutira sa svim elementima algebre:
-\begin{equation}
-   [\jsq, J_{i}^2]=0\;, \quad i=1,2,3
+    [r_i, p_j] = i\hbar \delta_{ij} \Eins \,.
+    \label{eq:rpkomutacija}
 \end{equation}
 
-- Kako nas zanimaju IRREPSi, iz druge Schurove leme slijedi da $\jsq$
-mora biti proporcionalan jediničnom operatoru: $\jsq \propto \Eins$.
-Tako se svojstvena vrijednost od $\jsq$ ne mijenja kroz cijelu IRREP i
-zgodna je za njeno označavanje. Usporedimo sad IRREPse grupe rotacija
-na običnom 3D prostoru i na prostoru kvantnomehaničkih stanja.
-
-\begin{itemize}
-\item  IRREP na 3D euklidskom prostoru:
-\begin{displaymath}
-   D^{(3D)}_{ij}(\unitn, \phi) r_j = \text{lin. komb. od}\: \hat{x}, \hat{y}, \hat{z}
-\end{displaymath}
-   $\unitn, \phi$ --- parametri \\
-  $3D$ --- oznaka IRREPsa \\
-  $r_j$ --- koordinate vektora $r_x, r_y, r_z$
-
-\item IRREPsi rotacija na Hilbertovom prostoru:
-\begin{displaymath}
-   D^{(\beta)}(\unitn,\phi) \ket{\beta, m} =
- e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{\beta, m} =
-\text{lin. komb. od}\: \ket{\beta, m_1}, \ket{\beta, m_2}, \dots
-\end{displaymath}
-$\beta$ --- indeks IRREPsa (na $\vec{J}$ često implicitan, no
- ponekad se piše $\vec{J}^{(\beta)}$) \\
-$ m $ --- ``koordinata'' koja razlikuje vektore unutar istog IRREPsa.\\
- Vektori baze prostora na koji djeluje IRREP $\beta$ su definirani slijedećim
-relacijama:
-\begin{eqnarray}
-  \jsq \ket{\beta, m} &=& \beta \hbar^2 \ket{\beta, m} \;.  \\
-  J_z \ket{\beta, m} &=& m \hbar \ket{\beta, m} \;.
-\end{eqnarray}
-\end{itemize}
-
-Sada ćemo eksplicitno konstruirati IRREPse od $SU(2)$, koristeći
-isključivo komutacijske relacije (\ref{eq:SU2algebra}).
-\secret{Ova konstrukcija se radi na kvantnoj pa se može
-preskočiti i samo rekapitulirati sažetak na kraju ovog odjeljka.}
-Prvo definiramo operatore \emph{podizanja i spuštanja}
-\begin{displaymath}
-    J_{\pm} = J_x \pm i J_y \;, \qquad [\jsq, J_\pm] =0
-\end{displaymath}
- 
-\begin{eqnarray*}
- [J_z, J_\pm]& = & [J_z, J_x] \pm i [J_z, J_y] = i\hbar J_y \pm i (-i\hbar J_x)
- \\ & = & \pm \hbar (J_x \pm i J_y) = \pm \hbar J_\pm
-\end{eqnarray*}
-
-Slično (pokažite):
-\begin{displaymath}
- [J_+, J_-] = 2 \hbar J_z
-\end{displaymath}
-
- Djelovanjem ovih operatora dizanja i spuštanja na vektore neke IRREP,
-ostajemo naravno u toj istoj IRREP:
-\begin{displaymath}
-   \jsq(J_{\pm}\ket{\beta, m})=J_{\pm}\jsq\ket{\beta, m}=\beta\hbar^2
-    (J_{\pm}\ket{\beta, m}) \;,
-\end{displaymath}
-ali svojstvena vrijednost od $J_z$ se mijenja:
+Iz kvantne mehanike je poznato da orbitalni moment impulsa
+poprima samo cjelobrojne vrijednosti 
 \begin{equation}
-J_z(J_{\pm}\ket{\beta, m})=([J_z,J_{\pm}]+J_{\pm}J_z)\ket{\beta, m}=
-\hbar(m\pm 1)J_{\pm}\ket{\beta, m} \;,
-\label{jzjpm}
-\end{equation}
-tj.
-\begin{displaymath}
-    J_{\pm}\ket{\beta, m}\propto \ket{\beta, m\pm 1} \;.
-\end{displaymath}
-
-
-Do kuda  može ići to dizanje i spuštanje tj. koliko različitih vrijednosti
-može poprimiti $m$?
-
-Tvrdnja: $m^2 \leq \beta$
-
-Dokaz: $J_{\pm}^{\dagger}=J_{\mp}$, jer $J^{\dagger}_{x,y,z}=J_{x,y,z}$.
-\begin{eqnarray*}
- \frac{1}{2}(J_+ J_{+}^{\dagger} + J_{+}^{\dagger}J_+)& = &
- \frac{1}{2}(J_+ J_{-}+ J_- J_+) \\
-& = & \frac{1}{2} \left[ (J_x + i J_y)(J_x - i J_y) + \textrm{h. c.} \right]
-\\ & = & \frac{1}{2} \left[ J_{x}^2 + i J_y J_x - i J_x J_y + J_{y}^2
-  + J_{x}^2 - i J_y J_x + i J_x J_y + J_{x}^2 \right] \\
-& = & J_{x}^2 + J_{y}^2 = \jsq - J_{z}^2
-\end{eqnarray*}
-No,
-\begin{displaymath}
-\bra{\beta, m}J_{+}^{\dagger}J_+ \ket{\beta, m} =
-\bra{J_{+}\beta, m}J_{+}\beta, m\rangle  \geq 0 \quad \textrm{i isto za}
-J_+ J_{+}^{\dagger}
-\end{displaymath}
-Slijedi da je
-\begin{displaymath}
-\bra{\beta, m}(\jsq - J_{z}^2)\ket{\beta, m}=
-\bra{\beta, m}(\beta\hbar^2 - m^2\hbar^2)\ket{\beta, m} =
-(\beta - m^2)\hbar^2 \geq 0
-\end{displaymath}
-Q.E.D.
-
-Dakle, za svaki $\beta$ postoji $m_{\textrm{\scriptsize max}}$ tako da 
-\begin{displaymath}
- J_+ \ket{\beta, m_{\textrm{\scriptsize max}}} = 0
-\end{displaymath}
-(To je jedini način da (\ref{jzjpm}) ostane vrijediti.)
-
-$m_{\textrm{\scriptsize max}}(\beta)$=?
-
-\begin{displaymath}
-J_- J_+ \ket{\beta, m_{\textrm{\scriptsize max}}} = 0
-\end{displaymath}
-\begin{eqnarray*}
-J_- J_+ =(J_x - i J_y)(J_x - i J_y)
-   & = &J_{x}^2 + J_{y}^2 +i (J_x J_y - J_y J_x) \\
- & = & J_{x}^2 + J_{y}^2 - \hbar J_z \\
- & = & \jsq - J_{z}^2 - \hbar J_z
-\end{eqnarray*}
-Pa je
-\begin{displaymath}
- (\jsq - J_{z}^2 - \hbar J_z)\ket{\beta, m_{\textrm{\scriptsize max}}}
- = (\beta\hbar^2 - m_{\textrm{\scriptsize max}}^2 \hbar^2 
-                 - m_{\textrm{\scriptsize max}}   \hbar^2 )
-\ket{\beta, m_{\textrm{\scriptsize max}}} = 0 \;,
-\end{displaymath}
-pa kako $\ket{\beta, m_{\textrm{\scriptsize max}}}$ nije nul-vektor
-slijedi da je
-\begin{displaymath}
-    \beta = m_{\textrm{\scriptsize max}} ( m_{\textrm{\scriptsize max}} +1)\;.
-\end{displaymath}
-
-Iz maločas dokazane činjenice da je $m^2 \le \beta$ slijedi također
-da ni spuštanje vrijednosti $m$ operatorom spuštanja ne može ići
-unedogled već da mora postojati $m_{\textrm{\scriptsize min}}$
-sa svojstvom
-\begin{displaymath}
-    J_- \ket{\beta, m_{\textrm{\scriptsize min}}} = 0 \;,
-\end{displaymath}
-iz čega postupkom analognim ovom gore dolazimo do
-\begin{displaymath}
-    \beta = m_{\textrm{\scriptsize min}} ( m_{\textrm{\scriptsize min}} -1)\;.
-\end{displaymath}
-
-Izjednačivši ove dvije vrijednosti za $\beta$ 
-\begin{displaymath}
-            m_{\textrm{\scriptsize max}} ( m_{\textrm{\scriptsize max}} +1)
-= m_{\textrm{\scriptsize min}} ( m_{\textrm{\scriptsize min}} -1)
-\end{displaymath}
-dobijemo kvadratnu jednadžbu za $m_{\textrm{\scriptsize min}}$ od čija
-dva rješenja $m_{\textrm{\scriptsize min}}=m_{\textrm{\scriptsize max}}+1$
-i $m_{\textrm{\scriptsize min}} = - m_{\textrm{\scriptsize max}}$ ovo
-prvo ne dolazi u obzir jer je $m_{\textrm{\scriptsize max}}$ po pretpostavci
-najveća moguća vrijednost za $m$. Tako imamo, uvodeći oznaku
-$j=m_{\textrm{\scriptsize max}}$,
-\begin{displaymath}
-               -j = m_{\textrm{\scriptsize min}} \le m \le 
- m_{\textrm{\scriptsize max}} = j   \;.
-\end{displaymath}
-
-Nadalje, kako operatori $J_\pm$ dižu ili spuštaju $m$ točno za 1, mora
-biti $m_{\textrm{\scriptsize max}} = m_{\textrm{\scriptsize min}} +n $,
-gdje je $n\in \mathbb{N}_{0}$, tj. $j = -j +n  \imp j=n/2$
-\begin{displaymath}
-  j= 0, \frac{1}{2}, 1, \frac{3}{2}, 2, \ldots \;.
-\end{displaymath}
-
-  Vrijednost $\beta = j(j+1)$ je ista za cijelu IRREP i uobičajenije
-je upravo $j$ koristiti za označavanje IRREPa:
-\begin{displaymath}
-  \ket{\beta, m} \longrightarrow \ket{j, m} \;,
-\end{displaymath}
-gdje $m$ poprima vrijednosti
-\begin{displaymath}
-   m= -j, -j+1, \ldots, j-1, j
-\end{displaymath}
-i gdje vektori baze IRREPa $\ket{j, m}$ zadovoljavaju
-\begin{eqnarray*}
- \jsq \ket{j, m}& = & \hbar^2 j(j+1)\ket{j, m} \quad \mbox{i} \\
- J_z \ket{j, m} & =  &\hbar m \ket{j, m} \;.
-\end{eqnarray*}
-Tako smo koristeći isključivo komutacijske relacije algebre grupe rotacija
-konstruirali sve njene ireducibilne reprezentacije!
-
-Kako je ta algebra zajednička i grupi $SO(3)$ i grupi $SU(2)$ dobili
-smo i reprezentacije s polucjelobrojnim momentom impulsa $j$.
-
-Još nas zanima i točno djelovanje operatora $J_\pm$ na vektore baze:
-\begin{displaymath}
-     J_+ \ket{j, m} = c_{jm} \ket{j, m+1} \;.
-\end{displaymath}
-Zahvaljujući ortonormiranosti:
-\begin{eqnarray*}
- |c_{jm}|^2 & = & \bra{j, m} J_- J_+ \ket{j, m} \\
-            & = & \bra{j, m}(\jsq - J_{z}^2 - \hbar J_z \ket{j, m} \\
-& = & \bra{j, m}(\hbar^2 j(j+1) - \hbar^2 m^2 - \hbar^2 m \ket{j, m}  \\
-            & = & \hbar^2[j(j+1)-m(m+1)] \\
-            & = & \hbar^2 (j-m)(j+m+1)
-\end{eqnarray*}
-Faza od $c_{jm}$ je neodređena i prema tzv. Condon-Shortley konvenciji
-odabire se realan i pozitivan $c_{jm}$:
-\begin{displaymath}
-  J_+ \ket{j, m} = \hbar \sqrt{(j-m)(j+m+1)} \ket{j, m+1} \;.
-\label{jplus}
-\end{displaymath}
-Slično, [pokažite]
-\begin{displaymath}
-  J_- \ket{j, m} = \hbar \sqrt{(j+m)(j-m+1)} \ket{j, m-1} \;.
-\label{jminus}
-\end{displaymath}
-
-Ove relacije nam omogućuju da odredimo matrične elemente operatora
-momenta impulsa između proizvoljnih stanja. Također, eksponencijacijom
-možemo odrediti matrične elemente samih operatora rotacija:
-\begin{displaymath}
-    \bra{j,m'} D^{(j)}(\hat{\vec{n}},\phi) \ket{j, m} \quad - \quad
-\text{Wignerove D-funkcije}
-\end{displaymath}
-Za konkretne primjere vidi vježbe.
-
-\textbf{Sažetak:}
-
-\begin{itemize}
-\item  Operatori momenta impulsa $J_x, J_y$ i $J_z$ te njihove kombinacije
-$\jsq, J_\pm, \ldots$ za dani $j$, tj. za danu ireducibilnu reprezentaciju
-grupe rotacija, djeluju na ($2j+1$)-dimenzionalnom vektorskom prostoru
-razapetom vektorima $\ket{j, m}$, $m=-j, -j+1, \ldots, j-1, j$.
-
-\item operatori $D^{(j)}=e^{-i \vec{J}\cdot\unitn\phi/\hbar}$ čine
-  reprezentaciju grupe rotacija na ($2j+1$)-dimenzionalnom  Hilbertovom
-  vektorskom prostoru kvantnomehaničkih stanja
-
-\item $J_{\pm}$ povezuju svih $2j+1$ vektora $\ket{j, m}$ tj.
-  reprezentacija je stvarno ireducibilna
-
-\item baza vektorskog prostora $\ket{j, m}$, $m=-j, -j+1, \ldots, j-1, j$ 
- se obično naziva \emph{multiplet}. (Neki autori tako zovu cijeli
- vektorski prostor.)
-  \begin{itemize}
-\item  $j=0$ : \emph{singlet}
-\item  $j=\frac{1}{2}$ : \emph{dublet}
-\item  $j=1$ : \emph{triplet}
-\item  $\cdots$ 
-\end{itemize}
-\end{itemize}
-
-\textbf{Orbitalni moment impulsa:}
-
-- Specijalna vrsta momenta impulsa koja je oblika $\vec{L} = \vec{r}
-  \times \vec{p}$
-
-- Kao posljedica toga (ne sasvim trivijalna \secret{cf. Kaplan and Wu, 
-Chinese J. of Phys. \textbf{9} (1971) 31; Gatland, Am. J. Phys.
-\textbf{74} (2006) 191.}), svojstvene vrijednosti su 
- isključivo  cjelobrojne:
-\begin{displaymath}
      \vec{L}^2 \ket{l, m} = \hbar^2 l(l+1) \ket{l,m} \qquad l=0,1,2,\ldots
-\end{displaymath}
-i označavaju se s $l$, a ne $j$.
-
-- Iz povijesnih razloga vezanih uz atomsku fiziku, stanja s $l=0,1,2,\ldots$
+\end{equation}
+i odgovarajući momenti impulsa tj. ireduciblne
+reprezentacije se označavaju s $l$, a ne $j$.
+Iz povijesnih razloga vezanih uz atomsku fiziku, stanja koja
+pripadaju $l=0,1,2,\ldots$ reprezentacijama
 se često nazivaju $S, P, D,\ldots$ stanja, a $m$ se ponekad naziva
 \emph{magnetski} kvantni broj (zbog svoje uloge u Zeemanovom efektu).
+
+Zanimljivo je pitanje zašto za orbitalni moment impulsa otpadaju
+polucjelobrojne reprezentacije $l \neq 1/2, 3/2, \ldots$?
+    Sama algebra, kako smo vidjeli u prošlom odjeljku, implicira
+postojanje i takvih reprezentacija, dakle stvar mora biti u konkretnom
+obliku operatora (\ref{eq:Lorb}) odnosno svojstvima operatora
+položaja i impulsa koji dodatno zadovoljavaju i relacije
+(\ref{eq:rpkomutacija}).
+
+Pozabavimo se prvo posebnim problemom dimenzionalnosti Hilbertovog prostora
+na kojem operator $\vec{L}$ iz (\ref{eq:Lorb}) djeluje. Naime, taj
+je prostor beskonačnodimenzionalan. Već smo to u sličnoj situaciji
+sreli u primjeru \ref{pr:repC3} u kontekstu rotacije valnih funkcija
+vodikovog atoma. No beskonačna dimenzionalnost Hilbertovog prostora
+na koji djeluju operatori položaja i impulsa (pa time i $\vec{L}$)
+vrijedi sasvim općenito u kvantnoj mehanici, u što se možemo uvjeriti
+djelovanjem operacije traga na (\ref{eq:rpkomutacija}). Tu lijeva
+strana zbog cikličnosti traga iščezava, a desna ne, pa imamo nekonzistenciju
+za konačno-dimenzionalne operatore. U beskonačno-dimenzionalnim prostorima
+trag operatora općenito nije definiran pa je samo tamo relacija
+(\ref{eq:rpkomutacija}) matematički konzistentna.
+Beskonačnodimenzionalni Hilbertovi prostori su u mnogome različiti
+od konačnodimenzionalnih i velika većina rezultata u ovoj knjizi tamo ne vrijedi
+onako kako su iskazani bez dodatnog posvećivanja velike pažnje
+domeni pojedinih operatora i drugim suptilnostima.
+Srećom, operator (\ref{eq:Lorb}) na cijelom Hilbertovom prostoru
+je \emph{reducibilan}. Iz osnova kvantne mehanike znamo da se valne
+funkcije faktoriziraju na radijalni i kutni dio $\psi(\vec{r})
+= R(r) Y^{(l)}_{m}(\theta, \phi)$. Radijalni dio je onaj koji
+je odgovoran za beskonačnu dimenzionalnost prostora,
+no za naše potrebe nam on nije važan jer na njega rotacije djeluju
+trivijalno. One djeluju netrivijalno na kutni dio $Y^{(l)}_{m}(\theta, \phi)$
+i tu, analizom svojstvenih funkcija Laplaceove diferencijalne
+jednadžbe (kutnog dijela Schr\"{o}dingerove jednadžbe), se u
+standardnim knjigama iz kvantne mehanike pokazuje da su rotacije
+ireduciblne na \emph{konačnodimenzionalnim} prostorima razapetim
+funkcijama $Y^{(l)}_{m}(\theta, \phi)$ za $m \in \{-l, -l+1, \ldots, l\}$.
+Dakle potpuno smo u domeni rezultata prošlog odjeljka i ostaje
+samo pitanje što je s polucjelobrojnim reprezentacijama.
+
+U literaturi se do rezultata da $l$ ne može biti polucjelobrojan
+često dolazi nezadovoljavajuće. Autori se uglavnom oslanjaju na postavljanje rubnih
+uvjeta na rješenja Laplaceove jednadžbe; konkretno, zahtijevaju
+da valne funkcije moraju zadovoljavati $\psi(\phi + 2\pi) = \psi(\phi)$.
+No sve fizikalne posljedice su, kako smo maločas diskutirali u
+kontekstu projektivnih reprezentacija, neosjetljive na fazu valne funkcije
+i nema nikakvog fizikalnog razloga zahtijevati takve rubne uvjete,
+pogotovu kad smo svjesni da u prirodi postoje sustavi (fermioni)
+koji takve zahtjeve \emph{ne} zadovoljavaju.
+Izložit ćemo sada argument koji objašnjava zašto $l$ ne može biti
+polucjelobrojan, a koji se ne oslanja na rubne uvjete nego samo
+na temeljne komutacijske relacije \cite{Ballentine:1998}.
+
+Radi jasnoće, umjesto standardnih operatora položaja $\vec{r}$
+i impulsa $\vec{p}$, definirajmo njihove bezdimezionalne inačice
+\begin{equation}
+    \vec{Q} \equiv \sqrt{\frac{m \omega}{\hbar}} \,\vec{r} \,, \qquad
+    \vec{P} \equiv \sqrt{\frac{1}{\hbar m \omega}} \, \vec{p} \,,
+\end{equation}
+gdje su $m$ i $\omega$ neke konstante s dimenzijama mase i frekvencije
+koje nam neće biti od važnosti. Pomoću ovih operatora definiramo 
+još četiri bezdimenzionalna operatora
+\begin{align}
+    q_{\pm}& \equiv \frac{1}{\sqrt{2}} (Q_x \pm P_y) \,, \\
+    p_{\pm}& \equiv \frac{1}{\sqrt{2}} (P_x \mp Q_y) \,.
+\end{align}
+Ovi operatori zadovoljavaju komutacijske relacije
+\begin{align}
+    [Q_i, P_j]& =  [r_i, p_j] / \hbar = i \delta_{ij} \,, \\
+    [q_{\pm}, p_{\pm}]& = i \,, \label{eq:qpkomutacija}\\
+    [q_{\pm}, p_{\mp}]& = 0 \,,
+\end{align}
+i svi ostali komutatori isto iščezavaju. Uz ovako definirane
+operatore imamo sada za bezdimenzionalni operator momenta impulsa
+oko $z$-osi
+\begin{equation}
+    \frac{1}{\hbar} L_z = Q_x P_y - Q_y P_x = \frac{1}{2}(p_{+}^2 + q_{+}^2)
+                   - \frac{1}{2}(p_{-}^2 + q_{-}^2) \;.
+\end{equation}
+Ovdje treba uočiti prvo da iz (\ref{eq:qpkomutacija}) vidimo da
+$q_{\pm}$ i $p_{\pm}$ zadovoljavaju kvantne komutacijske relacije položaja
+i impulsa, a drugo da je $(p^2 + q^2)/2$, ako je $p$ impuls, a $q$ položaj,
+upravo bezdimenzionalna varijanta Hamiltonijana jednodimenzionalnog kvantnog
+harmoničkog oscilatora. Dakle, operator $L_z$ je matematički ekvivalentan
+\emph{razlici} Hamiltonijana dvaju \emph{nezavisnih} harmoničkih oscilatora
+\begin{equation}
+\frac{1}{\hbar} L_z = H^{(+)} - H^{(-)} \;.
+\label{eq:Hpm}
+\end{equation}
+U svakoj knjizi iz kvantne mehanike je pokazano
+da su svojstvene vrijednosti ovakvih Hamiltonijana, dakle energije harmoničkog
+oscilatora, dane s 
+\begin{equation}
+    E_n = \hbar \omega \left(n + \frac{1}{2}\right)\,, 
+    \quad n \in \{0, 1, 2, \ldots\} \,,
+\end{equation}
+pa će odgovarajuće svojstvene vrijednosti bezdimenzionalnih Hamiltonijana
+iz (\ref{eq:Hpm}) biti upravo $n_{\pm} + 1/2$ uz nenegativne
+cjelobrojne $n_{\pm}$. Tako slijedi da su moguće svojstvene vrijednosti
+$L_z$ dane s
+\begin{equation}
+    \frac{1}{\hbar} L_z = \left(n_{+} + \frac{1}{2}\right) -
+    \left(n_{-} + \frac{1}{2}\right) = n_{+} - n_{-} \,,
+\end{equation}
+tj. da su svakako cjelobrojne, što je i trebalo pokazati.
+
 
 \section{Zbrajanje momenata impulsa i Clebsch-Gordanovi koeficijenti}
 
@@ -1005,7 +1229,7 @@ T_{ij} = \frac{1}{3}\delta_{ij}T_{kk} +
 gdje faktor $1/3$ osigurava da zadnji član bude traga nula.
 (Cf. Sakurai odjeljak 3.10)
 
-\section{Degeneracija nivoa vodikovog atoma i SO(4) simetrija}
+\section{Degeneracija nivoa vodikovog atoma i \SO{4} simetrija}
 \label{sec:so4}
 
 
@@ -1028,7 +1252,7 @@ To povlači da svih $2l+1$ stanja date ireducibilne reprezentacije
 grupe rotacija s kvantnim brojem $l$
 \begin{equation}
    \big\{\ket{nlm} \td m\in\{-l, -l+1, ..., l \}\big\} = 
-   \big\{ D(g)\ket{nlm} \td g \in SO(3) \big\}
+   \big\{ D(g)\ket{nlm} \td g \in \SO{3} \big\}
 \end{equation}
 ima istu energiju, kako smo već spominjali u odjeljku \ref{sec:reprezentacije}.
 
@@ -1187,17 +1411,17 @@ dva operatora zadovoljavaju komutacijske relacije
 [I_i, K_j] &= 0
 \end{align}
 što znači da i $I_i$ i $K_i$ generiraju svaki svoju
-algebru grupe SO(3) tj. da je ukupna grupa simetrija vodikovog
-atoma SO(3)$\times$SO(3)\footnote{Vrijedi grupni identitet
-SO(3)$\times$SO(3) = SO(4). Otud naslov ovog odjeljka. 
-SO(4) je grupa generirana s 6
+algebru grupe \SO{3} tj. da je ukupna grupa simetrija vodikovog
+atoma \SO{3}$\times$\SO{3}\footnote{Vrijedi grupni identitet
+\SO{3}$\times$\SO{3} = \SO{4}. Otud naslov ovog odjeljka. 
+\SO{4} je grupa generirana s 6
 generatora $L_{\mu\nu}=x_\mu p_\nu - x_\nu p_\mu$; $\mu, \nu = 1,2,3,4$;
 $[x_\mu, p_\nu] = i\hbar \delta_{\mu\nu}$. Definiramo li
 $L_i = \fhalf \epsilon_{ijk} L_{jk}$ i $M'_i = L_{4i}$, $i,j,k = 1,2,3$,
 dobijemo gornje komutacijske relacije.}
 
 Sad možemo upotrijebiti naše poznavanje svojstava reprezentacija
-grupe SO(3). Činjenica da $I_i$ i $K_i$ zadovoljavaju
+grupe \SO{3}. Činjenica da $I_i$ i $K_i$ zadovoljavaju
 iste komutacijske relacije kao i moment impulsa povlači da
 su svojstvene vrijednosti od $\vec{I}^2$ $i(i+1)\hbar^2$,
 a od $\vec{K}^2$ $k(k+1)\hbar^2$, uz 
@@ -1282,7 +1506,7 @@ Resolved, Foundation of Physics, \textbf{13} (1983) 13-34}
 
 \begin{enumerate}[label=\arabic{chapter}.\arabic*.]
 
-\item
+    \item \label{zad:matj}
 Odredite $\bra{j, m'}J_{i} \ket{j, m} \equiv (J_i)_{m' m}$ za 
 $j=1/2$ i $j=1$
 
