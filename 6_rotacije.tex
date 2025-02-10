@@ -487,21 +487,15 @@ vektorski prostor kojeg ta baza razapinje. Tako imamo
 \end{itemize}
 gdje ime odražava dimenzionalnost reprezentacije.
 
-
 Važna je značajka svakog sustava u prirodi 
 njegovo ponašanje pri rotacijama. Kvantni sustavi se redovito
 transformiraju prema nekoj konkretnoj ireducibilnoj reprezentaciji grupe
 rotacija\footnote{Izolirani ili elementarni sustavi praktički uvijek, no
     općenito su moguće i kvantne superpozicije stanja s različitim $j$.}, i
  tada govorimo da je riječ o sustavu \emph{spina $j$}.
-Jedan od centralnih rezultata kvantne teorije polja je tzv.
-\emph{teorem  veze spina i statistike} koji kaže da se sustavi
-cjelobrojnog spina ponašaju u skladu s Bose-Einsteinovom
-statistikom (i zovemo ih bozonski), a oni polucjelobrojnog spina
-u skladu s Fermi-Diracovom statistikom (i zovemo ih fermionski).
 
 
-\section{Projektivne reprezentacije i orbitalni moment impulsa}
+ \section{Projektivne reprezentacije grupe \SO{3}}
 
 Nakon što smo konstruirali sve ireducibilne reprezentacije \emph{algebre} 
 \suAlg{2}=\soAlg{3}, promotrimo sada detaljnije u kojoj mjeri eksponencijacijom
@@ -538,11 +532,15 @@ se po dva elementa $U$ i $-U$ iz  \SU{2} preslikavaju u isti element
 iste lokalno (imaju istu algebru), ali ne i globalno.
 
 
-Važniji je slučaj $j=1/2$ reprezentacije. Ona je dvodimenzionalna i
+Zanimljiviji je slučaj $j=1/2$ reprezentacije. Ona je dvodimenzionalna i
 istim postupkom kao gore lako se uvjerimo da su $J_i$ do na faktor
 dani Paulijevim matricama i eksponencijacijom dobivamo definicionu
-vjernu reprezentaciju grupe \SU{2}. No, je li ona i reprezentacija
-grupe rotacija \SO{3}?
+vjernu reprezentaciju grupe \SU{2} (vidi zadatak  \ref{zad:svojstvapaulijevi})
+\begin{equation}
+ e^{-\frac{i}{2}\vec{\sigma}\cdot\unitn \theta} =
+\cos \frac{\theta}{2}-i\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \,.
+\end{equation}
+No, je li $j=1/2$ također i reprezentacija grupe rotacija \SO{3}?
 Da bismo odgovorili na to promotrimo rotaciju 
 stanja spina $j=1/2$ i pozitivne projekcije spina $m=1/2$ za 
 kut $2\pi$ oko $z$-osi
@@ -551,51 +549,90 @@ kut $2\pi$ oko $z$-osi
     e^{-i\frac{\sigma_3}{2} 2 \pi} \begin{pmatrix} 1 \\ 0 \end{pmatrix} =
     e^{-i \pi}\ket{\frac{1}{2}, +\frac{1}{2}} =
     -\ket{\frac{1}{2}, +\frac{1}{2}} \;.
+    \label{eq:ferm2pifaza}
 \end{equation}
 Vidimo da pri toj rotaciji vektor stanja mijenja predznak tj. ne vraća se u početno stanje.
 Tek je operator rotacije za $4\pi$ jednak identiteti.  Čitatelj
 se lako može uvjeriti da će takvo ponašanje imati sve polucjelobrojne
 reprezentacije.
-No po definiciji, reprezentacija $\Gamma=\{D(\phi)\}$ grupe G mora zadovoljavati
-općeniti uvjet homomorfizma s grupom
-\begin{displaymath}
-    D(\phi_1)D(\phi_2)=D(\phi_1\circ_{\textrm{\tiny G}}\phi_2)
-        =D(\phi_1 + \phi_2)
-\end{displaymath}
+No, po definiciji, reprezentacija grupe  mora zadovoljavati
+općeniti uvjet homomorfizma s grupom, što znači da operatori
+reprezentacije grupe \SO{3} moraju zadovoljavati
+\begin{equation}
+    D(\pi)D(\pi)=D(2\pi)=\Eins \,,
+\end{equation}
+no kako za operatore $j=1/2$ reprezentacije vrijedi
+\begin{equation}
+    D^{(1/2)}(\pi)D^{(1/2)}(\pi)=D^{(1/2)}(2\pi)=-\Eins \,,
+\end{equation}
+zaključujemo da $D^{(1/2)}$
+\emph{ne} čine reprezentaciju grupe \SO{3}! Drugi način gledanja
+na ovu situaciju je da preslikavanje s grupe \SO{3} na
+skup operatora  $D^{(1/2)}$ nije jednoznačno jer svakom elementu
+grupe pripadaju dva operatora $D^{(1/2)}(\phi)$ i 
+$D^{(1/2)}(\phi + 2\pi) = -D^{(1/2)}(\phi)$.
 
-Ta promjena faze
-je i eksplicitno dokazana eksperimentima s fermionskim sustavima.
+Premda dakle strogo matematički gledano polucjelobrojne reprezentacije
+grupe \SU{2} nisu reprezentacije grupe rotacija \SO{3}, u prirodi
+postoje važni sustavi koji se transformiraju prema polucjelobrojnim
+reprezentacijama (nazivamo ih fermionski\footnote{%
+Jedan od centralnih rezultata kvantne teorije polja je tzv.
+\emph{teorem  veze spina i statistike} koji kaže da se sustavi
+cjelobrojnog spina ponašaju u skladu s Bose-Einsteinovom
+statistikom (i zovemo ih bozonski), a oni polucjelobrojnog spina
+u skladu s Fermi-Diracovom statistikom (i zovemo ih fermionski).
+Npr. foton je spina 1 i time bozon, a elektron je spina 1/2 i time fermion.})
+ i promjena faze vidljiva u (\ref{eq:ferm2pifaza})
+se lijepo može vidjeti u eksperimentima.
 
-
-dok za $m = 1/2, 3/2, 5/2, \ldots$ imamo npr.
-\begin{displaymath}
- D(\pi) D(\pi) = e^{i m \pi}e^{i m \pi} = e^{2 i m \pi}=-1
-\neq D(2\pi)=1 \;.
-\end{displaymath}
-Riječ je o tome da se u QM $D(\phi_1)D(\phi_2)\ket{\alpha}$ i
-$D(\phi_1 + \phi_2)\ket{\alpha}$ smiju razlikovati za fazu
-a da i dalje opisuju isto fizikalno stanje.
-
-Tako na QM stanjima dopuštamo reprezentiranje grupe i tzv.
-\emph{projektivnim reprezentacijama} s ``olabavljenim'' uvjetom homomorfizma:
+Tu formalno problematičnu situaciju možemo formalno razriješiti na dva
+načina. Prvi je da iskoristimo (fizikalnu, a ne matematičku!)
+činjenicu da u kvantnoj mehanici vektori Hilbertovog prostora koji
+se razlikuju za fazu i dalje opisuju isto fizikalno stanje.
+Tamo onda možemo dopustiti reprezentiranje grupe simetrija i tzv.
+\emph{projektivnim reprezentacijama} kod kojih je standardni
+uvjet homomorfizma "olabavljen" dopuštanjem razlike u fazi
 \begin{displaymath}
    D(g_1)D(g_2)=e^{i \phi(g_1,g_2)}D(g_1 g_2) \;.
+   \label{eq:projektivnarep}
 \end{displaymath}
+Ovdje se nećemo upuštati u općenitu teoriju projektivnih reprezentacija 
+(za diskusiju u kontekstu kvantne fizike vidi \cite{Weinberg}),
+nego ćemo samo izreći nekoliko nama relevantnih rezultata:
 
-- O grupi ovisi hoće li ona imati i projektivnih REP, a o fizikalnom
-sustavu hoće li se transformirati obzirom na projektivne REP ili ne.
+\begin{itemize}
+    \item O strukturi grupe ovisi hoće li ona imati i projektivnih 
+        reprezentacija\footnote{Ovdje se misli na projektivne reprezentacije
+        koje su netrivijalne u smislu da se faza u (\ref{eq:projektivnarep})
+        ne može eleminirati jednostavnom redefinicijom operatora $D(g) \to
+        e^{i\phi(g)}D(g)$.}, a o fizikalnom sustavu hoće li se transformirati 
+        obzirom na projektivne reprezentacije ili ne.
 
-- Jedan od načina da grupa ima i projektivne reprezentacije je da
-  ne bude jednostavno povezana.
+    \item  Jedan od načina da grupa ima i projektivne reprezentacije je da
+           ne bude jednostavno povezana. Konkretna topologija grupnog prostora
+           određuje mogućnosti za fazu $\phi(g_1,g_2)$.
 
-\SO{3} je dvostruko povezana i dopušta dvije faze: $\pm 1$. Fermioni
-su čestice koje se transformiraju projektivno.
+    \item \SO{3} je dvostruko povezana i dopušta dvije faze: $\pm 1$. Fermionski
+          sustavi se transformiraju projektivno. U literaturi se nekad kaže
+          da se fermioni transformiraju u skladu s \emph{dvovrijednom} (engl.
+          \emph{double-valued}) reprezentacijom grupe rotacija gdje se misli
+          da preslikavanje s elementa grupe rotacija ide u skup od dva operatora ($U$ i $-U$)
+          iz \SU{2}.
+\end{itemize}
 
-\SO{2} je beskonačno povezana i ima beskonačno mogućih faza. No, sustavi
-koje razmatramo su 3D i čak i pod 2D rotacijama mogu samo promijeniti
-predznak tj. \SO{2} je ovdje samo podgrupa od \SO{3}.
+Grupa \SU{2} je jednostavno povezana i sve njene reprezentacije su "obične".
+To nam onda omogućuje drugi pristup ovom formalnom problemu, a to je da
+prihvatimo da je zapravo \SU{2} "prava" grupa rotacija i prava simetrija prirode
+i onda ne moramo razmatrati projektivne reprezentacije.
+To može na prvi pogled biti protivno intuiciji, ali postoje i klasične
+situacije gdje rotacije kod kojih rotacije za 360 stupnjeva nisu identične
+rotaciji za nula stupnjeva, a one za 720 stupnjeva jesu (poznati trikovi
+s pojasom ili konobarevim pladnjem). Također, najjednostavniji odgovor na
+pitanje kako komponirati dvije prostorne rotacije dobije se upravo korištenjem
+kvaterniona (koji su ekvivalentni grupi \SU{2}) što isto sugerira svojvrsnu
+fundamentalnost grupe \SU{2} i izvan kvantnomehaničkog konteksta.
 
---------------
+\section{Orbitalni moment impulsa}
 
 Među raznim operatorima u kvantnoj mehanici koji zadovoljavaju
 komutacijske relacije \suAlg{2} algebre nailazimo i na važni
@@ -604,7 +641,11 @@ operator \emph{orbitalnog momenta impulsa} oblika
 \vec{L} = \vec{r} \times \vec{p} \;,
 \label{eq:Lorb}
 \end{equation}
-gdje \suAlg{2} komutacijske relacije slijede izravno iz
+gdje \suAlg{2} komutacijske relacije 
+\begin{equation}
+    [L_i, L_j] = \rmi \hbar \epsilon_{ijk} L_k \,,
+\end{equation}
+slijede izravno iz
 temeljnih kvantnomehaničkih komutacijskih relacija
 \begin{equation}
     [r_i, p_j] = i\hbar \delta_{ij} \Eins \,.
@@ -614,10 +655,10 @@ temeljnih kvantnomehaničkih komutacijskih relacija
 Iz kvantne mehanike je poznato da orbitalni moment impulsa
 poprima samo cjelobrojne vrijednosti 
 \begin{equation}
-     \vec{L}^2 \ket{l, m} = \hbar^2 l(l+1) \ket{l,m} \qquad l=0,1,2,\ldots
+     \vec{L}^2 \ket{l, m} = \hbar^2 l(l+1) \ket{l,m} \qquad l=0,1,2,\ldots\,,
 \end{equation}
-i odgovarajući momenti impulsa tj. ireduciblne
-reprezentacije se označavaju s $l$, a ne $j$.
+i odgovarajući momenti impulsa tj. ireducibilne
+reprezentacije se tradicionalno označavaju s $l$, a ne $j$.
 Iz povijesnih razloga vezanih uz atomsku fiziku, stanja koja
 pripadaju $l=0,1,2,\ldots$ reprezentacijama
 se često nazivaju $S, P, D,\ldots$ stanja, a $m$ se ponekad naziva
@@ -657,17 +698,17 @@ trivijalno. One djeluju netrivijalno na kutni dio $Y^{(l)}_{m}(\theta, \phi)$
 i tu, analizom svojstvenih funkcija Laplaceove diferencijalne
 jednadžbe (kutnog dijela Schr\"{o}dingerove jednadžbe), se u
 standardnim knjigama iz kvantne mehanike pokazuje da su rotacije
-ireduciblne na \emph{konačnodimenzionalnim} prostorima razapetim
+ireduciblne na \emph{konačno-dimenzionalnim} prostorima razapetim
 funkcijama $Y^{(l)}_{m}(\theta, \phi)$ za $m \in \{-l, -l+1, \ldots, l\}$.
-Dakle potpuno smo u domeni rezultata prošlog odjeljka i ostaje
-samo pitanje što je s polucjelobrojnim reprezentacijama.
+Dakle potpuno smo u okviru razmatranja i rezultata prošlog odjeljka i ostaje
+nam samo odgovoriti na pitanje što je s polucjelobrojnim reprezentacijama.
 
 U literaturi se do rezultata da $l$ ne može biti polucjelobrojan
 često dolazi nezadovoljavajuće. Autori se uglavnom oslanjaju na postavljanje rubnih
 uvjeta na rješenja Laplaceove jednadžbe; konkretno, zahtijevaju
 da valne funkcije moraju zadovoljavati $\psi(\phi + 2\pi) = \psi(\phi)$.
-No sve fizikalne posljedice su, kako smo maločas diskutirali u
-kontekstu projektivnih reprezentacija, neosjetljive na fazu valne funkcije
+No sve fizikalne posljedice su, kako smo baš diskutirali
+u prošlom odjeljku, neosjetljive na fazu valne funkcije
 i nema nikakvog fizikalnog razloga zahtijevati takve rubne uvjete,
 pogotovu kad smo svjesni da u prirodi postoje sustavi (fermioni)
 koji takve zahtjeve \emph{ne} zadovoljavaju.
