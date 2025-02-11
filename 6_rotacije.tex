@@ -495,7 +495,8 @@ rotacija\footnote{Izolirani ili elementarni sustavi praktički uvijek, no
  tada govorimo da je riječ o sustavu \emph{spina $j$}.
 
 
- \section{Projektivne reprezentacije grupe \SO{3}}
+\section{Projektivne reprezentacije grupe \SO{3}}
+ \label{sec:projektivnerep}
 
 Nakon što smo konstruirali sve ireducibilne reprezentacije \emph{algebre} 
 \suAlg{2}=\soAlg{3}, promotrimo sada detaljnije u kojoj mjeri eksponencijacijom
@@ -616,8 +617,8 @@ nego ćemo samo izreći nekoliko nama relevantnih rezultata:
           sustavi se transformiraju projektivno. U literaturi se nekad kaže
           da se fermioni transformiraju u skladu s \emph{dvovrijednom} (engl.
           \emph{double-valued}) reprezentacijom grupe rotacija gdje se misli
-          da preslikavanje s elementa grupe rotacija ide u skup od dva operatora ($U$ i $-U$)
-          iz \SU{2}.
+          da se svaki pojedini element grupe rotacija preslikava
+          u skup $\{U, -U\}$ dvaju operatora iz \SU{2}.
 \end{itemize}
 
 Grupa \SU{2} je jednostavno povezana i sve njene reprezentacije su "obične".
@@ -625,10 +626,11 @@ To nam onda omogućuje drugi pristup ovom formalnom problemu, a to je da
 prihvatimo da je zapravo \SU{2} "prava" grupa rotacija i prava simetrija prirode
 i onda ne moramo razmatrati projektivne reprezentacije.
 To može na prvi pogled biti protivno intuiciji, ali postoje i klasične
-situacije gdje rotacije kod kojih rotacije za 360 stupnjeva nisu identične
-rotaciji za nula stupnjeva, a one za 720 stupnjeva jesu (poznati trikovi
+situacije kod kojih rotacija za 360 stupnjeva nije identična
+rotaciji za nula stupnjeva, a ona za 720 stupnjeva jest (poznati trikovi
 s pojasom ili konobarevim pladnjem). Također, najjednostavniji odgovor na
-pitanje kako komponirati dvije prostorne rotacije dobije se upravo korištenjem
+pitanje kako komponirati dvije prostorne rotacije tj. kako odrediti
+rezultantni kut i os rotacije, dobije se upravo korištenjem
 kvaterniona (koji su ekvivalentni grupi \SU{2}) što isto sugerira svojvrsnu
 fundamentalnost grupe \SU{2} i izvan kvantnomehaničkog konteksta.
 
@@ -769,268 +771,145 @@ $L_z$ dane s
 \end{equation}
 tj. da su svakako cjelobrojne, što je i trebalo pokazati.
 
-
 \section{Zbrajanje momenata impulsa i Clebsch-Gordanovi koeficijenti}
 
-Sustav od dvije čestice, sa spinovima $j_1$ i $j_2$ u stanju 
-$\ket{j_1, m_1; j_2, m_2}$ ima svojstva:
-\begin{align*}
-\vec{J}_{1}^2 \ket{j_1, m_1; j_2, m_2} &= j_1(j_1+1)\hbar^2 
-  \ket{j_1, m_1; j_2, m_2} \\
-\vec{J}_{2}^2 \ket{j_1, m_1; j_2, m_2} &= j_2(j_2+1)\hbar^2 
-  \ket{j_1, m_1; j_2, m_2} \\
-J_{1z}\ket{j_1, m_1; j_2, m_2} &= m_1 \hbar \ket{j_1, m_1; j_2, m_2}\\
-J_{2z}\ket{j_1, m_1; j_2, m_2} &= m_2 \hbar \ket{j_1, m_1; j_2, m_2}
-\end{align*}
-\begin{align*}
+Kod konačnih grupa smo razmatrali pitanje direktnog produkta
+ireducibilnih reprezentacija i njegovog rastavljanja na tzv.
+Clebsch-Gordanov direktni zbroj. U kontekstu ireducibilnih
+reprezentacija grupe rotacija to je pitanje ekvivalentno
+poznatom problemu "zbrajanja momenata impulsa" u kvantnoj
+mehanici. Čitatelj koji poznaje to gradivo neće u ovom
+odjeljku naći ništa novo, no edukativno je razumjeti te
+rezultate izrečene jezikom teorije reprezentacija grupe rotacija.
+
+Promotrimo fizikalni sustav izgrađen od dvaju podsustava poznatih
+spinova $j_1$ i $j_2$. 
+Ako su stanja pojedinog podsustava opisana vektorima u
+prostorima $V_1$ i $V_2$
+\begin{align}
 \ket{j_1, m_1} &\in V_1\\
-\ket{j_2, m_2} &\in V_2\\
-\ket{j_1, m_1; j_2, m_2}&\equiv\ket{j_1, m_1}\ket{j_2, m_2} \in V_1\otimes V_2
-\end{align*}
+\ket{j_2, m_2} &\in V_2\,,
+\end{align}
+onda će združeni sustav biti opisan vektorima
+\begin{equation}
+    \ket{j_1, m_1; j_2, m_2} \equiv\ket{j_1, m_1}\ket{j_2, m_2} \,,
+\end{equation}
+koji su elementi produktnog vektorskog prostora $V_1\otimes V_2$.
+Na $V_1$ i $V_2$ su definirani operatori momenta impulsa
+$\vec{J}_1$ i $\vec{J}_2$ sa svojstvima
+\begin{align}
+\vec{J}_{1}^2 \ket{j_1, m_1; j_2, m_2} &= j_1(j_1+1)\hbar^2 
+  \ket{j_1, m_1; j_2, m_2}\,, \\
+\vec{J}_{2}^2 \ket{j_1, m_1; j_2, m_2} &= j_2(j_2+1)\hbar^2 
+  \ket{j_1, m_1; j_2, m_2}\,, \\
+J_{1z}\ket{j_1, m_1; j_2, m_2} &= m_1 \hbar \ket{j_1, m_1; j_2, m_2}\,,\\
+J_{2z}\ket{j_1, m_1; j_2, m_2} &= m_2 \hbar \ket{j_1, m_1; j_2, m_2}\,.
+\end{align}
 Na vektorskom
-prostoru $V_1$ grupa rotacija reprezentirana je operatorima $D^{(j_1)}=
+prostoru $V_1$ grupa rotacija reprezentirana\footnote{Odsad ćemo i projektivne reprezentacije
+    grupe \SO{3} zvati samo reprezentacije, ili ćemo \SU{2} smatrati grupom rotacija,
+štogod je čitatelju draže, vidi odjeljak \ref{sec:projektivnerep}.}
+je operatorima $D^{(j_1)}=
 \exp(-i\vec{J}_1\cdot\hat{\vec{n}}\theta/\hbar)$ (i slično za $V_2$),
 a na $V_1\otimes V_2$ operatorima
 $D^{(j_1)}\otimes D^{(j_2)}$.
-
 Međutim, $D^{(j_1)}\otimes D^{(j_2)}$ je općenito reducibilna reprezentacija
-koja nema dobro definiran spin. $\ket{j_1, m_1; j_2, m_2}$ nije nužno svojstveno
-stanje od $\vec{J}^2 = (\vec{J}_1 + \vec{J}_2)^2$ --- operatora ukupnog spina
-sustava.
+odnosno združeni sustav nema nužno definirani spin. 
+$\ket{j_1, m_1; j_2, m_2}$ nije nužno svojstveno
+stanje operatora ukupnog spina združenog sustava $\vec{J}^2 = (\vec{J}_1 + \vec{J}_2)^2$.
 
-Rastav na IRREPSE:
+Da bismo ustanovili moguće spinove združenog sustava trebamo
+provesti Clebsch-Gordanov rastav $D^{(j_1)}\otimes D^{(j_2)}$ na direktni
+zbroj ireducibilnih reprezentacija
 \begin{displaymath}
   D^{(j_1)}\otimes D^{(j_2)} =
-  \sum_J \oplus\: a_{J}D^{(J)} \quad
-   \textrm{ - Clebsch-Gordanov razvoj }
+  \sum_J \oplus\: a_{J}D^{(J)} \,,
 \end{displaymath}
-
+gdje su koeficijenti kao i inače dani s
 \begin{displaymath}
-a_J = \left( \chi^{(J)}, \chi^{(j_1)} \chi^{(j_2)} \right)
+a_J = \left( \chi^{(J)}, \chi^{(j_1)} \chi^{(j_2)} \right) \,.
 \end{displaymath}
-
 Za općeniti račun skalarnih umnožaka karaktera trebali bismo
-znati invarijantno integrirati u grupnom prostoru (cf. Jones,
+znati invarijantno integrirati u grupnom prostoru grupe rotacija (cf. Jones,
 Appendix C ili Hamermesh 9-2), ali ovdje ćemo potrebni rezulatat
-dobiti i bez toga, uz par matematičkih trikova:
-
-Kao reprezentante klasa biramo rotacije oko $z$-osi.
+dobiti i bez toga, uz par matematičkih trikova.
+Kako su karakteri konstante klasa konjugacije, za reprezentante 
+klasa biramo rotacije oko $z$-osi za koje su odgovarajući operatori
+rotacije dijagonalni
 \begin{equation}
 \begin{split}
- \chi^{(j)}(\phi) &= \Tr D^{(j)}(\phi) = \Tr e^{(-i/\hbar)J_3 \phi} \\
- &= \Tr \textrm{diagonal}\left( e^{-i j\phi }, e^{-i (j-1)\phi}, \ldots,
-e^{-i(-j)\phi}\right)\\
-&= e^{-ij\phi } + e^{-i (j-1)\phi} + \cdots + e^{-i(-j)\phi}\\
-&= \text{geom. red s omjerom članova $e^{i j\phi}$} \\
-&= e^{-i j\phi} \frac{1- (e^{i j\phi})^{2j+1}}{1-e^{i\phi}}
-= \frac{e^{-i(j+1/2)\phi} - e^{i(j+1/2)\phi}}{e^{-i\phi/2}-e^{i\phi/2}}\\
+ \chi^{(j)}(\phi) &= \Tr D^{(j)}(\phi) = \Tr e^{(-\rmi/\hbar)J_3 \phi} \\
+ &= \Tr \textrm{diagonal}\left( e^{-\rmi j\phi }, e^{-\rmi (j-1)\phi}, \ldots,
+e^{-\rmi(-j)\phi}\right)\\
+&= e^{-\rmi j\phi } + e^{-\rmi (j-1)\phi} + \cdots + e^{-\rmi(-j)\phi}\\
+&= \text{geometrijski red s omjerom članova $e^{\rmi j\phi}$} \\
+&= e^{-\rmi j\phi} \frac{1- (e^{\rmi j\phi})^{2j+1}}{1-e^{\rmi\phi}}
+= \frac{e^{-\rmi(j+1/2)\phi} - e^{\rmi(j+1/2)\phi}}{e^{-\rmi\phi/2}-e^{\rmi\phi/2}}\\
 &= \frac{\sin(j+1/2)\phi}{\sin\phi/2}
 \end{split}
 \end{equation}
-
-
 Odredimo sada koeficijente $a_J$ Clebsch-Gordanovog razvoja. Pretpostavimo
-prvo da je $j_1 \ge j_2$.
+prvo da je $j_1 \ge j_2$. Tada vrijedi
 \begin{equation}
 \begin{split}
 \chi^{(j_1)}(\phi)\chi^{(j_2)}(\phi)&=
- \frac{e^{+i(j_1+1/2)\phi} - e^{-i(j_1+1/2)\phi}}{2i\sin\phi/2}
-\sum_{m=-j_2}^{j_2}e^{i m \phi}\\
-&= \frac{1}{2 i \sin\phi/2} \sum_{m=-j_2}^{j_2}
-\left[ e^{i(j_1+m+1/2)\phi} - e^{-i(j_1-m+1/2)\phi}\right]\\
+ \frac{e^{+\rmi(j_1+1/2)\phi} - e^{-\rmi(j_1+1/2)\phi}}{2\rmi\sin\phi/2}
+\sum_{m=-j_2}^{j_2}e^{\rmi m \phi}\\
+&= \frac{1}{2 \rmi \sin\phi/2} \sum_{m=-j_2}^{j_2}
+\left[ e^{\rmi(j_1+m+1/2)\phi} - e^{-\rmi(j_1-m+1/2)\phi}\right]\\
 &= (\text{zamjena $m\to -m$ u drugom članu}) \\
 &=\sum_{m=-j_2}^{j_2} \frac{\sin(j_1+m+1/2)\phi}{\sin\phi/2}\\
 &=\sum_{m=-j_2}^{j_2} \chi^{(j_1 + m)}(\phi) \qquad (J\equiv j_1 +m) \\
 &=\sum_{J=j_1-j_2}^{J=j_1+j_2} \chi^{(J)}(\phi) \;.
 \end{split}
 \end{equation}
-($J$ mora biti pozitivan da bi bio labela neke IRREPS. Zato smo
-tražili $j_1\ge j_2$.)
-Za slučaj $j_2 \ge j_1$ imali bi sve isto, uz zamjenu $j_1 \leftrightarrow
+Ovdje $J$ mora biti pozitivan da bi bio labela neke ireducibilne
+reprezentacije. Zato smo se ograničili na $j_1\ge j_2$.
+Za slučaj $j_2 \ge j_1$ imali bi sve isto kao gore, samo uz zamjenu $j_1 \leftrightarrow
 j_2$. Slijedi da općenito možemo pisati:
-\begin{displaymath}
+\begin{equation}
  \chi^{(j_1)}(\phi)\chi^{(j_2)}(\phi)=
 \sum_{J=|j_1-j_2|}^{J=j_1+j_2} \chi^{(J)}(\phi)
-\end{displaymath}
+\end{equation}
 Dakle,
-\begin{displaymath}
+\begin{equation}
  a_J = \left(\chi^{(J)}, \chi^{(j_1)}\chi^{(j_2)}\right) =
  \sum_{J'=|j_1-j_2|}^{J'=j_1+j_2} 
 \underbrace{\left(\chi^{(J)}, \chi^{(J')}\right)}_{\delta_{JJ'}}
-\end{displaymath}
+\end{equation}
 odnosno,
 \begin{equation}
 D^{(j_1)} \otimes D^{(j_2)} = \sum_{J=|j_1-j_2|}^{J=j_1+j_2} 
-\oplus D^{(J)}
+\oplus D^{(J)} \,. \label{eq:CGrot}
 \end{equation}
-
-Npr. $D^{(1/2)}\otimes D^{(1)} = D^{(1/2)} \oplus D^{(3/2)}$.
-
-- Ovo da se svaka ireducibilna reprezentacija pojavljuje najviše jednom
-je veliko pojednostavljenje svojstveno grupi rotacija.
-
-- D.Z. Uvjerite se da se dimenzije dobro zbrajaju tj. da je 
+Kao primjer, vrijedi $D^{(1/2)}\otimes D^{(1)} = D^{(1/2)} \oplus D^{(3/2)}$.
+Treba primijetiti da se svaka ireducibilna reprezentacija pojavljuje najviše jednom
+u  Clebsch-Gordanovom razvoju. To je veliko pojednostavljenje svojstveno grupi rotacija.
+Za čitaoca bi bilo dobro da se uvjeri da su dimenzionalnosti reprezentacija
+u (\ref{eq:CGrot}) konzistentne tj. da je
 \begin{displaymath}
-    \sum_{J=|j_1-j_2|}^{J=j_1+j_2} (2J+1) = (2j_1+1)(2j_2+1)
+    \sum_{J=|j_1-j_2|}^{J=j_1+j_2} (2J+1) = (2j_1+1)(2j_2+1) \,.
 \end{displaymath}
 
-No, za primjene je zanimljivije zbrajanje stanja!
-
-$\ket{j_1, m_1; j_2, m_2}$ su vektori koji su baza od $V_1 \otimes V_2$ i
-koji su svojstveni vektori operatora $\{\jsqj, \jsqd, J_{1z}, J_{2z}\}$. No,
-postoji i baza $\ket{j_1, j_2; J, M}\equiv\ket{J, M}$
+Osim gore navedene baze prostora $V_1 \otimes V_2$
+$\ket{j_1, m_1; j_2, m_2}$ koju čine
+svojstveni vektori operatora $\{\jsqj, \jsqd, J_{1z}, J_{2z}\}$ u kvantnomehaničkim
+računima je važna i baza $\ket{j_1, j_2; J, M}\equiv\ket{J, M}$
 tog istog prostora koju čine svojstveni vektori operatora
 $\{\jsqj, \jsqd, \jsq, J_z\}$.
-
-- D.Z. Uvjerite se da je
-\begin{displaymath}
-   [\jsq, \jsqj] = [\jsq, \jsqd] = 0
-\end{displaymath}
-
-- Dvije baze su naravno povezane:
-\begin{equation*}
+Ove dvije baze su naravno povezane
+\begin{equation}
 \ket{J, M} = \underbrace{\sum_{m_1,m_2}\ket{j_1, m_1; j_2, m_2}
 \bra{j_1, m_1; j_2, m_2}}_{=1}
-\ket{J, M}
-\end{equation*}
+\ket{J, M} \,,
+\end{equation}
+i koeficijenti razvoja jedne baze po drugoj
 \begin{equation}
  \bra{j_1, m_1; j_2, m_2} J, M\rangle \equiv C^{JM}_{j_1m_1j_2m_2}
-\quad \text{Clebsch-Gordanovi koeficijenti}
 \end{equation}
-
-\subsubsection{Svojstva Clebsch-Gordanovih koeficijenata$^*$}
-\begin{itemize}
-\item $C^{JM}_{j_1m_1j_2m_2}=0$ ako nije $|j_1-j_2|\le J\le j_1 + j_2$. \\
-Dokaz: očito iz rastava $D^{(j_1)}\otimes D^{(j_2)}$.
-
-\item $C^{JM}_{j_1m_1j_2m_2}=0$ ako nije $M=m_1+m_2$.\\
-Dokaz: 
-\begin{gather}
-\vec{J}=\vec{J}_{1}+\vec{J}_{2} \imp J_z-J_{1z}-J_{2z}=0 \\
-\bra{j_1, m_1; j_2, m_2}(J_z-J_{1z}-J_{2z})\ket{J, M} = 0 \\
-(M-m_1-m_2)\bra{j_1, m_1; j_2, m_2} J, M\rangle = 0
-\end{gather}
-
-\item CG-koeficijenti imaju neodređenu fazu. Standardni izbor je
-da se uzme $C^{JJ}_{j_1 j_1 j_2 (J-j_1)}$ realan i pozitivan.
-Kao (netrivijalna) posljedica toga, svi CG-koeficijenti ispadaju realni.
-
-\item
-\begin{displaymath}
- \sum_{JM} C^{JM}_{j_1m_1j_2m_2} C^{JM}_{j_1m'_1j_2m'_2} =
-\delta_{m_1 m'_1} \delta_{m_2 m'_2}
-\end{displaymath}
-
-\item
-\begin{displaymath}
-  \sum_{m_1, m_2} C^{JM}_{j_1m_1j_2m_2}C^{J'M'}_{j_1m_1j_2m_2} =
- \delta_{JJ'}\delta_{MM'}
-\end{displaymath}
-
-\item
-\begin{displaymath}
- \ket{J, M} = \sum_{m_1, m_2} C^{JM}_{j_1m_1j_2m_2}\ket{j_1, m_1; j_2, m_2}
-\end{displaymath}
-(Isti koeficijenti pretvaraju baze u oba smjera.). Za dokaz, 
-pomnožiti s $\sum_{J,M}C^{JM}_{j_1m'_1j_2m'_2}$ i koristiti svojstva
-ortogonalnosti.
-
-\item
-\begin{displaymath}
- C^{JM}_{j_1m_1j_2m_2} = (-1)^{J-j_1 -j_2} C^{JM}_{j_2 m_2 j_1 m_1}
-\end{displaymath}
-\secret{Netrivijalno, cf. Cornwell}
-\end{itemize}
-
-\subsubsection{Izračunavanje Clebsch-Gordanovih koeficijenata$^*$}
-\label{tripletsinglet}
-
-Primjer: 
- $D^{(1/2)}\otimes D^{(1/2)} = D^{(1)} \oplus D^{(0)}$.
-
-Prva baza: $\ket{1/2, m_1; 1/2, m_2}\equiv\ket{m_1, m_2}$.
-$m_{1,2}=\pm 1/2$ $\imp$ 4 stanja
-
-Druga baza: $\ket{J, M}$. $M=-1, 0, 1$ za $J=1$ i $M=0$ za $J=0$.
-$\imp 3+1=4$ stanja.
-
-\begin{equation*}
-\begin{split}
- \ket{1,1} &= \sum_{m_1, m_2}C^{1 1}_{\fhalf m_1 \fhalf m_2}\ket{m_1, m_2}\\
-& (M=m_1+m_2=1 \imp m_1=m_2=\fhalf )\\
-&= C^{1 1}_{\fhalf \fhalf \fhalf \fhalf}\ket{\fhalf, \fhalf}
-\end{split}
-\end{equation*}
-
-To što su oba stanja normirana povlači da je $|C^{1 1}_{\fhalf \fhalf
-\fhalf \fhalf}|=1$. Već smo odabrali da je $C\in\mathbb{R}$, a sada
-još biramo i da je pozitivan: 
-$C^{1 1}_{\fhalf \fhalf \fhalf \fhalf}=1$.
-\begin{displaymath}
-    \ket{1, 1} = \ket{\fhalf, \fhalf}
-\end{displaymath}
-
-Sada, da bismo dobili ostale CG-koeficijente,
-djelujemo s $J_- = J_{1-}+J_{2-}$ na obje strane ove jednadžbe:
-
-\begin{align*}
-J_- \ket{1, 1}&=\hbar \sqrt{(1+1)(1-1+1)} \ket{1,0} =\hbar\sqrt{2}\ket{1, 0}\\
-J_{1-} \ket{\fhalf, \fhalf}&=\hbar\ket{-\fhalf, \fhalf}\\
-J_{2-} \ket{\fhalf, \fhalf}&=\hbar\ket{\fhalf, -\fhalf}\\
-\end{align*}
-
-Slijedi
-\begin{displaymath}
- \ket{1, 0} = \frac{1}{\sqrt{2}}\left(\ket{\fhalf, -\fhalf}+
-\ket{-\fhalf, \fhalf}\right)
-\end{displaymath}
-tj.
-\begin{displaymath}
-C^{1 0}_{\fhalf -\fhalf \fhalf \fhalf}=
-C^{1 0}_{\fhalf  \fhalf \fhalf -\fhalf} = \frac{1}{\sqrt{2}}
-\end{displaymath}
-
-Nadalje,
-\begin{displaymath}
-    \ket{1, -1} = \ket{-\fhalf, -\fhalf} \imp
-C^{1 -1}_{\fhalf -\fhalf \fhalf -\fhalf}= 1
-\end{displaymath}
-D.Z. - Dobiti ovo s $J_-$.
-
-Na kraju, napišimo, imajući u vidu da $M=m_1+m_2$
-\begin{displaymath}
- \ket{0,0} = \alpha\ket{\fhalf, -\fhalf}+\beta\ket{-\fhalf, \fhalf} \;,
-\end{displaymath}
-gdje su $\alpha$ i $\beta$  koeficijenti koje treba odrediti.
-Djelovanjem s $J_-$ na obje strane imamo:
-\begin{equation}
-\begin{split}
-0 &= \alpha\ket{-\fhalf, -\fhalf} + \beta\ket{-\fhalf, -\fhalf} + 0 + 0\\
-&= (\alpha+\beta)\ket{-\fhalf, -\fhalf} \imp \beta=-\alpha
-\end{split}
-\end{equation}
-$\imp$
-\begin{displaymath}
-   \ket{0,0}=\alpha\left(\ket{\fhalf, -\fhalf}-\ket{-\fhalf, \fhalf}
-\right)
-\end{displaymath}
-Normalizacija i izbor faze daju $\alpha=1/\sqrt{2}$ tj.
-\begin{displaymath}
- C^{0 0}_{\fhalf \fhalf \fhalf -\fhalf}=
- -C^{0 0}_{\fhalf -\fhalf \fhalf \fhalf}= \frac{1}{\sqrt{2}}.
-\end{displaymath}
-
-- Svi ostali koeficijenti su nula.
-
-- Za CG-koeficijente postoje tablice i računalni programi. Za
-  generalnu formulu vidi Hamermesh 9-8.
-
-Dosad rečeno nam opisuje ponašanje proizvoljnog kvantnomehaničkog
-stanja pri rotaciji:
-\begin{itemize}
-\item $\ket{j, m}$ stanja se transformiraju pod IRREPsima - $D$-funkcije
-\item složenija stanja reduciramo pomoću Clebsch-Gordanovih koeficijenata
-\end{itemize}
+nazivaju se \emph{Clebsch-Gordanovi koeficijenti} i mogu se naći tabelirani
+    u literaturi. U Dodatku \ref{sec:clebsch} mogu se naći neka svojstva
+ovih koeficijenata i metoda njihovog određivanja.
 
 
 \section{Tenzorski operatori i Wigner-Eckartov teorem}

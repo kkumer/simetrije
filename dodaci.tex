@@ -688,3 +688,132 @@ Kvaternioni u kontekstu teorije grupa su detaljno diskutirani u \cite{Stilwell:2
 
 O svojstvima eksponenciranja matrica \ldots
 
+
+\chapter{Clebsch-Gordanovi koeficijenti}
+\label{sec:clebsch}
+
+\begin{itemize}
+\item $C^{JM}_{j_1m_1j_2m_2}=0$ ako nije $|j_1-j_2|\le J\le j_1 + j_2$. \\
+Dokaz: očito iz rastava $D^{(j_1)}\otimes D^{(j_2)}$.
+
+\item $C^{JM}_{j_1m_1j_2m_2}=0$ ako nije $M=m_1+m_2$.\\
+Dokaz: 
+\begin{gather}
+\vec{J}=\vec{J}_{1}+\vec{J}_{2} \imp J_z-J_{1z}-J_{2z}=0 \\
+\bra{j_1, m_1; j_2, m_2}(J_z-J_{1z}-J_{2z})\ket{J, M} = 0 \\
+(M-m_1-m_2)\bra{j_1, m_1; j_2, m_2} J, M\rangle = 0
+\end{gather}
+
+\item CG-koeficijenti imaju neodređenu fazu. Standardni izbor je
+da se uzme $C^{JJ}_{j_1 j_1 j_2 (J-j_1)}$ realan i pozitivan.
+Kao (netrivijalna) posljedica toga, svi CG-koeficijenti ispadaju realni.
+
+\item
+\begin{displaymath}
+ \sum_{JM} C^{JM}_{j_1m_1j_2m_2} C^{JM}_{j_1m'_1j_2m'_2} =
+\delta_{m_1 m'_1} \delta_{m_2 m'_2}
+\end{displaymath}
+
+\item
+\begin{displaymath}
+  \sum_{m_1, m_2} C^{JM}_{j_1m_1j_2m_2}C^{J'M'}_{j_1m_1j_2m_2} =
+ \delta_{JJ'}\delta_{MM'}
+\end{displaymath}
+
+\item
+\begin{displaymath}
+ \ket{J, M} = \sum_{m_1, m_2} C^{JM}_{j_1m_1j_2m_2}\ket{j_1, m_1; j_2, m_2}
+\end{displaymath}
+(Isti koeficijenti pretvaraju baze u oba smjera.). Za dokaz, 
+pomnožiti s $\sum_{J,M}C^{JM}_{j_1m'_1j_2m'_2}$ i koristiti svojstva
+ortogonalnosti.
+
+\item
+\begin{displaymath}
+ C^{JM}_{j_1m_1j_2m_2} = (-1)^{J-j_1 -j_2} C^{JM}_{j_2 m_2 j_1 m_1}
+\end{displaymath}
+\secret{Netrivijalno, cf. Cornwell}
+\end{itemize}
+
+\subsubsection{Izračunavanje Clebsch-Gordanovih koeficijenata$^*$}
+\label{tripletsinglet}
+
+Primjer: 
+ $D^{(1/2)}\otimes D^{(1/2)} = D^{(1)} \oplus D^{(0)}$.
+
+Prva baza: $\ket{1/2, m_1; 1/2, m_2}\equiv\ket{m_1, m_2}$.
+$m_{1,2}=\pm 1/2$ $\imp$ 4 stanja
+
+Druga baza: $\ket{J, M}$. $M=-1, 0, 1$ za $J=1$ i $M=0$ za $J=0$.
+$\imp 3+1=4$ stanja.
+
+\begin{equation*}
+\begin{split}
+ \ket{1,1} &= \sum_{m_1, m_2}C^{1 1}_{\fhalf m_1 \fhalf m_2}\ket{m_1, m_2}\\
+& (M=m_1+m_2=1 \imp m_1=m_2=\fhalf )\\
+&= C^{1 1}_{\fhalf \fhalf \fhalf \fhalf}\ket{\fhalf, \fhalf}
+\end{split}
+\end{equation*}
+
+To što su oba stanja normirana povlači da je $|C^{1 1}_{\fhalf \fhalf
+\fhalf \fhalf}|=1$. Već smo odabrali da je $C\in\mathbb{R}$, a sada
+još biramo i da je pozitivan: 
+$C^{1 1}_{\fhalf \fhalf \fhalf \fhalf}=1$.
+\begin{displaymath}
+    \ket{1, 1} = \ket{\fhalf, \fhalf}
+\end{displaymath}
+
+Sada, da bismo dobili ostale CG-koeficijente,
+djelujemo s $J_- = J_{1-}+J_{2-}$ na obje strane ove jednadžbe:
+
+\begin{align*}
+J_- \ket{1, 1}&=\hbar \sqrt{(1+1)(1-1+1)} \ket{1,0} =\hbar\sqrt{2}\ket{1, 0}\\
+J_{1-} \ket{\fhalf, \fhalf}&=\hbar\ket{-\fhalf, \fhalf}\\
+J_{2-} \ket{\fhalf, \fhalf}&=\hbar\ket{\fhalf, -\fhalf}\\
+\end{align*}
+
+Slijedi
+\begin{displaymath}
+ \ket{1, 0} = \frac{1}{\sqrt{2}}\left(\ket{\fhalf, -\fhalf}+
+\ket{-\fhalf, \fhalf}\right)
+\end{displaymath}
+tj.
+\begin{displaymath}
+C^{1 0}_{\fhalf -\fhalf \fhalf \fhalf}=
+C^{1 0}_{\fhalf  \fhalf \fhalf -\fhalf} = \frac{1}{\sqrt{2}}
+\end{displaymath}
+
+Nadalje,
+\begin{displaymath}
+    \ket{1, -1} = \ket{-\fhalf, -\fhalf} \imp
+C^{1 -1}_{\fhalf -\fhalf \fhalf -\fhalf}= 1
+    \end{displaymath}
+D.Z. - Dobiti ovo s $J_-$.
+
+Na kraju, napišimo, imajući u vidu da $M=m_1+m_2$
+\begin{displaymath}
+ \ket{0,0} = \alpha\ket{\fhalf, -\fhalf}+\beta\ket{-\fhalf, \fhalf} \;,
+\end{displaymath}
+gdje su $\alpha$ i $\beta$  koeficijenti koje treba odrediti.
+Djelovanjem s $J_-$ na obje strane imamo:
+\begin{equation}
+\begin{split}
+0 &= \alpha\ket{-\fhalf, -\fhalf} + \beta\ket{-\fhalf, -\fhalf} + 0 + 0\\
+&= (\alpha+\beta)\ket{-\fhalf, -\fhalf} \imp \beta=-\alpha
+\end{split}
+\end{equation}
+$\imp$
+\begin{displaymath}
+   \ket{0,0}=\alpha\left(\ket{\fhalf, -\fhalf}-\ket{-\fhalf, \fhalf}
+\right)
+\end{displaymath}
+Normalizacija i izbor faze daju $\alpha=1/\sqrt{2}$ tj.
+\begin{displaymath}
+ C^{0 0}_{\fhalf \fhalf \fhalf -\fhalf}=
+ -C^{0 0}_{\fhalf -\fhalf \fhalf \fhalf}= \frac{1}{\sqrt{2}}.
+\end{displaymath}
+
+- Svi ostali koeficijenti su nula.
+
+- Za CG-koeficijente postoje tablice i računalni programi. Za
+  generalnu formulu vidi Hamermesh 9-8.
