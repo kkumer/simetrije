@@ -1185,13 +1185,20 @@ moment impulsa atoma se može promijeniti najviše za 1.
 
 
 
-\section{Degeneracija nivoa vodikovog atoma i \SO{4} simetrija}
+\section{Spektar vodikovog atoma i \SO{4} simetrija}
 \label{sec:so4}
+
+U udžbenicima kvantne mehanike se spektar vodikovog atoma obično
+dobiva rješavanjem Schr\"{o}dingerove diferencijalne jednadžbe.
+No povijesno prvi izračun spektra dao je Pauli 1926.
+koristeći Heisenbergovu matričnu mehaniku uz
+ingenioznu upotrebom načela simetrije, što ćemo izložiti u ovom odjeljku.
 
 
 Vidjeli smo u odjeljku \ref{sec:degeneracija} da postojanje operatora
-simetrije $\{U(g) \td g\in G \}$, $[U(g), H] = 0$ povlači degeneraciju
-energijskih nivoa koji odgovaraju stanjima $\{U(g)\ket{\alpha} \td g\in
+$\{U(g) \td g\in G \}$ koji reprezentiraju grupu $G$, te koji
+komutiraju s hamiltonijanom $[U(g), H] = 0$, povlači degeneraciju
+energijskih nivoa koji odgovaraju skupu stanja $\{U(g)\ket{\alpha} \td g\in
 G \}$. Tamo je to bilo ilustrirano na primjeru konačnih grupa. Zanimljiv
 primjer degeneracije kao posljedice kontinuirane sferne simetrije su
 nivoi u vodikovom atomu. Hamiltonijan (u CGS sustavu jedinica)
@@ -1211,7 +1218,8 @@ grupe rotacija s kvantnim brojem $l$
    \big\{ D(g)\ket{nlm} \td g \in \SO{3} \big\}
 \end{equation}
 ima istu energiju, kako smo već spominjali u odjeljku \ref{sec:reprezentacije}.
-
+Sferna simetrija implicira da energija ne ovisi o kvantnom broju $m$
+tj. o prostornoj orijentaciji sustava.
 Međutim, poznato je da energije stanja vodikovog atoma ne
 ovise ni o kvantnom broju $l$ i da $n^2$ stanja
 \begin{equation}
@@ -1239,15 +1247,14 @@ je hamiltonijan
  e_{M}^2 \equiv G M m \;.
 \end{equation}
 matematički ekvivalentan onom vodikovog atoma.
-
 Kod problema dva tijela rotacijska simetrija i njoj odgovarajući zakon
 očuvanja momenta impulsa ($\vec{L}$=const.) manifestiraju se kroz
 činjenicu da putanja sustava (elipsa) ostaje cijelo vrijeme u istoj
-ravnini.  Međutim, i ovdje se javlja zanimljiva dodatna simetrija ---
+ravnini.  Međutim, ovdje se javlja i zanimljiva dodatna simetrija ---
 putanja je zatvorena elipsa i
 smjer perihela elipse je također konstantan\footnote{Ovo
 vrijedi u klasičnoj Newtonovoj teoriji gravitacije. Poznato je da
-Einsteinova teorija gravitacije korigira ovaj rezultat i da položaj perihela
+Einsteinova teorija gravitacije korigira ovaj rezultat i da smjer perihela
 elipse nije konstantan već vrlo polako precesira.}.
 Odgovarajući očuvani vektor je tzv. \emph{Laplace-Runge-Lenzov}
 vektor
@@ -1255,7 +1262,7 @@ vektor
   \vec{M} = \vec{v}\times\vec{L} - \frac{e_{M}^2}{r}\vec{r} \;.
 \label{lrl}
 \end{equation}
-Njegovo očuvanje ($\vec{M}$=const.), slijedi iz drugog Newtonovog
+Njegovo očuvanje ($\vec{M}$=const.) slijedi iz drugog Newtonovog
 zakona uz malo elementarne vektorske algebre.
 Prije svega primijetimo da je
 \begin{displaymath}
@@ -1265,9 +1272,9 @@ Prije svega primijetimo da je
 \end{displaymath}
 gdje smo iskoristili $\vec{r}\cdot\vec{v} = \dd (\vec{r}\cdot\vec{r})/2\dd t
 = r dr/dt $.
-
-Sad deriviramo (\ref{lrl}) po vremenu, uz korištenje 
-($\dd \vec{v}/ \dd t = \vec{F}/m = - (e_{M}^2 \vec{r})/(mr^3)$):
+Sad deriviramo (\ref{lrl}) po vremenu pa uz korištenje 
+\[ \dd \vec{v}/ \dd t = \vec{F}/m = - (e_{M}^2 \vec{r})/(mr^3) \]
+dobivamo
 \begin{displaymath}
 \begin{split}
 \frac{\dd \vec{M}}{\dd t} &=
@@ -1277,18 +1284,15 @@ Sad deriviramo (\ref{lrl}) po vremenu, uz korištenje
 &= -\frac{e_{M}^2}{mr^3} \underbrace{\vec{r}\times\vec{L}}_{(\vec{r}\cdot 
 \vec{p})\vec{r} - r^2 \vec{p}} -
     \frac{e_{M}^2}{mr^3} \Big[ r^2\vec{p} - \vec{r}(\vec{r}\cdot\vec{p})\Big] \\
-&= 0
+&= 0 \,.
 \end{split}
 \end{displaymath}
-Primjetite kako je za ovaj izvod ključno da je $\vec{F}\propto 1/r^2$.
-
-Također, uočite da su $\vec{M}$ i $\vec{L}$ okomiti
-($\vec{M}\cdot\vec{L}=0$, trivijalno).
-
-Posebno je zanimljivo kako sad nakon što smo identificirali ovaj
+Dobro je uočiti kako je za ovaj izvod ključno da je $\vec{F}\propto 1/r^2$.
+Također, uočite da su $\vec{M}$ i $\vec{L}$ okomiti jer je očito da je
+$\vec{M}\cdot\vec{L}=0$.
+Sad nakon što smo identificirali ovaj
 dodatni očuvani vektor (\ref{lrl}) možemo lako riješiti problem
-dvaju tijela:
-
+dvaju tijela. Vrijedi
 \begin{equation}
 \begin{split}
  \vec{r}\cdot\vec{M} &= \underbrace{\vec{r}\cdot(\vec{v}\times\vec{L})}_{
@@ -1300,10 +1304,10 @@ dvaju tijela:
 gdje je $\theta$ kut kojeg zatvara $\vec{r}$ prema konstantnom vektoru
 $\vec{M}$. Ovu jednadžbu možemo prepisati u obliku
 \begin{equation}
-\frac{1}{r} = \frac{e_{M}^2 m}{L^2} \left(1+\frac{M}{e_{M}^2} \cos\theta\right)
+\frac{1}{r} = \frac{e_{M}^2 m}{L^2} \left(1+\frac{M}{e_{M}^2} \cos\theta\right) \,,
 \end{equation}
 što prepoznajemo kao polarnu jednadžbu elipse ekscentriciteta $e=M/e_{M}^2$
-(usp. npr. Goldstein, jedn. (3-51)). Dakle riješili smo problem i
+(vidi npr. \cite{Goldstein:1980}, jednadžba (3-51)). Dakle riješili smo problem i
 dobili trajektoriju sustava bez ikakvog rješavanja diferencijalne
 jednadžbe gibanja!
 
@@ -1313,7 +1317,7 @@ Postoji li kvantnomehanički operator koji bi bio analogon
 Laplace-Runge-Lenzovog vektora (\ref{lrl})? Naivni pokušaj
 s operatorom
 \begin{equation}
-  \vec{M} = \frac{\vec{p}}{m}\times\vec{L} - e^2\frac{\vec{r}}{r} \;.
+  \vec{M} = \frac{\vec{p}}{m}\times\vec{L} - e^2\frac{\vec{r}}{r} \;,
 \end{equation}
 ne prolazi jer ovaj operator, zbog 
 \begin{displaymath}
@@ -1325,9 +1329,8 @@ Laplace-Runge-Lenzov vektor ovako:
   \vec{M} = \frac{1}{2m}\big(\vec{p}\times\vec{L}- \vec{L}\times\vec{p}\big) 
 - e^2\frac{\vec{r}}{r} \;.
 \end{equation}
-
-Uz podosta računa (vidi Greiner\&M\"{u}ller, ex. 14.4--14.8) 
-pokazuje se da vrijedi
+Uz podosta računa (vidi npr. \cite{Greiner:1989}, zadaci 14.4--14.8) 
+pokazuje se da vrijede sljedeći identiteti
 \begin{align}
  [\vec{M}, H] &= 0 \;, \tag{A} \\
  \vec{L}\cdot\vec{M} &= 0 \;, \tag{B} \\
@@ -1335,25 +1338,23 @@ pokazuje se da vrijedi
  [L_i, M_j] &= i\hbar \epsilon_{ijk} M_k \;, \tag{D} \\
 [M_i, M_j] &= i \hbar \epsilon_{ijk} \left(- \frac{2H}{m}\right) L_k \tag{E} \;.
 \end{align}
-
 (A) kaže da je $\vec{M}$ očuvan i u kvantnomehaničkom slučaju, a (D) da
 je $M$ kartezijev vektor u smislu odjeljka \ref{sect:tenzorskioperatori}.
 (Klasični analogon jednadžbe (C) je $\vec{M}^2 = 2E\vec{L}^2/m + e_{M}^4$.)
-
 Definirajmo sada operator 
 \begin{equation}
 \vec{M}' \equiv \left(- \frac{2H}{m}\right)^{-\fhalf} \vec{M} \;.
 \end{equation}
-Uočite da je izraz u zagradi pozitivno definitan jer je spektar operatora $H$
-cijeli negativan buduči da radimo s vezanim stanjima vodikovog atoma.
+Uočite da je izraz u zagradi pozitivno definitan jer je cijeli spektar operatora $H$
+negativan buduči da radimo s vezanim stanjima vodikovog atoma.
 Ovakav reskalirani operator $\vec{M}'$ zadovoljava sada komutacijske
 relacije
 \begin{equation}
-[M'_i, M'_j] = i \hbar \epsilon_{ijk}  L_k \tag{E'} \;.
+[M'_i, M'_j] = i \hbar \epsilon_{ijk}  L_k \tag{E'} \;,
 \end{equation}
 i pomoću njega možemo definirati dva nova operatora
 \begin{align}
-\vec{I} &= \fhalf \big(\vec{L} + \vec{M}'\big) \\
+\vec{I} &= \fhalf \big(\vec{L} + \vec{M}'\big) \,, \\
 \vec{K} &= \fhalf \big(\vec{L} - \vec{M}'\big) \;.
 \end{align}
 (Odnosno $\vec{L} = \vec{I} + \vec{K}$ i
@@ -1362,27 +1363,25 @@ Uporabom relacija (D) i (E') te standardnih komutacijskih
 relacija za moment impulsa $\vec{L}$ lako se vidi da ova 
 dva operatora zadovoljavaju komutacijske relacije
 \begin{align}
-[I_i, I_j] &= i \hbar \epsilon_{ijk}  I_k \\
-[K_i, K_j] &= i \hbar \epsilon_{ijk}  K_k \\
-[I_i, K_j] &= 0
+[I_i, I_j] &= i \hbar \epsilon_{ijk}  I_k \,, \\
+[K_i, K_j] &= i \hbar \epsilon_{ijk}  K_k \,,\\
+[I_i, K_j] &= 0 \,,
 \end{align}
-što znači da i $I_i$ i $K_i$ generiraju svaki svoju
-algebru grupe \SO{3} tj. da je ukupna grupa simetrija vodikovog
+što znači da i $I_i$ i $K_i$ generiraju dvije nezavisne
+algebre grupe \SO{3} tj. da je ukupna grupa simetrija vodikovog
 atoma \SO{3}$\times$\SO{3}\footnote{Vrijedi grupni identitet
-\SO{3}$\times$\SO{3} = \SO{4}. Otud naslov ovog odjeljka. 
+\SO{3}$\times$\SO{3} = \SO{4} pa otud naslov ovog odjeljka. 
 \SO{4} je grupa generirana s 6
 generatora $L_{\mu\nu}=x_\mu p_\nu - x_\nu p_\mu$; $\mu, \nu = 1,2,3,4$;
 $[x_\mu, p_\nu] = i\hbar \delta_{\mu\nu}$. Definiramo li
 $L_i = \fhalf \epsilon_{ijk} L_{jk}$ i $M'_i = L_{4i}$, $i,j,k = 1,2,3$,
-dobijemo gornje komutacijske relacije.}
+dobijemo gornje komutacijske relacije.}.
 
 Sad možemo upotrijebiti naše poznavanje svojstava reprezentacija
 grupe \SO{3}. Činjenica da $I_i$ i $K_i$ zadovoljavaju
 iste komutacijske relacije kao i moment impulsa povlači da
-su svojstvene vrijednosti od $\vec{I}^2$ $i(i+1)\hbar^2$,
-a od $\vec{K}^2$ $k(k+1)\hbar^2$, uz 
-$i, k = 0, 1/2, 1, 3/2, ...$.
-
+su svojstvene vrijednosti od $\vec{I}^2$ dane kao $i(i+1)\hbar^2$,
+a od $\vec{K}^2$ kao $k(k+1)\hbar^2$, uz $i, k \in \{ 0, 1/2, 1, 3/2, \ldots\}$.
 Dodatni uvjet na ove svojstvene vrijednosti je relacija (B) koja
 daje:
 \begin{equation}
@@ -1391,25 +1390,20 @@ daje:
 \label{j1j2}
 \end{equation}
 odnosno $i = k\equiv j$. (Alternativno rješenje jednadžbe (\ref{j1j2})
-$i = - (k +1 )$ nije moguće jer daje negativne svojstvene vrijednosti
+$i = - (k +1 )$ nije moguće jer daje negativne vrijednosti
 za $i$ ili $k$.)
-
 Prepišimo sada jednadžbu (C) pomoću novih operatora. Množenjem (C)
 s $(-2H/m)^{-1}$ dobije se
-
 \begin{equation}
-   \vec{M'}^2 = -(\vec{L}^2 + \hbar^2) - \frac{me^4}{2H}
+   \vec{M'}^2 = -(\vec{L}^2 + \hbar^2) - \frac{me^4}{2H} \,,
 \end{equation}
-
 ili
-
 \begin{align}
  -\frac{me^4}{2}H^{-1} &= \vec{M'}^{2} + \vec{L}^2 + \hbar^2 \\
 &=\big[\vec{I} - \vec{K}\big]^2 + 
 \big[\vec{I} + \vec{K}\big]^2  + \hbar^2\\
 &=2\big[\vec{I}^2 + \vec{K}^2 \big]^2 + \hbar^2  \;.
 \end{align}
-
 To znači da za svojstvena stanja energije i momenta impulsa vrijedi
 \begin{equation}
 -\frac{me^4}{2}E^{-1} = 2\big[i(i +1)\hbar^2 + k(k+1)\hbar^2 
@@ -1422,30 +1416,24 @@ To znači da za svojstvena stanja energije i momenta impulsa vrijedi
 Uvedemo li kvantni broj $n\equiv 2j+1$, onda iz $j=0,1/2, 1,\ldots$
 slijedi $n=1,2,3,\ldots$ i ovo prepoznajemo kao ispravni izraz
 za spektar vodikovog atoma.
-
-Kako je ``pravi'' angularni moment $\vec{L}=\vec{I} +
+Kako je "pravi" angularni moment $\vec{L}=\vec{I} +
 \vec{K}$ njegove svojstvene vrijednosti dane su pravilima
 za zbrajanje momenata impulsa tj.
 \begin{equation}
-    |j - j| \leq l \leq j + j
+    |j - j| \leq l \leq j + j \,,
 \end{equation}
 tj. $l \leq 2j \leq n-1$, što je poznati rezultat. Također, $l$
-automatski ispada cjelobrojan. Dakle i kvantnomehanički spektar
-vodikovog atoma smo našli bez rješavanja Schr\"{o}dingerove
-jednadžbe!
+automatski ispada cjelobrojan. Dakle odredili smo kvantnomehanički spektar
+vodikovog atoma bez rješavanja Schr\"{o}dingerove jednadžbe!
 
-\secret{Usporediti algebarski i pristup preko diferencijalnih
-jednadžbi. Heisenberg vs. Schr\"{o}dinger. cf. priča u Futuri.}
-
-\textbf{Degeneracija.} Da se još jednom uvjerimo da je degeneracija
-svakog nivoa $n^2$-struka  možemo brojati stanja u bazi koja
+Da se još jednom uvjerimo da je degeneracija
+svakog nivoa $n^2$-struka  možemo prebrojati stanja u bazi koja
 dijagonalizira operatore $H$, $\vec{L}^2$ i $L_z$, što je
 uobičanjena $\ket{nlm}$ baza. Tu za dati $n$ imamo sve skupa
 \begin{equation}
  \sum_{l=0}^{n-1} (2l+1) =\frac{n}{2}\big(1+2(n-1)+1)\big) = n^2
 \end{equation}
 degeneriranih stanja.
-
 Alternativna baza je ona koja dijagoalizira operatore
 $\vec{I}^2=\vec{K}^2$, $I_z$ i $K_z$ čije vektore možemo
 označiti kao $\ket{j,m_i, m_k}$ i koja daje degeneraciju
@@ -1454,9 +1442,6 @@ označiti kao $\ket{j,m_i, m_k}$ i koja daje degeneraciju
 \end{equation}
 u skladu s prvim računom.
 
-\emph{Literatura}: Schiff(68), Sect. 30, Greiner\&M\"{u}ller, Jones,
-\secret{L.C. Biedenhorn, The ``Sommerfeld Puzzle'' Revisited and
-Resolved, Foundation of Physics, \textbf{13} (1983) 13-34}
 
 \subsection*{Zadaci}
 
