@@ -259,6 +259,7 @@ djelovanjem na vektore baze
 \begin{equation}
    D^{(\beta)}(\unitn,\phi) \ket{\beta, m} =
  e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{\beta, m} \,,
+ \label{eq:Drot}
 \end{equation}
 gdje je sada $\beta$ oznaka reprezentacije, koja bi u načelu trebala
 stajati i na generatoru $\vec{J} = \vec{J}^{(\beta)}$, ali je tamo obično samo implicitna.
@@ -466,7 +467,7 @@ Slično se dobije
   J_- \ket{j, m} = \hbar \sqrt{(j+m)(j-m+1)} \ket{j, m-1} \;.
 \label{eq:jminus}
 \end{equation}
-Relacije (\ref{eq:jz}) (\ref{eq:jplus}) i (\ref{eq:jminus}) 
+Relacije (\ref{eq:jz}), (\ref{eq:jplus}) i (\ref{eq:jminus}) 
 nam omogućuju da odredimo matrične elemente operatora
 momenta impulsa između proizvoljnih stanja i tako kompletno definiraju
 te operatore, a time i cijelu $2j+1$-dimenionalnu ireducibilnu reprezentaciju
@@ -536,7 +537,7 @@ iste lokalno (imaju istu algebru), ali ne i globalno.
 Zanimljiviji je slučaj $j=1/2$ reprezentacije. Ona je dvodimenzionalna i
 istim postupkom kao gore lako se uvjerimo da su $J_i$ do na faktor
 dani Paulijevim matricama i eksponencijacijom dobivamo definicionu
-vjernu reprezentaciju grupe \SU{2} (vidi zadatak  \ref{zad:svojstvapaulijevi})
+vjernu reprezentaciju grupe \SU{2} (vidi zadatak  \ref{zad:svojstvapaulijevih})
 \begin{equation}
  e^{-\frac{i}{2}\vec{\sigma}\cdot\unitn \theta} =
 \cos \frac{\theta}{2}-i\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \,.
@@ -598,7 +599,7 @@ uvjet homomorfizma "olabavljen" dopuštanjem razlike u fazi
    \label{eq:projektivnarep}
 \end{displaymath}
 Ovdje se nećemo upuštati u općenitu teoriju projektivnih reprezentacija 
-(za diskusiju u kontekstu kvantne fizike vidi \cite{Weinberg}),
+(za diskusiju u kontekstu kvantne fizike vidi \cite{Weinberg:1995mt}),
 nego ćemo samo izreći nekoliko nama relevantnih rezultata:
 
 \begin{itemize}
@@ -906,6 +907,7 @@ Ove dvije baze su naravno povezane
 i koeficijenti razvoja jedne baze po drugoj
 \begin{equation}
  \bra{j_1, m_1; j_2, m_2} J, M\rangle \equiv C^{JM}_{j_1m_1j_2m_2}
+ \label{eq:defCG}
 \end{equation}
 nazivaju se \emph{Clebsch-Gordanovi koeficijenti} i mogu se naći tabelirani
     u literaturi. U Dodatku \ref{sec:clebsch} mogu se naći neka svojstva
@@ -915,109 +917,191 @@ ovih koeficijenata i metoda njihovog određivanja.
 \section{Tenzorski operatori i Wigner-Eckartov teorem}
 \label{sect:tenzorskioperatori}
 
-U prošla dva odjeljka smo naučili rotirati kvantnomehanička stanja.
-Da bismo potpuno ovladali primjenama rotacijske simetrije u
-kvantnoj mehanici
+U prošla tri odjeljka smo naučili kako se kvantnomehanička \emph{stanja}
+ponašaju pri rotacijama.
+No, da bismo potpuno razumjeli posljedice rotacijske simetrije u
+kvantnomehaničkim sustavima
 potrebno je znati i kako se pri rotacijama ponašaju kvantnomehanički
-operatori.
-
-\subsubsection{Primjer: Skalarni operator $S$}
-
- - $D(R) S D(R)^{-1} = S$ --- invarijantan na rotacije (po definiciji)
-
+\emph{operatori}. Mnogi važni operatori su obzirom na rotacije \emph{vektori},
+što znači da se transformiraju analogno klasičnim vektorima tj. množenjem
+sa standardnom matricom rotacije $R(\unitn, \theta)$ iz odjeljka
+\ref{sec:tenzori}. Na primjer, transformacija operatora položaja je
 \begin{equation}
-\begin{split}
- e^{-i\vec{J}\cdot\unitn \phi/\hbar} S e^{-i\vec{J}\cdot\unitn \phi/\hbar}
-  &= \left(1-\frac{i}{\hbar}\vec{J}\cdot\unitn \phi\right)S
-\left(1+\frac{i}{\hbar}\vec{J}\cdot\unitn \phi\right) + O(\phi^2) \\
-&= S - \frac{i}{\hbar}(\vec{J}S - S\vec{J})\cdot\unitn\phi \\
-&= S \qquad \imp \qquad [\vec{J}, S] = 0
-\end{split}
+    r_i \longrightarrow U(R) r_i U(R)^{-1} = R_{ij} r_j \;.
 \end{equation}
-(Analogno kao što očuvani operatori tj. operatori invarijantni na
-translacije u vremenu komutiraju s hamiltonijanom --- generatorom translacija
-u vremenu.)
-
-Matrični elementi od $S$? (Obično je najzanimljivije znati neke informacije
-o matričnim elementima operatora.)
-\begin{displaymath}
-   \bra{j' m'}S\ket{j m} = \text{?}
-\end{displaymath}
+Slično, tenzori višeg ranga, poput npr. $r_i p_j$ će se transformirati
+množenjem s brojem matrica $R$ koji odgovara njihovom rangu, kao
+u (\ref{eq:tenzor}). Problem je međutim da ti tenzori općenito nisu
+\emph{ireducibilni} tj. mogu se rastaviti na zbroj tenzora
+koji se ne miješaju pri rotacijama i neki od kojih su
+nižeg ranga. Na primjer, općeniti tenzor drugog ranga $T_{ij}$ ima
+devet komponenata, ali one se mogu organizirati u kombinacije
+koje se međusobno ne miješaju pri rotacijama. 
+Kao prvo, trag tenzora $\mathrm{Tr} T = T_{ii}$ je invarijantan
+na rotacije jer imamo
 \begin{align*}
-\bra{j' m'}S\vec{J}^2 \ket{jm} &= \bra{j' m'}\vec{J}^2 S\ket{jm} \\
-j(j+1)\hbar^2 \bra{j' m'}S \ket{jm} &= j'(j'+1)\hbar^2 \bra{j' m'}S \ket{jm}\\
-(j-j')(\underbrace{j+j'+1}_{\neq 0})\bra{j' m'}S \ket{jm} &= 0 \\
-    &\imp \bra{j' m'}S \ket{jm} \propto \delta_{jj'}
+ T_{ii} = \delta_{ij} T_{ij} \longrightarrow
+\delta_{ij} R_{i i'} R_{j j'} T_{i' j'}& = (R_{j i'} R_{j j'}) T_{i' j'}
+= (R^{\mathsf{T}} R)_{i' j'} T_{i' j'} \\
+& = \delta_{i' j'} T_{i' j'} = T_{i' i'} \;,
 \end{align*}
-Slično (D.Z), 
-\begin{displaymath}
-            \bra{j' m'}S \ket{jm} \propto \delta_{mm'} \;.
-\end{displaymath}
-Znači, samo
-\begin{displaymath}
-               \bra{j m}S \ket{jm} \neq 0 \qquad \qquad \text{Izborno pravilo}
-\end{displaymath}
-Promotrimo li sada matrične elemente od $SJ_+$ možemo dobiti dodatne
-informacije:
-\begin{align*}
-\bra{j m} S J_+ \ket{j m-1} = \underbrace{\bra{j m} J_+}_{\bra{J_jm}}
-S \ket{j m-1} \\
-\hbar \sqrt{(j-m+1)(j+m)} \bra{j m}S \ket{jm} &=
-\hbar \sqrt{(j+m)(j-m+1)} \bra{j m-1}S \ket{jm-1} \\
- \bra{j m}S \ket{jm} &= \bra{j m-1}S \ket{jm-1}
-\end{align*}
-Dakle, matrični element $\bra{j m}S \ket{jm}$ ne ovisi o $m$!
-Običaj je u tom slučaju pisati
-\begin{displaymath}
- \bra{j' m'}S \ket{jm} = \delta_{jj'} \delta_{mm'}
- \underbrace{\bra{j' }|S| \ket{j}}_{\text{tzv. \emph{reducirani
- matrični element}}}
-\end{displaymath}
-Za dati $j$, umjesto $(2j+1)^2$ matričnih elemenata, dovoljno je
-izračunati jedan!
+gdje smo u predzadnjem koraku upotrijebili svojstvo ortogonalnosti
+matrica rotacije. Dakle, trag 
+ $T_{xx} + T_{yy} + T_{zz}$ je skalar tj. tenzor ranga 0.
+Nadalje, $T_{ij}$, baš kao i svaku matricu, možemo
+rastaviti na antisimetrični i simetrični dio
+\begin{equation}
+  T_{ij} = \fhalf (T_{ij} - T_{ji}) + \fhalf (T_{ij} + T_{ji}) \;.
+\label{eq:SplA}
+\end{equation}
+Lako je uočiti da rotacije ne miješaju ove dvije komponente:
+rotacija (anti)si\-met\-ri\-čne matrice daje (anti)simetričnu matricu,
+kako će čitatelj pokazati u zadatku \ref{zad:antisim}.
+Tako tri nezavisne antisimetrične kombinacije, $(T_{xy}-T_{yx})/2$,
+$(T_{yz}-T_{zy})/2$ i $(T_{zx} - T_{xz})/2$, čine tenzor
+prvog ranga tj. vektor.
+Ovaj tročlani skup nije dalje reducibilan jer rotacije međusobno
+miješaju sva tri elementa. Njegovu vektorsku prirodu možemo
+lako uočiti na primjeru $T_{ij} = 2 r_i p_j$ gdje ove tri
+kombinacije upravo daju tri komponente momenta impulsa 
+$L_k = \epsilon_{ijk} r_i p_k$.
+Simetrični dio ima šest komponenata, $T_{xx}$, $T_{yy}$, $T_{zz}$,
+$(T_{xy}+T_{yx})/2$, $(T_{yz}+T_{zy})/2$ i $(T_{zx} + T_{xz})/2$, 
+ali treba uočiti da je zbroj prvih triju jednak tragu za kojeg
+smo upravo vidjeli da je sam za sebe ireducibilan 
+pa ga treba eliminirati da bi se dobilo pet
+nezavisnih komponenata koje čine tenzor drugog ranga.
+Dakle, konačni rastav tenzora drugog ranga na
+ireducibilne tenzore ranga 0, 1 i 2 je
+\begin{equation}
+T_{ij} = \frac{1}{3}\delta_{ij}T_{kk} +
+  \fhalf (T_{ij} - T_{ji}) + 
+ \bigg[\fhalf (T_{ij} + T_{ji}) - \frac{1}{3}\delta_{ij}T_{kk} \bigg] \;,
+ \label{eq:Tijrastav}
+\end{equation}
+gdje faktor $1/3$ osigurava da zadnji član bude traga nula.
 
-Za poopćenje ovog na složenije operatore treba promatrati operatore koji
-se dobro transformiraju na rotacije \secret{tj. za koje znamo komutacijske
-relacije s $\vec{J}$} --- \emph{tenzorski operatori}.
-Podsjetimo se: Stanja koja se ``dobro'' transformiraju pri rotacijama
-su $\ket{jm}$ sa svojstvom
-\begin{displaymath}
- D(r) \ket{jm} = \sum_{m'} \ket{jm'}\bra{jm'}D(R)\ket{jm}
-               = \sum_{m'} D^{j}_{mm'}\ket{jm'}
-\end{displaymath}
-
+Kao posljedica reducibilnosti djelovanje ovakvih tenzorskih operatora na 
+stanja $\ket{j,m}$ ireducibilnih reprezentacija rezultirat će stanjima
+koja nemaju jednostavna transformacijska svojstva jer
+su superpozicija komponenata iz različitih ireducibilnih reprezentacija. To će
+otežavati i računanje s takvim stanjima i njihovu fizikalnu interpretaciju.
+Stoga uvodimo drugačije tenzorske operatore s 
+transformacijskim svojstvima srodnima onima stanja $\ket{j,m}$.
+Iz (\ref{eq:Drot}) i (\ref{eq:WignerD}) slijedi da se  $\ket{j,m}$
+stanja transformiraju množenjem (transponiranim) Wignerovim D-matricama
+\begin{equation}
+ D(R) \ket{j,m} = \sum_{m'} \ket{j,m'}\bra{j,m'}D(R)\ket{j,m}
+               = \sum_{m'} D^{(j)}_{m'm}\ket{j,m'} \;.
+\end{equation}
 \begin{definicija}[Ireducibilni sferični tenzorski operator]
 Ireducibilni sferični tenzorski operator $T^{(k)}$ ranga $k$, sa
 $2k+1$ komponenata $T^{(k)}_q$, $q=-k,-k+1,\ldots,k$ je operator
 koji zadovoljava
 \begin{equation}
  D(R) T^{(k)}_q D(R)^{-1} = \sum_{q'=-k}^{k} D^{(k)}_{q'q}(R)
-      T^{(k)}_{q'}
+      T^{(k)}_{q'} \;.
+      \label{eq:defTk}
 \end{equation}
 \end{definicija}
-
-
-Ekvivalentno, sferične tenzore možemo definirati zahtjevima
+Pogledajmo prvo infinitezimalnu verziju ove definicione relacije.
+Do prvog reda razvoja u malom kutu rotacije $\theta \ll 1$, 
+(\ref{eq:defTk}) postaje
+\begin{equation}
+    \left(1-\frac{i}{\hbar}\vec{J}\cdot\unitn \theta\right)
+       T^{(k)}_q
+    \left(1+\frac{i}{\hbar}\vec{J}\cdot\unitn \theta\right)
+    = \sum_{q'=-k}^{k} \bra{k, q'} 
+    \left(1-\frac{i}{\hbar}\vec{J}\cdot\unitn \theta\right)
+    \ket{k, q}
+      T^{(k)}_{q'} \;,
+\end{equation}
+odnosno
+\begin{equation}
+    [\vec{J}\cdot\unitn, T^{(k)}_q] 
+    = \sum_{q'=-k}^{k} \bra{k, q'} \vec{J}\cdot\unitn \ket{k, q}
+      T^{(k)}_{q'} \;.
+\end{equation}
+Sada izborom $\unitn = \vec{\hat{z}}$ i
+$\unitn = \vec{\hat{x}} \pm \rmi \vec{\hat{y}}$
+te korištenjem (\ref{eq:jz}), (\ref{eq:jplus}) i (\ref{eq:jminus}) 
+dobijamo komutacijske relacije
 \begin{align}
-[J_z, T^{(k)}_q ] &= \hbar q T^{(k)}_q \\
-[J_\pm, T^{(k)}_q] &= \hbar \sqrt{(k\mp q)(k\pm q +1)} T^{(k)}_{q\pm 1}
+[J_z, T^{(k)}_q ] &= \hbar q T^{(k)}_q \,, \\
+[J_\pm, T^{(k)}_q] &= \hbar \sqrt{(k\mp q)(k\pm q +1)} T^{(k)}_{q\pm 1} \,,
 \end{align}
-(D.Z. pokažite ekvivalentnost ovih definicija. Naputak: Napišite originalnu
-definiciju u infinitezimalnom obliku.)
+koje se mogu smatrati ekvivalentnom
+definicijom ireducibilnih sferičnih tenzora. 
+Obične (općenito reducibilne) tenzore s početka odjeljka nekad
+nazivamo \emph{kartezijevi} jer su im komponente definirane pomoću kartezijeve
+baze $\{\vec{\hat{x}}, \vec{\hat{y}}, \vec{\hat{z}}\}$.
+Obični kartezijevi tenzori ranga 1, dakle vektori, zadovoljavaju komutacijske
+relacije
+\begin{equation}
+ [J_i, V_j] = i\hbar \epsilon_{ijk} V_k \;.
+\end{equation}
+\begin{primjer}[Tenzori ranga 0]
+Tenzori ranga nula tj. skalari imaju samo jednu komponentu
+i nema razlike između sferične varijante $T^{(0)}_0$ i kartezijeve varijante $T$.
+Ovakvi operatori komutiraju sa sve tri komponente operatora momenta impulsa
+\begin{equation}
+    [J_i, T] = 0 \;,
+\end{equation}
+i tako su invarijantni na rotacije, baš kao što su operatori
+koji komutiraju s Hamiltonijanom invarijantni na vremenske translacije.
+\end{primjer}
+\begin{primjer}[Tenzori ranga 1]
+    Standardni vektorski operatori, poput $\vec{r}$, $\vec{p}$ i
+    \vec{J}, su kartezijevi operatori ranga 1. Za razliku od
+    kartezijevih operatora ranga 2, oni \emph{jesu} ireducibilni.
+    Rotacije naravno miješaju sve tri kartezijeve komponente
+    $T_x$, $T_y$, $T_z$ vektorskog operatora $\vec{T}$. 
+    \emph{Sferični} tenzor ranga $k=1$ ima $2k+1=3$ komponente i
+    one su povezane s kartezijevim komponentama relacijama
+    \begin{equation}
+    T^{(1)}_0 = T_z \;, \quad T^{(1)}_{\pm 1} = \mp \frac{1}{\sqrt{2}}
+    (T_x \pm i T_y) \;,
+    \label{eq:kartvektor}
+    \end{equation}
+    koje čitatelj treba provjeriti.
+    Tako na primjer $J_z$ i $\,\mp (1/\sqrt{2})J_\pm$ formiraju sferični tenzor 
+    ranga 1\footnote{Treba spomenuti da $D^{(j)}$ \emph{nije} 
+    sferični tenzorski operator ranga $j$.}.
+\end{primjer}
+\begin{primjer}[Tenzori ranga 2]
+    Kartezijev tenzor ranga 2 je reducibilan i u (\ref{eq:Tijrastav}) je ekspliciran
+    rastav na sferične tenzore ranga 0, 1 i 2, s ukupno 1+3+5=9 komponenata,
+    gdje pojedine komponente $T^{(k)}_q$ nisu izravno vidljive u (\ref{eq:Tijrastav}) 
+    nego ih se može odrediti računom.
+\end{primjer}
 
-Npr. $J_z$ i $\,\mp (1/\sqrt{2})J_\pm$ formiraju sferični tenzor ranga 1.
-(D.Z. pokažite to!)
 
-
-N.B. "Komponente" sferičnog tenzora su također operatori. Ne dolaziti u
-zabunu s komponentama matrica --- brojevima. Ove "komponente" sferičnog
-tenzora se naravno također mogu napisati u matričnom obliku i onda one
-imaju svoje komponente tj. matrične elemente koji jesu brojevi.
-
-N.B. $D^{(j)}$ nije tenzorski operator ranga $j$.
-
+Glavni razlog upotrebe sferičnih tenzorskih operatora je da njihovo
+djelovanje na $\ket{j,m}$ stanja rezultira stanjima s jednostavnim
+transformacijskim svojstvima. Rotacija stanja
+$T^{(k)}_q\ket{j,m}$ dana je s
+\begin{align}
+    U(R) \Big( T^{(k)}_q\ket{j,m} \Big)& =
+        U(R)  T^{(k)}_q U(R)^{-1} U(R) \ket{j,m}  \\
+   &= \sum_{q'=-k}^{k} \sum_{m=-j}^{j}
+   D^{(k)}_{q'q}(R) D^{(j)}_{m'm}(R) T^{(k)}_{q'} \ket{j, m'} \;,
+\end{align}
+a to je identično transformaciji kakvu bi imalo stanje
+\begin{equation}
+    \ket{k, q} \otimes \ket{j, m} = \ket{k, q; j, m} \;.
+\end{equation}
+Dakle djelovanje sferičnog operatora ranga $k$ na sustav spina $j$ 
+je matematički ekvivalentno zbrajanju dvaju sustava spinova $k$ i $j$.
+Stoga se često kaže da je $k$ "spin" takvog operatora.
+Amplituda vjerojatnosti da stanje $\ket{k, q; j, m}$ ima
+neki konkretni spin $J$ i projekciju spina $M$ dana je s Clebsch-Gordanovim
+koeficijentom $C^{J M}_{jmkq}$, vidi (\ref{eq:defCG}).
+Po bliskoj analogiji s tim, za amplitudu vjerojatnosti
+pronalaženja stanja $T^{(k)}_q\ket{j,m}$ u stanju $\ket{j',m'}$
+stanje  imamo sljedeći teorem, koji je jedan od centralnih
+rezultata primjene simetrija u kvantnoj mehanici.
 \begin{teorem}[Wigner-Eckart]
-Matrični elementi tenzorskih operatora između svojstvenih stanja momenata
+Matrični elementi sferičnih tenzorskih operatora između svojstvenih stanja momenta
 impulsa zadovoljavaju relaciju
 \begin{equation}
  \bra{j'm'}T^{(k)}_q \ket{jm} = C^{j'm'}_{jmkq}
@@ -1026,128 +1110,80 @@ impulsa zadovoljavaju relaciju
 gdje je $\bra{j'}|T^{(k)}|\ket{j}$ tzv. \emph{reducirani matrični element}
 koji ne ovisi o $m, q$ i $m'$.
 \end{teorem}
-Za dokaz vidi literaturu.
-
 Posljedica ovog teorema je da izračunavanje jednog jedinog matričnog elementa
 (npr. za slučaj $m'=q=m=0$) onda omogućuje trivijalno određivanje svih ostalih
+$(2j'+1)\times(2k+1)\times(2j+1)$ matričnih elemenata
 pomoću tablica Clebsch-Gordanovih koeficijenata.
+Amplituda se faktorizira na reducirani matrični element koji je netrivijalni 
+"dinamički" dio i Clebsch-Gordanove koeficijente koji sadrže obično
+manje važnu informaciju o prostornim orijentacijama stanja i operatora.
+Teorem omogućuje i određivanje tzv. \emph{izbornih pravila} za prijelaze
+atomskih i nuklearnih kvantnih sustava pod vanjskim utjecajima.
 
-\subsubsection{Primjer: skalarni operator}
+\begin{primjer}[Skalarni operator]
 \begin{displaymath}
-S=T^{(0)}_0 \imp \bra{j'm'}|T^{(0)}_0\ket{jm} = C^{j'm'}_{jm00}
+\bra{j'm'}|T^{(0)}_0\ket{jm} = C^{j'm'}_{jm00}
 \frac{\bra{j'}|T^{(0)}|\ket{j}}{\sqrt{2j+1}}
 \end{displaymath}
-pa svojstva Clebsch-Gordanovih koeficijenata automatski daju rezultate
-iz uvoda ovog odjeljka:
-\begin{itemize}
-\item $m+0 = m' \imp m=m'$
-\item $|j-0|\leq j' \leq j+0 \imp j=j'$
-\end{itemize}
+pa svojstva Clebsch-Gordanovih koeficijenata, vidi dodatak \ref{sec:clebsch},
+odmah daju da matrični element iščezava osim ako je $m=m'$ i
+$|j-0|\leq j' \leq j+0$ odnosno $j=j'$. To je naprosto odraz
+činjenice da skalarni operator nikako ne rotira stanje.
+\end{primjer}
 
-\subsubsection{Primjer: Izborna pravila za dipolno zračenje}
 
-\begin{displaymath}
-\text{Amplituda}\propto\bra{n'l'm'}\vec{E}\cdot\vec{x}\ket{nlm} =
-\vec{E}\cdot\bra{n'l'm'}\vec{x}\ket{nlm}
-\end{displaymath}
-$\vec{E}$ --- vanjsko polje (nije operator). $\vec{x}$ --- tenzor ranga
-1 (vektor); $x^{(1)}_q$, $x_z \leftrightarrow 
-x^{(1)}_0$, $x_{x,y}\leftrightarrow x^{(1)}_{\pm 1}$
-Teorem $\imp$
+\begin{primjer}[Izborna pravila za dipolno zračenje]
+Interakcija atoma s elektromagnetskim poljem opisanim vektorskim
+potencijalom $\vec{A}$ dana je hamiltonijanom
+\begin{equation}
+    \frac{1}{2m}\left(\vec{p} - \frac{e}{c}\vec{A}\right)^2
+    = \frac{e}{mc} \vec{p}\cdot\vec{A} + \cdots
+    = \frac{e}{c} \dot{\vec{r}} \cdot \vec{A}
+    = e \vec{r} \cdot \vec{E} + \cdots \,.
+\end{equation}
+Električno polje $\vec{E} = \vec{\epsilon}\, e^{i \vec{k}\cdot\vec{r}}$ se 
+u dipolnoj aproksimaciji, gdje se uzima da je valna duljina zračenja puno
+veća od atoma, aproksimira samo polarizacijskim vektorom 
+$\vec{E}\approx\vec{\epsilon}(1+\cdots)$
+pa je amplituda prijelaza između dvaju nivoa atoma, specificiranih
+radijalnim kvantnim brojevima $n$ i $n'$, momentima impulsa
+$l$ i $l'$ i magnetnim kvantnim brojevima $m$ i $m'$ proporcionalna
+matričnom elementu operatora položaja
+\begin{equation}
+    \vec{\epsilon} \cdot \bra{n'l'm'}\vec{r}\ket{nlm}  \,.
+\end{equation}
+Operator položaja $\vec{r}$ je kartezijev vektor (tenzor
+ranga 1), a istovremeno i sferični tenzor $r^{(1)}$ ranga 1, gdje
+je korespondencija komponenata navedena u (\ref{eq:kartvektor}).
+Wigner-Eckartov teorem kaže da su matrični elementi prijelaza
+proporcionalni Clebsch-Gordanovim koeficijentima za zbrajanje
+momenta impulsa $l$ s momentom impulsa 1 (rang operatora položaja)
 \begin{displaymath}
  \bra{n'l'm'}x^{(1)}_q \ket{nlm} = C^{l'm'}_{lm1q}
 \frac{\bra{n'l'}|x^{(1)}|\ket{nl}}{\sqrt{2l+1}} \;,
 \end{displaymath}
-\begin{itemize}
-\item $|l-1|\leq l' \leq l+1 \imp \Delta l = \pm 1,0$
-\item $m+q = m' \imp$
-  \begin{itemize}
-  \item \text{za} $\vec{E} = E\hat{\vec{z}} \qquad m'=m$
-  \item \text{za} $\vec{E} = E\hat{\vec{x}},E\hat{\vec{y}} \qquad m'=m\pm 1$
-   \end{itemize}
-$\imp \Delta m = \pm 1, 0$
-\end{itemize}
-(Usput, dodatna simetrija koju ima ovaj sustav, simetrija pariteta, zabranjuje
-$\delta l = 0$ prijelaze.)
+To odmah povlači da su prijelazi mogući samo ako
+je $|l-1|\leq l' \leq l+1$ odnosno da je moguća promjena
+momenta impulsa atoma u dipolnom zračenju $\Delta l = \pm 1,0$\footnote{Usput,
+    dodatna simetrija koju ima ovaj sustav, simetrija na prostornu
+    inverziju $\vec{x} \to -\vec{x}$, dodatno zabranjuje $\Delta l =0$
+prijelaze.}. Ovakvi uvjeti na prijelaze između kvantnih nivoa
+nazivaju se \emph{izborna pravila}.
+Nadalje, kako Clebsch-Gordanovi koeficijenti iščezavaju ako
+nije zadovoljeno $m+q = m'$, ukoliko znamo da je električno
+polje linearno polarizirano 
+$\vec{\epsilon} = \hat{\vec{z}}$ imamo i dodatno izborno
+pravilo da je $m'=m$ tj. $\Delta m = 0$. Za transverzalno
+ili cirkularno polarizirano polje u $x-y$ ravnini imat ćemo
+pak $m'= m\pm 1$ tj. $\Delta m = \pm 1$.
+Treba uočiti da ovakva izborna pravila vrijede i za kompleksnije
+atome za koje ne znamo izračunati radijalni dio valnih funkcija.
+Ona su naprosto posljedica sferne simetrije odnosno zakona očuvanja
+momenta impulsa: foton ima spin 1 i njegovom emisijom ili apsorpcijom
+moment impulsa atoma se može promijeniti najviše za 1.
+\end{primjer}
 
-\secret{- Vidi se veza ovog sa zakonima očuvanja momenta impulsa koji
-također impliciraju ovo gore.}
 
-\subsection{Veza kartezijevih i sferičnih tenzora}
-\label{sect:sfericniVSkartezijevi}
-
-Tenzore smo (definicija \ref{def:tenzor}) definirali kao objekte koji se pri rotaciji
-transformiraju kao npr.:
-\begin{displaymath}
-   T_{ij} \longrightarrow  R_{ii'}R_{jj'}T_{i'j'} \qquad \text{(tenzor ranga 2)}
-\end{displaymath}
-To su \emph{kartezijevi} tenzori.
-
-\emph{Kartezijevi} tenzori ranga 1 tj. uobičajeni kartezijevi vektori
-se također mogu definirati kao trojke operatora koje zadovoljavaju
-komutacijske relacije
-\begin{equation}
- [J_i, V_j] = i\hbar \epsilon_{ijk} V_k
-\end{equation}
-
-Problem kartezijevih tenzora je da nisu ireducibilni. To se ne
-vidi na tenzorima ranga 0 ili 1 koji jesu ireducibilni i jednaki
-su odgovarajućim sferičnim tenzorima do na drugačije kombinacije
-komponenata. Konkretno:
-\begin{equation}
-T^{(0)}_0 \: \text{\small (sferični tenzor ranga 0 tj. skalar)}
- = T      \: \text{\small (kartezijev tenzor ranga 0 tj. skalar)}
-\end{equation}
-Za operatore ranga 1 (vektore) imamo već spomenute relacije
-\begin{equation}
-T^{(1)}_0 = T_z \;, \quad T^{(1)}_{\pm 1} = \mp \frac{1}{\sqrt{2}}
-(T_x \pm i T_y) \;,
-\label{eq:kartvektor}
-\end{equation}
-i rotacije očito miješaju sve tri komponente kartezijevog tenzora
-$\vec{T}$. Međutim, kartezijev tenzor ranga 2, $T_{ij}$, više nije
-ireducibilan; njegovih 9 komponenti se može organizirati u
-kombinacije koje se međusobno ne miješaju pri rotacijama. 
-Kao prvo, trag tenzora $\mathrm{Tr} T = T_{ii}$ je invarijantan
-na rotacije:
-\begin{align}
- T_{ii} = \delta_{ij} T_{ij} \longrightarrow
-\delta_{ij} R_{i i'} R_{j j'} T_{i' j'}& = (R_{j i'} R_{j j'}) T_{i' j'}
-= (R^{\mathrm{T}} R)_{i' j'} T_{i' j'} \\
-& = \delta_{i' j'} T_{i' j'} = T_{i' i'} \;,
-\end{align}
-gdje smo u predzadnjem koraku upotrijebili svojstvo ortogonalnosti
-matrica rotacije. Dakle, trag 
- $T_{xx} + T_{yy} + T_{zz}$ je skalar tj. tenzor ranga 0.
-Nadalje, kartezijev tenzor $T_{ij}$, baš kao i svaku matricu, možemo
-rastaviti na antisimetrični i simetrični dio:
-\begin{equation}
-  T_{ij} = \fhalf (T_{ij} - T_{ji}) + \fhalf (T_{ij} + T_{ji}) \;.
-\label{eq:SplA}
-\end{equation}
-Lako je uočiti da rotacije ne miješaju ove dvije komponente:
-rotacija (anti)si\-met\-ri\-čne matrice daje (anti)simetričnu matricu.
-(Vidi zadatak \thechapter.\ref{zad:antisim}).
-Tako tri nezavisne antisimetrične kombinacije, $(T_{xy}-T_{yx})/2$,
-$(T_{yz}-T_{zy})/2$ i $(T_{zx} - T_{xz})/2$, čine sferični tenzor
-prvog ranga tj. vektor, što se vidi po broju komponenata i po
-činjenici da je ovaj tročlani skup ireducibilan tj. rotacije
-pretvaraju jedan element u drugi.
-Simetrični dio ima šest komponenata, $T_{xx}$, $T_{yy}$, $T_{zz}$,
-$(T_{xy}+T_{yx})/2$, $(T_{yz}+T_{zy})/2$ i $(T_{zx} + T_{xz})/2$, 
-ali treba uočiti da je zbroj prvih triju jednak tragu za kojeg
-znamo da je posebno ireducibilan 
-pa ga treba eliminirati da bi se dobilo pet
-nezavisnih komponenata koje čine sferični tenzor drugog ranga.
-Dakle, konačni rastav kartezijevog tenzora drugog ranga na
-ireducibilne tenzore ranga 0, 1 i 2 je
-\begin{equation}
-T_{ij} = \frac{1}{3}\delta_{ij}T_{kk} +
-  \fhalf (T_{ij} - T_{ji}) + 
- \bigg[\fhalf (T_{ij} + T_{ji}) - \frac{1}{3}\delta_{ij}T_{kk} \bigg] \;,
-\end{equation}
-gdje faktor $1/3$ osigurava da zadnji član bude traga nula.
-(Cf. Sakurai odjeljak 3.10)
 
 \section{Degeneracija nivoa vodikovog atoma i \SO{4} simetrija}
 \label{sec:so4}
