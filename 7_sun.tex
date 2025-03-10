@@ -1,52 +1,75 @@
-%Fancy RCS footer:
-     \fancyfoot[C]{\texttt{7\_sun.tex}}
-     \fancyfoot[RO,LE]{\mbox{$$Revision: 1.3 $$}}
-     \fancyfoot[LO,RE]{\mbox{$$Date: 2012-05-04$$}}
-% Correcting the title chapter page
 \fancypagestyle{plain}{%
     \fancyhf{}
     \fancyhead[RO,LE]{\bfseries \thepage}
     \fancyhead[CO]{\rightmark}
     \fancyhead[CE]{\leftmark}
-     \fancyfoot[C]{\texttt{7\_sun.tex}}
-     \fancyfoot[RO,LE]{\mbox{$$Revision: 1.3 $$}}
-     \fancyfoot[LO,RE]{\mbox{$$Date: 2012-05-04$$}}
-    \renewcommand{\headrulewidth}{0.4pt}
-    \renewcommand{\footrulewidth}{0.4pt}}
+    \renewcommand{\headrulewidth}{0.4pt}}
 
-\chapter{SU(N) grupe i fizika elementarnih čestica}
+\chapter{\SU{N} grupe i fizika elementarnih čestica}
+
+Svi primjeri simetrija razmatranih u prošla tri poglavlja,
+bavili su se \emph{prostorno-vremenskim} transformacijama fizikalnih
+sustava, poput translacija ili rotacija. U zadnjem poglavlju knjige
+bavit ćemo se Lorentzovim, Poincar\'{e}ovim i konformalnim
+transformacijama, koje također spadaju u kategoriju prostorno-vremenskih simetrija.
+Međutim u fizici, a posebice u fizici elementarnih čestica,
+od velikog su značaja i tzv. \emph{interne} simetrije, koje
+djeluju na značajke čestica poput njihove vrste, električnog
+naboja ili nekih "kvantnih brojeva" koji opisuju
+ponašanje čestica obzirom na tzv. slabe i jake sile.
+Povijesno su istraživači nailazili na mnoge teškoće u formuliranju
+ispravnih teorija tih sila, a i dan danas npr. ne znamo riješiti jednadžbe
+gibanja koje su posljedica jake sile; i tu su se svojstva simetrija
+opaženih u prirodi pokazala kao izuzetno korisna.
+Najveći trijumf fizike visokih energija druge polovice XX. i početka
+XXI. stoljeća je finalizacija tzv. standardnog modela fizike elementarnih
+čestica čije je struktura praktički potpuno određena njegovom
+tzv. baždarnom simetrijom, čija je grupa $\SU{3} \otimes \SU{2} \otimes \U{1}$. 
+Baždarne simetrije u fizici nisu tema ove knjige, ali u ovom ćemo poglavlju
+objasniti neke ideje i upotrebu općenitih internih simetrija, a također
+i konstrukciju ireducibilnih reprezentacija općenitih $\SU{N}$ grupa,
+što je od velike koristi pri izgradnji trenutnih i budućih teorija
+fizike visokih energija.
+
+
 
 \section{Izospin i SU(2)}
 \label{sec:izospin}
-Proton ($p$) i neutron ($n$) se obzirom na jake nuklearne
+Prva simetrija kojom ćemo se baviti je povezana s opažanjem da se
+proton ($p$) i neutron ($n$) obzirom na jake nuklearne
 sile ponašaju vrlo slično. To je dobro vidljivo npr. u energijama
 pobuđenih stanja zrcalnih jezgara $^{11}_{6}$C i $^{11}_{5}$B 
 (\emph{Zrcalne jezgre} su jezgre koje se razlikuju samo na zamjenu
-$p \leftrightarrow n$.) prikazanim u Tablici~\ref{mirror}
+$p \leftrightarrow n$.) prikazanim u Tablici~\ref{tab:mirror}.
 \begin{table}
-\caption{\label{mirror}Energije, u MeV, tri stanja zrcalnih jezgara
+\caption{\label{tab:mirror}Energije, u MeV, tri stanja zrcalnih jezgara
 $^{11}_{6}$C i $^{11}_{5}$B.  Vidljivo je da su razlike između ove dvije
 jezgre vrlo male.}
 \begin{center}
+\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{c|ccc}
-$^{11}_{6}$C & 2.00 & 4.31 & 4.79 \\[3pt] \hline
+$^{11}_{6}$C & 2.00 & 4.31 & 4.79 \\ \hline
 $^{11}_{5}$B & 2.12 & 4.44 & 5.02
 \end{tabular}
+\renewcommand{\arraystretch}{1.0}
 \end{center}
 \end{table}
-To je navelo Heisenberga da pretpostavi postojanje apstraktne simetrije,
-tzv. \emph{izospinske} simetrije,
-koja povezuje stanja $p$ i $n$ na isti način kao što rotacijska simetrija
-povezuje stanja $\ket{+}$ i $\ket{-}$
+To je navelo Heisenberga da pretpostavi postojanje apstraktne transformacije,
+nazvane \emph{izospinska} rotacija ili izo-rotacija,
+koja povezuje stanja $p$ i $n$ na isti način na koji standardne prostorne rotacije
+povezuju stanja $\ket{m=+\frac{1}{2}}$ i $\ket{m=-\frac{1}{2}}$
 elektrona ili bilo kojeg drugog sustava spina 1/2. Tako bi $\ket{p}$ i $\ket{n}$
-bili samo dva stanja jedne te iste čestice --- \emph{nukleona} ($\ket{N}$).
-Grupno-teorijski, spin i izospin se ne razlikuju i obje grupe su SU(2).
-Za korespondenciju među stanjima se obično uzima:
-\begin{align}
-   \ket{p} &\longleftrightarrow \ket{+} = \ket{\fhalf, \fhalf}  \\
-   \ket{n} &\longleftrightarrow \ket{-} = \ket{\fhalf,-\fhalf} \;.
-\end{align}
-Generatori izospina $I_i$, $i=1,2,3$ imaju iste komutacijske relacije
+bili samo dva stanja jedne te iste čestice --- \emph{nukleona} $\ket{N}$.
+Hipoteza je bila da je teorija jake nuklearne sile,
+još nepoznata u vrijeme uvođenja ideje izospina,
+simetrična obzirom na izospinske rotacije što objašnjava sličnost
+zrcalnih jezgara. Razlike u energijama njihovih nivoa, vidljive u
+Tablici~\ref{tab:mirror}, su posljedica elektromagnetskih sila koje
+ne poštuju izospinsku simetriju, ali su znantno slabije od nuklearnih.
+
+Grupno-teorijski, spin i izospin su identični tj. u oba
+slučaja skup svih transformacija simetrije čini grupu \SU{2}.
+Generatori izospina $I_i$, $i=1,2,3$ imaju stoga iste komutacijske relacije
 kao i operatori momenta impulsa (generatori rotacija):
 \begin{equation}
   [I_i, I_j] = i \epsilon_{ijk} I_k  \;,
@@ -60,35 +83,51 @@ I_3 \ket{n} &= - \fhalf  \ket{n} \;.
 Treba imati na umu da ove tri koordinate $i=1,2,3$, za razliku od
 slučaja rotacijske simetrije, nemaju nikakve veze sa prostornim
 $x, y$ i $z$ osima, već je riječ o posebnom izospinskom vektorskom prostoru.
+Isto tako, to što proton ima pozitivnu, a neutron negativnu vrijednost
+treće komponente izospina
+\begin{align}
+   \ket{p} & = \ket{I=\fhalf, I_3=\fhalf} \,, \\
+   \ket{n} & = \ket{I=\fhalf,I_3=-\fhalf} \,,
+\end{align}
+je stvar konvencije.
 Isto kao i kod spina, možemo definirati operatore dizanja i
-spuštanja $I_+$ i $I_-$ koji ``pretvaraju'' proton u neutron 
-ili obratno.
-
-Značaj izospinske simetrije počiva na pretpostavci da je hamiltonijan
-jake nuklearne sile $H_{\text{strong}}$ izo-simetričan tj. da komutira
+spuštanja $I_+$ i $I_-$ koji "pretvaraju" neutron u proton
+ili obratno. Važna konceptualna razlika između spina i izospina 
+je u tome da nije teško proizvesti stanje spina koje je svojstveno
+stanje operatora $J_y$, dakle usmjereno duž $y$-osi. To je jednostavna
+linearna superpozicija stanja $\ket{m=\fhalf}$ i $\ket{m=-\fhalf}$ koja
+se može lako realizirati odgovarajuće usmjerenim magnetom.
+S druge strane u prirodi \emph{ne} postoje stanja koja su superpozicija
+protona i neutrona\footnote{To je posljedica tzv. superselekcijskih  pravila.}.
+No i bez obzira na nepostojanje takvih stanja hipoteza izospina
+iziskuje da teorija jakih sila bude simetrična na cijelu izospinsku grupu,
+uključujući i rotacije koje bi mogle proizvesti takva nepostojeća stanja.
+Iz toga slijedi zahtjev da hamiltonijan
+jake nuklearne sile $H_{\text{strong}}$ bude izo-simetričan tj. da komutira
 s generatorima izospina:
 \begin{equation}
    [H_{\text{strong}}, I_i] = 0 \;.
+   \label{eq:HstrongI0}
 \end{equation}
-Naime, kako je dotični hamiltonijan vrlo složen i slabo poznat, svaka
+Kako je dotični hamiltonijan vrlo složen, svaka
 ovakva informacija o njegovim svojstvima simetrije je od velike
 pomoći, kako ćemo vidjeti kroz slijedeće primjere čiji je matematički
 formalizam u potpunosti ekvivalentan matematičkom formalizmu
 rotacijske simetrije iz poglavlja \ref{ch:rotacije}.
 
-\subsubsection*{Primjer: deuteron}
+\begin{primjer}[deuteron]
 
 Deuteron (jezgra deuterija) je vezano stanje jednog protona i jednog
 neutrona. Pogledajmo prvo općenitu situaciju stanja dva
 \emph{nukleona}. Ukupni izospin dobivamo direktnim \emph{množenjem}
 dvaju $I=1/2$ izospinskih stanja i Clebsch-Gordanovim razvojem na
-direktni \emph{zbroj}:
+direktni \emph{zbroj}
 \begin{equation}
  \big(I=\fhalf\big) \otimes  \big(I=\fhalf\big) = 
 \big(I=0\big) \oplus \big(I=1\big) \;.
 \end{equation}
 To znači da dva nukleona mogu postojati u četiri izospinska stanja:
-tri s $I=1$ (tzv. izotriplet):
+tri s $I=1$ (tzv. izotriplet)
 \begin{align}
   \ket{p}\ket{p} \qquad & I_3 = 1 \\
   \frac{1}{\sqrt{2}} \big( \ket{p}\ket{n}+\ket{p}\ket{n}\big)
@@ -100,22 +139,22 @@ i jedno s $I=0$ (tzv. izosinglet):
   \frac{1}{\sqrt{2}} \big( \ket{p}\ket{n}-\ket{p}\ket{n}\big)                    \qquad  I_3 = 0 \;.
 \label{izosinglet}
 \end{equation}
-
 Situacija je u potpunosti analogna zbrajanju momenata impulsa
-dvaju stanja sa \emph{spinom} $^1/_2$, u odjeljku \ref{tripletsinglet}.
+dvaju stanja sa \emph{spinom} $1/2$, u odjeljku \ref{tripletsinglet}.
 
-E sad, eksperimentalno je poznato da u prirodi nema vezanih stanja
+Nadalje, eksperimentalno je poznato da u prirodi nema vezanih stanja
 od samo dva protona ($\ket{p}\ket{p}$)  ili dva neutrona
 ($\ket{n}\ket{n}$). Izospinska simetrija onda nalaže da se ne pojavljuje
-ni treće stanje $\ket{I=1, I_3=0}$ već da primjećeno deuteronsko
-stanje bude $\ket{I=0, I_3 = 0}$.
+ni treće stanje $\ket{I=1, I_3=0}$ pa zaključujemo da je primjećeno deuteronsko
+stanje $\ket{I=0, I_3 = 0}$.
 Tu informaciju sad možemo iskoristiti na slijedeći način. Općenito
-stanje (položaj, spin i izospin) dva nukleona možemo zapisati u obliku
+stanje (valnu funkciju položaja, spina i izospina) dva nukleona možemo zapisati u obliku
 \begin{equation}
  \Psi_{N-N} = \phi(\vec{r}_1, \vec{r}_2) \Sigma(\vec{S}_1, \vec{S}_2)
 \zeta(\vec{I}_1, \vec{I}_2) \;,
 \end{equation}
-odnosno u sustavu samog deuterona i u bazi relativnih koordinata, te ukupnog spina i izospina:
+odnosno u sustavu samog deuterona i u bazi relativnih koordinata, te
+standardnim bazama ukupnog spina i izospina
 \begin{equation}
  \Psi_{N-N} = \rho(r) Y^{M_L}_{L} \ket{S, M_S} \ket{I, M_I} \;.
 \end{equation}
@@ -151,45 +190,46 @@ $S=1/2$) $S=0$ (singlet, antisimetričan
 na $P_{pn}$) i $S=1$ (triplet, simetričan na $P_{pn}$) vidimo da
 ukupni spin protona i neutrona u deutronu mora biti $S=1$. Kako
 je $L=0$ odmah znamo i ukupni spin deuterona: $J=1$.
+\end{primjer}
 
-\subsubsection*{Primjer: Pion-nukleon raspršenje}
+\begin{primjer}[Pion-nukleon raspršenje]
 
 I ostale subnuklearne čestice se grupiraju u izospinske multiplete.
-Tako tri piona, $\pi^+$, $\pi^0$ i $\pi^-$ tvore izo-triplet $I=1$
+Tako tri piona, $\pi^+$, $\pi^0$ i $\pi^-$ tvore izotriplet $I=1$
 \begin{center}
+\renewcommand{\arraystretch}{1.3}
 \begin{tabular}{ccr}
-  & masa & $I_3$ \\ \hline
+  & masa (MeV) & $I_3$ \\ \hline
 $\pi^+$  &  139.59  & 1 \\
 $\pi^0$  &  135.00  & 0 \\
 $\pi^-$  &  139.59  &-1
 \end{tabular}
+\renewcommand{\arraystretch}{1.0}
 \end{center}
-
-Razmotrimo sada raspršenje piona i nukleona. U takvom raspršenju
+Razmotrimo sada raspršenje piona na nukleonu. U takvom raspršenju
 može doći do promjena vrste čestica pa su tako moguće raspršenja
 $\pi^0 p \to \pi^0 p$, ali i $\pi^0 p \to \pi^+ n$. Amplitude, a time
 i udarni presjeci ovakvih raspršenja su određeni matričnim elementima
-tzv. operatora raspršenja $S$, $\bra{\pi^+ n}S\ket{\pi^0 p }$; gdje nas
-sam operator $S$ ovdje ne zanima pobliže, do na činjenicu da pretpostavljamo
-da je on izoskalar ($I=0$). Cilj nam je pokazati da izospinska simetrija
-nalaže povezanost raznih amplituda $\pi - N$ raspršenja, tako
+tzv. operatora raspršenja $S$, poput $\bra{\pi^+ n}S\ket{\pi^0 p }$.
+Detalji operatora $S$ ovdje nas neće zanimati, do na činjenicu da je
+on prvenstveno funkcija hamiltonijana pa je zahvaljujući (\ref{eq:HstrongI0})
+i $S$ izoskalar ($I=0$). Cilj nam je pokazati da izospinska simetrija
+onda nalaže povezanost raznih amplituda $\pi - N$ raspršenja, tako
 što ćemo pokazati da je
 \begin{equation}
  \bra{\pi^+ n}S\ket{\pi^0 p } = \sqrt{2} \bigg[
  \bra{\pi^0 p}S\ket{\pi^0 p } -
  \bra{\pi^+ n}S\ket{\pi^+ n} \bigg] \;.
+ \label{eq:piNrelation}
 \end{equation}
-
 Koliki je ukupni izospin $\ket{\pi N}$ stanja? Ponovno trebamo standardni
-Clebsch-Gordanov razvoj:
+Clebsch-Gordanov razvoj
 \begin{equation}
  \big(I=1\big) \otimes  \big(I=\fhalf\big) = 
 \big(I=\fhalf\big) \oplus \big(I=\frac{3}{2}\big) \;.
 \end{equation}
-
-$\ket{\pi N}$ stanja sad možemo izraziti u bazi ukupnog izospina
-koristeći Clebsch-Gordanove koeficijente iz tablica:
-
+Stanja $\ket{\pi N}$ možemo izraziti u bazi ukupnog izospina
+koristeći Clebsch-Gordanove koeficijente iz tablica
 \begin{align}
 \ket{\pi^0 p} &= 
 \ket{1 0; \fhalf \fhalf } = C^{\fhalf \fhalf}_{1 0 \fhalf \fhalf}
@@ -197,7 +237,7 @@ koristeći Clebsch-Gordanove koeficijente iz tablica:
 \ket{\frac{3}{2} \fhalf} \\
 &= -\frac{1}{\sqrt{3}} \ket{\fhalf \fhalf} +\sqrt{\frac{2}{3}} \ket{\frac{3}{2} \fhalf} \\
 \ket{\pi^+ n} &= \sqrt{\frac{2}{3}} \ket{\fhalf \fhalf} + 
-\frac{1}{\sqrt{3}} \ket{\frac{2}{3} \fhalf}
+\frac{1}{\sqrt{3}} \ket{\frac{2}{3} \fhalf} \,.
 \end{align}
 Tako amplituda raspršenja $\pi^0 p \to \pi^+ n$ ima oblik
 \begin{align}
@@ -209,30 +249,31 @@ Tako amplituda raspršenja $\pi^0 p \to \pi^+ n$ ima oblik
 \end{align}
 gdje smo uveli oznaku $S_I$ na očit način. Slično se dobije
 \begin{align}
-\bra{\pi^0 p}S\ket{\pi^0 p } &= \frac{2}{3}S_{3/2} + \frac{1}{3} S_{1/2} //
+\bra{\pi^0 p}S\ket{\pi^0 p } &= \frac{2}{3}S_{3/2} + \frac{1}{3} S_{1/2} \,, \\
 \bra{\pi^+ n}S\ket{\pi^+ n } &= \frac{1}{3}S_{3/2} + \frac{2}{3} S_{1/2}  \;,
 \end{align}
 a onda lako i gore tražena formula.
-
 Treba primijetiti da ova analiza pokazuje da su sva moguća $\pi - N$ raspršenja
-opisana sa samo dvije nepoznate amplitude: $S_{1/2}$ i $S_{3/2}$!
+opisana sa samo dva broja $S_{1/2}$ i $S_{3/2}$!
 Ovakva analiza je principijelno ekvivalentna analizi pomoću Wigner-Eckartovog
-teorema kakvu smo radili u kontekstu rotacijske simetrije.
+teorema kakvu smo radili u kontekstu rotacijske simetrije i
+čitaoc će profitirati ako pokaže kako (\ref{eq:piNrelation}) slijedi
+iz tog teorema.  Vrijedno je također razmisliti gdje smo točno u gornjoj analizi
+upotrijebili činjenicu da je operator $S$ izoskalar?
+\end{primjer}
 
-\emph{Pitanje:} Gdje smo u gornjoj analizi upotrijebili činjenicu
-da je operator $S$ izoskalar?
-
-\subsubsection*{Primjer: Omjer udarnih presjeka procesa 
-$p + d \to  \pi^+ \:\isotope[3]{H}$ i $p + d \to  \pi^0 \:\isotope[3]{He}$}
-
-Omjer udarnih presjeka je dan s
+\begin{primjer}[Omjer udarnih presjeka raspršenja] 
+Udarni presjeci raspršenja su općenito proporcionalni kvadratu apsolutne
+vrijednosti matričnih elemenata operatora raspršenja $S$.
+Tako je onda omjer udarnih presjeka raspršenja $p + d \to  \pi^+ \:\isotope[3]{H}$
+i $p + d \to  \pi^0 \:\isotope[3]{He}$ dan s
 \begin{equation}
  R = \frac{\sigma(p + d \to  \pi^+ \:\isotope[3]{H})}
 {\sigma(p + d \to  \pi^0 \:\isotope[3]{He})} = 
 \frac{|\bra{\pi^+ \:\isotope[3]{H}}S\ket{p d} |^2}
      {|\bra{\pi^0 \:\isotope[3]{He}}S\ket{p d}|^2} \;.
 \end{equation}
-\isotope[3]{He} i \isotope[3]{H} tvore izodublet
+Jezgre \isotope[3]{He} i \isotope[3]{H} tvore izodublet
 \begin{equation}
    \left(
 \begin{array}{c}
@@ -240,7 +281,6 @@ Omjer udarnih presjeka je dan s
 \end{array}\right) \qquad \qquad I=\fhalf \;,
 \end{equation}
 a $d$ je deuteron.
-
 Postupamo kao u prošlom primjeru i prikazujemo početno i konačna
 stanja u bazi ukupnog izospina:
 
@@ -249,17 +289,19 @@ stanja u bazi ukupnog izospina:
 \ket{\pi^+ \:\isotope[3]{H}} &= \ket{1 1; \fhalf -\fhalf} = 
   C^{\frac{3}{2} \fhalf}_{1 1 \fhalf -\fhalf} \ket{\frac{3}{2} \fhalf} +
   C^{\frac{1}{2} \fhalf}_{1 1 \fhalf -\fhalf} \ket{\frac{1}{2} \fhalf} \\
-\ket{\pi^0 + \:\isotope[3]{He}} &= \ket{1 0; \fhalf \fhalf} = 
+\ket{\pi^0 \:\isotope[3]{He}} &= \ket{1 0; \fhalf \fhalf} = 
   C^{\frac{3}{2} \fhalf}_{1 0 \fhalf \fhalf} \ket{\frac{3}{2} \fhalf} +
   C^{\frac{1}{2} \fhalf}_{1 0 \fhalf \fhalf} \ket{\frac{1}{2} \fhalf}  \;.
 \end{align}
 Prilikom kreiranja matričnog elementa $\bra{}S\ket{}$ stanja s izospinom
-$3/2$ u konačnom stanju ne sudjeluju (očuvanje izospina) i dobijamo
+$3/2$ u konačnom stanju ne sudjeluju zbog očuvanja izospina u jakim
+interakcijama i dobijamo
 \begin{equation}
  R = \frac{|\sqrt{2/3} S_{1/2}|^2}{|-\sqrt{1/3} S_{1/2}|^2} = 2 \;,
 \end{equation}
 što je u sasvim pristojnom slaganju s eksperimentalnim brojkama
-koje su $R=1.91$ ili, drugi eksperiment, $R=2.26$.
+koje su prema jednom eksperimentu $R=1.91$, a prema drugom $R=2.26$.
+\end{primjer}
 
 \section{Hipernaboj i SU(3), kvarkovi$^*$}
 
