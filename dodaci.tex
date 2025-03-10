@@ -683,14 +683,145 @@ je izomorfna grupi \SU{2}, uz identifikaciju
 \end{equation}
 Kvaternioni u kontekstu teorije grupa su detaljno diskutirani u \cite{Stilwell:2008}.
 
-\chapter{Eksponenta matrice}
+\chapter{Eksponencijacija matrice}
 \label{sec:expmat}
 
-O svojstvima eksponenciranja matrica \ldots
+Obična eksponencijalna funkcija na domeni običnih brojeva može se definirati
+i putem reda potencija
+\begin{equation}
+    \exp(x) = \sum_{k = 0}^{\infty} \frac{x^k}{k!}
+    = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \,,
+\end{equation}
+koji konvergira za svaki realni ili kompleksni $x$.
+Eksponencijacija matrice $A$ se definira putem istog takvog reda
+\begin{equation}
+    \exp(A) = \sum_{k = 0}^{\infty} \frac{A^k}{k!}
+    = 1 + A + \frac{A^2}{2!} + \frac{A^3}{3!} + \cdots \,.
+\end{equation}
+Može se pokazati (npr. \cite{Stilwell:2008}) da i ovaj
+red također konvergira za svaku matricu $A$.
+Pokažimo kako se praktično izvodi sumacija ovog reda na primjeru
+važne matrice
+\begin{equation}
+    A = 
+    \begin{pmatrix}
+        0 & -1 & 0 \\
+        1 &  0 & 0 \\
+        0 &  0 & 0 
+    \end{pmatrix} \,,
+\end{equation}
+koja je generator rotacija oko $z$-osi $A=X_3$ iz (\ref{eq:x3so3}).
+U računu
+\begin{equation}
+    e^{\theta A} = \sum_{k = 0}^{\infty} \frac{\theta^k A^k}{k!} \,,
+\end{equation}
+gdje je $\theta$ obični broj, potrebno je izračunati sve potencije $A^k$.
+Za $k=2$ i $k=3$ imamo
+\begin{equation}
+    A^2 = 
+    \begin{pmatrix}
+        0 & -1 & 0 \\
+        1 &  0 & 0 \\
+        0 &  0 & 0 
+    \end{pmatrix}
+    \begin{pmatrix}
+        0 & -1 & 0 \\
+        1 &  0 & 0 \\
+        0 &  0 & 0 
+    \end{pmatrix}  =
+    \begin{pmatrix}
+        -1 & 0 & 0 \\
+         0 & -1 & 0 \\
+        0 &  0 & 0 
+    \end{pmatrix}
+\end{equation}
+\begin{equation}
+    A^3 =
+    \begin{pmatrix}
+        0 & -1 & 0 \\
+        1 &  0 & 0 \\
+        0 &  0 & 0 
+    \end{pmatrix}
+    \begin{pmatrix}
+        -1 & 0 & 0 \\
+        0 &  -1 & 0 \\
+        0 &  0 & 0 
+    \end{pmatrix}  = -
+    \begin{pmatrix}
+        0 & -1 & 0 \\
+        1 &  0 & 0 \\
+        0 &  0 & 0 
+    \end{pmatrix} = - A \;,
+\end{equation}
+iz čega zaključujemo da je 
+\begin{equation}
+    A^k =
+    \left\{
+        \begin{array}{ll}
+            \Eins, & \text{za $k=0$} \\[10pt]
+            (-1)^{k/2}\begin{pmatrix}
+                1 & 0 & 0 \\
+                0 & 1 & 0 \\
+                0 & 0 & 0
+            \end{pmatrix}, & \text{za parni $k \ge 2$} \\[25pt]
+           (-1)^{(k-1)/2} A, & \text{za neparni $k$}
+        \end{array}
+        \right.
+\end{equation}
+odnosno
+\begin{align}
+    e^{\theta A}& =  \Eins + 
+            \begin{pmatrix}
+                1 & 0 & 0 \\
+                0 & 1 & 0 \\
+                0 & 0 & 0
+            \end{pmatrix} \sum_{k = 2,4,\ldots} (-1)^{k/2} \frac{\theta^k A^k}{k!} \nonumber \\[2ex]
+                & + 
+            \begin{pmatrix}
+                0 & -1 & 0 \\
+                1 & 0 & 0 \\
+                0 & 0 & 0
+            \end{pmatrix} \sum_{k = 1,3,\ldots} (-1)^{(k-1)/2} \frac{\theta^k A^k}{k!} \;.
+\end{align}
+Rastavom jedinične matrice možemo dopuniti prvu sumaciju s $k=0$ članom
+i onda zamjenom $k\to 2k$ to prepoznajemo kao razvoj u red funkcije $\cos\theta$,
+dok drugu sumaciju nakon zamjene $k \to  2k+1$ prepoznajemo kao $\sin\theta$,
+te na kraju dobijamo matricu konačnih rotacija oko $z$ osi
+\begin{equation}
+    e^{\theta A} =  
+            \begin{pmatrix}
+                \cos\theta & -\sin\theta & 0 \\
+                \sin\theta & \cos\theta & 0 \\
+                0 & 0 & 1
+            \end{pmatrix} \,.
+\end{equation}
 
+Za eksponencijalnu funkciju proizvoljne matrice $A$ vrijedi
+
+\begin{align}
+    \left(e^A\right)^* &= e^{A^*} \;,  \\
+    \left(e^A\right)^\mathsf{T} &= e^{A^\mathsf{T}} \;,  \\
+    \left(e^A\right)^\dagger &= e^{A^\dagger} \;,  \\
+    \left(e^A\right)^{-1} &= e^{-A} \;,  \\
+    e^{SAS^{-1}} &= Se^{A}S^{-1} \qquad \text{za nesingularnu $S$} \;,  \\
+    \det e^{A} &= e^{\mathrm{Tr}\,A} \,.
+\end{align}
+Na kraju, ako su $\lambda_1$, $\lambda_{2}$, \ldots, $\lambda_n$ svojstvene
+vrijednosti od $A$, onda su $e^{\lambda_{1}}$, $e^{\lambda_2}$, \ldots
+    $e^{\lambda_n}$ svojstvene vrijednosti od $e^A$.
 
 \chapter{Clebsch-Gordanovi koeficijenti}
 \label{sec:clebsch}
+
+Kako je opisano u odjeljku \ref{sec:zbrajanjeJ}, vektorski prostor
+$V_1 \otimes V_2$ na kojem djeluje direktan produkt dviju reprezentacija
+grupe rotacija (preciznije, grupe \SU{2}) spinova $j_1$ i $j_2$, ima
+dvije baze. Jednu razapetu svojstvenim vektorima operatora $J_{1z}$
+i $J_{2z}$ i drugu razapetu svojstvenim vektorima ukupnog momenta
+impulsa  $\vec{J}^2$ i njegove $z$-komponente $J_z$.
+Koeficijenti koji povezuju te baze zovu se Clebsch-Gordanovi koeficijenti,
+definirani su u (\ref{eq:defCG}) i u ovom dodatku ćemo pobrojati neka
+njihova važnija svojstva te dati primjer njihovog određivanja.
 
 \begin{itemize}
 \item $C^{JM}_{j_1m_1j_2m_2}=0$ ako nije $|j_1-j_2|\le J\le j_1 + j_2$. \\
@@ -735,8 +866,9 @@ ortogonalnosti.
 \secret{Netrivijalno, cf. Cornwell}
 \end{itemize}
 
-\subsubsection{Izračunavanje Clebsch-Gordanovih koeficijenata$^*$}
+\subsubsection{Izračunavanje Clebsch-Gordanovih koeficijenata}
 \label{tripletsinglet}
+
 
 Primjer: 
  $D^{(1/2)}\otimes D^{(1/2)} = D^{(1)} \oplus D^{(0)}$.
@@ -788,7 +920,6 @@ Nadalje,
     \ket{1, -1} = \ket{-\fhalf, -\fhalf} \imp
 C^{1 -1}_{\fhalf -\fhalf \fhalf -\fhalf}= 1
     \end{displaymath}
-D.Z. - Dobiti ovo s $J_-$.
 
 Na kraju, napišimo, imajući u vidu da $M=m_1+m_2$
 \begin{displaymath}
@@ -813,7 +944,8 @@ Normalizacija i izbor faze daju $\alpha=1/\sqrt{2}$ tj.
  -C^{0 0}_{\fhalf -\fhalf \fhalf \fhalf}= \frac{1}{\sqrt{2}}.
 \end{displaymath}
 
-- Svi ostali koeficijenti su nula.
+Svi ostali koeficijenti su nula.
 
-- Za CG-koeficijente postoje tablice i računalni programi. Za
-  generalnu formulu vidi Hamermesh 9-8.
+Clebsch-Gordanovi koeficijenti mogu se pronaći tabelirani u literaturi,
+a postoje i računalni programi za njihovo izračunavanje. Za
+generalnu formulu vidi \cite{Hamermesh:1989} 9-8.
