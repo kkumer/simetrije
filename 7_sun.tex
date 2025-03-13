@@ -112,7 +112,7 @@ s generatorima izospina:
 \end{equation}
 Kako je dotični hamiltonijan vrlo složen, svaka
 ovakva informacija o njegovim svojstvima simetrije je od velike
-pomoći, kako ćemo vidjeti kroz slijedeće primjere čiji je matematički
+pomoći, kako ćemo vidjeti kroz sljedeće primjere čiji je matematički
 formalizam u potpunosti ekvivalentan matematičkom formalizmu
 rotacijske simetrije iz poglavlja \ref{ch:rotacije}.
 
@@ -148,7 +148,7 @@ od samo dva protona ($\ket{p}\ket{p}$)  ili dva neutrona
 ($\ket{n}\ket{n}$). Izospinska simetrija onda nalaže da se ne pojavljuje
 ni treće stanje $\ket{I=1, M_I=0}$ pa zaključujemo da je primjećeno deuteronsko
 stanje $\ket{I=0, M_I = 0}$.
-Tu informaciju sad možemo iskoristiti na slijedeći način. Općenito
+Tu informaciju sad možemo iskoristiti na sljedeći način. Općenito
 stanje (valnu funkciju položaja, spina i izospina) dva nukleona možemo zapisati u obliku
 \begin{equation}
  \Psi_{N-N} = \phi(\vec{r}_1, \vec{r}_2) \Sigma(\vec{S}_1, \vec{S}_2)
@@ -625,7 +625,7 @@ dekuplet (10). Preostali dio u rastavu $3 \otimes 6$ ima
 dimenziju $3\times6-10=8$ i odgovara oktetu (8). (Tu
 zadnju ekvivalenciju nije lako pokazati ovom tenzorskom
 metodom. Pokazat ćemo to u zadatku \thechapter.\ref{zad:3x3x3} 
-metodom iz slijedećeg odjeljka.)
+metodom iz sljedećeg odjeljka.)
 Dakle, konačni rezultat je
 \begin{equation}
  3 \otimes 3 \otimes 3 = 10 \oplus 8 \oplus 8 \oplus 1
@@ -648,7 +648,7 @@ odgovaraju kvantnomehaničkim stanjima. Međutim, kako
 dimenzije reprezentacija rastu, i s njima broj indeksa tenzora,
 metoda postaje komplicirana. Jednostavnija za primjenu i općenitija
 je metoda Youngovih dijagrama, koju predstavljamo u 
-slijedećem odjeljku. Klasične reference za napredniji studij ovih
+sljedećem odjeljku. Klasične reference za napredniji studij ovih
 tenzorskih metoda i njihovih primjena na fiziku čestica
 su \cite{Coleman:1985} i \cite{Georgi:1999}.
 
@@ -662,12 +662,12 @@ $$
 gdje je važno svojstvo konveksnosti prema dolje desno tj. da
 je lijeva strana poravnata i da se broj polja u retcima
 \emph{ne smanjuje} kako idemo odozgo prema dolje.
-Dakle, slijedeći dijagrami \emph{nisu} ispravni Youngovi dijagrami
+Dakle, sljedeći dijagrami \emph{nisu} ispravni Youngovi dijagrami.
 $$
 \ydiagram{2+1,3,3} \qquad  \qquad  \ydiagram{3,4,1}
 $$
-Youngov dijagram s $n$ polja je ekvivalentan \SU{N} tenzoru s
-$n$ indeksa kojem su prvo indeksi koji odgovaraju pojedinim
+Youngov dijagram s $k$ polja je ekvivalentan \SU{N} tenzoru s
+$k$ indeksa kojem su prvo indeksi koji odgovaraju pojedinim
 retcima dijagrama simetrizirani, a zatim indeksi koji odgovaraju
 pojedinim stupcima antisimetrizirani.
 \begin{equation}
@@ -704,9 +704,10 @@ s četiri indeksa u \SU{3} gdje indeksi poprimaju
 samo vrijednosti $1$, $2$ i $3$ pa dva od ta četiri indeksa nužno moraju
 biti jednaka.
 
-\subsubsection{Dimenzija SU(N) reprezentacije reprezentirane Youngovim dijagramom}
-
-Youngov dijagram obrojčimo na dva slijedeća načina:
+Pokažimo sada kako se
+određuje dimenzija SU(N) reprezentacije reprezentirane 
+nekim Youngovim dijagramom.
+Youngov dijagram obrojčimo na dva sljedeća načina:
 
 Prvi način: U lijevi gornji kut upišemo $N$ (za \SU{N}), i ostatak
 reda obrojčimo s sukcesivno rastučim brojevima. Slijedeći red isto,
@@ -726,24 +727,14 @@ Kuka je linija koja od tog polja ide desno u beskonačnost i od tog
 istog polja dolje u beskonačnost. Broj polja preko kojih
 kuka prolazi upišemo u dato polje. Postupak ponavljamo za sva polja.
 
-%\begin{figure}[ht]
 \begin{center}
 \includegraphics[scale=0.8]{pics/kukat}
 \end{center}
-%\caption{Barionski oktet}
-%\label{fig:baryon_octet}
-%\end{figure}
-%\begin{displaymath}
-%\ytableausetup{boxsize=2.5em}
-%\ytableaushort{631, 41, 2, 1}
-%\end{displaymath}
 
-Pomnožimo posebno sve brojeve u dijagramu obrojčenom na prvi način i
+Sada pomnožimo posebno sve brojeve u dijagramu obrojčenom na prvi način i
 posebno sve brojeve u dijagramu obrojčenom na drugi način. Dimenzija
 ireducibilne reprezentacije je omjer ta dva broja.
-
-Primjeri:
-
+Evo tri primjera iz \SU{3}:
 \begin{displaymath}
 \ytableausetup{boxsize=normal}
 \SU{3}: \qquad \frac{\ytableaushort{34,2}}{\ytableaushort{31,1}} = \frac{24}{3}= 8
@@ -752,11 +743,9 @@ Primjeri:
 \qquad
 \frac{\ytableaushort{3,2}}{\ytableaushort{2,1}} = \frac{6}{2}= 3^*
 \end{displaymath}
-
-U zadnjem od gornja tri primjera smo se oslonili na informacije s
-početka ovog odjeljka da bi odredili da je zadnja reprezentacija zapravo
-antitriplet.
-
+U zadnjem od gornja tri primjera smo se oslonili na informacije ranije dobivene
+tenzorskim metodama da bi odredili da je zadnja reprezentacija zapravo
+antitriplet, a ne triplet. Navedimo još neke primjere:
 \begin{displaymath}
 \SU{3}: \qquad \frac{\ytableaushort{34}}{\ytableaushort{21}} = \frac{12}{2}= 6
 \qquad
@@ -773,11 +762,10 @@ antitriplet.
 \SU{5}: \qquad \frac{\ytableaushort{56,4}}{\ytableaushort{31,1}} = 40
 \end{displaymath}
 
-\subsubsection{Clebsch-Gordanov razvoj za SU(N) reprezentacije}
 
 Rastav direktnog produkta dvije \SU{N} ireducibilne reprezentacije na direktan zbroj
 (Clebsch-Gordanov razvoj) izvodi se množenjem odgovarajućih
-Youngovih dijagrama, $T_1$ i $T_2$, na slijedeći način. Polja u desnom
+Youngovih dijagrama, $T_1$ i $T_2$, na sljedeći način. Polja u desnom
 dijagramu ozačimo slovima: polja prvog retka
 s $a$, polja drugog retka s $b$ i tako dalje:
 
@@ -792,9 +780,9 @@ s $a$, polja drugog retka s $b$ i tako dalje:
 \end{array}
 \end{displaymath}
 
-Sada prebacujemo polja s $T_1$ na $T_2$ jedno po jedno, redak
+Sada prebacujemo polja s $T_2$ na $T_1$, jedno po jedno, redak
 po redak, odozgo prema dolje, na sve moguće načine, tako da
-budu zadovoljena slijedeća pravila.
+budu zadovoljena sljedeća pravila.
 \begin{enumerate}
 \item $T_1$ je u svakom trenutku ispravni Youngov dijagram.
 \item Polja s istim slovom ne smiju biti u istom stupcu.
@@ -855,7 +843,7 @@ Sad premještamo drugo {\ytableausetup{smalltableaux}$\ytableaushort{a}$
 \right)& 
 \quad\otimes\quad \ytableaushort{b} \quad=
 \end{align*}
-Tu imamo tri dijagrama u duplikatu pa po jedan maknemo:
+Tu iznad imamo tri dijagrama u duplikatu pa po jedan maknemo:
 \begin{displaymath}
 \left( 
 \ytableaushort{\none \none a a,\none} * {4, 1}
@@ -881,8 +869,8 @@ Tu imamo tri dijagrama u duplikatu pa po jedan maknemo:
 \quad\oplus\quad 
 \ytableaushort{\none \none , \none a, a b} * {2, 2, 2}
 \end{multline*}
-Primijetite da ovdje nismo kreirali dijagrame koji
-narušavaju gornja pravila:
+Primijetite da ovdje nismo kreirali sljedeće dijagrame koji
+bi narušavali gornja pravila:
 \begin{displaymath}
 \ytableaushort{\none \none a a b, \none} * {5, 1}
 \qquad \text{i} \qquad
