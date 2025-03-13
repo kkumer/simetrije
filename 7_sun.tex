@@ -5,35 +5,36 @@
     \fancyhead[CE]{\leftmark}
     \renewcommand{\headrulewidth}{0.4pt}}
 
-\chapter{\SU{N} grupe i fizika elementarnih čestica}
+\chapter{SU(N) grupe i fizika elementarnih čestica}
 
 Svi primjeri simetrija razmatranih u prošla tri poglavlja,
 bavili su se \emph{prostorno-vremenskim} transformacijama fizikalnih
 sustava, poput translacija ili rotacija. U zadnjem poglavlju knjige
-bavit ćemo se Lorentzovim, Poincar\'{e}ovim i konformalnim
+bavit ćemo se Lorentzovim, Poincar\'{e}ovim i konformnim
 transformacijama, koje također spadaju u kategoriju prostorno-vremenskih simetrija.
 Međutim u fizici, a posebice u fizici elementarnih čestica,
 od velikog su značaja i tzv. \emph{interne} simetrije, koje
 djeluju na značajke čestica poput njihove vrste, električnog
 naboja ili nekih "kvantnih brojeva" koji opisuju
-ponašanje čestica obzirom na tzv. slabe i jake sile.
+ponašanje čestica obzirom na  slabe i jake sile.
 Povijesno su istraživači nailazili na mnoge teškoće u formuliranju
-ispravnih teorija tih sila, a i dan danas npr. ne znamo riješiti jednadžbe
-gibanja koje su posljedica jake sile; i tu su se svojstva simetrija
-opaženih u prirodi pokazala kao izuzetno korisna.
+ispravnih teorija tih sila koje vladaju subnuklearnim svijetom,
+a i dan danas npr. ne znamo riješiti jednadžbe
+gibanja koje su posljedica jake sile. Tu su se svojstva simetrija
+opaženih u procesima s elementarnim česticama pokazala kao izuzetno korisna.
 Najveći trijumf fizike visokih energija druge polovice XX. i početka
-XXI. stoljeća je finalizacija tzv. standardnog modela fizike elementarnih
-čestica čije je struktura praktički potpuno određena njegovom
-tzv. baždarnom simetrijom, čija je grupa $\SU{3} \otimes \SU{2} \otimes \U{1}$. 
+XXI. stoljeća je finalizacija tzv. \emph{standardnog modela} fizike elementarnih
+čestica čija je struktura praktički potpuno određena njegovom
+tzv. baždarnom simetrijom i odgovarajućom grupom $\SU{3} \otimes \SU{2} \otimes \U{1}$. 
 Baždarne simetrije u fizici nisu tema ove knjige, ali u ovom ćemo poglavlju
 objasniti neke ideje i upotrebu općenitih internih simetrija, a također
 i konstrukciju ireducibilnih reprezentacija općenitih $\SU{N}$ grupa,
-što je od velike koristi pri izgradnji trenutnih i budućih teorija
+što je od velikog značaja pri izgradnji trenutnih i budućih teorija
 fizike visokih energija.
 
 
 
-\section{Izospin i SU(2)}
+\section{Izospin i grupa SU(2)}
 \label{sec:izospin}
 Prva simetrija kojom ćemo se baviti je povezana s opažanjem da se
 proton ($p$) i neutron ($n$) obzirom na jake nuklearne
@@ -84,10 +85,10 @@ Treba imati na umu da ove tri koordinate $i=1,2,3$, za razliku od
 slučaja rotacijske simetrije, nemaju nikakve veze sa prostornim
 $x, y$ i $z$ osima, već je riječ o posebnom izospinskom vektorskom prostoru.
 Isto tako, to što proton ima pozitivnu, a neutron negativnu vrijednost
-treće komponente izospina
+treće komponente izospina $M_I$
 \begin{align}
-   \ket{p} & = \ket{I=\fhalf, I_3=\fhalf} \,, \\
-   \ket{n} & = \ket{I=\fhalf,I_3=-\fhalf} \,,
+   \ket{p} & \:=\: \ket{I=\fhalf, M_I=\fhalf} \,, \\
+   \ket{n} & \:=\: \ket{I=\fhalf,M_I=-\fhalf} \,,
 \end{align}
 je stvar konvencije.
 Isto kao i kod spina, možemo definirati operatore dizanja i
@@ -97,10 +98,10 @@ je u tome da nije teško proizvesti stanje spina koje je svojstveno
 stanje operatora $J_y$, dakle usmjereno duž $y$-osi. To je jednostavna
 linearna superpozicija stanja $\ket{m=\fhalf}$ i $\ket{m=-\fhalf}$ koja
 se može lako realizirati odgovarajuće usmjerenim magnetom.
-S druge strane u prirodi \emph{ne} postoje stanja koja su superpozicija
+S druge strane u prirodi se ne opažaju stanja koja su superpozicija
 protona i neutrona\footnote{To je posljedica tzv. superselekcijskih  pravila.}.
-No i bez obzira na nepostojanje takvih stanja hipoteza izospina
-iziskuje da teorija jakih sila bude simetrična na cijelu izospinsku grupu,
+No i bez obzira na to hipoteza očuvanja izospina
+nalaže da teorija jakih sila bude simetrična na cijelu izospinsku grupu,
 uključujući i rotacije koje bi mogle proizvesti takva nepostojeća stanja.
 Iz toga slijedi zahtjev da hamiltonijan
 jake nuklearne sile $H_{\text{strong}}$ bude izo-simetričan tj. da komutira
@@ -129,14 +130,14 @@ direktni \emph{zbroj}
 To znači da dva nukleona mogu postojati u četiri izospinska stanja:
 tri s $I=1$ (tzv. izotriplet)
 \begin{align}
-  \ket{p}\ket{p} \qquad & I_3 = 1 \\
+  \ket{p}\ket{p} \qquad & M_I = 1 \\
   \frac{1}{\sqrt{2}} \big( \ket{p}\ket{n}+\ket{p}\ket{n}\big)
-  \qquad & I_3 = 0 \\
-  \ket{n}\ket{n} \qquad & I_3 = -1 \;,
+  \qquad & M_I = 0 \\
+  \ket{n}\ket{n} \qquad & M_I = -1 \;,
 \end{align}
 i jedno s $I=0$ (tzv. izosinglet):
 \begin{equation}
-  \frac{1}{\sqrt{2}} \big( \ket{p}\ket{n}-\ket{p}\ket{n}\big)                    \qquad  I_3 = 0 \;.
+  \frac{1}{\sqrt{2}} \big( \ket{p}\ket{n}-\ket{p}\ket{n}\big)   \qquad  M_I = 0 \;.
 \label{izosinglet}
 \end{equation}
 Situacija je u potpunosti analogna zbrajanju momenata impulsa
@@ -145,8 +146,8 @@ dvaju stanja sa \emph{spinom} $1/2$, u odjeljku \ref{tripletsinglet}.
 Nadalje, eksperimentalno je poznato da u prirodi nema vezanih stanja
 od samo dva protona ($\ket{p}\ket{p}$)  ili dva neutrona
 ($\ket{n}\ket{n}$). Izospinska simetrija onda nalaže da se ne pojavljuje
-ni treće stanje $\ket{I=1, I_3=0}$ pa zaključujemo da je primjećeno deuteronsko
-stanje $\ket{I=0, I_3 = 0}$.
+ni treće stanje $\ket{I=1, M_I=0}$ pa zaključujemo da je primjećeno deuteronsko
+stanje $\ket{I=0, M_I = 0}$.
 Tu informaciju sad možemo iskoristiti na slijedeći način. Općenito
 stanje (valnu funkciju položaja, spina i izospina) dva nukleona možemo zapisati u obliku
 \begin{equation}
@@ -156,7 +157,7 @@ stanje (valnu funkciju položaja, spina i izospina) dva nukleona možemo zapisat
 odnosno u sustavu samog deuterona i u bazi relativnih koordinata, te
 standardnim bazama ukupnog spina i izospina
 \begin{equation}
- \Psi_{N-N} = \rho(r) Y^{M_L}_{L} \ket{S, M_S} \ket{I, M_I} \;.
+ \Psi_{N-N} = R(r) Y^{M_L}_{L} \ket{S, M_S} \ket{I, M_I} \;.
 \end{equation}
 Za deuteron u osnovnom stanju poznato je da mu je orbitalni moment
 impulsa $L=0$\footnote{U stvarnosti, deuteron ima i malu primjesu
@@ -164,21 +165,21 @@ stanja s $L=2$ koju ovdje zanemarujemo.}, a upravo smo zaključili
 da mu je i izospin $I=0$.
 To znači da stanje deuterona mora biti oblika
 \begin{equation}
-\Psi_{\text{deuteron}} = \rho(r) \frac{1}{\sqrt{4\pi}} 
+\Psi_{\text{deuteron}} = R(r) \frac{1}{\sqrt{4\pi}} 
 \ket{S, M_S} \ket{I=0,M_I=0}\;.
 \end{equation}
 Nadalje, iz kvantne mehanike je poznato da valne funkcije moraju biti
-antisimetrične na zamjenu dva \emph{identična} fermiona. Izospinska
+antisimetrične na zamjenu dva identična fermiona. Izospinska
 simetrija onda ovdje nalaže da $\Psi_{\text{deuteron}}$ bude
 antisimetrično na zamjenu $p\leftrightarrow n$. Definiramo li onda
 operator zamjene $P_{pn}$ imamo
 \begin{equation}
-   P_{pn} \Psi_{\text{deuteron}} = - \Psi_{\text{deuteron}}
+   P_{pn} \Psi_{\text{deuteron}} = - \Psi_{\text{deuteron}} \,,
 \end{equation}
 dok se s druge strane vidi da je
 \begin{align}
 P_{pn} R(r) &= R(r) \\
-P_{pn} \ket{I=0,M_I=0} = - \ket{I=0,M_I=0} \;.
+P_{pn} \ket{I=0,M_I=0} &= - \ket{I=0,M_I=0} \;.
 \end{align}
 (Prvo je trivijalno, a drugo slijedi iz (\ref{izosinglet}).)
 To onda povlači da mora biti
@@ -187,9 +188,12 @@ To onda povlači da mora biti
 \end{equation}
 a kako su moguća stanja ukupnog spina protona i neutrona (svaki ima spin
 $S=1/2$) $S=0$ (singlet, antisimetričan
-na $P_{pn}$) i $S=1$ (triplet, simetričan na $P_{pn}$) vidimo da
+na $P_{pn}$) i $S=1$ (triplet, simetričan na $P_{pn}$), vidimo da
 ukupni spin protona i neutrona u deutronu mora biti $S=1$. Kako
 je $L=0$ odmah znamo i ukupni spin deuterona: $J=1$.
+To se onda odražava i na magnetski moment deuterona, odnosno
+njegov spektar nuklearne magnetske rezonancije (NMR) koji pokazuje
+tri vrha koja odgovaraju vrijednostima $M_J = -1, 0, 1$.
 \end{primjer}
 
 \begin{primjer}[Pion-nukleon raspršenje]
@@ -199,7 +203,7 @@ Tako tri piona, $\pi^+$, $\pi^0$ i $\pi^-$ tvore izotriplet $I=1$
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{ccr}
-  & masa (MeV) & $I_3$ \\ \hline
+  & masa (MeV) & $M_I$ \\ \hline
 $\pi^+$  &  139.59  & 1 \\
 $\pi^0$  &  135.00  & 0 \\
 $\pi^-$  &  139.59  &-1
@@ -213,7 +217,10 @@ i udarni presjeci ovakvih raspršenja su određeni matričnim elementima
 tzv. operatora raspršenja $S$, poput $\bra{\pi^+ n}S\ket{\pi^0 p }$.
 Detalji operatora $S$ ovdje nas neće zanimati, do na činjenicu da je
 on prvenstveno funkcija hamiltonijana pa je zahvaljujući (\ref{eq:HstrongI0})
-i $S$ izoskalar ($I=0$). Cilj nam je pokazati da izospinska simetrija
+i $S$ izoskalar ($I=0$). 
+Oznaka $S$ dolazi od engl. \emph{scattering} i operator $S$ ne treba
+miješati s operatorom spina koji se isto često označava s $S$.
+Cilj nam je pokazati da izospinska simetrija
 onda nalaže povezanost raznih amplituda $\pi - N$ raspršenja, tako
 što ćemo pokazati da je
 \begin{equation}
@@ -303,37 +310,36 @@ interakcijama i dobijamo
 koje su prema jednom eksperimentu $R=1.91$, a prema drugom $R=2.26$.
 \end{primjer}
 
-\section{Hipernaboj i SU(3), kvarkovi$^*$}
+\section{Grupa SU(3) i kvarkovi}
 
-\texttt{[... bit će dodano kasnije (vidi odgovarajuće dijelove u \cite{Jones:1998},
-i dodatno u Halzen and Martin, \emph{Quarks and leptons}, odjeljci 2.6, 2.8, 2.9 i 2.11) ...]}
+Velik broj novih čestica otkrivenih s napretkom akceleratora i detektora nakon
+II. svjetskog rata motivirao je istraživače da ih pokušaju organizirati
+koristeći interne simetrije slične izospinu. Na primjer, osim protona i
+neutrona, još šest čestica istog spina $\fhalf$ pokazivali su slična
+svojstva i mase. M. Gell-Mann i Y. Ne'eman su ovu osmorku i druge grupe
+sličnih čestica interpretirali pomoću klasifikacijskog sistema nazvanog
+"osmerostruki put" (engl. \emph{Eightfold way}). Taj je sistem bio posljedica
+pretpostavljene \SU{3} simetrije, čije su ireducibilne reprezentacije (multipleti) dobro
+odgovarali opaženim grupiranjima čestica.
 
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[scale=0.4]{pics/baryon_octet}
-\end{center}
-\caption{Barionski oktet}
-\label{fig:baryon_octet}
-\end{figure}
-
-Vidi sliku $\ref{fig:baryon_octet}$ \dots
-
-\section{Struktura grupe SU(3)}
-
-Znamo da grupe SU(N) imaju $N^2-1$ generatora, što znači da ih SU(3) ima osam.
-Općeniti element grupe će stoga biti $\exp(i \sum_{A=1}^8 \alpha_A T_{A})$, gdje
-su $\alpha_A$ realni parametri, a $T_A$ generatori. Algebra grupe je
+Grupa \SU{N} ima $N^2-1$ generatora, što znači da ih \SU{3} ima osam i
+općeniti element grupe će stoga biti oblika
 \begin{equation}
-  [ T_{A}, T_{B} ] = i f_{ABC} T_C \;
+    e^{i \sum_{A=1}^8 \alpha_A T_{A}} \in \SU{3} \,,
+    \label{eq:elsu3}
+\end{equation}
+gdje su $\alpha_A$ realni parametri, a $T_A$ generatori. Algebra grupe je
+definirana komutacijskim relacijama
+\begin{equation}
+  [ T_{A}, T_{B} ] = i f_{ABC} T_C \,,
 \label{eq:SU3}
 \end{equation}
-gdje su $f_{ABC}$ strukturne konstante grupe. Kao i kod SU(2), ove strukturne
+gdje su $f_{ABC}$ strukturne konstante grupe. Kao i kod \SU{2}, ove strukturne
 konstante su potpuno antisimetrične u sva tri indeksa (vidi zadatak \thechapter.\ref{zad:fabc}).
-Kao i kod SU(2) gdje su generatori u definicionoj (najnižoj netrivijalnoj)
+Kao i kod \SU{2} gdje su generatori u definicionoj (najnižoj netrivijalnoj)
 reprezentaciji bili dani $2\times 2$ Paulijevim matricama, tako su generatori
-definicione trodimenzionalne reprezentacije grupe SU(3) dani kao
-$T_A = \lambda_A/2$, gdje su $\lambda_A$ tzv. Gell-Mannove matrice:
-
+definicione trodimenzionalne reprezentacije grupe \SU{3} dani kao
+$T_A = \lambda_A/2$, gdje su $\lambda_A$ tzv. Gell-Mannove $3\times 3$ matrice
 \begin{gather}
 \lambda_1 = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}\:,\quad
 \lambda_2 = \begin{pmatrix} 0 & -i & 0 \\ i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}\:,\quad
@@ -346,46 +352,91 @@ $T_A = \lambda_A/2$, gdje su $\lambda_A$ tzv. Gell-Mannove matrice:
 \:.
 \nonumber
 \end{gather}
-
 Predfaktori su odabrani tako da univerzalno vrijedi relacija normalizacije
 \begin{equation}
  \Tr(T_A T_B) = \frac{1}{2} \delta_{AB} \;,
 \label{eq:SU3norm}
 \end{equation}
-koja vrijedi i za grupu SU(2).
-
+koja vrijedi i za grupu \SU{2}.
 Vidljivo je da su prve tri Gell-Mannove matrice zapravo Paulijeve matrice
-proširene na tri dimenzije iz čega se vidi da one generiraju SU(2) podgrupu od SU(3).
-
-Strukturne konstante grupe SU(3) su:
-
+proširene na tri dimenzije iz čega se vidi da one generiraju \SU{2} podgrupu od \SU{3}.
+Strukturne konstante grupe \SU{3} su:
 \begin{gather}
 f_{123} = 1 \, \nonumber \\
 f_{147} = -f_{156} = f_{246} = f_{257} = f_{345} = -f_{367} = \frac{1}{2} \, \\
 f_{458} = f_{678} = \frac{\sqrt{3}}{2} \;. \nonumber
 \end{gather}
-
 Kako je $f_{38A}=0$, $T_3$ i $T_8$ komutiraju što povlači da ih je moguće
 istovremeno dijagonalizirati što je i napravljeno gornjim izborom
 Gell-Mannovih matrica.
-Maksimalan broj takvih generatora naziva se \emph{rang} algebre i oni razapinju
-tzv. \emph{Cartanovu podalgebru} date Liejeve algebre. 
-Algebra su(3) je ranga 2, dok je su(2) ranga 1 (jedino je $\sigma_3$ dijagonalna).
+Općenito, maksimalan broj istovremeno dijagonalizabilnih generatora naziva se 
+\emph{rang} algebre.
+Algebra \suAlg{3} je dakle ranga 2, dok je \suAlg{2} ranga 1 (jedino je $\sigma_3$ dijagonalna).
+Ono što je razlikovalo stanja unutar istog \SU{2} multipleta su bile upravo
+svojstvene vrijednosti dijagonalnog operatora $J_3 = \sigma_3/2$, dok
+će stanja u \SU{3} multipletima biti analogno specificirana vrijednostima
+operatora $T_3$ i $T_8$. U praksi se umjesto $T_8$ obično koristi
+operator tzv. \emph{hipernaboja} $Y = T_8/\sqrt{3}$ ili operator tzv.
+\emph{stranosti} $S = Y - B$ gdje je $B$ tzv. barionski broj. 
+Obzirom na rang 2, \SU{3} multiplete je pogodno prikazivati u ravnini
+čije su osi $T_3$ i $T_8$ (ili $Y$ ili $S$) pa je tako na slici
+\ref{fig:baryon_octet} prikazan osnovni oktet bariona ($B=1$).
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.4]{pics/baryon_octet}
+\end{center}
+\caption{Barionski oktet.}
+\label{fig:baryon_octet}
+\end{figure}
+Kod grupe \SU{2}, bilo spina, bilo izospina, definiciona reprezentacija
+(izo)spina $\fhalf$ se obilato nalazi u prirodi. S druge strane,
+u vrijeme nastanka "osmerostrukog puta," nije bila poznata nijedna
+grupa čestica koja bi odgovarala definicionoj reprezentaciji grupe
+\SU{3} --- tripletu. Da bi si pomogli u računima, Gell-Mann i
+G. Zweig su postulirali tri hipotetske čestice koje je Gell-Mann nazvao
+\emph{kvarkovi}, s današnjim imenima $u$ (\emph{up}, gornji), $d$
+(\emph{down}, donji) i $s$ (\emph{strange}, strani, čudni) od kojih
+je bilo moguće izgraditi sve druge tada poznate čestice. Na slici
+\ref{fig:baryon_octet} je vidljiv i kvarkovski sastav čestica barionskog
+okteta.
+Originalno se mislilo da su kvarkovi samo pomagalo prilikom računa,
+no s vremenom su i sami kvarkovi opaženi u eksperimentima, a kasnije
+su otkrivena još i tri dodatna kvarka, $c$, $b$ i $t$. Ovi dodatni
+kvarkovi u načelu omogućuju i daljnje proširenje simetrije
+na \SU{4} itd., ali zbog velikih razlika u masama ovih dodatnih kvarkova
+te su simetrije jako narušene i nisu od takve koristi kao
+izospin i \SU{3}.
+Svaki od šest vrsta kvarkova (poznatih i kao šest "okusa") 
+dolazi u tri varijante (poznate kao tri "boje"), tako da kvarkova
+zapravo ima 18. Od velike je važnosti simetrija koja međusobno
+transformira tri bojna stanja kvarka i koja također ima grupno-teorijska
+svojstva grupe \SU{3}. 
+Treba dobro razlikovati simetriju \SU{3} okusa, koja je samo približna
+simetrija prirode narušena različitim nabojima i masama kvarkova
+i egzaktnu simetriju \SU{3} boje. Kad postoji opasnost zabune,
+koriste se oznake $\SU{3}_{\mathrm{F}}$ i $\SU{3}_{\mathrm{C}}$.
+
 
 \section{SU(3) tenzori}
 
-Za grupu SU(2) smo identificirali sve njene ireducibilne reprezentacije
+Za grupu \SU{2} smo identificirali sve njene ireducibilne reprezentacije
 razmatrajući isključivo same generatore grupe i njihove komutacijske relacije.
-Slična procedure je u načelu moguća i za SU(3), ali mi ćemo se ovdje osloniti
-na intuitivniji pristup koji se fokusira na same vektorske prostore na kojima
-reprezentacije djeluju. Postupke i rezultate ćemo prikazati na razini
-recepta, bez detaljnog dokazivanja.
+Slična procedura je u načelu moguća i za \SU{3}, ali mi ćemo se ovdje osloniti
+na intuitivniji pristup koji se fokusira na same objekte na koje operatori
+reprezentacije djeluju. Ti su objekti \SU{3} tenzori raznih rangova
+(prisjetite se definicije \ref{def:tenzor} i diskusije iza primjera
+\ref{pr:tenzorvodljivosti})
+i ta metoda razmatranja reprezentacija se onda naziva "tenzorska."
+Postupke i rezultate ćemo prikazati na razini recepta, bez detaljnog dokazivanja.
 
 
-Pogledajmo prvo analognu proceduru za slučaj grupe SU(2).
+Pogledajmo prvo tenzorski pristup reprezentacijama grupe \SU{2}.
 Sve ireducibilne reprezentacije te grupe mogu se dobiti
 višestrukim direktnim množenjem fundamentalne dvodimenzionalne reprezentacije
-(dubleta) sa samom sobom. (Fizikalno govoreći, kombinirajući dovoljan broj
+(dubleta) sa samom sobom\footnote{Podsjećamo da se u žargonu izraz
+    "reprezentacija" koristi i za skup operatora homomorfan grupi i za vektorski prostor
+    na kojem ti operatori djeluju. U ovom odjeljku ćemo obično
+misliti na ovo drugo.}. (Fizikalno govoreći, kombinirajući dovoljan broj
 sustava spina $1/2$ možemo dobiti sustav bilo kojeg spina.). Npr. ukoliko
 fundamentalni dublet označimo kao
 $\psi^a$, $a=1,2$, gdje je 
@@ -398,7 +449,7 @@ onda direktan produkt tog dubleta sa samim sobom daje četiri stanja:
  \psi^{11}\equiv \psi^1 \otimes \psi^1 \;, \quad \psi^{12} \;, \quad \psi^{21} \;
  \quad \text{i} \quad \psi^{22} \;.
 \end{displaymath}
-No, znamo da su ireducibilne reprezentacije od SU(2) zapravo 
+No znamo da su ireducibilne reprezentacije od \SU{2} zapravo 
 \emph{antisimetrični} singlet
 \begin{displaymath}
    \psi^{12} - \psi^{21}
@@ -411,18 +462,13 @@ Ova potreba da se ireducibilne reprezentacije formiraju
 simetrizacijom i antisimetrizacijom je djelomično rasvijetljena
 u odjeljku \ref{sect:sfericniVSkartezijevi} gdje je pokazano 
 kako se simetrične i antisimetrične komponente 
-tenzora\footnote{U ovom odjeljku riječ tenzor se odnosi na ove
-direktne produkte \emph{vektora stanja}, a ne na sferične i kartezijeve
-tenzorske \emph{operatore} iz odjeljka \protect\ref{sect:tenzorskioperatori}.
-Opisana metoda konstrukcije IRREPsa se po tome i često zove 
-``tenzorska metoda''.} ne miješaju pri transformacijama.
-
+tenzora ne miješaju pri transformacijama.
 Na isti način, direktnim množenjem i (anti)simetriziranjem
-fundamentalnih trodimenzionalnih reprezentacija grupe SU(3) moguće
-je konstruirati sve njene IRREPse. Kao prvo, potrebno je uočiti da
-SU(3) ima \emph{dvije} neekvivalentne 3D reprezentacije,
+fundamentalnih trodimenzionalnih reprezentacija grupe \SU{3} moguće
+je konstruirati sve njene ireducibilne reprezentacije. Kao prvo, potrebno je uočiti da
+\SU{3} ima \emph{dvije} neekvivalentne trodimenzionalne reprezentacije,
 čiji operatori su povezani kompleksnom konjugacijom: $U(g)$ i
-$U(g)^*$. (Za SU(2) grupu su odgovarajuće 2D reprezentacije ekvivalentne
+$U(g)^*$. (Za \SU{2} grupu su odgovarajuće dvodimenzionalne reprezentacije ekvivalentne
 pa je dovoljno raditi samo s jednim fundamentalnim dubletom, vidi
 zadatak \thechapter.\ref{zad:su2dublet}.)
 Da bismo razlikovali te dvije reprezentacije, odgovarajuće vektore
@@ -445,24 +491,25 @@ se transformiraju kao:
 \end{equation}
 
 Promotrimo sada direktni produkt 3 i $3^*$ reprezentacija tj.
-tenzor $\psi^a \psi_b$.
-Kao prvo, trag tog tenzora je invarijantan i predstavlja tenzor 
-ranga 0:
-%\begin{displaymath}
-%\psi^a \psi_a \to \tensor{U}{^a_b}\tensor{U}{^*_a^c} \psi^b \psi_c
-%= \big\{ \tensor{U}{^*_a^c}=\tensor{U}{^\dagger^c_a} \big\}
-%= \tensor{(U^\dagger U)}{^c_b} \psi^b \psi_c
-%= \tensor{\delta}{^c_b} \psi^b \psi_c = \psi^b \psi_b \.
-%\end{displaymath}
+tenzor $\psi^a \psi_b \equiv \psi^{a}_{b}$.
+Kao prvo, trag tog tenzora $\psi^a \psi_a$ je invarijantan na \SU{3}
+transformacije
+\begin{equation}
+ \psi^a \psi_a \to \tensor{U}{^{a}_{b}}\tensor{U}{^*_a^c} \psi^b \psi_c
+= \tensor{(U^\dagger U)}{^c_b} \psi^b \psi_c
+= \tensor{\delta}{^c_b} \psi^b \psi_c = \psi^b \psi_b \,,
+\end{equation}
+(koristili smo $\tensor{U}{^*_a^c}=\tensor{U}{^\dagger^c_a}$) 
+što znači da je taj trag  tenzor ranga 0.
 To nam sugerira da tenzor $\psi^a \psi_b$ rastavimo 
- dio s tragom nula i sam trag:
+ dio s tragom nula i sam trag
 \begin{equation}
 \psi^a \psi_b = \left(\psi^a \psi_b - \frac{1}{3}
 \tensor{\delta}{^a_b}\psi^c \psi_c \right) +
 \frac{1}{3} \tensor{\delta}{^a_b} \psi^c \psi_c  \;.
 \label{eq:rastav3c3tensor}
 \end{equation}
-Daljnje rastavljanje odvajanjem simetričnog i antisimetričnog
+Daljnje rastavljanje prvog člana odvajanjem simetričnog i antisimetričnog
 dijela tenzora nije moguće jer gornji i donji indeks
 nisu ekvivalentni. Kako smo ustanovili da je trag ranga 0,
 dakle singlet, imamo konačno:
@@ -471,24 +518,35 @@ dakle singlet, imamo konačno:
 \label{eq:rastav3c3}
 \end{equation}
 
-\subsubsection{Invarijantni SU(3) tenzori}
-
-Kroneckerov simbol $\tensor{\delta}{^a_b}$ je također SU(3) 
-tenzor (vidi (\ref{eq:rastav3c3tensor})) i to invarijantan jer:
+To da je trag invarijantan je očito i iz toga što nema
+"slobodnog" indeksa na koji bi djelovao operator transformacije
+$\tensor{U}{^{a}_{b}}$. Postoje međutim i važni tenzori
+viših rangova koji su također invarijantni.
+Prvi je Kroneckerov simbol $\tensor{\delta}{^a_b}$ koji je \SU{3} 
+tenzor ranga 2 (usporedi u (\ref{eq:rastav3c3tensor})) koji je invarijantan jer
 \begin{equation*}
 \tensor{\delta}{^a_b} \to  \tensor{U}{^a_c}
 \tensor{U}{^*_b^d} \tensor{\delta}{^c_d} = 
 \tensor{U}{^a_c} \tensor{U}{^*_b^c} = \tensor{\delta}{^a_b} \;.
 \end{equation*}
-
 Na sličan način se je moguće uvjeriti da su Levi-Civita
 tenzori $\epsilon^{abc}$  i $\epsilon_{abc}$ 
-također invarijantni, vidi zadatak \thechapter.\ref{zad:epsSU3invariance}. 
+također invarijantni.
+Na primjer, 
+\begin{equation}
+    \epsilon^{abc} \to     
+     \tensor{U}{^a_d}
+     \tensor{U}{^b_e}
+     \tensor{U}{^c_f}\epsilon^{def} 
+     = \det U \epsilon^{abc} = \epsilon^{abc} \,,
+\end{equation}
+gdje smo upotrijebili svojstvo iz zadatka \ref{zad:levicivita}.
 Značaj Levi-Civita tenzora je da se pomoću
 njih mogu ``spuštati i dizati indeksi'' drugih tenzora.
 Npr. promotrimo antisimetričnu komponentu tenzora $\psi^{ab}$,
 koju dobijemo kao $\tensor{\psi}{^{[ab]}} \equiv (\psi^{ab}-\psi^{ba})/2$.
-Ona očito ima samo tri nezavisne komponente. Množenjem s 
+Ona očito ima samo tri nezavisna elementa (slično kao
+antisimetrična $3\times 3$ matrica). Kontrakcijom s 
 Levi-Civita tenzorom možemo tu činjenicu učiniti eksplicitnom
 i pokazati da je $\tensor{\psi}{^{[ab]}}$ ekvivalentan
 antitripletu $\psi_a$:
@@ -496,8 +554,13 @@ antitripletu $\psi_a$:
   \psi_a = \epsilon_{abc} \tensor{\psi}{^{bc}}
 \label{eq:spustanjeindeksa}
 \end{equation}
-(Objekt $\epsilon_{abc} \tensor{\psi}{^{bc}}$ ima samo jedan slobodan
-donji indeks  iz čega se vidi da je ekvivalentan tenzoru $\psi_a$.)
+Usput, Levi-Civita tenzor invarijantan na 
+djelovanje \SU{2} grupe ima samo
+dva indeksa $\epsilon_{ij}$, pa podižući i spuštajući
+indekse ne mijenja rang tenzora, te se i tako vidi
+da su u \SU{2} dublet $\psi^{i}$ i antidublet
+$\psi_{i} = \epsilon_{ij}\psi^{j}$ ekvivalentni i da
+u \SU{2} općenito ne moramo razlikovati položaje indeksa.
 
 \begin{primjer}[$3\otimes 3$]
 Kako triplet i antitriplet nisu ekvivalentni, $3\otimes 3
@@ -512,32 +575,19 @@ tenzora koji su svaki za sebe ireducibilni,
 \end{align}
 Prvi, potpuno simetrični član, ima šest nezavisnih komponenata
 (broj nezavisnih elemenata simetrične 3$\times$3 matrice) i
-predstavlja sekstuplet (6) reprezentaciju.
-Nadalje, zahvaljujući svojstvu Levi-Civita tenzora
-(usporedi zadatak \ref{ch:lie}.\ref{zad:svojstvalevicivite}),
-$\epsilon^{abc}\epsilon_{cmn} = 
-\tensor{\delta}{^a_m}
-\tensor{\delta}{^b_n} -
-\tensor{\delta}{^a_n}
-\tensor{\delta}{^b_m}$, imamo
-\begin{equation}
-\psi^a\psi^b - \psi^b \psi^a = \epsilon^{abc}\epsilon_{cmn}
-\psi^m\psi^n \;.
-\end{equation}
-$\epsilon^{abc}$ je SU(3) invarijanta, dok je, cf. 
-(\ref{eq:spustanjeindeksa}), $\epsilon_{cmn}\psi^{m}\psi^n = \psi_c$
-iz čega vidimo da je $\psi^{[ab]}$ ekvivalentan antitripletu
+predstavlja sekstuplet (6) reprezentaciju, dok smo gore
+vidjeli da je $\psi^{[ab]}$ ekvivalentan antitripletu
 $\psi_c$. 
 
 Podsjetimo se da smo u odjeljku \ref{sect:tenzorskioperatori},
 simetrične 6-dim operatore dodatno reducirali na jednodimenzionalni
 trag i 5-dim simetrični dio s tragom nula.  Ovdje to ne možemo učiniti
 jer na raspolaganju imamo samo 
-$\tensor{\delta}{^a_b}$ i $\tensor{\delta}{_a^b}$ kao SU(3) invarijante, 
-ali ne i $\delta^{ab}$. (U odjeljku \ref{sect:tenzorskioperatori}
-to nije bio problem jer zbog ekvivalentnosti dubleta i antidubleta u
-SU(2) ne moramo paziti na razliku između gornjih i donjih indeksa.)
-Stoga je $\psi^{(ab)}$ ireducibilni sekstet (6).
+$\tensor{\delta}{^a_b}$ i $\tensor{\delta}{_a^b}$ kao \SU{3} invarijante, 
+ali ne i $\delta^{ab}$! (U odjeljku \ref{sect:tenzorskioperatori}
+to nije bio problem jer u
+\SU{2} ne moramo paziti na razliku između gornjih i donjih indeksa.)
+Stoga je sekstuplet $\psi^{(ab)}$ ireducibilan.
 
 Dakle, konačni rezultat je
 \begin{equation}
@@ -549,42 +599,41 @@ Dakle, konačni rezultat je
 \begin{primjer}[$3\otimes 3\otimes 3$]
 Koristimo prvo rezultat iz zadnjeg primjera:
 \begin{equation}
-3\otimes 3\otimes 3 = (3 \otimes 6) \oplus (3 \otimes 3^*) \;.
+3\otimes 3\otimes 3 = 3 \otimes (6 \oplus 3^*)
+= (3 \otimes 6) \oplus (3 \otimes 3^*) \;.
 \end{equation}
 Drugi član već znamo iz (\ref{eq:rastav3c3}), a prvi je
-umnožak seksteta $\psi^{(ab)}$ i tripleta $\psi^{c}$.
+direktan umnožak seksteta $\psi^{(ab)}$ i tripleta $\psi^{c}$.
 Iz tog umnoška možemo izdvojiti potpuno simetričnu komponentu:
 \begin{equation}
 \psi^{(ab)}\psi^{c} = \psi^{(abc)} + \text{ostatak} \;. 
 \label{eq:6x3}
 \end{equation}
-Tenzor $\psi^{(abc)}$, tipa $(3,0)$, je totalno simetrični
+Tenzor $\psi^{(abc)}$ je totalno simetrični
 tenzor ranga 3. Broj njegovih nezavisnih komponenata može
-se odrediti npr. izravnim brojanjem. Prvo, postoji
+se odrediti i izravnim brojanjem. Prvo, postoji
 samo jedna nezavisna komponenta sa sva tri različita
 indeksa, npr. $\psi^{123}$, i sve ostale su joj jednake:
-$\psi^{123} = \psi^{213} = \psi^{312} = \ldots$. Komponenata
-s dva ista indeksa i trećim različitim ima šest:
+$\psi^{123} = \psi^{213} = \psi^{312} = \ldots$. Nezavisnih komponenata
+s dva ista indeksa i trećim različitim ima šest, npr.
 $\psi^{112}, \psi^{113}, \psi^{221}, \psi^{223},
 \psi^{331}$ i $\psi^{332}$. Imamo još i tri nezavisne
-komponente sa sva tri indeksa ista (na ``hiperdijagonali''
-tenzora), $\psi^{111}, \psi^{222}, \psi^{333}$, što sve skupa
-čini ukupno 10 komponenata. Dakle, $\psi^{(abc)}$ je
+komponente sa sva tri indeksa ista (na "hiperdijagonali"
+tenzora), $\psi^{111}$, $\psi^{222}$ i $\psi^{333}$, što sve skupa
+čini ukupno 10 nezavisnih komponenata. Dakle, $\psi^{(abc)}$ je
 dekuplet (10). Preostali dio u rastavu $3 \otimes 6$ ima
 dimenziju $3\times6-10=8$ i odgovara oktetu (8). (Tu
 zadnju ekvivalenciju nije lako pokazati ovom tenzorskom
-metodom --- pokazat ćemo to u zadatku \thechapter.\ref{zad:3x3x3} 
+metodom. Pokazat ćemo to u zadatku \thechapter.\ref{zad:3x3x3} 
 metodom iz slijedećeg odjeljka.)
-
 Dakle, konačni rezultat je
 \begin{equation}
  3 \otimes 3 \otimes 3 = 10 \oplus 8 \oplus 8 \oplus 1
 \label{eq:3x3x3}
 \end{equation}
-
 Ovaj primjer je od velikog fizikalnog značaja jer odgovara
 mogućim kombinacijama triju lakih kvarkova koji čine
-fundamentalni SU(3) triplet:
+fundamentalni \SU{3} triplet
 \begin{equation}
  \psi^{1}=u\;, \quad \psi^{2}=d \;, \quad \psi^{3} = s \;,
 \end{equation}
@@ -592,14 +641,16 @@ Jedan od okteta, prikazan na slici \ref{fig:baryon_octet}, sadrži
 proton i neutron.
 \end{primjer}
 
-Tenzorske metode analize SU(3) ireducibilnih reprezentacija, prikazane
+Tenzorske metode analize \SU{3} ireducibilnih reprezentacija, prikazane
 u ovom odjeljku, su pogodne jer istovremeno pokazuju strukturu samih
-SU(3) objekata što je često od interesa u primjenama, gdje ti objekti
+\SU{3} objekata što je često od interesa u primjenama, gdje ti objekti
 odgovaraju kvantnomehaničkim stanjima. Međutim, kako
 dimenzije reprezentacija rastu, i s njima broj indeksa tenzora,
 metoda postaje komplicirana. Jednostavnija za primjenu i općenitija
 je metoda Youngovih dijagrama, koju predstavljamo u 
-slijedećem odjeljku.
+slijedećem odjeljku. Klasične reference za napredniji studij ovih
+tenzorskih metoda i njihovih primjena na fiziku čestica
+su \cite{Coleman:1985} i \cite{Georgi:1999}.
 
 
 \section{SU(N) tenzori i Youngovi dijagrami}
@@ -615,7 +666,7 @@ Dakle, slijedeći dijagrami \emph{nisu} ispravni Youngovi dijagrami
 $$
 \ydiagram{2+1,3,3} \qquad  \qquad  \ydiagram{3,4,1}
 $$
-Youngov dijagram s $n$ polja je ekvivalentan SU(N) tenzoru s
+Youngov dijagram s $n$ polja je ekvivalentan \SU{N} tenzoru s
 $n$ indeksa kojem su prvo indeksi koji odgovaraju pojedinim
 retcima dijagrama simetrizirani, a zatim indeksi koji odgovaraju
 pojedinim stupcima antisimetrizirani.
@@ -625,18 +676,18 @@ pojedinim stupcima antisimetrizirani.
 \label{eq:tbltensor}
 \end{equation}
 Uočite da antisimetrizacija po stupcima pokvari simetriju po retcima.
-Ukoliko je u ovom primjeru riječ o SU(3) tenzoru, znamo da je par
+Ukoliko je u ovom primjeru riječ o \SU{3} tenzoru, znamo da je par
 antisimetriziranih gornjih indeksa ekvivalentan jednom donjem indeksu
 nakon spuštanja pomoću Levi-Civita tenzora:
 \begin{equation}
-SU(3):\quad 
+\SU{3}:\quad 
 \ytableaushort{abc, de} \qquad \Longleftrightarrow \qquad
 \psi^{[ad][be]c} \qquad \Longleftrightarrow \qquad
 \psi^{c}_{fg} \;.
 \label{eq:tbltensorsu3}
 \end{equation}
-Na sličan način možemo svaki tenzor (dakle svaku IRREP) prikazati
-posebnim Youngovim dijagramom. Npr. u SU(3):
+Na sličan način možemo svaki tenzor (dakle svaku ireducibilnu reprezentaciju) prikazati
+posebnim Youngovim dijagramom. Npr. u \SU{3}:
 \begin{align}
 \ydiagram{1} \qquad\qquad \psi^a \qquad\qquad 3  \\[2ex]
 \ydiagram{1,1} \qquad\qquad \psi^{[ab]} \Leftrightarrow \psi_c  \qquad\qquad 3^*  \\[2ex]
@@ -647,17 +698,17 @@ U zadnjem redu smo iskoristili činjenicu da je potpuno antisimetrični tenzor s
 indeksa nužno proporcionalan Levi-Civiti, što znači da je invarijantan i
 da ga trebamo tretirati kao singlet tj. jedinični element u algebri
 reprezentacija. Ekvivalentno, stupac s N polja
-Youngovog dijagrama SU(N) grupe možemo brisati. Dijagram s više od N polja
+Youngovog dijagrama \SU{N} grupe možemo brisati. Dijagram s više od N polja
 je naprosto nula jer npr. nije moguće napraviti potpuno antisimetrični tenzor
-s četiri indeksa u SU(3) gdje indeksi poprimaju
+s četiri indeksa u \SU{3} gdje indeksi poprimaju
 samo vrijednosti $1$, $2$ i $3$ pa dva od ta četiri indeksa nužno moraju
 biti jednaka.
 
-\subsubsection{Dimenzija SU(N) IRREPsa reprezentiranog Youngovim dijagramom}
+\subsubsection{Dimenzija SU(N) reprezentacije reprezentirane Youngovim dijagramom}
 
 Youngov dijagram obrojčimo na dva slijedeća načina:
 
-Prvi način: U lijevi gornji kut upišemo $N$ (za SU(N)), i ostatak
+Prvi način: U lijevi gornji kut upišemo $N$ (za \SU{N}), i ostatak
 reda obrojčimo s sukcesivno rastučim brojevima. Slijedeći red isto,
 ali počnemo s $N-1$. I tako dalje.
 \begin{displaymath}
@@ -689,13 +740,13 @@ kuka prolazi upišemo u dato polje. Postupak ponavljamo za sva polja.
 
 Pomnožimo posebno sve brojeve u dijagramu obrojčenom na prvi način i
 posebno sve brojeve u dijagramu obrojčenom na drugi način. Dimenzija
-IRREPsa je omjer ta dva broja.
+ireducibilne reprezentacije je omjer ta dva broja.
 
 Primjeri:
 
 \begin{displaymath}
 \ytableausetup{boxsize=normal}
-SU(3): \qquad \frac{\ytableaushort{34,2}}{\ytableaushort{31,1}} = \frac{24}{3}= 8
+\SU{3}: \qquad \frac{\ytableaushort{34,2}}{\ytableaushort{31,1}} = \frac{24}{3}= 8
 \qquad
 \frac{\ytableaushort{3}}{\ytableaushort{1}} = \frac{3}{1}= 3
 \qquad
@@ -707,24 +758,24 @@ početka ovog odjeljka da bi odredili da je zadnja reprezentacija zapravo
 antitriplet.
 
 \begin{displaymath}
-SU(3): \qquad \frac{\ytableaushort{34}}{\ytableaushort{21}} = \frac{12}{2}= 6
+\SU{3}: \qquad \frac{\ytableaushort{34}}{\ytableaushort{21}} = \frac{12}{2}= 6
 \qquad
 \frac{\ytableaushort{345}}{\ytableaushort{321}} = \frac{60}{6}= 10
 \end{displaymath}
 
 \begin{displaymath}
-SU(3): \qquad \frac{\ytableaushort{345,234}}{\ytableaushort{432,321}} = 10
+\SU{3}: \qquad \frac{\ytableaushort{345,234}}{\ytableaushort{432,321}} = 10
  \qquad 
 \frac{\ytableaushort{3456,23}}{\ytableaushort{5421,21}} = 27
 \end{displaymath}
 
 \begin{displaymath}
-SU(5): \qquad \frac{\ytableaushort{56,4}}{\ytableaushort{31,1}} = 40
+\SU{5}: \qquad \frac{\ytableaushort{56,4}}{\ytableaushort{31,1}} = 40
 \end{displaymath}
 
-\subsubsection{Clebsch-Gordanov razvoj za SU(N) IRREPse}
+\subsubsection{Clebsch-Gordanov razvoj za SU(N) reprezentacije}
 
-Rastav direktnog produkta dva SU(N) IRREPsa na direktan zbroj
+Rastav direktnog produkta dvije \SU{N} ireducibilne reprezentacije na direktan zbroj
 (Clebsch-Gordanov razvoj) izvodi se množenjem odgovarajućih
 Youngovih dijagrama, $T_1$ i $T_2$, na slijedeći način. Polja u desnom
 dijagramu ozačimo slovima: polja prvog retka
@@ -756,14 +807,14 @@ Na kraju
 \begin{itemize}
 \item Maknemo stupce s $N$ polja. (Jer je totalno
 antisimetrični tenzor s $N$ indeksa proporcionalan
-s $\epsilon^{a_1 a_2 \cdots a_N}$ i time SU(N)
+s $\epsilon^{a_1 a_2 \cdots a_N}$ i time \SU{N}
 invarijanta.)
 \item Dva dijagrama istog oblika  odgovaraju
-posebnim IRREPsima samo ako se razlikuju po razmještaju
+posebnim ireducibilnim reprezentacijama samo ako se razlikuju po razmještaju
 slova $a,b,\dots$. U suprotnom jednog maknemo.
 \end{itemize}
 
-\begin{primjer}[$8 \otimes 8$ u SU(3)]
+\begin{primjer}[$8 \otimes 8$ u \SU{3}]
 \begin{displaymath}
 \ydiagram{2,1} \quad\otimes\quad \ytableaushort{aa,b} \quad = 
 \end{displaymath}
@@ -837,7 +888,7 @@ narušavaju gornja pravila:
 \qquad \text{i} \qquad
 \ytableaushort{\none \none a, \none, a, b} * {3, 1,1, 1}
 \end{displaymath}
-Sada maknemo sve stupce s tri polja (SU(3) invarijante)
+Sada maknemo sve stupce s tri polja (\SU{3} invarijante)
 i dobijemo konačno:
 \begin{equation*}
 \ytableaushort{\none \none a a,\none b} * {4, 2}
@@ -852,7 +903,7 @@ i dobijemo konačno:
 \quad\oplus\quad 
 1
 \end{equation*}
-Dimenzije IRREPsa za sve ove dijagrame smo već odredili pa
+Dimenzije ireducibilnih reprezentacija za sve ove dijagrame smo već odredili pa
 očitavamo konačni rezultat
 \begin{equation}
 8 \otimes 8 = 27 \oplus 10 \oplus 10 \oplus 8 \oplus 8 \oplus 1
@@ -882,7 +933,7 @@ strukturne konstante $f_{ABC}$, grupe SO(3) potpuno antisimetrične u
 svim indeksima.
 
 \item \label{zad:su2dublet}
-Pokažite da je za SU(2)  $2^* = 2$ tj. da su fundamentalni dublet i
+Pokažite da je za \SU{2}  $2^* = 2$ tj. da su fundamentalni dublet i
 antidublet ekvivalentni, tako da pokažete da je operator $C$
 \begin{displaymath}
   C = U(R(\hat{y},\theta=\pi)) = \exp\left(-\frac{i}{\hbar} J_2 \pi\right) \;
@@ -893,20 +944,16 @@ C \sigma_i C^{-1}& = - \sigma_{i}^* \\
 C U(g) C^{-1}& = U(g)^*
 \end{align*}
 
-\item \label{zad:epsSU3invariance}
-Pokažite da su Levi-Civita tenzori $\epsilon^{abc}$ i $\epsilon_{abc}$
-invarijatni na SU(3) transformacije. Naputak: promotrite djelovanje
-infinitezimalnih transformacija $U=1+i\alpha_A T_A$.
 
 \item \label{zad:3x3x3}
-Izračunajte Clebsch-Gordanov razvoj u SU(3) grupi za
+Izračunajte Clebsch-Gordanov razvoj u \SU{3} grupi za
 \begin{itemize}
 \item $3^* \otimes 3$
 \item $3 \otimes 3$
 \item $3 \otimes 3 \otimes 3$
 \end{itemize}
 
-\item Izračunajte Clebsch-Gordanov razvoj u SU(6) grupi za
+\item Izračunajte Clebsch-Gordanov razvoj u \SU{6} grupi za
 \begin{itemize}
 \item $6 \otimes 6^*$
 \item $6 \otimes 6 \otimes 6$
