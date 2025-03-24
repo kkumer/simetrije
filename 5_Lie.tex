@@ -236,25 +236,32 @@ koja se naziva \emph{specijalna} ortogonalna grupa \SO{3}.
 Elementi komplementa od \SO{3} u \O{3} tj. matrice koje imaju determinantu -1 nekad se 
 nazivaju \emph{neprave} rotacije.
 Neprave rotacije se mogu na jedinstven
-način prikazati kao umnožak običnih rotacija iz \SO{3} i operatora inverzije
+način prikazati kao umnožak običnih rotacija iz \SO{3} i operatora 
+prostorne inverzije\footnote{Poznat i kao operator \emph{pariteta} zbog
+    važnog svojstva parnosti kvantnomehaničkih valnih funkcija na transformaciju
+prostorne inverzije.}
 \begin{equation}
-I = \begin{pmatrix}
+P = \begin{pmatrix}
 -1 & 0 & 0 \\ 
 0  &-1 & 0 \\
 0  & 0 & -1
 \end{pmatrix} \,.
 \end{equation}
 Naime, uzmemo li proizvoljnu nepravu rotaciju $\tilde{R}$ tada
-je $\det (I \tilde{R}) = \det(I) \det(\tilde{R}) = +1 $ pa je $I\tilde{R}$ 
-prava rotacija, $I\tilde{R} = R$,
-i onda je $\tilde{R} = I R$. Tako je cijeli taj skup
-kojeg čine neprave rotacije zapravo jednak umnošku $I\SO{3}$ i vidimo da
+je 
+\begin{equation}
+\det (P \tilde{R}) = \det(P) \det(\tilde{R}) = +1     
+\end{equation}
+pa je $P\tilde{R}$ 
+prava rotacija, $P\tilde{R} = R$,
+i onda je $\tilde{R} = P R$. Tako je cijeli taj skup
+kojeg čine neprave rotacije zapravo jednak umnošku $P\SO{3}$ i vidimo da
 se cijela ortogonalna grupa sastoji od točno dvije komponente
 \begin{equation}
-    \O{3} = \SO{3} + I\SO{3}\,,
-    \label{eq:so3Iso3}
+    \O{3} = \SO{3} + P\SO{3}\,,
+    \label{eq:so3Pso3}
 \end{equation}
-od kojih je samo $\SO{3}$ podgrupa. ($I\SO{3}$ ne može biti podgrupa jer ne sadrži
+od kojih je samo $\SO{3}$ podgrupa. ($P\SO{3}$ ne može biti podgrupa jer ne sadrži
 jedinični element.)
 
 Usredotočimo se sada na grupu $\SO{3}$ i promotrimo izgled njene grupne mnogostrukosti.
