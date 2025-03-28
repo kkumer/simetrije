@@ -417,7 +417,7 @@ nije nužna poput četverovektora položaja ili impulsa te, važno, klasičnih
 i kvantnih polja.
 
 
-Pogledajmo prvo komutacijske relacije Lorentzove Lieve algebre \soAlg{1,3}. Eskplicitnim
+Pogledajmo prvo komutacijske relacije Lorentzove Lieve algebre \soAlg{1,3}. Eksplicitnim
 množenjem vidimo da vrijedi
 \begin{align}
 [J_i, J_j] &= i\epsilon_{ijk} J_k  \,, \label{eq:LK1}\\
@@ -603,7 +603,7 @@ grupa. To je posljedica činjenice da za razliku od grupe translacija,
 Lorentzova grupa nije normalna podgrupa Poincar\'{e}ove grupe.
 U takvom slučaju govorimo o \emph{semi-direktnom} produktu grupa
 i pišemo da je Poincar\'{e}ova grupa $\mathbb{R}^{1,3} \rtimes \O{1,3}$,
-te je označavamo i kao \ISO{1,3} ("I" dolazi od engl. \emph{inhomogenous}).
+te je označavamo i kao \IO{1,3} ("I" dolazi od engl. \emph{inhomogenous}).
 
 Riječ je očito o deset-parametarskoj grupi gdje povrh generatora
 Lorentzove grupe ($J^i$ i $K^i$) imamo i impuls $P^i$ kao
@@ -645,6 +645,282 @@ eksplicitno ovisi o prostornim $x$ i $y$ koordinatama.}
 pa nisu od praktične koristi. 
 
 
+U sljedećem odjeljku ćemo se baviti konstrukcijom unitarnih ireducibilnih
+reprezentacija Poincar\'{e}ove grupe koje djeluju na kvantnomehanička stanja.
+U tom kontekstu će biti relevantno svojstvo Poincar\'{e}ove grupe da
+dopušta i projektivne reprezentacije, vidi odjeljak \ref{sec:projektivnerep},
+jer njena komponenta povezanosti
+jedinice nije jednostavno povezana. To znači da je kompozicija
+transformacija definirana do na fazu.
+To je isključivo posljedica
+činjenice da je njena podgrupa Lorentzova grupa \SOsup{+}{1,3},
+dvostruko povezana. Situacija je potpuno analogna situaciji iz
+odjeljka \ref{sec:projektivnerep}, gdje je grupa rotacija
+\SO{3} dopuštala projektivne reprezentacije\footnote{Dvostruku
+    povezanost Lorentzova grupe direktno nasljeđuje
+od njene podgrupe --- grupe rotacija.}. Tamo smo identificirali
+jednostavno povezanu grupu pokrivanja \SU{2} koja ima istu algebru
+kao i \SO{3}, no čije su sve reprezentacije obične, ne-projektivne.
+Za Lorentzovu grupu također postoji grupa pokrivanja. Riječ je
+o grupi $\SL{2, \mathbb{C}}$ svih regularnih kompleksnih
+$2\times 2$ matrica, koja dva puta pokriva Lorentzovu grupu,
+što za posljedicu ima da je i ovdje kompozicija transformacija
+na kvantnim stanjima "dvo-vrijedna" i može uključivati dodatni
+minus.
+U skladu s komentarima na kraju odjeljka \ref{sec:projektivnerep} 
+mogli bismo reći da je "istinska" Poincar\'{e}ova grupa
+$\mathbb{R}^{1,3} \rtimes \SL{2, \mathbb{C}}$. No mi ćemo
+se svejedno držati standardne Poincar\'{e}ove grupe, s
+komponentnom povezanosti jedinice $\mathbb{R}^{1,3} \rtimes \SOsup{+}{1,3}$
+jer nam je djelovanje elemenata te grupe na prostoru Minkowskog dobro poznato.
+S druge strane, pojednostavit ćemo analizu razmatrajući
+samo prave reprezentacije grupe, znajući da postoji mogućnost i
+projektivnih, što će se na kraju svesti samo na to spinovi mogu
+biti i polucjelobrojni, što nije nikakva novost.
+
+\section{Unitarne reprezentacije Poincar\'{e}ove grupe}
+
+Želja nam je klasificirati i opisati unitarne ireducibilne reprezentacije
+$U(\Lambda, a)$
+Poincar\'{e}ove grupe na Hilbertovom prostoru jednočestičnih stanja 
+$\mathcal{H}$. Vektori koji razapinju potprostore od $\mathcal{H}$ koji
+pripadaju tim reprezentacijama su labelirani svojstvenim vrijednostima
+maksimalnog skupa međusobno komutirajućih generatora grupe
+(kako je za grupu rotacija bio samo $J_3$). Poincar\'{e}ova grupa
+nije ni kompaktna ni polujednostavna i na nju se ne može primijeniti
+metoda slična onoj koju smo koristili za grupu rotacija  gdje smo
+identificirali stanje s maksimalnom vrijednošću $J_3$ i onda razapeli
+cijeli prostor djelvanjem $J_\pm$.
+Za Poincar\'{e}ovu grupu je E. Wigner 1939. godine razvio posebnu
+metodu --- tzv. metodu \emph{induciranih reprezentacija} koju ćemo
+sada izložiti.
+
+Promatrajući komutacijske relacije Poincar\'{e}ove grupe 
+(\ref{eq:LK1})--(\ref{eq:LK3}) i (\ref{eq:Poi1})--(\ref{eq:PoinKom})
+prirodno je za označavanje stanja koristiti četveroimpuls $p^{\mu}$,
+obzirom da pripadajuća četiri operatora $P^{\mu}$ međusobno komutiraju.
+Komponenta $p^0$ je redundantna pa ćemo stanja označavati samo s $\vec{p}$
+\begin{equation}
+    P^{\mu} \ket{\vec{p}, \sigma} = p^{\mu} \ket{\vec{p}, \sigma} \,,
+    \label{eq:defpsigma}
+\end{equation}
+gdje $\sigma$ označava sve ostale labele potrebne za potpunu specifikaciju
+stanja unutar dane ireducibilne reprezentacije, a koje tek treba odrediti\footnote{Dakle,
+    $\sigma$ obrojčava ostale dimenzije
+vektorskog prostora, ortogonalne na kontinuum dimenzija koje obrojčava $p^{\mu}$.}.
+Sva stanja $\ket{\vec{p}, \sigma}$ s istim $p^{\mu}$, a različitim $\sigma$
+razapinju potprostor $\mathcal{H}_{p} \subset \mathcal{H}$ kojeg nazivamo
+\emph{mali} Hilbertov prostor. Zahvaljujući (\ref{eq:defpsigma}) djelovanje
+čistih translacija je jednostavno, podsjetimo se odjeljka \ref{sec:qmtrans} 
+\begin{equation}
+    U(1, a) \ket{\vec{p}, \sigma} = e^{i p\cdot a}  \ket{\vec{p}, \sigma}\;.
+    \label{eq:PoiTrans}
+\end{equation}
+Pozabavimo se sada djelovanjem Lorentzovih transformacija $U(\Lambda)\equiv U(\Lambda, 0)$.
+
+
+Skup vektora $\{ \tensor{\Lambda}{^\mu_\nu}p^{\nu} \: | \: \Lambda \in \SOsup{+}{1,3}\}$
+koje dobijemo djelovanjem svih Lorentzovih transformacija na neki
+vektor $p$, nazivamo \emph{orbita} tog vektora. Oblik orbite ovisi o karakteristikama
+vektora i mogućnosti su prikazane na slici \ref{fig:orbite} i bit će diskutirane kasnije.
+Izaberimo neki konkretni element orbite $p^{*}$ kojeg ćemo zvati
+\emph{reprezentant} orbite i označiti zvjezdicom (nema veze s kompleksnom konjugacijom).
+Konstruirajmo sada skup transformacija 
+$\{L(p) \td p \in \mathrm{orbita}(p^*) \} \subset \SOsup{+}{1,3}$ koje
+na \emph{jedinstven} način transformiraju $p^{*\mu}$ u svaki vektor njegove orbite
+\begin{equation}
+p^{\mu} = \tensor{L(p)}{^\mu_\nu} p^{*\nu}\,.
+\end{equation}
+Označavat ćemo skraćeno $L_{p} \equiv L(p)$.
+Elementi $U(L)$ iz unitarne reprezentacije Poincare\'{o}ve grupe
+preslikavaju vektore iz $\mathcal{H}_{p^*}$ u $\mathcal{H}_{p}$
+i kako je inverz $U(L_{p})^{-1} = U(L_{p}^{-1})$ definiran jer
+su $U$ elementi reprezentacije grupe, preslikavanje je injekcija i
+svi mali Hilbertovi prostori $\mathcal{H}_{p}$ na orbiti su 
+izomorfni. Tako izbor reprezentanta $p^*$ ne smanjuje općenitost
+i možemo izabrati bilo koji pogodni reprezentant orbite za daljnju
+analizu. Nadalje, kad jednom definiramo bazu  $\mathcal{H}_{p^*}$
+(obrojčenu vrijednostima labele $\sigma$), baze ostalih $\mathcal{H}_{p}$
+\emph{definiramo} preslikavanjem
+\begin{equation}
+\ket{\vec{p}, \sigma} \equiv U(L_{p}) \ket{\vec{p}^*, \sigma} \quad \forall \sigma \,.
+    \label{eq:defbazaHp}
+\end{equation}
+Treba uočiti da će konkretne baze ovisiti o skupu $\{L_{p}\}$, a
+sastav tog skupa ovisi ne samo o izboru reprezentanta $p^*$ nego i
+o izboru elemenata $L_p$ koji na jedinstven način transformiraju
+$p^*$ u $p$. Orbitu sačinjavaju vektori različitih iznosa i smjerova
+troimpulsa $\vec{p}$,
+pa će $L_p$ tipično biti kombinacija potiska i rotacije, ali postoji
+sloboda hoćemo li prvo zarotirati $\vec{p}^*$ u smjer $\vec{p}$ pa 
+napraviti odgovarajući potisak ili obrnuto ili pak neka kompliciranija kombinacija.
+
+Za općenitu Lorentzovu transformaciju $\Lambda \in \SOsup{+}{1,3}$,
+između dva proizvoljna vektora $p$ i $\Lambda p$ na orbiti očekujemo 
+da odgovarajući operator $U(\Lambda)$ miješa vektore baze
+odgovarajućih malih Hilbertovih prostora $\mathcal{H}_{p}$
+i $\mathcal{H}_{\Lambda p}$ tj. da je
+\begin{equation}
+    U(\Lambda) \ket{\vec{p}, \sigma} = \sum_{\sigma'=1}^{\mathrm{dim}(\mathcal{H}_{\Lambda p})}
+    C_{\sigma \sigma'} \ket{\Lambda\vec{p}, \sigma'} \,.
+\end{equation}
+Objekti $C_{\sigma \sigma'}$ (matrice ako je $\mathrm{dim}(\mathcal{H}_{p}) =
+\mathrm{dim}(\mathcal{H}_{\Lambda p})$ konačan)
+nakon transformacije u blok-dijagonalnu
+formu (ako je potrebno) definiraju tražene unitarne ireducibilne reprezentacije
+Lorentzove grupe. Ti objekti na kompleksan način ovise o $\Lambda$ i
+$p$ eksplicitno te o $L_{p}$ i $p^*$ implicitno,
+no sad ćemo vidjeti da su ipak razmjerno jednostavni.
+
+Ograničimo se privremeno na $m > 0$ masivnu situaciju i promotrimo
+kao reprezentanta $p^{*\mu} = (m, 0, 0, 0)$.
+Pripadajući mali Hilbertov prostor $\mathcal{H}_{p^*}$ je razapet
+vektorima $\ket{\vec{p}^{*}, \sigma}$. Djelovanje $U(\Lambda)$ na
+proizvoljno stanje na orbiti je
+\begin{align}
+    U(\Lambda)\ket{\vec{p}, \sigma} &=  U(\Lambda) U(L_p) \ket{\vec{p}^{*}, \sigma} \\
+     &= U(\Lambda L_p) \ket{\vec{p}^{*}, \sigma} \\
+     &= U(L_{\Lambda p}) U(L_{\Lambda p}^{-1}) \: U(\Lambda L_p) \ket{\vec{p}^{*}, \sigma} \\
+     &= U(L_{\Lambda p})\, U(L_{\Lambda p}^{-1} \Lambda L_p) \ket{\vec{p}^{*}, \sigma}
+     \label{eq:defRWone}
+.\end{align}
+gdje smo u prvom redu iskoristili (\ref{eq:defbazaHp}) i gdje smo
+obilato koristili svojstvo da je $U(\Lambda)$ reprezentacija\footnote{I gdje
+smo po potrebi radili u "istinskoj" Lorentzovoj grupi \SL{2, \mathbb{C}}
+umjesto u \SOsup{+}{1,3} da izbjegnemo faze projektivnih reprezentacija,
+vidi diskusiju na kraju prošlog odjeljka.}.
+Sada treba uočiti da je Lorentzova transformacija koja
+u (\ref{eq:defRWone}) djeluje na $\ket{\vec{p}^{*}, \sigma}$ redom
+\begin{enumerate}
+    \item transformacija iz sustava mirovanja ($p^*$) u sustav impulsa $p$,
+    \item transformacija u sustav impulsa $\Lambda p$, te
+    \item inverzna transformacija koja nas vraća u sustav mirovanja.
+\end{enumerate}
+Dakle ukupna Lorentzova transformacija je obična rotacija!
+Tu rotaciju
+\begin{equation}
+    R_{\scriptscriptstyle \mathrm{W}} \equiv L_{\Lambda p}^{-1} \Lambda L_p \,,
+    \label{eq:defRW}
+\end{equation}
+nazivamo \emph{Wignerova rotacija} i nije je općenito lako eksplicitno
+odrediti, no nama je ovdje bitno samo to da je to obična prostorna rotacija
+jer djelovanje rotacija na kvantna stanja dobro
+znamo. Ono je dano Wignerovim $D$-matricama,
+vidi (\ref{eq:WignerD}), pa je odgovarajuća transformacija u $\mathcal{H}_{p^*}$
+\begin{equation}
+    U(R_{\scriptscriptstyle\rm W}) \ket{\vec{p}^{*}, \sigma} = 
+      \sum_{\sigma'=-j}^{j} D^{(j)}_{\sigma'\sigma}(R_{\scriptscriptstyle\rm W})
+      \ket{\vec{p}^{*}, \sigma'} \;,
+\end{equation}
+i vidimo da $\sigma$ nije ništa drugo nego projekcija spina, često označavana s $m$.
+Uvrštavanjem u (\ref{eq:defRWone}) dobivamo reprezentaciju Lorentzove
+grupe
+\begin{equation}
+    U(\Lambda) \ket{\vec{p}, \sigma} = 
+     \sum_{\sigma'=-j}^{j} D^{(j)}_{\sigma'\sigma}(R_{\scriptscriptstyle\rm W})
+     \ket{\Lambda\vec{p}, \sigma'} \;,
+\end{equation}
+te na kraju i reprezentaciju Poincar\'{e}ove grupe
+\begin{equation}
+    U(\Lambda, a) \ket{\vec{p}, \sigma} =  e^{-i p \cdot a}
+     \sum_{\sigma'=-j}^{j} D^{(j)}_{\sigma'\sigma}(R_{\scriptscriptstyle\rm W})
+     \ket{\Lambda\vec{p}, \sigma'} \;.
+\end{equation}
+Centralni je rezultat ovog razmatranja da je, pored mase $m$, standardni spin $j$
+jedino drugo svojstvo sustava potrebno za specifikaciju njegovog ponašanja
+pri Poincar\'{e}ovim transformacijama.
+Masa je svojstvena vrijednost Casimirovog operatora $P^2$, a spin
+je svojstvena vrijednost Casimirovog operatora $\vec{J}^2$, koji se
+može pogodno generalizirati na kovarijantni operator $W^2$ gdje je
+$W^{\mu}$ \emph{operator Paulija i Ljubanskog}
+\begin{equation}
+    W_{\mu} \equiv - \frac{1}{2} \epsilon_{\mu \nu \rho \sigma}
+    J^{\nu \rho} P^{\sigma} \,,
+    \label{eq:defPLj}
+\end{equation}
+gdje je $J^{\nu \rho}$ definiran u (\ref{eq:defJmn}.
+Čitatelj će se lako uvjeriti da u sustavu mirovanja vrijedi
+\begin{equation}
+    W^2 = - m^2 \vec{J}^2 = -m^2 j (j+1) \;.
+\end{equation}
+Par $(m, j)$ potpuno specificira ponašanje sustava pri kompletnom skupu
+prostornovremenskih simetrija danih Poincar\'{e}ovom grupom, i često se
+govori da je \emph{definicija} "čestice" to da je to sustav koji predstavlja
+ireducibilnu reprezentaciju Poincar\'{e}ove grupe ili, alternativno,
+da je to sustav definirane mase i spina.
+Treba reći da se ovdje ne ograničavamo samo na tzv. elementarne čestice.
+I ne-elementarni sustavi, ako ih promatramo u situacijama koje ne razlučuju
+njihovu unutarnju građu (npr. proton na energijama na kojima se ne pobuđuju
+kvarkovi ili vodikov atom u osnovnom stanju na energijama manjim od 1 eV),
+predstavljaju \emph{jednočestična stanja} i ireducibilne reprezentacije
+Poincar\'{e}ove grupe.
+
+Spomenimo još da se gore diskutirana sloboda u izboru baza malih Hilbertovih
+prostora na orbiti u praksi koristi tako da se, umjesto standardne \emph{spinske}
+baze gdje je $\sigma$ svojstveno stanje $J_z$,
+koristi \emph{helicitetna} baza gdje je $\sigma$ svojstveno stanje operatora
+heliciteta $\vec{J}\cdot\vec{\hat{p}}$, tj. operatora momenta impulsa projeciranog na smjer
+impulsa čestice. To ima nekoliko prednosti
+\begin{itemize}
+    \item Helicitet $\vec{J}\cdot\vec{\hat{p}}$ komutira s impulsom $\vec{P}$ 
+        (vidi zadatak \ref{zad:help}) pa je onda stanje $\ket{\vec{p}, \sigma}$
+        specificirano pomoću svojstvenih vrijednosti komutirajućih operatora koje
+        su istovremeno mjerljive.
+
+   \item U ultrarelativističkom limesu elektromagnetske i jake nuklearne sile
+       čuvaju vrijednost heliciteta.
+
+   \item U često korištenom sustavu dvije čestice u kojem njihov ukupni troimpuls
+       iščezava, njihov orbitalni moment impulsa je okomit na smjer njihovog
+       relativnog gibanja. Tada je ukupni spin duž tog smjera (što je važna očuvana veličina)
+       dan jednostavnim zbrajanjem heliciteta bez potrebe dodavanja doprinosa
+       orbitalnog momenta impulsa kojeg često ne znamo.
+\end{itemize}
+
+Ovo smo razmatranje proveli specijalizirano za sustav s $m > 0$.
+Pogledajmo sada općenitu situaciju. U gornjem izvodu ključno je bilo
+identificirati grupu simetrija koja ostavlja invarijantnim reprezentirajući
+vektor $p^*$. Ta se grupa naziva \emph{mala grupa} ili \emph{stabilizator}
+i u gornjem slučaju to je bila grupa rotacija \SO{3}.
+Pokazali smo da se puna reprezentacija $U(\Lambda, a)$ inducira iz te
+male grupe pa je to bio primjer metode induciranih reprezentacija.
+Metoda općenito uključuje identificiranje klasa elemenata vektorskog prostora
+(ovdje $p \in \mathbb{R}^{1,3}$) koji su kao skupovi invarijantni na djelovanje
+pune grupe (ovdje orbite Poincar\'{e}ove grupe),
+identificiranje pogodnih reprezentanata tih klasa $p^*$ i
+određivanje njihovih malih grupa. Sve kategorije orbita prikazane su
+na slici \ref{fig:orbite}
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pics/orbits}
+    \caption{Kategorije mogućih orbita vektora u prostoru Minkowskog.}
+    \label{fig:orbite}
+\end{figure}
+a pogodni reprezentanti i pripadajuće male grupe su
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{cccc}
+\hline
+  & orbita & reprezentant $p^*$ & mala grupa \\ \hline
+    A & $p^2=m^2>0$, $p^0>0$ &  $(m, 0, 0, 0)$  &  \SO{3} \\
+    B & $p^2=m^2>0$, $p^0<0$ &  $(-m, 0, 0, 0)$  &  \SO{3} \\
+    C & $p^2=0, p^0>0$ &  $(\omega, 0, 0, \omega)$  &  \ISO{2} \\
+    D & $p^2=0, p^0<0$ &  $(-\omega, 0, 0, \omega)$  &  \ISO{2} \\
+    E & $p^2= - \kappa^2 < 0$ &  $(0, 0, 0, \kappa)$  &  \SO{1,2} \\
+    F & $p^{\mu} =  0$ &  $(0, 0, 0, 0)$  &  Poincar\'{e} \\
+\end{tabular}
+\renewcommand{\arraystretch}{1.0}
+\end{center}
+Ovdje je pored činjenice da je $p^2$ invarijanta iskorišteno i to da je
+za $p^2 \ge 0$ i predznak od $p^0$ invarijantan (uvjerite se u to).
+Stanja iz kategorija B, D i E nisu dosad identificirana u prirodi pa ih
+nećemo razmatrati.
+Kategorija F predstavlja vakuum koji je invarijantan na cijelu Poincar\'{e}ovu
+grupu pa je odgovarajuća reprezentacija trivijalna i ne trebamo je
+dalje razmatrati.
+Kategoriju A smo upravo razmotrili gore.
+Tako nam preostaje razmotriti kategoriju C bezmasenih stanja pozitivne
+energije kojoj pripadaju npr. fotoni.
 
 \subsection*{Zadaci}
 
@@ -658,4 +934,9 @@ pa nisu od praktične koristi.
 (\ref{eq:DiracJ}) i (\ref{eq:DiracGamma}) zadovoljavaju komutacijske
 relacije Lorentzove grupe (\ref{eq:4DLorKom}).
 
+\item Pokažite da helicitet $\vec{J}\cdot\vec{\hat{p}}$ komutira s impulsom $\vec{P}$.
+    \label{zad:help}
+
+\item Odredite inifinitezimalne generatore dvodimenzionalne euklidske
+    grupe $\ISO{2}$ i njihove komutacijske relacije.
 \end{enumerate}
