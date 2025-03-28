@@ -460,7 +460,8 @@ i \emph{simetrični} triplet
 \end{displaymath}
 Ova potreba da se ireducibilne reprezentacije formiraju 
 simetrizacijom i antisimetrizacijom je djelomično rasvijetljena
-u odjeljku \ref{sect:sfericniVSkartezijevi} gdje je pokazano 
+u odjeljku \ref{sec:tenzorskioperatori} i zadatku \ref{zad:antisim}
+gdje je diskutirano
 kako se simetrične i antisimetrične komponente 
 tenzora ne miješaju pri transformacijama.
 Na isti način, direktnim množenjem i (anti)simetriziranjem
@@ -579,12 +580,12 @@ predstavlja sekstuplet (6) reprezentaciju, dok smo gore
 vidjeli da je $\psi^{[ab]}$ ekvivalentan antitripletu
 $\psi_c$. 
 
-Podsjetimo se da smo u odjeljku \ref{sect:tenzorskioperatori},
+Podsjetimo se da smo u odjeljku \ref{sec:tenzorskioperatori},
 simetrične 6-dim operatore dodatno reducirali na jednodimenzionalni
 trag i 5-dim simetrični dio s tragom nula.  Ovdje to ne možemo učiniti
 jer na raspolaganju imamo samo 
 $\tensor{\delta}{^a_b}$ i $\tensor{\delta}{_a^b}$ kao \SU{3} invarijante, 
-ali ne i $\delta^{ab}$! (U odjeljku \ref{sect:tenzorskioperatori}
+ali ne i $\delta^{ab}$! (U odjeljku \ref{sec:tenzorskioperatori}
 to nije bio problem jer u
 \SU{2} ne moramo paziti na razliku između gornjih i donjih indeksa.)
 Stoga je sekstuplet $\psi^{(ab)}$ ireducibilan.
@@ -847,14 +848,14 @@ Tu iznad imamo tri dijagrama u duplikatu pa po jedan maknemo:
 \begin{displaymath}
 \left( 
 \ytableaushort{\none \none a a,\none} * {4, 1}
-\quad\oplus\quad 
+\;\oplus\; 
 \ytableaushort{\none \none a, \none a} * {3, 2}
-\quad\oplus\quad 
+\;\oplus\; 
 \ytableaushort{\none \none a, \none, a} * {3, 1, 1}
-\quad\oplus\quad 
+\;\oplus\; 
 \ytableaushort{\none \none, \none a, a} * {2, 2, 1}
 \right) 
-\quad\otimes\quad \ytableaushort{b} \quad=
+\:\otimes\; \ytableaushort{b} \quad=
 \end{displaymath}
 \begin{multline*}
 \ytableaushort{\none \none a a,\none b} * {4, 2}
@@ -878,19 +879,19 @@ bi narušavali gornja pravila:
 \end{displaymath}
 Sada maknemo sve stupce s tri polja (\SU{3} invarijante)
 i dobijemo konačno:
-\begin{equation*}
+\begin{multline*}
 \ytableaushort{\none \none a a,\none b} * {4, 2}
 \quad\oplus\quad 
 \ytableaushort{\none a a} * {3}
 \quad\oplus\quad 
-\ytableaushort{\none \none a, \none a b} * {3, 3}
-\quad\oplus\quad 
+\ytableaushort{\none \none a, \none a b} * {3, 3} \\
+\oplus\quad 
 \ytableaushort{\none a, a} * {2, 1}
 \quad\oplus\quad 
 \ytableaushort{\none a,  b} * {2, 1}
 \quad\oplus\quad 
 1
-\end{equation*}
+\end{multline*}
 Dimenzije ireducibilnih reprezentacija za sve ove dijagrame smo već odredili pa
 očitavamo konačni rezultat
 \begin{equation}
