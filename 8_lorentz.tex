@@ -286,8 +286,8 @@ iz skupa $\{1, P, T, PT\}$ i elemenata \SOsup{+}{1,3}.
 
 
 \section{Generatori i reprezentacije Lorentzove grupe}
+\label{sec:genLor}
 
-\label{id:5}
 Kao i kod rotacija, sustave u prirodi treba klasificirati prema
 njihovim transformacijskim svojstvima pri Lorentzovim transformacijama
 tj. prema pripadnosti reprezentacijama Lorentzove
@@ -713,7 +713,7 @@ razapinju potprostor $\mathcal{H}_{p} \subset \mathcal{H}$ kojeg nazivamo
 \emph{mali} Hilbertov prostor. Zahvaljujući (\ref{eq:defpsigma}) djelovanje
 čistih translacija je jednostavno, podsjetimo se odjeljka \ref{sec:qmtrans} 
 \begin{equation}
-    U(1, a) \ket{\vec{p}, \sigma} = e^{i p\cdot a}  \ket{\vec{p}, \sigma}\;.
+    U(1, a) \ket{\vec{p}, \sigma} = e^{\rmi p\cdot a}  \ket{\vec{p}, \sigma}\;.
     \label{eq:PoiTrans}
 \end{equation}
 Pozabavimo se sada djelovanjem Lorentzovih transformacija $U(\Lambda)\equiv U(\Lambda, 0)$.
@@ -822,7 +822,7 @@ grupe
 \end{equation}
 te na kraju i reprezentaciju Poincar\'{e}ove grupe
 \begin{equation}
-    U(\Lambda, a) \ket{\vec{p}, \sigma} =  e^{-i p \cdot a}
+    U(\Lambda, a) \ket{\vec{p}, \sigma} =  e^{\rmi p \cdot a}
      \sum_{\sigma'=-j}^{j} D^{(j)}_{\sigma'\sigma}(R_{\scriptscriptstyle\rm W})
      \ket{\Lambda\vec{p}, \sigma'} \;.
 \end{equation}
@@ -922,6 +922,96 @@ Kategoriju A smo upravo razmotrili gore.
 Tako nam preostaje razmotriti kategoriju C bezmasenih stanja pozitivne
 energije kojoj pripadaju npr. fotoni.
 
+Fotoni nemaju sustav mirovanja pa je najjednostavniji reprezentant
+oblika $k^{*\mu} = (\omega, 0, 0, \omega)$. Očito je da ovaj put
+mala grupa \emph{nije} grupa rotacija. Jedino rotacije oko $z$-osi
+$\{R(\theta) \td \theta \in [0, 2\pi)\}$ ostavljaju $k^{*\mu}$
+invarijantan. Malu grupu kompletiraju dvoparametarske translacije
+u $t-z$ "ravnini" dane matricom
+\begin{equation}
+  T(\vec{u}) = \begin{pmatrix}
+      1+\vec{u}^2/2 & u_1 & u_2 & -\vec{u}^2/2 \\
+u_1 & 1 & 0 & -u_1 \\
+u_2 & 0 & 1 & -u_2 \\
+\vec{u}/2 & u_1 & u_2 & 1-\vec{u}^2/2
+  \end{pmatrix} \,,
+    \label{eq:defTu}
+\end{equation}
+parametriziranom vektorom $\vec{u} = (u_1, u_2) \in \mathbb{R}^2$.
+Čitatelj će se lako eksplicitnim množenjem uvjeriti da vrijedi
+\begin{equation}
+    \tensor{T(\vec{u})}{^{\mu}_{\nu}} k^{*\nu} = k^{*\mu} \,,
+\end{equation}
+a također i
+\begin{align}
+    T(\vec{u}) T(\vec{v}) &= T(\vec{u} + \vec{v}) \,, \\
+    R(\theta) T(\vec{u}) R(\theta)^{-1} &= T(R(\theta)\vec{u}) \,,
+\end{align}
+uz $R(\theta)\vec{u} = (u_1\cos\theta + u_2 \sin\theta, -u_1\sin\theta+u_2\cos\theta)$,
+što potvrđuje interpretaciju $T$ kao translacije i pokazuje da je mala grupa
+od $k^{*}$ troparametarska grupa translacija i rotacija 2D prostora poznata
+kao \emph{euklidska} grupa \ISO{2}, kako je i naznačeno u gornjoj tablici.
+Baza odgovarajućeg malog Hilbertovog prostora $\mathcal{H}_{k^*}$ bit
+će razapeta vektorima
+\begin{equation}
+  \ket{\vec{k}^{*}, \sigma} = \ket{\vec{k}^{*}, t_1, t_{2}, \lambda} \,,
+\end{equation}
+gdje je $\lambda$ svojstvena vrijednost od $J_z$ koju ćemo po analogiji
+s masivnim slučajem zvati helicitet, a $t_{1,2}\in\mathbb{R}$,
+su svojstvene
+vrijednosti infinitezimalnih generatora translacija $T$ (odredite ih, vidi
+zadatak \ref{zad:iso2gen}).
+Jedino izolirano jednočestično bezmaseno stanje koje smo dosad opazili
+u prirodi je foton koji u eksperimentima ne pokazuje nikakve značajke
+koje bi ukazivale na posjedovanje dodatnog kontinuiranog kvantnog broja
+$t_i$ pa smo prisiljeni zaključiti da je za foton $t_1=t_2=0$,
+te da priroda nije iskoristila mogućnost $t_i \neq 0$, baš jednako kao ni
+mogućnosti stanja na orbitama B, D i E sa slike \ref{fig:orbite}.
+Stavimo onda $t_1=t_2=0$ i promotrimo mali Hilbertov prostor
+razapet s $\ket{\vec{k}^{*}, \lambda} \equiv \ket{\vec{k}^{*}, 0, 0, \lambda}$.
+Kako mala grupa ne sadrži
+operatore dizanja i spuštanja $J_{\pm}$, njenim djelovanjem $\lambda$
+se ne mijenja\footnote{Operatori translacije isto ne mijenjaju $\lambda$
+    za stanja s $t_1=t_2=0$ u što se lako možete uvjeriti nakon što
+ste odredili komutacijske relacije u zadatku \ref{zad:iso2gen}.
+Ispostavlja se da je ta translacijska simetrija povezana s tzv.
+baždarnom simetrijom kvantne elektrodinamike, vidi \cite{Weinberg:1995mt}.}
+i posljedično je mali Hilbertov prostor \emph{jednodimenzionalan} i
+ponašanje bezmasenih stanja pri
+transformacijama iz Poincar\'{e}ove grupe 
+$(\Lambda, a) \in \mathbb{R}^{1,3}\rtimes\SOsup{+}{1,3}$ je jednostavno
+\begin{equation}
+    U(\Lambda, a) \ket{\vec{k}, \lambda} = e^{\rmi k\cdot a}
+    e^{-\rmi \lambda \theta(\Lambda, k)} \ket{\Lambda\vec{k}, \lambda} \,,
+    \label{eq:Urepm0}
+\end{equation}
+gdje je kut $\theta(\Lambda, k)$ potrebno odrediti netrivijalnim postupkom slično kao
+i Wignerovu rotaciju u masivnom slučaju.
+Uočite da stanja sa suprotnim helicitetima $\lambda$ i $-\lambda$ pripadaju
+različitim reprezentacijama
+i s tog stanovišta su lijevi i desni foton dvije različite čestice.
+No ako proširimo grupu i s operatorom prostorne inverzije $P\in O(1,3)$, slično kao za Diracovu
+reprezentaciju u odjeljku \ref{sec:genLor}, ustanovili bi da
+on mijenja predznak od $\lambda$ pa je u kontekstu teorija koje
+imaju simetriju na prostornu inverziju, a takav je elektromagnetizam,
+prirodno lijevi i desni foton ipak smatrati dvama stanjima iste čestice.
+
+Zadnja finesa je da ništa dosad rečeno ne ograničava helicitet $\lambda$
+da ne bude bilo koji realni broj. Sjetimo se naime da je kvantizacija
+spina u \ref{ch:rotacije}. poglavlju bila posljedica \soAlg{3} algebre
+koju ovdje nemamo. Međutim, ovisnost o $\lambda$
+u (\ref{eq:Urepm0}) je samo kroz fazu, a kako je Poincar\'{e}ova grupa
+dvostruko povezana (nasljeđeno od njene \SO{3} podgrupe rotacija),
+rotacije za $\theta=2\pi$ smiju rezultirati samo fazom $\pm 1$ i
+slijedi da je ipak $\lambda \in \{0, \fhalf, 1, \ldots\}$. Razlog
+da je spin bezmasenih čestica polucjelobrojan nije posljedica
+algebre (okoline jediničnog elementa) nego topologije (globalne strukture)
+grupe simetrija.
+
+
+
+
+
 \subsection*{Zadaci}
 
 \begin{enumerate}[label=\arabic{chapter}.\arabic*.]
@@ -938,5 +1028,5 @@ relacije Lorentzove grupe (\ref{eq:4DLorKom}).
     \label{zad:help}
 
 \item Odredite inifinitezimalne generatore dvodimenzionalne euklidske
-    grupe $\ISO{2}$ i njihove komutacijske relacije.
+    grupe $\ISO{2}$ i njihove komutacijske relacije.\label{zad:iso2gen}
 \end{enumerate}
