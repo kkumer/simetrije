@@ -288,7 +288,7 @@ iz skupa $\{1, P, T, PT\}$ i elemenata \SOsup{+}{1,3}.
 \section{Generatori i reprezentacije Lorentzove grupe}
 \label{sec:genLor}
 
-Kao i kod rotacija, sustave u prirodi treba klasificirati prema
+Kao i kod rotacija, objekte koji se pojavljuju u našim teorijama treba klasificirati prema
 njihovim transformacijskim svojstvima pri Lorentzovim transformacijama
 tj. prema pripadnosti reprezentacijama Lorentzove
 grupe. Kao i kod rotacija, poželjno je usredotočiti se na Lievu algebru
@@ -378,21 +378,21 @@ K_1 =
 -i & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0
-\end{pmatrix} \quad
+\end{pmatrix} \;
 K_2=
 \begin{pmatrix}
 0 & 0 & -i & 0 \\
 0 & 0 & 0 & 0 \\
 -i & 0 & 0 & 0 \\
 0 & 0 & 0 & 0
-\end{pmatrix} \quad
+\end{pmatrix} \;
 K_3 =
 \begin{pmatrix}
 0 & 0 & 0 & -i \\
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 \\
 -i & 0 & 0 & 0
-\end{pmatrix} \;.
+\end{pmatrix} \,.
 \label{eq:defKi}
 \end{equation}
 
@@ -791,18 +791,18 @@ umjesto u \SOsup{+}{1,3} da izbjegnemo faze projektivnih reprezentacija,
 vidi diskusiju na kraju prošlog odjeljka.}.
 Sada treba uočiti da je Lorentzova transformacija koja
 u (\ref{eq:defRWone}) djeluje na $\ket{\vec{p}^{*}, \sigma}$ redom
-\begin{enumerate}
-    \item transformacija iz sustava mirovanja ($p^*$) u sustav impulsa $p$,
-    \item transformacija u sustav impulsa $\Lambda p$, te
-    \item inverzna transformacija koja nas vraća u sustav mirovanja.
-\end{enumerate}
+\begin{description}
+    \item[1.] transformacija iz sustava mirovanja ($p^*$) u sustav impulsa $p$,
+    \item[2.] transformacija u sustav impulsa $\Lambda p$, te
+    \item[3.] inverzna transformacija koja nas vraća u sustav mirovanja.
+\end{description}
 Dakle ukupna Lorentzova transformacija je obična rotacija!
 Tu rotaciju
 \begin{equation}
     R_{\scriptscriptstyle \mathrm{W}} \equiv L_{\Lambda p}^{-1} \Lambda L_p \,,
     \label{eq:defRW}
 \end{equation}
-nazivamo \emph{Wignerova rotacija} i nije je općenito lako eksplicitno
+nazivamo \emph{Wignerova rotacija} i nije ju općenito lako eksplicitno
 odrediti, no nama je ovdje bitno samo to da je to obična prostorna rotacija
 jer djelovanje rotacija na kvantna stanja dobro
 znamo. Ono je dano Wignerovim $D$-matricama,
@@ -918,7 +918,8 @@ $p^2<0$.
 Nadalje, za  $p^2 \ge 0$ i predznak od $p^0$ je invarijantan (uvjerite se u to),
 što cijepa kategorije T i L na dvije podkategorije.
 Stanja iz kategorija T$_-$, L$_-$ i S nisu dosad identificirana u prirodi pa ih
-nećemo razmatrati.
+nećemo razmatrati\footnote{Neka razmatranja tih kategorija mogu se naći u
+\cite{Baskal:2024}}.
 Kategorija 0 predstavlja vakuum koji je invarijantan na cijelu Poincar\'{e}ovu
 grupu pa je odgovarajuća reprezentacija trivijalna i ne trebamo je
 dalje razmatrati.
@@ -1035,8 +1036,8 @@ relacije Lorentzove grupe (\ref{eq:4DLorKom}).
     kvocijentni skup po maloj grupi (stabilizatoru)
     jednak orbiti poznato je kao \emph{teorem orbite i stabilizatora}.
 
-\item Pokažite da helicitet $\vec{J}\cdot\vec{\hat{p}}$ komutira s impulsom $\vec{P}$.
-    \label{zad:help}
+\item Pokažite da operator heliciteta $\vec{J}\cdot\vec{\hat{p}}$ komutira s
+    operatorom impulsa $\vec{P}$.  \label{zad:help}
 
 \item Odredite inifinitezimalne generatore dvodimenzionalne euklidske
     grupe $\ISO{2}$ i njihove komutacijske relacije.\label{zad:iso2gen}

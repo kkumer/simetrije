@@ -54,12 +54,19 @@
 \pagestyle{fancy}
     \fancyhf{}
     \fancyhead[RO,LE]{\bfseries \thepage}
-    \fancyhead[CO]{\rightmark}
-    \fancyhead[CE]{\leftmark}
+	\fancyhead[CO]{\itshape\nouppercase{\rightmark}}
+	\fancyhead[CE]{\itshape\nouppercase{\leftmark}}
     \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-\setlength{\headheight}{14pt}
+    \renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{}}
+	%\renewcommand{\chaptermark}[1]{\markboth{\ifnum\value{chapter}>0 \thechapter.\ \fi#1}{}}
+	\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+    \setlength{\headheight}{14pt}
+%Fix for biblatex bibliography heading which is otherwise all-caps
+\defbibheading{bibunnumbered}[\bibname]{%
+  \chapter*{#1}%
+  \markboth{#1}{}%
+  \phantomsection
+}
 %% END Fancy headings
 
 
@@ -146,8 +153,9 @@
 \setlength{\parskip}{2ex}
 
 %\includeonly{1_grupe,2_reprezentacije,3_irreps,4_klasicna,dodaci}
-%\includeonly{8_lorentz}
+%\includeonly{colophon,predgovor,1_grupe,2_reprezentacije}
 \begin{document}
+\pagenumbering{roman}
 
 \begin{titlepage}
 \title{Grupe, simetrije i tenzori u fizici}
@@ -163,7 +171,7 @@
 \tableofcontents
 }
 %\cleardoublepage
-%\include{predgovor}
+\include{predgovor}
 \include{1_grupe}
 \include{2_reprezentacije}
 \include{3_irreps}
@@ -174,6 +182,7 @@
 \include{8_lorentz}
 \include{dodaci}
 
-\printbibliography
+
+\printbibliography[heading=bibunnumbered]
 
 \end{document}
