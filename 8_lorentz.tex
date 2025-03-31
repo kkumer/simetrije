@@ -901,25 +901,29 @@ a pogodni reprezentanti i pripadajuće male grupe su
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{cccc}
 \hline
-  & orbita & reprezentant $p^*$ & mala grupa \\ \hline
-    A & $p^2=m^2>0$, $p^0>0$ &  $(m, 0, 0, 0)$  &  \SO{3} \\
-    B & $p^2=m^2>0$, $p^0<0$ &  $(-m, 0, 0, 0)$  &  \SO{3} \\
-    C & $p^2=0, p^0>0$ &  $(\omega, 0, 0, \omega)$  &  \ISO{2} \\
-    D & $p^2=0, p^0<0$ &  $(-\omega, 0, 0, \omega)$  &  \ISO{2} \\
-    E & $p^2= - \kappa^2 < 0$ &  $(0, 0, 0, \kappa)$  &  \SO{1,2} \\
-    F & $p^{\mu} =  0$ &  $(0, 0, 0, 0)$  &  Poincar\'{e} \\
+\multicolumn{2}{c}{orbita} & reprezentant $p^*$ & mala grupa \\ \hline
+    T$_+$ & $p^2=m^2>0$, $p^0>0$ &  $(m, 0, 0, 0)$  &  \SO{3} \\
+    T$_-$ & $p^2=m^2>0$, $p^0<0$ &  $(-m, 0, 0, 0)$  &  \SO{3} \\
+    L$_+$ & $p^2=0, p^0>0$ &  $(\omega, 0, 0, \omega)$  &  \ISO{2} \\
+    L$_-$ & $p^2=0, p^0<0$ &  $(-\omega, 0, 0, \omega)$  &  \ISO{2} \\
+    S & $p^2= - \kappa^2 < 0$ &  $(0, 0, 0, \kappa)$  &  \SO{1,2} \\
+    0 & $p^{\mu} =  0$ &  $(0, 0, 0, 0)$  &  Poincar\'{e} \\
 \end{tabular}
 \renewcommand{\arraystretch}{1.0}
 \end{center}
-Ovdje je pored činjenice da je $p^2$ invarijanta iskorišteno i to da je
-za $p^2 \ge 0$ i predznak od $p^0$ invarijantan (uvjerite se u to).
-Stanja iz kategorija B, D i E nisu dosad identificirana u prirodi pa ih
+Za ovu kategorizaciju je prvenstveno iskorištena činjenica da je
+kvadrat četverovektora $p^2$ invarijanta, što općenito dijeli četverovektore
+na one vremenskog tipa (T), $p^2>0$, svjetlosnog tipa (L), $p^2=0$ i prostornog tipa (S),
+$p^2<0$.
+Nadalje, za  $p^2 \ge 0$ i predznak od $p^0$ je invarijantan (uvjerite se u to),
+što cijepa kategorije T i L na dvije podkategorije.
+Stanja iz kategorija T$_-$, L$_-$ i S nisu dosad identificirana u prirodi pa ih
 nećemo razmatrati.
-Kategorija F predstavlja vakuum koji je invarijantan na cijelu Poincar\'{e}ovu
+Kategorija 0 predstavlja vakuum koji je invarijantan na cijelu Poincar\'{e}ovu
 grupu pa je odgovarajuća reprezentacija trivijalna i ne trebamo je
 dalje razmatrati.
-Kategoriju A smo upravo razmotrili gore.
-Tako nam preostaje razmotriti kategoriju C bezmasenih stanja pozitivne
+Kategoriju T$_+$ smo upravo razmotrili gore.
+Tako nam preostaje razmotriti kategoriju L$_+$ bezmasenih stanja pozitivne
 energije kojoj pripadaju npr. fotoni.
 
 Fotoni nemaju sustav mirovanja pa je najjednostavniji reprezentant
@@ -965,8 +969,7 @@ Jedino izolirano jednočestično bezmaseno stanje koje smo dosad opazili
 u prirodi je foton koji u eksperimentima ne pokazuje nikakve značajke
 koje bi ukazivale na posjedovanje dodatnog kontinuiranog kvantnog broja
 $t_i$ pa smo prisiljeni zaključiti da je za foton $t_1=t_2=0$,
-te da priroda nije iskoristila mogućnost $t_i \neq 0$, baš jednako kao ni
-mogućnosti stanja na orbitama B, D i E sa slike \ref{fig:orbite}.
+te da priroda nije iskoristila mogućnost $t_i \neq 0$.
 Stavimo onda $t_1=t_2=0$ i promotrimo mali Hilbertov prostor
 razapet s $\ket{\vec{k}^{*}, \lambda} \equiv \ket{\vec{k}^{*}, 0, 0, \lambda}$.
 Kako mala grupa ne sadrži
@@ -990,11 +993,12 @@ i Wignerovu rotaciju u masivnom slučaju.
 Uočite da stanja sa suprotnim helicitetima $\lambda$ i $-\lambda$ pripadaju
 različitim reprezentacijama
 i s tog stanovišta su lijevi i desni foton dvije različite čestice.
-No ako proširimo grupu i s operatorom prostorne inverzije $P\in O(1,3)$, slično kao za Diracovu
+No ako proširimo grupu i s operatorom prostorne inverzije $P\in \O{1,3}$, slično kao za Diracovu
 reprezentaciju u odjeljku \ref{sec:genLor}, ustanovili bi da
 on mijenja predznak od $\lambda$ pa je u kontekstu teorija koje
 imaju simetriju na prostornu inverziju, a takav je elektromagnetizam,
-prirodno lijevi i desni foton ipak smatrati dvama stanjima iste čestice.
+ipak prirodno desni ($\lambda=1$) i lijevi ($\lambda=-1)$ 
+foton smatrati dvama stanjima iste čestice.
 
 Zadnja finesa je da ništa dosad rečeno ne ograničava helicitet $\lambda$
 da ne bude bilo koji realni broj. Sjetimo se naime da je kvantizacija
@@ -1023,6 +1027,13 @@ grupe simetrija.
 \item Uvjerite se da generatori $J^{\mu\nu}$ definirani putem
 (\ref{eq:DiracJ}) i (\ref{eq:DiracGamma}) zadovoljavaju komutacijske
 relacije Lorentzove grupe (\ref{eq:4DLorKom}).
+
+\item Uočite da je u trodimenzionalnom euklidskom prostoru pod djelovanjem grupe rotacija \SO{3}
+    orbita vektora $\hat{\vec{z}} = (0, 0, 1)$ sfera $S^2$, a da je odgovarajuća
+    mala grupa \SO{2}. Zatim konstruirajte bijekciju između te sfere i kvocijentnog
+    skupa \SO{3}/\SO{2}. Općenito postojanje takve bijekcije tj. činjenica da je
+    kvocijentni skup po maloj grupi (stabilizatoru)
+    jednak orbiti poznato je kao \emph{teorem orbite i stabilizatora}.
 
 \item Pokažite da helicitet $\vec{J}\cdot\vec{\hat{p}}$ komutira s impulsom $\vec{P}$.
     \label{zad:help}
