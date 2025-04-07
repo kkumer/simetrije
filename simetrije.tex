@@ -2,8 +2,8 @@
 \PassOptionsToPackage{naturalnames}{hyperref}
 \documentclass[a4paper,11pt]{book}
 \usepackage[utf8]{inputenc}
-\usepackage{tgheros}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
+\usepackage{fontspec}
 \usepackage[croatian]{babel}
 \usepackage{enumerate}
 \usepackage{amsmath}
@@ -151,12 +151,11 @@
                               {\mbox{\boldmath$\scriptscriptstyle#1$}}}}
 \fi
 
-
-
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2ex}
 
-\includeonly{colophon,predgovor,1_grupe}
+\input{gitinfo.tex}
+%\includeonly{colophon,predgovor,1_grupe}
 \begin{document}
 \pagenumbering{roman}
 
