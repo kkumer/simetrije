@@ -1,8 +1,4 @@
 
-- Appendix s eksponentom matrica - ili u uvod poglavlja o Liejevim grupama!
-
-Stilwell
-
 - moto: algebra+analiza = teorija grupa
 
 - f(x) = a+bx kao jednostavna nekomutativna grupa i njena REP
@@ -19,8 +15,6 @@ Stilwell
 - Pitanje: Ortogonalna transformacija koja nije reprezentirana
   ortogonalnom matricom: dilatacija
 
-- Rotacija iz svakodnevnog govora implicira kontinuiranu putanju
-  od jedinice do krajnjeg stanja.
 
 Ch. 5.  
 
@@ -76,18 +70,5 @@ MIsc:
 obzirom na konvergentne nizove regularnih matrica)
 
 - primjer ne-matrične Liejeve grupe vs. Ado
-http://mathoverflow.net/questions/64195/when-is-a-finite-dimensional-real-or-complex-lie-group-not-a-matrix-gro://mail.google.com/mail/u/0?ui=2&ik=deba00d97f&attid=0.1&th=155965795c913fd2&view=fimg&disp=thd&attbid=ANGjdJ8IKeyxYfmmTXx7G8CQkHVTw6YzBIxyPa2jZ24AIcOQAB9LXkN16psrkX0QnPSGV_nh2ZFW0R1gtiDtL99aR3RhViOhKgB5-J03Ypcmu8485Bw4fotcWvW6BUc&ats=2524608000000&sz=w1039-h1712 
+http://mathoverflow.net/questions/64195/when-is-a-finite-dimensional-real-or-complex-lie-group-not-a-matrix
 
-- kompaktnost SO(N), O(N), ... i nekompaktnost GL(N). Kontinuirana preslikavanja cuvaju kompaktnost.
-
-00_Misc
--------
-
-\section{Simetrije na izmjenu identičnih čestica}
-
--  Fermioni-bozoni  <-> polucjelobrojni-cjelobrojni spin
-
-- primjer s papirnatom trakom a la Baez (vidi i Am. J. Phys.,
- search on dejanews braid, anyons, statistics
-
-- 2D: braid grupa, vidi Weinberga, Haaga
