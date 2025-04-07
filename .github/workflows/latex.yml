@@ -1,0 +1,29 @@
+name: Build and Release PDF (XeLaTeX)
+
+on:
+  push:
+    tags:
+      - '*'  # Trigger on any tag
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
+
+    - name: Compile LaTeX with XeLaTeX
+      uses: dante-ev/latex-action@v2
+      with:
+        root_file: simetrije.tex
+        compiler: xelatex
+        latexmk_shell_escape: true  # optional, enable if needed
+
+    - name: Create GitHub Release and upload PDF
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ github.ref_name }}
+        files: simetrije.pdf
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
