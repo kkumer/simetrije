@@ -1,0 +1,31 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usepackage{amsbsy}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round,scale=0.75]
+\draw[dash pattern=on 7.5pt off 5pt,thick] (0,0) -- (-5,0); 
+\draw[dash pattern=on 7.5pt off 5pt,thick,-stealth] (0,0) -- (5,0) node[below left] {$\boldsymbol{p}$};
+\draw[dash pattern=on 7.5pt off 5pt,thick] (0,0) -- (0,-5);
+\draw[dash pattern=on 7.5pt off 5pt,thick,-stealth] (0,0) -- (0,5.5) node[right] {$p^0$};
+\draw[thick]	  (-2.22,3.71) -- (2.22,-3.71);
+\draw[thick]	  (2.22,3.71) -- (-2.22,-3.71);
+\draw[thick]  (0,3.75) ellipse (2.22 and 0.56);
+\draw[thick] (-0.99,3.7) .. controls (-0.6,2.52) and (0.6,2.52) .. (0.99,3.7);
+\draw[thick]  (0,3.75) ellipse (1 and 0.25);
+\draw[thick]  (0,1.85) ellipse (2.22 and 0.58);
+\draw[thick]  (0,-1.85) ellipse (2.22 and 0.58);
+\draw[thick] (-1.39,-3.7) .. controls (-0.6,-2) and (0.6,-2) .. (1.39,-3.7);
+\draw[thick]  (0,-3.75) ellipse (1.4 and 0.3);
+\draw[thick]  (0,-3.75) ellipse (2.22 and 0.56);
+\draw[thick] (-2,1.6) .. controls (-0.68,0.8) and (-0.68,-0.8) .. (-2,-1.6);
+\draw[thick] (2,1.6) .. controls (0.68,0.8) and (0.68,-0.8) .. (2,-1.6);
+\draw[stealth-] (1.2,3.8) -- (2.6,4.4) node[above right] {$\mathrm{T}_+$};
+\draw[stealth-] (2.26,3.8) -- (3.32,3.76) node[right] {$\mathrm{L}_+$};
+\draw[stealth-] (2.26,1.92) -- (3.04,2.14) node[right] {$\mathrm{S}$};
+\draw[stealth-] (0.24,0.1) -- (2.62,1.1) node[right] {$0$};
+\draw[stealth-] (2.26,-3.8) -- (3.04,-3.78) node[right] {$\mathrm{L}_-$};
+\draw[stealth-] (1.46,-3.92) -- (2.9,-4.28) node[right] {$\mathrm{T}_-$};
+\end{tikzpicture}
+\end{document}
