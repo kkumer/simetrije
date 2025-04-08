@@ -1,6 +1,9 @@
 name: Build and Release PDF (XeLaTeX)
 
-on: [push]
+on:
+  push:
+    tags:
+      - '*'  # Trigger on any tag
 
 jobs:
   build-and-release:
