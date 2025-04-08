@@ -15,7 +15,6 @@ jobs:
       with:
         root_file: simetrije.tex
         compiler: xelatex
-        latexmk_shell_escape: true  # optional, enable if needed
 
     - name: Create GitHub Release and upload PDF
       uses: softprops/action-gh-release@v2
