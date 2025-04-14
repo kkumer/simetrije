@@ -31,21 +31,27 @@
 
 
 %% BEGIN bibliography specification
-\usepackage[backend=biber,
-            style=alphabetic]{biblatex}
+\usepackage[backend=biber, style=authoryear, maxcitenames=3]{biblatex}
 \addbibresource{literatura.bib}
-% Printing the annotation after bibitem
-\DeclareFieldFormat{annotation}{\par\textit{#1}}
-\renewbibmacro*{finentry}{%
-  \setunit{\finentrypunct}%
-  \printfield{annotation}%
-  \finentry
-}
+%% Printing the annotation after bibitem
+% \DeclareFieldFormat{annotation}{\par\textit{#1}}
+% \renewbibmacro*{finentry}{%
+%   \setunit{\finentrypunct}%
+%   \printfield{annotation}%
+%   \finentry
+% }
+\DeclareCiteCommand{\cite}[\mkbibbrackets]
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}}
+  {\bibhyperref{\printnames[family]{labelname}%
+   \setunit{\addcomma\space}%
+   \printfield{year}\addperiod}}
+  {\multicitedelim}
+  {}
 %% END bibliography specification
 
-
 %% Colour version which is nice on-screen:
-\usepackage[colorlinks=true,citecolor=blue,linkcolor=red,hyperfootnotes=false]{hyperref}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,hyperfootnotes=true]{hyperref}
 %% Version which prints in B/W (but still has working links in PDF):
 %\usepackage[colorlinks=false,hyperfootnotes=false,pdftitle={Simetrije u fizici}, pdfauthor={Kresimir Kumericki}]{hyperref}
 %% B/W version which for printing, without links:

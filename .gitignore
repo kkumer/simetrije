@@ -1,0 +1,27 @@
+# Aux files
+my*
+**/*.swp
+**/*.~
+
+# LaTeX processing
+**/*.aux
+**/*.end
+**/*.toc
+**/*.fdb_latexmk
+**/*.bbl
+**/*.blg
+**/*.brf
+**/*.fls
+**/*.log
+**/*.dvi
+**/*.bcf
+**/*.out
+**/*.tdo
+**/*.synctex.gz
+**/*.run.xml
+**/*eps-converted-to.pdf
+**/*SAVE-ERROR
+
+# LaTeX outputs
+simetrije.pdf
+
