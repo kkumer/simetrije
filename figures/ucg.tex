@@ -1,0 +1,32 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{amssymb}
+
+\begin{document}
+	\begin{tikzpicture}[scale=1.5]
+		\node (1) at (0,0) {$\mathfrak{ucg}$};
+		\node (2) at (1.5,0) {$\mathfrak{g}_1$};
+		\node (3) at (3,0) {$\mathfrak{g}_2$};
+		\node (4) at (4.5,0) {$\mathfrak{g}_n$};
+		\node (5) at (1.5,1) {$G_1$};
+		\node (6) at (3,1) {$G_2$};
+		\node (7) at (4.5,1) {$G_n$};
+		\node (8) at (0,1.75) {$\mathrm{UCG}$};
+		\node at (3.75,0.5) {$\cdots$};
+		\draw[very thick,{Triangle[scale=0.75]}-{Triangle[scale=0.75]}] (1) -- (2);
+		\draw[very thick,{Triangle[scale=0.75]}-{Triangle[scale=0.75]}] (2) -- (3);
+		\draw[very thick,{Triangle[scale=0.75]}-{Triangle[scale=0.75]}] (3) -- (4);
+		\draw[very thick,-{Triangle[scale=0.75]}] ([yshift=2.5pt]8.east) to[out=0,in=120,looseness=0.6] (7.north west);
+		\draw[very thick,-{Triangle[scale=0.75]}] (8.east) to[out=0,in=120,looseness=0.6] (6.north west);
+		\draw[very thick,-{Triangle[scale=0.75]}] ([yshift=-2.5pt]8.east) to[out=0,in=120] (5.north west);
+		\draw[thick,-Triangle,densely dotted] (8) -- (1);
+		\draw[thick,-Triangle,densely dotted] (5) -- (2);
+		\draw[thick,-Triangle,densely dotted] (6) -- (3);
+		\draw[thick,-Triangle,densely dotted] (7) -- (4);
+		\node at (0.6871,1.4) {$K_1$};
+		\node at (2.1,1.4) {$K_2$};
+		\node at (3.6526,1.4) {$K_n$};
+	\end{tikzpicture}
+\end{document}

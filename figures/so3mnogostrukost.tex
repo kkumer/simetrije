@@ -1,0 +1,27 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{tikz-3dplot}
+
+\begin{document}
+	\tdplotsetmaincoords{15}{0}
+	\begin{tikzpicture}[scale=1.5,tdplot_main_coords]
+		\tdplotsetrotatedcoords{-45}{0}{0}
+		\draw[very thick] (0,0) circle [radius=2cm];
+		\draw[canvas is xz plane at y=0] (0,0) circle [radius=2cm];
+		\draw[canvas is xz plane at y=0] (0,0) -- (2.5,0);
+		\draw[canvas is xy plane at z=0] (0,0) -- (0,2.5);
+		\draw[canvas is xy plane at z=0,tdplot_rotated_coords] (0,0) -- (0,1.5);
+		
+		\node[circle,inner sep=0pt,outer sep=2pt,fill=black,minimum size=3pt,label={left:$e$}] (1) at (0,0) {};
+		\node[circle,inner sep=0pt,outer sep=2pt,fill=black,minimum size=3pt] (2) at (0,2cm) {};
+		\node[circle,inner sep=0pt,outer sep=2pt,fill=black,minimum size=3pt] (3) at (0,-2cm) {};
+		\node[circle,inner sep=0pt,outer sep=2pt,fill=black,minimum size=3pt] (4) at (1cm,0) {};
+		\draw[Triangle-] (3) --++ (20:3cm) node[right,align=left] (5) {Rotacija oko\\
+$z$-osi za $\pi$};
+		\draw[Triangle-] (2) -- (5);
+		\draw[Triangle-] (4) --++ (45:2cm) node[right,align=left] {Rotacija oko\\
+$x$-osi za $\pi/2$};;
+	\end{tikzpicture}
+\end{document}

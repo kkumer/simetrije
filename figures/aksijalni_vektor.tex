@@ -1,0 +1,12 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings,arrows.meta}
+
+\begin{document}
+	\begin{tikzpicture}
+		\draw[-Triangle,thick] (-2.5,-1.5) node[below] {polarni vektor} -- (-1.5,1.5);
+		\draw[thick] (1.23,-1.5) node[below] {aksijalni vektor} -- (2.23,1.5);
+		\draw[decoration={markings,mark=at position 0.85 with {\arrow{Triangle}}},postaction={decorate}]  (1.78,0.11) ellipse (0.35 and 0.1);
+	\end{tikzpicture}
+\end{document}

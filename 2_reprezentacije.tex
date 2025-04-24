@@ -307,21 +307,16 @@ uzeti operator rotacije za 2$\pi$/3 oko $z$-osi.
 Prilikom specifikacije matričnog zapisa operatora, 
 treba razlikovati tzv. \emph{aktivne} transformacije kod
 koji se mijenjaju vektori, a baza ostaje ista, te \emph{pasivne} kod
-kojih vektori ostaju isti, a baza se mijenja. Oba pristupa su
-regularna, ali tipično vode do nekih različitih predznaka u izrazima
+kojih vektori ostaju isti, a baza se mijenja, vidi sliku \ref{fig:aktivne}.
+Oba pristupa su regularna, ali tipično vode do razlika u nekim predznacima u izrazima
 pa treba pripaziti.
-
-\noindent
-\begin{minipage}[c]{0.3\textwidth}
+\begin{figure}[htpb]
     \centering
-    Aktivna transformacija:
-    \label{aktivna}
-\end{minipage}%
-\begin{minipage}[c]{0.5\textwidth}
-    \centering
-    {\includegraphics[width=0.8\textwidth]{pics/aktivne}}
-\end{minipage}
-
+    \input{figures/aktivne.tex}
+    %{\includegraphics[width=0.8\textwidth]{pics/aktivne}}
+    \caption{Aktivne transformacije (lijevo) i pasivne transformacije (desno).}
+    \label{fig:aktivne}
+\end{figure}
 Ako se ne kaže drukčije, transformacije u ovoj knjizi su "aktivne"
 i u tom slučaju
 \begin{equation}

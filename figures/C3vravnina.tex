@@ -1,0 +1,23 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=2]
+	% Axes
+    \draw[-{Triangle[scale=0.75]}] (-1.5,0) -- (1.5,0) node[right] {$x$};
+    \draw[-{Triangle[scale=0.75]}] (0,-1.2) -- (0,1.5) node[above] {$y$};
+
+    % Triangle
+    \draw[very thick] (-1,-0.5) -- (1,-0.5) -- (0,1) -- cycle;
+
+    % Mirror plane (dashed line)
+    \draw[very thick, dash pattern=on 6pt off 3pt on 1pt off 3pt] (0,-1.15) -- (0,1.45);
+
+    % Label and arrow for mirror plane
+    \draw[{Triangle[scale=0.5]}-, thick] (0.025,-0.525) --++ (-45:0.5cm) node[below right] {$\sigma_v = b$ ravnina};
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,15 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes}
+
+\begin{document}
+	\begin{tikzpicture}
+		\node[ellipse,draw,thick,minimum width=1.275cm,minimum height=2.175cm,label={above:$G$},inner sep=0pt,outer sep=2.5pt] (g) at (0,0) {$g$};
+		\node[ellipse,draw,thick,minimum width=1.275cm,minimum height=2.175cm,label={above:$\Gamma$},label={right:$:V\rightarrow V$},inner sep=0pt,outer sep=2.5pt] (Dg) at (4,1.72) {$D(g)$};
+		\node[ellipse,draw,thick,minimum width=1.275cm,minimum height=2.175cm,label={above:$\Gamma'$},label={right:$:V'\rightarrow V'$},inner sep=0pt,outer sep=2.5pt] (D'g) at (4,-1.72) {$D'(g)$};
+		\draw[-Triangle] ([xshift=4pt,yshift=-4pt]g.north east) .. controls (1.36,1.41) and (2.4,1.79) .. (Dg.west);
+		\draw[-Triangle] ([xshift=4pt,yshift=4pt]g.south east) .. controls (1.36,-1.41) and (2.4,-1.79) .. (D'g.west);
+		\draw[-Triangle] (5.4,1.4) .. controls (5.81,0.5) and (5.81,-0.5) .. (5.4,-1.4) node[midway,right] {$S$};
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+	\begin{tikzpicture}[line cap=round,scale=1.0]
+		%% Left figure
+		\draw[-Triangle](0,0) coordinate (o) -- (3,0) node[below] {$x$};
+		\draw[-Triangle](o) -- (0,3) node[left] {$y$};
+		\draw[thick,dash pattern=on 2pt off 3pt,-Triangle] (o) -- (30:3cm) node[below,yshift=-6pt] {$\mathbf{r}$};
+		\draw[thick,-Triangle] (o) -- (60:3cm) node[below,yshift=-6pt] {$\mathbf{r'}$};
+		\draw[-Triangle](1.73,0.9982) arc (30:60:2) node[midway,below,xshift=-4pt] {$\theta$};
+		
+		%% Right figure
+		\begin{scope}[xshift=6cm]
+			\draw[-Triangle,dash pattern=on 2pt off 3pt](0,0) coordinate (o) -- (3,0) node[below] {$x$};
+			\draw[-Triangle,dash pattern=on 2pt off 3pt](o) -- (0,3) node[left] {$y$};
+			\draw[thick,-Triangle] (o) -- (30:3cm) node[below,yshift=-6pt] {$\mathbf{r}$};
+			\draw[-Triangle] (o) -- (60:3cm) node[above left] {$y'$};
+			\path(1.73,0.9982) arc (30:60:2) coordinate (a);
+			\draw[Triangle-](a) arc (60:90:2) node[midway,below,xshift=-4pt] {$-\theta$};
+			\draw[-Triangle] (o) -- (-30:3cm) node[below left] {$x'$};
+		\end{scope}
+	\end{tikzpicture}
+\end{document}

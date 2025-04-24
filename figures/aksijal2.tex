@@ -1,0 +1,64 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{3d,arrows.meta,angles}
+
+\begin{document}
+	\begin{tikzpicture}[scale=1.2]
+	
+		\tikzstyle{charge+}=[draw,circle,inner sep=0pt,outer sep=2pt,thin,top color=white!50,bottom color=white!90!black,shading angle=20]
+		\tikzstyle{charge-}=[draw,circle,inner sep=0pt,outer sep=2pt,thin,top color=white!50,bottom color=white!90!black,shading angle=20]
+		
+		\begin{scope}
+			%% Top left
+			\begin{scope}[canvas is zy plane at x=0]
+				\draw[gray] (0,1) -- (-2,1) -- (-2,-1) -- (0,-1);
+				\draw[very thick,green!50!black,-Triangle] (0,-1.25) coordinate (a) -- (0,1.25) coordinate (b) node[pos=0.8,right]{$\mathbf{P}$};
+				\draw[gray] (0,1) -- (2,1) -- (2,-1) -- (0,-1);
+				\node[charge-,below] at (a) {\footnotesize $-$};
+				\node[charge+,above] at (b) {\footnotesize $+$};
+			\end{scope}
+			
+			%% Top right
+			\begin{scope}[canvas is zy plane at x=4]
+				\draw[gray] (0,1) -- (-2,1) -- (-2,-1) -- (0,-1);
+				\draw[very thick,green!50!black,-Triangle] (0,-1.25) coordinate (a) -- (0,1.25) coordinate (b) node[pos=0.8,right]{$\mathbf{P}$};
+				\draw[gray] (0,1) -- (2,1) -- (2,-1) -- (0,-1);
+				\node[charge-,below] at (a) {\footnotesize $-$};
+				\node[charge+,above] at (b) {\footnotesize $+$};
+			\end{scope}
+				\draw[-Triangle] (0.5,1) .. controls (1.5,1.75) and (2.5,1.75) .. (3.5,1) node[above,midway]{$\sigma_{v}$};
+		\end{scope}
+		
+		%% Bottom left
+		\begin{scope}[yshift=-4cm]
+			\begin{scope}[canvas is zy plane at x=0]
+				\draw[gray] (2,1) rectangle (-2,-1);
+			\end{scope}
+			\begin{scope}[canvas is xz plane at y=0]
+				\draw[orange] (0,0) circle (1);
+				\coordinate (d) at (10:1);
+				\draw[red!50!black,-stealth,very thick] (d) arc (10:-50:1);
+				\node[charge+] at (d) {\footnotesize $+$};
+			\end{scope}
+			\begin{scope}[canvas is zy plane at x=0]
+				\draw[very thick,blue!50!black,-Triangle] (0,0) -- (0,0.75) node[right] {$\mathbf{M}$};
+			\end{scope}
+			\draw[-Triangle] (0.5,1) .. controls (1.5,1.75) and (2.5,1.75) .. (3.5,1) node[above,midway]{$\sigma_{v}$};
+		\end{scope}
+		
+		%% Bottom right
+		\begin{scope}[yshift=-4cm,xshift=4cm]
+			\begin{scope}[canvas is zy plane at x=0]
+				\draw[gray] (2,1) rectangle (-2,-1);
+				\draw[very thick,blue!50!black,-Triangle] (0,0) -- (0,-0.75) node[left] {$\mathbf{-M}$};
+			\end{scope}
+			\begin{scope}[canvas is xz plane at y=0]
+				\draw[orange] (0,0) circle (1);
+				\coordinate (d) at (130:1);
+				\draw[red!50!black,-stealth,very thick] (d) arc (130:200:1);
+				\node[charge+] at (d) {\footnotesize $+$};
+			\end{scope}
+		\end{scope}
+	\end{tikzpicture}
+\end{document}

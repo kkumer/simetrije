@@ -1,0 +1,36 @@
+\documentclass[border=3mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings,arrows.meta}
+
+\begin{document}
+	\begin{tikzpicture}[scale=1.5]
+		\tikzstyle{dot}=[circle,fill,inner sep=0pt,outer sep=1pt,minimum size=3pt]
+		\draw[thick] (-1.6196,-0.1149) ellipse (0.72 and 2.05);
+		\draw[thick] (2.0788,-0.1149) ellipse (0.72 and 2.05);
+		\node[dot] (1) at (-1.5933,1.5) {};
+		\node[dot] (2) at (-1.6,1.2) {};
+		\node[dot] (3) at (-1.6,0.9) {};
+		\node[dot] (4) at (-1.6,0.6) {};
+		\node[dot] (5) at (-1.6,0.3) {};
+		\node[dot] (6) at (-1.6,0) {};
+		\node[dot] (7) at (-1.6,-0.3) {};
+		\node[dot] (8) at (-1.6,-0.6) {};
+		\node[dot] (9) at (-1.6,-0.9) {};
+		\node[dot,label={right:$e$}] (a) at (2.0737,1.2) {};
+		\node[dot] (b) at (1.9,0.3) {};
+		\node[dot] (c) at (2.2,-0.6) {};
+		\node at (-1.667,-1.5) {$\cdots$};
+		\node at (2.1,-1.6) {$\cdots$};
+		\draw  (-1.6,1.22) ellipse (0.18 and 0.5) node[left,xshift=-7pt]{$K$};
+		\draw[-{Triangle[scale=0.75]}] (1) -- (a);
+		\draw[-{Triangle[scale=0.75]}] (2) -- (a);
+		\draw[-{Triangle[scale=0.75]}] (3) -- (a);
+		\draw[-{Triangle[scale=0.75]}] (4) -- (b);
+		\draw[-{Triangle[scale=0.75]}] (5) -- (b);
+		\draw[-{Triangle[scale=0.75]}] (6) -- (b);
+		\draw[-{Triangle[scale=0.75]}] (7) -- (c);
+		\draw[-{Triangle[scale=0.75]}] (8) -- (c);
+		\draw[-{Triangle[scale=0.75]}] (9) -- (c);
+	\end{tikzpicture}
+\end{document}

@@ -18,8 +18,9 @@ dvije Schurove leme.
 Neka operator S povezuje dvije  ireducibilne
 reprezentacije $\Gamma=\{D(g)\}$ i $\Gamma'=\{D'(g)\}$ u smislu da je
 \begin{displaymath}
-  SD(g)=D'(g)S  \quad \forall g\in G  \;.
+  SD(g)=D'(g)S  \quad \forall g\in G  \;,
 \end{displaymath}
+kako je ilustrirano na slici \ref{fig:schur}.
 Tada je ili $S=0$ ili je $S$ invertibilan i imamo
 \begin{displaymath}
 D(g)=S^{-1}D'(g)S
@@ -28,7 +29,15 @@ tj. dvije su reprezentacije ekvivalentne. (Mogućnost
 da je $S$ singularan, ali ne i nul-operator je isključena.)
 \end{teorem}
 
-\centerline{\includegraphics[scale=0.8]{pics/schur.eps}}
+\begin{figure}[htpb]
+    \centering
+    \centerline{\input{figures/schur.tex}}
+    %\centerline{\includegraphics[scale=0.8]{pics/schur.eps}}
+    \caption{Situacija prve Schurove leme: 
+        dvije reprezentacije grupe $G$ čiji vektorski prostori su
+    povezani operatorom $S$.}
+    \label{fig:schur}
+\end{figure}
 
 \emph{Dokaz.}
 Neka su $V$ i $V'$ vektorski prostori na kojima djeluju $\Gamma$ i $\Gamma'$.
@@ -677,12 +686,14 @@ kao na sljedećoj slici je invarijantan i
 to može biti smjer dipolnog momenta takvog kristala. $\vec{P}\neq 0$
 ne narušava C$_3$ simetriju.
 
-\centerline{\includegraphics[scale=1.0]{pics/dipol.eps}}
+\centerline{\input{figures/dipol.tex}}
+%\centerline{\includegraphics[scale=1.0]{pics/dipol.eps}}
 
 S druge strane, veća D$_3$ simetrija ukida takvu mogućnost. $b$-rotacija
 mijenja $\vec{P}\to-\vec{P}$ pa bi $\vec{P}\neq 0$ narušilo simetriju.
 
-\centerline{\includegraphics[scale=1.0]{pics/nodipol.eps}}
+\centerline{\input{figures/nodipol.tex}}
+%\centerline{\includegraphics[scale=1.0]{pics/nodipol.eps}}
 
 Atomi simetričnog kristala ne mogu proizvesti nesimetrični dipolni moment.
 
@@ -722,7 +733,8 @@ Tako npr. refleksija preko horizontalne ravnine $\sigma_h$ će promijeniti
 predznak vertikalno usmjerenog električnog, ali ne i
 magnetskog dipolnog dipolnog momenta:
 
-\centerline{\includegraphics[scale=0.8]{pics/aksijal1.eps}}
+\centerline{\input{figures/aksijal1.tex}}
+%\centerline{\includegraphics[scale=0.8]{pics/aksijal1.eps}}
 
 Isto tako, refleksija preko vertikalne ravnine $\sigma_v$ neće promijeniti
 predznak vertikalno usmjerenog električnog, ali hoće
@@ -732,7 +744,8 @@ operaciju refleksije preko vertikalnog ogledala koje leži
 u $x-z$ ravnini $\sigma_v:(x, y, z)\mapsto (x, -y, z)$
 čini se da bi ta dva smjera trebala biti ekvivalentna.}.
 
-\centerline{\includegraphics[scale=0.8]{pics/aksijal2.eps}}
+\centerline{\input{figures/aksijal2.tex}}
+%\centerline{\includegraphics[scale=0.8]{pics/aksijal2.eps}}
 
 
 Uzmimo kao primjer kristal s C$_{3v}$ simetrijom.
@@ -756,7 +769,8 @@ D(c)=
 s karakterima $\chi^{(V)}(e)=\mbox{dim}\Gamma_{V}=3$, $\chi^{(V)}(c)=0$,
 a ako osi izberemo kao na slici
 
-\centerline{\includegraphics[scale=0.8]{pics/C3vravnina.eps}}
+\centerline{\input{figures/C3vravnina.tex}}
+%\centerline{\includegraphics[scale=0.8]{pics/C3vravnina.eps}}
 
 onda je 
 
@@ -1045,7 +1059,8 @@ Tako su neke ireducibilne reprezentacije od $G$ reducibilne obzirom na $H$
 i nema razloga da energijski nivoi koji odgovaraju dotičnim reprezentacijama
 od $G$ ostanu degenerirani nakon uvođenja smetnje.
 
-\centerline{\includegraphics[scale=1.0]{pics/splitting.eps}}
+\centerline{\input{figures/splitting.tex}}
+%\centerline{\includegraphics[scale=1.0]{pics/splitting.eps}}
  
 Poznavajući dekompoziciju ireducibilne reprezentacije $IRREP^{(G)}$
 grupe $G$ na ireducibilne reprezentacije  $IRREP^{(H)}$ grupe $H$
@@ -1110,7 +1125,8 @@ Dakle degeneracija je potpuno ukinuta
   \imp   T =  B_1 \oplus B_2 \oplus B_3
 \end{displaymath}
 
-\centerline{\includegraphics[scale=1.0]{pics/splittingT.eps}}
+\centerline{\input{figures/splittingT.tex}}
+%\centerline{\includegraphics[scale=1.0]{pics/splittingT.eps}}
 
 b) $\mathrm{T}\to \mathrm{C}_{3v}$. Sličnim postupkom dobivamo
 \begin{displaymath}
@@ -1118,7 +1134,8 @@ b) $\mathrm{T}\to \mathrm{C}_{3v}$. Sličnim postupkom dobivamo
 \end{displaymath}
 tj. degeneracija je samo djelomično ukinuta
 
-\centerline{\includegraphics[scale=1.0]{pics/splittingT2.eps}}
+\centerline{\input{figures/splittingT2.tex}}
+%\centerline{\includegraphics[scale=1.0]{pics/splittingT2.eps}}
 
 \end{primjer}
 
