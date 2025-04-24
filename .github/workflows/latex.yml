@@ -14,15 +14,15 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Fetch all tags
-       run: git fetch --tags --force
+      run: git fetch --tags --force
 
     - name: Extract tag and commit hash
-       run: |
-         echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-         echo "COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      run: |
+        echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+        echo "COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
     - name: Update version in colophon
-        run: ./gitinfo.sh
+      run: ./gitinfo.sh
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
