@@ -13,6 +13,19 @@ jobs:
     - name: Checkout source
       uses: actions/checkout@v4
 
+    - name: Fetch all tags
+       run: git fetch --tags --force
+
+    - name: Extract tag and commit hash
+       run: |
+         echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+         echo "COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+    - name: Update version in colophon
+        run: ./gitinfo.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Compile LaTeX with XeLaTeX
       uses: dante-ev/latex-action@latest
       with:
