@@ -886,7 +886,7 @@ gornjih suma mogu isto kao kod eksponencijacije običnih brojeva
 iskombinirati u $\sum (X+Y)^{n}/n! = \exp(X+Y)$. Za općenite
 nekomutirajuće grupe to nije slučaj, nego vrijedi sljedeći važan
 rezultat teorije Liejevih grupa
-\begin{teorem}[Baker-Campbell-Hausdorff]
+\begin{teorem}[Baker-Campbell-Hausdorff] \label{th:bch}
     \[ e^X e^Y = e^Z \,, \]
   gdje je 
   \[ Z = X + Y + \text{red višestrukih komutatora $X$ i $Y$.} \]
@@ -897,6 +897,7 @@ Prvi članovi BCH formule su
        - \frac{1}{12}[Y, [X, Y]] \nonumber \\
      &   - \frac{1}{24}[X, [Y, [X, Y]]] + \frac{1}{720}[Y, [Y, [Y, [X, Y]]]] 
          + \cdots \,,
+   \label{eq:bch}
 \end{align}
 i ključna netrivijalnost je da su \emph{svi} članovi reda dati preko
 ovakvih višestrukih komutatora pa je jasno da je $Z$ element Liejeve algebre.
@@ -909,7 +910,7 @@ BCH red konvergira u nekoj okolini jediničnog elementa (ne nužno infinitezimal
 i u toj okolini je grupa potpuno i jedinstveno određena algebrom.
 Eksponencijacija povezuje elemente grupe i algebre, a BCH formula
 operacije u algebri (zbrajanje i komutator) s grupnom operacijom (množenje).
-Dokaz i razmatranje radijusa konvergencije BCH formule
+Dokaz teorema \ref{th:bch}  i razmatranje radijusa konvergencije BCH formule (\ref{eq:bch}) 
 obično zahtijeva napredne matematičke
 pojmove. Relativno pristupačan algebarski dokaz može se pronaći
 u \cite{Stilwell:2008}.
@@ -934,7 +935,7 @@ je interval otvoren i nekompaktan\footnote{Radi
     kompletnosti spomenimo da ako Liejeva grupa nije kompaktna, 
     svejedno se elementi iz komponente
 povezanosti jedinice mogu prikazati kao konačan umnožak eksponencijala
-$e^{X_1} e^{X_2}\cdots e^{X_n}$.
+$e^{X_1} e^{X_2}\cdots e^{X_n}$ \cite{Stilwell:2008}.
 Treba razlikovati situaciju gdje se svaki element
 grupe (ili njenog podskupa) može dobiti eksponencijacijom (exp
 je surjektivna) i situaciju gdje se on može se dobiti na jedinstven način 
@@ -949,7 +950,7 @@ a može i niže definirana jednostruka povezanost.}.
 
 
 Dakle, Liejeva algebra skoro potpuno određuje barem komponentu povezanosti
-jediničnog elementa Liejeve grupe koju generira eksponecijacijom.
+jediničnog elementa Liejeve grupe koju generira eksponencijacijom.
 Međutim, primjer grupa \SO{3} i \SU{2} koje su obje povezane i koje
 imaju istu (izomorfnu) algebru, ali ipak nisu izomorfne, pokazuje
 da neka svojstva grupe nisu određena algebrom, tj. da "skoro" iz
@@ -985,7 +986,7 @@ definirati zbrajanje. Kao reprezentante klasa uzmimo
 krivulje koje počnu i završe u nekoj konkretnoj \emph{baznoj} točki, recimo $\phi=0$.
 Uzmemo li dvije zatvorene krivulje, njihov zbroj definiramo kao krivulju koja se dobije tako da 
 prvo po jednoj krivulji idemo od bazne točke do bazne točke, pa onda
-bez "završavanja" nastavimo tako po drugoj i završimo u baznoj točki.
+"bez završavanja" nastavimo tako po drugoj i završimo u baznoj točki.
 Obzirom na takvo zbrajanje (klasa) krivulja, ovaj skup čini grupu
 poznatu pod imenom \emph{fundamentalna grupa} ili \emph{prva grupa homotopija} $\pi_1$. 
 Ta grupa je temeljno topološko obilježje svake grupe. Prema gornjem
@@ -1016,7 +1017,7 @@ ubaci u unutrašnjost lopte, kako je prikazano na slici.
 
 Tako te krivulje ne čine novu nego pripadaju prvoj klasi.
 Krivulja kroz tri površinske točke će se istim postupkom moći deformirati u 
-krivulju kroz jednu točku i tako dalje. Dakle, postoje točno dvije klase
+krivulju kroz jednu površinsku točku i tako dalje. Dakle, postoje točno dvije klase
 krivulja i kažemo da je  \SO{3} \emph{dvostruko povezana}.
 Njena prva grupa homotopija je time
     $\pi_1\left(\SO{3} \right) = \mathbb{Z}_{2} = (\{+1, -1\}, \cdot)$.
@@ -1027,13 +1028,13 @@ Vidjeli smo u prošlom odjeljku da je
 grupna mnogostrukost \SU{2} 3-sfera tj. generalizacija uobičajene
 sfere (2-sfere) na četverodimenzionalni prostor. 
 Može se pokazati da je svaka $n$-sfera s $n\ge 2$ jednostavno povezana.
-Pravi dokaz zahtijeva nešto znanja toplologije, ali čitatelju će
+Pravi dokaz zahtijeva nešto znanja topologije, ali čitatelju će
 moguće ta činijenica biti vrlo intuitivna, a za 2-sferu i očita.
 \end{primjer}
 
-Ako postoji homomorfizam s povezane Liejeve grupe G na povezanu Liejevu
-grupu H s \emph{diskretnom} jezgrom K onda kažemo da grupa G 
-\emph{pokriva} grupu H onoliko puta koliko elemenata ima K.
+Ako postoji homomorfizam s povezane Liejeve grupe $G$ na povezanu Liejevu
+grupu $H$ s \emph{diskretnom} jezgrom $K$ onda kažemo da grupa $G$ 
+\emph{pokriva} grupu $H$ onoliko puta koliko elemenata ima $K$.
 (Prisjetite se teorema \ref{th:izomorfizam} o izomorfizmu.)
 Također, Liejeve algebre tih grupa su izomorfne.
 
@@ -1045,8 +1046,8 @@ dviju grupa su izomorfne.
 \end{primjer}
 
 \begin{teorem}[Univerzalna grupa pokrivanja]
-Među grupama koje pokrivaju povezanu Liejevu grupu G, postoji jedinstvena
-grupa koja je jednostavno povezana --- \emph{univerzalna grupa pokrivanja}.
+Među grupama koje pokrivaju povezanu Liejevu grupu G postoji jedinstvena
+grupa koja je jednostavno povezana --- tzv. \emph{univerzalna grupa pokrivanja}.
 Broj pokrivanja jednak je povezanosti od G. 
 \end{teorem}
 
@@ -1082,7 +1083,7 @@ Općenita situacija je\\[1ex]
 \centerline{\input{figures/ucg.tex}}
 %\centerline{\includegraphics[scale=1.0]{pics/ucg.eps}}
 
-gdje je UCG/$K_i$=G$_i$. Tako pronalaženjem svih diskretnih normalnih
+gdje je UCG/$K_i$=$G_i$. Tako pronalaženjem svih diskretnih normalnih
 podgrupa (kandidata za kernele homomorfizma) jednostavno povezane grupe 
 možemo naći sve grupe koje
 s njom dijele istu Liejevu algebru\footnote{To je znatno olakšano teoremom
