@@ -855,7 +855,7 @@ je determinanta također kontinuirana funkcija, u slučaju grupe \O{3},
 za čije elemente smo vidjeli da imaju determinantu ili +1 ili -1,
 jasno je da eksponencijacijom algebre možemo dobiti (a u slučaju \O{3}
 i dobivamo) samo elemente s determinantom +1, dakle prave rotacije.
-Neprave rotacije $I\SO{3}$ koje imaju determinantu -1
+Neprave rotacije $P\SO{3}$ koje imaju determinantu -1
 pripadaju drugoj komponenti povezanosti. \label{pag:povezanostO3}
 
 
@@ -875,7 +875,7 @@ povezivanje elemenata algebre i elemenata grupe exponencijacijom
 (odnosno u drugom smjeru inverznom funkcijom logaritma) samo dio
 posla. Potrebno je pokazati i da je binarna grupna operacija potpuno
 određena operacijama s odgovarajućim elementima algebre. Kako
-dakle izračunati $e^X e^Y$? Imajuči u vidu definiciju eksponencijacije
+dakle izračunati $e^X e^Y$? Imajući u vidu definiciju eksponencijacije
 to je
 \begin{equation}
    e^X e^Y = \left(\sum_{k=0}^{\infty} \frac{X^k}{k!}\right)
@@ -911,14 +911,14 @@ ovakvih višestrukih komutatora pa je jasno da je $Z$ element Liejeve algebre.
     općenito \emph{nije} antisimetrična matrica.} $X Y$.)
 BCH red konvergira u nekoj okolini jediničnog elementa (ne nužno infinitezimalnoj)
 i u toj okolini je grupa potpuno i jedinstveno određena algebrom.
-Eksponencijacija povezuje elemente grupe i algebre, a BCH formula
+Eksponencijacija povezuje elemente grupe i algebre, a BCH formula povezuje
 operacije u algebri (zbrajanje i komutator) s grupnom operacijom (množenje).
 Dokaz teorema \ref{th:bch}  i razmatranje radijusa konvergencije BCH formule (\ref{eq:bch}) 
 obično zahtijeva napredne matematičke
 pojmove. Relativno pristupačan algebarski dokaz može se pronaći
 u \cite{Stilwell:2008}.
 
-Za veliku kategoriju Liejevih grupa vrijedi da se svi elementi iz 
+Za važnu kategoriju Liejevih grupa vrijedi da se svi elementi iz 
 komponente povezanosti jedinice mogu prikazati u obliku
 $e^{X}$ gdje je $X$ element
 Liejeve algebre. Dovoljan uvjet je da grupa ima svojstvo \emph{kompaktnosti}.
@@ -948,14 +948,13 @@ Treba uočiti da se algebra grupe \SO{2} preslikava na grupu neinjektivno,
 pa nijedna grupa koja
 je sadrži kao podgrupu, kao \SO{3}, \SU{2} etc., neće biti injektivno pokrivena
 exponencijacijom. Surjektivnost je lakše postići.
-Za to je dovoljna kompaktnost,
-a može i niže definirana jednostruka povezanost.}.
+Za to je dovoljna, ali čak ne i nužna, kompaktnost.}.
 
 
 Dakle, Liejeva algebra skoro potpuno određuje barem komponentu povezanosti
-jediničnog elementa Liejeve grupe koju generira eksponencijacijom.
-Međutim, primjer grupa \SO{3} i \SU{2} koje su obje povezane i koje
-imaju istu (izomorfnu) algebru, ali ipak nisu izomorfne, pokazuje
+jediničnog elementa kompaktne Liejeve grupe.
+Međutim, primjer grupa \SO{3} i \SU{2} koje su obje povezane i kompaktne i koje
+imaju istu (izomorfnu) algebru, ali ipak nisu same izomorfne, pokazuje
 da neka svojstva grupe nisu određena algebrom, tj. da "skoro" iz
 prošle rečenice ipak nije "potpuno."
 Riječ je o globalnim topološkim svojstvima grupe i
@@ -970,19 +969,23 @@ Broj takvih klasa zovemo \emph{povezanost} grupe G. Ako postoji samo
 jedna klasa kažemo da je grupa \emph{jednostavno} ili \emph{jednostruko}
 povezana.
 \end{definicija}
-
+\begin{figure}[htpb]
+\centerline{\input{figures/homotopija.tex}}
+%\centerline{\includegraphics[scale=1.0]{pics/homotopija.eps}}
+\caption{Primjeri krivulja iz triju neekvivalentnih klasa u \SO{2}. Radi preglednosti
+  grupnu mnogostrukost smo predstavili prstenom koji u glavi treba "stegnuti" u
+   jednodimenzionalnu kružnicu.}
+    \label{fig:so2homo}
+\end{figure}
 \begin{primjer}[\SO{2}]
 Vidjeli smo da je grupna
 mnogostrukost grupe \SO{2} kružnica.
 Za zatvorene krivulje promjena kuta $\phi$ duž krivulje je $2n\pi$,
-$n=0,\pm 1, \pm 2, \ldots$. Krivulje s različitim $n$ pripadaju
+$n=0,\pm 1, \pm 2, \ldots$, vidi sliku \ref{fig:so2homo}. Krivulje s različitim $n$ pripadaju
 različitim klasama povezanosti jer je nemoguće kontinuiranim deformacijama
 pretvoriti krivulju $n$ puta "namotanu" oko kružnice u onu $m$ puta namotanu,
 ako je $n \neq m$. Obzirom na beskonačni skup klasa povezanosti,
 kažemo da je $\SO{2}$ beskonačno povezana.
-
-\centerline{\input{figures/homotopija.tex}}
-%\centerline{\includegraphics[scale=1.0]{pics/homotopija.eps}}
 \end{primjer}
 Na ovom skupu klasa krivulja može se prirodno
 definirati zbrajanje. Kao reprezentante klasa uzmimo
@@ -1032,7 +1035,7 @@ grupna mnogostrukost \SU{2} 3-sfera tj. generalizacija uobičajene
 sfere (2-sfere) na četverodimenzionalni prostor. 
 Može se pokazati da je svaka $n$-sfera s $n\ge 2$ jednostavno povezana.
 Pravi dokaz zahtijeva nešto znanja topologije, ali čitatelju će
-moguće ta činijenica biti vrlo intuitivna, a za 2-sferu i očita.
+moguće ta činjenica biti vrlo intuitivna, a za 2-sferu i očita.
 \end{primjer}
 
 Ako postoji homomorfizam s povezane Liejeve grupe $G$ na povezanu Liejevu
