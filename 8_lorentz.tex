@@ -603,7 +603,8 @@ grupa. To je posljedica činjenice da za razliku od grupe translacija,
 Lorentzova grupa nije normalna podgrupa Poincar\'{e}ove grupe.
 U takvom slučaju govorimo o \emph{semi-direktnom} produktu grupa
 i pišemo da je Poincar\'{e}ova grupa $\mathbb{R}^{1,3} \rtimes \O{1,3}$,
-te je označavamo i kao \IO{1,3} ("I" dolazi od engl. \emph{inhomogenous}).
+te je označavamo i kao \IO{1,3} ("I" dolazi od engl. \emph{inhomogenous}.
+U literaturi se Poinca).
 
 Riječ je očito o deset-parametarskoj grupi gdje povrh generatora
 Lorentzove grupe ($J^i$ i $K^i$) imamo i impuls $P^i$ kao
@@ -690,7 +691,7 @@ maksimalnog skupa međusobno komutirajućih generatora grupe
 nije ni kompaktna ni polujednostavna i na nju se ne može primijeniti
 metoda slična onoj koju smo koristili za grupu rotacija  gdje smo
 identificirali stanje s maksimalnom vrijednošću $J_3$ i onda razapeli
-cijeli prostor djelvanjem $J_\pm$.
+cijeli prostor djelovanjem $J_\pm$.
 Za Poincar\'{e}ovu grupu je E. Wigner 1939. godine razvio posebnu
 metodu --- tzv. metodu \emph{induciranih reprezentacija} koju ćemo
 sada izložiti.
@@ -707,10 +708,10 @@ Komponenta $p^0$ je redundantna pa ćemo stanja označavati samo s $\vec{p}$
 gdje $\sigma$ označava sve ostale labele potrebne za potpunu specifikaciju
 stanja unutar dane ireducibilne reprezentacije, a koje tek treba odrediti\footnote{Dakle,
     $\sigma$ obrojčava ostale dimenzije
-vektorskog prostora, ortogonalne na kontinuum dimenzija koje obrojčava $p^{\mu}$.}.
-Sva stanja $\ket{\vec{p}, \sigma}$ s istim $p^{\mu}$, a različitim $\sigma$
+vektorskog prostora, ortogonalne na kontinuum dimenzija koje obrojčava $\vec{p}$.}.
+Sva stanja $\ket{\vec{p}, \sigma}$ s istim $\vec{p}$, a različitim $\sigma$
 razapinju potprostor $\mathcal{H}_{p} \subset \mathcal{H}$ kojeg nazivamo
-\emph{mali} Hilbertov prostor. Zahvaljujući (\ref{eq:defpsigma}) djelovanje
+\emph{mali Hilbertov prostor}. Zahvaljujući (\ref{eq:defpsigma}) djelovanje
 čistih translacija je jednostavno, podsjetimo se odjeljka \ref{sec:qmtrans} 
 \begin{equation}
     U(1, a) \ket{\vec{p}, \sigma} = e^{\rmi p\cdot a}  \ket{\vec{p}, \sigma}\;.
@@ -752,7 +753,7 @@ o izboru elemenata $L_p$ koji na jedinstven način transformiraju
 $p^*$ u $p$. Orbitu sačinjavaju vektori različitih iznosa i smjerova
 troimpulsa $\vec{p}$,
 pa će $L_p$ tipično biti kombinacija potiska i rotacije, ali postoji
-sloboda hoćemo li prvo zarotirati $\vec{p}^*$ u smjer $\vec{p}$ pa 
+sloboda hoćemo li prvo zarotirati $\vec{p}^*$ u smjer $\vec{\hat{p}}$ pa 
 napraviti odgovarajući potisak ili obrnuto ili pak neka kompliciranija kombinacija.
 
 Za općenitu Lorentzovu transformaciju $\Lambda \in \SOsup{+}{1,3}$,
@@ -765,7 +766,7 @@ i $\mathcal{H}_{\Lambda p}$ tj. da je
     C_{\sigma \sigma'} \ket{\Lambda\vec{p}, \sigma'} \,.
 \end{equation}
 Objekti $C_{\sigma \sigma'}$ (matrice ako je $\mathrm{dim}(\mathcal{H}_{p}) =
-\mathrm{dim}(\mathcal{H}_{\Lambda p})$ konačan)
+\mathrm{dim}(\mathcal{H}_{\Lambda p})$ konačno)
 nakon transformacije u blok-dijagonalnu
 formu (ako je potrebno) definiraju tražene unitarne ireducibilne reprezentacije
 Lorentzove grupe. Ti objekti na kompleksan način ovise o $\Lambda$ i
@@ -812,7 +813,8 @@ vidi (\ref{eq:WignerD}), pa je odgovarajuća transformacija u $\mathcal{H}_{p^*}
       \sum_{\sigma'=-j}^{j} D^{(j)}_{\sigma'\sigma}(R_{\scriptscriptstyle\rm W})
       \ket{\vec{p}^{*}, \sigma'} \;,
 \end{equation}
-i vidimo da $\sigma$ nije ništa drugo nego projekcija spina, često označavana s $m$.
+i vidimo da $\sigma$ nije ništa drugo nego projekcija spina, često
+označavana s $m$ ("magnetski" kvantni broj).
 Uvrštavanjem u (\ref{eq:defRWone}) dobivamo reprezentaciju Lorentzove
 grupe
 \begin{equation}
@@ -955,7 +957,12 @@ a također i
 uz $R(\theta)\vec{u} = (u_1\cos\theta + u_2 \sin\theta, -u_1\sin\theta+u_2\cos\theta)$,
 što potvrđuje interpretaciju $T$ kao translacije i pokazuje da je mala grupa
 od $k^{*}$ troparametarska grupa translacija i rotacija 2D prostora poznata
-kao \emph{euklidska} grupa \ISO{2}, kako je i naznačeno u gornjoj tablici.
+kao \emph{euklidska} grupa \ISO{2}, kako je i naznačeno u gornjoj tablici\footnote{"I"
+    u oznaci
+\ISO{2} dolazi od \emph{nehomogena} (\emph{engl.} inhomogeneous). Tako
+se i Poincar\'{e}ova grupa u literaturi često označava
+kao I$\,$\O{1, 3} (kompletna) ili  I$\,$\SOsup{+}{1,3} (komponenta
+povezanosti jedinice).}.
 Baza odgovarajućeg malog Hilbertovog prostora $\mathcal{H}_{k^*}$ bit
 će razapeta vektorima
 \begin{equation}
