@@ -1,9 +1,27 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{naturalnames}{hyperref}
-\documentclass[a4paper,11pt]{book}
-\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
+\documentclass[10pt,twoside]{book}
+% Royal paper size and margins (for printing at lulu.com)
+\usepackage[
+  paperwidth=156mm,
+  paperheight=234mm,
+  inner=20mm,   % Binding side
+  outer=15mm,   % Outside edge
+  top=18mm,
+  % bottom=22mm,
+  bottom=15mm,
+  includehead,
+  includefoot,
+  heightrounded
+]{geometry}
+\special{papersize=156mm,234mm}
+%\usepackage[utf8]{inputenc}
 \usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+%\setmainfont{Libertinus Serif}
+%\setmainfont{Tex Gyre Termes}
+\setmainfont{Latin Modern Roman}
+%\setmainfont{Latin Modern Math}
 \usepackage[croatian]{babel}
 \usepackage{enumerate}
 \usepackage{amsmath}
@@ -54,7 +72,7 @@
 %% Colour version which is nice on-screen:
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,hyperfootnotes=true]{hyperref}
 %% Version which prints in B/W (but still has working links in PDF):
-%\usepackage[colorlinks=false,hyperfootnotes=false,pdftitle={Simetrije u fizici}, pdfauthor={Kresimir Kumericki}]{hyperref}
+%\usepackage[colorlinks=false,hyperfootnotes=false]{hyperref}
 %% B/W version which for printing, without links:
 %\usepackage{url}
 %% This is needed to get links breaking in combination with hyperref
@@ -162,7 +180,7 @@
 \setlength{\parskip}{2ex}
 
 \input{gitinfo.tex}
-%\includeonly{7_sun}
+%\includeonly{1_grupe}
 \begin{document}
 \pagenumbering{roman}
 
