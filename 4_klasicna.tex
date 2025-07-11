@@ -592,9 +592,9 @@ enormna i zbog važnih primjena u fizici kojima je posvećeno
 \ref{ch:rotacije}. poglavlje i zbog toga što su one paradigmatski
 slučaj na kojem se može izložiti većina gradiva teorije kontinuiranih grupa,
 kao u \ref{ch:lie}. poglavlju.
-Konceptualno, unitarni operator $\mathcal{D}(\hat{\vec{n}}, \phi)$
+Konceptualno, unitarni operator $D(\hat{\vec{n}}, \phi)$
 rotacije\footnote{Koristit ćemo
-  tradicionalni simbol $\mathcal{D}$ koji dolazi od njemačke
+  tradicionalni simbol $D$ koji dolazi od njemačke
 riječi \emph{Drehung} = rotacija.} za kut $\phi$ oko osi $\hat{\vec{n}}$ dobivamo
 istim postupkom kao i operatore translacije u prostoru i vremenu,
 jedino intrinsična trodimenzionalnost i nekomutativnost rotacija
@@ -628,7 +628,7 @@ Rotaciju za konačni kut dobijemo kompozicijom N rotacija za $\delta\phi = \phi 
 gdje $N\to\infty$:
 
 \begin{equation}
-\mathcal{D}(\hat{\vec{n}}, \phi)=\lim_{N\to\infty}
+D(\hat{\vec{n}}, \phi)=\lim_{N\to\infty}
 \left(1-\frac{i}{\hbar}\vec{L}\cdot\hat{\vec{n}}\delta\phi \right)^N
 = e^{-(i/\hbar)\vec{L}\cdot\hat{\vec{n}}\phi}
 \label{eq:rotD}
@@ -676,10 +676,10 @@ promatrajući rotaciju sustava opisanog vektorskom trojkom valnih funkcija
 \end{equation}
 Takav opis bit će potreban za opis kvantnog stanja čestice za koju nam nije
 važan samo njen položaj u prostoru nego i njena orijentacija.
-Kao i ranije, tražimo operator $\mathcal{D}(\hat{\vec{n}}, \phi)$, moguće
+Kao i ranije, tražimo operator $D(\hat{\vec{n}}, \phi)$, moguće
 različit od onog iz (\ref{eq:rotD}), s djelovanjem
 \begin{equation}
-  \vec{\Psi}'(\vec{r},t) = \mathcal{D}
+  \vec{\Psi}'(\vec{r},t) = D
 (\vec{\hat{n}},\phi) \vec{\Psi}(\vec{r},t) \;,
 \end{equation}
 gdje je $\vec{\Psi}'(\vec{r},t)$ valna funkcija zarotiranog sustava.
@@ -698,7 +698,7 @@ orijentacije čestice treba biti
 pa imamo, sličnim postupkom kao i ranije
 \begin{equation*}
 \begin{split}
-\mathcal{D}(\vec{\hat{n}},\delta\phi)\vec{\Psi}(\vec{r}, t)&=
+D(\vec{\hat{n}},\delta\phi)\vec{\Psi}(\vec{r}, t)&=
  R \vec{\Psi}(R(\hat{\vec{n}},\delta \phi)^{-1}
 \vec{r}, t) \\
  &=\vec{\Psi}(R(\hat{\vec{n}}, \delta\phi)^{-1}\vec{r}, t)+
@@ -750,13 +750,13 @@ Uz tako definirane matrice imamo
 \end{equation}
 što znači
 \begin{equation*}
-\mathcal{D}(\vec{\hat{n}},\phi)\vec{\Psi}(\vec{r}, t)=
+D(\vec{\hat{n}},\phi)\vec{\Psi}(\vec{r}, t)=
  \left(1-\frac{i}{\hbar}(\vec{L}+\vec{S})\cdot\hat{\vec{n}}\delta\phi \right)
   \Psi(\vec{r}, t) \,,
 \end{equation*}
 odnosno, operator konačne rotacije ovakvog kvantnog sustava jest
 \begin{equation}
-\mathcal{D}(\hat{\vec{n}}, \phi)=
+D(\hat{\vec{n}}, \phi)=
  e^{-(i/\hbar)(\vec{L}+\vec{S})\cdot\hat{\vec{n}}\phi} \,.
  \label{eq:rotDJ}
 \end{equation}
