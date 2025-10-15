@@ -504,13 +504,13 @@ Nakon što smo konstruirali sve ireducibilne reprezentacije \emph{algebre}
 \suAlg{2} = \soAlg{3}, promotrimo sada detaljnije u kojoj mjeri eksponencijacijom
 odgovarajućih operatora dobivamo reprezentacije \emph{grupa} \SO{3} i \SU{2}.
 Matrični elementi ekponenciranih operatora između standardnih
-$\ket{j, m}$ stanja
+$\ket{j, m}$ stanja,
 \begin{equation}
     D^{(j)}_{m'm}(\hat{\vec{z}},\phi)  \equiv  \bra{j,m'} D^{(j)}(\hat{\vec{n}},\phi) \ket{j, m} 
-    =\bra{j,m'} e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{j, m} \,.
+    =\bra{j,m'} e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{j, m} \,,
     \label{eq:WignerD}
 \end{equation}
-se nazivaju \emph{Wignerove D-funkcije} i formiraju tzv. \emph{Wignerovu D-matricu}.
+nazivaju se \emph{Wignerove D-funkcije} i formiraju tzv. \emph{Wignerovu D-matricu}.
 Mogu se pronaći tabelirani u specijaliziranoj literaturi, a postoje
 i zatvoreni analitički izrazi. No razmotrimo u kojoj mjeri oni
 reprezentiraju grupe \SO{3} i \SU{2}. Kako te grupe nisu izomorfne,
@@ -716,7 +716,7 @@ u prošlom odjeljku, neosjetljive na fazu valne funkcije
 i nema nikakvog fizikalnog razloga zahtijevati takve rubne uvjete,
 pogotovu kad smo svjesni da u prirodi postoje sustavi (fermioni)
 koji takve zahtjeve \emph{ne} zadovoljavaju.
-Izložit ćemo sada argument koji objašnjava zašto $l$ ne može biti
+Izložit ćemo sada argument J. Schwingera koji objašnjava zašto $l$ ne može biti
 polucjelobrojan, a koji se ne oslanja na rubne uvjete nego samo
 na temeljne komutacijske relacije \cite{Ballentine:1998}.
 
@@ -740,7 +740,7 @@ Ovi operatori zadovoljavaju komutacijske relacije
     [q_{\pm}, p_{\mp}]& = 0 \,,
 \end{align}
 i svi ostali komutatori isto iščezavaju. Uz ovako definirane
-operatore imamo sada za bezdimenzionalni operator momenta impulsa
+operatore imamo sada izraz za bezdimenzionalni operator momenta impulsa
 oko $z$-osi
 \begin{equation}
     \frac{1}{\hbar} L_z = Q_x P_y - Q_y P_x = \frac{1}{2}(p_{+}^2 + q_{+}^2)
@@ -928,8 +928,9 @@ potrebno je znati i kako se pri rotacijama ponašaju kvantnomehanički
 što znači da se transformiraju analogno klasičnim vektorima tj. množenjem
 sa standardnom matricom rotacije $R(\unitn, \theta)$ iz odjeljka
 \ref{sec:tenzori}. Na primjer, transformacija operatora položaja je
+(uz $D(R) \equiv D(\hat{\vec{n}},\phi)$)
 \begin{equation}
-    r_i \longrightarrow U(R) r_i U(R)^{-1} = R_{ij} r_j \;.
+    r_i \longrightarrow D(R) r_i D(R)^{-1} = R_{ij} r_j \;.
 \end{equation}
 Slično, tenzori višeg ranga, poput npr. $r_i p_j$ će se transformirati
 množenjem s brojem matrica $R$ koji odgovara njihovom rangu, kao
@@ -1084,8 +1085,8 @@ djelovanje na $\ket{j,m}$ stanja rezultira stanjima s jednostavnim
 transformacijskim svojstvima. Rotacija stanja
 $T^{(k)}_q\ket{j,m}$ dana je s
 \begin{align}
-    U(R) \Big( T^{(k)}_q\ket{j,m} \Big)& =
-        U(R)  T^{(k)}_q U(R)^{-1} U(R) \ket{j,m}  \\
+    D(R) \Big( T^{(k)}_q\ket{j,m} \Big)& =
+        D(R)  T^{(k)}_q D(R)^{-1} D(R) \ket{j,m}  \\
    &= \sum_{q'=-k}^{k} \sum_{m=-j}^{j}
    D^{(k)}_{q'q}(R) D^{(j)}_{m'm}(R) T^{(k)}_{q'} \ket{j, m'} \;,
 \end{align}
@@ -1212,13 +1213,12 @@ nivoi u vodikovom atomu. Hamiltonijan (u CGS sustavu jedinica)
 je rotacijski simetričan i kao posljedica toga komutira s operatorom
 rotacija
 \begin{equation}
-     [H, D(\vec{n},\phi)] = 0 \;.
+     [H, D(R)] = 0 \;.
 \end{equation}
 To povlači da svih $2l+1$ stanja date ireducibilne reprezentacije
 grupe rotacija s kvantnim brojem $l$
 \begin{equation}
-   \big\{\ket{nlm} \td m\in\{-l, -l+1, ..., l \}\big\} = 
-   \big\{ D(g)\ket{nlm} \td g \in \SO{3} \big\}
+   \big\{\ket{nlm} \td m\in\{-l, -l+1, ..., l \}\big\}
 \end{equation}
 ima istu energiju, kako smo već spominjali u odjeljku \ref{sec:reprezentacije}.
 Sferna simetrija implicira da energija ne ovisi o kvantnom broju $m$
