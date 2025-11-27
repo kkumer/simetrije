@@ -1,0 +1,24 @@
+;;; customization of xindy/makeidx
+
+(require "texindy.xdy")
+
+
+; (markup-crossref-list :class "see"
+;   :open "\emph{Vidi }"
+;   :close "")
+
+; (define-crossref-class "see")
+; (markup-crossref-list :class "see"
+;   :open "\emph{Vidi }"
+;   :sep ", "
+;   :close "")
+
+; (markup-crossref-list :class "seealso"
+;   :open "\emph{Vidi i }"
+;   :close "")
+
+
+;; (markup-crossref-list :class "seealso" :open "~n\subitem\seealso{" :sep "; " :close "}{}")
+
+
+

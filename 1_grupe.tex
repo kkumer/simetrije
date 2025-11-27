@@ -13,7 +13,7 @@
 
 
 Moć teorije grupa leži u njenoj apstraktnosti koju je poznati fizičar Arthur
-Eddington \index{Eddington, Arthur (1882.--1944.)} ilustrirao riječima
+Eddington \index{Eddington, Arthur \yrange{1882}{1944}} ilustrirao riječima
 \begin{quote}
 \emph{Potrebna nam je super-matematika u kojoj su operacije jednako nepoznate kao i
 veličine na koje te operacije djeluju, te super-matematičar koji ne zna što radi kada
@@ -95,11 +95,12 @@ zadovoljen aksiom egzistencije inverza. Naime, neregularne matrice (one
 ograničimo samo na skup regularnih  $2\times2$ matrica dobivamo grupu
 koja se naziva \emph{opća linearna grupa} u dvije dimenzije i označava
 grupno-teorijskom oznakom GL(2).
-    \index{Opća linearna grupa GL($n$)!kao primjer grupe}
+    \index{Opća linearna grupa GL($n$)}
 \index{GL($n$)|see{Opća linearna grupa GL($n$)}}
 \end{primjer}
 
 Grupu zovemo \emph{Abelova (abelovska, komutativna)} ako \index{Grupa!Abelova}
+\index{Abel, Niels \yrange{1802}{1829}}
 $\forall g_1, g_2 \in G \quad g_1 \star g_2 = g_2 \star g_1$.
 Na primjer ($\mathbb{Z}$, +) je Abelova dok grupa GL(2) to nije jer množenje
 matrica općenito ne komutira.
@@ -191,9 +192,9 @@ grupe. (Što nikako ne treba miješati s \emph{reprezentacijom} grupe što je ne
 pojam kojeg ćemo kasnije definirati!)
 
 Treću mogućnost za definiciju ove i drugih grupa pruža nam grupna tablica množenja
-(poznata i kao Cayleyjeva tablica).
+(Stanley poznata i kao Cayleyjeva tablica).
 \index{Cayleyjeva tablica|see{Tablica množenja}}
-\index{Cayley, Arthur (1821.--1895.)}
+\index{Cayley, Arthur \yrange{1821}{1895}}
 Naime, obzirom da je apstraktna grupa potpuno određena time da se navede
 skup elemenata koji je sačinjavaju te time da se potpuno specificira kako
 se ti elementi množe (tj. kakva je binarna operacija u grupi), grupu C$_3$, npr.,
@@ -357,15 +358,18 @@ za koju nemamo odgovarajući poligon kao objekt grupe simetrija.
 \label{sec:podgrupe}
 
 Za operacije s grupama i njihovu klasifikaciju centralni je pojam \emph{podgrupe}:
-
+\index{Podgrupa}
 \begin{definicija}[Podgrupa]
+\index{Podgrupa!definicija}
 Podgrupa $H$ grupe $G$ je neprazni podskup $H\subset G$ koji i sam
 tvori grupu obzirom na grupnu operaciju definiranu na $G$.
 \end{definicija}
 
 Svaka grupa ima trivijalne podgrupe $H=\{e\}$ i $H=G$, a
+\index{Podgrupa!trivijalna}
 podgrupu koja je različita od ovih dviju trivijalnih
 zovemo \emph{prava} podgrupa.
+\index{Podgrupa!prava}
 
 \begin{primjer} \label{th:c2c3}
 C$_2$=\{e, b\} i C$_3$=\{e, c, c$^2$\} su prave podgrupe od D$_3$
@@ -377,6 +381,7 @@ simetrija kristala.
 \end{primjer}
 
 \begin{definicija}[Susjedna klasa]
+\index{Susjedna klasa}
 Lijeva susjedna klasa (engl. coset) podgrupe $H$ obzirom na element
 $g\in G$ je skup
 \begin{displaymath}
@@ -386,7 +391,7 @@ $g\in G$ je skup
 
 Odnos pripadnosti elementa $g_1$ lijevoj susjednoj klasi obzirom na element $g_2$,  
 $g_1 \in g_2 H$, uspostavlja \emph{relaciju ekvivalencije}%
-\footnote{\label{fn:ekviv}
+\footnote{\label{fn:ekviv} \index{Klasa ekvivalencije}
 Općenito, \emph{relacija ekvivalencije} je binarna relacija $a\sim b$ između
 elemenata nekog
 skupa koja ima slijedeća svojstva
@@ -407,6 +412,7 @@ kao reprezentanta klase tj. da ako je $g_k \in gH$ onda je $g_{k}H = gH$.
 
 Susjedne klase po nekoj podgrupi $H$ su međusobno disjunktne i
 zahvaljujući Teoremu o razmještaju sve imaju isti broj elemenata (jednak redu od $H$)
+\index{Teorem!o razmještaju}
 pa tako definiraju jednu particiju grupe G:\\[2ex]
 \centerline{\input{figures/lagrange.tex}}
 %\centerline{\includegraphics[scale=1.0]{pics/lagrange}}
@@ -416,9 +422,10 @@ elementu $eH = H$. Zbog navedene disjunktnosti klasa i jedinstvenosti
 jediničnog elementa ostale susjedne klase naravno ne sadrže jedinični element i
 samim time one nisu podgrupe. 
 Promatrajući ovu sliku lako se uvjerimo u točnost Lagrangeovog
-teorema:
+teorema: 
 
 \begin{teorem}[Lagrange]
+    \index{Teorem!Lagrangeov} \index{Grupa!red} \index{Lagrange, Joseph-Louis \yrange{1736}{1813}}
 Red podgrupe dijeli red grupe.
 \end{teorem}
 
@@ -427,6 +434,7 @@ grupe D$_3$, 6. Skup čiji su elementi predstavljeni kvadratičima na gornjoj sl
 ima svoj naziv:
 
 \begin{definicija}[Kvocijentni skup]
+    \index{Kvocijentni skup}
 Skup svih različitih lijevih susjednih klasa 
 \begin{displaymath}
       G/H \equiv \{gH \td g\in G\}
@@ -449,6 +457,7 @@ skup $\mathrm{D}_3/\mathrm{C}_2$
 \end{primjer}
 
 \begin{definicija}[Normalna podgrupa]
+    \index{Normalna podgrupa} \index{Invarijantna podgrupa|see{Normalna podgrupa}}
 Podgrupa za koju vrijedi $gH=Hg$, $\forall g\in G$, zovemo
 \emph{normalna} ili \emph{invarijantna}.
 \label{tm:normalnapodgrupa}
@@ -493,6 +502,7 @@ gdje smo u drugom koraku iskoristili normalnost podgrupe $H$ i gdje je
 $(g_1 g_2) H$ nužno susjedna klasa jer je $g_1 g_2 \in G$.
 Lako se uvjeriti da su i ostali aksiomi grupe zadovoljeni pa zaključujemo
 da kvocijentni skup po normalnoj podgrupi čini grupu koju zovemo
+\index{Normalna podgrupa} \index{Kvocijentna grupa}
 \emph{kvocijentna grupa}\footnote{Nešto je teže
     uvjeriti se u činjenicu da bi i drugačiji pokušaji definiranja množenja
     susjednih klasa od (\ref{eq:ABmult}) doveli do nužnosti da podgrupa
@@ -534,13 +544,15 @@ nisu jednaki i $\mathrm{D}_{3}$/$\mathrm{C}_2$ nije grupa.
 
 Grupe koje nemaju normalnih podgrupa zovu se \emph{jednostavne}\footnote{Mi se
     nećemo baviti simetrijama algebarskih jednadžbi, ali spomenimo
-    da je \'{E}variste Galois povezao njihovu općenitu rješivost (mogućnost
+    da je \'{E}variste Galois \index{Galois, \'{E}variste \yrange{1811}{1832}}
+    povezao njihovu općenitu rješivost (mogućnost
     da se sva rješenja prikažu u obliku izraza koji uključuju konačni broj
     primjena osnovnih matematičkih operacija i korijena na
     koeficijente jednadžbe) s nejednostavnošću pripadajuće grupe simetrija
     skupa rješenja. Onda je dokazavši da su grupe simetrija skupa rješenja za jednadžbe reda
     većeg od 5 jednostavne pokazao da te jednadžbe nisu rješive. To je otkriće predstavljalo
 kraj teorije algebarskih jednadžbi i rođenje teorije grupa.\label{fus:galois}} ,
+\index{Grupa!Abelova} \index{Grupa!jednostavna} \index{Grupa!polujednostavna}
 a one koje nemaju normalnih Abelovih podgrupa zovu se \emph{polujednostavne}.
 Kako imanje normalne podgrupe znači mogućnost "dijeljenja" grupe na kvocijentnu
 grupu, jednostavne grupe su u nekoj mjeri analogne prostim brojevima.
@@ -551,12 +563,14 @@ ove operacije $g \ldots g^{-1}$ i na skupove koji nisu podgrupa te
 na pojedine elemente grupe:
 
 \begin{definicija}[Konjugirani elementi]
+    \index{Element!konjugirani}
 Dva elementa $a$ i $b$ grupe $G$ su \emph{konjugirani} ukoliko
 postoji $g\in G$ takav da je $a=gbg^{-1}$.
 \label{tm:konjugacija}
 \end{definicija}
 
 Konjugacija je također relacija ekvivalencije:
+\index{Klasa ekvivalencije}
 \begin{enumerate}
 \item $a=e^{-1} a e  \imp a\sim a$
 \item $a=g^{-1} b g  \imp  b= g^{-1} a (g^{-1})^{-1}$
@@ -574,7 +588,7 @@ particiju skupa na klase.
 
 Klasa od $e=\{e\}$ što znači da klase, izuzev ove trivijalne, nisu podgrupe.
 
-Za Abelove grupe svaki element je klasa za sebe.
+Za Abelove grupe svaki element je klasa za sebe. \index{Grupa!Abelova}
 
 Kako normalne podgrupe zadovoljavaju $gHg^{-1}=H$, $\forall g\in G$, slijedi
 da su one sastavljenje od \emph{cijelih} klasa konjugacije.
@@ -600,7 +614,7 @@ ima isti broj elemenata i istu tablicu množenja kao grupa $\mathrm{C}_2$. Dakle
 apstraktnom smislu teorije grupa te su grupe identične.  Za prepoznavanje takvih
 situacija, umjesto uspoređivanja grupnih tablica množenja pogodnije je identificirati
 preslikavanje s jedne grupe na drugu koje "čuva" grupnu binarnu operaciju. Takvo preslikavanje
-se naziva \emph{homomorfizam}:
+se naziva \emph{homomorfizam}: \index{Homomorfizam!definicija}
 \begin{definicija}[Homomorfizam]
 Neka su $A$ i $B$ grupe, a $f:A\to B$ preslikavanje koje komutira
 s grupnom operacijom tj. za koje vrijedi
@@ -631,6 +645,7 @@ Onda kažemo da je $f$ \emph{homomorfizam} grupe $A$ u grupu $B$.
 Vidimo da homomorfizam općenito ne mora biti injekcija tj. da se više
 elemenata može preslikavati u isti element.
 Homomorfizam koji je i bijekcija zovemo \emph{izomorfizam} i
+\index{Izomorfizam!definicija}
 pišemo $A\cong B$ ili $A=B$.
 
 Izomorfne grupe su s apstraktnog stanovišta jednake (imaju
@@ -662,6 +677,7 @@ $$
 
 \emph{Slika} homomorfizma $f(A)$ (skup svih elemenata u $B$ koji imaju original u $A$) 
 je podgrupa od $B$. Uvjerite se u to.
+\index{Homomorfizam!slika homomorfizma}
 
 
 \begin{figure}[htpb]
@@ -683,6 +699,7 @@ No moguće je da se i drugi elementi iz $A$ osim jediničnog $e_A$ preslikavaju 
 jedinični element $e_B$ u $B$ (u primjeru \ref{pr:C3toC1} se svi tako preslikavaju).
 \emph{Kernel} homomorfizma se naziva skup svih elemenata od $A$ koji se
 preslikavaju u jedinični element iz $B$.
+\index{Homomorfizam!kernel}  \index{Kernel}
 $$ K \equiv {\rm ker}(f) \equiv \{ k\in A \; | \; f(k) = e_B \} \;. $$
 Kernel od $f:A\to B$ je normalna podgrupa od $A$. Uvjerite se u to.
 
@@ -690,6 +707,7 @@ Kernel je iznimno korisna podgrupa, između ostalog i zahvaljujući sljedećem
 važnom teoremu:
 \begin{teorem}[Teorem o izomorfizmu]
 \label{th:izomorfizam}
+\index{Teorem!o izomorfizmu}
 Ako je $f:G\to G'$ homomorfizam s kernelom $K$, onda vrijedi
 \begin{enumerate}
 \item Svaki element susjedne klase $gK$ se preslikava u isti element $f(g)$.
@@ -697,6 +715,8 @@ Ako je $f:G\to G'$ homomorfizam s kernelom $K$, onda vrijedi
 \end{enumerate}
 \end{teorem}
 (Skup $G/K$ je grupa jer je $K$ normalna podgrupa.)
+\index{Homomorfizam!slika homomorfizma}
+\index{Homomorfizam!kernel}  \index{Kernel}
 
 \emph{Dokaz}$^{*}$\secret{Cornwell '84, 2.6}: Pridruživanje koje
 čini izomorfizam iz stavka 2) teorema je $f(g)\leftrightarrow gK$.
@@ -763,6 +783,7 @@ Odgovor je da to nije moguće općenito, ali jest u situaciji kad su
 $\mathrm{D}_3$ nije slučaj.
 
 \begin{definicija}[Direktni produkt grupa]\label{def:direktniproduktgrupa}
+    \index{Direktni produkt!grupa}
 Ako imamo dvije grupe (G, $\star$) i (H, $\circ$), onda je njihov
 \emph{direktni produkt} grupa G$\times$H čiji su elementi svi uređeni
 parovi $(g, h)$, $g \in \mathrm{G}$, $h \in \mathrm{H}$, a 
@@ -786,9 +807,9 @@ $\mathrm{C}_2 \times \mathrm{C}_2 = \mathrm{D}_2$.
 \begin{enumerate}[label=\arabic{chapter}.\arabic*.]
 \item Dokažite da su jedinični i inverzni element grupe jedinstveni.
 \item Konstrukcijom grupne tablice množenja pokažite da postoji samo
-jedna grupa reda 3.
+jedna apstraktna grupa reda 3.
 \item Na isti način kao u prošlom zadatku pokažite da postoje samo
-dvije grupe reda 4.
+dvije apstraktne grupe reda 4.
 \item Grupa je Abelova ako i samo ako je njena grupna tablica množenja simetrična.
 Dokažite da i za grupe koje nisu Abelove razmještaj jediničnih elemenata u tablici
 mora biti simetričan.
@@ -797,18 +818,21 @@ mora biti simetričan.
     stranica izomorfna grupi $\mathrm{D}_n=\langle c,b \td c^n = b^2 = (bc)^2 = e \rangle $.
     (\emph{Naputak}: Odredite transformacije poligona koje odgovaraju elementima $c$ i
  $b$, pa se uvjerite da one zadovoljavaju $c^n = b^2 = (bc)^2 = e$. Usporedite
-broj elementa grupa.)\label{zad:Dn}
+broj elementa grupa.)\label{zad:Dn} \index{Dihedralna grupa D$_n$}
 \item \label{zad:centar} Centar $Z$ grupe $G$ je skup svih elemenata koji komutiraju sa svakim
 elementom grupe tj. $Z=\{z\in G \td zg=gz \; \forall g\in G\}$. Pokažite da
 je $Z$ normalna Abelova podgrupa od $G$.
+\index{Centar grupe} \index{Grupa!centar}
 \item Odredite klase konjugacije grupe D$_4$.
 \item Pokažite da su sve grupe s prostim brojem elemenata cikličke.
 \item \emph{Red} elementa $a$ grupe $G$ je najmanji $n$ takav da je $a^n=e$.
     Pokažite da je red svih elemenata jedne klase konjugacije isti.\label{zad:redel}
+    \index{Grupa!red}
 \item Postoji li netrivijalni homomorfizam s grupe D$_4$ na grupu D$_3$?
 \item Pokažite da je kvocijentna grupa $\mathbb{Z}/\mathbb{Z}_e$
 izomorfna grupi C$_2$, gdje je $\mathbb{Z}_e$ grupa parnih cijelih brojeva.
 \item Promotrite grupu nesingularnih kvadratnih $n\times n$ 
-matrica $G=\{M\}$. Pokažite da je $f(M)=\det M$ homomorfizam.
-Koja grupa je kodomena tog homomorfizma?
+    matrica $\GL{n}=\{M\}$. Pokažite da je $f(M)=\det M$ homomorfizam.
+Koja grupa je slika tog homomorfizma?
+    \index{Opća linearna grupa GL($n$)}
 \end{enumerate}

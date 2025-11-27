@@ -17,6 +17,8 @@ my*
 **/*.bcf
 **/*.out
 **/*.tdo
+**/*.idx
+**/*.ind
 **/*.synctex.gz
 **/*.run.xml
 **/*eps-converted-to.pdf
