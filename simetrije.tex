@@ -20,8 +20,9 @@
 \defaultfontfeatures{Ligatures=TeX}
 %\setmainfont{Libertinus Serif}
 %\setmainfont{Tex Gyre Termes}
-\setmainfont{Latin Modern Roman}
-%\setmainfont{Latin Modern Math}
+%%% ZAMIJENITI SLJEDECA DVA na CALCULONU !!!
+%\setmainfont{Latin Modern Roman}
+\setmainfont{Latin Modern Math}
 \usepackage[croatian]{babel}
 \usepackage{enumerate}
 \usepackage{amsmath}
@@ -32,6 +33,7 @@
 \usepackage{enumitem}
 %\usepackage{mathbbol}
 %\usepackage{theorem}
+\usepackage{makeidx}
 \usepackage{multirow}
 \usepackage{rotating}
 \usepackage{isotope}
@@ -180,7 +182,9 @@
 \setlength{\parskip}{2ex}
 
 \input{gitinfo.tex}
-%\includeonly{1_grupe}
+\includeonly{1_grupe}
+\makeindex
+\newcommand{\lettergroup}[1]{ \par \nopagebreak }  % remove index headings
 \begin{document}
 \pagenumbering{roman}
 
@@ -211,5 +215,10 @@
 
 
 \printbibliography[heading=bibunnumbered]
+\backmatter
+\small
+%%% MAKE THIS WORK:
+% \index{Grupa|seealso{Liejeva grupa}}
+\printindex
 
 \end{document}
