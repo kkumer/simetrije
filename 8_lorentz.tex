@@ -43,6 +43,7 @@ transformacija sadrži još samo Lorentzove transformacije među inercijalnim su
 poznate kao Lorentzovi \emph{potisci} (engl. \emph{boost}).
 Ta maksimalna grupa se obično naziva Poincar\'{e}ova\footnote{Priroda poštuje
     i općenitije trasformacije prostorvremena poznate kao difeomorfizmi. 
+    \index{Difeomorfizam} \index{Grupa!konformna}
     Odgovarajuće simetrije poštuje klasična Einsteinova teorija gravitacije, ali još
     ih nismo uspjeli ugraditi u univerzalne kvantne teorije ostalih sila i
     tim simetrijama se ne bavimo u ovoj knjizi. Ne bavimo se ni \emph{konformnom}
@@ -58,25 +59,27 @@ nego tek u kombinaciji s rotacijama.
 
 \section{Lorentzova grupa}
 \label{sec:lorentz}
+\index{Lorentzova grupa}
 
 Einsteinova specijalna teorija relativnosti počiva na tzv.
-principu relativnosti. Prema njemu, postoji skup ekvivalentnih koordinatnih
+načelu relativnosti. Prema njemu, postoji skup ekvivalentnih koordinatnih
 sustava (zvanih \emph{inercijalni sustavi})
+\index{Načelo relativnosti} \index{Inercijalni sustav}
 u međusobnom jednolikom pravocrtnom gibanju, a u kojima fizikalni zakoni i pojave
 izgledaju isto. Promatrač ne može eksperimentalno detektirati da 
 se giba, ako se giba jednoliko. Mirovanje nije apsolutno,
 čega su na ovaj ili onaj način bili svjesni već Kopernik, Galilei i Newton, ali je
 tek Einstein uočio druge radikalne posljedice ovog načela, poput toga
 da ni simultanost događaja nije apsolutna.
-Princip relativnosti je princip simetrije na troparametarski skup transformacija
+Načelo relativnosti implicira simetriju na troparametarski skup transformacija
 koje preslikavaju inercijalne sustave jedan u drugi.
-Da bismo vidjeli o kojoj se grupi simetrija radi (i da li se uopće radi o grupi),
+Da bismo vidjeli o kojoj se grupi simetrija radi (i radi li se uopće o grupi),
 moramo ustanoviti kako se kombiniraju transformacije među inercijalnim sustavima.
 
-Kako je poznato, iz principa relativnosti slijedi da
+Kako je poznato, iz načela relativnosti slijedi da
 transformacije iz sustava $S$ u sustav $S'$, 
 tzv. \emph{Lorentzovi potisci}, imaju oblik\footnote{U
-standardnoj literaturi se pri izvodu Lorentzovih potisaka osim principa
+standardnoj literaturi se pri izvodu Lorentzovih potisaka osim načela
 relativnosti obično koristi i postulat o konstantnosti brzine svjetlosti
 u svim sustavima.  No, ovaj drugi postulat je zapravo suvišan, vidi
 Mermin, Am. J. Phys. \textbf{52}(2) (1984) 119 ili J. D. Jackson,
@@ -87,6 +90,7 @@ x' &= x \,, \\
 y' &= y \,,  \\
 z' &= \gamma \big(z+\beta ct \big) \,,
 \end{align}
+\index{Lorentzov potisak}
 gdje je $c$ brzina svjetlosti i
 gdje je radi jednostavnosti uzeto da se je brzina $\vec{v}$ relativnog gibanja
 dvaju sustava duž $z$-osi, $\vec{v}=v\hat{\vec{z}}$, te su uvedene standardne pokrate
@@ -97,9 +101,11 @@ dvaju sustava duž $z$-osi, $\vec{v}=v\hat{\vec{z}}$, te su uvedene standardne p
 Također, transformacije su \emph{aktivne} u smislu da transformiramo koordinate
 konkretnog događaja (npr. položaj $\vec{x}$ neke čestice u trenutku $t$), a ne
 bazne vektore koordinatnog sustava, vidi primjer \ref{pr:repC3}.
+\index{Transformacija!aktivna i pasivna}
 Ove transformacije djeluju na četverodimenzionalnom vektorskom prostoru koji
-se zove \emph{prostor Minkowskog} i kojeg sačinjavaju tzv.
-\emph{Lorentzovi vektori}
+se zove \emph{prostor Minkowskog} i kojeg sačinjavaju tzv. \index{Prostor Minkowskog}
+\index{Minkowski, Hermann \yrange{1864}{1909}}
+\emph{Lorentzovi vektori} \index{Lorentzovi vektori}
 $x^\mu$,  $\mu=0,1,2,3$, čije su komponente  $x^0=ct, x^1=x, x^2=y$ i $x^3=z$.
 U prostoru Minkowskog je vektorski produkt dvaju vektora definiran kao
 \begin{equation}
@@ -112,7 +118,7 @@ $x_0=ct, x_1=-x, x_2=-y, x_3=-z$, tako da je skalarni produkt jednostavno
 \begin{equation}
 x \cdot y = x^{\mu} y_{\mu} \;.
 \end{equation}
-\emph{Metrički tenzor}
+\emph{Metrički tenzor} \index{Tenzor!metrički}
 \begin{equation}
 g = 
 \begin{pmatrix}
@@ -260,7 +266,7 @@ odnosno da je $(\tensor{\Lambda}{^{0}_{0}})^2 \geq 1$ što daje dvije mogućnost
     \tensor{\Lambda}{^{0}_{0}}\geq 1  \qquad\text{ili}\qquad \tensor{\Lambda}{^{0}_{0}}\leq -1 \;.
 \end{equation}
 Zajedno s dvije mogućnosti za $\det \Lambda$ imamo dakle četiri mogućnosti koje vode
-na četiri odvojene komponente povezanosti od O(1,3)
+na četiri odvojene komponente povezanosti od \O{1,3} \index{O(1,3)}
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{ccc}
@@ -274,8 +280,8 @@ $\det\Lambda$ & $\tensor{\Lambda}{^{0}_{0}}$ & oznaka   \\ \hline
 \renewcommand{\arraystretch}{1.0}
 \end{center}
 gdje smo izdvojili specijalne elemente grupe \O{1, 3} 
-prostornu inverziju (\emph{paritet}) $P$
-i vremensku inverziju $T$, definirane kao
+prostornu inverziju (\emph{paritet}) $P$  \index{Inverzija prostora}
+i vremensku inverziju $T$, definirane kao \index{Vrijeme!inverzija}
 \begin{align}
     P& =g :  (t\to t, \vec{x}\to -\vec{x}) \,, \label{eq:paritet} \\
     T& =-g :  (t\to -t, \vec{x}\to \vec{x})  \;.
@@ -286,6 +292,7 @@ nekad se naziva \emph{prava ortokrona Lorentzova grupa}, a neki autori koriste i
 samo za nju termin Lorentzova grupa, što ćemo i mi dalje običavati. Iz tablice vidimo da
 se svi elementi pune Lorentzove grupe \O{1,3} mogu prikazati kao produkt jedne od transformacija
 iz skupa $\{1, P, T, PT\}$ i elemenata \SOsup{+}{1,3}.
+\index{SO$^{+}$(1,3)}
 
 
 \section{Generatori i reprezentacije Lorentzove grupe}
@@ -342,9 +349,9 @@ L_{03} & -L_{13} &-L_{23} & 0
 gdje tri parametra $L_{01}$, $L_{02}$ i $L_{03}$ opisuju Lorentzove
 potiske, a tri parametra $L_{12}$, $L_{13}$ i $L_{23}$ prostorne rotacije.
 Umjesto ovih šest parametara pogodno je koristiti parametre
-$\theta_i$ i $\zeta_i$,  definirane na slijedeći način:
+$\theta_i$ i $\eta_i$,  definirane na slijedeći način:
 \begin{equation}
- L = -\rmi \theta_i J_i + \rmi \zeta_i K_i  \qquad i=1,2,3  \;,
+ L = -\rmi \theta_i J_i + \rmi \eta_i K_i  \qquad i=1,2,3  \;,
 \label{eq:LJK}
 \end{equation}
 gdje su $J_i$ već dobro poznati generatori rotacija, samo prošireni
@@ -400,9 +407,9 @@ K_3 =
 \end{equation}
 
 Treba primijetiti kako operatori $K_i$ nisu hermitski tako da odgovarajuće
-transformacije $\exp(\rmi\zeta_i K_i)$ neće biti unitarne. To je posljedica
+transformacije $\exp(\rmi\eta_i K_i)$ neće biti unitarne. To je posljedica
 nekompaktnosti Lorentzove grupe --- parametri potiska poprimaju
-vrijednosti iz nekompaktnog intervala $[0,c)$.
+vrijednosti iz nekompaktnog intervala $[0,c)$. \index{Liejeva grupa!kompaktna}
 Kao posljedica toga integrali po grupnom prostoru ne konvergiraju i ta se beskonačnost
 za unitarne reprezentacije mora odražavati u beskonačnosti vektorskih prostora
 na kojima one djeluju. Konačnodimenzionalne reprezentacije nekompaktnih grupa
@@ -427,6 +434,7 @@ množenjem vidimo da vrijedi
 [K_i, K_j] &= -\rmi\epsilon_{ijk} J_k \,, \label{eq:LK2} \\
 [J_i, K_j] &= \rmi\epsilon_{ijk} K_k \;. \label{eq:LK3}
 \end{align}
+\index{Lorentzova grupa!algebra}
 Prva relacija je dobro poznata algebra \soAlg{3}=\suAlg{2} grupe prostornih rotacija
 koja je dakle podgrupa Lorentzove grupe.
 Druga relacija govori da podskup Lorentzovih potisaka nije zatvoren
@@ -459,13 +467,14 @@ Svejedno ispostavlja se\footnote{nakon vrlo netrivijalnog postupka \emph{komplek
 Lieve algebre} da za klasifikaciju ireducibilnih reprezentacija Lorentzove
 grupe možemo kao i u odjeljku \ref{sec:so4} koristiti parove
 \begin{equation}
-(j^{(+)}, j^{(-)})  \qquad j^{(+)}, j^{(-)} = 0, \fhalf, 1, \dotsc .
+(j^{(-)}, j^{(+)})  \qquad j^{(-)}, j^{(+)} = 0, \fhalf, 1, \dotsc .
 \end{equation}
 Tako imamo trivijalnu 1D (0,0) reprezentaciju i objekte koji se
 transformiraju prema njoj zovemo Lorentzovi skalari. Slijedeće
 dvije su 2D tzv. \emph{Weylove} reprezentacije ($\fhalf$, 0) i
 (0, $\fhalf$) prema kojima bi se transformirala bezmasena
 fermionska polja, kad bi takva postojala, što u ovom trenutku nije poznato.
+\index{Weylova reprezentacija} \index{Weyl, Hermann \yrange{1885}{1955}}
 Obični četverovektori poput $x^\mu$ pripadaju ireducibilnoj
 4D reprezentaciji $(\fhalf, \fhalf)$. Uočite da ukoliko napravimo
 restrikciju Lorentzove simetrije \SOsup{+}{1,3} na samo rotacijsku \SO{3},
@@ -474,7 +483,7 @@ pa kako je $\vec{J}=\vec{J}^{(+)}+\vec{J}^{(-)}$ standardni
 Clebsch-Gordanov razvoj ("zbrajanje" momenata impulsa) nam kaže da
 je 
 \begin{equation}
-(j^{(+)}=\fhalf, j^{(-)}=\fhalf)_{\SOsup{+}{1,3}} \quad = \quad(j=1)_{\SO{3}} \oplus (j=0)_{\SO{3}} \,,
+(j^{(-)}=\fhalf, j^{(+)}=\fhalf)_{\SOsup{+}{1,3}} \quad = \quad(j=1)_{\SO{3}} \oplus (j=0)_{\SO{3}} \,,
 \end{equation} 
 gdje naravno trodimenzionalni $j=1$ potprostor odgovara prostornim vektorima,
 a jednodimenzionalni $j=0$ potprostor vremenskoj komponenti koja je invarijantna
@@ -513,11 +522,13 @@ Slijedi da je
 Posljedično, proširivanjem \SOsup{+}{1,3} grupe paritetom, reprezentacije
 (0, $\fhalf$) i ($\fhalf$,0) više nisu ireducibilne svaka zasebno,
 već ireducibilna postaje 4D reprezentacija $(\fhalf, 0) \oplus (0, \fhalf)$, poznata
-kao Diracova reprezentacija.
+kao Diracova reprezentacija. \index{Diracova reprezentacija}
+\index{Dirac, Paul \yrange{1902}{1984}}
 
 
 Slično, tenzor elektromagnetskog polja $F^{\mu\nu}$ pripada
 6-dimenzionalnoj reducibilnoj reprezentaciji (1,0)$\oplus$(0,1).
+\index{Tenzor!elektromagnetskog polja}
 
 
 Kao što smo u \ref{ch:rotacije}. poglavlju i od samih operatora tražili
@@ -549,6 +560,7 @@ a komutacijske relacije (\ref{eq:LK1})--(\ref{eq:LK3}) se ujedinjuju u
 - g^{\sigma\nu} J^{\rho\mu} \;.
 \label{eq:4DLorKom}
 \end{equation}
+\index{Lorentzova grupa!algebra}
 Također, matrični elementi generatora Lorentzove grupe u
 4D definicionoj ($\fhalf$, $\fhalf$) reprezentaciji dani su kao
 \begin{equation}
@@ -566,7 +578,7 @@ dani su kao
 \label{eq:DiracJ}
 \end{equation}
 gdje su $\gamma^\mu$ tzv. Diracove gama matrice definirane
-antikomutacijskim relacijama
+antikomutacijskim relacijama  \index{Diracove matrice}
 \begin{equation}
  \gamma^\mu\gamma^\nu + \gamma^\nu \gamma^\mu
 \equiv \{\gamma^\mu, \gamma^\nu\} = 2 g^{\mu\nu} \,.
@@ -583,7 +595,8 @@ Jedan mogući izbor za ove matrice je
 gdje su $\sigma^i$ Paulijeve matrice (\ref{eq:PaulijeveMatrice}).
 
 \section{Poincar\'{e}ova grupa}
-
+\index{Poincar\'{e}ova grupa}
+\index{Poincar\'{e}, Henri \yrange{1854}{1912}}
 
 Poincar\'{e}ova (poznata i kao nehomogena Lorentzova) grupa je
 proširenje Lorentzove grupe translacijama u prostoru
@@ -594,7 +607,7 @@ Minkowskog kao
 \label{eq:defPoin}
 \end{equation}
 gdje je $\tensor{\Lambda}{^\mu_\nu}$ matrica Lorentzove transformacije,
-dok su $a^\mu \in \mathbb{R}^{1,3}$ četiri parametra translacija u prostor-vremenu.
+dok su $a^\mu \in \mathbb{R}^{1,3}$ četiri parametra translacija u prostorvremenu.
 Kompozicija elemenata Poincar\'{e}ove grupe, za koju se iz (\ref{eq:defPoin}) 
 lako vidi da je oblika
 \begin{equation}
@@ -607,13 +620,14 @@ Lorentzova grupa nije normalna podgrupa Poincar\'{e}ove grupe.
 U takvom slučaju govorimo o \emph{semi-direktnom} produktu grupa
 i pišemo da je Poincar\'{e}ova grupa $\mathbb{R}^{1,3} \rtimes \O{1,3}$,
 te je označavamo i kao \IO{1,3} ("I" dolazi od engl. \emph{inhomogenous}).
+\index{Semi-direktni produkt grupa}
 
 Riječ je očito o deset-parametarskoj grupi gdje povrh generatora
 Lorentzove grupe ($J^i$ i $K^i$) imamo i impuls $P^i$ kao
 generator translacija u prostoru i Hamiltonijan $H$ kao
 generator translacija u vremenu.
 Algebra ove grupe je algebra Lorentzove grupe \SO{1,3} (\ref{eq:4DLorKom}) 
-i dodatno
+i dodatno \index{Poincar\'{e}ova grupa!algebra} 
 \begin{align}
 [H, H]& = [H, P^i] = [P^i, P^j] = 0 \label{eq:Poi1} \\
 [H, J_i]& = 0  \label{eq:Poi2}\\
@@ -639,6 +653,7 @@ očuvanim veličinama. To može biti zbunjujuće jer Noetherin teorem
 nam govori kako bi simetrija obzirom na 10-parametarsku Poincar\'{e}ovu grupu
 trebala rezultirati s deset očuvanih veličina, a ovako ih imamo samo
 7 --- energiju, tri komponente impulsa i tri komponente momenta impulsa.
+\index{Teorem!Noetherin} \index{Lorentzov potisak} \index{Zakon očuvanja}
 Razrješenje je u tome da Noetherini očuvani naboji
 (pokušajte ih eksplicitno odrediti) koji
 odgovaraju Lorentzovim potiscima jesu formalno očuvani (vremenska
@@ -669,7 +684,7 @@ o grupi $\SL{2, \mathbb{C}}$ svih regularnih kompleksnih
 $2\times 2$ matrica, koja dva puta pokriva Lorentzovu grupu,
 što za posljedicu ima da je i ovdje kompozicija transformacija
 na kvantnim stanjima "dvo-vrijedna" i može uključivati dodatni
-minus.
+minus. \index{Lieva grupa!pokrivanje}
 U skladu s komentarima na kraju odjeljka \ref{sec:projektivnerep} 
 mogli bismo reći da je "istinska" Poincar\'{e}ova grupa
 $\mathbb{R}^{1,3} \rtimes \SL{2, \mathbb{C}}$. No mi ćemo
@@ -682,6 +697,7 @@ projektivnih, što će se na kraju svesti samo na to spinovi mogu
 biti i polucjelobrojni, što nije nikakva novost.
 
 \section{Unitarne reprezentacije Poincar\'{e}ove grupe}
+\index{Poincar\'{e}ova grupa!unitarne reprezentacije}
 
 Želja nam je klasificirati i opisati unitarne ireducibilne reprezentacije
 $U(\Lambda, a)$
@@ -696,7 +712,7 @@ identificirali stanje s maksimalnom vrijednošću $J_3$ i onda razapeli
 cijeli prostor djelovanjem $J_\pm$.
 Za Poincar\'{e}ovu grupu je E. Wigner 1939. godine razvio posebnu
 metodu --- tzv. metodu \emph{induciranih reprezentacija} koju ćemo
-sada izložiti.
+sada izložiti. \index{Reprezentacija grupe!inducirana}
 
 Promatrajući komutacijske relacije Poincar\'{e}ove grupe 
 (\ref{eq:LK1})--(\ref{eq:LK3}) i (\ref{eq:Poi1})--(\ref{eq:PoinKom})
@@ -713,7 +729,8 @@ stanja unutar dane ireducibilne reprezentacije, a koje tek treba odrediti\footno
 vektorskog prostora, ortogonalne na kontinuum dimenzija koje obrojčava $\vec{p}$.}.
 Sva stanja $\ket{\vec{p}, \sigma}$ s istim $\vec{p}$, a različitim $\sigma$
 razapinju potprostor $\mathcal{H}_{p} \subset \mathcal{H}$ kojeg nazivamo
-\emph{mali Hilbertov prostor}. Zahvaljujući (\ref{eq:defpsigma}) djelovanje
+\emph{mali Hilbertov prostor}. \index{Hilbertov prostor!mali}
+Zahvaljujući (\ref{eq:defpsigma}) djelovanje
 čistih translacija je jednostavno, podsjetimo se odjeljka \ref{sec:qmtrans} 
 \begin{equation}
     U(1, a) \ket{\vec{p}, \sigma} = e^{\rmi p\cdot a}  \ket{\vec{p}, \sigma}\;.
@@ -726,6 +743,7 @@ Skup vektora $\{ \tensor{\Lambda}{^\mu_\nu}p^{\nu} \: | \: \Lambda \in \SOsup{+}
 koje dobijemo djelovanjem svih Lorentzovih transformacija na neki
 vektor $p$, nazivamo \emph{orbita} tog vektora. Oblik orbite ovisi o karakteristikama
 vektora i mogućnosti su prikazane na slici \ref{fig:orbite} i bit će diskutirane kasnije.
+\index{Orbita Lorentzovog vektora}
 Izaberimo neki konkretni element orbite $p^{*}$ kojeg ćemo zvati
 \emph{reprezentant} orbite i označiti zvjezdicom (nema veze s kompleksnom konjugacijom).
 Konstruirajmo sada skup transformacija 
@@ -762,7 +780,7 @@ Za općenitu Lorentzovu transformaciju $\Lambda \in \SOsup{+}{1,3}$,
 između dva proizvoljna vektora $p$ i $\Lambda p$ na orbiti očekujemo 
 da odgovarajući operator $U(\Lambda)$ miješa vektore baze
 odgovarajućih malih Hilbertovih prostora $\mathcal{H}_{p}$
-i $\mathcal{H}_{\Lambda p}$ tj. da je
+i $\mathcal{H}_{\Lambda p}$ tj. da je  \index{Hilbertov prostor!mali}
 \begin{equation}
     U(\Lambda) \ket{\vec{p}, \sigma} = \sum_{\sigma'=1}^{\mathrm{dim}(\mathcal{H}_{\Lambda p})}
     C_{\sigma \sigma'} \ket{\Lambda\vec{p}, \sigma'} \,.
@@ -805,7 +823,7 @@ Tu rotaciju
     R_{\scriptscriptstyle \mathrm{W}} \equiv L_{\Lambda p}^{-1} \Lambda L_p \,,
     \label{eq:defRW}
 \end{equation}
-nazivamo \emph{Wignerova rotacija} i nije ju općenito lako eksplicitno
+nazivamo \emph{Wignerova rotacija} \index{Wignerova rotacija} i nije ju općenito lako eksplicitno
 odrediti, no nama je ovdje bitno samo to da je to obična prostorna rotacija
 jer djelovanje rotacija na kvantna stanja dobro
 znamo. Ono je dano Wignerovim $D$-matricama,
@@ -818,7 +836,7 @@ vidi (\ref{eq:WignerD}), pa je odgovarajuća transformacija u $\mathcal{H}_{p^*}
 i vidimo da $\sigma$ nije ništa drugo nego projekcija spina, često
 označavana s $m$ ("magnetski" kvantni broj).
 Uvrštavanjem u (\ref{eq:defRWone}) dobivamo reprezentaciju Lorentzove
-grupe
+grupe \index{Lorentzova grupa!unitarna reprezentacija}
 \begin{equation}
     U(\Lambda) \ket{\vec{p}, \sigma} = 
      \sum_{\sigma'=-j}^{j} D^{(j)}_{\sigma'\sigma}(R_{\scriptscriptstyle\rm W})
@@ -830,13 +848,15 @@ te na kraju i reprezentaciju Poincar\'{e}ove grupe
      \sum_{\sigma'=-j}^{j} D^{(j)}_{\sigma'\sigma}(R_{\scriptscriptstyle\rm W})
      \ket{\Lambda\vec{p}, \sigma'} \;.
 \end{equation}
+\index{Poincar\'{e}ova grupa!unitarna reprezentacija}
 Centralni je rezultat ovog razmatranja da je, pored mase $m$, standardni spin $j$
 jedino drugo svojstvo sustava potrebno za specifikaciju njegovog ponašanja
 pri Poincar\'{e}ovim transformacijama.
-Masa je svojstvena vrijednost Casimirovog operatora $P^2$, a spin
+Masa je svojstvena vrijednost Casimirovog operatora $P^2$, a spin \index{Casimirov operator}
 je svojstvena vrijednost Casimirovog operatora $\vec{J}^2$, koji se
 može pogodno generalizirati na kovarijantni operator $W^2$ gdje je
-$W^{\mu}$ \emph{operator Paulija i Ljubanskog}
+$W^{\mu}$ \emph{operator Paulija i Ljubanskog} \index{Operator!Paulija i Ljubanskog}
+\index{Luba\'{n}ski, J\'{o}zef \yrange{1914}{1946}}
 \begin{equation}
     W_{\mu} \equiv - \frac{1}{2} \epsilon_{\mu \nu \rho \sigma}
     J^{\nu \rho} P^{\sigma} \,,
@@ -851,7 +871,7 @@ Par $(m, j)$ potpuno specificira ponašanje sustava pri kompletnom skupu
 prostornovremenskih simetrija danih Poincar\'{e}ovom grupom, i često se
 govori da je \emph{definicija} "čestice" to da je to sustav koji predstavlja
 ireducibilnu reprezentaciju Poincar\'{e}ove grupe ili, alternativno,
-da je to sustav definirane mase i spina.
+da je to sustav definirane mase i spina. \index{Elementarna čestica}
 Treba reći da se ovdje ne ograničavamo samo na tzv. elementarne čestice.
 I ne-elementarni sustavi, ako ih promatramo u situacijama koje ne razlučuju
 njihovu unutarnju građu (npr. proton na energijama na kojima se ne pobuđuju
@@ -864,7 +884,7 @@ prostora na orbiti u praksi koristi tako da se, umjesto standardne \emph{spinske
 baze gdje je $\sigma$ svojstveno stanje $J_z$,
 koristi \emph{helicitetna} baza gdje je $\sigma$ svojstveno stanje operatora
 heliciteta $\vec{J}\cdot\vec{\hat{p}}$, tj. operatora momenta impulsa projeciranog na smjer
-impulsa čestice. To ima nekoliko prednosti
+impulsa čestice. To ima nekoliko prednosti  \index{Operator!heliciteta}
 \begin{itemize}
     \item Helicitet $\vec{J}\cdot\vec{\hat{p}}$ komutira s impulsom $\vec{P}$ 
         (vidi zadatak \ref{zad:help}) pa je onda stanje $\ket{\vec{p}, \sigma}$
@@ -885,7 +905,7 @@ Ovo smo razmatranje proveli specijalizirano za sustav s $m > 0$.
 Pogledajmo sada općenitu situaciju. U gornjem izvodu ključno je bilo
 identificirati grupu simetrija koja ostavlja invarijantnim reprezentirajući
 vektor $p^*$. Ta se grupa naziva \emph{mala grupa} ili \emph{stabilizator}
-i u gornjem slučaju to je bila grupa rotacija \SO{3}.
+i u gornjem slučaju to je bila grupa rotacija \SO{3}. \index{Mala grupa}
 Pokazali smo da se puna reprezentacija $U(\Lambda, a)$ inducira iz te
 male grupe pa je to bio primjer metode induciranih reprezentacija.
 Metoda općenito uključuje identificiranje klasa elemenata vektorskog prostora
@@ -957,7 +977,7 @@ a također i
     R(\theta) T(\vec{u}) R(\theta)^{-1} &= T(R(\theta)\vec{u}) \,,
 \end{align}
 uz $R(\theta)\vec{u} = (u_1\cos\theta + u_2 \sin\theta, -u_1\sin\theta+u_2\cos\theta)$,
-što potvrđuje interpretaciju $T$ kao translacije i pokazuje da je mala grupa
+što potvrđuje interpretaciju $T$ kao translacije i pokazuje da je mala grupa \index{Mala grupa}
 od $k^{*}$ troparametarska grupa translacija i rotacija 2D prostora poznata
 kao \emph{euklidska} grupa \ISO{2}, kako je i naznačeno u gornjoj tablici\footnote{"I"
     u oznaci
@@ -988,6 +1008,7 @@ se ne mijenja\footnote{Operatori translacije isto ne mijenjaju $\lambda$
     za stanja s $t_1=t_2=0$ u što se lako možete uvjeriti nakon što
 ste odredili komutacijske relacije u zadatku \ref{zad:iso2gen}.
 Ispostavlja se da je ta translacijska simetrija fotonskog stanja povezana s tzv.
+\index{Baždarna simetrija}
 baždarnom simetrijom kvantne elektrodinamike, vidi \cite{Weinberg:1995mt}.}
 i posljedično je mali Hilbertov prostor \emph{jednodimenzionalan} i
 ponašanje bezmasenih stanja pri
@@ -1009,6 +1030,7 @@ on mijenja predznak od $\lambda$ pa je u kontekstu teorija koje
 imaju simetriju na prostornu inverziju, a takav je elektromagnetizam,
 ipak prirodno desni ($\lambda=1$) i lijevi ($\lambda=-1)$ 
 foton smatrati dvama stanjima iste čestice.
+\index{Inverzija prostora}
 
 Zadnja finesa je da ništa dosad rečeno ne ograničava helicitet $\lambda$
 da ne bude bilo koji realni broj. Sjetimo se naime da je kvantizacija
@@ -1044,6 +1066,7 @@ relacije Lorentzove grupe (\ref{eq:4DLorKom}).
     skupa \SO{3}/\SO{2}. Općenito postojanje takve bijekcije tj. činjenica da je
     kvocijentni skup po maloj grupi (stabilizatoru)
     jednak orbiti poznato je kao \emph{teorem orbite i stabilizatora}.
+    \index{Teorem!orbite i stabilizatora}
 
 \item Pokažite da operator heliciteta $\vec{J}\cdot\vec{\hat{p}}$ komutira s
     operatorom impulsa $\vec{P}$.  \label{zad:help}
