@@ -13,11 +13,11 @@ gradivo u koje se nećemo ovdje upuštati. U preostalim
 poglavljima ove knjige posvetit ćemo se samo
 reprezentacijama nekoliko Liejevih grupa posebno važnih
 za fiziku. Prva od njih će biti grupa rotacija u trodimenzionalnom
-euklidskom prostoru \SO{3}, koju ćemo  zvati
+euklidskom prostoru \SO{3}, koju ćemo  zvati \index{SO(3)}
 jednostavno "grupa rotacija". Grupa rotacija je od ogromne
 važnosti za cijelu fiziku i radu s njenim reprezentacijama
 se tipično posvećuju središnja poglavlja udžbenika kvantne mehanike,
-obično pod naslovom "teorija momenta impulsa".
+obično pod naslovom "teorija momenta impulsa". \index{Moment impulsa}
 Tako ovo prvo poglavlje ima određeni preklop s tim udžbenicima, ali
 izlaganje će naglasiti upravo grupno-teorijske aspekte.
 
@@ -26,10 +26,12 @@ prilikom razmatranja složenijih grupa poput \SU{N} i, posebice,
 Lorentzove grupe \SO{1, 3} kojoj je grupa rotacija podgrupa.
 
 \section{Ireducibilne reprezentacije grupe SO(2)}
+\index{Ireducibilna reprezentacija!SO(2)}
 
 Promotrimo za zagrijavanje jednostavniji slučaj grupe \SO{2}
 rotacija u ravnini. Kao i puna grupa rotacija, \SO{2} je
 \emph{kompaktna} (njen grupni prostor je kružnica).
+\index{Liejeva grupa!kompaktna}
 Teorija reprezentacija za kompaktne grupe je osjetno lakša
  od one za nekompaktne grupe.
 Ključna prednost kompaktnosti je činjenica da su kontinuirane funkcije
@@ -39,7 +41,7 @@ grupe, uz zamjenu u dokazima i iskazima:
 \begin{equation}
     \frac{1}{n} \sum_{g} \longrightarrow \int \rmd g \;,
 \end{equation}
-gdje mjeru integrala valja izabrati tako da vrijedi
+gdje mjeru integrala valja izabrati tako da vrijedi \index{Invarijantna integracija}
 \begin{equation}
   \int \rmd g f(g) = \int \rmd g f(hg) = \int \rmd g f(gh) \,,
 \end{equation}
@@ -109,7 +111,7 @@ i oni zadovoljavaju relaciju ortogonalnosti
 a čitaoc će se lako uvjeriti da je ovakva integracija invarijantna u gornjem smislu.
 
 Kao i kod konačnih grupa možemo rastaviti direktni produkt dviju
-ireducibilnih reprezentacija na Clebsch-Gordanov direktni zbroj
+ireducibilnih reprezentacija na Clebsch-Gordanov direktni zbroj \index{Clebsch-Gordanov razvoj}
 \begin{displaymath}
   \Gamma^{(m)}\otimes\Gamma^{(n)} =
   \sum \oplus\: a_{k}\Gamma^{(k)}  \,,
@@ -131,7 +133,8 @@ ireducibilan smo ustanovili već ranije u zadatku \ref{zad:1D1D1D}, a sad vidimo
 to točno rezultirajuća reprezentacija. Fizikalno, poznato je da je generator
 rotacija operator momenta impulsa, tako da je $m$ iznos momenta impulsa,
 u jedinicama $\hbar$, fizikalnog sustava koji se pri rotacijama transformira
-u skladu s reprezentacijom $\Gamma^{(m)}$. Direktan produkt $\Gamma^{(m)}\otimes\Gamma^{(n)}$
+u skladu s reprezentacijom $\Gamma^{(m)}$. Direktni produkt $\Gamma^{(m)}\otimes\Gamma^{(n)}$
+\index{Reprezentacija grupe!direktni produkt}
 je reprezentacija grupe rotacija na sustavu dobivenom \emph{združivanjem} dvaju sustava 
 s momentima impulsa $m$ i $n$. Jasno je da će združeni sustav imati moment impulsa $m+n$.
 No, kako znamo iz kvantne mehanike i kako ćemo vidjeti u sljedećem odjeljku, ova
@@ -177,6 +180,9 @@ polarizirane" funkcije u ravnini poput $x + \rmi y$ to mogu biti.
 
 
 \section{Ireducibilne reprezentacije algebre \soAlg{3} = \suAlg{2}}
+\index{$\mathfrak{so}$(3)} \index{$\mathfrak{su}$(2)}
+\index{Ireducibilna reprezentacija!SU(2)}
+\index{Ireducibilna reprezentacija!$\mathfrak{su}$(2)}
 
 Puna grupa rotacija \SO{3} nije Abelova i ireducibilne
 reprezentacije više nisu nužno jednodimenzionalne pa njihova konstrukcija nije
@@ -217,15 +223,17 @@ a da bismo dobili operatore grupe, eksponencijacija će biti oblika
 e^{\phi\unitn\cdot\vec{X}}=e^{(-i/\hbar)\phi\unitn\cdot \vec{J}} \,.
     \label{eq:expJ}
 \end{equation}
+\index{Operator!rotacije}
 
 
 Kako je već diskutirano na kraju odjeljka \ref{sec:liejevealgebre},
 operator $\vec{J}^2 = J_{1}^2 + J_{2}^2 + J_{3}^2$ je Casimirov
+\index{Casimirov operator}
 tj. komutira sa svim elementima algebre
 \begin{equation}
    [\jsq, J_{i}^2]=0\;, \quad i=1,2,3 \,,
 \end{equation}
-pa iz druge Schurove leme slijedi da $\jsq$
+pa iz druge Schurove leme slijedi da $\jsq$ \index{Schurova lema}
 mora biti proporcionalan jediničnom operatoru: $\jsq \propto \Eins$.
 Tako je svojstvena vrijednost od $\jsq$ ista za sve vektore neke konkretne 
 ireducibilne reprezentacije i koristit ćemo je za njeno označavanje.
@@ -240,11 +248,11 @@ naše konvencije, usporedimo sad detaljno reprezentaciju grupe rotacija
 na običnom euklidskom prostoru i reprezentacije, koje tek treba
 pronači i proučiti, na konačno-dimenzionalnom Hilbertovom prostoru kvantnomehaničkih stanja.
 
-Liejeva \emph{grupa} rotacija je parametrizirana s tri realna broja $(\vec{n}, \phi)$.
+Liejeva \emph{grupa} rotacija je parametrizirana s tri realna broja $(\unitn, \phi)$.
 Elementi grupe su na trodimenzionalnom euklidskom prostoru reprezentirani $3\times 3$
 matricama $D^{(\mathrm{3D})}$
 čiji tipični elementi su $\cos(\phi)$ ili $\sin(\phi)$ i koje djeluju
-na općeniti vektor $\vec{r}$, izražen preko svojih kartezijevih komponenata $r_i$,
+na općeniti vektor $\vec{r}$, izražen preko svojih Kartezijevih komponenata $r_i$,
 matričnom operacijom
 \begin{displaymath}
    D^{(3D)}_{ij}(\unitn, \phi) r_j  \;,
@@ -290,6 +298,7 @@ bezdimenzionalni.
 Sada ćemo eksplicitno konstruirati ireducibilne reprezentacije \suAlg{2}, koristeći
 isključivo komutacijske relacije (\ref{eq:SU2algebra}).
 Prvo definiramo tzv. operatore \emph{podizanja i spuštanja}
+\index{Operator!podizanja i spuštanja}
 \begin{equation}
     J_{\pm} \equiv J_x \pm i J_y \,, 
 \end{equation}
@@ -422,7 +431,7 @@ i vrijednost $j$ za označavanje ireducibilnih reprezentacija i to ćemo
 odsad i činiti. U kontekstu teorije reprezentacija grupa, $j$ se naziva
 \emph{spin} i govorimo o \emph{reprezentaciji spina $j$} čak i ukoliko
 razmatramo sustav za koji bi orbitalni moment impulsa
-bio fizikalno primjereniji pojam od spina.
+bio fizikalno primjereniji pojam od spina. \index{Spin}
 Dakle mijenjamo oznaku
 \begin{displaymath}
   \ket{\beta, m} \longrightarrow \ket{j, m} \;,
@@ -477,7 +486,7 @@ konstruirali sve ireducibilne reprezentacije ove algebre. Eksplicitni
 matrični oblici za niže dimenzije mogu se naći u knjigama iz kvantne
 mehanike.
 
-Baza vektorskog prostora 
+Baza vektorskog prostora  \index{Multiplet}
 \[\ket{j, m},\quad m\in\{-j, -j+1, \ldots, j-1, j\}\,,\] 
 se obično naziva \emph{multiplet}, a neki autori tako zovu i cijeli
 vektorski prostor kojeg ta baza razapinje. Tako imamo
@@ -511,6 +520,7 @@ $\ket{j, m}$ stanja,
     \label{eq:WignerD}
 \end{equation}
 nazivaju se \emph{Wignerove D-funkcije} i formiraju tzv. \emph{Wignerovu D-matricu}.
+\index{Wignerova D-matrica}
 Mogu se pronaći tabelirani u specijaliziranoj literaturi, a postoje
 i zatvoreni analitički izrazi. No razmotrimo u kojoj mjeri oni
 reprezentiraju grupe \SO{3} i \SU{2}. Kako te grupe nisu izomorfne,
@@ -528,7 +538,7 @@ operatora $J_z$, $J_\pm$ putem formula iz prošlog odjeljka, pa onda linearnim
 kombiniranjem da bi dobili i $J_x$ i $J_y$ (zadatak \ref{zad:matj}), 
 dobivamo upravo generatore iz (\ref{eq:SO3generators}), do na faktor $\rmi\hbar$.
 Tako je $j=1$ \emph{definiciona} reprezentacija grupe \SO{3} i njena najmanja
-vjerna reprezentacija.
+vjerna reprezentacija. \index{Reprezentacija grupa!vjerna}
 No, ona nije i vjerna reprezentacija grupe \SU{2}, što znamo jer znamo da
 se po dva elementa $U$ i $-U$ iz  \SU{2} preslikavaju u isti element 
 \SO{3}. To je samo još jedna manifestacija činjenice da su te dvije grupe
@@ -539,6 +549,7 @@ Zanimljiviji je slučaj $j=1/2$ reprezentacije. Ona je dvodimenzionalna i
 istim postupkom kao gore lako se uvjerimo da su $J_i$ do na faktor
 dani Paulijevim matricama i eksponencijacijom dobivamo definicionu
 vjernu reprezentaciju grupe \SU{2} (vidi zadatak  \ref{zad:svojstvapaulijevih})
+\index{Reprezentacija grupe!SU(2)}
 \begin{equation}
  e^{-\frac{i}{2}\vec{\sigma}\cdot\unitn \theta} =
 \cos \frac{\theta}{2}-i\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \,.
@@ -579,6 +590,7 @@ Premda dakle strogo matematički gledano polucjelobrojne reprezentacije
 gru\-pe \SU{2} nisu reprezentacije grupe rotacija \SO{3}, u prirodi
 postoje važni sustavi koji se transformiraju prema polucjelobrojnim
 reprezentacijama (nazivamo ih fermionski\footnote{%
+    \index{Teorem!veze spina i statistike} \index{Fermion} \index{Bozon}
 Jedan od centralnih rezultata kvantne teorije polja je tzv.
 \emph{teorem  veze spina i statistike} koji kaže da se sustavi
 cjelobrojnog spina ponašaju u skladu s Bose-Einsteinovom
@@ -595,6 +607,7 @@ se razlikuju za fazu i dalje opisuju isto fizikalno stanje.
 Tamo onda možemo dopustiti reprezentiranje grupe simetrija i tzv.
 \emph{projektivnim reprezentacijama} kod kojih je standardni
 uvjet homomorfizma "olabavljen" dopuštanjem razlike u fazi
+\index{Reprezentacija grupe!projektivna}  \index{Projektivna reprezentacija}
 \begin{equation}
    D(g_1)D(g_2)=e^{i \phi(g_1,g_2)}D(g_1 g_2) \;.
    \label{eq:projektivnarep}
@@ -635,8 +648,10 @@ pitanje kako komponirati dvije prostorne rotacije tj. kako odrediti
 rezultantni kut i os rotacije, dobije se upravo korištenjem
 kvaterniona (koji su ekvivalentni grupi \SU{2}) što isto sugerira svojvrsnu
 fundamentalnost grupe \SU{2} i izvan kvantnomehaničkog konteksta.
+\index{Kvaternion}
 
 \section{Orbitalni moment impulsa}
+\index{Moment impulsa!orbitalni}
 
 Među raznim operatorima u kvantnoj mehanici koji zadovoljavaju
 komutacijske relacije \suAlg{2} algebre nailazimo i na važni
@@ -677,6 +692,7 @@ položaja i impulsa koji dodatno zadovoljavaju i relacije
 (\ref{eq:rpkomutacija}).
 
 Pozabavimo se prvo posebnim problemom dimenzionalnosti Hilbertovog prostora
+\index{Hilbertov prostor}
 na kojem operator $\vec{L}$ iz (\ref{eq:Lorb}) djeluje. Naime, taj
 je prostor beskonačnodimenzionalan. Već smo to u sličnoj situaciji
 sreli u primjeru \ref{pr:repC3} u kontekstu rotacije valnih funkcija
@@ -715,8 +731,9 @@ No sve fizikalne posljedice su, kako smo baš diskutirali
 u prošlom odjeljku, neosjetljive na fazu valne funkcije
 i nema nikakvog fizikalnog razloga zahtijevati takve rubne uvjete,
 pogotovu kad smo svjesni da u prirodi postoje sustavi (fermioni)
-koji takve zahtjeve \emph{ne} zadovoljavaju.
+koji takve uvjete \emph{ne} zadovoljavaju. \index{Fermion}
 Izložit ćemo sada argument J. Schwingera koji objašnjava zašto $l$ ne može biti
+\index{Schwinger, Julian \yrange{1918}{1994}}
 polucjelobrojan, a koji se ne oslanja na rubne uvjete nego samo
 na temeljne komutacijske relacije \cite{Ballentine:1998}.
 
@@ -751,7 +768,8 @@ $q_{\pm}$ i $p_{\pm}$ zadovoljavaju kvantne komutacijske relacije položaja
 i impulsa, a drugo da je $(p^2 + q^2)/2$, ako je $p$ impuls, a $q$ položaj,
 upravo bezdimenzionalna varijanta Hamiltonijana jednodimenzionalnog kvantnog
 harmoničkog oscilatora. Dakle, operator $L_z$ je matematički ekvivalentan
-\emph{razlici} Hamiltonijana dvaju \emph{nezavisnih} harmoničkih oscilatora
+razlici Hamiltonijana dvaju nezavisnih harmoničkih oscilatora
+\index{Harmonički oscilator}
 \begin{equation}
 \frac{1}{\hbar} L_z = H^{(+)} - H^{(-)} \;.
 \label{eq:Hpm}
@@ -775,6 +793,7 @@ tj. da su svakako cjelobrojne, što je i trebalo pokazati.
 
 \section{Zbrajanje momenata impulsa i Clebsch-Gor\-da\-no\-vi koeficijenti}
 \label{sec:zbrajanjeJ}
+\index{Clebsch-Gordanov razvoj}
 
 Kod konačnih grupa smo razmatrali pitanje direktnog produkta
 ireducibilnih reprezentacija i njegovog rastavljanja na tzv.
@@ -914,6 +933,7 @@ i koeficijenti razvoja jedne baze po drugoj
 nazivaju se \emph{Clebsch-Gordanovi koeficijenti} i mogu se naći tabelirani
     u literaturi. U Dodatku \ref{sec:clebsch} mogu se naći neka svojstva
 ovih koeficijenata i metoda njihovog određivanja.
+\index{Clebsch-Gordanov koeficijent}
 
 
 \section{Tenzorski operatori i Wigner-Eckartov teorem}
@@ -932,6 +952,8 @@ sa standardnom matricom rotacije $R(\unitn, \theta)$ iz odjeljka
 \begin{equation}
     r_i \longrightarrow D(R) r_i D(R)^{-1} = R_{ij} r_j \;.
 \end{equation}
+\index{Operator!tenzorski} \index{Operator!ponašanje pri rotacijama}
+\index{Teorem!Wigner-Eckartov}
 Slično, tenzori višeg ranga, poput npr. $r_i p_j$ će se transformirati
 množenjem s brojem matrica $R$ koji odgovara njihovom rangu, kao
 u (\ref{eq:tenzor}). Problem je međutim da ti tenzori općenito nisu
@@ -998,6 +1020,8 @@ stanja transformiraju množenjem (transponiranim) Wignerovim D-matricama
                = \sum_{m'} D^{(j)}_{m'm}\ket{j,m'} \;.
 \end{equation}
 \begin{definicija}[Ireducibilni sferični tenzorski operator]
+ \index{Operator!sferični tenzorski}  \index{Sferični tenzorski operator}
+ \index{Tenzor!sferični}
 Ireducibilni sferični tenzorski operator $T^{(k)}$ ranga $k$, sa
 $2k+1$ komponenata $T^{(k)}_q$, $q=-k,-k+1,\ldots,k$ je operator
 koji zadovoljava
@@ -1036,9 +1060,10 @@ dobijamo komutacijske relacije
 koje se mogu smatrati ekvivalentnom
 definicijom ireducibilnih sferičnih tenzora. 
 Obične (općenito reducibilne) tenzore s početka odjeljka nekad
-nazivamo \emph{kartezijevi} jer su im komponente definirane pomoću kartezijeve
+nazivamo \emph{Kartezijevi} jer su im komponente definirane pomoću Kartezijeve
 baze $\{\vec{\hat{x}}, \vec{\hat{y}}, \vec{\hat{z}}\}$.
-Obični kartezijevi tenzori ranga 1, dakle vektori, zadovoljavaju komutacijske
+\index{Tenzor!Kartezijev}
+Obični Kartezijevi tenzori ranga 1, dakle vektori, zadovoljavaju komutacijske
 relacije
 \begin{equation}
  [J_i, V_j] = \rmi \hbar \epsilon_{ijk} V_k \;.
@@ -1046,7 +1071,7 @@ relacije
 \end{equation}
 \begin{primjer}[Tenzori ranga 0]
 Tenzori ranga nula tj. skalari imaju samo jednu komponentu
-i nema razlike između sferične varijante $T^{(0)}_0$ i kartezijeve varijante $T$.
+i nema razlike između sferične varijante $T^{(0)}_0$ i Kartezijeve varijante $T$.
 Ovakvi operatori komutiraju sa sve tri komponente operatora momenta impulsa
 \begin{equation}
     [J_i, T] = 0 \;,
@@ -1056,12 +1081,12 @@ koji komutiraju s Hamiltonijanom invarijantni na vremenske translacije.
 \end{primjer}
 \begin{primjer}[Tenzori ranga 1]
     Standardni vektorski operatori, poput $\vec{r}$, $\vec{p}$ i
-    \vec{J}, su kartezijevi operatori ranga 1. Za razliku od
-    kartezijevih operatora ranga 2, oni \emph{jesu} ireducibilni.
-    Rotacije naravno miješaju sve tri kartezijeve komponente
+    \vec{J}, su Kartezijevi operatori ranga 1. Za razliku od
+    Kartezijevih operatora ranga 2, oni \emph{jesu} ireducibilni.
+    Rotacije naravno miješaju sve tri Kartezijeve komponente
     $T_x$, $T_y$, $T_z$ vektorskog operatora $\vec{T}$. 
     \emph{Sferični} tenzor ranga $k=1$ ima $2k+1=3$ komponente i
-    one su povezane s kartezijevim komponentama relacijama
+    one su povezane s Kartezijevim komponentama relacijama
     \begin{equation}
     T^{(1)}_0 = T_z \;, \quad T^{(1)}_{\pm 1} = \mp \frac{1}{\sqrt{2}}
     (T_x \pm i T_y) \;,
@@ -1100,11 +1125,13 @@ Stoga se često kaže da je $k$ "spin" takvog operatora.
 Amplituda vjerojatnosti da stanje $\ket{k, q; j, m}$ ima
 neki konkretni spin $J$ i projekciju spina $M$ dana je s Clebsch-Gordanovim
 koeficijentom $C^{J M}_{jmkq}$, vidi (\ref{eq:defCG}).
+\index{Clebsch-Gordanov koeficijent}
 Po bliskoj analogiji s tim, za amplitudu vjerojatnosti
 pronalaženja stanja $T^{(k)}_q\ket{j,m}$ u stanju $\ket{j',m'}$
 stanje  imamo sljedeći teorem, koji je jedan od centralnih
 rezultata primjene simetrija u kvantnoj mehanici.
 \begin{teorem}[Wigner-Eckart]
+    \index{Teorem!Wigner-Eckartov} \index{Tenzor!sferični}
 Matrični elementi sferičnih tenzorskih operatora između svojstvenih stanja momenta
 impulsa zadovoljavaju relaciju
 \begin{equation}
@@ -1121,8 +1148,10 @@ pomoću tablica Clebsch-Gordanovih koeficijenata.
 Amplituda se faktorizira na reducirani matrični element koji je netrivijalni 
 "dinamički" dio i Clebsch-Gordanove koeficijente koji sadrže obično
 manje važnu informaciju o prostornim orijentacijama stanja i operatora.
+\index{Clebsch-Gordanov koeficijent}
 Teorem omogućuje i određivanje tzv. \emph{izbornih pravila} za prijelaze
 atomskih i nuklearnih kvantnih sustava pod vanjskim utjecajima.
+\index{Izborno pravilo}
 
 \begin{primjer}[Skalarni operator]
 \begin{displaymath}
@@ -1137,6 +1166,7 @@ $|j-0|\leq j' \leq j+0$ odnosno $j=j'$. To je naprosto odraz
 
 
 \begin{primjer}[Izborna pravila za dipolno zračenje]
+    \index{Dipolno zračenje}
 Interakcija atoma s elektromagnetskim poljem opisanim vektorskim
 potencijalom $\vec{A}$ dana je hamiltonijanom
 \begin{equation}
@@ -1156,7 +1186,7 @@ matričnom elementu operatora položaja
 \begin{equation}
     \vec{\epsilon} \cdot \bra{n'l'm'}\vec{r}\ket{nlm}  \,.
 \end{equation}
-Operator položaja $\vec{r}$ je kartezijev vektor (tenzor
+Operator položaja $\vec{r}$ je Kartezijev vektor (tenzor
 ranga 1), a istovremeno i sferični tenzor $r^{(1)}$ ranga 1, gdje
 je korespondencija komponenata navedena u (\ref{eq:kartvektor}).
 Wigner-Eckartov teorem kaže da su matrični elementi prijelaza
@@ -1171,8 +1201,9 @@ je $|l-1|\leq l' \leq l+1$ odnosno da je moguća promjena
 momenta impulsa atoma u dipolnom zračenju $\Delta l = \pm 1,0$\footnote{Usput,
     dodatna simetrija koju ima ovaj sustav, simetrija na prostornu
     inverziju $\vec{x} \to -\vec{x}$, dodatno zabranjuje $\Delta l =0$
+    \index{Inverzija prostora}
 prijelaze.}. Ovakvi uvjeti na prijelaze između kvantnih nivoa
-nazivaju se \emph{izborna pravila}.
+nazivaju se \emph{izborna pravila}.  \index{Izborno pravilo}
 Nadalje, kako Clebsch-Gordanovi koeficijenti iščezavaju ako
 nije zadovoljeno $m+q = m'$, ukoliko znamo da je električno
 polje linearno polarizirano 
@@ -1191,6 +1222,7 @@ moment impulsa atoma se može promijeniti najviše za 1.
 
 \section{Spektar vodikovog atoma i SO(4) simetrija}
 \label{sec:so4}
+\index{Vodikov atom} \index{SO(4)}
 
 U udžbenicima kvantne mehanike se spektar vodikovog atoma obično
 dobiva rješavanjem Schr\"{o}dingerove diferencijalne jednadžbe.
@@ -1237,6 +1269,7 @@ spektra.}
 \begin{equation}
     E_n = - \frac{e^4 m}{2 \hbar^2 n^2}  \;.
 \end{equation}
+\index{Degeneracija}
 Dakle, umjesto $(2l+1)$-struke degeneracije koju očekujemo kao posljedicu
 rotacijske simetrije imamo veću, $n^2$-struku degeneraciju. Ovakva
 situacija obično znači da sustav ima veću simetriju nego što smo
@@ -1250,10 +1283,12 @@ je hamiltonijan
  e_{M}^2 \equiv G M m \;.
 \end{equation}
 matematički ekvivalentan onom vodikovog atoma.
-Kod problema dva tijela rotacijska simetrija i njoj odgovarajući zakon
+Kod problema dva tijela rotacijska simetrija i pripadajući zakon
 očuvanja momenta impulsa ($\vec{L}$=const.) manifestiraju se kroz
 činjenicu da putanja sustava (elipsa) ostaje cijelo vrijeme u istoj
-ravnini.  Međutim, ovdje se javlja i zanimljiva dodatna simetrija ---
+ravnini.  
+\index{Moment impulsa!orbitalni} \index{Zakon očuvanja}
+Međutim, ovdje se javlja i zanimljiva dodatna simetrija ---
 putanja je zatvorena elipsa i
 smjer perihela elipse je također konstantan\footnote{Ovo
 vrijedi u klasičnoj Newtonovoj teoriji gravitacije. Poznato je da
@@ -1261,6 +1296,10 @@ Einsteinova teorija gravitacije korigira ovaj rezultat i da smjer perihela
 elipse nije konstantan već vrlo polako precesira.}.
 Odgovarajući očuvani vektor je tzv. \emph{Laplace-Runge-Lenzov}
 vektor
+\index{Laplace-Runge-Lenzov vektor}
+\index{Laplace, Pierre-Simon \yrange{1749}{1827}}
+\index{Runge, Carl \yrange{1856}{1927}}
+\index{Lenz, Wilhelm \yrange{1888}{1957}}
 \begin{equation}
   \vec{M} = \vec{v}\times\vec{L} - \frac{e_{M}^2}{r}\vec{r} \;.
 \label{lrl}
@@ -1342,7 +1381,7 @@ pokazuje se da vrijede sljedeći identiteti
 [M_i, M_j] &= i \hbar \epsilon_{ijk} \left(- \frac{2H}{m}\right) L_k \tag{E} \;.
 \end{align}
 (A) kaže da je $\vec{M}$ očuvan i u kvantnomehaničkom slučaju, a (D) da
-je $M$ kartezijev vektor u smislu odjeljka \ref{sec:tenzorskioperatori}.
+je $M$ Kartezijev vektor u smislu odjeljka \ref{sec:tenzorskioperatori}.
 (Klasični analogon jednadžbe (C) je $\vec{M}^2 = 2E\vec{L}^2/m + e_{M}^4$.)
 Definirajmo sada operator 
 \begin{equation}
@@ -1374,7 +1413,7 @@ dva operatora zadovoljavaju komutacijske relacije
 algebre grupe \SO{3} tj. da je ukupna grupa simetrija vodikovog
 atoma \SO{3}$\times$\SO{3}\footnote{Algebra grupe
 \SO{3}$\times$\SO{3} izomorfna je algebri grupe \SO{4} pa otud naslov ovog odjeljka. 
-\SO{4} je grupa generirana s 6
+\SO{4} je grupa generirana s 6 \index{SO(4)}
 generatora $L_{\mu\nu}=x_\mu p_\nu - x_\nu p_\mu$; $\mu, \nu = 1,2,3,4$;
 $[x_\mu, p_\nu] = i\hbar \delta_{\mu\nu}$. Definiramo li
 $L_i = \fhalf \epsilon_{ijk} L_{jk}$ i $M'_i = L_{4i}$, $i,j,k = 1,2,3$,
@@ -1502,7 +1541,7 @@ gdje su $A$, $B$ i $C$ poznate konstante?
 
 \item
 Izrazite komponente sferičnog vektora $r^{(1)} = (r^{(1)}_{-1}, r^{(1)}_{0},
-r^{(1)}_{1})$ preko kartezijevih komponenata $r_x, r_y, r_z$ tj. izvedite
+r^{(1)}_{1})$ preko Kartezijevih komponenata $r_x, r_y, r_z$ tj. izvedite
 relaciju (\ref{eq:kartvektor}).
 
 \item Neka je poznato da za sferični vektorski operator $\sigma$ vrijedi

@@ -8,6 +8,7 @@
 
 \chapter{Liejeve grupe}
 \label{ch:lie}
+\index{Liejeva grupe}
 
 \section{Kontinuirane grupe}
 
@@ -49,6 +50,7 @@ grupa, za razmatranje istih uvodimo važan pojam \emph{grupnog prostora}
 kojeg nazivamo i \emph{grupna mnogostrukost}.
 Riječ je o prostoru čija je svaka točka pridružena jedinstvenom
 elementu grupe.
+\index{Grupna mnogostrukost} \index{Grupni prostor}
 Za konačne grupe \emph{grupni prostor} je naprosto skup točaka koji
 nema neka dodatna svojstva povrh svojstava koji mu daju aksiomi grupe
 (dakle, ne smatramo da su te točke elementi nekog pravca, ravnine
@@ -67,7 +69,7 @@ niz sofisticiranih matematičkih koncepata (vidi npr.
 prostori lokalno slični prostoru $\mathbb{R}^n$,
 tj. da ih je lokalno moguće parametrizirati $n$-torkom realnih\footnote{Matematičari
     poznaju i grupe čiji grupni prostor se parametrizira kompleksnim
-    brojevima, no mi ovdje takve grupe nećemo sresti.}
+    brojevima, no mi takve grupe ovdje nećemo sresti.}
 brojeva. Najbolje je to razjasniti na primjerima.
 
 
@@ -94,6 +96,7 @@ i $\mathbb{R}^1$.
 
 Kao drugi primjer promotrimo grupu svih translacija u ravnini $\vec{x}\to\vec{x}+\vec{t}$,
 dakle translacija za bilo koji vektor $\vec{t}=(t_1, t_2)$.
+\index{Translacija!u prostoru}
 Ovdje je elemente grupe prirodno parametrizirati dvama
 realnim brojevima $t_1, t_2 \in (-\infty, \infty)$ i očito je da je
  grupna mnogostrukost ravnina tj. $\mathbb{R}^2$. Ovdje naravno treba
@@ -109,7 +112,7 @@ parametriziramo s $n$ realnih brojeva
 te onda govorimo o \emph{$n$-parametarskoj} ili \emph{$n$-di\-men\-zi\-o\-nal\-noj} grupi.
 Zahvaljajući toj identifikaciji
 elemente grupe ćemo označavati kao $g(a_1, a_2$, $\ldots$, $a_n)$, odnosno
-skraćeno $g(a)$.
+skraćeno $g(a)$. \index{Parametar grupe}
 
 Promotrimo sada četiri aksioma grupe u svjetlu ove diskusije.
 \begin{enumerate}
@@ -121,21 +124,21 @@ Promotrimo sada četiri aksioma grupe u svjetlu ove diskusije.
     gdje je funkcija kompozicije  $\theta = \phi(\theta_1, \theta_2) =
     (\theta_1 + \theta_2)\, \mathrm{mod}\, 2\pi$ .) U svjetlu identifikacije
     grupe i njenog grupnog prostora ovdje pišemo da je grupa $G$ domena i kodomena funkcije $\phi$
-    premda je to strogo uzevši grupni prostor.
+    premda je to strogo uzevši grupni prostor. \index{Zatvorenost!Liejeve grupe}
 
 \item Asocijativnost: $g(a)\big[g(b)g(c)\big]=\big[g(a)g(b)\big]g(c)$ što
     znači da funkcija kompozicije mora zadovoljavati
-    $\phi(a, \phi(b,c))=\phi(\phi(a,b),c) $.
+    $\phi(a, \phi(b,c))=\phi(\phi(a,b),c)$. \index{Asocijativnost!Liejeve grupe}
 
 \item Identiteta: postoji parametar $a^0$ takav da je 
        $g(a^0)g(a)$$=g(a)g(a^0)$$=g(a)$ za sve parametre $a$.
     Običaj je grupnu mnogostrukost parametrizirati tako da bude $a^0=(0, 0, \ldots, 0)
      \equiv 0$ tj. $g(0)=e$ što onda znači da za funkciju
-     kompozicije vrijedi $\phi(0,a)=\phi(a,0)=a$.
+     kompozicije vrijedi $\phi(0,a)=\phi(a,0)=a$. \index{Identitet!Liejeve grupe}
 
 \item Inverz: $\forall a\quad \exists \bar{a} \td g(a)g(\bar{a})=
         g(\bar{a})g(a)=g(0)=e$ tj. $g(\bar{a})=g(a)^{-1}$. To znači
-        da postoji tzv. funkcija inverza
+        da postoji tzv. funkcija inverza \index{Inverz!Liejeve grupe}
         \[ \psi:G\to G   \quad  \text{tako da je} \quad \bar{a}=\psi(a) \,. \]
 
 \end{enumerate}
@@ -147,6 +150,7 @@ način. Međutim za grupe od interesa preslikavanja između grupne mnogostrukost
 i grupe su "glatka" i takve grupe onda zovemo Liejeve.
 
 \begin{definicija}[Liejeva grupa]
+    \index{Liejeva grupa!definicija}
   Liejeva grupa je grupa za koju su funkcije kompozicije
 ($\phi$) i inverza ($\psi$) diferencijabilne\footnote{Strogo uzevši, 
     dovoljna je kontinuiranost funkcija jer ona u ovom slučaju povlači diferencijabilnost.
@@ -174,6 +178,7 @@ samo takvim tzv. matričnim Liejevim grupama. Smanjenje općenitosti je neznatno
     poput tzv. metaplektičkih grupa ili kvocijentne grupe Heisenbergove grupe po
 jednoj svojoj specifičnoj normalnoj podgrupi.\label{fus:nematricne}},
 a rad s matricama je značajno lakši od rada s diferencijabilnim mnogostrukostima.
+\index{Liejeva grupa!matrična}
 Na primjer, matrice odmah dolaze parametrizirane brojčanim vrijednostima svojih
 elemenata. Tu je važno
 ne pomiješati dimezionalnost matrične grupe s dimenzionalnošću njenih matrica.
@@ -192,7 +197,7 @@ ali to je jednodimenzionalna grupa jer je svaka matrica potpuno određena
 jednim realnim parametrom $\phi$. Matrične grupe imaju svoja klasična
 imena pa se tako grupa iz (\ref{eq:so2}) zove \SO{2}, što dolazi
 od \emph{specijalna} ($\det M = 1$) \emph{ortogonalna} ($M^\mathsf{T} M = 1$) 
-grupa $2\times 2$ matrica.
+grupa $2\times 2$ matrica. \index{SO(2)}
 
 
 \section{Grupe SO(3) i SU(2)}
@@ -202,9 +207,9 @@ Dva važna primjera Liejevih grupa na kojima  ćemo ilustrirati većinu rezultat
 su grupa $3 \times 3$ ortogonalnih matrica determinante 1, dakle \SO{3},
 i grupa $2 \times 2$ unitarnih matrica determinante 1, \SU{2}, pa ćemo
 se u ovom odjeljku detaljnije upoznati s ove dvije grupe i njihovom
-međusobnom vezom. No krenimo prvo
-s malo općenitijim razmatranjem transformacija prostora koje
-čuvaju udaljenosti između točaka.
+međusobnom vezom.  \index{SO(3)} \index{SU(2)}
+No krenimo prvo s malo općenitijim razmatranjem transformacija prostora koje
+čuvaju udaljenosti između točaka. \index{Transformacija!izometrija}
 Takve transformacije nazivaju se \emph{izometrije}. U vektorskim prostorima,
 udaljenost točaka se prirodno definira kao norma razlike vektora do tih točaka,
 pa će transformacije koje čuvaju skalarni produkt vektora $(\vec{x}, \vec{y})$,
@@ -218,6 +223,7 @@ pa mora biti $R^{\mathsf{T}} R = 1$, a matrice koje to zadovoljavaju
 nazivamo \emph{ortogonalne} jer iz tog svojstva slijedi da su retci i stupci
 tih matrica ortogonalni vektori, štoviše ortonormirani su. Grupa svih
 ortogonalnih $3 \times 3$ matrica se naziva \O{3}.
+\index{Ortogonalna matrica} \index{O(3)}
 
 Kako je prema Binet-Cauchyjevom teoremu $\det R^\mathsf{T} R = \det R^\mathsf{T} \det R$,
 te kako transpozicija ne mijenja determinantu, vidimo da je $(\det R)^2 = 1$,
@@ -236,11 +242,13 @@ udaljenosti, ali ne čuvaju orijentaciju (lijevi vijak se
 se pretvara u desni). Podskup od \O{3} kojeg čine
 matrice determinante 1 čini normalnu podgrupu (uvjerite se u to!)
 koja se naziva \emph{specijalna} ortogonalna grupa \SO{3}.
+\index{Normalna podgrupa} \index{SO(3)}
 
 Elementi komplementa od \SO{3} u \O{3} tj. matrice koje imaju determinantu -1 nekad se 
-nazivaju \emph{neprave} rotacije.
+nazivaju \emph{neprave} rotacije. \index{Neprave rotacije}
 Neprave rotacije se mogu na jedinstven
 način prikazati kao umnožak običnih rotacija iz \SO{3} i operatora 
+\index{Inverzija prostora}  \index{Paritet|see{Inverzija prostora}}
 prostorne inverzije\footnote{Poznat i kao operator \emph{pariteta} zbog
     važnog svojstva parnosti kvantnomehaničkih valnih funkcija na transformaciju
 prostorne inverzije.}
@@ -343,14 +351,17 @@ ili trodimenzionalna Liejeva grupa. Parametre $x, y, r$ i $s$ možemo interpreti
 kao koordinate točaka u četverodimenzionalnom euklidskom prostoru $\mathbb{R}^4$
 i kako je (\ref{eq:s3sfera}) jednadžba sfere u tom prostoru vidimo da je
 grupna mnogostrukost grupe \SU{2} 3-sfera\footnote{Kružnica je 1-sfera $S^1$,
+ \index{SU(2)}  \index{Sfera!3-sfera ($S^3$)} \index{Sfera!kao grupna mnogostrukost}
     Zemljina površina je približno 2-sfera $S^2$ itd. Interesantan vrlo
     netrivijalan rezultat teorije grupa je da od svih $S^n$ samo $S^1$ i $S^3$ dopuštaju
 grupnu strukturu tj. mogu biti mnogostrukosti Liejeve grupe.
 Druga zanimljivost vezana je uz kvocijentni skup \SU{2}/\U{1}. Grupna mnogostrukost
-podgrupe \U{1} je 1-sfera $S^1$ tj. kružnica. Kako smo naučili u odjeljku \ref{sec:podgrupe},
+podgrupe \U{1} je 1-sfera $S^1$ tj. kružnica. \index{Sfera!1-sfera ($S^1$)}
+Kako smo naučili u odjeljku \ref{sec:podgrupe},
 susjedne klase po podgrupi su ili identične ili disjunktne. Pokazuje se,
 najlakše upotrebom kvaterniona \cite{Stilwell:2008}, da su i sve ostale
 susjedne klase kružnice pa je $S^3$ moguće prikazati kao uniju (tzv. svežanj)
+\index{Susjedna klasa} \index{Hopfova fibracija} \index{Hopf, Heinz \yrange{1894}{1971}}
 kružnica, postupkom poznatim kao Hopfova fibracija. Dio Hopfove fibracije,
 projeciran na obični trodimenzionalni prostor, pa onda naravno i na
 dvodimenzionalni prostor papira, prikazan je na naslovnici ove knjige.} $S^3$.
@@ -358,7 +369,7 @@ dvodimenzionalni prostor papira, prikazan je na naslovnici ove knjige.} $S^3$.
 
 Diskutirajmo sada vezu između grupa \SO{3} i \SU{2}. Za zagrijavanje, možemo
 promotriti sličnu vezu jednostavnijih Abelovih grupa \SO{2} i \U{1}. Grupa \SO{2} je dana
-u (\ref{eq:so2}), a \U{1} je grupa unitarnih $1 \times 1$
+u (\ref{eq:so2}), a \U{1} je grupa unitarnih $1 \times 1$ \index{U(1)}
 matrica, a to su naravno kompleksni brojevi apsolutne vrijednosti 1, jer uvjet
 unitarnosti je $u^\dagger u = u^* u = |u| = 1$. Tako tu grupu možemo
 parametrizirati kao $u = e^{i\phi}$, $\phi\in [0, 2\pi)$ i jasno je da je
@@ -387,13 +398,14 @@ i matricama iz SU(2), a ova prividna redundancija dvaju matrica za
 istu rotaciju s pokazuje ključna u kvantnoj mehanici sustava s
 polucjelobrojnim\footnote{\emph{Polucjelobrojni} brojevi nisu polovice
     cijelih brojeva nego polovice \emph{neparnih} cijelih brojeva,
-dakle $1/2$, $3/2$, $5/2$, itd.} spinom,
+dakle $1/2$, $3/2$, $5/2$, itd. \index{Polucjelobrojni brojevi}} spinom,
 kako ćemo vidjeti u \ref{ch:rotacije}. poglavlju.
 
 Kernel ovog homomorfizma je znači $\{\mathbb{I}, -\mathbb{I}\}$ što je
 grupa $\mathbb{Z}_2$ pa prema
 teoremu o izomorfizmu \ref{th:izomorfizam} imamo
 odnos $\SU{2}/\mathbb{Z}_2 = \SO{3}$.
+\index{Teorem!o izomorfizmu}
 
 
 
@@ -401,6 +413,7 @@ odnos $\SU{2}/\mathbb{Z}_2 = \SO{3}$.
 
 \section{Liejeve algebre}
 \label{sec:liejevealgebre}
+\index{Liejeva algebra}
 
 Promotrimo sada skup matrica $M(a)\equiv M(a_1, a_2, \ldots, a_n)$ koje
 čine $n$-pa\-ra\-me\-tar\-sku Liejevu grupe.
@@ -413,7 +426,8 @@ svojstvu diferencijabilnosti Liejeve grupe možemo razviti oko $a_i = 0$:
 \end{equation}
 gdje diferenciranje matrica provodimo prirodno diferencirajući svaki njen
 element ponaosob. Koeficijenti od $\epsilon_i$ u (\ref{eq:razvojM}) su
-konstantne matrice (ne ovise o parametrima) koje se nazivaju generatori
+konstantne matrice (ne ovise o parametrima) koje se nazivaju generatori grupe
+\index{Generator grupe}
 i skraćeno ćemo ih označiti s $X_i$
 \begin{equation}
 X_i =  \frac{\partial M(a_1, \ldots, a_n)}
@@ -507,8 +521,8 @@ Tako vidimo da zaista svaki element ove jednoparametarske podgrupe
 od \SO{3} možemo dobiti eksponencijacijom generatora.
 Nadalje, u skladu s Eulerovim teoremom iz mehanike\footnote{Svaki pomak krutog
 tijela kod kojeg jedna točka ostaje nepomična je ekvivalentan \emph{jednoj}
-rotaciji oko fiksne osi koja prolazi kroz tu točku.} svaka \SO{3} rotacija 
-pripada nekoj jednoparametarskoj podgrupi
+rotaciji oko fiksne osi koja prolazi kroz tu točku. \index{Teorem!Eulerov}}
+svaka \SO{3} rotacija pripada nekoj jednoparametarskoj podgrupi
  (čine je sve rotacije oko te iste osi), što onda znači da se
 svi elementi grupe \SO{3} mogu dobiti eksponencijacijom generatora.
 Mogućih osi rotacije ima beskonačno pa tako i geratora ima beskonačno
@@ -624,7 +638,7 @@ i obzirom na komutatore svojih elemenata. Time je on još složenija matematičk
 struktura od vektorskog prostora koja se naziva  \emph{Liejeva algebra}.
 Načinimo kratki odmak od proučavanja samo matričnih grupa i
 definirajmo Liejevu algebru nešto općenitije.
-\begin{definicija}[Liejeva algebra]
+\begin{definicija}[Liejeva algebra] \index{Liejeva algebra!definicija}
 Liejeva algebra $\calA$ je vektorski prostor na kojem je definiran 
 Liejev produkt dvaju elemenata $[X,Y]$ (ne mora biti komutator) sa svojstvima
 
@@ -639,12 +653,12 @@ $\quad \alpha,\beta \in \mathbb{R} $
 \end{definicija}
 Za vektorske prostore matrica, gdje je Liejev produkt definiran kao
 komutator (\ref{eq:defkomutator}), svojstva 2--4 su automatski ispunjena.
-Ovo poopćenje od matričnih grupa smo napravili samo zato da kao
+Ovo poopćenje od matričnih grupa smo napravili samo zato da
 spomenemo da zapravo o nikakvom poopćenju nema govora.
 Naime, kako smo rekli u fusnoti na stranici \pageref{fus:nematricne}, nematrične Liejeve grupe
 su egzotične, ali postoje. No, zahvaljujući sljedećem Adovom teoremu
 nematrične (konačno-dimenzionalne) Liejeve algebre ne postoje.
-\begin{teorem}[Ado]
+\begin{teorem}[Ado] \index{Teorem!Adov} \index{Ado, Igor \yrange{1910}{1983}}
  Svaka konačno-dimenzionalna apstraktna Liejeva algebra je izomorfna nekoj
  Liejevoj algebri konačno-dimenzionalnih matrica s komutatorom kao Liejevim produktom. \emph{(Bez
  dokaza.)}
@@ -653,9 +667,9 @@ Dakle, ograničavajući se na Liejeve grupe \emph{matrica} ne gubimo mnogo
 na općenitosti jer sve Liejeve algebre koje ćemo sresti u ovoj knjizi su
 konačno-dimenzionalne\footnote{Istina, u fizici nekad nalazimo i primjenu beskonačno-dimenzionalnih
 algebri za koje teorem ne vrijedi. Jedan primjer je tzv. Virasorova algebra važna
-u teoriji superstruna.}.
+u teoriji superstruna. \index{Virasorova algebra}}.
 Liejeve algebre se obično označavaju isto kao i pripadajuće Liejeve grupe, ali malim gotičkim slovima.
-Dakle, $\calA = \soAlg{3}$.
+Dakle, $\calA = \soAlg{3}$. \index{$\mathfrak{so}$(3)}
 
 Komutatori elemenata baze Liejeve algebre $X_i, i=1,2,\ldots, \textrm{dim}(\calA)$ se
 kao i svi ostali elementi od $\calA$ naravno mogu prikazati kao linearna kombinacija baze, dakle
@@ -665,6 +679,7 @@ sebe samih:
  \label{eq:defstrukturne}
 \end{equation}
 Realni brojevi $C_{ij}^{k}$ koji se ovdje pojavljuju nazivaju se \emph{strukturne konstante} grupe.
+\index{Strukturne konstante grupe}
 Uočite da je (\ref{eq:defstrukturne}) vrlo netrivijalna nelinearna relacija između
 generatora koju će morati zadovoljavati sve njihove reprezentacije.  Naime, cijelo ovo
 izlaganje dosad koristilo je $3\times 3$ matrice za definiciju grupe \SO{3} i njene
@@ -679,6 +694,7 @@ konačnih grupa da ireducibilnih reprezentacija ima isto koliko i klasa konjugac
 vidi odjeljak \ref{sec:ortogonalnost}, onda bismo zaključili da \SO{3} ima beskonačno
 ireducibilnih reprezentacija (jer se uz malo geometrijskog razmišljanja lako uvjerite
 da pojedinu klasu konjugacije čine rotacije oko bilo koje osi za konkretni kut $\phi$).
+\index{Klasa konjugacije}
 I premda je takvo zaključivanje nekorektno jer navedena jednakost broja ireducibilnih
 reprezentacija i klasa konjugacije \emph{ne vrijedi} za Liejeve grupe, zaključak jest
 točan --- Liejeve grupe tipično imaju beskonačno ireducibilnih reprezentacija.
@@ -695,7 +711,7 @@ samo na bazu Liejeve algebre, a ne i na ostatak vektorskog prostora, pa će u ž
 reći da tri matrice iz (\ref{eq:SO3generators}) "čine algebru" ove grupe.
 
 
-\begin{primjer}[strukturne konstante od \SO{3}]
+\begin{primjer}[strukturne konstante grupe \SO{3}]
 Eksplicitnim računom lako se uvjerimo da je
  \begin{align}
      [X_i,X_j]& =0 \quad\text{za}\quad i=j \,,  \\
@@ -709,12 +725,13 @@ tj. da je
  C_{12}^3  & = C_{23}^{1}=C_{31}^{2}=1 \,, \\
  C_{21}^3  & = C_{32}^{1}=C_{13}^{2}=-1 \,, \\
  \end{align}
-pa pomoću Levi-Civita tenzora
+pa pomoću Levi-Civitinog tenzora
 komutacijske relacije algebre \soAlg{3} možemo zapisati u obliku
 \begin{equation}
  [X_i, X_j]=\epsilon_{ijk} X_k  \,,
   \label{eq:algebraso3}
 \end{equation}
+    \index{Tenzor!Levi-Civitin}
 odnosno strukturne konstante grupe \SO{3} su $C_{ij}^{k} = \epsilon_{ijk}$.
 \end{primjer}
 
@@ -724,10 +741,13 @@ matrica $S:\calA\to\calA'$ takva da je
 \begin{displaymath}
        [S(X), S(Y)]=S([X,Y]) \quad \forall X, Y \in\calA \,.
 \end{displaymath}
+\index{Homomorfizam!Liejevih algebri}
 Ako je $S$ još i bijekcija $\calA$ i $\calA'$ su \emph{izomorfne}. Dakle,
 važno je da preslikavanje  bude konzistentno s operacijom komutatora.
+\index{Izomorfizam!Liejevih algebri}
 
 \begin{primjer}[Liejeva algebra grupe \SU{2} tj. \suAlg{2}] \label{pr:su2so3Alg}
+    \index{$\mathfrak{su}$(2)}
     \SU{2} je grupa svih unitarnih $2\times 2$ matrica jedinične determinante.
     Identičnim zaključivanjem kao za \SO{3}, samo uz zamjenu traspozicije
     hermitskom konjugacijom $X^\mathsf{T} \to X^\mathsf{\dagger}$ lako
@@ -762,12 +782,16 @@ Važno je ovdje uočiti da premda su elementi matrica iz \suAlg{2} općenito kom
 dok $\sigma_1 + i \sigma_2$ to nije!)
 
 Zanimljivo je pitanje što izomorfizam algebri znači za odgovarajuće grupe tj.
-jesu li možda onda i \SO{3} i \SU{2} izomorfne. O tome će biti riječi u sljedećem odjeljku.
+jesu li možda onda i \SO{3} i \SU{2} izomorfne? O tome će biti riječi u sljedećem odjeljku,
+a odgovor je da nisu.
 \end{primjer}
 
 Pri analizi reprezentacija Liejevih grupa od koristi će biti
 tzv. Casimirovi operatori.
 \begin{definicija}[Casimirov operator]
+    \index{Operator!Casimirov|see{Casimirov operator}}
+    \index{Casimir, Hendrik \yrange{1909}{2000}}
+    \index{Casimirov operator}
 Ako je skup $\{X_i, i=1,2, ... \}$ baza Liejeve algebre onda se polinom
 u $X_i$ koji komutira sa svim elementima te algebre naziva 
 \emph{Casimirov operator}.
@@ -785,12 +809,12 @@ X_{1}^2 + X_{2}^2 + X_{3}^2 = -2\cdot \Eins \,,
 \end{equation}
     za \suAlg{2}.
 \end{primjer}
-Schurova lema, koja vrijedi i za Liejeve grupe, traži da Casimirov operator 
+Schurova lema \index{Schurova lema}, koja vrijedi i za Liejeve grupe, traži da Casimirov operator 
 bude proporcionalan jediničnom i ispostavlja se da je koeficijent proporcionalnosti
 zgodan za označavanje ireducibilnih reprezentacija kako ćemo vidjeti u sljedećem poglavlju.
 
 
-\begin{primjer}[Algebra grupe \SO{2}]
+\begin{primjer}[Algebra grupe \SO{2}] \index{$\mathfrak{so}$(2)}
     Generator grupe \SO{2} već smo identificirali kao $X_3$ iz
     \ref{eq:x3so3} kad smo \SO{2}
     razmatrali kao jednoparametarsku podgrupu grupe \SO{3}.
@@ -823,7 +847,7 @@ poglavlja.
 
 Prvo je potrebno uvesti neke pojmove koji opisuju topološka
 svojstva grupe.
-\begin{definicija}[Povezanost]
+\begin{definicija}[Povezanost] \index{Liejeva grupa!povezana}
 Liejeva grupa je \emph{povezana} ako njen grupni prostor ne možemo
 rastaviti na disjunktne komponente tj. ako se svake dvije točke 
 mogu povezati linijom čije sve točke pripadaju grupnom prostoru.
@@ -834,6 +858,7 @@ matematičke ideje iz topologije.)
 Podskup kojeg čine svi elementi grupe koji se
 kontinuiranom linijom u grupnoj mnogostrukosti mogu povezati s
 jediničnim elementom nazivamo \emph{komponenta povezanosti jedinice}.
+\index{Liejeva grupa!komponenta povezanosti jedinice}
 Ukoliko je grupa povezana komponenta povezanosti jedinice je naravno
 jednaka cijeloj grupi. Ukoliko grupa nije povezana, komponenta povezanosti
 jedinice je prava podgrupa cijele grupe. \emph{Dokaz}: Pretpostavimo
@@ -869,7 +894,7 @@ pripadaju drugoj komponenti povezanosti. \label{pag:povezanostO3}
 
 
 Iz gornje diskusije, odnosno imajući u vidu kontinuiranost funkcije
-eksponencijacije, jasno da najbolje čemu se možemo nadati u
+eksponencijacije, jasno je da najbolje čemu se možemo nadati u
 slučaju općenite Liejeve grupe je da
 eksponencijacijom njene algebre dobijemo komponentu povezanosti
 jedinice. No je li barem to uvijek moguće?
@@ -898,6 +923,10 @@ iskombinirati u $\sum (X+Y)^{n}/n! = \exp(X+Y)$. Za općenite
 nekomutirajuće grupe to nije slučaj, nego vrijedi sljedeći važan
 rezultat teorije Liejevih grupa
 \begin{teorem}[Baker-Campbell-Hausdorff] \label{th:bch}
+    \index{BCH formula} \index{Teorem!Baker-Campbell-Hausdorff (BCH)}
+    \index{Baker, Henry \yrange{1866}{1956}}
+    \index{Campbell, John \yrange{1862}{1924}}
+    \index{Hausdorff, Felix \yrange{1868}{1942}}
     \[ e^X e^Y = e^Z \,, \]
   gdje je 
   \[ Z = X + Y + \text{red višestrukih komutatora $X$ i $Y$.} \]
@@ -923,7 +952,7 @@ Eksponencijacija povezuje elemente grupe i algebre, a BCH formula povezuje
 operacije u algebri (zbrajanje i komutator) s grupnom operacijom (množenje).
 Dokaz teorema \ref{th:bch}  i razmatranje radijusa konvergencije BCH formule (\ref{eq:bch}) 
 obično zahtijeva napredne matematičke
-pojmove. Relativno pristupačan algebarski dokaz može se pronaći
+tehnike. Relativno pristupačan algebarski dokaz može se pronaći
 u \cite{Stilwell:2008}.
 
 Za važnu kategoriju Liejevih grupa vrijedi da se svi elementi iz 
@@ -931,6 +960,7 @@ komponente povezanosti jedinice mogu prikazati u obliku
 $e^{X}$ gdje je $X$ element
 Liejeve algebre. Dovoljan uvjet je da grupa ima svojstvo \emph{kompaktnosti}.
 \begin{definicija}[Kompaktnost]
+    \index{Liejeva grupa!kompaktna}
 Liejeva grupa je \emph{kompaktna} ako njeni parametri variraju po zatvorenim intervalima.
 (Ovo je intuitivna "fizičarska" definicija. Prava definicija uključuje napredne
 matematičke ideje iz topologije.)
@@ -969,6 +999,7 @@ Riječ je o globalnim topološkim svojstvima grupe i
 da bismo precizno opisali vezu između Liejevih grupa s istom algebrom, treba
 nam još jedan pojam iz topologije.
 \begin{definicija}[Jednostavna (jednostruka) povezanost]
+    \index{Liejeva grupa!jednostavno povezana}
   Neka je G povezana grupa (ako nije, možemo promatrati samo komponentu
 povezanosti jedinice). Promotrimo skup svih zatvorenih krivulja u grupnoj 
 mnogostrukosti. Podijelimo skup  na klase ekvivalencije koje čine 
@@ -985,7 +1016,7 @@ povezana.
    jednodimenzionalnu kružnicu.}
     \label{fig:so2homo}
 \end{figure}
-\begin{primjer}[\SO{2}]
+\begin{primjer}[\SO{2}] \index{SO(2)}
 Vidjeli smo da je grupna
 mnogostrukost grupe \SO{2} kružnica.
 Za zatvorene krivulje promjena kuta $\phi$ duž krivulje je $2n\pi$,
@@ -1003,11 +1034,12 @@ prvo po jednoj krivulji idemo od bazne točke do bazne točke, pa onda
 "bez završavanja" nastavimo tako po drugoj i završimo u baznoj točki.
 Obzirom na takvo zbrajanje (klasa) krivulja, ovaj skup čini grupu
 poznatu pod imenom \emph{fundamentalna grupa} ili \emph{prva grupa homotopija} $\pi_1$. 
+\index{Grupa!fundamentalna} \index{Prva grupa homotopija}
 Ta grupa je temeljno topološko obilježje svake grupe. Prema gornjem
 primjeru vidimo da je $\pi_1\left(\SO{2} \right) = (\mathbb{Z}, +)$.
 
 \begin{primjer}[\SO{3}]
-
+    \index{SO(3)}
 
 U odjeljku \ref{sec:so3su2} smo vidjeli da je grupna mnogostrukost od \SO{3}
 lopta s identificiranim antipodnim točkama površine.
@@ -1038,7 +1070,7 @@ Njena prva grupa homotopija je time
     $\pi_1\left(\SO{3} \right) = \mathbb{Z}_{2} = (\{+1, -1\}, \cdot)$.
 \end{primjer}
 
-\begin{primjer}[\SU{2}]
+\begin{primjer}[\SU{2}] \index{SU(2)}
 Vidjeli smo u odjeljku \ref{sec:so3su2} da je
 grupna mnogostrukost \SU{2} 3-sfera tj. generalizacija uobičajene
 sfere (2-sfere) na četverodimenzionalni prostor. 
@@ -1048,8 +1080,9 @@ moguće ta činjenica biti vrlo intuitivna, a za 2-sferu i očita.
 \end{primjer}
 
 Ako postoji homomorfizam s povezane Liejeve grupe $G$ na povezanu Liejevu
-grupu $H$ s \emph{diskretnom} jezgrom $K$ onda kažemo da grupa $G$ 
+grupu $H$ s \emph{diskretnim} kernelom $K$ onda kažemo da grupa $G$ 
 \emph{pokriva} grupu $H$ onoliko puta koliko elemenata ima $K$.
+\index{Kernel}  \index{Liejeva grupa!pokrivanje}
 (Prisjetite se teorema \ref{th:izomorfizam} o izomorfizmu.)
 Također, Liejeve algebre tih grupa su izomorfne.
 
@@ -1061,6 +1094,7 @@ dviju grupa su izomorfne.
 \end{primjer}
 
 \begin{teorem}[Univerzalna grupa pokrivanja]
+    \index{Univerzalna grupa pokrivanja}
 Među grupama koje pokrivaju povezanu Liejevu grupu G postoji jedinstvena
 grupa koja je jednostavno povezana --- tzv. \emph{univerzalna grupa pokrivanja}.
 Broj pokrivanja jednak je povezanosti od G. 
@@ -1075,6 +1109,7 @@ Tako je \SU{2} univerzalna grupa pokrivanja za \SO{3}.
 Što se grupa \SO{2} i \U{1} tiče, one su obje izomorfne i beskonačno
 povezane. U primjeru \ref{pr:so2Alg} smo vidjeli da je njihova
 algebra $\mathbb{R}$.
+\index{Homomorfizam!Liejevih grupa} \index{Izomorfizam!Liejevih algebri}
 Njihovu univerzalnu grupu pokrivanja možemo identificirati
 tako da identificiramo jednostavno povezanu Liejevu grupu koju
 generira $\mathbb{R}$. Ako se oslonimo na eksponencijaciju
@@ -1100,11 +1135,11 @@ Općenita situacija je\\[1ex]
 
 gdje je UCG/$K_i$=$G_i$. Tako pronalaženjem svih diskretnih normalnih
 podgrupa (kandidata za kernele homomorfizma) jednostavno povezane grupe 
-možemo naći sve grupe koje
+možemo naći sve grupe koje \index{Normalna podgrupa}
 s njom dijele istu Liejevu algebru\footnote{To je znatno olakšano teoremom
 koji kaže da su diskretne normalne podgrupe nužno sadržane u
 centru grupe (vidi zadatak \ref{zad:centar}) što znači da svi elementi
-kernela komutiraju sa cijelom grupom.}.
+kernela komutiraju sa cijelom grupom.\index{Centar grupe} \index{Grupa!centar}}.
 U zaključku, Liejeve algebre u velikoj mjeri određuju Liejevu grupu i
 glavna informacija o grupi koju gubimo razmatrajući samo algebru
 je njena topologija. Algebra, koja je određena okolinom jediničnog
@@ -1118,6 +1153,7 @@ na samu sebe daleko od jedinice.
 \begin{enumerate}[leftmargin=0pt, itemindent=0pt]
 
 \item \textbf{Opća linearna grupa}
+    \index{GL($n$)}
 
 Opću linearnu grupu $\GL{n, \mathbb{C}}$ čini
 skup svih $n\times n$ regularnih ($\det M \neq 0$)
@@ -1138,6 +1174,8 @@ Izuzeće determinante nula razdvaja te komponente, ali to nije slučaj
 za $\GL{n, \mathbb{C}}$ koja je povezana (ali ne i jednostavno povezana).
 
 \item \textbf{Specijalna linearna grupa}
+    \index{Specijalna linearna grupa SL($n$)|see{SL($n$)}} 
+    \index{SL($n$)}
 
 \begin{equation}
 \SL{n, \mathbb{C}} = \{ M\in \GL{n,\mathbb{C}} \; | \; \det M = 1\}
@@ -1161,6 +1199,8 @@ realna jednadžba, a ne dvije.) Ona je povezana, ali ne i jednostavno
 povezana.
 
 \item \textbf{Unitarna grupa}
+    \index{Unitarna grupa U($n$)|see{U($n$)}} 
+    \index{U($n$)}
 
 \begin{equation}
 \U{n} = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\dagger} = 1\}
@@ -1211,6 +1251,7 @@ da odgovarajući zahtjevi na stupce nisu nezavisni od ovih na retke.)
 Unitarna grupa je kompaktna i povezana, ali ne i jednostavno. Za $\U{1}$
 smo vidjeli, a i za ostale unitarne grupe
 vrijedi da im je prva grupa homotopije $\pi_{1}(\U{n}) = \mathbb{Z}$.
+\index{Prva grupa homotopija}
 
 Važno svojstvo unitarnih matrica je da, ukoliko ih interpretiramo kao
 operatore nad kompleksnim vektorskim prostorima ($\vec{x} \to M\vec{x}$), 
@@ -1228,6 +1269,8 @@ unitarne grupe tj. da se unitarne matrice mogu definirati kao one koje
 smo ovdje uzeli kao definiciono, samo posljedica.
 
 \item \textbf{Specijalna unitarna grupa}
+    \index{Specijalna unitarna grupa SU($n$)|see{SU($n$)}} 
+    \index{SU($n$)}
 
 \begin{equation}
 \SU{n} = \{ M\in U(n) \; | \; \det M  = 1\}
@@ -1243,6 +1286,8 @@ samo jedna realna jednadžba $\phi = 0$ pa specijalna unitarna grupa
 ima točno $n^2 - 1$ parametar. \SU{n} su kompaktne i jednostavno povezane.
 
 \item \textbf{Ortogonalna grupa}
+    \index{Ortogonalna grupa O($n$)|see{O($n$)}} 
+    \index{O($n$)}
 
 \begin{equation}
 \O{n, \mathbb{C}} = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\mathrm{T}} = 1\}
@@ -1266,6 +1311,8 @@ kvadratnu formu $(\vec{x}, \vec{y}) = \sum_i x_i y_i$ tj. skalarni produkt na re
 vektorskom prostoru, što se može upotrijebiti kao alternativna definicija grupe.
 
 \item \textbf{Specijalna ortogonalna grupa}
+    \index{Specijalna ortogonalna grupa SO($n$)|see{SO($n$)}} 
+    \index{SO($n$)}
 
 \begin{equation}
 \SO{n, \mathbb{C}} = \{ M\in O(n, \mathbb{C}) \; | \; \det M  = 1\} \;,
@@ -1277,6 +1324,8 @@ na zaključak da ortogonalne matrice imaju determinantu $\det M = \pm 1$,
 pa ograničenje na $\det M = 1$ ne smanjuje dimenziju parametarskog prostora.
 
 \item \textbf{Pseudo-unitarna grupa}
+    \index{Pseudo-unitarna grupa U($p, q$)|see{U($p, q$)}} 
+    \index{U($p, q$)}
 
 Čine je $n\times n$ matrice
 \begin{equation}
@@ -1298,6 +1347,8 @@ definicije \ref{def:skalarniprodukt}.
 
 
 \item \textbf{Pseudo-ortogonalna grupa}
+    \index{Pseudo-ortogonalna grupa O($p, q$)|see{O($p, q$)}} 
+    \index{O($p, q$)}
 
 \begin{equation}
 \O{p, q} = \{ M\in \GL{n,\mathbb{R}} \; | \; M^{\mathrm{T}} g M = g \} \;,
@@ -1309,6 +1360,7 @@ Ove matrice čuvaju kvadratnu formu oblika
  \sum_{i=1}^{p} x_{i} y_{i} - \sum_{i=p+1}^{p+q=n} x_{i} y_i  \;.
 \end{equation}
 Najpoznatija grupa ove vrste je grupa Lorentzovih transformacija  $\O{1,3}$
+\index{Lorentzova grupa}  \index{Grupa!Lorentzova|see{Lorentzova grupa}}
 (vidi odjeljak \ref{sec:lorentz}). Ove grupe su nekompaktne i imaju
 četiri komponente povezanosti što za 
 konkretan primjer grupe $O(1,3)$ pokazujemo u odjeljku \ref{sec:lorentz}.
@@ -1317,6 +1369,7 @@ Specijalnu pseudo-unitarnu grupu $\SU{p,q}$ odnosno specijalnu
 pseudo-or\-to\-go\-nal\-nu
 grupu $\SO{p,q}$ dobivamo ako se u $\U{p,q}$ odnosno $\O{p, q}$
 ograničimo na matrice s $\det M = 1$.
+\index{SU($p, q$)} \index{SO($p, q$)}
 
 \end{enumerate}
 
@@ -1326,25 +1379,28 @@ koje su se pokazale od najveće važnosti za primjene u fizici, no recimo
 ipak nešto o kompletnom katalogu Liejevih grupa.
 
 Kao prvo, mi smo ovdje, kao i mnogi autori, posebice fizičari, razlikovali
-Liejeve (kontinuirane) grupe i diskretne grupe. To je na ovom nivou pedagoški
+Liejeve (kontinuirane) grupe i diskretne grupe. To je na ovom nivou metodički
 poželjno kako bi se istaknula specifična moć netrivijalnih Liejevih algebri tj. infinitezimalne
 okoline jedinice. No, strogo uzevši, i skup diskretnih točaka je
 (0-dimenzionalna) mnogostrukost, a i topološki prostor (s tzv. 
 diskretnom topologijom, vidi \cite{Smolic:2024}) tako da su i diskretne
 i konačne grupe zapravo strogo uzevši Liejeve, što nas onda spašava od
-nezgodnih situacija da formiranjem kvocijentnih skupova ne izlazimo
+nezgodnih situacija gdje bismo operacijom kvocijenta izlazili
 iz domene Liejevih grupa.
 
 Kad je to rečeno, recimo da su kontinuirane kompaktne Liejeve grupe
 lakše za potpunu klasifikaciju. Kao prvo,
 bitno je klasificirati jednostavne grupe, jer ukoliko grupa ima normalne
 podgrupe onda se može reducirati uzimanjem kvocijenta po toj podgrupi
-(jednostavne grupe su poput prostih brojeva teorije grupa). W. Killing i \'{E}. Cartan
+(jednostavne grupe su poput "prostih brojeva" teorije grupa). W. Killing i \'{E}. Cartan
+\index{Cartan, \'{E}lie \yrange{1869}{1951}}  \index{Killing, Wilhelm \yrange{1847}{1923}}
 su pokazali da algebre tih grupa spadaju u jednu od četiri beskonačne 
 porodice u matematici poznate kao $\mathrm{A}_n, \mathrm{B}_n, \mathrm{C}_n$
 i $\mathrm{D}_n$, gdje već poznajemo
 $\mathrm{A}_n$ kao algebre od $\SU{n+1}$,  $\mathrm{B}_n$ kao algebre od \SO{2n+1},
 $\mathrm{D}_n$ kao algebre od \SO{2n}, a $\mathrm{C}_n$ su algebre tzv. simplektičkih grupa
+\index{Liejeva grupa!simplektička}
+\index{Liejeva grupa!iznimna}
 $\mathrm{Sp}(n)$ koje isto imaju neke primjene u fizici, ali mi ih ovdje
 nećemo više spominjati. Osim ove četiri porodice postoji još samo
 pet \emph{iznimnih} grupa $\mathrm{G}_2$, $\mathrm{F}_4$,
@@ -1359,8 +1415,10 @@ reda većeg od četiri) i
 veliku porodicu diskretnih grupa tzv. Liejevog tipa koje su konstruirane
 kao standardne Liejeve grupe, ali ne nad poljem realnih brojeva nego
 nad konačnim poljima. Povrh toga postoji još samo 26 tzv. \emph{sporadičnih}
+\index{Grupa!sporadična} \index{Grupa!čudovište (monster)}
+\index{Janko, Zvonimir \yrange{1932}{2022}}
 grupa\footnote{Četiri sporadične grupe je pronašao hrvatski matematičar Zvonimir Janko
-i po njemu se zovu $\mathrm{J}_{1, 2, 3, 4}$.} gdje je najveća od njih
+i po njemu se zovu $\mathrm{J}_{1, 2, 3 i 4}$.} gdje je najveća od njih
 čuvena grupa \emph{čudovište} (engl. \emph{monster}) s
 \[ \textstyle
 808\,017\,424\,794\,512\,875\,886\,459\,904\,961\,710\,757\,005\,754\,368\,000\,000\,000
@@ -1377,8 +1435,10 @@ grupe.
 \begin{enumerate}[label=\arabic{chapter}.\arabic*.]
 
 \item \label{zad:O3oSO3} Uvjerite se da je kvocijentna grupa $\O{3}/\SO{3} = \mathrm{C}_{2}$.
+    \index{Kvocijentna grupa}
 
-\item \label{zad:svojstvalevicivite} Pokažite da Levi-Civita tenzor ima slijedeća svojstva:
+\item \label{zad:svojstvalevicivite} Pokažite da Levi-Civitin tenzor ima slijedeća svojstva:
+    \index{Tenzor!Levi-Civitin}
 \begin{align*}
 \tag{a}\epsilon_{ijk}\epsilon_{imn}&=\delta_{jm}\delta_{kn}-\delta_{jn}\delta_{km}\\
 \tag{b}\epsilon_{ijk}\epsilon_{ijm}&=2\delta_{km} \\
@@ -1387,7 +1447,7 @@ grupe.
 \tag{e}\frac{1}{3!}\epsilon_{lmn} \epsilon_{ijs} A_{li} A_{mj} A_{ns} &= \det A
 \end{align*}
 
-\item Uporabom svojstava Levi-Civita tenzora pokažite da je
+\item Uporabom svojstava Levi-Civitinog tenzora pokažite da je
 za vektore $\vec{a}$, $\vec{b}$ i \vec{c}
 \begin{displaymath}
     \vec{a}\times(\vec{b}\times\vec{c})=(\vec{a}\cdot\vec{c})\vec{b}
@@ -1396,6 +1456,7 @@ za vektore $\vec{a}$, $\vec{b}$ i \vec{c}
 \secret{Za slične stvari vidi Evett, Am. J. Phys \textbf{34} (1966) 503.}
 
 \item \label{zad:svojstvapaulijevih} Pokažite da Paulijeve matrice imaju slijedeća svojstva:
+    \index{Paulijeve matrice} \index{Pauli, Wolfgang \yrange{1900}{1958}}
 \begin{align*}
 \tag{a} \sigma_{i}^2 &= 1 \\
 \tag{b} \sigma_{i}^\dagger &= \sigma_i \\
@@ -1419,8 +1480,10 @@ za vektore $\vec{a}$, $\vec{b}$ i \vec{c}
 \exp(-sX) \exp(-tY) \big) = [X, Y] \,,
 \end{equation}
 i time da je algebra $\calA$ Abelove grupe trivijalna $[X, Y] = 0$, za svake $X, Y \in \calA$.
+\index{Grupa!Abelova}
 
 \item Provjerite eksplicitno BCH formulu do kubičnog člana.
+    \index{BCH formula}
 
 
 \item Pokažite da matrice
@@ -1432,11 +1495,12 @@ i time da je algebra $\calA$ Abelove grupe trivijalna $[X, Y] = 0$, za svake $X,
 \end{equation}
 djelujući na vektore $(x, y)$ čuvaju formu $x^2 - y^2$, te da 
 je $\det M(\theta) = 1$, tako da $M(\theta)$ tvore grupu
-$\SO{1,1}$.
+$\SO{1,1}$. \index{SO($p, q$)}
 \item Grupni prostor kvocijentne grupe $G/H$ Liejeve grupe $G$ po diskretnoj normalnoj podgrupi $H$
     općenito odgovara grupnom prostoru od $G$ u kojem su su sve točke svake susjedne klase po $H$
     identificirane. Tako je grupni prostor $\SU{2}/\mathbb{Z}_2$ 3-sfera s identificiranim
-    antipodnim točakama $S^{3}/\mathbb{Z}_2$. 
+    antipodnim točakama $S^{3}/\mathbb{Z}_2$.  \index{Kvocijentna grupa} 
+    \index{Sfera!3-sfera ($S^3$)}
     No kako je $\SU{2}/\mathbb{Z}_2 = \SO{3}$, a grupni prostor od
     \SO{3} je puna 3D \emph{lopta} s identificiranim nasuprotnim točkama, $B^{3}/\mathbb{Z}_2$,
     slijedi da su ta dva prostora topološki jednaka tj. jedan te isti prostor,
@@ -1452,5 +1516,5 @@ $\SO{1,1}$.
             \right) \,.
     \end{multline}
     Inače, navedeni prostor matematičari zovu \emph{realni projektivni prostor}
-    $\mathbb{RP}^{3}$.
+    $\mathbb{RP}^{3}$. \index{Projektivni prostor}
 \end{enumerate}
