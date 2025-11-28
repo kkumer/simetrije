@@ -21,8 +21,8 @@
 %\setmainfont{Libertinus Serif}
 %\setmainfont{Tex Gyre Termes}
 %%% ZAMIJENITI SLJEDECA DVA na CALCULONU !!!
-%\setmainfont{Latin Modern Roman}
-\setmainfont{Latin Modern Math}
+\setmainfont{Latin Modern Roman}
+%\setmainfont{Latin Modern Math}
 \usepackage[croatian]{babel}
 \usepackage{enumerate}
 \usepackage{amsmath}
@@ -183,7 +183,7 @@
 \setlength{\parskip}{2ex}
 
 \input{gitinfo.tex}
-\includeonly{1_grupe}
+\includeonly{1_grupe,2_reprezentacije,3_irreps}
 \makeindex
 \newcommand{\lettergroup}[1]{ \par \nopagebreak }  % remove index headings
 \begin{document}
@@ -218,8 +218,9 @@
 \printbibliography[heading=bibunnumbered]
 \backmatter
 \small
-%%% MAKE THIS WORK:
-% \index{Grupa|seealso{Liejeva grupa}}
+\index{Grupa|seealso{Liejeva grupa, Reprezentacija grupe}}
+\index{Reprezentacija grupe|seealso{Ireducibilna reprezentacija}}
+\index{Vektorski prostor|seealso{Hilbertov prostor}}
 \printindex
 
 \end{document}

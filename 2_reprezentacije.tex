@@ -23,7 +23,7 @@ To pokriva sve važne situacije u fizici, a najvažnije
 i najnetrivijalnije primjene bit će u \emph{kvantnoj} fizici gdje
 je odgovarajući vektorski prostor Hilbertov prostor kvantnomehaničkih
 stanja. Najvažnije pitanje kojim ćemo se baviti je određivanje na koje je
-sve načine moguće reprezentirati neku grupu kao skup operatora nad
+sve različite načine moguće reprezentirati neku grupu kao skup operatora nad
 nekim prostorom.
 To će onda dati jednu važnu klasifikaciju sustava a time i odgovor na pitanje
 na koje se sve načine neka simetrija može javljati u prirodi.
@@ -36,7 +36,7 @@ Očekuje se da je čitaoc već upoznat s osnovama matematičke
 teorije vektorskih prostora, no u ovom ćemo odjeljku ipak ponoviti
 osnovne pojmove.
 
-\begin{definicija}[Vektorski prostor]
+\begin{definicija}[Vektorski prostor] \index{Vektorski prostor!definicija}
 Vektorski prostor (ili linearni prostor) $V$ nad poljem $F$ je aditivna grupa
 (grupna operacija je zbrajanje vektora $\vec{x}+\vec{y}$) na
 kojoj je definirana operacija \emph{množenja skalarom} iz $F$ tako
@@ -62,17 +62,18 @@ realnih brojeva, $\mathbb{C}$ ili $\mathbb{R}$, pa govorimo o
  \emph{kompleksnom} ili \emph{realnom} vektorskom prostoru.
 \emph{Baza} vektorskog prostora je skup $\{\vec{e}_{i}\}$ linearno nezavisnih vektora koji 
 \emph{razapinju} $V$ tj. svaki vektor iz $V$ se može prikazati kao linearna
- kombinacija vektora baze $\{\vec{e}_{i}\}$.
+kombinacija vektora baze $\{\vec{e}_{i}\}$. \index{Vektorski prostor!baza}
 \emph{Dimenzija} vektorskog prostora definirana je kao broj vektora njegove baze (teorem
-je da sve baze imaju isti broj vektora).
+je da sve baze imaju isti broj vektora). \index{Vektorski prostor!dimenzija}
 
-\begin{primjer}[3D euklidski prostor]
+\begin{primjer}[3D euklidski prostor] \index{Euklidski prostor}
 Riječ je o "klasičnom" realnom vektorskom prostoru u kojem vrijedi osnovnoškolska
 geometrija. Jedna moguća baza je Kartezijeva
 $\vec{e}_{1}=\hat{\vec{x}}, \vec{e}_{2}=\hat{\vec{y}}, 
-   \vec{e}_{3}=\hat{\vec{z}}$, tako da je
+   \vec{e}_{3}=\hat{\vec{z}}$, tako da je proizvoljni vektor
 \begin{equation}
-    \vec{r} = x \hat{\vec{x}} + y \hat{\vec{y}} + z \hat{\vec{z}} \;.
+    \vec{r} = x \hat{\vec{x}} + y \hat{\vec{y}} + z \hat{\vec{z}} \,,
+    \quad x, z, z \in \mathbb{R} \,.
 \end{equation}
 Proizvoljni vektor često prikazujemo i kao stupac njegovih triju komponenata
 u konkretnoj bazi:
@@ -86,13 +87,13 @@ z
 \end{equation}
 \end{primjer}
 
-\begin{primjer}[Hilbertov prostor kvantnomehaničkih stanja vodikovog atoma]
-
+\begin{primjer}[Hilbertov prostor stanja vodikovog atoma]
+    \index{Hilbertov prostor} \index{Hilbert, David \yrange{1862}{1943}}
 Rješenja vremenski nezavisne Schr\"{o}dingerove diferencijalne jednadžbe 
 \begin{equation}
 H\psi(\vec{x})=E\psi(\vec{x}) \;,
 \end{equation}
-gdje je $H$ hamiltonijan za vodikov atom, označavamo 
+gdje je $H$ hamiltonijan za vodikov atom, označavamo \index{Vodikov atom}
 $\psi_{nlm}(\vec{x})$ i nazivamo stacionarna stanja. Ovdje je
 $m \in \{-l, -l+1, \ldots, l\}$, $l \in \{0, 1, \ldots, n-1\}$,
 a $n \in \{1, 2, \ldots, \infty\}$. Stacionarnih stanja ima
@@ -111,6 +112,7 @@ kompleksni vektorski prostor.
 \end{primjer}
 
 \begin{definicija}[Linearni operator]
+     \index{Operator!linearni}
 Operator $T:V \to V$ na vektorskom prostoru $V$
 sa svojstvom
 \begin{displaymath}
@@ -124,7 +126,8 @@ kao matricu s elementima $T_{ij}$ definiranu relacijom
 $ T\vec{e}_j = \sum_{i} T_{ij} \vec{e}_i \equiv T_{ij} \vec{e}_i$, 
 gdje uvodimo tzv. Einsteinovu sumacijsku konvenciju po kojoj se
 zbrajanje po dvaput ponovljenom indeksu podrazumijeva i znak
-sume se ne piše.
+sume se ne piše. \index{Einsteinova konvencija}
+\index{Einstein, Albert \yrange{1879}{1955}}
 
 Djelovanje operatora $T$ na vektor $\vec{x}=x_i \vec{e}_i$ rezultira
 vektorom $T\vec{x}$  s komponentama $(T \vec{x})_i = T_{ij} x_j$.
@@ -132,7 +135,7 @@ vektorom $T\vec{x}$  s komponentama $(T \vec{x})_i = T_{ij} x_j$.
 \begin{primjer}[Operator rotacije u euklidskom prostoru]
 Operatori rotacije nad raznim vektorskim prostorima će nam biti važan primjer jer
 je riječ o transformacijama s kojima imamo mnogo neposrednog iskustva,
-a istovremeno su vrlo netrivijalne i dobar primjer za velik dio
+a istovremeno su vrlo netrivijalne i dobar primjer za mnoge teme
 teorije grupa i njenih reprezentacija.
 Rotacija oko $z$-osi za kut $\theta$ je
 \begin{equation*}
@@ -161,6 +164,7 @@ množenja skalarom često je moguće definirati i dodatne operacije, a
 možda najvažnija je skalarni produkt.
 
 \begin{definicija}[Skalarni produkt]
+    \index{Vektorski prostor!skalarni produkt}
 Skalarni produkt na vektorskom prostoru $V$ je preslikavanje
 $(\,\;,\;):V\times V \to \mathbb{C}$ sa svojstvima:
 \begin{enumerate}
@@ -188,12 +192,15 @@ Skalarni produkt omogućuje prirodnu definiciju \emph{norme} vektora
 Vektorski prostor s definiranom operacijom skalarnog produkta se
  zove \emph{unitarni prostor}. Alternativno se za takav prostor
  koriste i nazivi pre-Hilbertov ili  euklidski prostor.
+    \index{Vektorski prostor!unitarni}
 
 Ortonormirana baza vektorskog prostora je baza $\{\vec{e}_i\}$
 takva da je $(\vec{e}_i, \vec{e}_j)=\delta_{ij}$ i uvijek ju je moguće
 naći u unitarnom prostoru.
+    \index{Vektorski prostor!baza}
 
 \begin{definicija}[Unitarni operator]
+    \index{Operator!unitarni}
 Unitarni operator $U$ je operator takav da je $(U\vec{x}, U\vec{y})
 =(\vec{x}, \vec{y})$, $\forall \vec{x}, \vec{y}$. 
 \end{definicija}
@@ -212,6 +219,7 @@ $U^{\dagger}\equiv U^{T^*}$ hermitski konjugirana matrica.
 
 
 \begin{definicija}[Hermitski konjugirani operator]
+    \index{Operator!hermitski konjugirani}
 Hermitski konjugirani operator operatoru $D$ je operator $D^\dagger$
 definiran tako da vrijedi $(D\vec{x}, \vec{y})
 =(\vec{x}, D^\dagger \vec{y})$, $\forall \vec{x}, \vec{y}$.
@@ -221,13 +229,15 @@ U ortonormiranoj bazi hermitski konjugirani operator je predstavljen
 hermitski konjugiranom matricom.
 
 \begin{definicija}[Hermitski operator]
+    \index{Operator!hermitski}
 Operator $H$ se naziva hermitski ako vrijedi $(H\vec{x}, \vec{y})
 =(\vec{x}, H \vec{y})$, $\forall \vec{x}, \vec{y}$. Takav operator
 je u ortonormiranoj bazi prikazan hermitskom matricom za koju
 vrijedi $H^\dagger = H$.
 \end{definicija}
 
-Hermitski konjugirani operator operatora $D$ se naziva i 
+Hermitski konjugirani operator operatoru $D$ se naziva i 
+\index{Operator!adjungirani}
 adjungirani operator operatoru $D$ (engl. \emph{adjoint}), a hermitski
 operator se naziva i auto-adjungirani (engl. \emph{self-adjoint}).
 Zapravo postoji suptilna matematička razlika između hermitskog
@@ -237,8 +247,9 @@ i auto-adjungiranog operatora, ali fizičari je obično zanemaruju.
 Svojstvene vrijednosti hermitskog operatora su realne.
 \end{teorem}
 
-\emph{Dokaz:} Uzmimo $\vec{x}\neq \vec{0}$ za koji je $A \vec{x} = \lambda \vec{x}$%
-\footnote{Egzistencija takvog vektora slijedi iz fundamentalnog teorema algebre}.
+\emph{Dokaz:} Uzmimo $\vec{x}\neq \vec{0}$ za koji je%
+\footnote{Egzistencija takvog vektora slijedi iz fundamentalnog teorema algebre}
+$A \vec{x} = \lambda \vec{x}$.
 Skalarnim množenjem s $\vec{x}$ imamo $\lambda(\vec{x}, \vec{x}) =
 (\vec{x}, A\vec{x}) = (A\vec{x},\vec{x}) = \lambda^{\ast}(\vec{x},\vec{x})$,
 iz čega slijedi $\lambda^{\ast}=\lambda$ jer je kraćenje (\vec{x},\vec{x})
@@ -256,6 +267,7 @@ $S^{-1} T S = D$, gdje je $S$ unitarna matrica.
 \label{sec:reprezentacije}
 
 \begin{definicija}[Reprezentacija grupe] 
+    \index{Reprezentacija grupe!definicija}
 Reprezentacija grupe $G=\{g_{i}\}$ je homomorfizam s $G$ na
 grupu linearnih operatora
 $\Gamma=\{D(g_{i})\}$, na nekom vektorskom prostoru $V$.
@@ -271,6 +283,7 @@ gornji homomorfizam već i na samu grupu $\Gamma$, pa čak i na vektorski
 prostor $V$. No to ne bi smjelo dovoditi do zabune.
 
 \emph{Dimenzija} reprezentacije je dimenzija vektorskog prostora $V$ na koji operatori djeluju.
+    \index{Reprezentacija grupe!dimenzija}
 Kako se  operatori mogu u nekoj bazi predstaviti kao kvadratne matrice u literaturi
  se često rabi alternativna definicija reprezentacije kao preslikavanja s
  apstraktne grupe na grupu matrica.
@@ -284,9 +297,11 @@ jediničnom matricom jer $D(g)D(e)=D(ge)=D(g)$ povlači $D(e)=1$.
 Uobičajena oznaka za operatore iz reprezentacije je slovo $D$ od
 njemačke riječi "\emph{Darstellung}" (reprezentacija). Primjenu teorije reprezentacija
   grupa na fiziku je u velikoj mjeri razvio E. P. Wigner.
+  \index{Wigner, Eugene \yrange{1902}{1995}}
 
 Ukoliko je grupa operatora $\Gamma$ \emph{izomorfna} grupi $G$, 
   reprezentaciju zovemo \emph{vjerna}.
+    \index{Reprezentacija grupe!vjerna}
 
   
 \begin{primjer}[Reprezentacija grupe C$_3$ na 3D euklidskom prostoru]
@@ -308,6 +323,7 @@ Prilikom specifikacije matričnog zapisa operatora,
 treba razlikovati tzv. \emph{aktivne} transformacije kod
 koji se mijenjaju vektori, a baza ostaje ista, te \emph{pasivne} kod
 kojih vektori ostaju isti, a baza se mijenja, vidi sliku \ref{fig:aktivne}.
+\index{Transformacije!aktivne i pasivne}
 Oba pristupa su regularna, ali tipično vode do razlika u nekim predznacima u izrazima
 pa treba pripaziti.
 \begin{figure}[htpb]
@@ -357,6 +373,7 @@ tako dobiti beskonačno drugačijih reprezentacija.
 
 \begin{primjer}[Reprezentacija grupe C$_3$ na  vektorskom prostoru stanja vodikovog atoma]
     \label{ex:C3}
+    \index{Vodikov atom}
 Operator koji reprezentira element $c\in\mathrm{C}_3$ će biti
 operator $D(c)$ koji transformira valne funkcije vodikovog atoma
 \begin{equation}
@@ -420,6 +437,7 @@ Da bismo uveli red treba nam općenita formalna teorija reprezentacija grupa.
 Jedan primjer tvrdnji koje vrijede sasvim općenito je
 da svaka grupa $G$ ima tzv. \emph{trivijalnu} reprezentaciju
 kod koje je svakom elementu pridružen jedinični operator
+\index{Reprezentacija grupe!trivijalna}
 \begin{displaymath}
              D(g)=1 \quad \forall g \in G  \;.
 \end{displaymath}
@@ -455,11 +473,12 @@ grupe. No očito je da su sve te reprezentacije u nekom smislu
 ekvivalentne. Na tom tragu je sljedeća definicija.
 
 \begin{definicija}[Ekvivalentne reprezentacije]
+\index{Reprezentacija grupe!ekvivalentna}
 Dvije reprezentacije grupe $G$, $\Gamma_{1}=\{D^{(1)}\}$ i $\Gamma_{2}=\{D^{(2)}\}$ su
 \emph{ekvivalentne} ako postoji konstantni nesingularni operator
 $S$ takav da je
 \begin{equation}
-        D^{(1)}(g) = S D^{(2)}(g) S^{-1} \quad \forall g \in G
+        D^{(1)}(g) = S D^{(2)}(g) S^{-1} \quad \forall g \in G \,.
         \label{eq:ekvivrep}
 \end{equation}
 \end{definicija}
@@ -473,7 +492,7 @@ prostora (pa su u tom smislu one "iste"). Uzmimo neki konkretni operator
 $D:V \to V$ iz jedne reprezentacije, koji djeluje na vektorskom prostoru
 $V$ i općenito transformira vektore
 \begin{equation}
-D:\vec{u}\mapsto \vec{v}
+D:\vec{u}\mapsto \vec{v} \,.
 \end{equation}
 Uzmimo neku bazu $\{\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n\}$ prostora
 $V$ i u njoj će vektor $\vec{u}$ imati komponente $u_i$, 
@@ -548,11 +567,12 @@ Definirat ćemo sada operacije zbrajanja i množenja reprezentacija koje
 će nam onda omogućiti definiranje "elementarnih" reprezentacija koje se
 neće moći prikazati kao kombinacija nižedimenzionalnih reprezentacija.
 Te "elementarne" reprezentacije (zvat ćemo ih \emph{ireducibilne}) će onda
+\index{Ireducibilna reprezentacija}
 zbrajanjem i množenjem moći generirati sve ostale reprezentacije,
 slično kao što prosti brojevi generiraju sve ostale.
 
 \subsection*{Direktni zbroj reprezentacija}
-
+\index{Reprezentacija grupe!direktni zbroj}
 Kvadratnu matricu oblika
 \begin{displaymath}
    \begin{pmatrix}
@@ -666,6 +686,7 @@ Stanja kvantnomehaničkog sustava jednog elektrona i jednog protona
 vektorskog prostora stacionarnih \emph{vezanih} stanja vodikovog
 atoma $\psi_{nlm}$ (diskretne negativne energije) i vektorskog prostora dvočestičnog stanja
 \emph{nevezanih} elektrona i protona (kontinuum pozitivnih energija).
+\index{Vodikov atom}
 Kad bismo zanemarili interakciju, ovaj drugi prostor bi bio produkt 
 dva ravna vala. U ovom trenutku još nemamo dovoljno znanja konstruirati
 općenitu reprezentaciju grupe $\mathrm{C}_3$ na ovom prostoru ili diskutirati
@@ -675,7 +696,7 @@ je riječ o beskonačnodimenzionalnoj reprezentaciji.
 
 
 \subsection*{Direktni produkt reprezentacija}
-
+\index{Reprezentacija grupe!direktni produkt}
 \emph{Kroneckerov} ili \emph{direktni produkt} kvadratnih matrica 
 $A$ i $B$ je kvadratna matrica $C=A\otimes B$ čije su komponente
 \begin{displaymath}
@@ -737,6 +758,7 @@ $\{e_{i}\otimes f_{j}, i=1,\ldots, m; j=1,\ldots, n\}$,
 dimenzije $d=mn$.
 
 \begin{primjer}[Dva vodikova atoma]
+    \index{Vodikov atom}
 Uzmimo kvantnomehanički sustav dva vodikova atoma koja ne djeluju jedan
 na drugog (aproksimacija H$_2$ molekule). Njihove će valne funkcije 
 biti vektori u dva Hilbertova prostora:
@@ -756,10 +778,11 @@ Ključno je pitanje za datu reprezentaciju, a pogotovo za reprezentaciju
 nastalu direktnim produktom, može li se ona prikazati kao direktan
 zbroj nižedimenzionalnih reprezentacija. 
 \begin{definicija}[Reducibilna reprezentacija]
+    \index{Reprezentacija grupe!reducibilna}
 Reprezentacija $\Gamma$ grupe $G$ koja djeluje na vektorskom
 prostoru $V$  je \emph{reducibilna} ukoliko postoji netrivijalni
 potprostor $V_{1}$ od $V$ koji je \emph{invarijantan} na $\Gamma$,
-što znači da vrijedi
+što znači da vrijedi \index{Invarijantni potprostor}
 \begin{displaymath}
     D(g)V_{1}\subset V_{1} \quad \forall g \in G \;.
 \end{displaymath}
@@ -825,7 +848,7 @@ Sve tri matrice ove reprezentacije (\ref{eq:c3rep1})--(\ref{eq:c3rep3}) su oblik
 \quad \forall g \in \textrm{C}_3 \,.
 \end{displaymath}
 Dakle 2D prostor $V_1$ razapet vektorima $\hat{\vec{x}}$ i $\hat{\vec{y}}$
-je invarijantan na djelovanje svih ovakvih matrica
+je invarijantan \index{Invarijantni potprostor} na djelovanje svih ovakvih matrica
 pa slijedi da je reprezentacija reducibilna.
 \end{primjer}
 
@@ -835,6 +858,7 @@ rastavljiv na direktnu sumu dva potprostora koja su oba
 invarijantna. To nas vodi na pojam \emph{potpune} reducibilnosti.
 
 \begin{definicija}[Potpuno reducibilna reprezentacija]
+    \index{Reprezentacija grupe!potpuno reducibilna}
 Ako pored $V_1$ postoji i drugi invarijantni potprostor $V_2$ 
 tako da je $V=V_1 \oplus V_2$ tada reprezentaciju $\Gamma$
 možemo rastaviti na direktni zbroj $\Gamma=\Gamma_1
@@ -844,6 +868,9 @@ možemo rastaviti na direktni zbroj $\Gamma=\Gamma_1
 Od velike je važnosti sljedeći Maschkeov teorem.
 
 \begin{teorem}[Maschke]
+    \index{Teorem!Maschkeov}  \index{Maschke, Heinrich \yrange{1853}{1908}}
+    \index{Reprezentacija grupe!reducibilna}
+    \index{Reprezentacija grupe!potpuno reducibilna}
 Sve reducibilne reprezentacije konačnih grupa su i potpuno reducibilne.
 \end{teorem}
 
@@ -855,7 +882,7 @@ povlače teorem.
     \item Svaka \emph{unitarna} reducibilna reprezentacija je potpuno reducibilna
 \end{enumerate}
 Tvrdnja iz prvog koraka je i sama po sebi zanimljiva obzirom na važnost unitarnih transformacija
-u kvantnoj mehanici.
+u kvantnoj mehanici. \index{Reprezentacija grupe!unitarna}
 
 \emph{Korak 1:} Definirajmo tzv. "grupni" skalarni produkt dvaju
 vektora iz $V$ na slijedeći način:
@@ -874,6 +901,7 @@ Sada vrijedi
  D(g) D(h) \vec{y} \big) \\
 &\stackrel{\text{($D$ je rep.)}}= \frac{1}{n}\sum_g \big( D(gh)\vec{x} , D(gh)\vec{y} \big) \\
 &=  gh\to k\;;\quad \text{teorem o razmještaju}\;;\quad \sum_g \to \sum_k \\
+\index{Teorem!o razmještaju}
 &= \frac{1}{n}\sum_k \big( D(k) \vec{x}, D(k) \vec{y} \big) \\
 &= \{\vec{x}, \vec{y}\} \,.
 \end{split}
@@ -945,11 +973,12 @@ i $\vec{x}'\in V_1$ slijedi da je i $V_2$ invarijantan.\qed
 U prvom dijelu dokaza, definicija grupnog skalarnog produkta i manipulacije
 koje smo radili funkcioniraju samo za konačne grupe. No teorem vrijedi i 
 za kontinuirane (Liejeve) grupe (koje ćemo upoznati u \ref{ch:lie}. poglavlju),
-ako imaju neko od slijedećih svojstava
+ako je zadovoljeno neko od slijedećih svojstava
 \begin{itemize}
-\item unitarnost (u drugom koraku dokaza nismo koristili konačnost)
-\item kompaktnost (vidi definiciju \ref{def:kompaktnost})
-\item povezanost (vidi definiciju \ref{def:povezanost}), nekompaktnost i polujednostavnost (vidi \cite[79]{Cornwell:1997})
+\item unitarnost reprezentacije (u drugom koraku dokaza nismo koristili konačnost)
+\item kompaktnost grupe (vidi definiciju \ref{def:kompaktnost}) \index{Grupa!kompaktna}
+\item povezanost (vidi definiciju \ref{def:povezanost}), nekompaktnost i polujednostavnost
+    grupe (vidi \cite[79]{Cornwell:1997}) \index{Grupa!povezana} \index{Grupa!polujednostavna}
 \end{itemize}
 Srećom, većina kontinuiranih grupa od interesa za fiziku imaju neka od ovih svojstava.
 
@@ -958,6 +987,7 @@ Srećom, većina kontinuiranih grupa od interesa za fiziku imaju neka od ovih sv
 Reprezentacija $\Gamma$ na vektorskom prostoru $V$ je
 \emph{ireducibilna} ako $V$ nema invarijantnih potprostora
 izuzev $\{0\}$ i samog sebe.
+\index{Ireducibilna reprezentacija}  \index{Invarijantni potprostor}
 \label{def:irrep}
 \end{definicija}
 Posljedično, ireducibilnu reprezentaciju nije moguće promjenom baze 
@@ -1017,7 +1047,7 @@ Konstruirajte njihov direktni zbroj i produkt.
 generira 2D reprezentaciju grupe C$_3$. Pokažite da je ova reprezentacija
 ireducibilna nad poljem realnih brojeva.
 
-\item \label{zad:lnred} Uvjerite se da grupa $\mathbb{R}_{+}\backslash \{0\}, \cdot )$
+\item \label{zad:lnred} Uvjerite se da grupa ($\mathbb{R}_{+}\backslash \{0\}, \cdot )$
 može biti vjerno reprezentirana na 2D vektorskom prostoru reducibilnom
 reprezentacijom
 \begin{equation*}

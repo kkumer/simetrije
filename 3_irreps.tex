@@ -13,6 +13,7 @@
 
 Sva ključna svojstva ireducibilnih reprezentacija slijede iz 
 dvije Schurove leme.
+\index{Schurova lema} \index{Schur, Issai \yrange{1875}{1941}}
 
 \begin{teorem}[Prva Schurova lema]
 Neka operator S povezuje dvije  ireducibilne
@@ -27,6 +28,7 @@ D(g)=S^{-1}D'(g)S
 \end{displaymath}
 tj. dvije su reprezentacije ekvivalentne. (Mogućnost
 da je $S$ singularan, ali ne i nul-operator je isključena.)
+\index{Reprezentacija grupe!ekvivalentna}
 \end{teorem}
 
 \begin{figure}[htpb]
@@ -46,6 +48,7 @@ Sva potrebna svojstva
 $S(V)$ nasljeđuje od $V'$, a zatvorenost i egzistencija inverza su 
 posljedice linearnosti operatora $S$.
 Dodatno, $S(V)$ je \emph{invarijantni} potprostor od $V'$ jer
+\index{Invarijantni potprostor}
 $$D'(g)S\vec{x}=SD(g)\vec{x} \in S(V)\,.$$
 
 Kako je $\{D'(g)\}$ ireducibilna, iz
@@ -65,6 +68,7 @@ da je ili $S(V)=\{\vec{0'}\}$ ili $S(V)=V'$.
     $$ S D(g) \vec{k} = D'(g)S\vec{k} = \vec{0'}$$
     što znači da je i $D\vec{k}$ element kernela Ker($S$), odnosno
     i kernel je \emph{invarijantni} potprostor, baš kao i slika.
+    \index{Kernel}
     Sad, kako je $\{D(g)\}$ ireducibilna slijedi da je ili
     Ker($S$)=$\{\vec{0}\}$ ili Ker($S$)=$V$.
     Ker($S$)$=V$ ne može biti jer onda ne bi bilo $S(V)=V'$ nego bi bilo
@@ -86,7 +90,7 @@ je nužno proporcionalan jediničnom operatoru
 \end{teorem}
 
 \emph{Dokaz.} Iz fundamentalnog teorema algebre slijedi da $S$ ima
-barem jedan svojstveni vektor tj. da postoji
+barem jedan svojstveni vektor tj. postoji
 $\vec{x}\neq\vec{0}$ takav da je $S\vec{x}=\lambda\vec{x}$.
 To možemo zapisati i u obliku $(S-\lambda\Eins)\vec{x}=0$ što
 znači da je $(S-\lambda\Eins)$
@@ -196,7 +200,7 @@ Slijedi da je
 \lambda^{(\alpha)}_{jk}= \frac{n}{d_{\alpha}}\delta_{kj} \;,
 \end{displaymath}
 što daje \emph{temeljni teorem o ortogonalnosti} matrica ireducibilnih
-reprezentacija:
+reprezentacija: \index{Teorem!ortogonalnosti matrica ireducibilnih reprezentacija}
 \begin{teorem}[Ortogonalnost matrica ireducibilnih reprezentacija]
 \begin{displaymath}
 \sum_g D^{(\alpha)}_{ij}(g) D^{(\beta)}_{kl}(g^{-1}) =
@@ -249,12 +253,14 @@ Da bismo odredili broj članova u ovoj relaciji tj.
 broj (neekvivalentnih) ireducibilnih reprezentacija grupe, treba nam
 pojam \emph{karaktera} reprezentacije.
 \begin{definicija}[Karakter reprezentacije]
+    \index{Karakter}
 Karakter $\chi$ reprezentacije $\Gamma=\{D(g)\}$ grupe $G$ je skup
 $\chi=\{\chi(g) = \Tr D(g) \td  g\in G\}$.
 \end{definicija}
 Prvo važno svojstvo je da ekvivalentne reprezentacije imaju iste
 karaktere jer zbog cikličnosti traga
 imamo $\Tr S D(g) S^{-1} = \Tr D(g)$.
+\index{Reprezentacija grupe!ekvivalentna}
 Bez dokaza navedimo da vrijedi i obrat: jednakost karaktera implicira
 da su reprezentacije ekvivalentne.
 (Usput, taj obrat se \emph{ne} poopćuje na beskonačne kontinuirane grupe, osim
@@ -263,7 +269,8 @@ Zahvaljujući cikličnosti traga vidimo i da je
 $\chi(g)=\Tr D(g) = \Tr D(h) D(g) D^{-1}(h) = \Tr D(hgh^{-1})$
   tj. konjugirani elementi imaju iste karaktere (Oprez: Treba
   razlikovati karakter reprezentacije $\chi$ od njegove komponente
-  $\chi(g)$ koju isto često zovemo karakter --- karakter elementa.)
+  $\chi(g)$ koju isto često zovemo karakter---karakter elementa.)
+ \index{Element!konjugirani}
 
 Za unitarnu reprezentaciju vrijedi $\chi(g^{-1}) = \Tr D(g^{-1})= \Tr D^{\dagger}
     = \chi^{*}(g)$.
@@ -289,6 +296,7 @@ imamo
 \end{displaymath}
 tj. karakteri neekvivalentnih ireducibilnih reprezentacija su ortonormirani
 obzirom na taj skalarni produkt.
+\index{Karakter}
 
 Neka je sada $k_i$ broj elemenata u $i$-toj klasi konjugacije grupe $G$.
 Tada, budući da su karakteri svih elemenata jedne klase konjugacije
@@ -325,7 +333,7 @@ upravo jednak broju njenih klasa konjugacije!
 \label{sec:karakteri}
 
 \emph{Tablica karaktera} neke grupe je tablica karaktera svih njenih
-ireducibilnih reprezentacija.
+ireducibilnih reprezentacija. \index{Tablica karaktera} \index{Karakter!tablica|see{Tablica karaktera}}
 \begin{center}
     \setlength{\tabcolsep}{12pt}
     \renewcommand{\arraystretch}{2.0}
@@ -341,7 +349,8 @@ ireducibilnih reprezentacija.
 \end{center}
 Vidjet ćemo da tablica često daje dovoljno informacija za praktične primjene, a može
 se, pomoću slijedećih pravila, konstruirati i bez eksplicitnog
-poznavanja samih matrica reprezentacija i uzimanja njihovih tragova.
+poznavanja samih matrica reprezentacija.
+
 
 \subsection*{Pravila za konstrukciju tablice karaktera}
 
@@ -349,7 +358,7 @@ poznavanja samih matrica reprezentacija i uzimanja njihovih tragova.
 
 \item Broj ireducibilnih reprezentacija jednak je broju klasa konjugacije 
   grupe. Iz ovoga slijedi da tablica ima jednak broj redova i stupaca. 
-  Broj klasa pronalazimo "pješke," analizom grupe.
+  Broj klasa pronalazimo "pješke," analizom grupe. \index{Klasa konjugacije} 
 
 \item Kako su dimenzije vektorskih prostora prirodni brojevi,
     uvjet da je zbroj kvadrata dimenzija ireducibilnih reprezentacija
@@ -364,6 +373,7 @@ poznavanja samih matrica reprezentacija i uzimanja njihovih tragova.
 \item Uvijek postoji trivijalna jednodimenzionalna ireducibilna
    reprezentacija  $D(g)=\chi(g)=1$, $\forall g\in G$.
   Dakle jedan red (konvencionalno prvi) se sastoji od samih jedinica.
+  \index{Reprezentacija grupe!trivijalna}
 
 \item Za jednodimenzionalne reprezentacije vrijedi $D(g)=\chi(g)$ pa
   sami karakteri reprezentiraju grupu i njihovo množenje mora biti
@@ -385,7 +395,7 @@ Pravila je najbolje primjenjivati po redu jer su ona s većim rednim
 brojem teža za primjenu i rjeđe nužna za kompletiranje tablice.
 
 \begin{primjer}[Tablica karaktera grupe $\mathrm{D}_3$]
-    \label{pr:karakteriD3}
+    \label{pr:karakteriD3} \index{Tablica karaktera}
 Grupa ima tri klase konjugacije (vidi primjer \ref{pr:klaseD3}):
 
 \begin{center}
@@ -469,6 +479,7 @@ gdje treba paziti na težinske faktore. Imamo
 Tako smo odredili cijelu tablicu. Običaj je za označavanje ireducibilnih
 reprezentacija i klasa konjugacija koristiti kristalografske
 oznake. Mi ćemo koristiti tzv. Sch\"{o}nfliesove oznake iz priloga \ref{sec:kristalografija} 
+\index{Sch\"{o}nfliesove oznake} \index{Sch\"{o}nflies, Arthur \yrange{1853}{1928}}
 pa konačna tablica izgleda ovako:
 \begin{center}
 \begin{tabular}{c|ccc}
@@ -515,7 +526,7 @@ zajedno smatraju jednom dvodimenzionalnom ireducibilnom reprezentacijom $E$.
 
 Zgodno je uočiti da neabelovska grupa $D_3$ ima i dvodimenzionalnu, dakle matričnu,
 ireduciblinu reprezentaciju. To je logično jer neabelovsko svojstvo ne može biti
-vjerno reprezentirano jednodimenzionalnim reperezentacijama.
+vjerno reprezentirano jednodimenzionalnim reprezentacijama.
 
 \section{Dekompozicija reducibilnih reprezentacija}
 
@@ -529,7 +540,8 @@ ireducibilnih.  Uzmimo neku, moguće reducibilnu, reprezentaciju $\Gamma$. Opće
 \end{displaymath}
 gdje su $\Gamma_{\alpha}$ ireducibilne reprezentacije i
 gdje je $a_{\alpha}$ \emph{multiplicitet} (broj pojavljivanja) 
-$\Gamma_{\alpha}$ u $\Gamma$.
+$\Gamma_{\alpha}$ u $\Gamma$. \index{Ireducibilna reprezentacija!multiplicitet}
+\index{Multiplicitet ireducibilne reprezentacije}
 Uzmemo li sad trag nekog operatora iz $\Gamma$ iz  $i$-te klase konjugacije
 imajući u vidu blok-dijagonalnu formu direktnog zbroja vidimo da je
 \begin{equation}
@@ -554,6 +566,7 @@ a_{\alpha} = \frac{1}{n} \sum_{i=1}^{k}  k_i \chi_i \chi^{(\alpha)*}_i
 gdje smo uveli skalarni produkt karaktera $(\;,\;)$.
 
 \begin{primjer}[Reprezentacija $\Gamma_V$ grupe D$_3$ na 3D euklidskom prostoru]
+    \index{Euklidski prostor}
 Promotrimo reprezentaciju grupe D$_3$ na standardnom trodimenzionalnom
 vektorskom prostoru. (Oznaka $V$ implicira da mislimo na prave (polarne)
 vektore, za razliku od "nepravih", aksijalnih ili pseudovektora koje obično
@@ -604,7 +617,7 @@ Tako konačno imamo
 \Gamma_V  = A_2 \oplus E \,.
 \end{equation}
 Od interesa je odrediti i invarijantne potprostore na koje djeluju
-$A_2$ i $E$.
+$A_2$ i $E$. \index{Invarijantni potprostor}
 $V^{(A_2)}$ je očito razapet vektorom $\hat{\vec{z}}$, a $\hat{\vec{x}}$ i
 $\hat{\vec{y}}$ razapinju 2D potprostor $V^{(E)}$. (Primijetite razliku
 prema $C_3$ kod koje je dodatno i svaki pojedini vektor $\vec{v}=a\hat{\vec{z}}$ invarijantan.)
@@ -617,6 +630,9 @@ reprezentacija je reducibilan.
 Što je s direktnim produktom  $\Gamma_{\alpha} \otimes \Gamma_{\beta}$?
 On je općenito reducibilan i njegov rastav na ireducibilne reprezentacija
 nazivamo \emph{Clebsch-Gordanov razvoj}:
+\index{Clebsch-Gordanov razvoj}
+\index{Clebsch, Rudolf \yrange{1833}{1872}}
+\index{Gordan, Paul \yrange{1837}{1912}}
 \begin{displaymath}
   \Gamma_{\alpha}\otimes\Gamma_{\beta} =
   \sum \oplus\: a_{\gamma}\Gamma_{\gamma}  \,.
@@ -656,6 +672,7 @@ direktnim produktom pa nije riječ o Clebsch-Gordanovom razvoju.
 \section{Primjena: \emph{Dipolni momenti kristala}}
 \label{sec:dipolni}
 
+\index{Kristal}
 Kristali su fizikalni sustavi koji su bogati simetrijama. Tu se
 ističu (1) simetrije na translacije za cijeli broj jediničnih vektora
 osnovne kristalne ćelije (kristal se za te potrebe zamišlja kao beskonačan),
@@ -678,19 +695,21 @@ permanentnog magnetskog ili električnog dipolnog
 momenta. Da bi kristal mogao imati neiščezavajući
 električni dipolni moment
 te veličina mora biti invarijantna na grupu simetrije
-kristala.
+kristala. \index{Kristal!dipolni moment}
 Kako je električni dipolni moment \emph{vektor} 3D euklidskog vektorskog prostora,
 slijedi da je nužno postojanje vektora invarijantnih na djelovanje grupe simetrija.
 Na primjer, za kristal s C$_3$ simetrijom vektor $\vec{P}$ usmjeren
 kao na sljedećoj slici je invarijantan i
 to može biti smjer dipolnog momenta takvog kristala. $\vec{P}\neq 0$
 ne narušava C$_3$ simetriju.
+\index{Ciklička grupa C$_n$}
 
 \centerline{\input{figures/dipol.tex}}
 %\centerline{\includegraphics[scale=1.0]{pics/dipol.eps}}
 
 S druge strane, veća D$_3$ simetrija ukida takvu mogućnost. $b$-rotacija
 mijenja $\vec{P}\to-\vec{P}$ pa bi $\vec{P}\neq 0$ narušilo simetriju.
+\index{Dihedralna grupa D$_n$}
 
 \centerline{\input{figures/nodipol.tex}}
 %\centerline{\includegraphics[scale=1.0]{pics/nodipol.eps}}
@@ -699,7 +718,7 @@ Atomi simetričnog kristala ne mogu proizvesti nesimetrični dipolni moment.
 
 Grupno-teorijski iskaz ovoga je da \emph{reprezentacija grupe $G$ na vektorskom
 prostoru (potencijalnih) vektora dipolnog momenta mora biti trivijalna tj.
-identiteta}:
+identiteta}: \index{Reprezentacija grupe!trivijalna}
 \begin{displaymath}
    D(g)=1 \quad \forall g\in G \;.
 \end{displaymath}
@@ -726,7 +745,8 @@ pa u ovom slučaju postoji mogućnost električnog dipolnog momenta.
 Kad grupa simetrija pored rotacija sadrži i refleksije ($\sigma$, $S_n$, $i$,
 vidi odjeljak \ref{sec:kristalografija}) treba
 uzeti u obzir činjenicu da je magnetski moment $\vec{M}$ \emph{aksijalni}
-vektor (vidi Dodatak \ref{sec:aksijalni})
+vektor (vidi Dodatak \ref{sec:aksijalni}) \index{Aksijalni vektor} \index{Refleksija}
+\index{Pseudovektor|see{Aksijalni vektor}}
 koji se pri takvim transformacijama ponaša obrnuto od običnog
 (polarnog) vektora električnog dipolnog momenta.
 Tako npr. refleksija preko horizontalne ravnine $\sigma_h$ će promijeniti
@@ -805,7 +825,7 @@ da je za ovaj kristal moguć permanentni \emph{električni} dipolni
 moment.
 
 Za aksijalne vektore, reprezentacije elemenata $e, c$ i $c^2$ su iste kao i
-gore, jer rotacije ne razlikuju polarne i aksijalne vektore. 
+gore, jer rotacije ne razlikuju polarne i aksijalne vektore.  \index{Aksijalni vektor}
 Međutim refleksija $D^{(V)}(b)$ je reprezentirana
 suprotno\footnote{Oblik matrice se može naći i iz razmatranja djelovanja $\sigma_{v}$ na
 aksijalni vektor $\vec{c}=\vec{a}\times\vec{b}$ gdje 
@@ -862,6 +882,8 @@ Naime, možemo reći da putem Schr\"{o}dingerove jednadžbe
 hamiltonijan definira sustav. Transformirani sustav će u slučaju da
 je transformacija simetrija imati isti skup rješenja Schr\"{o}dingerove jednadžbe,
 s istim energijama.
+\index{Schr\"{o}dingerova jednadžba}
+\index{Schr\"{o}dinger, Erwin \yrange{1987}{1961}}
 Ekvivalentno, iz (\ref{eq:invH0}) se vidi da tada operator
 simetrije $U(g)$ i hamiltonijan $H_0$ komutiraju
 \begin{equation}
@@ -876,6 +898,7 @@ stanja.
 Stanje sustava $|n\rangle$ s dobro definiranom energijom  zove se
 \emph{stacionarno stanje} i dano je kao rješenje vremenski 
 neovisne Schr\"{o}dingerove jednadžbe tj. kao svojstveno stanje hamiltonijana
+\index{Schr\"{o}dingerova jednadžba}
 \begin{displaymath}
   H_0 |n\rangle = E_n | n \rangle \;.
 \end{displaymath}
@@ -888,12 +911,13 @@ odgovarajuća svojstvena vrijednost hamiltonijana pa zahvaljujući
 \end{displaymath}
 Dakle sva stanja $|n'\rangle = U(g)|n\rangle$, za sve $g\in G$ imaju
 istu energiju $E_n$! Pojavu kad više stanja ima istu energiju 
-nazivamo \emph{degeneracija}.
+nazivamo \emph{degeneracija}. \index{Degeneracija}
 
 Skup stanja $\{U(g)|n \rangle \,|\, g\in G\}$ dobivenih transformacijama
 datog stanja $|n\rangle$ razapinje
 potprostor vektorskog prostora svih stanja sustava. On je
 po konstrukciji invarijantan na djelovanje reprezentacije $\{ U(g) \}$.
+\index{Invarijantni potprostor}
 Također, reprezentacija $\{ U'(g) \}$ dobivena redukcijom reprezentacije
 $\{ U(g) \}$ na ovaj potprostor je ireducibilna što isto slijedi
 iz načina na koji smo konstruirali potprostor\footnote{Čitaoc će jako
@@ -905,6 +929,7 @@ je transformacijama bilo kojeg vektora baze moguće dobiti baš sve
 ostale (ireducibilnost)}.
 Takav potprostor naziva se \emph{multiplet}, a u literaturi se
 vrlo često izraz multiplet koristi i za samu bazu ovog potprostora.
+\index{Multiplet}
 
 Vidimo da poznavajući sve ireducibilne reprezentacije grupe simetrija nekog
 kvantnomehaničkog
@@ -917,7 +942,7 @@ to nam može pomoći u određivanju strukture sustava i interakcija koje
 njime upravljaju jer sve to mora biti u skladu sa simetrijama.
 
 \begin{primjer}[Sustav s oktahedralnom grupom simetrija]
-
+\index{Oktahedralna grupa}
 Ireducibilne reprezentacije oktahedralne grupe O pronađemo
 u dodatku \ref{sec:kristalografija} gdje vidimo 
 da ta grupa ima dvije jednodimenzionalne
@@ -976,7 +1001,7 @@ on pripada i kojoj je O podgrupa.
 
 \begin{primjer}[Sferna simetrija i vodikov atom]
 
-
+\index{Vodikov atom}
 Ukoliko zanemarimo interakcije višeg reda (poput interakcije spina i orbite) i
 promatramo samo osnovni hamiltonijan vodikovog atoma po kojem se elektron nalazi u kulonskom 
 električnom polju jezgre u ishodištu, vidimo da sustav ima sfernu simetriju --- simetriju
@@ -1002,12 +1027,12 @@ No dodatno cijela ljuska s konkretnom vrijednošću kvantnog broja $n$, a
 koja sadrži $n^2$ stanja s $l \in \{0, 1, \ldots, n-1\}$
 ima istu energiju
 \begin{displaymath}
-  E_n \propto \frac{1}{n^2} \qquad \text{neovisno o $l$}
+  E_n \propto \frac{1}{n^2} \qquad \text{neovisno o $l$} \,.
 \end{displaymath}
 Dakle, degeneracija je veća od one koju bismo očekivali samo zbog
 sferne simetrije SO(3).
 U odjeljku \ref{sec:so4}  ćemo vidjeti da je relevantna simetrija
-zapravo SO(4)=SO(3)$\otimes$SO(3) što će onda kompletno objasniti
+zapravo SO(4)=SO(3)$\otimes$SO(3) što će onda potpuno objasniti
 opaženu degeneraciju nivoa vodikovog atoma.
 \end{primjer}
 
@@ -1023,7 +1048,9 @@ energiju samo jednog od njih.
 
 Vidjeli smo kako struktura grupe simetrija sustava diktira moguće
 ireducibilne reprezentacije, a one pak diktiraju mogućnost 
-degeneracija u energijskom spektru sustava. Zanimljivo je promotriti
+degeneracija u energijskom spektru sustava.
+\index{Degeneracija}
+Zanimljivo je promotriti
 što se događa sa spektrom ukoliko se simetrija sustava promijeni.
 Razlog promjeni može biti na primjer promjena kristalne strukture
 zbog promjene temperature ili promjena simetrije zbog uključivanja
@@ -1031,7 +1058,7 @@ vanjskog električnog ili magnetskog polja.
 Konkretno, zamislimo da uvođenje vanjskog potencijala $V$  promijeni hamiltonijan
 sustava
 \begin{displaymath}
-    H_0 \to H = H_0 + V \;.
+    H_0 \to  H_0 + V \,.
 \end{displaymath}
 Ukoliko znamo riješiti sustav opisan osnovnim hamiltonijanom $H_0$, te
 ukoliko je smetnja $V$ slaba ($V\ll H_0$), tehnikama računa smetnje
@@ -1041,12 +1068,12 @@ u promjene u spektru sustava.
 
 Pretpostavimo da je originalni hamiltonijan $H_0$ invarijantan na
 grupu simetrija $G$. Uvođenje smetnje $V$ će u najvećem broju
-slučajeva smanjiti simetriju tako da će ukupni hamiltonijan $H$ 
-biti sada invarijantan na manju grupu $H<G$. To je jasno jer 
+slučajeva smanjiti simetriju tako da će ukupni hamiltonijan $H_0 + V$ 
+biti sada invarijantan na manju grupu $H<G$. Naime,
 hamiltonijan $H_0$ komutira sa svim operatorima koji reprezentiraju
 grupu simetrija $G$. Ako hamiltonijanu dodamo novi član $V$, neki operatori iz
 tog skupa $\{U(g) \td g\in G\}$ tipično neće komutirati i s $H_0 + V$.
-Na primjer, električno polje u Starkovom efektu mijenja Hamiltonijan
+Na primjer, električno polje u Starkovom efektu \index{Starkov efekt} mijenja hamiltonijan
 vodikovog atoma tako da mu doda član proprocionalan električnom polju
 i od originalne pune sferne simetrije na sve rotacije 3D prostora,
 preostaje samo aksijalna simetrija na rotacije oko smjera polja.
@@ -1072,7 +1099,7 @@ možemo odrediti strukturu cijepanja. Za određivanje \emph{iznosa} cijepanja
 trebat će tipično ipak koristiti metode kvantnomehaničkog računa smetnje.
 
 \begin{primjer}[Cijepanje $T$-nivoa tetrahedralne grupe T]
-
+    \index{Tetrahedralna grupa}
 Ireducibilna reprezentacija $T$, tetrahedralne grupe T, je
 trodimenzionalna, pa će odgovarajući nivo biti trostruko degeneriran
 (tri različita kvantna stanja će imati istu energiju).
@@ -1108,21 +1135,22 @@ $B_3$ & 1 & -1&-1  & 1\\ \hline \hline
  $T$ & 3 & -1 & -1 & -1
 \end{tabular}
 \end{displaymath}
+\index{Tablica karaktera}
 
 Sada provodimo dekompoziciju reprezentacije $T$ koja je u kontekstu
 grupe D$_2$ reduciblilna
 \begin{displaymath}
-   T = a_1 A_1 \oplus b_1 B_1 \oplus b_2 B_2 \oplus b_3 B_3
+   T = a_1 A_1 \oplus b_1 B_1 \oplus b_2 B_2 \oplus b_3 B_3 \,.
 \end{displaymath}
 Mulitiplicitete određujemo skalarnim množenjem redaka gornje tablice:
 \begin{align*}
 a_1 &= \frac{1}{n}\sum_k \chi^{(A_1)}(k) \chi^{(T)^*}(k)  \\
-    &= \frac{1}{4}\big(1\cdot3 + 1\cdot(-1) + 1\cdot(-1) + 1\cdot(-1)\big) = 0 \\
-b_1 &= b_2 = b_3 = 1
+    &= \frac{1}{4}\big(1\cdot3 + 1\cdot(-1) + 1\cdot(-1) + 1\cdot(-1)\big) = 0 \,, \\
+b_1 &= b_2 = b_3 = 1 \,.
 \end{align*}
 Dakle degeneracija je potpuno ukinuta
 \begin{displaymath}
-  \imp   T =  B_1 \oplus B_2 \oplus B_3
+  T =  B_1 \oplus B_2 \oplus B_3 \,.
 \end{displaymath}
 
 \centerline{\input{figures/splittingT.tex}}
@@ -1132,11 +1160,9 @@ b) $\mathrm{T}\to \mathrm{C}_{3v}$. Sličnim postupkom dobivamo
 \begin{displaymath}
         T = A_2 \oplus E \;,
 \end{displaymath}
-tj. degeneracija je samo djelomično ukinuta
-
+tj. degeneracija je samo djelomično ukinuta.
 \centerline{\input{figures/splittingT2.tex}}
 %\centerline{\includegraphics[scale=1.0]{pics/splittingT2.eps}}
-
 \end{primjer}
 
 \subsection*{Zadaci}
@@ -1148,10 +1174,11 @@ tj. degeneracija je samo djelomično ukinuta
 i provjerite temeljni teorem o ortogonalnosti.
 
 \item Pokažite da su sve ireducibilne reprezentacije Abelovih grupa jednodimenzionalne.
-    \label{zad:1Dabelrep}
+    \label{zad:1Dabelrep} \index{Grupa!Abelova}
 
 \item Pokažite da je nužan i dovoljan uvjet ireducibilnosti reprezentacije
  $\Gamma$ s karakterima $\chi_i$ tzv. Frobeniusov kriterij
+ \index{Frobeniusov kriterij} \index{Frobenius, Ferdinand \yrange{1849}{1917}}
 \begin{displaymath}
     \sum_i k_i |\chi_i|^2 = n  \;,
 \end{displaymath}
