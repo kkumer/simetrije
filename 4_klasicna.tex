@@ -28,6 +28,7 @@ To i jest uobičajeno laičko razumijevanje značenja riječi \emph{simetrija}. 
 mnoge važne realizacije simetrija u prirodi nisu na razini pojedinih
 fizikalnih sustava, nego na razini zakona prirode. Na primjer, zakoni mehanike
 i gravitacije su simetrični na sve rotacije, ali Sunčev sustav to nije.
+\index{Sunčev sustav}
 Na rotacije su simetrični i zakoni kvantne mehanike, ali pojedini atomi općenito
 nisu.
 Svejedno, mnoga svojstva Sunčevog sustava i atoma su diktirana simetrijama
@@ -41,12 +42,14 @@ malo produbiti ovu generičku ideju.
 \begin{definicija}[invarijantnost i kovarijantnost]
 Fizikalna veličina je \emph{invarijantna} na neku transformaciju ako se
 pri toj transformaciji ne mijenja.
+\index{Invarijantnost}
+\index{Kovarijantnost}
 
 Jednadžba koja opisuje fizikalni sustav je \emph{kovarijantna}\footnote{%
 Pojmovi kovarijantnosti i kontravarijantnosti
 komponenata vektora i tenzora koje srećemo u teoriji relativnosti
 ("gornji" i "donji" indeksi), a zapravo potječu iz diferencijalne 
-geometrije nemaju veze s ovom kovarijantnosti.  To su samo homonimi.}
+geometrije, nemaju veze s ovom kovarijantnosti.  To su samo homonimi.}
 na neku transformaciju ako se pri toj transformaciji 
 njen \emph{oblik} ne mijenja.
 \end{definicija}
@@ -108,7 +111,7 @@ drugog zarotiranog sustava ne mogu zaključiti da je sustav zarotiran.
 
 Ova i daljnja diskusija podrazumijevaju da govorimo o \emph{aktivnim}
 transformacijama koje djeluju na sam fizikalni sustav (vidi
-sliku \ref{fig:aktivne}). U \emph{pasivnom}
+sliku \ref{fig:aktivne}). U \emph{pasivnom} \index{Transformacije!aktivne i pasivne}
 pristupu u kojem transformiramo samo koordinatni sustav,
 ovako napisane jednadžbe su \emph{invarijantne} jer
 ako $\vec{r}$ i $\vec{F}$ promatramo kao elemente vektorskog prostora,
@@ -118,12 +121,15 @@ koordinatnog sustava ne mijenja same vektore i ono što je onda
 \begin{equation}
        m  \ddot{x}_{i} =  F_{i} \;.
 \end{equation}
+\index{Invarijantnost}
+\index{Kovarijantnost}
 
 Kod konstrukcije fizikalnih teorija simetrije prirode će se odražavati
 u kovarijantnosti jednadžbi gibanja pa je
 važno razviti vještinu prepoznavanja jesu li neke jednadžbe
 kovarijantne obzirom na neke transformacije ili nisu. Pogledajmo na primjer
 Maxwellove jednadžbe klasične elektrodinamike
+\index{Maxwellove jednadžbe} \index{Maxwell, James \yrange{1831}{1879}}
 \begin{align}
     \nabla \cdot \mathbf{E}  &= \frac{\rho}{\varepsilon_0} \,, \label{eq:maxwell1} \\
 \nabla \cdot \mathbf{B}  &= 0 \,, \\
@@ -140,6 +146,7 @@ Gledajući matematičku strukturu članova tih jednadžbi vidimo da je ona
 \end{align*}
 Zapravo je ovdje riječ o skalarnim i vektorskim \emph{poljima}, dakle veličinama
 koje imaju neku skalarnu odnosno vektorsku vrijednost u svakoj točki prostora.
+\index{Polje}
 To je pogodan primjer jer su kvantnomehaničke valne funkcije
 i kvantna polja, što će nam kasnije biti od velikog interesa, isto polja u tom smislu.
 
@@ -168,12 +175,13 @@ gdje je $R_{ij}$ ista matrica (poput (\ref{eq:matrot})) koja rotira
 vektor položaja $\vec{r}$. To da se svi vektori rotiraju pomoću identične
 matrice je ključno i u ovom kontekstu predstavlja svojevrsnu definiciju
 vektora:
+\index{Vektor}
 \begin{center}
     {vektor} $\equiv$ {objekt koji se pri rotacijama transformira množenjem matricom}
     $R(\hat{\vec{n}}, \theta)$.
 \end{center}
 Ovo se poopćuje na veličine sa složenijim transformacijskim svojstvima,
-\emph{tenzore}. 
+\emph{tenzore}.  \index{Tenzor!definicija}
 \begin{definicija}[Tenzor]
 \label{def:tenzor}
 \emph{Tenzor $n$-tog ranga} (pri rotacijama)  jest veličina $\bbtensor{T}$  koja
@@ -192,6 +200,7 @@ Komponente tenzora drugog ranga $\bbtensor{T}_{ij}$
 možemo po želji prikazati matricom.
 
 \begin{primjer}[Tenzor vodljivosti]
+    \index{Tenzor!vodljivosti}
 U neizotropnom sredstvu (npr. kristalu), smjer struje $\vec{j}$ ne mora biti isti
 kao i smjer narinutog električnog polja $\vec{E}$. U tom slučaju Ohmov zakon
 glasi
@@ -208,8 +217,10 @@ npr. \emph{Lorentzovi tenzori} obzirom na Lorentzove tranformacije
 izospinske transformacije u subnuklearnoj fizici (vidi odjeljak
 \ref{sec:izospin}) i drugi.
 Kad se tip transformacije ne specificira obično se misli se na rotacije.
+    \index{Tenzor!Lorentzov}
 
 \begin{primjer}[Tenzor elektromagnetskog polja]
+    \index{Tenzor!elektromagnetskog polja}
  Maxwellove jednadžbe (\ref{eq:maxwell1}--\ref{eq:maxwell4}) su očito
  (nekad se kaže \emph{manifestno}) kovarijantne pri rotacijama kako
  je upravo bilo diskutirano. Einsteinu je za razvoj specijalne teorije relativnosti
@@ -233,6 +244,7 @@ Kad se tip transformacije ne specificira obično se misli se na rotacije.
 \end{primjer}
 
 \begin{primjer}[Riemannov tenzor]
+    \index{Tenzor!Riemannov} \index{Riemann, Bernhard \yrange{1826}{1866}}
 Zakrivljenost $n$-dimenzionalnih ploha se standardno opisuje
 tzv. Riemannovim tenzorom $R_{abcd}$  (tenzor četvrtog ranga),
 gdje je od posebne važnosti za fiziku Riemannov tenzor prostorvremena
@@ -275,6 +287,7 @@ teorija svih temeljnih prirodnih sila izuzev gravitacije.}.
 
 
 \begin{primjer}[Vremenska inverzija]
+    \index{Vrijeme!inverzija}  \index{Inverzija vremena|see{Vrijeme!inverzija}}
 Promotrimo transformaciju inverzije vremena $t \to -t$.
 S jedne strane gornje Newtonove jednadžbe su kovarijantne i obzirom na tu vremensku
 inverziju, zahvaljujući tome što je diferencijacija po vremenu koja
@@ -289,6 +302,7 @@ zakona termodinamike na vremensku inverziju i time će dobiti zadovoljavajuće
 razumijevanje ove situacije. Stvarno razumijevanje načina na koji je narušena
 ova simetrija u zakonima mehanike čestica plina (dakle ne termodinamike) 
 predstavlja zloglasni problem strijele vremena \cite{Zeh:2007}.
+\index{Vrijeme!strijela vremena}
 
 \end{primjer}
 
@@ -304,8 +318,10 @@ svepristutnog pojma.
 U prošlom smo odjeljku promatrali simetrije Newtonovih klasičnih jednadžbi
 gibanja. Ispostavlja se međutim da je
 Lagrange-Hamiltonova formulacija klasične mehanike znatno pogodnija od
-Newtonove za formalizaciju principa simetrije. Naime, centralni objekt
-te formulacije je integral lagranžijana tj. akcija
+Newtonove za formalizaciju principa simetrije. 
+\index{Lagrange, Joseph-Louis \yrange{1736}{1813}}
+\index{Hamilton, William \yrange{1805}{1865}}
+Naime, centralni objekt te formulacije je integral lagranžijana tj. akcija
 \begin{equation}
 S = \int_{t_0}^{t_1}  L\, dt
     \label{eq:akcija}
@@ -316,6 +332,8 @@ gibanja kovarijantne. Osim toga, u relativističkoj kvantnoj fizici
 (kvantnoj teoriji polja), u skladu s načelima relativistike,
 vrijeme prestaje imati posebnu ulogu i jednadžbe gibanja
 u vremenu se rijetko koriste. 
+\index{Vrijeme!u teoriji relativnosti}
+\index{Lagranžijan} 
 
 No, ostanimo još nakratko u svijetu klasične fizike i podsjetimo se da je jedna
 od važnih posljedica simetrija u prirodi postojanje očuvanih veličina.
@@ -326,6 +344,7 @@ Prostorne translacije su transformacije oblika
 \begin{equation}
 \vec{r}\to\vec{r}'=\vec{r}+\delta\vec{r} \,,
 \end{equation}
+\index{Translacija!u prostoru}
 koje čine grupu $(\mathbb{R}^{3},+)$, no grupnoteorijska svojstva nam ovdje
 neće biti bitna, do na činjenicu da ona ima beskonačno elemenata parametriziranih
 s tri realna broja. Da bi akcija (\ref{eq:akcija}) bila invarijantna potrebno
@@ -350,6 +369,7 @@ za proizvoljan pomak $\delta r_i$.  Kao posljedica toga, lagranžijan
 $L(\vec{r},\dot{\vec{r}},t)=L(\dot{\vec{r}},t)$ ne ovisi eksplicitno
 o koordinati $\vec{r}$.
 Sada Euler-Lagrangeove jednadžbe gibanja,
+\index{Euler-Lagrangeove jednadžbe}  \index{Euler, Leonhard \yrange{1707}{1783}}
 \begin{equation}
   \frac{\pd L}{\pd r_i}-\frac{d}{d t} \frac{\pd L}{\pd \dot{r}_i}=0 \,,
 \end{equation}
@@ -370,6 +390,8 @@ Sve ovo gore su samo posebni primjeri sljedećeg općeg teorema.
 \begin{teorem}[Noether]
 Ako je sustav invarijantan na $n$-parametarsku
 grupu transformacija onda postoji $n$ konstanti gibanja.
+\index{Teorem!Noetherin}  \index{Noether, Emmy \yrange{1882}{1935}}
+\index{Invarijantnost} \index{Zakon očuvanja}
 \end{teorem}
 
 \section{Transformacije kvantnih sustava}
@@ -387,13 +409,16 @@ nama je posebno važan Wignerov teorem, po kojem su transformacije simetrije
 redovito reprezentirane unitarnim i linearnim opearatorima na
 Hilbertovom prostoru stanja\footnote{Druga mogućnost je da operatori
     budu antiunitarni i antilinearni, no odgovarajuće transformacije
-    uvijek uključuju inverziju vremena čime se nećemo baviti u ovoj knjizi.}.
+    uvijek uključuju inverziju vremena čime se nećemo baviti u ovoj
+    knjizi.\index{Vrijeme!inverzija}}.
 U ovom odjeljku ćemo upoznati neke operatore transformacija kvantnih
 sustava, što će nam poslužiti i kao motivacija za općenitije
 proučavanje reprezentacija beskonačnih grupa.
+\index{Teorem!Wignerov} \index{Hilbertov prostor}
 
 \subsection{Kontinuirane prostorne translacije}
 \label{sec:prostornetranslacije}
+\index{Translacija!u prostoru}
 
 Poznato je, vidi odjeljak \ref{sec:qm}, da je konkretno kvantno stanje
 $|\alpha\rangle$ moguće prikazati u koordinatnoj bazi kao Schr\"{o}dingerovu
@@ -403,12 +428,14 @@ olakšati razmatranje transformacije translacije u prostoru, a za početak
 ćemo uzeti da je prostor jednodimenzionalan, $\vec{r} \to x$.
 Zanima nas unitarni operator $U_{r}(a)$ koji djelujući na valnu
 funkciju sustava $\psi_{\alpha}(x, t)$ daje valnu funkciju 
+\index{Operator!unitarni}
 \begin{equation}
   \psi'_{\alpha}(x,t)= U_{r}(a)\psi_{\alpha}(x,t) \;,
 \end{equation}
 tog istog sustava, ali translatiranog za udaljenost $a$. (Kao i uvijek,
 smatramo da je transformacija aktivna tj. da djeluje na fizikalni,
 a ne koordinatni sustav.)
+\index{Transformacija!aktivna i pasivna}
 
 \centerline{\input{figures/qmtranslacija}}
 Promatrajući crtež, vidimo da vrijedi
@@ -512,6 +539,7 @@ operator konačne translacije za $\vec{a}$ kao\footnote{Da se uvjerite u ovu
         = e^{-(i/\hbar)\vec{a}\cdot\vec{p}} \;,
 \end{equation}
 što je upravo operator translacije $U_r(\vec{a})$ iz (\ref{eq:Ur}).
+\index{Operator!translacije u prostoru} \index{Translacija!u prostoru}
 Naglasimo još jednom da je ovdje operator $\vec{p}$ definiran svojom ulogom
 u operatoru translacije (kažemo da on \emph{generira} translacije). 
 Kasnije nam daljnja razmatranja trebaju pokazati
@@ -520,6 +548,7 @@ da je on kvantnomehanički analogon klasičnom impulsu sustava.
 
 \subsection{Vremenske translacije}
 \label{sec:vremensketranslacije}
+\index{Translacija!u vremenu}
 
 Potpuno analogno translaciji u jednodimenzionalnom prostoru
 možemo definirati operator translacije u vremenu $U_{t}(\tau)$
@@ -544,6 +573,7 @@ Ovo vrijedi samo za $H$ konstantan u vremenu, kakav on jest u većini
 nama zanimljivih slučajeva (za ostale slučajeve
 vidi diskusiju u \cite{Sakurai:2011}, odjeljak 2.1).
 
+\index{Vrijeme!evolucija vs. translacija}
 Vremenska \emph{translacija} je transformacija koja daje
 stanje sustava koji ima isto ponašanje u vremenskom
 trenutku $t+\tau$ kao originalni sustav u trenutku $t$. Vremenska
@@ -586,6 +616,7 @@ Npr. za slobodnu česticu $H=p^2/2m$ i zbog (\ref{eq:ppkomutacija}) imamo
    [H,p]=\frac{1}{2m}[p^2,p]=0
 \end{equation}
 pa je impuls očuvana veličina.
+\index{Zakon očuvanja}
 
 
 
@@ -629,7 +660,7 @@ sustava treba zadovoljavati
 \end{equation}
 
 Rotaciju za konačni kut dobijemo kompozicijom N rotacija za $\delta\phi = \phi / N$
-gdje $N\to\infty$:
+gdje $N\to\infty$: \index{Operator!rotacije}
 
 \begin{equation}
 D(\hat{\vec{n}}, \phi)=\lim_{N\to\infty}
@@ -647,7 +678,7 @@ Poznato je da operatori $L_i$, $i=x,y,z$ zadovoljavaju komutacijske relacije
     [L_i, L_j] = i\hbar \epsilon_{ijk}  L_k \,,
     \label{eq:Lkomutacija}
 \end{equation}
-gdje smo upotrijebili Levi-Civita ili totalno antisimetrični pseudotenzor\footnote{Za
+gdje smo upotrijebili Levi-Civitin ili totalno antisimetrični pseudotenzor\footnote{Za
 razliku između običnih i pseudotenzora vidi dodatak \ref{sec:aksijalni}.}
 trećeg reda definiran
 svojim komponentama $\epsilon_{ijk}$ tako da je
@@ -660,8 +691,11 @@ svojim komponentama $\epsilon_{ijk}$ tako da je
 \end{cases} 
 \end{displaymath}
 Npr. $\epsilon_{231}=1$, $\epsilon_{213}=-1$, $\epsilon_{221}=0$, itd.
+\index{Tenzor!Levi-Civitin}  \index{Levi-Civitin tenzor|see{Tenzor!Levi-Civitin}}
+\index{Levi-Civita, Tullio \yrange{1873}{1941}}
 
 \section{Spin}
+\index{Spin}
 
 U odjeljku \ref{sec:tenzori} vidjeli smo kako veličine u klasičnoj fizici
 možemo kategorizirati prema njihovim različitim transformacijskim svojstvima,
@@ -718,7 +752,7 @@ R(\hat{\vec{n}}, \delta\phi)^{-1}\vec{r},t) \\
 Vidimo da se obzirom na rotaciju jednokomponentne valne funkcije u prošlom
 odjeljku pojavio dodatni član $\delta\phi \hat{\vec{n}}\times\vec{\Psi}(\vec{r},t)$
 kojeg ćemo sada zapisati pomoću tripleta matrica $S_{j}$,
-definiranih pomoću Levi-Civita pseudotenzora (vidi zadatak \ref{zad:levicivita}):
+definiranih pomoću Levi-Civitinog pseudotenzora (vidi zadatak \ref{zad:levicivita}):
 \begin{equation}
 (S_j)_{ik} = i\hbar\epsilon_{ijk} \quad j=1,2,3 \;.
 \end{equation}
@@ -770,6 +804,8 @@ Hermitske matrice $S_i$ zadovoljavaju iste komutacijske relacije
 \emph{intrinsičnog}  momenta impulsa poznatog pod nazivom \emph{spin},
 za razliku od tzv. \emph{orbitalnog} momenta impulsa kojem odgovaraju
 operatori $L_i = (\vec{r}\times\vec{p})_{i}$.
+\index{Spin}  \index{Moment impulsa!orbitalni} 
+\index{Moment impulsa!spinski|see{Spin}} \index{Zakon očuvanja}
 Invarijantnost na rotacije, tj. komutiranje hamiltonijana s operatorom
 (\ref{eq:rotDJ}), će onda značiti da je očuvana veličina zapravo
 \begin{equation}
@@ -793,9 +829,12 @@ reprezentacija grupe rotacija u kvantnoj mehanici.
 
 
 \section{Primjena: Blochov teorem}
+\index{Teorem!Blochov}
+\index{Bloch, Felix \yrange{1905}{1983}}
 
 U ovom ćemo odjeljku pokazati kako primjena teorije grupa elegantno
 vodi na važna svojstva valnih funkcija elektrona u kristalu.
+\index{Kristal}
 \emph{Kristal} je ovdje definiran kao beskonačni trodimenzionalni
 sustav atoma koji je invarijantan na translacije 
 za bilo koji vektor oblika:
@@ -832,6 +871,7 @@ i odgovarajuća translacijska grupa simetrija ima $N\equiv N_1 N_2 N_3$
 elemenata. Kako translacije komutiraju ova grupa je Abelova što
 znači da ima $N$ ireducibilnih reprezentacija koje su
 sve jednodimenzionalne (vidi npr. Zadatak \ref{zad:1Dabelrep}).
+\index{Grupa!Abelova}
 Elementi grupe su generirani translacijom za primitivne vektore
 $U_{r}(\vec{a}_j)$  pa tako imamo
 \begin{equation}
@@ -853,14 +893,16 @@ operatorima oblika
  + \frac{n_3 p_3}{N_3} \Big)\Big\} \;,
 \label{blochirreps}
 \end{align}
-tj. s $N$ različitih operatora kako i očekujemo za grupu s $N$ IRREPsa.
-Svaka od tih IRREPsa se onda može označiti ("labelirati") s trojkom brojeva $(p_1, p_2, p_3)$
+tj. s $N$ različitih operatora kako i očekujemo za grupu s $N$ ireducibilnih
+reprezentacija.
+Svaka od tih reprezentacija se onda može označiti ("labelirati") s trojkom brojeva $(p_1, p_2, p_3)$
 gdje svaki od brojeva $p_j$ može poprimiti bilo koju vrijednost iz
 skupa $\{0, 1, 2$, $\ldots$, $N_j -1\}$.
-Operator translacije $U_{r}(\vec{t}_{\vec{n}})$ je u konkretnom IRREPsu 
+Operator translacije $U_{r}(\vec{t}_{\vec{n}})$ je u konkretnoj reprezentaciji
  $(p_1, p_2, p_3)$ reprezentiran operatorom/brojem (\ref{blochirreps}).
+ \index{Operator!translacije u prostoru} \index{Translacija!u prostoru}
 
-Umjesto trojke $(p_1, p_2, p_3)$ za označavanje IRREPsa se obično
+Umjesto trojke $(p_1, p_2, p_3)$ za označavanje ireducibilnih reprezentacija se obično
 upotrebljavaju vektori $\vec{k}$ definirani na slijedeći način. Prvo
 definiramo tzv. vektore \emph{recipročne rešetke} $\vec{b}_1, \vec{b}_2,
 \vec{b}_3$ putem zahtjeva:
@@ -868,7 +910,7 @@ definiramo tzv. vektore \emph{recipročne rešetke} $\vec{b}_1, \vec{b}_2,
    \vec{a}_i\cdot \vec{b}_j = 2 \pi \delta_{ij} \qquad i,j = 1, 2, 3 \;.
 \label{defb}
 \end{equation}
-Sada vektor $\vec{k}$ koji odgovara IRREPsu
+Sada vektor $\vec{k}$ koji odgovara reprezentaciji
 $(p_1, p_2, p_3)$ definiramo kao
 \begin{equation}
   \vec{k} \equiv \frac{p_1}{N_1}\vec{b}_1 + \frac{p_2}{N_2}\vec{b}_2 + 
@@ -876,18 +918,18 @@ $(p_1, p_2, p_3)$ definiramo kao
 \label{defk}
 \end{equation}
 Iz (\ref{defk}), (\ref{defb}) i (\ref{blochirreps}) slijedi da je
-operator translacije za $\vec{t}_{\vec{n}}$ u IRREPsu $\vec{k}$
+operator translacije za $\vec{t}_{\vec{n}}$ u reprezentaciji $\vec{k}$
 dan s
 \begin{equation}
  U_{r}^{(\vec{k})} (\vec{t}_{\vec{n}}) = 
  e^{-i \vec{k}\cdot \vec{t}_{\vec{n}}} \;,
 \end{equation}
-i odsad $N$ različitih $\vec{k}$-ova (\ref{defk}) labelira IRREPse.
+i odsad $N$ različitih $\vec{k}$-ova (\ref{defk}) labelira ireducibilne reprezentacije.
 Vidimo da dimenzija $\vec{k}$ odgovara valnom broju, tj. impulsu
 podijeljenom s Planckovom konstantom.
 
-Djelovanje ovih operatora translacije na valne funkcije u datom
-IRREPsu mora biti kao i kod svih operatora translacije (\ref{eq:optrans})
+Djelovanje ovih operatora translacije na valne funkcije u datoj
+reprezentaciji mora biti kao i kod svih operatora translacije (\ref{eq:optrans})
 \begin{equation}
  e^{-i \vec{k}\cdot \vec{t}_{\vec{n}}} \psi_{\vec{k}}(\vec{r}) =
 \psi_{\vec{k}}(\vec{r} - \vec{t}_{\vec{n}}) \;.
@@ -897,7 +939,7 @@ Kako je riječ o običnim brojevima (a ne recimo o diferencijalnim
 operatorima) dobili smo razmjerno jednostavan uvjet koji valne funkcije
 u kristalu moraju zadovoljavati da bi bile svojstvene funkcije operatora
 translacije. Takve funkcije se nazivaju \emph{Blochove funkcije}, a
-$\vec{k}$ je Blochov valni vektor.
+$\vec{k}$ je Blochov valni vektor. \index{Blochove funkcije}
 Zašto su one zanimljive?
 
 Kao prvo, ako ih (bez gubitka općenitosti) zapišemo u obliku
@@ -930,6 +972,7 @@ Posljedica komutiranja dvaju operatora je da oni imaju zajedničke
 svojstvene funkcije. To onda povlači
 \begin{teorem}[Bloch]
 Valne funkcije periodičke rešetke mogu se izabrati kao Blochove funkcije.
+\index{Teorem!Blochov}
 \end{teorem}
 
 Ovo onda olakšava rješavanje Schr\"{o}dingerove jednadžbe
@@ -949,11 +992,12 @@ grupe translacija.
 \item \label{zad:kronecker} Kroneckerov simbol $\delta_{ij}$, $i,j \in \{1, 2, 3\}$ je tenzor drugog ranga
     obzirom na rotacije. Tenzori su općenito definirani kao veličine 
     \emph{kovarijantne} pri datim transformacijama. Pokažite da je $\delta_{ij}$
-    također i \emph{invarijantan}.
+    također i \emph{invarijantan}. \index{Kovarijantnost} \index{Invarijantnost}
 \item Pokažite da je operator translacije kvantnomehaničkog stanja,
  $U_{r}(\vec{a})$ = $\exp (-\frac{i}{\hbar} \vec{p}\cdot \vec{a} )$
 unitaran. Razmotrite situaciju u koordinatnoj reprezentaciji gdje
 je $\vec{p} = -i \hbar \nabla$. Zašto ovaj $i$ ne kvari unitarnost?
+\index{Operator!unitaran}
 
 \item Neka $\psi(\vec{r}, t)$ zadovoljava Schr\"{o}dingerovu jednadžbu.
 Pokažite da će prostorno translatirana $\psi(\vec{r}, t)' = 
@@ -965,14 +1009,14 @@ jednadžbu ako i samo ako je $[H, \vec{p}] = 0$
  [x_i, p_j] = i\hbar \delta_{ij}\;, \qquad
  [x_i, x_j] = [p_i, p_j] = 0 \;,
 \end{equation}
-te svojstva Levi-Civita tenzora, izračunajte komutacijske
+te svojstva Levi-Civitinog tenzora, izračunajte komutacijske
 relacije angularnog momenta $[L_i, L_j]$.
 
 \item Pokažite da operatori spina $S_i$ također zadovoljavaju komutacijske
 relacije angularnog momenta.
 
 \item Pokažite da je $[\vec{J}^2, J_i] = 0$.
-\item \label{zad:levicivita} Uvjerite se da se pomoću Levi-Civita tenzora mogu elegantno zapisati
+\item \label{zad:levicivita} Uvjerite se da se pomoću Levi-Civitinog tenzora mogu elegantno zapisati
     vektorski produkt i determinanta matrice: $\epsilon_{ijk}a_{j}b_{k}
     = (\vec{a}\times\vec{b})_{i}$, $\epsilon_{ijk}A_{il}A_{jm}A_{kn} = \det A \: \epsilon_{lmn}$.
 \end{enumerate}
