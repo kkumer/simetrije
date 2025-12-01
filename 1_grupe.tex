@@ -18,10 +18,11 @@ Eddington \index{Eddington, Arthur \yrange{1882}{1944}} ilustrirao riječima
 veličine na koje te operacije djeluju, te super-matematičar koji ne zna što radi kada
 izvodi te operacije. Takva super-matematika je teorija grupa.}
 \end{quote}
-Možda je Eddingtonova karakterizacija teorije grupa kao "super-matematike" malo pretjerana, jer
-teorija grupa je čvrsti dio standardne matematike, ali točno je da je upotrebljivost
-ove teorije iznenađujuće široka i da najraznolikiji matematički i fizikalni objekti
-imaju strukturu grupe.
+Ova karakterizacija teorije grupa kao "super-matematike" je možda malo pretjerana, jer
+teorija grupa je čvrsti dio standardne matematike.
+Isto tako, cilj teorije grupa nije zamagliti strukturu
+tako da ni ne znamo što radimo, nego izdvojiti bitna svojstva koja su zajednička
+mnogim različitim objektima matematike i fizike.
 Stoga je poželjno prvo definirati pojam grupe maksimalno apstraktno, bez pozivanja
 na njene konkretne primjere i realizacije:
 
@@ -34,7 +35,7 @@ Grupa $(G,\star)$ je skup objekata $G$ na kojem je definirana binarna operacija
 \item $ g_1 \star (g_2 \star g_3) = (g_1 \star  g_2)\star g_3 \quad \forall 
     g_1, g_2, g_3 \in G$  (asocijativnost) \index{Asocijativnost!kao aksiom grupe}
 \item $\exists e \in G \td g\star e = e \star g = g \quad \forall g\in G$
-    (egzistencija jedinstvenog identiteta) \index{Identitet!kao aksiom grupe}
+    (egzistencija identiteta) \index{Identitet!kao aksiom grupe}
     \index{Element!jedinični|see{Identitet}}
 \item $\forall g\in G \;\; \exists g^{-1} \td g\star g^{-1} = g^{-1}\star g =e$
     (egzistencija inverza za svaki element) \index{Inverz!kao aksiom grupe}
@@ -67,9 +68,9 @@ množenjem cijelih brojeva dobivamo cijele brojeve. Asocijativnost
 je također zadovoljena: $m(nk)=(mn)k$. Broj $1$ je identitet jer
 za svaki $n\in\mathbb{Z}$ vrijedi da je $1n=n$.
 No aksiom postojanja inverza za svaki element nije zadovoljen.
-Inverz od $n$ je broj $\frac{1}{n}$, ali taj broj nije element
-skupa cijelih brojeva $\mathbb{Z}$ (osim za specijalne slučajeve
-kad je $n\in\{-1, 1\}$ što nije dovoljno).
+Naime, element $m$ bi bio inverz od $n$ kada bi vrijedilo $mn=1$, ali takav $m=1/n$
+ne pripada $\mathbb{Z}$ osim za specijalne slučajeve
+kad je $n\in\{-1, 1\}$ što nije dovoljno.
 \end{primjer}
 
 Ovaj primjer ilustrira da je za potpunu definiciju pojma grupe nužno
@@ -288,8 +289,8 @@ rotacija za 60$^\circ$ i 90$^\circ$ te inverzije $\vec{r}\to -\vec{r}$
     \input{figures/D3}
     \end{center}
 vidimo da su elementi grupe rotacije $e, c$ i  $c^2$ baš kao i kod grupe $\mathrm{C}_3$, te
-dodatno rotacije $b_1, b_2$ i $b_3$ za kut 180$^\circ$ oko triju horizontalnih
-osi.
+dodatno rotacije $b_1, b_2$ i $b_3$ za kut od 180$^\circ$ oko triju osi
+koje prolaze kroz središte i vrhove trokuta.
 \end{primjer}
 
 Uočimo sada neka svojstva množenja u toj grupi. Kao prvo, vrijedi
@@ -350,7 +351,7 @@ ili, ekvivalentno i praktičnije za komutiranje elemenata prilikom množenja
 D$_2$ poznate i kao
 \emph{Kleinova četvorna grupa} (njem. \emph{Vierergruppe}), 
 \index{Kleinova četvorna grupa|see{D$_2$}} \index{D$_{2}$}
-za koju nemamo odgovarajući poligon kao objekt grupe simetrija.
+za koju nemamo odgovarajući pravilni poligon kao objekt grupe simetrija.
 
 
 \section{Podgrupe}
@@ -429,7 +430,7 @@ Red podgrupe dijeli red grupe.
 \end{teorem}
 
 Tako u Primjeru \ref{th:c2c3} redovi podgrupa C$_2$ i C$_3$, 2 i 3, dijele red
-grupe D$_3$, 6. \index{C$_2$} \index{C$_3$} \index{D$_3$}
+grupe D$_3$, 6. \index{C$_2$} \index{C$_3$}
 Skup čiji su elementi predstavljeni kvadratičima na gornjoj slici
 ima svoj naziv:
 
@@ -518,7 +519,6 @@ podgrupa normalna, nakon čega ta definicija postaje ekvivalentna definiciji (\r
 
 
 \begin{primjer}[$\mathrm{D}_{3}$/$\mathrm{C}_3$]
-    \index{D$_3$} \index{C$_3$}
 Tablica množenja u ovom kvocijentnom skupu je dana relacijama
 \begin{align}
     (e\mathrm{C}_3)(e\mathrm{C}_3) &= ee \mathrm{C}_3 = e\mathrm{C}_3\\
@@ -537,7 +537,7 @@ i imaju grupnu strukturu jednaku grupi $\mathrm{C}_2$.
 \label{pr:D3oC3}
 \end{primjer}
 
-    \index{D$_3$} \index{C$_3$} \index{C$_2$}
+\index{C$_2$}
 S druge strane $\mathrm{C}_2$ nije normalna, lijevi i desni kvocijentni
 skupovi
 \begin{align*}

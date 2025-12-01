@@ -38,7 +38,7 @@ osnovne pojmove.
 
 \begin{definicija}[Vektorski prostor] \index{Vektorski prostor}
 Vektorski prostor (ili linearni prostor) $V$ nad poljem $F$ je aditivna grupa
-(grupna operacija je zbrajanje vektora $\vec{x}+\vec{y}$) na
+(grupna operacija je komutativno zbrajanje vektora $\vec{x}+\vec{y}$) na
 kojoj je definirana operacija \emph{množenja skalarom} iz $F$ tako
 da su zadovoljeni aksiomi:
 \begin{enumerate}
@@ -55,8 +55,6 @@ da su zadovoljeni aksiomi:
 \end{enumerate}
 \end{definicija}
 
-Iz aksioma slijedi da je zbrajanje vektora u $V$  komutativno tj.
- $\vec{x} + \vec{y} = \vec{y} + \vec{x} $.
 Za naše potrebe, polje $F$ je obično polje kompleksnih ili 
 realnih brojeva, $\mathbb{C}$ ili $\mathbb{R}$, pa govorimo o
  \emph{kompleksnom} ili \emph{realnom} vektorskom prostoru.
@@ -73,7 +71,7 @@ $\vec{e}_{1}=\hat{\vec{x}}, \vec{e}_{2}=\hat{\vec{y}},
    \vec{e}_{3}=\hat{\vec{z}}$, tako da je proizvoljni vektor
 \begin{equation}
     \vec{r} = x \hat{\vec{x}} + y \hat{\vec{y}} + z \hat{\vec{z}} \,,
-    \quad x, z, z \in \mathbb{R} \,.
+    \quad x, y, z \in \mathbb{R} \,.
 \end{equation}
 Proizvoljni vektor često prikazujemo i kao stupac njegovih triju komponenata
 u konkretnoj bazi:
@@ -766,7 +764,8 @@ Združeni sustav ta dva atoma možemo promatrati kao jedan vektor
 $\psi_{1}(\vec{x})\psi_{2}(\vec{x}) \in \mathcal{H}_1
 \otimes \mathcal{H}_2$ gdje je baza od ovog direktnog
 produkta Hilbertovih prostora razapeta vektorima
-$\psi_{nlm}(\vec{x})\psi_{n'l'm'}(\vec{x})$.
+$\psi_{nlm}(\vec{x})\psi_{n'l'm'}(\vec{x})$. (Ovdje zanemarujemo
+potrebu (anti)simetrizacije kvantnih stanja identičnih čestica.)
 \end{primjer}
 
 
@@ -834,7 +833,7 @@ tj. $\Gamma_1$ i $\Gamma_2$ su reprezentacije.\qed
 
 \begin{primjer}[Reprezentacija grupe $\mathrm{C}_3$ na 
       3D euklidskom prostoru]
-
+      \index{C$_3$}
 Sve tri matrice ove reprezentacije (\ref{eq:c3rep1})--(\ref{eq:c3rep3}) su oblika:
 \begin{displaymath}
  D(g)= 
@@ -994,7 +993,7 @@ Dva glavna zadatka teorije grupa, kojima će biti posvećeno sljedeće poglavlje
 je identifikacija svih ireducibilnih reprezentacija date grupe te rastav
 njene proizvoljne reprezentacije na direktni zbroj ireducibilnih:
 \begin{displaymath}
-  \Gamma = \sum_{i} \oplus\, \Gamma_{i} \;.
+  \Gamma = \bigoplus_{i}  \Gamma_{i} = \Gamma_1 \oplus \Gamma_2 \oplus \cdots \;.
 \end{displaymath}
 
 
@@ -1045,6 +1044,9 @@ Konstruirajte njihov direktni zbroj i produkt.
 \end{equation*}
 generira 2D reprezentaciju grupe C$_3$. Pokažite da je ova reprezentacija
 ireducibilna nad poljem realnih brojeva. \index{C$_3$}
+Ona je međutim reducibilna nad poljem kompleksnih brojeva pa
+vidimo da svojstvo ireducibilnosti općenito ovisi o polju nad kojim je
+definiran vektorski prostor.
 
 \item \label{zad:lnred} Uvjerite se da grupa ($\mathbb{R}_{+}\backslash \{0\}, \cdot )$
 može biti vjerno reprezentirana na 2D vektorskom prostoru reducibilnom
