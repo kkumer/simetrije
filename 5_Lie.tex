@@ -415,7 +415,7 @@ odnos $\SU{2}/\mathbb{Z}_2 = \SO{3}$.
 \index{Liejeva algebra}
 
 Promotrimo sada skup matrica $M(a)\equiv M(a_1, a_2, \ldots, a_n)$ koje
-čine $n$-pa\-ra\-me\-tar\-sku Liejevu grupe.
+čine $n$-pa\-ra\-me\-tar\-sku Liejevu grupu.
 Za infinitezimalno male vrijednosti parametara $a_i \to \epsilon_i \ll 1$, zahvaljujući
 svojstvu diferencijabilnosti Liejeve grupe možemo razviti oko $a_i = 0$:
 \begin{equation}
@@ -423,15 +423,15 @@ svojstvu diferencijabilnosti Liejeve grupe možemo razviti oko $a_i = 0$:
  {\partial a_i}\Bigg|_{a_1=\ldots =a_n=0} + 0(\epsilon^2) \,,
  \label{eq:razvojM}
 \end{equation}
-gdje diferenciranje matrica provodimo prirodno diferencirajući svaki njen
+gdje diferenciranje matrica provodimo prirodno, diferencirajući svaki njen
 element ponaosob. Koeficijenti od $\epsilon_i$ u (\ref{eq:razvojM}) su
-konstantne matrice (ne ovise o parametrima) koje se nazivaju generatori grupe
+konstantne matrice (ne ovise o parametrima $a_i$) koje se nazivaju \emph{generatori} grupe
 \index{Liejeva grupa!generator} \index{Generator grupe|see{Liejeva grupa!generator}}
 i skraćeno ćemo ih označiti s $X_i$
 \begin{equation}
 X_i =  \frac{\partial M(a_1, \ldots, a_n)}
- {\partial a_i}\Bigg|_{a_1=\ldots =a_n=0} = \textrm{const}(a_1, \ldots, a_n)
-   \quad i=1, \ldots, n 
+ {\partial a_i}\Bigg|_{a_1=\ldots =a_n=0}\,, \quad 
+   \quad i=1, \ldots, n\,. 
    \label{eq:defXi}
 \end{equation}
 Očito je da generatora ima koliko i parametara tj. njihov broj je jednak
@@ -442,7 +442,7 @@ element grupe tj. jedinična matrica pa za infinitezimalne transformacije imamo
 \end{equation}
 
 Centralna spoznaja teorije Liejevih grupa je da je struktura \emph{čitave} grupe i
-njenih reprezentacija skoro sasvim određena
+njezinih reprezentacija skoro sasvim određena
 generatorima grupe tj. infinitezimalnom okolinom jediničnog 
 elementa.
 Ovo ćemo većim dijelom samo pokazati na primjeru grupe rotacija realnog
@@ -468,7 +468,7 @@ rotacije oko treće tj. $z$-osi.
 \end{displaymath}
 gdje premda su same matrice $R_3 (\phi)$ trodimenzionalne one su
 naravno izomorfne grupi \SO{2} rotacija $x$-$y$ ravnine.
-Generator te pogrupe je
+Generator te podgrupe je
 \begin{equation} \label{eq:x3so3}
 X_3 = \frac{\partial R_3 (\phi)}{\partial \phi}\Bigg|_{\phi=0}=
 \begin{pmatrix}
@@ -503,7 +503,7 @@ u nadi da će ono vrijediti i kad je $x$ matrica.
 U dodatku \ref{sec:expmat} diskutiramo
 kako eksponenciranje matrica zaista funkcionira isto kao i
 eksponenciranje brojeva, uz još neka dodatna zanimljiva svojstva,
-te tamo usput eksplicitno pokazujemo da je
+te tamo eksplicitno pokazujemo da je
 \begin{equation}
 e^{\phi X_3} = \exp\Bigg\{ 
     \phi  \begin{pmatrix}
@@ -807,7 +807,7 @@ X_{1}^2 + X_{2}^2 + X_{3}^2 = -2\cdot \Eins \,,
 \end{equation}
     za \suAlg{2}.
 \end{primjer}
-Schurova lema \index{Schurova lema}, koja vrijedi i za Liejeve grupe, traži da Casimirov operator 
+Schurova lema\index{Schurova lema}, koja vrijedi i za Liejeve grupe, traži da Casimirov operator 
 bude proporcionalan jediničnom i ispostavlja se da je koeficijent proporcionalnosti
 zgodan za označavanje ireducibilnih reprezentacija kako ćemo vidjeti u sljedećem poglavlju.
 
@@ -1071,7 +1071,7 @@ Njena prva grupa homotopija je time
 \begin{primjer}[\SU{2}] \index{SU(2)}
 Vidjeli smo u odjeljku \ref{sec:so3su2} da je
 grupna mnogostrukost \SU{2} 3-sfera tj. generalizacija uobičajene
-sfere (2-sfere) na četverodimenzionalni prostor. 
+sfere (2-sfere) na jednu dimenziju više. 
 Može se pokazati da je svaka $n$-sfera s $n\ge 2$ jednostavno povezana.
 Pravi dokaz zahtijeva nešto znanja topologije, ali čitatelju će
 moguće ta činjenica biti vrlo intuitivna, a za 2-sferu i očita.
