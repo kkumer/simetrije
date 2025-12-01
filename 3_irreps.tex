@@ -395,7 +395,7 @@ Pravila je najbolje primjenjivati po redu jer su ona s većim rednim
 brojem teža za primjenu i rjeđe nužna za kompletiranje tablice.
 
 \begin{primjer}[Tablica karaktera grupe $\mathrm{D}_3$]
-    \label{pr:karakteriD3} \index{Tablica karaktera}
+    \label{pr:karakteriD3} \index{Tablica karaktera} \index{D$_3$}
 Grupa ima tri klase konjugacije (vidi primjer \ref{pr:klaseD3}):
 
 \begin{center}
@@ -493,7 +493,7 @@ Uvjerite se da je i pravilo 7), ortogonalnost stupaca tablice, zadovoljeno.
 \end{primjer}
 
 \begin{primjer}[Tablica karaktera grupe C$_3$]
-
+    \index{C$_3$}
 Grupa C$_3$=$\{e, c, c^2\}$ je Abelova pa je svaki element klasa za sebe.
 Dakle imamo tri klase i tri ireducibilne reprezentacije,
 a iz pravila 2) slijedi $d_{1}^2+d_{2}^2+d_{3}^2 = n =3$
@@ -501,7 +501,7 @@ i vidimo da su sve tri jednodimenzionalne.
 Pravila 3) i 4) nas vode na to da su prvi red i prvi stupac
 tablice same jedinice.
 Pravilo 5) se može upotrijebiti da se zaključi da
-je$\chi(c)^3=\chi(c^3)=\chi(e)=1$ iz čega slijedi da su $\chi(c)$
+je $\chi(c)^3=\chi(c^3)=\chi(e)=1$ iz čega slijedi da su $\chi(c)$
 kubni korijeni jedinice $\chi(c) = \exp(2\pi i k/3), k=0, 1, 2$,
 odnosno mogućnosti su $\chi(c)=1, \omega\equiv e^{2\pi i/3}, \omega^2$.
 Uvjeti ortogonalnosti redaka i stupaca nas onda vode na
@@ -517,6 +517,7 @@ $\Gamma_{3}$  & 1 &$\omega^2$ & $\omega$
 Kako je $\omega^2 = \omega^* $ vidimo da
 su $\Gamma_2$ i $\Gamma_3$ međusobno kompleksno
 konjugirane reprezentacije (vidi zadatak \ref{zad:complex}).
+\index{Reprezentacija grupe!kompleksno konjugirana}
 Kompleksna konjugacija je sama po sebi isto svojevrsna transformacija
 simetrije. Ukoliko proširimo razmatranje i na tu transformaciju $\Gamma_2$
 i $\Gamma_3$ prestaju biti ireducibilne i zato se često te dvije reprezentacije
@@ -526,7 +527,7 @@ zajedno smatraju jednom dvodimenzionalnom ireducibilnom reprezentacijom $E$.
 
 Zgodno je uočiti da neabelovska grupa $D_3$ ima i dvodimenzionalnu, dakle matričnu,
 ireduciblinu reprezentaciju. To je logično jer neabelovsko svojstvo ne može biti
-vjerno reprezentirano jednodimenzionalnim reprezentacijama.
+vjerno reprezentirano jednodimenzionalnim reprezentacijama. \index{D$_3$}
 
 \section{Dekompozicija reducibilnih reprezentacija}
 
@@ -566,7 +567,7 @@ a_{\alpha} = \frac{1}{n} \sum_{i=1}^{k}  k_i \chi_i \chi^{(\alpha)*}_i
 gdje smo uveli skalarni produkt karaktera $(\;,\;)$.
 
 \begin{primjer}[Reprezentacija $\Gamma_V$ grupe D$_3$ na 3D euklidskom prostoru]
-    \index{Euklidski prostor}
+    \index{Euklidski prostor} \index{D$_3$}
 Promotrimo reprezentaciju grupe D$_3$ na standardnom trodimenzionalnom
 vektorskom prostoru. (Oznaka $V$ implicira da mislimo na prave (polarne)
 vektore, za razliku od "nepravih", aksijalnih ili pseudovektora koje obično
@@ -644,6 +645,7 @@ a_{\gamma}  = (\chi^{(\gamma)}, \chi^{(\alpha)}\chi^{(\beta)}) \,.
 \end{displaymath}
 
 \begin{primjer}[Clebsch-Gordanov razvoj $E\otimes E$ reprezentacije grupe D$_3$]
+    \index{D$_3$}
 Iz tablice karaktera grupe D$_3$, vidi primjer \ref{pr:karakteriD3}, znamo
 da je karakter dvodimenzionalne reprezentacije $\chi(E)=(2, -1, 0)$,
 pa je onda karakter direktnog produkta
@@ -672,7 +674,7 @@ direktnim produktom pa nije riječ o Clebsch-Gordanovom razvoju.
 \section{Primjena: \emph{Dipolni momenti kristala}}
 \label{sec:dipolni}
 
-\index{Kristal}
+\index{Kristal}  \index{Kristal!dipolni moment}
 Kristali su fizikalni sustavi koji su bogati simetrijama. Tu se
 ističu (1) simetrije na translacije za cijeli broj jediničnih vektora
 osnovne kristalne ćelije (kristal se za te potrebe zamišlja kao beskonačan),
@@ -695,7 +697,7 @@ permanentnog magnetskog ili električnog dipolnog
 momenta. Da bi kristal mogao imati neiščezavajući
 električni dipolni moment
 te veličina mora biti invarijantna na grupu simetrije
-kristala. \index{Kristal!dipolni moment}
+kristala.
 Kako je električni dipolni moment \emph{vektor} 3D euklidskog vektorskog prostora,
 slijedi da je nužno postojanje vektora invarijantnih na djelovanje grupe simetrija.
 Na primjer, za kristal s C$_3$ simetrijom vektor $\vec{P}$ usmjeren
@@ -709,7 +711,7 @@ ne narušava C$_3$ simetriju.
 
 S druge strane, veća D$_3$ simetrija ukida takvu mogućnost. $b$-rotacija
 mijenja $\vec{P}\to-\vec{P}$ pa bi $\vec{P}\neq 0$ narušilo simetriju.
-\index{Dihedralna grupa D$_n$}
+\index{D$_n$}
 
 \centerline{\input{figures/nodipol.tex}}
 %\centerline{\includegraphics[scale=1.0]{pics/nodipol.eps}}
@@ -734,6 +736,7 @@ euklidskom vektorskom prostoru rastavlja na ireducibilne kao
 \end{displaymath}
 pa kako u tom rastavu nema trivijalne reprezentacije $A_1$, zaključujemo
 da kristal sa D$_3$ simetrijom ne može imati električni dipolni moment.
+\index{Kristal!dipolni moment}
 S druge strane, uvjerite se da za C$_3$ vrijedi
 \begin{displaymath}
              \Gamma_V = A_1 \oplus E \;,
@@ -743,7 +746,8 @@ pa u ovom slučaju postoji mogućnost električnog dipolnog momenta.
 
 
 Kad grupa simetrija pored rotacija sadrži i refleksije ($\sigma$, $S_n$, $i$,
-vidi odjeljak \ref{sec:kristalografija}) treba
+vidi odjeljak \ref{sec:kristalografija}) \index{Inverzija prostora} 
+\index{Refleksija|see{Inverzija prostora}} treba
 uzeti u obzir činjenicu da je magnetski moment $\vec{M}$ \emph{aksijalni}
 vektor (vidi Dodatak \ref{sec:aksijalni}) \index{Aksijalni vektor} \index{Refleksija}
 \index{Pseudovektor|see{Aksijalni vektor}}
@@ -768,7 +772,7 @@ u $x-z$ ravnini $\sigma_v:(x, y, z)\mapsto (x, -y, z)$
 %\centerline{\includegraphics[scale=0.8]{pics/aksijal2.eps}}
 
 
-Uzmimo kao primjer kristal s C$_{3v}$ simetrijom.
+Uzmimo kao primjer kristal s C$_{3v}$ simetrijom. \index{C$_{3v}$}
 Grupa C$_{3v}$ je izomorfna grupi D$_3$, jedino što $b$ nije rotacija
 za $\pi/2$ oko horizontalne osi već refleksija oko vertikalne ravnine
 koja sadrži $C_3$ os\footnote{Vidimo da ovdje grupe ne razmatramo sasvim 
@@ -804,8 +808,8 @@ D^{(V)}(b)=
 \end{displaymath}
 s karakterom $\chi^{(V)}(b)=1$ (usporedite s (\ref{eq:DVbD3})).
 Kako je grupa C$_{3v}$ izomorfna grupi D$_3$ ima istu tablicu karaktera\footnote{Obrat
-ne vrijedi, npr. Q i T$_d$ imaju iste tablice karaktera, a nisu izomorfne.}. Dakle,
-imamo
+ne vrijedi, grupe mogu imati iste tablice karaktera, a da nisu izomorfne.}. Dakle,
+imamo \index{D$_3$}\index{C$_{3v}$}\index{Tablica karaktera}
 \begin{center}
 \begin{tabular}{c|ccc}
   & E & 2$C_3$  & 3$C_2$ \\ \hline
@@ -822,7 +826,7 @@ iz čega slijedi
 \end{displaymath}
 Kako se u rastavu javlja trivijalna reprezentacija $A_1$  slijedi
 da je za ovaj kristal moguć permanentni \emph{električni} dipolni
-moment.
+moment. \index{Kristal!dipolni moment}  \index{Dipolni moment|see{Kristal!dipolni moment}}
 
 Za aksijalne vektore, reprezentacije elemenata $e, c$ i $c^2$ su iste kao i
 gore, jer rotacije ne razlikuju polarne i aksijalne vektore.  \index{Aksijalni vektor}

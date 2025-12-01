@@ -36,7 +36,7 @@ Očekuje se da je čitaoc već upoznat s osnovama matematičke
 teorije vektorskih prostora, no u ovom ćemo odjeljku ipak ponoviti
 osnovne pojmove.
 
-\begin{definicija}[Vektorski prostor] \index{Vektorski prostor!definicija}
+\begin{definicija}[Vektorski prostor] \index{Vektorski prostor}
 Vektorski prostor (ili linearni prostor) $V$ nad poljem $F$ je aditivna grupa
 (grupna operacija je zbrajanje vektora $\vec{x}+\vec{y}$) na
 kojoj je definirana operacija \emph{množenja skalarom} iz $F$ tako
@@ -62,9 +62,9 @@ realnih brojeva, $\mathbb{C}$ ili $\mathbb{R}$, pa govorimo o
  \emph{kompleksnom} ili \emph{realnom} vektorskom prostoru.
 \emph{Baza} vektorskog prostora je skup $\{\vec{e}_{i}\}$ linearno nezavisnih vektora koji 
 \emph{razapinju} $V$ tj. svaki vektor iz $V$ se može prikazati kao linearna
-kombinacija vektora baze $\{\vec{e}_{i}\}$. \index{Vektorski prostor!baza}
+kombinacija vektora baze $\{\vec{e}_{i}\}$.
 \emph{Dimenzija} vektorskog prostora definirana je kao broj vektora njegove baze (teorem
-je da sve baze imaju isti broj vektora). \index{Vektorski prostor!dimenzija}
+je da sve baze imaju isti broj vektora). 
 
 \begin{primjer}[3D euklidski prostor] \index{Euklidski prostor}
 Riječ je o "klasičnom" realnom vektorskom prostoru u kojem vrijedi osnovnoškolska
@@ -164,7 +164,7 @@ množenja skalarom često je moguće definirati i dodatne operacije, a
 možda najvažnija je skalarni produkt.
 
 \begin{definicija}[Skalarni produkt]
-    \index{Vektorski prostor!skalarni produkt}
+    \index{Skalarni produkt}
 Skalarni produkt na vektorskom prostoru $V$ je preslikavanje
 $(\,\;,\;):V\times V \to \mathbb{C}$ sa svojstvima:
 \begin{enumerate}
@@ -192,12 +192,10 @@ Skalarni produkt omogućuje prirodnu definiciju \emph{norme} vektora
 Vektorski prostor s definiranom operacijom skalarnog produkta se
  zove \emph{unitarni prostor}. Alternativno se za takav prostor
  koriste i nazivi pre-Hilbertov ili  euklidski prostor.
-    \index{Vektorski prostor!unitarni}
 
 Ortonormirana baza vektorskog prostora je baza $\{\vec{e}_i\}$
 takva da je $(\vec{e}_i, \vec{e}_j)=\delta_{ij}$ i uvijek ju je moguće
-naći u unitarnom prostoru.
-    \index{Vektorski prostor!baza}
+naći u unitarnom prostoru. \index{Ortonormirana baza}
 
 \begin{definicija}[Unitarni operator]
     \index{Operator!unitarni}
@@ -305,7 +303,7 @@ Ukoliko je grupa operatora $\Gamma$ \emph{izomorfna} grupi $G$,
 
   
 \begin{primjer}[Reprezentacija grupe C$_3$ na 3D euklidskom prostoru]
-\label{pr:repC3}
+    \label{pr:repC3} \index{C$_3$}
 C$_3=\{e, c, c^2\}$. Kako je pokazano gore, jedinični element je
 nužno reprezentiran jediničnom matricom
 \begin{equation}
@@ -372,7 +370,7 @@ Mogli smo uzeti rotacije za iste kutove oko bilo koje druge osi i
 tako dobiti beskonačno drugačijih reprezentacija.
 
 \begin{primjer}[Reprezentacija grupe C$_3$ na  vektorskom prostoru stanja vodikovog atoma]
-    \label{ex:C3}
+    \label{ex:C3} \index{C$_3$}
     \index{Vodikov atom}
 Operator koji reprezentira element $c\in\mathrm{C}_3$ će biti
 operator $D(c)$ koji transformira valne funkcije vodikovog atoma
@@ -547,7 +545,7 @@ neekvivalentne.
 
 U potrazi za "elementarnim" reprezentacijama grupe nije dovoljno razmatrati samo
 klase neekvivalentnih reprezentacija. Usporedimo li na primjer
-trodimenzionalnu reprezentaciju
+trodimenzionalnu reprezentaciju \index{C$_3$}
 grupe $\mathrm{C}_3$ iz primjera \ref{ex:C3} s dvodimenzionalnom reprezentacijom
 generiranom matricom
 \begin{equation}
@@ -669,7 +667,7 @@ a vektorski prostor na koji djeluje zbroj reprezentacija je
   $\{f_1, f_2, \ldots, f_n\}$ jedna baza od $V_2$.
 
 \begin{primjer}[Reprezentacija grupe $\mathrm{C}_3$ na 
-      3D euklidskom prostoru]
+    3D euklidskom prostoru] \index{C$_3$}
 Ovaj slučaj smo diskutirali na početku ovog odjeljka. Sad vidimo
 da je 3D reprezentacija iz (\ref{eq:c3rep1}--\ref{eq:c3rep3}) koja
 djeluje na 3D euklidskom prostoru
@@ -1006,16 +1004,17 @@ njene proizvoljne reprezentacije na direktni zbroj ireducibilnih:
 \begin{enumerate}[label=\arabic{chapter}.\arabic*.]
 
 \item Konstruirajte tri različite jednodimenzionalne reprezentacije
-grupe C$_3$.
+    grupe C$_3$. \index{C$_3$}
 
 \item \label{zad:complex} Pokažite da je $\Gamma^* = \{ D(g)^* \}$ reprezentacija ako je
                      $\Gamma   = \{ D(g)   \}$ reprezentacija.
+                     \index{Reprezentacija grupe!kompleksno konjugirana}
 
 \item Zbrajajući dvije 1D reprezentacije od C$_2$:
 \begin{equation}
  \Gamma_1 = \{1, 1\} \qquad i \qquad \Gamma_2 = \{1, -1\}
 \end{equation}
-konstruirajte 2D reprezentaciju od C$_2$.
+konstruirajte 2D reprezentaciju od C$_2$. \index{C$_2$}
 
 \item Dvije 2D reprezentacije od C$_2$ su
 \begin{align*}
@@ -1045,7 +1044,7 @@ Konstruirajte njihov direktni zbroj i produkt.
 \end{pmatrix}
 \end{equation*}
 generira 2D reprezentaciju grupe C$_3$. Pokažite da je ova reprezentacija
-ireducibilna nad poljem realnih brojeva.
+ireducibilna nad poljem realnih brojeva. \index{C$_3$}
 
 \item \label{zad:lnred} Uvjerite se da grupa ($\mathbb{R}_{+}\backslash \{0\}, \cdot )$
 može biti vjerno reprezentirana na 2D vektorskom prostoru reducibilnom
@@ -1065,7 +1064,7 @@ Pet funkcija $f(x,y)$
     \{x^4, x^3y, x^2y^2, xy^3, y^4\}
 \]
 čine bazu peterodimenzionalnog vektorskog prostor $V$. Neka je $\Gamma=
-\{D(g)\}$
+\{D(g)\}$ \index{D$_3$}
 reprezentacija grupe $D_3$ na $V$ definirana uobičajenim transformacijama
 dvodimenzionalnih vektora $(x,y)$, kao u (\ref{eq:c3rep2}). To npr. znači:
 \begin{align*}

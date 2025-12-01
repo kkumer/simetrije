@@ -18,6 +18,7 @@
 
 \chapter{Kristalografske oznake i grupe}
 \label{sec:kristalografija}
+\index{Kristal}
 \textbf{Ireducibilne reprezentacije} $\Gamma^{(\alpha)}$ se obično označavaju
 velikim slovima i to tako da se 1D reprezentacije označavaju slovima
 $A$ i $B$, 2D reprezentacije slovom $E$, 3D reprezentacije slovom $T$
@@ -25,12 +26,13 @@ itd. Par kompleksno konjugiranih 1D reprezentacija se smatra jednom
 2D reprezentacijom (jer ih povezuje vremenska inverzija) tako da se
 one udružuju vitičastom zagradom i označavaju s $E$.
 
-\textbf{Klase konjugacije} se obično označavaju simbolom $mC_n$ gdje je $m$
+\textbf{Klase konjugacije} \index{Klasa konjugacije} se obično označavaju
+simbolom $mC_n$ gdje je $m$
 broj elemenata klase, a $C_n$ tipični predstavnik klase označen
-Sch\"{o}nfliesovim simbolom:
+Sch\"{o}nfliesovim simbolom: \index{Sch\"{o}nfliesove oznake}
 \begin{center}
 \begin{tabular}{rcp{10cm}}
-$E$ & = & identiteta \\
+    $E$ & = & identiteta \\  \index{Identitet!kao klasa konjugacije}
 $C_n$ & = & rotacija za $2\pi/n$ \\
 $\sigma$ & = & refleksija preko ravnine \\
 $\sigma_{h}$ & = & refleksija preko ``horizontalne'' ravnine tj. ravnine
@@ -66,8 +68,9 @@ $O$  & = & oktahedralna grupa
 \end{center}
 
 \textbf{Tablice karaktera} nekih grupa koje se pojavljuju u ovoj knjizi
+\index{Tablica karaktera}
 
-Ciklička grupa C$_3$:
+Ciklička grupa C$_3$: \index{C$_3$}
 \begin{center}
 \begin{tabular}{c|ccc}
      & $E$ & $C_3$ & $C_{3}^2$ \\ \hline
@@ -81,7 +84,7 @@ gdje su zadnje dvije ireducibilne reprezentacija međusobno
 kompleksno konjugirane pa se često smatraju jednom dvodimenzionalnom
 reprezentacijom $E$.
 
-Ciklička grupa C$_4$:
+Ciklička grupa C$_4$: \index{C$_4$}
 \begin{center}
 \begin{tabular}{c|cccc}
      & $E$ & $C_4$ & $C_2$ & $C_{4}^3$ \\ \hline
@@ -92,7 +95,7 @@ Ciklička grupa C$_4$:
 \end{tabular}
 \end{center}
 
-Kleinova četvorna grupa D$_2$:
+Kleinova četvorna grupa D$_2$: \index{D$_2$}
 \begin{center}
 \begin{tabular}{c|cccc}
      & $E$ & $C_{2}(z)$ & $C_{2}(y)$ & $C_{2}(x)$ \\ \hline
@@ -103,7 +106,7 @@ Kleinova četvorna grupa D$_2$:
 \end{tabular}
 \end{center}
 
-Dihedralna grupa D$_3$:
+Dihedralna grupa D$_3$: \index{D$_3$}
 \begin{center}
 \begin{tabular}{c|ccc}
   & E & 2$C_3$  & 3$C_2$ \\ \hline
@@ -114,7 +117,7 @@ $A_2$ & 1 & 1&-1 \\
 \end{center}
 
 
-Dihedralna grupa D$_{4}$:
+Dihedralna grupa D$_{4}$: \index{D$_4$}
 \begin{center}
     \begin{tabular}{c|ccccc}
          & $E$ & $2C_4$ & $C_2$ & $2C_{2}'$ & $2C_{2}''$ \\ \hline
@@ -125,12 +128,12 @@ Dihedralna grupa D$_{4}$:
         $E$ & 2 & 0 & -2 & 0 & 0 \\
     \end{tabular}
 \end{center}
-Ova je grupa izomorfna grupi C$_{4v}$, samo što su u tom  slučaju
+Ova je grupa izomorfna grupi C$_{4v}$\index{C$_{4v}$}, samo što su u tom  slučaju
 neke rotacije za $\pi$ zapravo refleksije: $C_{2}' \to \sigma_v$ i
 $C_{2}'' \to \sigma_h$.
 
 
-Tetrahedralna grupa T:
+Tetrahedralna grupa T:  \index{Tetrahedralna grupa}
 \begin{center}
 \begin{tabular}{c|cccccccc}
  & $E$ & $3C_2$ & $4C_3$ & $4C_{3}^2$  \\ \hline
@@ -142,7 +145,7 @@ $T$ & 3 & -1 & 0 & 0  \\
 \end{center}
 gdje je $\omega = e^{2\pi i/3}$ kubni korijen jedinice.
 
-Oktahedralna grupa O:
+Oktahedralna grupa O: \index{Oktahedralna grupa}
 
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
@@ -162,7 +165,7 @@ Oktahedralna grupa O:
 
 \chapter{Aksijalni vektori}
 \label{sec:aksijalni}
-
+\index{Aksijalni vektor} \index{Prostorna inverzija}
 \emph{Aksijalni} ili \emph{pseudovektori} su objekti koji se pri rotacijama transformiraju
 isto kao i obični (tzv. \emph{polarni}) vektori, ali pri refleksijama i inverzijama
 imaju još i dodatnu promjenu predznaka.
@@ -191,6 +194,7 @@ i impulsa $\vec{p}$ posljedično \emph{ne mijenja} predznak:
 veličine vezane uz vrtnju, poput momenta impulsa ili momenta sile, 
 često reprezentirane aksijalnim vektorima. Isto vrijedi za veličine
 vezane uz magnetizam koji je obično rezultat kruženja (mikro ili makro) struja.)
+\index{Moment impulsa}
 
 Da bi se naglasila njihova različitost,
 ponegdje u literaturi se aksijalne vektore ne crta kao usmjerene crte
@@ -215,7 +219,8 @@ $\vec{M} = \frac{1}{2} q \vec{r} \times \vec{v}$ za točkasti
 naboj $q$, je dakle aksijalni vektor.
 
 Ovaj koncept se generalizira i na tenzore odnosno pseudotenzore višeg ranga.
-Važan je primjer Levi-Civita pseudotenzor trećeg ranga koji je invarijantan
+Važan je primjer Levi-Civita pseudotenzor \index{Tenzor!Levi-Civitin}
+trećeg ranga koji je invarijantan
 pri rotacijama, ali mijenja predznak pri refleksijama, u što se možemo uvjeriti
 korištenjem njegovog svojstva iz zadatka \ref{zad:levicivita} i svojstva
 determinanti elemenata O(3) grupe sa stranice \pageref{pag:detO3}.
@@ -233,6 +238,8 @@ koji se koristi Diracova oznaka
  $\ket{\alpha}$ --- tzv. "ket". 
 (Strogo uzevši, kvantnom stanju odgovara
 čitava "zraka" $c\ket{\alpha}, c\in\mathbb{C}$.)
+\index{Hilbertov prostor}
+\index{Diracove "ket" i "bra" oznake}
 
 Simbol $\alpha$ ovdje stoji za sve kvantne brojeve koji su potrebni za potpuno
 određenje stanja. Npr, za vodikov atom $\ket{\alpha}=\ket{n,l,m}$.
@@ -245,6 +252,7 @@ $\bra{\alpha}\beta \rangle^{*} = \bra{\beta}\alpha \rangle$.
 \textbf{Opservabla} (veličina koja se eksperimentalno određuje i ima
  analogon u klasičnoj fizici) je reprezentirana hermitskim operatorom na
  Hilbertovom prostoru prostoru stanja: $A=A^{\dagger}$.
+ \index{Opservabla}
 
 Ako su $\ket{a}$ svojstveni vektori od $A$ sa svojstvenim vrijednostima
 $a$, tj.
@@ -275,6 +283,11 @@ bazi:
 
 \textbf{Operatori transformacije} fizikalnog sustava (tj. odgovarajućeg vektora
 stanja) moraju biti unitarni i linearni (ili antiunitarni i antilinearni)
+\index{Transformacija!kvantnomehaničkog sustava}
+\index{Teorem!Wignerov}
+\index{Operator!unitarni}
+\index{Operator!linearni}
+\index{Operator!antilinearni i antiunitarni}
 \begin{align*}
 \text{unitarnost}&:\; \bra{U\alpha}U\beta\rangle = \bra{\alpha}\beta\rangle
    \\
@@ -304,6 +317,7 @@ impulsa, $e^{i p x}$, i položaja, $\delta(x - x_0)$, \emph{nisu} elementi
 Hilbertovog prostora. Prvi jer mu je norma beskonačna, a drugi jer mu
 norma nije ni definirana (norma je $\int \rmd x \psi^{*}(x) \psi(x)$,
 a kvadrat Diracove delta funkcije nije definiran).
+\index{Distribucije (generalizirane funkcije)}
 Stoga se Hilbertov prostor stanja treba upotpuniti tzv. generaliziranim
 funkcijama poznatim i kao \emph{distribucije}. Distribucije nisu nužno
 definirane svojom vrijednosti u pojedinim točkama nego samo kao funkcionali
@@ -327,7 +341,9 @@ Cijela ta trojka
     \label{eq:gelfand}
 \end{equation}
 naziva se \emph{opremljeni} (\emph{rigged}) Hilbertov prostor  ili
-\emph{Gel'fandov triplet} \cite{Ballentine:1998}. Tako, sasvim strogo uzevši, Diracovi
+\emph{Gel'fandov triplet} \cite{Ballentine:1998}. 
+\index{Hilbertov prostor!opremljeni (rigged)}
+Tako, sasvim strogo uzevši, Diracovi
 "ket" simboli predstavljaju elemente ovog najvećeg prostora $\Phi^{\times}$.
 Srećom, ove matematičke finese često nisu ključne i
 manipulacije vektorima kao u konačnodimenzionalnim vektorskim prostorima i distribucijama
@@ -338,6 +354,7 @@ za fiziku vode na ispravne rezultate.
 
 \chapter{Tenzori kao matematički strojevi}
 \label{sec:tenzorKaoStroj}
+\index{Tenzor!kao matematički stroj}
 
 Tenzore možemo promatrati kao neku vrstu \emph{matematičkih strojeva}
 \cite{MTW:2017}
@@ -357,7 +374,7 @@ možemo skicirati kao
    \bbtensor{T}(\underbrace{\slot, \slot, \slot, \dots}_{n \times})  \;,
 \end{equation}
 
-gdje su ``$\rule{1em}{1pt}$'' mjesta gdje treba staviti konkretne vektore
+gdje su ``$\rule{1em}{1pt}$'' mjesta ("slotovi") gdje treba staviti konkretne vektore
 koje će onda stroj ``preraditi'' u rezultirajući skalar ili vektor
 
 \begin{equation}
@@ -397,7 +414,7 @@ i drugi kao output.
 
 Totalno antisimetrični tenzor (Levi-Civita) u tri dimenzije je
 tenzor oblika $(1, 2)$, u svom obliku u kojem nam daje
-vektorski produkt dvaju vektora
+vektorski produkt dvaju vektora \index{Tenzor!Levi-Civitin}
 \begin{equation}
    \bbtensor{LEVICIVITA}(\vec{a}, \vec{b}) = \vec{a}\times\vec{b} \;,
 \end{equation}
@@ -411,7 +428,7 @@ gdje ta dva oblika nisu identična.
 
 U elektrodinamici (koja je teorija koja poštuje specijalnu teoriju
 relativnosti), javlja se $(1,1)$ tenzor $\bbtensor{FARADAY}$, ali koji
-nije tenzor obzirom na rotacije
+nije tenzor obzirom na rotacije \index{Tenzor!elektromagnetskog polja}
 već obzirom na relativističke transformacije u četverodimenzionalnom
 prostoru Minkowskog. Taj tenzor daje četverovektor Lorentzove sile
 kad mu se kao input stavi četverovektor brzine
@@ -427,10 +444,11 @@ daje ubrzanje kojim se one približavaju ili udaljavaju na toj plohi.}
 
 \subsubsection*{Apstraktna indeksna notacija}
 
+\index{Apstraktna indeksna notacija}
 Indeksi na tenzorima najčešće označavaju kompenente tog tenzora
 u nekoj bazi, vidi (\ref{eq:Gkomponente}). Međutim, moguće ih
-je upotrebljavati i samo kao zamjenu za ove slotove koji su
-nespretni za zapisivanje.
+je upotrebljavati i samo kao zamjenu za slotove iz prošlog
+odjeljka koji su nespretni za zapisivanje.
 
 Tako npr.  za $(0, n)$ tenzor imamo korespondenciju
 \begin{equation}
@@ -453,7 +471,7 @@ Dakle tek taj objekt $V_a$, koji nije isto što i $V^a$, se može
 skalarno množiti s vektorima da bi se dobio skalar. To što u praksi
 u trodimenzionalnom vektorskom prostoru množimo skalarno vektore
 međusobno je samo zato što je u tom prostoru metrički tenzor
-jednak jediničnom 
+jednak jediničnom  \index{Tenzor!metrički}
 \begin{displaymath}
 g = \text{diag}(1, 1, 1) =
 \begin{pmatrix}
@@ -472,12 +490,13 @@ $g_{\mu \nu} a^{\mu} a^{\nu} = a_{\mu} a^{\mu} = (a^{0})^2
 No, u općenitom zakrivljenom prostoru s općenitim metričkim
 tenzorom moramo strogo razlikovati vektor $V^a$ i objekt
 $V_a$ (za kojeg postoji i specijalno ime: \emph{1-forma}).
-Npr. u Hilbertovom prostoru Diracov ``ket'' $|\alpha\rangle$ je
-vektor, a ``bra'' $\langle\alpha|$ je 1-forma. Više o ovome
+Npr. u Hilbertovom prostoru Diracov "ket" $|\alpha\rangle$ je
+vektor, a "bra" $\langle\alpha|$ je 1-forma. Više o ovome
 vidi u knjigama iz diferencijalne geometrije.
 
 \chapter{Homomorfizam grupa SU(2) i SO(3)}
 \label{sec:su2so3}
+\index{Homomorfizam!SU(2) i SO(3)}
 
 Kompletan dokaz 2-na-1 homomorfnosti \SU{2} i \SO{3} provest ćemo
 u četiri koraka:
@@ -494,7 +513,7 @@ kombinacija,
 \begin{equation}
 M = \alpha_0 \mathbb{I} + \alpha_i \sigma_i, \quad \alpha_0, \alpha_i \in \mathbb{C}\;,
 \end{equation}
-jedinične $\mathbb{I}$ i Paulijevih matrica
+jedinične $\mathbb{I}$ i Paulijevih matrica \index{Paulijeve matrice}
 \begin{equation}
 \sigma_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad
 \sigma_2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad
@@ -586,12 +605,13 @@ imamo
        & = \frac{1}{3!} \epsilon_{ijs}\epsilon_{ijs} = 1\,.
 \end{align}
 Ovo je dobra vježba iz manipulacija Levi-Civita tenzorom, ali postoji i jednostavniji
-način da se vidi da je $\det R = 1$. 
+nove ačin da se vidi da je $\det R = 1$. \index{Tenzor!Levi-Civitin}
 Po svojstvu homomorfizma, jedinični element iz \SU{2} se preslikava u jedinični
 element iz \SO{3}, koji ima determinantu 1.
 Nadalje, grupna mnogostrukost od \SU{2} je takva da se
 svaki element može doseći od jediničnog kontinuiranim gibanjem po grupnoj mnogostrukosti
 (kažemo da je ona \emph{povezana}, vidi kasnije definiciju \ref{def:povezanost}).
+\index{Grupna mnogostrukost} \index{Liejeva grupa!povezana}
 No i preslikavanje (\ref{eq:defReksp}) je kontinuirano i tim kontinuiranim gibanjem
 po \SU{2} se $\det R$ ne može diskontinuirano promijeniti s +1 na -1, što znači da je slika
 preslikavanja upravo \SO{3}.
@@ -601,7 +621,7 @@ Pokazat ćemo da se svaka rotacija može prikazati kao (\ref{eq:defRimp})
 tako da eksplicitno konstruiramo odgovarajuću matricu $U \in \SU{2}$.
 Kao prvo, podsjetimo se činjenice da se proizvoljna rotacija može prikazati
 kao kompozicija rotacija oko $z$-osi, $y$-osi, pa opet $z$-osi za tri,
-tzv. Eulerova kuta (vidi npr. \cite{Sakurai:2011})
+tzv. Eulerova kuta (vidi npr. \cite{Sakurai:2011}) \index{Eulerovi kutovi}
 \begin{equation}
 R = R_{3}(\gamma) R_{2}(\beta) R_{3}(\alpha) \,.
 \end{equation}
@@ -696,7 +716,7 @@ ove jednadžbe dobijemo $1 = \alpha^2$, što znači $\alpha=\pm 1$ tj.
 $U = \pm V$, što je i trebalo pokazati. \qed
 
 Recimo još da se slično kao pomoću \SU{2} rotacije mogu elegantno
-interpretirati pomoću tzv. \emph{kvaterniona}. Kvaternioni su poopćenje 
+interpretirati pomoću tzv. \emph{kvaterniona}. \index{Kvaternioni} Kvaternioni su poopćenje 
 skupa kompleksnih brojeva, gdje umjesto jedne imaginarne jedinice $\vec{{\rm i}}$,
 imamo tri objekta $\vec{{\rm i}}$, $\vec{{\rm j}}$ i $\vec{{\rm k}}$ koji zadovoljavaju
 $\vec{{\rm i}}^2 = \vec{{\rm j}}^2 = \vec{{\rm k}}^2 = \vec{{\rm i}}\vec{{\rm j}}\vec{{\rm k}} = -1$. 
@@ -711,6 +731,7 @@ Kvaternioni u kontekstu teorije grupa su detaljno diskutirani u \cite{Stilwell:2
 
 \chapter{Eksponencijacija matrice}
 \label{sec:expmat}
+\index{Eksponencijacija matrice}
 
 Obična eksponencijalna funkcija na domeni običnih brojeva može se definirati
 i putem reda potencija
@@ -830,7 +851,7 @@ Za eksponencijalnu funkciju proizvoljne matrice $A$ vrijedi
     \left(e^A\right)^\dagger &= e^{A^\dagger} \;,  \\
     \left(e^A\right)^{-1} &= e^{-A} \;,  \\
     e^{SAS^{-1}} &= Se^{A}S^{-1} \qquad \text{za nesingularnu $S$} \;,  \\
-    \det e^{A} &= e^{\mathrm{Tr}\,A} \,.
+    \det e^{A} &= e^{\mathrm{Tr}\,A} \,. \label{eq:dettr}
 \end{align}
 Na kraju, ako su $\lambda_1$, $\lambda_{2}$, \ldots, $\lambda_n$ svojstvene
 vrijednosti od $A$, onda su $e^{\lambda_{1}}$, $e^{\lambda_2}$, \ldots
@@ -838,6 +859,7 @@ vrijednosti od $A$, onda su $e^{\lambda_{1}}$, $e^{\lambda_2}$, \ldots
 
 \chapter{Clebsch-Gordanovi koeficijenti}
 \label{sec:clebsch}
+\index{Clebsch-Gordanov koeficijent}
 
 Kako je opisano u odjeljku \ref{sec:zbrajanjeJ}, vektorski prostor
 $V_1 \otimes V_2$ na kojem djeluje direktan produkt dviju reprezentacija

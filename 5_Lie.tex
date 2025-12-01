@@ -8,7 +8,6 @@
 
 \chapter{Liejeve grupe}
 \label{ch:lie}
-\index{Liejeva grupe}
 
 \section{Kontinuirane grupe}
 
@@ -50,7 +49,7 @@ grupa, za razmatranje istih uvodimo važan pojam \emph{grupnog prostora}
 kojeg nazivamo i \emph{grupna mnogostrukost}.
 Riječ je o prostoru čija je svaka točka pridružena jedinstvenom
 elementu grupe.
-\index{Grupna mnogostrukost} \index{Grupni prostor}
+\index{Grupna mnogostrukost}
 Za konačne grupe \emph{grupni prostor} je naprosto skup točaka koji
 nema neka dodatna svojstva povrh svojstava koji mu daju aksiomi grupe
 (dakle, ne smatramo da su te točke elementi nekog pravca, ravnine
@@ -427,7 +426,7 @@ svojstvu diferencijabilnosti Liejeve grupe možemo razviti oko $a_i = 0$:
 gdje diferenciranje matrica provodimo prirodno diferencirajući svaki njen
 element ponaosob. Koeficijenti od $\epsilon_i$ u (\ref{eq:razvojM}) su
 konstantne matrice (ne ovise o parametrima) koje se nazivaju generatori grupe
-\index{Generator grupe}
+\index{Liejeva grupa!generator} \index{Generator grupe|see{Liejeva grupa!generator}}
 i skraćeno ćemo ih označiti s $X_i$
 \begin{equation}
 X_i =  \frac{\partial M(a_1, \ldots, a_n)}
@@ -454,7 +453,7 @@ dokaz čitaoc može konzultirati literaturu poput \cite{Stilwell:2008}.
 U odjeljku \ref{sec:primjeriLie} dokazat ćemo da je grupa \SO{3} troparametarska,
 no to je i odmah jasno ako znamo da su rotacije potpuno specificirane pomoću
 iznosa kuta rotacije (jedan parametar) i usmjerenja jediničnog vektora osi rotacije (dva parametra)
-ili alternativno pomoću tri Eulerova kuta.
+ili alternativno pomoću tri Eulerova kuta. \index{Eulerovi kutovi}
 
 Promotrimo sada jednoparametarsku podgrupu grupe \SO{3} koju čine
 rotacije oko treće tj. $z$-osi.
@@ -518,7 +517,7 @@ e^{\phi X_3} = \exp\Bigg\{
 0 & 0 & 1 \end{pmatrix} \,.
 \end{equation}
 Tako vidimo da zaista svaki element ove jednoparametarske podgrupe
-od \SO{3} možemo dobiti eksponencijacijom generatora.
+od \SO{3} možemo dobiti eksponencijacijom generatora.\index{Liejeva grupa!generator} 
 Nadalje, u skladu s Eulerovim teoremom iz mehanike\footnote{Svaki pomak krutog
 tijela kod kojeg jedna točka ostaje nepomična je ekvivalentan \emph{jednoj}
 rotaciji oko fiksne osi koja prolazi kroz tu točku. \index{Teorem!Eulerov}}
@@ -531,7 +530,7 @@ Kako se vidi iz (\ref{eq:defXi}) konkretan oblik generatora ovisi
 o parametrizaciji grupnog prostora. 
 Mogli bismo recimo pokušati konstruirati opću rotaciju kao kompoziciju tri
  Eulerove rotacije i onda deriviranjem po Eulerovim kutovima dobiti
- generatore. No, ima i lakši put koji će olakšati traženje 
+ generatore. \index{Eulerovi kutovi} No, ima i lakši put koji će olakšati traženje 
  generatora drugih Liejevih grupa koje se pojavljuju u fizici\footnote{Recimo
      usput i da bi pristup preko Eulerovih rotacija
      bio  problematičan jer su one singularne oko jedinice.}.
@@ -552,11 +551,11 @@ matricu jer je
   = e^X e^{-X}
   = e^{X-X} = 1 \,,
 \end{equation}
-gdje je jedini netrivijalni korak predzadnji. Naime, vidi dodatak \ref{sec:expmat},
+gdje je jedini netrivijalni korak predzadnji. Naime, vidi teorem \ref{th:bch},
 $e^{A} e^{B} = e^{A+B}$ samo ukoliko matrice $A$ i $B$ komutiraju što je ovdje
 srećom trivijalno slučaj.
 Zahvaljujući općenitoj relaciji $\det e^{X} = e^{\textrm{\scriptsize Tr} X}$,
-vidi dodatak \ref{sec:expmat}, te činjenici da antisimetrične matrice imaju
+vidi (\ref{eq:dettr}), te činjenici da antisimetrične matrice imaju
 nule na glavnoj dijagonali, uvjet specijalnosti determinante $\det R = 1$ je
 zadovoljen automatski.
 Tako smo pokazali da skup $\calA$ svih antisimetričnih 3$\times$3 matrica
@@ -565,9 +564,7 @@ generira grupu \SO{3}\footnote{Pažljivi čitaoc će možda u ovom automatskom
  Refleksije su isto ortogonalne matrice,
 pa bi i njihovi generatori trebali biti antisimetrični, no njihova determinanta
 je -1. Stvar je u tome da refleksije nije moguće generirati kompozicijom
-infinitezimalnih transformacija tj. one nemaju generatore. O tome će još biti
-govora kasnije.\label{fus:refleksija}
-}.
+infinitezimalnih transformacija tj. one nemaju generatore.\label{fus:refleksija}}.
 
 Skup generatora $\calA$ ima i dodatna svojstva. Kao prvo, on je
 vektorski prostor nad poljem $\mathbb{R}$ jer za svaka dva vektora
@@ -585,12 +582,12 @@ oblik $3\times 3$ antisimetrične matrice
 Jednakost dimenzija vektorskog prostora generatora $\calA$ i grupe \SO{3} koju
 oni generiraju naravno nije slučajna obzirom da eksponencijacijom
 generatora trebamo moći dobiti skoro sve elemente grupe, a u najmanju ruku
-barem sve elemente u nekoj okolini jedinice.
+barem sve elemente u nekoj okolini jedinice.\index{Liejeva grupa!generator} 
 
 Trodimenzionalni vektorski prostor ima tročlanu bazu i u ovom slučaju je
 uobičajeno kao bazu izabrati generatore jednoparametarskih podgrupa rotacija oko
 $x$, $y$ i $z$ osi. Ovaj treći smo već odredili u (\ref{eq:x3so3}), a kompletna
-baza je
+baza je \index{Liejeva grupa!generator} 
 \begin{equation}
 X_1=
 \begin{pmatrix}
@@ -619,7 +616,7 @@ Vektorski prostor sa svojom dodatnom operacijom množenja
 skalarima iz polja $\mathbb{R}$ je općenito znatno bogatija struktura od grupe (koja
 ima samo svoju binarnu operaciju). To znači da o generatorima "znamo više" i
 lakše je proučavati njih i onda pomoću eksponencijacije vidjeti reperkusije tih
-spoznaja na samu grupu.
+spoznaja na samu grupu.\index{Liejeva grupa!generator} 
 To je dodatno pojačano još jednim njihovim važnim svojstvom.
 Neka su $X,Y\in\calA$. Definirajmo njihov \emph{komutator} 
 \begin{equation}
@@ -707,7 +704,7 @@ nego apstraktnijim zaključivanjem u kojem će
 relacija (\ref{eq:defstrukturne}), koju fizičari često zovu "algebra grupe," imati
 centralnu ulogu, kako ćemo vidjeti u sljedećim poglavljima.
 Kad smo već kod terminologije, recimo i to da je fizičarima često interes usredotočen
-samo na bazu Liejeve algebre, a ne i na ostatak vektorskog prostora, pa će u žargonu
+samo na bazu Liejeve algebre, a ne toliko i na ostatak vektorskog prostora, pa će u žargonu
 reći da tri matrice iz (\ref{eq:SO3generators}) "čine algebru" ove grupe.
 
 
@@ -733,6 +730,7 @@ komutacijske relacije algebre \soAlg{3} možemo zapisati u obliku
 \end{equation}
     \index{Tenzor!Levi-Civitin}
 odnosno strukturne konstante grupe \SO{3} su $C_{ij}^{k} = \epsilon_{ijk}$.
+\index{Strukturne konstante grupe}
 \end{primjer}
 
 
@@ -923,7 +921,7 @@ iskombinirati u $\sum (X+Y)^{n}/n! = \exp(X+Y)$. Za općenite
 nekomutirajuće grupe to nije slučaj, nego vrijedi sljedeći važan
 rezultat teorije Liejevih grupa
 \begin{teorem}[Baker-Campbell-Hausdorff] \label{th:bch}
-    \index{BCH formula} \index{Teorem!Baker-Campbell-Hausdorff (BCH)}
+    \index{BCH formula} \index{Teorem!Baker-Campbell-Hausdorffov}
     \index{Baker, Henry \yrange{1866}{1956}}
     \index{Campbell, John \yrange{1862}{1924}}
     \index{Hausdorff, Felix \yrange{1868}{1942}}
@@ -1174,7 +1172,7 @@ Izuzeće determinante nula razdvaja te komponente, ali to nije slučaj
 za $\GL{n, \mathbb{C}}$ koja je povezana (ali ne i jednostavno povezana).
 
 \item \textbf{Specijalna linearna grupa}
-    \index{Specijalna linearna grupa SL($n$)|see{SL($n$)}} 
+    \index{Specijalna linearna grupa|see{SL($n$)}} 
     \index{SL($n$)}
 
 \begin{equation}
@@ -1192,6 +1190,7 @@ ima $2 n^2 - 2$ parametara. Grupa je jednostavno povezana i za fiziku
 je posebno važna grupa $\SL{2, \mathbb{C}}$ koja je univerzalna grupa
 pokrivanja za Lorentzovu grupu na analogan način na koji je \SU{2}
 univerzalna grupa pokrivanja za grupu rotacija \SO{3}.
+    \index{Univerzalna grupa pokrivanja}
 
 Podgrupa ove grupe je grupa $\SL{n, \mathbb{R}}$ koja ima 
 $n^2 - 1$ parametar. (Jednadžba (\ref{eq:SL}) je sad samo jedna
@@ -1199,7 +1198,7 @@ realna jednadžba, a ne dvije.) Ona je povezana, ali ne i jednostavno
 povezana.
 
 \item \textbf{Unitarna grupa}
-    \index{Unitarna grupa U($n$)|see{U($n$)}} 
+    \index{Unitarna grupa|see{U($n$)}} 
     \index{U($n$)}
 
 \begin{equation}
@@ -1269,7 +1268,7 @@ unitarne grupe tj. da se unitarne matrice mogu definirati kao one koje
 smo ovdje uzeli kao definiciono, samo posljedica.
 
 \item \textbf{Specijalna unitarna grupa}
-    \index{Specijalna unitarna grupa SU($n$)|see{SU($n$)}} 
+    \index{Specijalna unitarna grupa|see{SU($n$)}} 
     \index{SU($n$)}
 
 \begin{equation}
@@ -1286,7 +1285,7 @@ samo jedna realna jednadžba $\phi = 0$ pa specijalna unitarna grupa
 ima točno $n^2 - 1$ parametar. \SU{n} su kompaktne i jednostavno povezane.
 
 \item \textbf{Ortogonalna grupa}
-    \index{Ortogonalna grupa O($n$)|see{O($n$)}} 
+    \index{Ortogonalna grupa|see{O($n$)}} 
     \index{O($n$)}
 
 \begin{equation}
@@ -1311,7 +1310,7 @@ kvadratnu formu $(\vec{x}, \vec{y}) = \sum_i x_i y_i$ tj. skalarni produkt na re
 vektorskom prostoru, što se može upotrijebiti kao alternativna definicija grupe.
 
 \item \textbf{Specijalna ortogonalna grupa}
-    \index{Specijalna ortogonalna grupa SO($n$)|see{SO($n$)}} 
+    \index{Specijalna ortogonalna grupa|see{SO($n$)}} 
     \index{SO($n$)}
 
 \begin{equation}
@@ -1324,7 +1323,7 @@ na zaključak da ortogonalne matrice imaju determinantu $\det M = \pm 1$,
 pa ograničenje na $\det M = 1$ ne smanjuje dimenziju parametarskog prostora.
 
 \item \textbf{Pseudo-unitarna grupa}
-    \index{Pseudo-unitarna grupa U($p, q$)|see{U($p, q$)}} 
+    \index{Pseudo-unitarna grupa|see{U($p, q$)}} 
     \index{U($p, q$)}
 
 Čine je $n\times n$ matrice
@@ -1347,7 +1346,7 @@ definicije \ref{def:skalarniprodukt}.
 
 
 \item \textbf{Pseudo-ortogonalna grupa}
-    \index{Pseudo-ortogonalna grupa O($p, q$)|see{O($p, q$)}} 
+    \index{Pseudo-ortogonalna grupa|see{O($p, q$)}} 
     \index{O($p, q$)}
 
 \begin{equation}

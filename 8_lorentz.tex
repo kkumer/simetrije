@@ -82,8 +82,8 @@ tzv. \emph{Lorentzovi potisci}, imaju oblik\footnote{U
 standardnoj literaturi se pri izvodu Lorentzovih potisaka osim načela
 relativnosti obično koristi i postulat o konstantnosti brzine svjetlosti
 u svim sustavima.  No, ovaj drugi postulat je zapravo suvišan, vidi
-Mermin, Am. J. Phys. \textbf{52}(2) (1984) 119 ili J. D. Jackson,
-\emph{Classical Electrodynamics}, 3rd ed.(!), zadaci 11.1 i 11.2.}
+Mermin, Am. J. Phys. \textbf{52}(2) (1984) 119 ili
+\cite{Jackson:1998}, zadaci 11.1 i 11.2.}
 \begin{align}
 t' &= \gamma \big(t+\frac{\beta}{c}z\big) \,, \\
 x' &= x \,, \\
@@ -281,13 +281,13 @@ $\det\Lambda$ & $\tensor{\Lambda}{^{0}_{0}}$ & oznaka   \\ \hline
 \end{center}
 gdje smo izdvojili specijalne elemente grupe \O{1, 3} 
 prostornu inverziju (\emph{paritet}) $P$  \index{Inverzija prostora}
-i vremensku inverziju $T$, definirane kao \index{Vrijeme!inverzija}
+i vremensku inverziju $T$, definirane kao \index{Inverzija vremena}
 \begin{align}
     P& =g :  (t\to t, \vec{x}\to -\vec{x}) \,, \label{eq:paritet} \\
     T& =-g :  (t\to -t, \vec{x}\to \vec{x})  \;.
 \end{align}
 Komponenta povezanosti jedinice
-\SOsup{+}{1,3} je od najvećeg interesa i
+\SOsup{+}{1,3} je od najvećeg interesa i \index{Ortokrona Lorentzova grupa|see{SO$^{+}$(1,3)}}
 nekad se naziva \emph{prava ortokrona Lorentzova grupa}, a neki autori koriste i
 samo za nju termin Lorentzova grupa, što ćemo i mi dalje običavati. Iz tablice vidimo da
 se svi elementi pune Lorentzove grupe \O{1,3} mogu prikazati kao produkt jedne od transformacija
@@ -301,7 +301,7 @@ iz skupa $\{1, P, T, PT\}$ i elemenata \SOsup{+}{1,3}.
 Kao i kod rotacija, objekte koji se pojavljuju u našim teorijama treba klasificirati prema
 njihovim transformacijskim svojstvima pri Lorentzovim transformacijama
 tj. prema pripadnosti reprezentacijama Lorentzove
-grupe. Kao i kod rotacija, poželjno je usredotočiti se na Lievu algebru
+grupe. Kao i kod rotacija, poželjno je usredotočiti se na Liejevu algebru
 grupe koju čine generatori $L$:
 \begin{equation}
     \Lambda \in \SOsup{+}{1,3} \,, \qquad \Lambda = e^L \,.
@@ -427,7 +427,7 @@ nije nužna poput četverovektora položaja ili impulsa te, važno, klasičnih
 i kvantnih polja.
 
 
-Pogledajmo prvo komutacijske relacije Lorentzove Lieve algebre \soAlg{1,3}. Eksplicitnim
+Pogledajmo prvo komutacijske relacije Lorentzove Liejeve algebre \soAlg{1,3}. Eksplicitnim
 množenjem vidimo da vrijedi
 \begin{align}
 [J_i, J_j] &= \rmi\epsilon_{ijk} J_k  \,, \label{eq:LK1}\\
@@ -464,7 +464,7 @@ Ovo ipak ne znači  da O(1,3) ima istu algebru kao i SU(2)$\otimes$SU(2),
 jer gore u (\ref{eq:defJpm})  nismo radili \emph{realne} linearne kombinacije generatora,
 a podsjećamo da su sve Liejeve algebre u ovoj knjizi nad $\mathbb{R}$.
 Svejedno ispostavlja se\footnote{nakon vrlo netrivijalnog postupka \emph{kompleksifikacije}
-Lieve algebre} da za klasifikaciju ireducibilnih reprezentacija Lorentzove
+Liejeve algebre} da za klasifikaciju ireducibilnih reprezentacija Lorentzove
 grupe možemo kao i u odjeljku \ref{sec:so4} koristiti parove
 \begin{equation}
 (j^{(-)}, j^{(+)})  \qquad j^{(-)}, j^{(+)} = 0, \fhalf, 1, \dotsc .
@@ -523,7 +523,7 @@ Posljedično, proširivanjem \SOsup{+}{1,3} grupe paritetom, reprezentacije
 (0, $\fhalf$) i ($\fhalf$,0) više nisu ireducibilne svaka zasebno,
 već ireducibilna postaje 4D reprezentacija $(\fhalf, 0) \oplus (0, \fhalf)$, poznata
 kao Diracova reprezentacija. \index{Diracova reprezentacija}
-\index{Dirac, Paul \yrange{1902}{1984}}
+\index{Dirac, Paul \yrange{1902}{1984}}\index{SO$^{+}$(1,3)}
 
 
 Slično, tenzor elektromagnetskog polja $F^{\mu\nu}$ pripada
@@ -548,7 +548,7 @@ J^{i0}& = K^i \;.
 \end{align}
 (Podsjetimo se da grčki indeksi idu $\alpha,\beta = 0,1,2,3$, a 
 latinski $i,m = 1,2,3$.)  
-Sada je element grupe \SOsup{+}{1,3} dan kao
+Sada je element grupe \SOsup{+}{1,3} dan kao \index{SO$^{+}$(1,3)}
 \begin{equation}
  \Lambda = \exp\left(-\frac{\rmi}{2} \omega_{\rho\sigma} J^{\rho\sigma}\right) \,,
 \label{eq:4DLorentz}
@@ -670,7 +670,7 @@ dopušta i projektivne reprezentacije, vidi odjeljak \ref{sec:projektivnerep},
 jer njena komponenta povezanosti
 jedinice nije jednostavno povezana. To znači da je kompozicija
 transformacija definirana do na fazu.
-To je isključivo posljedica
+To je isključivo posljedica \index{SO$^{+}$(1,3)}
 činjenice da je njena podgrupa Lorentzova grupa \SOsup{+}{1,3},
 dvostruko povezana. Situacija je potpuno analogna situaciji iz
 odjeljka \ref{sec:projektivnerep}, gdje je grupa rotacija
@@ -684,7 +684,7 @@ o grupi $\SL{2, \mathbb{C}}$ svih regularnih kompleksnih
 $2\times 2$ matrica, koja dva puta pokriva Lorentzovu grupu,
 što za posljedicu ima da je i ovdje kompozicija transformacija
 na kvantnim stanjima "dvo-vrijedna" i može uključivati dodatni
-minus. \index{Lieva grupa!pokrivanje}
+minus. \index{Liejeva grupa!pokrivanje}
 U skladu s komentarima na kraju odjeljka \ref{sec:projektivnerep} 
 mogli bismo reći da je "istinska" Poincar\'{e}ova grupa
 $\mathbb{R}^{1,3} \rtimes \SL{2, \mathbb{C}}$. No mi ćemo
@@ -697,7 +697,7 @@ projektivnih, što će se na kraju svesti samo na to spinovi mogu
 biti i polucjelobrojni, što nije nikakva novost.
 
 \section{Unitarne reprezentacije Poincar\'{e}ove grupe}
-\index{Poincar\'{e}ova grupa!unitarne reprezentacije}
+\index{Poincar\'{e}ova grupa!unitarna reprezentacija}
 
 Želja nam je klasificirati i opisati unitarne ireducibilne reprezentacije
 $U(\Lambda, a)$
