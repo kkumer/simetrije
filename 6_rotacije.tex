@@ -114,7 +114,7 @@ Kao i kod konačnih grupa možemo rastaviti direktni produkt dviju
 ireducibilnih reprezentacija na Clebsch-Gordanov direktni zbroj \index{Clebsch-Gordanov razvoj}
 \begin{displaymath}
   \Gamma^{(m)}\otimes\Gamma^{(n)} =
-  \sum \oplus\: a_{k}\Gamma^{(k)}  \,,
+  \bigoplus_{k}\: a_{k}\Gamma^{(k)}  \,,
 \end{displaymath}
 gdje su koeficijenti dani skalarnim produktom odgovarajućih karaktera,
 koji je ovdje integral
@@ -126,7 +126,7 @@ a_{k} & = & (\chi^{(k)}, \chi^{(m)}\chi^{(n)}) \\
 odnosno
 \begin{displaymath}
   \Gamma^{(m)}\otimes\Gamma^{(n)} =
-  \sum_{k} \oplus\: \delta_{k,m+n}\Gamma^{(k)} = \Gamma^{(m+n)} \;.
+  \bigoplus_{k}\: \delta_{k,m+n}\Gamma^{(k)} = \Gamma^{(m+n)} \;.
 \end{displaymath}
 To da je direktan produkt jednodimenzionalnih ireducibilnih reprezentacija svakako
 ireducibilan smo ustanovili već ranije u zadatku \ref{zad:1D1D1D}, a sad vidimo i koja je
@@ -136,7 +136,7 @@ u jedinicama $\hbar$, fizikalnog sustava koji se pri rotacijama transformira
 u skladu s reprezentacijom $\Gamma^{(m)}$. Direktni produkt $\Gamma^{(m)}\otimes\Gamma^{(n)}$
 \index{Reprezentacija grupe!direktni produkt}
 je reprezentacija grupe rotacija na sustavu dobivenom \emph{združivanjem} dvaju sustava 
-s momentima impulsa $m$ i $n$. Jasno je da će združeni sustav imati moment impulsa $m+n$.
+s momentima impulsa $m$ i $n$. Tako će ovdje združeni sustav imati moment impulsa $m+n$.
 No, kako znamo iz kvantne mehanike i kako ćemo vidjeti u sljedećem odjeljku, ova
 jednostavna matematika ne vrijedi za punu grupu rotacija u trodimenzionalnom prostoru.
 
@@ -462,8 +462,8 @@ tj. da odredimo konstante proporcionalnosti u(\ref{eq:jpmpropto}):
 Zahvaljujući ortonormiranosti baze imamo
 \begin{eqnarray*}
  |c_{jm}|^2 & = & \bra{j, m} J_- J_+ \ket{j, m} \\
-            & = & \bra{j, m}(\jsq - J_{z}^2 - \hbar J_z \ket{j, m} \\
-& = & \bra{j, m}(\hbar^2 j(j+1) - \hbar^2 m^2 - \hbar^2 m \ket{j, m}  \\
+            & = & \bra{j, m}(\jsq - J_{z}^2 - \hbar J_z) \ket{j, m} \\
+& = & \bra{j, m}(\hbar^2 j(j+1) - \hbar^2 m^2 - \hbar^2 m) \ket{j, m}  \\
             & = & \hbar^2[j(j+1)-m(m+1)] \\
             & = & \hbar^2 (j-m)(j+m+1) \,.
 \end{eqnarray*}
@@ -516,7 +516,7 @@ odgovarajućih operatora dobivamo reprezentacije \emph{grupa} \SO{3} i \SU{2}.
 Matrični elementi ekponenciranih operatora između standardnih
 $\ket{j, m}$ stanja,
 \begin{equation}
-    D^{(j)}_{m'm}(\hat{\vec{z}},\phi)  \equiv  \bra{j,m'} D^{(j)}(\hat{\vec{n}},\phi) \ket{j, m} 
+    D^{(j)}_{m'm}(\hat{\vec{n}},\phi)  \equiv  \bra{j,m'} D^{(j)}(\hat{\vec{n}},\phi) \ket{j, m} 
     =\bra{j,m'} e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{j, m} \,,
     \label{eq:WignerD}
 \end{equation}
@@ -647,7 +647,8 @@ rotaciji za nula stupnjeva, a ona za 720 stupnjeva jest (poznati trikovi
 s pojasom ili konobarevim pladnjem). Također, najjednostavniji odgovor na
 pitanje kako komponirati dvije prostorne rotacije tj. kako odrediti
 rezultantni kut i os rotacije, dobije se upravo korištenjem
-kvaterniona (koji su ekvivalentni grupi \SU{2}) što isto sugerira svojvrsnu
+kvaterniona (koji su ekvivalentni grupi \SU{2}, vidi odjeljak \ref{sec:su2so3})
+što isto sugerira svojvrsnu
 fundamentalnost grupe \SU{2} i izvan kvantnomehaničkog konteksta.
 \index{Kvaternion}
 
@@ -846,7 +847,7 @@ provesti Clebsch-Gordanov rastav $D^{(j_1)}\otimes D^{(j_2)}$ na direktni
 zbroj ireducibilnih reprezentacija
 \begin{displaymath}
   D^{(j_1)}\otimes D^{(j_2)} =
-  \sum_J \oplus\: a_{J}D^{(J)} \,,
+  \bigoplus_{J}\: a_{J}D^{(J)} \,,
 \end{displaymath}
 gdje su koeficijenti kao i inače dani s
 \begin{displaymath}
@@ -865,7 +866,7 @@ rotacije dijagonalni
  &= \Tr \textrm{diagonal}\left( e^{-\rmi j\phi }, e^{-\rmi (j-1)\phi}, \ldots,
 e^{-\rmi(-j)\phi}\right)\\
 &= e^{-\rmi j\phi } + e^{-\rmi (j-1)\phi} + \cdots + e^{-\rmi(-j)\phi}\\
-&= \text{geometrijski red s omjerom članova $e^{\rmi j\phi}$} \\
+&= \text{geometrijski red s omjerom članova $e^{\rmi \phi}$} \\
 &= e^{-\rmi j\phi} \frac{1- (e^{\rmi j\phi})^{2j+1}}{1-e^{\rmi\phi}}
 = \frac{e^{-\rmi(j+1/2)\phi} - e^{\rmi(j+1/2)\phi}}{e^{-\rmi\phi/2}-e^{\rmi\phi/2}}\\
 &= \frac{\sin(j+1/2)\phi}{\sin\phi/2}
@@ -902,8 +903,8 @@ Dakle,
 \end{equation}
 odnosno,
 \begin{equation}
-D^{(j_1)} \otimes D^{(j_2)} = \sum_{J=|j_1-j_2|}^{J=j_1+j_2} 
-\oplus D^{(J)} \,. \label{eq:CGrot}
+D^{(j_1)} \otimes D^{(j_2)} = \bigoplus_{J=|j_1-j_2|}^{J=j_1+j_2} 
+ D^{(J)} \,. \label{eq:CGrot}
 \end{equation}
 Kao primjer, vrijedi $D^{(1/2)}\otimes D^{(1)} = D^{(1/2)} \oplus D^{(3/2)}$.
 Treba primijetiti da se svaka ireducibilna reprezentacija pojavljuje najviše jednom
@@ -1445,12 +1446,12 @@ ili
  -\frac{me^4}{2}H^{-1} &= \vec{M'}^{2} + \vec{L}^2 + \hbar^2 \\
 &=\big[\vec{I} - \vec{K}\big]^2 + 
 \big[\vec{I} + \vec{K}\big]^2  + \hbar^2\\
-&=2\big[\vec{I}^2 + \vec{K}^2 \big]^2 + \hbar^2  \;.
+&=2\big[\vec{I}^2 + \vec{K}^2 \big] + \hbar^2  \;.
 \end{align}
 To znači da za svojstvena stanja energije i momenta impulsa vrijedi
 \begin{equation}
 -\frac{me^4}{2}E^{-1} = 2\big[i(i +1)\hbar^2 + k(k+1)\hbar^2 
-\big]^2 + \hbar^2   = \hbar^2 \big[ 4j(j+1) +1 \big] = \hbar^2 (2j+1)^2
+\big] + \hbar^2   = \hbar^2 \big[ 4j(j+1) +1 \big] = \hbar^2 (2j+1)^2
 \end{equation}
 što daje spektar
 \begin{equation}
