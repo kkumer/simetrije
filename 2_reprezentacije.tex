@@ -182,7 +182,7 @@ rijetko rabi, ali je dominantna u matematičkim tekstovima.
 Primjeri skalarnog produkta su standardno množenje
 vektora $\vec{x}\cdot \vec{y}$ u 3D euklidskom prostoru ili "preklop"
 valnih funkcija
-$(\psi_1, \psi_2) = \int \psi_{1}^{*}(\vec{x}) \psi_{2}(\vec{x}) d^3 x$
+$(\psi_1, \psi_2) = \int \rmd^3 x\, \psi_{1}^{*}(\vec{x}) \psi_{2}(\vec{x})$
 u Hilbertovom prostoru kvantnomehaničkih stanja.
 
 Skalarni produkt omogućuje prirodnu definiciju \emph{norme} vektora
@@ -244,7 +244,7 @@ Svojstvene vrijednosti hermitskog operatora su realne.
 \end{teorem}
 
 \emph{Dokaz:} Uzmimo $\vec{x}\neq \vec{0}$ za koji je%
-\footnote{Egzistencija takvog vektora slijedi iz fundamentalnog teorema algebre}
+\footnote{Egzistencija takvog vektora slijedi iz fundamentalnog teorema algebre.}
 $A \vec{x} = \lambda \vec{x}$.
 Skalarnim množenjem s $\vec{x}$ imamo $\lambda(\vec{x}, \vec{x}) =
 (\vec{x}, A\vec{x}) = (A\vec{x},\vec{x}) = \lambda^{\ast}(\vec{x},\vec{x})$,
@@ -256,8 +256,8 @@ Ovo svojstvo se odražava u činjenici da su kvantnomehanički operatori koji
 odgovaraju opservabilnim fizikalnim veličinama (koje su redovito realni
 brojevi) redovito hermitski.
 
-I unitarne i hermitske matrice $T$ se mogu dijagonalizirati transformacijom
-$S^{-1} T S = D$, gdje je $S$ unitarna matrica.
+I unitarne i hermitske matrice $T$ se mogu dijagonalizirati trans\-for\-ma\-ci\-jom
+$S^{-1} T S$ = $D$, gdje je $S$ unitarna matrica.
 
 \section{Definicija reprezentacije i osnovna svojstva}
 \label{sec:reprezentacije}
@@ -285,7 +285,7 @@ Kako se  operatori mogu u nekoj bazi predstaviti kao kvadratne matrice u literat
  apstraktne grupe na grupu matrica.
 Iz uvjeta homomorfizma
 \begin{displaymath}
-           D(g_1) D(g_2) = D(g_1 g_2)
+           D(g_1) D(g_2) = D(g_1 g_2) \,,
 \end{displaymath}
 slijede razne stvari poput činjenice da je jedinični element uvijek reprezentiran
 jediničnom matricom jer $D(g)D(e)=D(ge)=D(g)$ povlači $D(e)=1$.
@@ -295,7 +295,7 @@ njemačke riječi "\emph{Darstellung}" (reprezentacija). Primjenu teorije reprez
   grupa na fiziku je u velikoj mjeri razvio E. P. Wigner.
   \index{Wigner, Eugene \yrange{1902}{1995}}
 
-Ukoliko je grupa operatora $\Gamma$ \emph{izomorfna} grupi $G$, 
+Ukoliko je grupa operatora $\Gamma$ izomorfna grupi $G$, 
   reprezentaciju zovemo \emph{vjerna}.
     \index{Reprezentacija grupe!vjerna}
 
@@ -310,7 +310,7 @@ D(e)=\left(
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{array}\right)
+\end{array}\right) \,.
 \label{eq:c3rep1}
 \end{equation}
 Za operator $D(c)$ u koji se preslikava element $c$, možemo
@@ -382,7 +382,7 @@ pogodno je da to bude upravo operator rotacije za kut 2$\pi$/3.
 Neka je $\psi(\vec{x})=\psi_{nlm}(\vec{x})$, dakle gledamo rotaciju
 stacionarnih stanja:
 \begin{gather}
-\psi_{nlm}(\vec{x}) \stackrel{D(c)}{\mapsto}  \psi'_{nlm}(\vec{x}) \\
+\psi_{nlm}(\vec{x}) \stackrel{D(c)}{\mapsto}  \psi'_{nlm}(\vec{x}) \,, \\
    \psi'_{nlm}(\vec{x}) = \sum_{n'=1}^{\infty}\sum_{l'=0}^{n'-1}
   \sum_{m'=-l'}^{l'}  D_{(nlm)(n'l'm')}(c)\,  \psi_{n'l'm'}(\vec{x}) \;. 
   \label{eq:nlmexp}
@@ -413,11 +413,11 @@ tj. relevantna matrica rotacije je konačna.
 To je dokud možemo doći u ovom trenutku. U \ref{ch:rotacije}. poglavlju ćemo
 vidjeti da npr. za $l=1$ i za bilo koji $n$ matrica rotacije ima oblik
 \begin{equation*}
-D^{(1)}_{mm'}(c)=\delta_{mm'}e^{ -i 2\pi m/3} =
+D^{(1)}_{mm'}(c)=\delta_{mm'}\rme^{ -\rmi 2\pi m/3} =
 \begin{pmatrix}
-e^{-i2\pi/3} & 0 & 0 \\
+\rme^{-\rmi 2\pi/3} & 0 & 0 \\
 0 &  1 & 0 \\
-0 & 0 & e^{i 2\pi/3}
+0 & 0 & \rme^{\rmi 2\pi/3}
 \end{pmatrix}
 \end{equation*}
 tj. da rotacija oko $z$-osi ne mijenja niti $m$, što je logično.
@@ -457,7 +457,7 @@ reprezentacije onda povlači da iz $g^n=e$ slijedi $D(g^n)=
   D(g)^n=D(e)=1$, odnosno broj $D(g)$ je $n$-ti korijen jedinice pa može
   biti samo
 \begin{equation*}
- D(g)= e^{i 2\pi k/n} \quad k\in\{0,1,\ldots, n-1\} \imp |D(g)|=1 \:.
+ D(g)= \rme^{\rmi 2\pi k/n} \quad k\in\{0,1,\ldots, n-1\} \imp |D(g)|=1 \:.
 \end{equation*}
 
 \section{Ekvivalentne reprezentacije}
@@ -786,13 +786,13 @@ potprostor $V_{1}$ od $V$ koji je \emph{invarijantan} na $\Gamma$,
 \end{definicija}
 Ukoliko je reducibilna,
 onda u bazi $\{\vec{e}_1, \ldots, \vec{e}_{m+n} \}$, gdje prvih $m$
-vektora $\{\vec{e}_1, \ldots, \vec{e}_{m} \}$ čini bazu od
+vektora $\{\vec{e}_1, \ldots,\allowbreak \vec{e}_{m} \}$ čini bazu od
 $V_1$, reprezentacija poprima oblik
 \begin{equation}
  D(g) = \begin{pmatrix}
   D^{(1)}(g) & C(g) \\
      0       & D^{(2)}(g) 
-\end{pmatrix}
+\end{pmatrix} \,,
 \label{eq:reducibilnarep}
 \end{equation}
 gdje su $D^{(1)}(g)$ $m\times m$, $D^{(2)}(g)$ $n\times n$,
@@ -822,12 +822,12 @@ D(g)D(h)&=&
 &=& 
 \begin{pmatrix}
  D^{(1)}(gh) & C(gh) \\ 0 & D^{(2)}(gh)
-\end{pmatrix}
+\end{pmatrix} \,.
 \end{eqnarray*}
 Usporedbom drugog i četvrtog reda slijedi
 \begin{eqnarray*}
-D^{(1)}(gh) &=& D^{(1)}(g)D^{(1)}(h) \\
-D^{(2)}(gh) &=& D^{(2)}(g)D^{(2)}(h) \\
+D^{(1)}(gh) &=& D^{(1)}(g)D^{(1)}(h) \,, \\
+D^{(2)}(gh) &=& D^{(2)}(g)D^{(2)}(h) \,, \\
 \end{eqnarray*}
 tj. $\Gamma_1$ i $\Gamma_2$ su reprezentacije.\qed
 
@@ -874,7 +874,7 @@ Sve reducibilne reprezentacije konačnih grupa su i potpuno reducibilne.
 \emph{Dokaz}. Dokaz teorema ćemo provesti u dva koraka u kojima ćemo
 pokazati da vrijede sljedeće dvije tvrdnje koje zajedno
 povlače teorem.
-\begin{enumerate}
+\begin{enumerate}[noitemsep]
     \item Svaka reprezentacija konačne grupe je ekvivalentna nekoj unitarnoj reprezentaciji
     \item Svaka \emph{unitarna} reducibilna reprezentacija je potpuno reducibilna
 \end{enumerate}
@@ -922,7 +922,7 @@ i $S$ operator koji povezuje baze: $S\vec{e}_i = \vec{f}_i$. Tada je
 &= x_{i}^* y_{j}\underbrace{ \{\vec{f}_i, \vec{f}_j\}}_{=\delta_{ij} =
  (\vec{e}_i, \vec{e_j})} \\
 &= (x_i \vec{e}_i, y_j \vec{e}_j) \\
-&= (\vec{x}, \vec{y})
+&= (\vec{x}, \vec{y}) \,,
 \end{split}
 \end{equation*}
 tj. $S$ povezuje grupni i obični skalarni produkt. Ako sada pomoću
@@ -936,7 +936,7 @@ ekvivalentnu reprezentaciju $U(g)\equiv S^{-1}D(g)S$ imamo
  \qquad \text{\small[$S$ povezuje skalarne produkte]}\\
 &= \{ S \vec{x}, S \vec{y} \} \quad
 \text{\small[$D(g)$ je unitaran obzirom na grupni produkt]}\\
-&= (\vec{x}, \vec{y}) \qquad \text{\small[$S$ povezuje skalarne produkte]}
+&= (\vec{x}, \vec{y}) \qquad \text{\small[$S$ povezuje skalarne produkte]} \,.
 \end{split}
 \end{equation*}
 Dakle $U(g)$ je unitarna reprezentacija. (Preciznije, $\Gamma = \{U(g) \td g\in G\}$
@@ -979,7 +979,7 @@ ako je zadovoljeno neko od slijedećih svojstava
 \end{itemize}
 Srećom, većina kontinuiranih grupa od interesa za fiziku imaju neka od ovih svojstava.
 
-
+Definirajmo sada na prirodan način centralni objekt teorije reprezentacija grupa.
 \begin{definicija}[Ireducibilna reprezentacija]
 Reprezentacija $\Gamma$ na vektorskom prostoru $V$ je
 \emph{ireducibilna} ako $V$ nema invarijantnih potprostora
@@ -990,7 +990,7 @@ izuzev $\{0\}$ i samog sebe.
 Posljedično, ireducibilnu reprezentaciju nije moguće promjenom baze 
 dovesti u blok-dijagonalnu formu s više od jednog bloka.
 Dva glavna zadatka teorije grupa, kojima će biti posvećeno sljedeće poglavlje,
-je identifikacija svih ireducibilnih reprezentacija date grupe te rastav
+su identifikacija svih ireducibilnih reprezentacija date grupe te rastav
 njene proizvoljne reprezentacije na direktni zbroj ireducibilnih:
 \begin{displaymath}
   \Gamma = \bigoplus_{i}  \Gamma_{i} = \Gamma_1 \oplus \Gamma_2 \oplus \cdots \;.
@@ -1009,9 +1009,9 @@ njene proizvoljne reprezentacije na direktni zbroj ireducibilnih:
                      $\Gamma   = \{ D(g)   \}$ reprezentacija.
                      \index{Reprezentacija grupe!kompleksno konjugirana}
 
-\item Zbrajajući dvije 1D reprezentacije od C$_2$:
+\item Zbrajajući dvije 1D reprezentacije od C$_2$
 \begin{equation}
- \Gamma_1 = \{1, 1\} \qquad i \qquad \Gamma_2 = \{1, -1\}
+ \Gamma_1 = \{1, 1\} \qquad i \qquad \Gamma_2 = \{1, -1\} \,,
 \end{equation}
 konstruirajte 2D reprezentaciju od C$_2$. \index{C$_2$}
 
@@ -1117,7 +1117,7 @@ od $V_1$ u $V$. Oćito je $P^2 = P$. Pokažite  da je reprezentacija $\Gamma = \
 \item reducibilna ako i samo ako je $PD(g)P = D(g)P$, $\forall g\in G$, te
 \item potpuno reducibilna ako i samo ako je $PD(g) = D(g)P$, $\forall g\in G$.
 \end{itemize}
-Primijenite ovo na zadatak \ref{zad:lnred}.
+Primijenite ovo na zadatak \ref{zad:lnred}
 
 \end{enumerate}
 

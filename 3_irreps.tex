@@ -65,8 +65,8 @@ da je ili $S(V)=\{\vec{0'}\}$ ili $S(V)=V'$.
     potprostor od $V$.
     Uzmimo proizvoljni vektor $\vec{k}$ iz Ker($S$).
     Po pretpostavci leme je 
-    $$ S D(g) \vec{k} = D'(g)S\vec{k} = \vec{0'}$$
-    što znači da je i $D\vec{k}$ element kernela Ker($S$), odnosno
+    $$ S D(g) \vec{k} = D'(g)S\vec{k} = \vec{0'} \,,$$
+    što znači da je i $D(g)\vec{k}$ element kernela Ker($S$), odnosno
     i kernel je \emph{invarijantni} potprostor, baš kao i slika.
     \index{Kernel}
     Sad, kako je $\{D(g)\}$ ireducibilna slijedi da je ili
@@ -83,7 +83,7 @@ da je ili $S(V)=\{\vec{0'}\}$ ili $S(V)=V'$.
 Operator koji komutira sa svim operatorima neke ireducibilne 
 reprezentacije
 \begin{displaymath}
-  D(g)S=SD(g) \quad \forall g\in G
+  D(g)S=SD(g) \quad \forall g\in G \,,
 \end{displaymath}
 je nužno proporcionalan jediničnom operatoru
 (identiteti), $S = \lambda \Eins$.
@@ -131,7 +131,7 @@ Uzimimo proizvoljni element $h\in G$. Tada vrijedi:
 &= ( \textrm{zamjenom}\; hg\equiv g' \, , \; g^{-1}=g'^{-1}h )  \label{eq:gshift} \\
 &= \sum_{g'} D^{(\alpha)}(g') A D^{(\beta)}(g'^{-1}h) \\
 &= \sum_{g'} D^{(\alpha)}(g') A D^{(\beta)}(g'^{-1}) D^{(\beta)}(h) \\
-&= B D^{(\beta)}(h)
+&= B D^{(\beta)}(h) \,.
 \end{split}
 \end{equation}
 
@@ -216,7 +216,7 @@ i u tom slučaju je
  \frac{n}{d_{\alpha}}\delta^{\alpha\beta}\delta_{il}\delta_{kj} \;.
 \end{displaymath}
 Stavimo ovdje $\alpha=\beta$ i promotrimo skup od $d^{2}_\alpha$ vektora
-$\vec{x}_{ij}$ iz novog $n$-dimenzionalnog vektorskog prostora,  čije
+$\vec{x}_{ij}$ iz novog $n$-di\-men\-zi\-o\-nal\-nog vektorskog prostora,  čije
 su komponente dane komponentama svih matrica reprezentacije:
 \begin{displaymath}
 \vec{x}_{ij} \equiv
@@ -227,7 +227,7 @@ D^{(\alpha)}_{ij}(g_n)) \,.
 prostor s $V^{\alpha}$ koji je dimenzije $d_\alpha$!) Zbog
 \begin{displaymath}
 \sum_g D^{(\alpha)}_{ij}(g) D^{(\alpha)}_{lk}(g)^* = (\vec{x}_{lk},\vec{x}_{ij})
- =\frac{n}{d_{\alpha}}\delta_{il}\delta_{kj}
+ =\frac{n}{d_{\alpha}}\delta_{il}\delta_{kj} \,,
 \end{displaymath}
 vektori $\vec{x}_{ij}$ su međusobno ortogonalni.
 Za neku drugu ireducibilnu reprezentaciju 
@@ -262,9 +262,9 @@ karaktere jer zbog cikličnosti traga
 imamo $\Tr S D(g) S^{-1} = \Tr D(g)$.
 \index{Reprezentacija grupe!ekvivalentna}
 Bez dokaza navedimo da vrijedi i obrat: jednakost karaktera implicira
-da su reprezentacije ekvivalentne.
-(Usput, taj obrat se \emph{ne} poopćuje na beskonačne kontinuirane grupe, osim
-  ukoliko nisu kompaktne, vidi \cite[302]{Cornwell:1997})
+da su reprezentacije ekvivalentne\footnote{Taj obrat 
+    se \emph{ne} poopćuje na beskonačne kontinuirane grupe, osim
+ukoliko nisu kompaktne, vidi \cite[302]{Cornwell:1997})}.
 Zahvaljujući cikličnosti traga vidimo i da je
 $\chi(g)=\Tr D(g) = \Tr D(h) D(g) D^{-1}(h) = \Tr D(hgh^{-1})$
   tj. konjugirani elementi imaju iste karaktere (Oprez: Treba
@@ -292,7 +292,7 @@ Definiramo li skalarni produkt karaktera na sljedeći način
 \end{displaymath}
 imamo
 \begin{displaymath}
-(\chi^{(\alpha)}, \chi^{(\beta)}) = \delta^{\alpha\beta}
+(\chi^{(\alpha)}, \chi^{(\beta)}) = \delta^{\alpha\beta} \,,
 \end{displaymath}
 tj. karakteri neekvivalentnih ireducibilnih reprezentacija su ortonormirani
 obzirom na taj skalarni produkt.
@@ -317,7 +317,7 @@ da je broj
 ireducibilnih reprezentacija  manji ili jednak broju klasa konjugacije. Štoviše, vrijedi
 (vidi literaturu) ortogonalnost vektora:
 \begin{displaymath}
-\vec{\chi}_i = (\chi^{(\alpha)}_i, \chi^{(\beta)}_i, \ldots)
+\vec{\chi}_i = (\chi^{(\alpha)}_i, \chi^{(\beta)}_i, \ldots) \,,
 \end{displaymath}
 tj.
 \begin{displaymath}
@@ -421,7 +421,7 @@ korisno imati pri ruci jer su to težinski faktori potrebni za primjenu
 pravila 6) i 7).
 Pravilo 2) vodi na jednadžbu
  $$\sum_{\alpha=1}^{3} d_{\alpha}^2 = d_{1}^2 + d_{2}^2
-   + d_{3}^2 = n = 6 $$
+   + d_{3}^2 = n = 6 \,, $$
 koja, do na permutacije, ima samo jedno rješenje u skupu prirodnih brojeva
  $$ d_1 = d_2 = 1\,,\quad d_3=2 \,. $$
 Dakle, dvije su reprezentacije jednodimenzionalne. Običaj je organizirati
@@ -502,8 +502,8 @@ Pravila 3) i 4) nas vode na to da su prvi red i prvi stupac
 tablice same jedinice.
 Pravilo 5) se može upotrijebiti da se zaključi da
 je $\chi(c)^3=\chi(c^3)=\chi(e)=1$ iz čega slijedi da su $\chi(c)$
-kubni korijeni jedinice $\chi(c) = \exp(2\pi i k/3), k=0, 1, 2$,
-odnosno mogućnosti su $\chi(c)=1, \omega\equiv e^{2\pi i/3}, \omega^2$.
+kubni korijeni jedinice $\chi(c) = \exp(2\pi \rmi k/3), k=0, 1, 2$,
+odnosno mogućnosti su $\chi(c)=1, \omega\equiv \rme^{2\pi \rmi/3}, \omega^2$.
 Uvjeti ortogonalnosti redaka i stupaca nas onda vode na
 strukturu:
 \begin{center}
@@ -519,7 +519,7 @@ su $\Gamma_2$ i $\Gamma_3$ međusobno kompleksno
 konjugirane reprezentacije (vidi zadatak \ref{zad:complex}).
 \index{Reprezentacija grupe!kompleksno konjugirana}
 Kompleksna konjugacija je sama po sebi isto svojevrsna transformacija
-simetrije. Ukoliko proširimo razmatranje i na tu transformaciju $\Gamma_2$
+simetrije. Ukoliko proširimo razmatranje i na tu transformaciju, $\Gamma_2$
 i $\Gamma_3$ prestaju biti ireducibilne i zato se često te dvije reprezentacije
 zajedno smatraju jednom dvodimenzionalnom ireducibilnom reprezentacijom $E$.
 \end{primjer}
@@ -537,7 +537,7 @@ a to je naučiti kako proizvoljnu reprezentaciju reducirati na direktan zbroj
 ireducibilnih.  Uzmimo neku, moguće reducibilnu, reprezentaciju $\Gamma$. Općenito
 \begin{displaymath}
   \Gamma = \Gamma_{1}\oplus\Gamma_{2}\oplus\cdots =
-     \sum_{\alpha} \oplus a_{\alpha} \Gamma_{\alpha}
+  \bigoplus_{\alpha} a_{\alpha} \Gamma_{\alpha} \,,
 \end{displaymath}
 gdje su $\Gamma_{\alpha}$ ireducibilne reprezentacije i
 gdje je $a_{\alpha}$ \emph{multiplicitet} (broj pojavljivanja) 
@@ -549,7 +549,7 @@ imajući u vidu blok-dijagonalnu formu direktnog zbroja vidimo da je
   \chi_i = \sum_{\alpha}  a_{\alpha} \chi^{(\alpha)}_i \quad 
   \forall i  \,.
 \end{equation}
-Sada pomnožimo ovu realaciju s $k_i \chi^{(\beta)*}_i$, gdje je $\Gamma_{\beta}$
+Sada pomnožimo ovu relaciju s $k_i \chi^{(\beta)*}_i$, gdje je $\Gamma_{\beta}$
 neka konkretna ireducibilna reprezentacija, te prosumiramo po svim klasama
 i iskoristimo ortogonalnost karaktera ireducibilnih reprezentacija
 \begin{equation}
@@ -607,11 +607,11 @@ multipliciteta svake pojedine od tri
 ireducibilne reprezentacije pomoću skalarnog produkta (\ref{eq:multiplicitet}):
 \begin{align*}
     a_{A_1}& = (\chi, \chi^{(A_1)})=\frac{1}{n}\sum_{i=1}^{3} k_i \chi_i \chi^{(A_1)*}_i \\
- & = \frac{1}{6}(1\cdot 3\cdot 1 + 2\cdot 0\cdot 1 + 3\cdot (-1) \cdot 1)=0\\
+ & = \frac{1}{6}(1\cdot 3\cdot 1 + 2\cdot 0\cdot 1 + 3\cdot (-1) \cdot 1)=0 \,, \\
     a_{A_2}& = (\chi, \chi^{(A_2)}) \\
- & =\frac{1}{6}(1\cdot 3\cdot 1 + 2\cdot 0\cdot 1 + 3\cdot (-1)\cdot(-1))=1\\
+ & =\frac{1}{6}(1\cdot 3\cdot 1 + 2\cdot 0\cdot 1 + 3\cdot (-1)\cdot(-1))=1 \,, \\
     a_{E}& = (\chi, \chi^{(E)}) \\
- & =\frac{1}{6}(1\cdot 3\cdot 2 + 2\cdot 0\cdot (-1) + 3\cdot (-1)\cdot 0)=1
+ & =\frac{1}{6}(1\cdot 3\cdot 2 + 2\cdot 0\cdot (-1) + 3\cdot (-1)\cdot 0)=1 \,. 
 \end{align*}
 Tako konačno imamo
 \begin{equation}
@@ -636,7 +636,7 @@ nazivamo \emph{Clebsch-Gordanov razvoj}:
 \index{Gordan, Paul \yrange{1837}{1912}}
 \begin{displaymath}
   \Gamma_{\alpha}\otimes\Gamma_{\beta} =
-  \sum \oplus\: a_{\gamma}\Gamma_{\gamma}  \,.
+  \bigoplus_{\gamma} \: a_{\gamma}\Gamma_{\gamma}  \,.
 \end{displaymath}
 Karakter direktnog produkta je produkt karaktera (lako se vidi iz
 matričnog zapisa direktnog produkta) pa odmah vidimo da je
@@ -652,9 +652,9 @@ pa je onda karakter direktnog produkta
 $ \chi(E\otimes E)=(4, 1, 0)$.
 Multipliciteti pojedinih ireducibilnih reprezentacija su
 \begin{align*}
-    a_{A_1}& =\frac{1}{6}(1\cdot 1\cdot 4+2\cdot 1\cdot 1+3\cdot 1\cdot 0)=1 \\
-    a_{A_2}& =\frac{1}{6}(1\cdot 1\cdot 4+2\cdot 1\cdot 1+3\cdot (-1)\cdot 0)=1 \\
-    a_{E}& =\frac{1}{6}(1\cdot 2\cdot 4+2\cdot (-1)\cdot 1+3\cdot 0\cdot 0)=1
+    a_{A_1}& =\frac{1}{6}(1\cdot 1\cdot 4+2\cdot 1\cdot 1+3\cdot 1\cdot 0)=1 \,, \\
+    a_{A_2}& =\frac{1}{6}(1\cdot 1\cdot 4+2\cdot 1\cdot 1+3\cdot (-1)\cdot 0)=1 \,, \\
+    a_{E}& =\frac{1}{6}(1\cdot 2\cdot 4+2\cdot (-1)\cdot 1+3\cdot 0\cdot 0)=1\,, 
 \end{align*}
 što znači da je Clebsch-Gordanov razvoj
 \begin{equation}
@@ -753,24 +753,32 @@ vektor (vidi dodatak \ref{sec:aksijalni}) \index{Aksijalni vektor} \index{Reflek
 \index{Pseudovektor|see{Aksijalni vektor}}
 koji se pri takvim transformacijama ponaša obrnuto od običnog
 (polarnog) vektora električnog dipolnog momenta. \index{Kristal!dipolni moment}
-Tako npr. refleksija preko horizontalne ravnine $\sigma_h$ će promijeniti
+Tako će npr. refleksija preko horizontalne ravnine $\sigma_h$ promijeniti
 predznak vertikalno usmjerenog električnog, ali ne i
-magnetskog dipolnog momenta:
-
-\centerline{\input{figures/aksijal1.tex}}
-%\centerline{\includegraphics[scale=0.8]{pics/aksijal1.eps}}
-
+magnetskog dipolnog momenta, vidi sliku \ref{aksijal1}.
+\begin{figure}[ht]
+    \centerline{\input{figures/aksijal1.tex}}
+    \caption{\label{fig:aksijal1}
+        Ponašanje vertikalno usmjerenog polarnog vektora $\vec{P}$
+        električnog dipolnog momenta
+        i aksijalnog vektora $\vec{M}$ magnetskog
+    dipolnog momenta prilikom refleksije $\sigma_h$ preko horizontalne ravnine.}
+\end{figure}
+\begin{figure}[ht]
+    \centerline{\input{figures/aksijal2.tex}}
+    \caption{\label{fig:aksijal2}
+        Ponašanje vertikalno usmjerenog polarnog vektora $\vec{P}$
+        električnog dipolnog momenta
+        i aksijalnog vektora $\vec{M}$ magnetskog
+    dipolnog momenta prilikom refleksije $\sigma_h$ preko vertikalne ravnine.}
+\end{figure}
 Isto tako, refleksija preko vertikalne ravnine $\sigma_v$ neće promijeniti
 predznak vertikalno usmjerenog električnog, ali hoće
 magnetskog dipolnog dipolnog momenta\footnote{ 
 Usput, razmislite zašto ogledalo izvrće lijevo-desno, a ne i gore-dolje? Promatrajući
 operaciju refleksije preko vertikalnog ogledala koje leži
 u $x-z$ ravnini $\sigma_v:(x, y, z)\mapsto (x, -y, z)$
-čini se da bi ta dva smjera trebala biti ekvivalentna.}.
-
-\centerline{\input{figures/aksijal2.tex}}
-%\centerline{\includegraphics[scale=0.8]{pics/aksijal2.eps}}
-
+čini se da bi ta dva smjera trebala biti ekvivalentna.}, vidi sliku \ref{fig:aksijal2}.
 
 Uzmimo kao primjer kristal s C$_{3v}$ simetrijom. \index{C$_{3v}$}
 Grupa C$_{3v}$ je izomorfna grupi D$_3$, jedino što $b$ nije rotacija
@@ -791,20 +799,19 @@ D(c)=
 \end{array}\right) \;, \ldots
 \end{displaymath}
 s karakterima $\chi^{(V)}(e)=\mbox{dim}\Gamma_{V}=3$, $\chi^{(V)}(c)=0$,
-a ako osi izberemo kao na slici
-
-\centerline{\input{figures/C3vravnina.tex}}
-%\centerline{\includegraphics[scale=0.8]{pics/C3vravnina.eps}}
-
+a ako osi izberemo kao na slici \ref{fig:C3vravnina}
+\begin{figure}[ht]
+    \centerline{\input{figures/C3vravnina.tex}}
+    \caption{\label{fig:C3vravnina}}
+\end{figure}
 onda je 
-
 \begin{displaymath}
 D^{(V)}(b)=
 \begin{pmatrix}
 -1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{pmatrix}
+\end{pmatrix} \,,
 \end{displaymath}
 s karakterom $\chi^{(V)}(b)=1$ (usporedite s (\ref{eq:DVbD3})).
 Kako je grupa C$_{3v}$ izomorfna grupi D$_3$ ima istu tablicu karaktera\footnote{Obrat
@@ -819,7 +826,6 @@ $A_2$ & 1 & 1&-1 \\
  $\Gamma_V$ & 3 & 0 & 1
 \end{tabular}
 \end{center}
-
 iz čega slijedi
 \begin{displaymath}
    \Gamma_{V} = A_1  \oplus E \,.
@@ -1165,6 +1171,7 @@ b) $\mathrm{T}\to \mathrm{C}_{3v}$. Sličnim postupkom dobivamo
         T = A_2 \oplus E \;,
 \end{displaymath}
 tj. degeneracija je samo djelomično ukinuta.
+
 \centerline{\input{figures/splittingT2.tex}}
 %\centerline{\includegraphics[scale=1.0]{pics/splittingT2.eps}}
 \end{primjer}
@@ -1189,13 +1196,14 @@ i provjerite temeljni teorem o ortogonalnosti.
 gdje je $k_i$ broj elemenata u klasi konjugacije $i$.
 
 \item Konstruirajte tablicu karaktera za grupu $D_4$
+    \index{D$_4$}
 
 \item Pokažite da je direktni produkt dvije jednodimenzionalne
     ireducbilne reprezentacije uvijek ireducibilna reprezentacija.
     \label{zad:1D1D1D}
 
 \item Izrazite reprezentaciju $\Gamma$ grupe $C_{4v}$ koja ima
-karaktere
+    karaktere \index{C$_{4v}$}
 \begin{displaymath}
   \chi(E)=5\;,\; \chi(C_2)=1\;,\; \chi(C_4)=-1\;,\;
   \chi(\sigma_v)=1\;,\; \chi(\sigma_d)=-3\;,

@@ -38,7 +38,8 @@ tj. realne i kompleksne analize te diferencijalne geometrije i topologije.
 Zahvaljujući tome matematička teorija kontinuiranih grupa je u nekim aspektima
 čak i jednostavnija od teorije konačnih grupa\footnote{Najspektakularniji
     primjer je potpuna klasifikacija grupa koju je za kontinuirane
-    grupe dovršio još E. Cartan i koja se često izlaže u jednom poglavlju
+    grupe dovršio još \'{E}. Cartan \index{Cartan, \'{E}lie \yrange{1869}{1951}}
+    i koja se često izlaže u jednom poglavlju
     čak i udžbenika za studente fizike, poput \cite{Jones:1998}, dok je
     klasifikacija konačnih grupa dovršena tek krajem 20. stoljeća i razbacana
 je na tisuće stranica specijalizirane matematičke literature.}.
@@ -262,7 +263,7 @@ P = \begin{pmatrix}
 Naime, uzmemo li proizvoljnu nepravu rotaciju $\tilde{R}$ tada
 je 
 \begin{equation}
-\det (P \tilde{R}) = \det(P) \det(\tilde{R}) = +1     
+\det (P \tilde{R}) = \det(P) \det(\tilde{R}) = +1      \,,
 \end{equation}
 pa je $P\tilde{R}$ 
 prava rotacija, $P\tilde{R} = R$,
@@ -372,13 +373,13 @@ promotriti sličnu vezu jednostavnijih Abelovih grupa \SO{2} i \U{1}. Grupa \SO{
 u (\ref{eq:so2}), a \U{1} je grupa unitarnih $1 \times 1$ \index{U(1)}
 matrica, a to su naravno kompleksni brojevi apsolutne vrijednosti 1, jer uvjet
 unitarnosti je $u^\dagger u = u^* u = |u| = 1$. Tako tu grupu možemo
-parametrizirati kao $u = e^{i\phi}$, $\phi\in [0, 2\pi)$ i jasno je da je
+parametrizirati kao $u = \rme^{\rmi\phi}$, $\phi\in [0, 2\pi)$ i jasno je da je
 i grupna mnogostrukost od \U{1} kružnica, kao i za \SO{2}. Štoviše ove dvije
 grupe su očito izomorfne. Taj izomorfizam omogućuje da se mnogi
 trigonometrijski identiteti ravninske geometrije, poput formula za sinus i kosinus dvostrukog kuta,
 mogu znatno lakše izvesti u grupi \U{1} jer je s eksponencijalnom
 funkcijom lakše raditi nego s trigonometrijskima, a na kraju se lako "vratimo
-u \SO{2}" pomoću Eulerove formule $e^{i\phi} = \cos\phi + i\sin\phi$.
+u \SO{2}" pomoću Eulerove formule $\rme^{\rmi\phi} = \cos\phi + \rmi\sin\phi$.
 
 Kod grupa \SO{3} i \SU{2} situacija je ipak nešto složenija. Već smo vidjeli
 da su grupne mnogostrukosti vrlo različite, a kako je
@@ -493,7 +494,7 @@ kut $\phi$
 [R_3(\epsilon)]^{N} = (1+\epsilon X_3)^N = \left(1+\frac{(N\epsilon)X_3}
  {N}\right)^N 
  \xrightarrow[\substack{N \to \infty \\ (N\epsilon) \to \phi}]{}
- e^{\phi X_3} \,,
+ \rme^{\phi X_3} \,,
 \end{displaymath}
 gdje smo upotrijebili svojstvo eksponencijalne funkcije
 \begin{equation}
@@ -505,7 +506,7 @@ kako eksponenciranje matrica zaista funkcionira isto kao i
 eksponenciranje brojeva, uz još neka dodatna zanimljiva svojstva,
 te tamo eksplicitno pokazujemo da je \index{Matrica!eksponenciranje}
 \begin{equation}
-e^{\phi X_3} = \exp\Bigg\{ 
+\rme^{\phi X_3} = \exp\Bigg\{ 
     \phi  \begin{pmatrix}
 0 & -1 & 0 \\
 1 & 0 & 0 \\
@@ -544,17 +545,17 @@ gdje je $X$ jedan od generatora. Uvjet ortogonalnosti je sada
    X^\mathsf{T}) = 1+\epsilon (X+X^\mathsf{T})+O(\epsilon^2) = 1 \,,
 \end{equation}
 što znači da je $X^\mathsf{T}=-X$ odnosno $X$ je antisimetrična 3$\times$3 matrica.
-Obratno, ako je $X$ antisimetrična, njena eksponencijacija $R = e^X$ daje ortogonalnu
+Obratno, ako je $X$ antisimetrična, njena eksponencijacija $R = \rme^X$ daje ortogonalnu
 matricu jer je
 \begin{equation}
-  R R^\mathsf{T} = e^X (e^X)^\mathsf{T} = e^X e^{X^\mathsf{T}}
-  = e^X e^{-X}
-  = e^{X-X} = 1 \,,
+  R R^\mathsf{T} = \rme^X (\rme^X)^\mathsf{T} = \rme^X \rme^{X^\mathsf{T}}
+  = \rme^X \rme^{-X}
+  = \rme^{X-X} = 1 \,,
 \end{equation}
 gdje je jedini netrivijalni korak predzadnji. Naime, vidi teorem \ref{th:bch},
-$e^{A} e^{B} = e^{A+B}$ samo ukoliko matrice $A$ i $B$ komutiraju što je ovdje
+$\rme^{A} \rme^{B} = \rme^{A+B}$ samo ukoliko matrice $A$ i $B$ komutiraju što je ovdje
 srećom trivijalno slučaj.
-Zahvaljujući općenitoj relaciji $\det e^{X} = e^{\textrm{\scriptsize Tr} X}$,
+Zahvaljujući općenitoj relaciji $\det \rme^{X} = \rme^{\textrm{\scriptsize Tr} X}$,
 vidi (\ref{eq:dettr}), te činjenici da antisimetrične matrice imaju
 nule na glavnoj dijagonali, uvjet specijalnosti determinante $\det R = 1$ je
 zadovoljen automatski.
@@ -609,7 +610,7 @@ X_3=
 \end{pmatrix} \,,
 \label{eq:SO3generators}
 \end{equation}
-pa je $e^{\phi \vec{X}\cdot\unitn}$ onda općeniti element grupe \SO{3} koji
+pa je $\rme^{\phi \vec{X}\cdot\unitn}$ onda općeniti element grupe \SO{3} koji
 predstavlja rotaciju oko osi $\unitn$ za kut $\phi$.
 
 Vektorski prostor sa svojom dodatnom operacijom množenja
@@ -646,7 +647,7 @@ $\quad \alpha,\beta \in \mathbb{R} $
 
 3) antisimetrija: $[X,Y]=-[Y,X]$
 
-4) Jacobijev identitet: $[X, [Y, Z]]+[Y, [Z, X]]+[Z, [X, Y]]=0$
+4) Jacobijev identitet: $[X, [Y, Z]]+[Y, [Z, X]]+[Z, [X, Y]]=0$.
 \index{Jacobijev identitet}
 \end{definicija}
 Za vektorske prostore matrica, gdje je Liejev produkt definiran kao
@@ -755,13 +756,13 @@ važno je da preslikavanje  bude konzistentno s operacijom komutatora.
     2$\times$2 matrice s tragom nula (ovdje zadovoljavanje uvjeta jedinične
     determinante nije automatsko). Kao bazu ove algebre uzimamo
 \begin{equation}
-     \{ -i\frac{\sigma_1}{2},  -i\frac{\sigma_2}{2},  -i\frac{\sigma_3}{2} \} \,,
+     \{ -\rmi\frac{\sigma_1}{2},  -\rmi\frac{\sigma_2}{2},  -\rmi\frac{\sigma_3}{2} \} \,,
 \end{equation}
 gdje su $\sigma_{1,2,3}$ tri Paulijeve matrice
 \begin{equation}
 \sigma_1=\left( \begin{array}{cc} 0 &  1 \\ 1 & 0 \end{array} \right) \,,
 \quad
-\sigma_2=\left( \begin{array}{cc} 0 & -i \\ i & 0 \end{array} \right) \,,
+\sigma_2=\left( \begin{array}{cc} 0 & -\rmi \\ \rmi & 0 \end{array} \right) \,,
 \quad
 \sigma_3=\left( \begin{array}{cc} 1 &  0 \\ 0 &-1 \end{array} \right) \,.
 \label{eq:PaulijeveMatrice}
@@ -769,16 +770,16 @@ gdje su $\sigma_{1,2,3}$ tri Paulijeve matrice
 Ova tri generatora zadovoljavaju identične komutacijske relacije kao i matrice
 \soAlg{3} algebre
 \begin{displaymath}
- \left[ -i\frac{\sigma_1}{2}, -i\frac{\sigma_2}{2} \right] =
- -i\frac{\sigma_3}{2} \qquad \text{itd.}
+ \left[ -\rmi\frac{\sigma_1}{2}, -\rmi\frac{\sigma_2}{2} \right] =
+ -\rmi\frac{\sigma_3}{2} \qquad \text{itd.}
 \end{displaymath}
-pa je pridruživanje $X_i \to -i \sigma_i/2$  izomorfizam i
+pa je pridruživanje $X_i \to -\rmi \sigma_i/2$  izomorfizam i
 \soAlg{3}=\suAlg{2}.
 
 Važno je ovdje uočiti da premda su elementi matrica iz \suAlg{2} općenito kompleksni,
 \suAlg{2} je \emph{realna} Liejeva algebra, dakle algebra nad poljem $\mathbb{R}$. 
 (Linearna kombinacija $\sigma_1 + \sigma_2$ je antihermitska i time pripada \suAlg{2},
-dok $\sigma_1 + i \sigma_2$ to nije!)
+dok $\sigma_1 + \rmi \sigma_2$ to nije!)
 
 Zanimljivo je pitanje što izomorfizam algebri znači za odgovarajuće grupe tj.
 jesu li možda onda i \SO{3} i \SU{2} izomorfne? O tome će biti riječi u sljedećem odjeljku,
@@ -803,7 +804,7 @@ X_{1}^2 + X_{2}^2 + X_{3}^2 = -2\cdot \Eins \,,
 \end{equation}
     za \soAlg{3} i
 \begin{equation}
-    \left(\frac{-i}{2}\right)^2
+    \left(\frac{-\rmi}{2}\right)^2
     \big(\sigma_{1}^2 + \sigma_{2}^2 + \sigma_{3}^2\big) = -\frac{3}{4} \cdot \Eins \,,
 \end{equation}
     za \suAlg{2}.
@@ -902,17 +903,17 @@ jedinice. No je li barem to uvijek moguće?
 Kako smo pokazali, svakoj Liejevoj grupi jednoznačno pripada neka Liejeva algebra
 konstrukcijom kao u (\ref{eq:defXi}). Možemo li, obratno, svakom
 elementu $g$  komponente povezanosti jedinice pridružiti jedinstveni
-element $X$ algebre takav da je $g = e^{X}$?
+element $X$ algebre takav da je $g = \rme^{X}$?
 
 Prije nego damo odgovor na to pitanje, skrenimo pažnju na to da je
 povezivanje elemenata algebre i elemenata grupe exponencijacijom
 (odnosno u drugom smjeru inverznom funkcijom logaritma) samo dio
 posla. Potrebno je pokazati i da je binarna grupna operacija potpuno
 određena operacijama s odgovarajućim elementima algebre. Kako
-dakle izračunati $e^X e^Y$? Imajući u vidu definiciju eksponencijacije
+dakle izračunati $\rme^X \rme^Y$? Imajući u vidu definiciju eksponencijacije
 to je
 \begin{equation}
-   e^X e^Y = \left(\sum_{k=0}^{\infty} \frac{X^k}{k!}\right)
+   \rme^X \rme^Y = \left(\sum_{k=0}^{\infty} \frac{X^k}{k!}\right)
              \left(\sum_{n=0}^{\infty} \frac{Y^n}{n!}\right)
     \,,
 \end{equation}
@@ -922,17 +923,17 @@ $[X, Y]=0$ (vidi zadatak \ref{zad:abelovaalgebra}) pa se članovi
 gornjih suma mogu isto kao kod eksponencijacije običnih brojeva
 iskombinirati u $\sum (X+Y)^{n}/n! = \exp(X+Y)$. Za općenite
 nekomutirajuće grupe to nije slučaj, nego vrijedi sljedeći važan
-rezultat teorije Liejevih grupa
+rezultat teorije Liejevih grupa.
 \begin{teorem}[Baker-Campbell-Hausdorff] \label{th:bch}
     \index{BCH formula} \index{Teorem!Baker-Campbell-Hausdorffov}
     \index{Baker, Henry \yrange{1866}{1956}}
     \index{Campbell, John \yrange{1862}{1924}}
     \index{Hausdorff, Felix \yrange{1868}{1942}}
-    \[ e^X e^Y = e^Z \,, \]
+    \[ \rme^X \rme^Y = \rme^Z \,, \]
   gdje je 
   \[ Z = X + Y + \text{red višestrukih komutatora $X$ i $Y$.} \]
 \end{teorem}
-Prvi članovi BCH formule su
+Ovaj izraz se naziva BCH formula i njeni prvi članovi su
 \begin{align}
     Z& = X + Y + \frac{1}{2}[X, Y] + \frac{1}{12}[X, [X, Y]] 
        - \frac{1}{12}[Y, [X, Y]] \nonumber \\
@@ -940,7 +941,7 @@ Prvi članovi BCH formule su
          + \cdots \,,
    \label{eq:bch}
 \end{align}
-i ključna netrivijalnost je da su \emph{svi} članovi reda dati preko
+a ključna netrivijalnost je da su \emph{svi} članovi reda dati preko
 ovakvih višestrukih komutatora pa je jasno da je $Z$ element Liejeve algebre.
 (Podsjetimo se da je u Liejevoj algebri definirano zbrajanje elemenata $X+Y$ i njihov
  komutator $[X, Y]$, ali ne i množenje\footnote{Ako gledamo matrične
@@ -958,7 +959,7 @@ u \cite{Stilwell:2008}.
 
 Za važnu kategoriju Liejevih grupa vrijedi da se svi elementi iz 
 komponente povezanosti jedinice mogu prikazati u obliku
-$e^{X}$ gdje je $X$ element
+$\rme^{X}$ gdje je $X$ element
 Liejeve algebre. Dovoljan uvjet je da grupa ima svojstvo \emph{kompaktnosti}.
 \begin{definicija}[Kompaktnost]
     \index{Liejeva grupa!kompaktna}
@@ -977,7 +978,7 @@ je interval otvoren i nekompaktan\footnote{Radi
     kompletnosti spomenimo da ako Liejeva grupa nije kompaktna, 
     svejedno se elementi iz komponente
 povezanosti jedinice mogu prikazati kao konačan umnožak eksponencijala
-$e^{X_1} e^{X_2}\cdots e^{X_n}$ \cite{Stilwell:2008}.
+$\rme^{X_1} \rme^{X_2}\cdots \rme^{X_n}$ \cite{Stilwell:2008}.
 Treba razlikovati situaciju gdje se svaki element
 grupe (ili njenog podskupa) može dobiti eksponencijacijom (exp
 je surjektivna) i situaciju gdje se on može se dobiti na jedinstven način 
@@ -1104,6 +1105,7 @@ Broj pokrivanja jednak je povezanosti od G.
 
 Tako je \SU{2} univerzalna grupa pokrivanja za \SO{3}.
 
+\vspace{2ex}
 \centerline{\input{figures/so3pokrivanje.tex}}
 %\centerline{\includegraphics[scale=1.0]{pics/so3pokrivanje.eps}}
 
@@ -1115,13 +1117,13 @@ Njihovu univerzalnu grupu pokrivanja možemo identificirati
 tako da identificiramo jednostavno povezanu Liejevu grupu koju
 generira $\mathbb{R}$. Ako se oslonimo na eksponencijaciju
 vidimo da generiramo grupu pozitivnih realnih brojeva
-$\{e^{x}\,; x \in \mathbb{R}\}$ s množenjem kao grupnom operacijom.
+$\{\rme^{x}\,; x \in \mathbb{R}\}$ s množenjem kao grupnom operacijom.
 No primjetite da je ta grupa izomorfna grupi $(\mathbb{R}, +)$
 gdje je preslikavanje izomorfizma upravo eksponencijalna funkcija.
 Tako možemo reći da je $R$ sam sebi algebra i sam sebi univerzalna
 grupa pokrivanja, a on je i univerzalna grupa pokrivanja za
 \SO{2} i \U{1}. Odgovarajući homomorfizam $\mathbb{R} \to \U{1}$
-je $x \to e^{ix}$ i kernel je skup $2\pi\mathbb{Z} = \{0, \pm 2\pi,
+je $x \to \rme^{\rmi x}$ i kernel je skup $2\pi\mathbb{Z} = \{0, \pm 2\pi,
 \pm 4\pi, \ldots\}$. Riječ je o beskonačnom skupu pa kažemo da
 $\mathbb{R}$ pokriva \U{1} beskonačno puta, što je konzistentno
 s ranije utvrđenom činjenicom da je \U{1} beskonačno povezan.
@@ -1281,7 +1283,7 @@ smo ovdje uzeli kao definiciono, samo posljedica.
 Za prebrojavanje parametara treba prvo uočiti da je za sve unitarne
 matrice determinanta ograničena na apsolutnu vrijednost 1. To slijedi
 primjenom Binet-Cauchyjevog teorema na definiciju $M M^{\dagger} = 1$
-što daje $|\det M|^2 = 1$ odnosno $\det M = e^{i \phi}$, 
+što daje $|\det M|^2 = 1$ odnosno $\det M = \rme^{\rmi \phi}$, 
 $\phi\in [0, 2\pi)$.
 Dodatni uvjet za specijalne unitarne matrice $\det M = 1$ je onda
 samo jedna realna jednadžba $\phi = 0$ pa specijalna unitarna grupa
@@ -1299,14 +1301,14 @@ Kod prebrojavanja parametara, jedina razlika obzirom na unitarne matrice
 je da umjesto ($i=k$) jednadžbi (\ref{eq:diagonalcondition}) 
 koje odgovaraju dijagonali matrične jednadžbe sada imamo
 \begin{equation}
- \sum_j M_{ij} M_{ij} = \sum_j M_{ij}^2 = 1
+ \sum_j M_{ij} M_{ij} = \sum_j M_{ij}^2 = 1 \,,
 \end{equation}
 što su kompleksne jednadžbe pa možemo eliminirati sve skupa
 $2n + n(n-1)$ parametara i ostaje ih samo $n(n-1)$.
 
 U fizici se najčešće susrećemo s grupom ortogonalnih \emph{realnih} matrica
 \begin{equation}
-\O{n} \equiv \O{n, \mathbb{R}} = \{ M\in \GL{n,\mathbb{R}} \; | \; M M^{\mathrm{T}} = 1\}
+\O{n} \equiv \O{n, \mathbb{R}} = \{ M\in \GL{n,\mathbb{R}} \; | \; M M^{\mathrm{T}} = 1\} \,,
 \end{equation}
 koja ima $n(n-1)/2$ parametara. Ova grupa čuva
 kvadratnu formu $(\vec{x}, \vec{y}) = \sum_i x_i y_i$ tj. skalarni produkt na realnom
@@ -1422,7 +1424,7 @@ nad konačnim poljima. Povrh toga postoji još samo 26 tzv. \emph{sporadičnih}
 \index{Grupa!sporadična} \index{Grupa!čudovište (monster)}
 \index{Janko, Zvonimir \yrange{1932}{2022}}
 grupa\footnote{Četiri sporadične grupe je pronašao hrvatski matematičar Zvonimir Janko
-i po njemu se zovu $\mathrm{J}_{1, 2, 3 i 4}$.} gdje je najveća od njih
+i po njemu se zovu $\mathrm{J}_{1, 2, 3\,\mathrm{i}\, 4}$.} gdje je najveća od njih
 čuvena grupa \emph{čudovište} (engl. \emph{monster}) s
 \[ \textstyle
 808\,017\,424\,794\,512\,875\,886\,459\,904\,961\,710\,757\,005\,754\,368\,000\,000\,000
@@ -1466,19 +1468,19 @@ za vektore $\vec{a}$, $\vec{b}$ i \vec{c}
 \tag{b} \sigma_{i}^\dagger &= \sigma_i \\
 \tag{c} \det \sigma_i &= -1 \\
 \tag{d} \Tr \sigma_i &=0 \\
-\tag{e} [\sigma_i, \sigma_j] &= 2 i \epsilon_{ijk} \sigma_k \\
+\tag{e} [\sigma_i, \sigma_j] &= 2 \rmi \epsilon_{ijk} \sigma_k \\
 \tag{f} \{\sigma_i, \sigma_j\}\equiv \sigma_i\sigma_j + \sigma_j \sigma_i &= 2
 \delta_{ij} 1 \\
 \tag{g} \Tr (\sigma_i \sigma_j) &= 2\delta_{ij} \\
-\tag{h} \sigma_i \sigma_j &= \delta_{ij} 1 + i \epsilon_{ijk}\sigma_k\\
-\tag{i} e^{-\frac{i}{2}\vec{\sigma}\cdot\unitn \theta} &=
-\cos \frac{\theta}{2}-i\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \quad\in \SU{2}
+\tag{h} \sigma_i \sigma_j &= \delta_{ij} 1 + \rmi \epsilon_{ijk}\sigma_k\\
+\tag{i} \rme^{-\frac{\rmi}{2}\vec{\sigma}\cdot\unitn \theta} &=
+\cos \frac{\theta}{2}-\rmi\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \quad\in \SU{2}
 \end{align*}
 
 \item \label{zad:abelovaalgebra} Za Abelovu grupu vrijedi $g_1 g_2 g_{1}^{-1} g_{2}^{-1} = e$,
     gdje se $g_1 g_2 g_{1}^{-1} g_{2}^{-1}$ naziva \emph{komutator} elemenata grupe.
     \index{Komutator}
-    Ako je $g_1$ generiran elementom algebre $g_1 = e^{s X}$, a $g_2 = e^{t Y}$, gdje su
+    Ako je $g_1$ generiran elementom algebre $g_1 = \rme^{s X}$, a $g_2 = \rme^{t Y}$, gdje su
     $s$ i $t$ realni parametri, pokažite da je
 \begin{equation}
 \frac{\partial^2}{\partial s \, \partial t} \bigg|_{s=t=0} \big( \exp(sX) \exp(tY)

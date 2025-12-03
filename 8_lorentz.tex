@@ -133,7 +133,7 @@ omogućuje pretvorbu donjih kovarijantnih u gornje (\emph{kontravarijantne})
 indekse tako da je
 \begin{align}
 x^\mu &= (ct, \vec{x}) \\
-x_\mu &= (ct,-\vec{x}) = g_{\mu\nu} x^\nu
+x_\mu &= (ct,-\vec{x}) = g_{\mu\nu} x^\nu \,,
 \end{align}
 te skalarni produkt zapisujemo i kao\footnote{Specifično 
 razlikovanje "gornjih" i "donjih" indeksa vektora u
@@ -218,13 +218,13 @@ Za transformirani 4-vektor $x' = \Lambda x$ vrijedi
 {x^0}' \\ {x^1}' \\ {x^2}' \\ {x^3}'
 \end{pmatrix} \\
   &= {x'}^{\top} g x' = x^\top \Lambda^\top g \Lambda x \\
-  &= x^2 = x^\top g x
+  &= x^2 = x^\top g x \,,
 \end{align}
 pa usporedbom dobivamo definiciju opće Lorentzove grupe
 \O{1, 3}
 kao grupe svih matrica $\Lambda$ sa svojstvom
 \begin{equation}
-   \Lambda^\top g \Lambda = g
+   \Lambda^\top g \Lambda = g \,,
 \label{deflambda}
 \end{equation}
 što je definicija koju smo upoznali već u (\ref{eq:MgM}).
@@ -240,17 +240,17 @@ iz čega slijedi da je
 \label{detL}
 \end{equation}
 Ova situacija je analogna situaciji u grupi \O{3} čiji elementi
-također imaju determinantu $\pm 1$ pa (vidi argumentaciju na
-stranici \pageref{pag:povezanostO3}) elementi koji imaju
-determinantu $+1$ i tako čine podgrupu \SO{1, 3} nisu topološki
+također imaju determinantu $\pm 1$ pa  elementi koji imaju
+determinantu $+1$ i čine podgrupu \SO{1, 3} nisu topološki
 u grupnoj mnogostrukosti povezani sa elementima koji imaju
-determinantu $-1$. Za razliku od \O{3}, koja ima točno te
+determinantu $-1$ (vidi argumentaciju na
+stranici \pageref{pag:povezanostO3}). Za razliku od \O{3}, koja ima
 dvije komponente povezanosti (vidi (\ref{eq:so3Pso3})), 
 vidjet ćemo da ih \O{1, 3} ima četiri.
 Naime, raspišimo matričnu jednadžbu (\ref{eq:deflambda})  po komponentama
 \begin{equation}
     \underbrace{\tensor{(\Lambda^\top)}{_{\mu}^{\nu}}}_{\tensor{\Lambda}{^{\nu}_{\mu}}}
-    g_{\nu\rho}\tensor{\Lambda}{^{\rho}_{\sigma}} = g_{\mu\sigma}
+    g_{\nu\rho}\tensor{\Lambda}{^{\rho}_{\sigma}} = g_{\mu\sigma} \,,
 \end{equation}
 i pogledajmo komponentu $\mu=\sigma=0$. Kako je $g_{00}=1$ imamo
 \begin{align}
@@ -304,7 +304,7 @@ tj. prema pripadnosti reprezentacijama Lorentzove
 grupe. Kao i kod rotacija, poželjno je usredotočiti se na Liejevu algebru
 grupe koju čine generatori $L$:
 \begin{equation}
-    \Lambda \in \SOsup{+}{1,3} \,, \qquad \Lambda = e^L \,.
+    \Lambda \in \SOsup{+}{1,3} \,, \qquad \Lambda = \rme^L \,.
 \end{equation}
 Iz definicionog svojstva (\ref{deflambda}) dobijemo $L^\top g = -g L$,
 što uz činjenicu da je $g^\top = g$ daje $(gL)^\top = -gL$ odnosno
@@ -415,12 +415,12 @@ za unitarne reprezentacije mora odražavati u beskonačnosti vektorskih prostora
 na kojima one djeluju. Konačnodimenzionalne reprezentacije nekompaktnih grupa
 su obavezno neunitarne, gdje jedino trivijalna jednodimenzionalna reprezentacija
 čini iznimku. Kao primjer toga, matrice $\tensor{\Lambda}{^\mu_\nu}$
-definicione četverodimenzionalne reprezentacija Lorenztove grupe u (\ref{eq:deflambda}) 
+definicione četverodimenzionalne reprezentacija Lorentzove grupe u (\ref{eq:deflambda}) 
 su očito neunitarne. Stoga se stanja kvantnih sustava za koja je 
 unitarnost obavezna prema Wignerovom teoremu (vidi dodatak \ref{sec:qm}) ne mogu transformirati
 prema konačnodimenzionalnim reprezentacijama. U sljedećem odjeljku ćemo
 vidjeti kako se ona transformiraju prema beskonačnodimenzionalnim
-reprezentacijama Poincar\'{e}ove grupe (koja sadrži Lorenztovu),
+reprezentacijama Poincar\'{e}ove grupe (koja sadrži Lorentzovu),
 dok su konačnodimenzionalne neunitarne reprezentacije koje diskutiramo
 u ostatku ovog odjeljka relevantne za objekte za koje unitarnost
 nije nužna poput četverovektora položaja ili impulsa te, važno, klasičnih
@@ -733,7 +733,7 @@ razapinju potprostor $\mathcal{H}_{p} \subset \mathcal{H}$ kojeg nazivamo
 Zahvaljujući (\ref{eq:defpsigma}) djelovanje
 čistih translacija je jednostavno, podsjetimo se odjeljka \ref{sec:qmtrans} 
 \begin{equation}
-    U(1, a) \ket{\vec{p}, \sigma} = e^{\rmi p\cdot a}  \ket{\vec{p}, \sigma}\;.
+    U(1, a) \ket{\vec{p}, \sigma} = \rme^{\rmi p\cdot a}  \ket{\vec{p}, \sigma}\;.
     \label{eq:PoiTrans}
 \end{equation}
 Pozabavimo se sada djelovanjem Lorentzovih transformacija $U(\Lambda)\equiv U(\Lambda, 0)$.
@@ -844,7 +844,7 @@ grupe \index{Lorentzova grupa!unitarna reprezentacija}
 \end{equation}
 te na kraju i reprezentaciju Poincar\'{e}ove grupe
 \begin{equation}
-    U(\Lambda, a) \ket{\vec{p}, \sigma} =  e^{\rmi (\Lambda p) \cdot a}
+    U(\Lambda, a) \ket{\vec{p}, \sigma} =  \rme^{\rmi (\Lambda p) \cdot a}
      \sum_{\sigma'=-j}^{j} D^{(j)}_{\sigma'\sigma}(R_{\scriptscriptstyle\rm W})
      \ket{\Lambda\vec{p}, \sigma'} \;.
 \end{equation}
@@ -1015,8 +1015,8 @@ ponašanje bezmasenih stanja pri
 transformacijama iz Poincar\'{e}ove grupe 
 $(\Lambda, a) \in \mathbb{R}^{1,3}\rtimes\SOsup{+}{1,3}$ je jednostavno
 \begin{equation}
-    U(\Lambda, a) \ket{\vec{k}, \lambda} = e^{\rmi k\cdot a}
-    e^{-\rmi \lambda \theta(\Lambda, k)} \ket{\Lambda\vec{k}, \lambda} \,,
+    U(\Lambda, a) \ket{\vec{k}, \lambda} = \rme^{\rmi k\cdot a}
+    \rme^{-\rmi \lambda \theta(\Lambda, k)} \ket{\Lambda\vec{k}, \lambda} \,,
     \label{eq:Urepm0}
 \end{equation}
 gdje je kut $\theta(\Lambda, k)$ potrebno odrediti netrivijalnim postupkom slično kao

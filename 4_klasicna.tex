@@ -121,9 +121,7 @@ koordinatnog sustava ne mijenja same vektore i ono što je onda
 \begin{equation}
        m  \ddot{x}_{i} =  F_{i} \;.
 \end{equation}
-\index{Invarijantnost}
-\index{Kovarijantnost}
-
+\index{Invarijantnost} \index{Kovarijantnost}
 Kod konstrukcije fizikalnih teorija simetrije prirode će se odražavati
 u kovarijantnosti jednadžbi gibanja pa je
 važno razviti vještinu prepoznavanja jesu li neke jednadžbe
@@ -177,7 +175,7 @@ matrice je ključno i u ovom kontekstu predstavlja svojevrsnu definiciju
 vektora:
 \index{Vektor}
 \begin{center}
-    {vektor} $\equiv$ {objekt koji se pri rotacijama transformira množenjem matricom}
+    \emph{vektor} $\equiv$ {objekt koji se pri rotacijama transformira množenjem matricom}
     $R(\hat{\vec{n}}, \theta)$.
 \end{center}
 Ovo se poopćuje na veličine sa složenijim transformacijskim svojstvima,
@@ -205,7 +203,7 @@ U neizotropnom sredstvu (npr. kristalu), smjer struje $\vec{j}$ ne mora biti ist
 kao i smjer narinutog električnog polja $\vec{E}$. U tom slučaju Ohmov zakon
 glasi
 \begin{equation*}
-j_i = \sum_j \sigma_{ij} E_j
+j_i = \sum_j \sigma_{ij} E_j \,,
 \end{equation*}
 i uključuje tenzor drugog ranga $\sigma_{ij}$ --- tenzor električne vodljivosti.
 \label{pr:tenzorvodljivosti}
@@ -323,9 +321,10 @@ Newtonove za formalizaciju principa simetrije.
 \index{Lagrange, Joseph-Louis \yrange{1736}{1813}}
 \index{Hamilton, William \yrange{1805}{1865}}
 Naime, centralni objekt te formulacije je integral lagranžijana tj. akcija
+\index{Akcija}
 \begin{equation}
-S = \int_{t_0}^{t_1}  L\, dt
-    \label{eq:akcija}
+S = \int_{t_0}^{t_1} \rmd t\, L \,,
+\label{eq:akcija}
 \end{equation}
 koja je invarijantni skalar obzirom na sve simetrije teorije. Razmatranje
 je li akcija invarijantna je znantno lakše od razmatranja jesu li jednadžbe
@@ -457,23 +456,23 @@ i formalno zbrojimo članove
 {\pd x}+\frac{a^2}{2!}\frac{\pd^2 \psi_{\alpha}(x,t)}{\pd x^2}-\ldots \\
 &=\left(1-a\frac{\pd}{\pd x}+\frac{a^2}{2!}\frac{\pd^2}{\pd x^2} - \ldots\right)
 \psi_{\alpha}(x,t) \\
-&=e^{-a \pd / \pd  x} \psi_{\alpha}(x,t) \,,
+&=\rme^{-a \pd / \pd  x} \psi_{\alpha}(x,t) \,,
 \end{split}
 \end{equation*}
 gdje je eksponencijacija diferencijalnog (ili bilo kakvog drugog) operatora
 definirana naznačenom beskonačnom sumom (vidi i dodatak \ref{sec:expmat}).
 Usporedbom vidimo da je operator translacije u 1D
 \begin{equation}
-U_r(a)= e^{-a \pd / \pd  x} \,,
+U_r(a)= \rme^{-a \pd / \pd  x} \,,
 \end{equation}
-odnosno, u trodimenzionalnom prostoru ćemo imati
+a u trodimenzionalnom prostoru ćemo imati
 \begin{equation}
-U_r(\vec{a})= e^{-\vec{a}\cdot\nabla} \;.
+U_r(\vec{a})= \rme^{-\vec{a}\cdot\nabla} \;.
 \end{equation}
-Poznavajući kvantnomehaničku korespondenciju $-i\hbar\nabla \leftrightarrow
+Poznavajući kvantnomehaničku korespondenciju $-\rmi\hbar\nabla \leftrightarrow
 \vec{p}$ imamo konačno općeniti (neovisan o bazi) operator translacije
 \begin{equation}
-U_r(\vec{a})= e^{-(i/\hbar)\vec{a}\cdot\vec{p}} \;.
+U_r(\vec{a})= \rme^{-(\rmi/\hbar)\vec{a}\cdot\vec{p}} \;.
 \label{eq:Ur}
 \end{equation}
 Skup translacija čini grupu. Kako svaku translaciju možemo specificirati njenim 
@@ -511,14 +510,14 @@ Iz razloga kontinuiranosti, odgovarajući operator translacije mora biti
 samo infinitezimalno različit od jediničnog operatora pa ga možemo
 napisati u obliku
 \begin{equation}
-    U_{r}(\vec{\epsilon}) = 1 - \frac{i}{\hbar} \vec{p}\cdot\vec{\epsilon} + O(\epsilon^2) \;,
+    U_{r}(\vec{\epsilon}) = 1 - \frac{\rmi}{\hbar} \vec{p}\cdot\vec{\epsilon} + O(\epsilon^2) \;,
     \label{eq:infinitezimalniUr}
 \end{equation}
 gdje je $\vec{p}$ operator \emph{definiran} ovim relacijama. Uvrštavanjem
 (\ref{eq:infinitezimalniUr}) u (\ref{eq:defUr}) i uspoređivanjem članova
 linearnih u $\epsilon_i$ zaključujemo da mora vrijediti
 \begin{equation}
-    [x_i, p_j] = i\hbar \delta_{ij}\,.
+    [x_i, p_j] = \rmi\hbar \delta_{ij}\,.
     \label{eq:xpkomutacija}
 \end{equation}
 Također, kako translacije komutiraju, odgovarajući operatori moraju
@@ -537,14 +536,14 @@ operator konačne translacije za $\vec{a}$ kao\footnote{Da se uvjerite u ovu
     strana djeluju na svojstvene vektore operatora $\vec{p}$, a oni
     čine kompletnu bazu prostora što onda povlači i operatorsku jednakost.}
 \begin{equation}
-    \lim_{N\to\infty} \left(1 - \frac{i}{\hbar} \frac{\vec{p}\cdot\vec{a}}{N} \right)^N
-        = e^{-(i/\hbar)\vec{a}\cdot\vec{p}} \;,
+    \lim_{N\to\infty} \left(1 - \frac{\rmi}{\hbar} \frac{\vec{p}\cdot\vec{a}}{N} \right)^N
+        = \rme^{-(\rmi/\hbar)\vec{a}\cdot\vec{p}} \;,
 \end{equation}
 što je upravo operator translacije $U_r(\vec{a})$ iz (\ref{eq:Ur}).
 \index{Operator!translacije u prostoru} \index{Translacija!u prostoru}
 Naglasimo još jednom da je ovdje operator $\vec{p}$ definiran svojom ulogom
 u operatoru translacije (kažemo da on \emph{generira} translacije). 
-Kasnije nam daljnja razmatranja trebaju pokazati
+Daljnja razmatranja trebaju pokazati
 da je on kvantnomehanički analogon klasičnom impulsu sustava.
 
 
@@ -563,13 +562,13 @@ I opet Taylorovim razvojem dobivamo
 \begin{split}
  \psi_{\alpha}(x,t-\tau)&=\psi_{\alpha}(x,t)-\tau\frac{\pd\psi_{\alpha}(x,t)}
 {\pd t}+\ldots \\
-&=e^{-\tau \pd / \pd  t} \psi_{\alpha}(x,t) \;,
+&=\rme^{-\tau \pd / \pd  t} \psi_{\alpha}(x,t) \;,
 \end{split}
 \end{equation}
-te kvantnomehanička korespondencija $i\hbar\pd /\pd t \leftrightarrow H$
+te kvantnomehanička korespondencija $\rmi\hbar\pd /\pd t \leftrightarrow H$
 daje
 \begin{equation}
-U_t(\tau)= e^{(i/\hbar)H\tau} \;.
+U_t(\tau)= \rme^{(\rmi/\hbar)H\tau} \;.
 \end{equation}
 Ovo vrijedi samo za $H$ konstantan u vremenu, kakav on jest u većini
 nama zanimljivih slučajeva (za ostale slučajeve
@@ -585,13 +584,13 @@ tog istog sustava u ranijem trenutku $t$.
 Operator vremenske evolucije se može dobiti iz upravo
 navedenog, ako primijetimo da je
 \begin{equation}
-\psi_{\alpha}(x,t-\tau)=e^{(i/\hbar)H\tau}\psi_{\alpha}(x,t)
+\psi_{\alpha}(x,t-\tau)=\rme^{(\rmi/\hbar)H\tau}\psi_{\alpha}(x,t)
 \end{equation}
 pa zamjenom $\tau\equiv t-t'$ imamo 
 \begin{equation}
-\psi_{\alpha}(x,t')=e^{-(i/\hbar)H(t'-t)}\psi_{\alpha}(x,t)
+\psi_{\alpha}(x,t')=\rme^{-(\rmi/\hbar)H(t'-t)}\psi_{\alpha}(x,t)
 \end{equation}
-Vrijedi dakle\footnote{Razlikovanje operatora translacije i evolucije nije
+Vrijedi dakle\footnote{Razlikovanje operatora vremenske translacije i evolucije nije
     univerzalno prisutno u literaturi, što nije nužno pogrešno jer se može
     u nekom smislu svesti na razlikovanje aktivnih i pasivnih transformacija. 
     Za dodatno pojašnjenje pristupa zastupanog ovdje, vidi \cite{Greiner:1989},
@@ -608,8 +607,8 @@ $[H,A]=0$. Neka je $\psi(x,t)$ svojstveno stanje od $A$ tj.
 \end{equation}
 Tada to isto stanje nakon vremena $(t'-t)$ zadovoljava
 \begin{equation}
-  A\psi(x,t')= A e^{-(i/\hbar)H(t'-t)} \psi(x,t) =
- e^{-(i/\hbar)H(t'-t)} A \psi(x,t) = a \psi(x,t')
+  A\psi(x,t')= A \rme^{-(\rmi/\hbar)H(t'-t)} \psi(x,t) =
+ \rme^{-(\rmi/\hbar)H(t'-t)} A \psi(x,t) = a \psi(x,t')
 \end{equation}
 tj. $A$ je očuvana veličina. Zaključujemo da su
 veličine čiji operatori komutiraju s hamiltonijanom očuvane u vremenu.
@@ -637,6 +636,7 @@ istim postupkom kao i operatore translacije u prostoru i vremenu,
 jedino intrinsična trodimenzionalnost i nekomutativnost rotacija
 malo komplicira izvod.
 
+\vspace{2ex}
 \centerline{\input{figures/infrotacija.tex}}
 %\centerline{\includegraphics[scale=0.8]{pics/infrotacija.eps}}
 
@@ -654,10 +654,10 @@ sustava treba zadovoljavati
  &=\psi_{\alpha}(\vec{r}-\delta\phi\hat{\vec{n}}\times\vec{r}, t) \\
  &=\psi_{\alpha}(\vec{r}, t)-(\delta\phi\hat{\vec{n}}\times\vec{r})\cdot
   \nabla\psi_{\alpha}(\vec{r}, t) \\
- &= \psi_{\alpha}(\vec{r}, t)-\frac{i}{\hbar}(\delta\phi\hat{\vec{n}}\times
+ &= \psi_{\alpha}(\vec{r}, t)-\frac{\rmi}{\hbar}(\delta\phi\hat{\vec{n}}\times
   \vec{r})\cdot \vec{p}\psi_{\alpha}(\vec{r}, t) \\
- &= \left(1-\frac{i}{\hbar}\vec{L}\cdot\hat{\vec{n}}\delta\phi \right)
-  \psi_{\alpha}(\vec{r}, t)
+ &= \left(1-\frac{\rmi}{\hbar}\vec{L}\cdot\hat{\vec{n}}\delta\phi \right)
+  \psi_{\alpha}(\vec{r}, t) \,.
 \end{split}
 \end{equation}
 
@@ -666,8 +666,8 @@ gdje $N\to\infty$: \index{Operator!rotacije}
 
 \begin{equation}
 D(\hat{\vec{n}}, \phi)=\lim_{N\to\infty}
-\left(1-\frac{i}{\hbar}\vec{L}\cdot\hat{\vec{n}}\delta\phi \right)^N
-= e^{-(i/\hbar)\vec{L}\cdot\hat{\vec{n}}\phi}
+\left(1-\frac{\rmi}{\hbar}\vec{L}\cdot\hat{\vec{n}}\delta\phi \right)^N
+= \rme^{-(\rmi/\hbar)\vec{L}\cdot\hat{\vec{n}}\phi} \,.
 \label{eq:rotD}
 \end{equation}
 I opet, ove relacije definiraju operatore $L_i$ kao generatore rotacija,
@@ -677,7 +677,7 @@ Ukoliko vrijedi $[H,L_{i}]=0$ (a vrijedit će ukoliko neki vanjski utjecaji
 ne naruše izotropiju prostora) moment impulsa će biti očuvan.
 Poznato je da operatori $L_i$, $i=x,y,z$ zadovoljavaju komutacijske relacije
 \begin{equation}
-    [L_i, L_j] = i\hbar \epsilon_{ijk}  L_k \,,
+    [L_i, L_j] = \rmi\hbar \sum_{k} \epsilon_{ijk}  L_k \,,
     \label{eq:Lkomutacija}
 \end{equation}
 gdje smo upotrijebili Levi-Civitin ili totalno antisimetrični pseudotenzor\footnote{Za
@@ -732,8 +732,8 @@ pri rotacijama kao standardni vektor, dakle pomoću iste matrice $R(\hat{\vec{n}
 iz odjeljka \ref{sec:tenzori}, iz gornje slike vidimo da zbog promjene
 orijentacije čestice treba biti
 \begin{gather*}
-\vec{\Psi}'(\vec{r}',t)=R \vec{\Psi}(\vec{r},t) \\
-\vec{\Psi}'(\vec{r},t)=R \vec{\Psi}(R^{-1}\vec{r},t) 
+\vec{\Psi}'(\vec{r}',t)=R \vec{\Psi}(\vec{r},t) \,, \\
+\vec{\Psi}'(\vec{r},t)=R \vec{\Psi}(R^{-1}\vec{r},t) \,, 
 \end{gather*}
 pa imamo, sličnim postupkom kao i ranije
 \begin{equation*}
@@ -746,9 +746,9 @@ D(\vec{\hat{n}},\delta\phi)\vec{\Psi}(\vec{r}, t)&=
 R(\hat{\vec{n}}, \delta\phi)^{-1}\vec{r},t) \\
  &=\vec{\Psi}(\vec{r}-\delta\phi\hat{\vec{n}}\times\vec{r}, t)+
 \delta\phi \hat{\vec{n}}\times\vec{\Psi}(\vec{r},t) + O(\delta\phi^2) \\
- &= \vec{\Psi}(\vec{r}, t)-\frac{i}{\hbar}(\delta\phi\hat{\vec{n}}\cdot
+ &= \vec{\Psi}(\vec{r}, t)-\frac{\rmi}{\hbar}(\delta\phi\hat{\vec{n}}\cdot
   \vec{L})\vec{\Psi}(\vec{r}, t)+
-\delta\phi \hat{\vec{n}}\times\vec{\Psi}(\vec{r},t) + O(\delta\phi^2)
+\delta\phi \hat{\vec{n}}\times\vec{\Psi}(\vec{r},t) + O(\delta\phi^2) \,.
 \end{split}
 \end{equation*}
 Vidimo da se obzirom na rotaciju jednokomponentne valne funkcije u prošlom
@@ -756,48 +756,48 @@ odjeljku pojavio dodatni član $\delta\phi \hat{\vec{n}}\times\vec{\Psi}(\vec{r}
 kojeg ćemo sada zapisati pomoću tripleta matrica $S_{j}$,
 definiranih pomoću Levi-Civitinog pseudotenzora (vidi zadatak \ref{zad:levicivita}):
 \begin{equation}
-(S_j)_{ik} = i\hbar\epsilon_{ijk} \quad j=1,2,3 \;.
+(S_j)_{ik} = \rmi\hbar\epsilon_{ijk} \quad j=1,2,3 \;.
 \end{equation}
 Konkretno
 \begin{align}
-S_1& =i\hbar
+S_1& =\rmi\hbar
 \begin{pmatrix}
 0 & 0 & 0 \\
 0 & 0 &-1 \\
 0 & 1 & 0
-\end{pmatrix} = i\hbar X_1 \,,\\
-S_2& = i\hbar
+\end{pmatrix} = \rmi\hbar X_1 \,,\\
+S_2& = \rmi\hbar
 \begin{pmatrix}
 0 & 0 & 1 \\
 0 & 0 & 0 \\
 -1 & 0 & 0
-\end{pmatrix} = i\hbar X_2 \,, \\
-S_3& = i\hbar
+\end{pmatrix} = \rmi\hbar X_2 \,, \\
+S_3& = \rmi\hbar
 \begin{pmatrix}
 0 & -1 & 0 \\
 1 & 0 & 0\\
 0 & 0 & 0
-\end{pmatrix} = i\hbar X_3 \,.
+\end{pmatrix} = \rmi\hbar X_3 \,.
 \end{align}
 Uz tako definirane matrice imamo
 \begin{equation}
 \begin{split}
 [\hat{\vec{n}}\times\vec{\Psi}]_i &=
 \epsilon_{ijk}\hat{n}_j\Psi_k \\
-&= -\frac{i}{\hbar}\hat{n}_j (S_j)_{ik}\Psi_k\\
-&= -\frac{i}{\hbar}(\hat{\vec{n}}\cdot\vec{S})_{ik}\Psi_k \;,
+&= -\frac{\rmi}{\hbar}\hat{n}_j (S_j)_{ik}\Psi_k\\
+&= -\frac{\rmi}{\hbar}(\hat{\vec{n}}\cdot\vec{S})_{ik}\Psi_k \;,
 \end{split}
 \end{equation}
 što znači
 \begin{equation*}
 D(\vec{\hat{n}},\phi)\vec{\Psi}(\vec{r}, t)=
- \left(1-\frac{i}{\hbar}(\vec{L}+\vec{S})\cdot\hat{\vec{n}}\delta\phi \right)
+ \left(1-\frac{\rmi}{\hbar}(\vec{L}+\vec{S})\cdot\hat{\vec{n}}\delta\phi \right)
   \Psi(\vec{r}, t) \,,
 \end{equation*}
 odnosno, operator konačne rotacije ovakvog kvantnog sustava jest
 \begin{equation}
 D(\hat{\vec{n}}, \phi)=
- e^{-(i/\hbar)(\vec{L}+\vec{S})\cdot\hat{\vec{n}}\phi} \,.
+ \rme^{-(\rmi/\hbar)(\vec{L}+\vec{S})\cdot\hat{\vec{n}}\phi} \,.
  \label{eq:rotDJ}
 \end{equation}
 
@@ -830,7 +830,7 @@ Za te ćemo potrebe razviti općenitu teoriju
 reprezentacija grupe rotacija u kvantnoj mehanici.
 
 
-\section{Primjena: Blochov teorem}
+\section{Primjena: \emph{Blochov teorem}}
 \index{Teorem!Blochov}
 \index{Bloch, Felix \yrange{1905}{1983}}
 
@@ -877,10 +877,10 @@ sve jednodimenzionalne (vidi npr. Zadatak \ref{zad:1Dabelrep}).
 Elementi grupe su generirani translacijom za primitivne vektore
 $U_{r}(\vec{a}_j)$  pa tako imamo
 \begin{equation}
-U_{r}(\vec{a}_1)^{N_1} = 1 
+U_{r}(\vec{a}_1)^{N_1} = 1  \,,
 \end{equation}
 \begin{equation}
-U_{r}(\vec{a}_1) = \exp\Big\{-2\pi i\: \frac{p_1 }{N_1}\Big\} \qquad 
+U_{r}(\vec{a}_1) = \exp\Big\{-2\pi \rmi\: \frac{p_1 }{N_1}\Big\} \qquad 
  p_1 \in \{0,1,2,\ldots ,N_1 -1\} \;,
 \end{equation}
 tj. translacija za $\vec{a}_1$ može biti reprezentirana s
@@ -891,7 +891,7 @@ operatorima oblika
  U_{r}(\vec{t}_{\vec{n}}) &=
  U_{r}(n_1 \vec{a}_1 + n_2 \vec{a}_2 + n_3  \vec{a}_3) \\
  &= U_{r}(\vec{a}_1)^{n_1} U_{r}(\vec{a}_2)^{n_2} U_{r}(\vec{a}_3)^{n_3} \\
- &= \exp\Big\{ -2\pi i \Big( \frac{n_1 p_1}{N_1} + \frac{n_2 p_2}{N_2} 
+ &= \exp\Big\{ -2\pi \rmi \Big( \frac{n_1 p_1}{N_1} + \frac{n_2 p_2}{N_2} 
  + \frac{n_3 p_3}{N_3} \Big)\Big\} \;,
 \label{blochirreps}
 \end{align}
@@ -924,7 +924,7 @@ operator translacije za $\vec{t}_{\vec{n}}$ u reprezentaciji $\vec{k}$
 dan s
 \begin{equation}
  U_{r}^{(\vec{k})} (\vec{t}_{\vec{n}}) = 
- e^{-i \vec{k}\cdot \vec{t}_{\vec{n}}} \;,
+ \rme^{-\rmi \vec{k}\cdot \vec{t}_{\vec{n}}} \;,
 \end{equation}
 i odsad $N$ različitih $\vec{k}$-ova (\ref{defk}) labelira ireducibilne reprezentacije.
 Vidimo da dimenzija $\vec{k}$ odgovara valnom broju, tj. impulsu
@@ -933,7 +933,7 @@ podijeljenom s Planckovom konstantom.
 Djelovanje ovih operatora translacije na valne funkcije u datoj
 reprezentaciji mora biti kao i kod svih operatora translacije (\ref{eq:optrans})
 \begin{equation}
- e^{-i \vec{k}\cdot \vec{t}_{\vec{n}}} \psi_{\vec{k}}(\vec{r}) =
+ \rme^{-\rmi \vec{k}\cdot \vec{t}_{\vec{n}}} \psi_{\vec{k}}(\vec{r}) =
 \psi_{\vec{k}}(\vec{r} - \vec{t}_{\vec{n}}) \;.
 \label{bloch}
 \end{equation}
@@ -946,14 +946,14 @@ Zašto su one zanimljive?
 
 Kao prvo, ako ih (bez gubitka općenitosti) zapišemo u obliku
 \begin{equation}
- \psi_{\vec{k}}(\vec{r}) = e^{+i \vec{k}\cdot \vec{r}} u_{\vec{k}}(\vec{r})
+ \psi_{\vec{k}}(\vec{r}) = \rme^{+\rmi \vec{k}\cdot \vec{r}} u_{\vec{k}}(\vec{r}) \,,
 \end{equation}
 onda odmah iz (\ref{bloch}) dobijemo uvjet 
 \begin{equation}
   u_{\vec{k}}(\vec{r}) = u_{\vec{k}}(\vec{r} - \vec{t}_{\vec{n}})  \;,
 \end{equation}
 dakle Blochove funkcije su oblika 
-$e^{+i \vec{k}\cdot \vec{r}} u_{\vec{k}}(\vec{r})$,
+$\rme^{+\rmi \vec{k}\cdot \vec{r}} u_{\vec{k}}(\vec{r})$,
 gdje je $u_{\vec{k}}(\vec{r})$ periodička funkcija na rešetci.
 S druge strane, operator translacije na rešetci komutira s hamiltonijanom
 \begin{equation}
@@ -971,18 +971,18 @@ A(\vec{r}) U_{r}(\vec{t}_{\vec{n}}) = A(\vec{r}+\vec{t}_{\vec{n}})$,
 pa onda to vrijedi i za $A=V$ pa iz toga i iz periodičnosti $V$ odmah slijedi tražena
 komutativnost.}.
 Posljedica komutiranja dvaju operatora je da oni imaju zajedničke
-svojstvene funkcije. To onda povlači
+svojstvene funkcije. To onda povlači Blochov teorem.
 \begin{teorem}[Bloch]
 Valne funkcije periodičke rešetke mogu se izabrati kao Blochove funkcije.
 \index{Teorem!Blochov}
 \end{teorem}
 
-Ovo onda olakšava rješavanje Schr\"{o}dingerove jednadžbe
+Blochov teorem olakšava rješavanje Schr\"{o}dingerove jednadžbe
 za rešetku jer je potrebno naći samo funkcije $u_{\vec{k}}(\vec{r})$ za
 svaki $\vec{k}$,
 a njihova periodičnost umnogome pojednostavljuje taj zadatak,
 kako svjedoče brojni primjeri iz fizike čvrstog stanja.
-Blochov teorem se obično izvodi i u udžbenicima fizike čvrstog
+Teorem se obično izvodi i u udžbenicima fizike čvrstog
 stanja, no ovdje smo dali naglasak
 na grupno-teorijski pristup tj. korespondenciju s reprezentacijama
 grupe translacija.
@@ -994,11 +994,11 @@ grupe translacija.
 \item \label{zad:kronecker} Kroneckerov simbol $\delta_{ij}$, $i,j \in \{1, 2, 3\}$ je tenzor drugog ranga
     obzirom na rotacije. Tenzori su općenito definirani kao veličine 
     \emph{kovarijantne} pri datim transformacijama. Pokažite da je $\delta_{ij}$
-    također i \emph{invarijantan}. \index{Kovarijantnost} \index{Invarijantnost}
+    također i \emph{invarijantan}.\index{Kovarijantnost} \index{Invarijantnost}
 \item Pokažite da je operator translacije kvantnomehaničkog stanja,
- $U_{r}(\vec{a})$ = $\exp (-\frac{i}{\hbar} \vec{p}\cdot \vec{a} )$
+ $U_{r}(\vec{a})$ = $\exp (-\frac{\rmi}{\hbar} \vec{p}\cdot \vec{a} )$
 unitaran. Razmotrite situaciju u koordinatnoj reprezentaciji gdje
-je $\vec{p} = -i \hbar \nabla$. Zašto ovaj $i$ ne kvari unitarnost?
+je $\vec{p} = -\rmi \hbar \nabla$. Zašto ovaj $i$ ne kvari unitarnost?
 \index{Operator!unitarni}
 
 \item Neka $\psi(\vec{r}, t)$ zadovoljava Schr\"{o}dingerovu jednadžbu.
@@ -1008,7 +1008,7 @@ jednadžbu ako je $[H, \vec{p}] = 0$
 
 \item Koristeći fundamentalne kvantnomehaničke komutatore
 \begin{equation}
- [x_i, p_j] = i\hbar \delta_{ij}\;, \qquad
+ [x_i, p_j] = \rmi\hbar \delta_{ij}\;, \qquad
  [x_i, x_j] = [p_i, p_j] = 0 \;,
 \end{equation}
 te svojstva Levi-Civitinog tenzora, izračunajte komutacijske

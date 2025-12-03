@@ -79,7 +79,7 @@ slučaja skup svih transformacija simetrije čini grupu \SU{2}. \index{SU(2)}
 Generatori izospina $I_i$, $i=1,2,3$ imaju stoga iste komutacijske relacije
 kao i operatori momenta impulsa (generatori rotacija):
 \begin{equation}
-  [I_i, I_j] = i \epsilon_{ijk} I_k  \;,
+  [I_i, I_j] = \rmi \epsilon_{ijk} I_k  \;,
 \end{equation}
 što onda ima za posljedicu relacije svojstvenih vrijednosti:
 \begin{align}
@@ -341,13 +341,13 @@ odgovarali opaženim grupiranjima čestica.
 Grupa \SU{N} ima $N^2-1$ generatora, što znači da ih \SU{3} ima osam i
 općeniti element grupe će stoga biti oblika
 \begin{equation}
-    e^{i \sum_{A=1}^8 \alpha_A T_{A}} \in \SU{3} \,,
+    \rme^{\rmi \sum_{A=1}^8 \alpha_A T_{A}} \in \SU{3} \,,
     \label{eq:elsu3}
 \end{equation}
 gdje su $\alpha_A$ realni parametri, a $T_A$ generatori. Algebra grupe je
 definirana komutacijskim relacijama
 \begin{equation}
-  [ T_{A}, T_{B} ] = i f_{ABC} T_C \,,
+  [ T_{A}, T_{B} ] = \rmi f_{ABC} T_C \,,
 \label{eq:SU3}
 \end{equation}
 \index{Strukturne konstante grupe}
@@ -473,7 +473,7 @@ onda direktan produkt tog dubleta sa samim sobom daje četiri stanja:
 No znamo da su ireducibilne reprezentacije od \SU{2} zapravo 
 \emph{antisimetrični} singlet
 \begin{displaymath}
-   \psi^{12} - \psi^{21}
+   \psi^{12} - \psi^{21} \,,
 \end{displaymath}
 i \emph{simetrični} triplet
 \begin{displaymath}
@@ -594,7 +594,7 @@ tenzora koji su svaki za sebe ireducibilni,
 \begin{align}
 \psi^a \psi^b &= \fhalf (\psi^a\psi^b + \psi^b \psi^a)
                + \fhalf (\psi^a\psi^b - \psi^b \psi^a) \\
-              &\equiv \psi^{(ab)} + \psi^{[ab]}
+              &\equiv \psi^{(ab)} + \psi^{[ab]} \,.
 \end{align}
 Prvi, potpuno simetrični član, ima šest nezavisnih komponenata
 (broj nezavisnih elemenata simetrične 3$\times$3 matrice) i
@@ -614,7 +614,7 @@ Stoga je sekstuplet $\psi^{(ab)}$ ireducibilan.
 
 Dakle, konačni rezultat je
 \begin{equation}
- 3 \otimes 3 = 6 \oplus 3^*
+ 3 \otimes 3 = 6 \oplus 3^* \,.
 \label{eq:33eq63}
 \end{equation}
 \end{primjer}
@@ -680,7 +680,7 @@ su \cite{Coleman:1985} i \cite{Georgi:1999}.
 \index{SU(n)}  \index{Youngov dijagram ("tabl\'{o}")}
 \index{Young, Alfred \yrange{1873}{1940}}
 
-Youngov dijagram je dijagram poput ovog
+Youngov dijagram (poznat i kao Youngov tabl\'{o}) je dijagram poput ovog
 $$
 \ydiagram{5,5,3,1}
 $$
@@ -772,6 +772,8 @@ Evo tri primjera iz \SU{3}:
 U zadnjem od gornja tri primjera smo se oslonili na informacije ranije dobivene
 tenzorskim metodama da bi odredili da je zadnja reprezentacija zapravo
 antitriplet, a ne triplet. Navedimo još neke primjere:
+
+\vspace*{2ex}
 \begin{displaymath}
 \SU{3}: \qquad \frac{\ytableaushort{34}}{\ytableaushort{21}} = \frac{12}{2}= 6
 \qquad
@@ -810,7 +812,7 @@ s $a$, polja drugog retka s $b$ i tako dalje:
 Sada prebacujemo polja s $T_2$ na $T_1$, jedno po jedno, redak
 po redak, odozgo prema dolje, na sve moguće načine, tako da
 budu zadovoljena sljedeća pravila.
-\begin{enumerate}
+\begin{enumerate}[itemsep=2pt, topsep=1ex]
 \item $T_1$ je u svakom trenutku ispravni Youngov dijagram.
 \item Polja s istim slovom ne smiju biti u istom stupcu.
  (Posljedica činjenice da su stupci antisimetrizirani.)
@@ -818,6 +820,7 @@ budu zadovoljena sljedeća pravila.
 kao broj polja s indeksom $a$ iznad i desno od njega.
 Isto tako $n_b$ itd. Mora biti: $n_a \ge n_b \ge n_c$.
 \end{enumerate}
+
 Na kraju 
 \begin{itemize}
 \item Maknemo stupce s $N$ polja. (Jer je totalno
@@ -951,7 +954,7 @@ svim indeksima.
 Pokažite da je za \SU{2}  $2^* = 2$ tj. da su fundamentalni dublet i
 antidublet ekvivalentni, tako da pokažete da je operator $C$
 \begin{displaymath}
-    C = D^{(1/2)}(\hat{\vec{y}},\theta=\pi) = \exp\left(-\frac{i}{\hbar} J_2 \pi\right) \;
+    C = D^{(1/2)}(\hat{\vec{y}},\theta=\pi) = \exp\left(-\frac{\rmi}{\hbar} J_2 \pi\right) \;
 \end{displaymath}
 operator koji povezuje 2 i $2^*$:
 \begin{align*}

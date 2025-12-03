@@ -65,17 +65,17 @@ su jednodimenzionalne (kako smo ustanovili u zadatku \ref{zad:1Dabelrep}),
 što uz unitarnost ($uu^\dagger = uu^* = |u|^2=1$) znači da su operatori koji
 su elementi reprezentacija svakako oblika
 \begin{equation}
-D(\phi)=e ^{-i f(\phi)} \;, \qquad f(\phi) \in \mathbb{R} \;.
+D(\phi)=e ^{-\rmi f(\phi)} \;, \qquad f(\phi) \in \mathbb{R} \;.
 \end{equation}
 Kompozicija dvaju rotacija u ravnini za kutove $\phi_1$ i $\phi_2$ je rotacija za
 kut $\phi_1 + \phi_2$ pa zahtjev da reprezentacija bude
 homomorfna grupi povlači
 \begin{equation}
-   D(\phi_2) D(\phi_1) = D(\phi_1+\phi_2) = e^{-i f(\phi_1 + \phi_2)}\;.
+   D(\phi_2) D(\phi_1) = D(\phi_1+\phi_2) = \rme^{-\rmi f(\phi_1 + \phi_2)}\;.
 \end{equation}
 S druge strane svojstvo eksponencijalne funkcije daje
 \begin{equation}
-   D(\phi_2) D(\phi_1) = e^{-i f(\phi_2)} e^{-i f(\phi_1)} =  e^{-i f(\phi_1) - i f(\phi_2)}\;,
+   D(\phi_2) D(\phi_1) = \rme^{-\rmi f(\phi_2)} \rme^{-\rmi f(\phi_1)} =  \rme^{-\rmi f(\phi_1) - i f(\phi_2)}\;,
 \end{equation}
 pa slijedi
 \begin{equation}
@@ -84,7 +84,7 @@ pa slijedi
 što znači da je $f(\phi)=m\phi$, $m\in\mathbb{R}$, odnosno
 reprezentacija je skup operatora
 \begin{equation}
-    \Gamma^{(m)} = \{ D^{(m)}(\phi) = e^{-i m \phi} \td  \phi \in [0, 2\pi)\}\,,
+    \Gamma^{(m)} = \{ D^{(m)}(\phi) = \rme^{-\rmi m \phi} \td  \phi \in [0, 2\pi)\}\,,
 \end{equation}
 s fiksnim $m$.  Na kraju, zahtjev periodičnosti rotacija daje
 \begin{equation}
@@ -101,12 +101,12 @@ je $m \in \mathbb{Z}$ koristiti kao oznaku (labelu) reprezentacije.
 Trag jednodimenzionalnog operatora je jednak njemu samome pa su
 karakteri 
 \begin{equation}
-\chi^{(m)}(\phi)=D^{(m)}(\phi)=e^{-\rmis m \phi} \,,
+\chi^{(m)}(\phi)=D^{(m)}(\phi)=\rme^{-\rmis m \phi} \,,
 \end{equation}
 i oni zadovoljavaju relaciju ortogonalnosti
 \begin{displaymath}
 (\chi^{(m)}, \chi^{(m')})=\int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
- e^{\rmis m \phi}e^{-\rmis m' \phi} = \delta_{mm'} \,,
+ \rme^{\rmis m \phi}\rme^{-\rmis m' \phi} = \delta_{mm'} \,,
 \end{displaymath}
 a čitaoc će se lako uvjeriti da je ovakva integracija invarijantna u gornjem smislu.
 
@@ -121,7 +121,7 @@ koji je ovdje integral
 \begin{eqnarray*}
 a_{k} & = & (\chi^{(k)}, \chi^{(m)}\chi^{(n)}) \\
       & = & \int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
-    e^{\rmis k \phi}e^{-\rmis m \phi}e^{-\rmis n \phi} = \delta_{k,m+n} \,,
+    \rme^{\rmis k \phi}\rme^{-\rmis m \phi}\rme^{-\rmis n \phi} = \delta_{k,m+n} \,,
 \end{eqnarray*}
 odnosno
 \begin{displaymath}
@@ -160,17 +160,17 @@ Koeficijenti Clebsch-Gordanovog razvoja su
 \begin{eqnarray*}
 a_k & = & (\chi^{(k)}, \chi_{\rm 2D}) \\
     & = & \int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
-   e^{\rmis k \phi} 2\cos\phi  \\
+   \rme^{\rmis k \phi} 2\cos\phi  \\
  & = & \int_{0}^{2\pi}\frac{\rmd \phi}{2\pi}\,
-  e^{\rmis k \phi} ( e^{\rmis  \phi} + e^{-\rmis  \phi}) \\
+  \rme^{\rmis k \phi} ( \rme^{\rmis  \phi} + \rme^{-\rmis  \phi}) \\
  & = & \delta_{k,-1} + \delta_{k, 1} \;.
 \end{eqnarray*}
 To znači da postoji $S$ (pronađite ga!) takav da je
 \begin{equation}
   S D_{\rm 2D} (\phi) S^{-1} = \left(
 \begin{array}{cc}        
-e^{\rmis  \phi} &  0 \\
-0 & e^{- \rmis  \phi}
+\rme^{\rmis  \phi} &  0 \\
+0 & \rme^{- \rmis  \phi}
 \end{array}                
 \right) \,.
 \end{equation}
@@ -210,18 +210,18 @@ kao
     \label{eq:jfromX}
 \end{equation}
 Naime, kako smo vidjeli u (\ref{eq:Xantisim}) $X_i$ su antisimetrične
-matrice pa će ovako definirani $J_i$ biti hermitski, $J_{i}^{\dagger}
+matrice pa će ovako definirani $J_i$ biti hermitski, $J_{\rmi}^{\dagger}
 = - \rmi \hbar X^\mathsf{T} = J_i$, što znači da će u kvantnomehaničkom
 kontekstu odgovarati opservabli, momentu impulsa, i svojstvene vrijednosti
 će mu biti realne.
 Ovi generatori zadovoljavaju komutacijske relacije
 \begin{equation}
-          [J_i, J_j] = i \hbar \epsilon_{ijk} J_k \,,
+          [J_i, J_j] = \rmi \hbar \epsilon_{ijk} J_k \,,
 \label{eq:SU2algebra}
 \end{equation}
 a da bismo dobili operatore grupe, eksponencijacija će biti oblika
 \begin{equation}
-e^{\phi\unitn\cdot\vec{X}}=e^{(-i/\hbar)\phi\unitn\cdot \vec{J}} \,.
+\rme^{\phi\unitn\cdot\vec{X}}=\rme^{(-\rmi/\hbar)\phi\unitn\cdot \vec{J}} \,.
     \label{eq:expJ}
 \end{equation}
 \index{Operator!rotacije}
@@ -267,7 +267,7 @@ Djelovanje operatora reprezentacija na Hilbertovom prostoru je definirano
 djelovanjem na vektore baze
 \begin{equation}
    D^{(\beta)}(\unitn,\phi) \ket{\beta, m} =
- e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{\beta, m} \,,
+ \rme^{(-\rmi/\hbar)\vec{J}\cdot\unitn\phi}\ket{\beta, m} \,,
  \label{eq:Drot}
 \end{equation}
 gdje je sada $\beta$ oznaka reprezentacije, koja bi u načelu trebala
@@ -309,7 +309,7 @@ koji naravno isto komutiraju s $\jsq$
 \end{equation}
 dok su komutacijske relacije s $J_z$, 
 \begin{eqnarray*}
- [J_z, J_\pm]& = & [J_z, J_x] \pm i [J_z, J_y] = i\hbar J_y \pm i (-i\hbar J_x)
+ [J_z, J_\pm]& = & [J_z, J_x] \pm i [J_z, J_y] = i\hbar J_y \pm i (-\rmi\hbar J_x)
  \\ & = & \pm \hbar (J_x \pm i J_y) = \pm \hbar J_\pm \,.
 \end{eqnarray*}
 Slično (pokažite),
@@ -347,7 +347,7 @@ Iz toga slijedi
 \\ & = & \frac{1}{2} \left[ J_{x}^2 + i J_y J_x - i J_x J_y + J_{y}^2
   + J_{x}^2 \right. \\
    & & \qquad \qquad \qquad \left. - i J_y J_x + i J_x J_y + J_{x}^2 \right] \\
-& = & J_{x}^2 + J_{y}^2 = \jsq - J_{z}^2
+& = & J_{x}^2 + J_{y}^2 = \jsq - J_{z}^2 \,.
 \end{eqnarray*}
 Matrični elementi operatora na lijevoj strani ove jednakosti su očito
 pozitivni jer je
@@ -407,7 +407,7 @@ iz čega postupkom analognim ovom gore dolazimo do
 Izjednačivši ove dvije vrijednosti za $\beta$ 
 \begin{displaymath}
             m_{\textrm{\scriptsize max}} ( m_{\textrm{\scriptsize max}} +1)
-= m_{\textrm{\scriptsize min}} ( m_{\textrm{\scriptsize min}} -1)
+= m_{\textrm{\scriptsize min}} ( m_{\textrm{\scriptsize min}} -1) \,,
 \end{displaymath}
 dobijemo kvadratnu jednadžbu za $m_{\textrm{\scriptsize min}}$ od čija
 dva rješenja $m_{\textrm{\scriptsize min}}=m_{\textrm{\scriptsize max}}+1$
@@ -517,7 +517,7 @@ Matrični elementi ekponenciranih operatora između standardnih
 $\ket{j, m}$ stanja,
 \begin{equation}
     D^{(j)}_{m'm}(\hat{\vec{n}},\phi)  \equiv  \bra{j,m'} D^{(j)}(\hat{\vec{n}},\phi) \ket{j, m} 
-    =\bra{j,m'} e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{j, m} \,,
+    =\bra{j,m'} \rme^{(-\rmi/\hbar)\vec{J}\cdot\unitn\phi}\ket{j, m} \,,
     \label{eq:WignerD}
 \end{equation}
 nazivaju se \emph{Wignerove D-funkcije} i formiraju tzv. \emph{Wignerovu D-matricu}.
@@ -552,17 +552,17 @@ dani Paulijevim matricama i eksponencijacijom dobivamo definicionu
 vjernu reprezentaciju grupe \SU{2} (vidi zadatak  \ref{zad:svojstvapaulijevih})
 \index{Reprezentacija grupe!SU(2)}
 \begin{equation}
- e^{-\frac{i}{2}\vec{\sigma}\cdot\unitn \theta} =
-\cos \frac{\theta}{2}-i\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \,.
+ \rme^{-\frac{\rmi}{2}\vec{\sigma}\cdot\unitn \theta} =
+\cos \frac{\theta}{2}-\rmi\vec{\sigma}\cdot\unitn \sin\frac{\theta}{2} \,.
 \end{equation}
 No, je li $j=1/2$ također i reprezentacija grupe rotacija \SO{3}?
 Da bismo odgovorili na to promotrimo rotaciju 
 stanja spina $j=1/2$ i pozitivne projekcije spina $m=1/2$ za 
 kut $2\pi$ oko $z$-osi
 \begin{equation}
-    e^{(-i/\hbar)\vec{J}\cdot\unitn\phi}\ket{\frac{1}{2}, +\frac{1}{2}} =
-    e^{-i\frac{\sigma_3}{2} 2 \pi} \begin{pmatrix} 1 \\ 0 \end{pmatrix} =
-    e^{-i \pi}\ket{\frac{1}{2}, +\frac{1}{2}} =
+    \rme^{(-\rmi/\hbar)\vec{J}\cdot\unitn\phi}\ket{\frac{1}{2}, +\frac{1}{2}} =
+    \rme^{-\rmi\frac{\sigma_3}{2} 2 \pi} \begin{pmatrix} 1 \\ 0 \end{pmatrix} =
+    \rme^{-\rmi \pi}\ket{\frac{1}{2}, +\frac{1}{2}} =
     -\ket{\frac{1}{2}, +\frac{1}{2}} \;.
     \label{eq:ferm2pifaza}
 \end{equation}
@@ -610,7 +610,7 @@ Tamo onda možemo dopustiti reprezentiranje grupe simetrija i tzv.
 uvjet homomorfizma "olabavljen" dopuštanjem razlike u fazi
 \index{Reprezentacija grupe!projektivna}  \index{Projektivna reprezentacija}
 \begin{equation}
-   D(g_1)D(g_2)=e^{i \phi(g_1,g_2)}D(g_1 g_2) \;.
+   D(g_1)D(g_2)=\rme^{\rmi \phi(g_1,g_2)}D(g_1 g_2) \;.
    \label{eq:projektivnarep}
 \end{equation}
 Ovdje se nećemo upuštati u općenitu teoriju projektivnih reprezentacija 
@@ -622,7 +622,7 @@ nego ćemo samo izreći nekoliko nama relevantnih rezultata:
         reprezentacija\footnote{Ovdje se misli na projektivne reprezentacije
         koje su netrivijalne u smislu da se faza u (\ref{eq:projektivnarep})
         ne može eliminirati jednostavnom redefinicijom operatora $D(g) \to
-        e^{i\phi(g)}D(g)$.}, a o fizikalnom sustavu hoće li se transformirati 
+        \rme^{\rmi\phi(g)}D(g)$.}, a o fizikalnom sustavu hoće li se transformirati 
         obzirom na projektivne reprezentacije ili ne.
 
     \item  Jedan od načina da grupa ima i projektivne reprezentacije je da
@@ -669,7 +669,7 @@ gdje \suAlg{2} komutacijske relacije
 slijede izravno iz
 temeljnih kvantnomehaničkih komutacijskih relacija
 \begin{equation}
-    [r_i, p_j] = i\hbar \delta_{ij} \Eins \,.
+    [r_i, p_j] = \rmi\hbar \delta_{ij} \Eins \,.
     \label{eq:rpkomutacija}
 \end{equation}
 
@@ -754,8 +754,8 @@ još četiri bezdimenzionalna operatora
 \end{align}
 Ovi operatori zadovoljavaju komutacijske relacije
 \begin{align}
-    [Q_i, P_j]& =  [r_i, p_j] / \hbar = i \delta_{ij} \,, \\
-    [q_{\pm}, p_{\pm}]& = i \,, \label{eq:qpkomutacija}\\
+    [Q_i, P_j]& =  [r_i, p_j] / \hbar = \rmi \delta_{ij} \,, \\
+    [q_{\pm}, p_{\pm}]& = \rmi \,, \label{eq:qpkomutacija}\\
     [q_{\pm}, p_{\mp}]& = 0 \,,
 \end{align}
 i svi ostali komutatori isto iščezavaju. Uz ovako definirane
@@ -834,7 +834,7 @@ prostoru $V_1$ grupa rotacija reprezentirana\footnote{Odsad ćemo i projektivne 
     grupe \SO{3} zvati samo reprezentacije, ili ćemo \SU{2} smatrati grupom rotacija,
 štogod je čitatelju draže, vidi odjeljak \ref{sec:projektivnerep}.}
 je operatorima $D^{(j_1)}=
-\exp(-i\vec{J}_1\cdot\hat{\vec{n}}\theta/\hbar)$ (i slično za $V_2$),
+\exp(-\rmi\vec{J}_1\cdot\hat{\vec{n}}\theta/\hbar)$ (i slično za $V_2$),
 a na $V_1\otimes V_2$ operatorima
 $D^{(j_1)}\otimes D^{(j_2)}$.
 Međutim, $D^{(j_1)}\otimes D^{(j_2)}$ je općenito reducibilna reprezentacija
@@ -862,14 +862,14 @@ klasa biramo rotacije oko $z$-osi za koje su odgovarajući operatori
 rotacije dijagonalni
 \begin{equation}
 \begin{split}
- \chi^{(j)}(\phi) &= \Tr D^{(j)}(\phi) = \Tr e^{(-\rmi/\hbar)J_3 \phi} \\
- &= \Tr \textrm{diagonal}\left( e^{-\rmi j\phi }, e^{-\rmi (j-1)\phi}, \ldots,
-e^{-\rmi(-j)\phi}\right)\\
-&= e^{-\rmi j\phi } + e^{-\rmi (j-1)\phi} + \cdots + e^{-\rmi(-j)\phi}\\
-&= \text{geometrijski red s omjerom članova $e^{\rmi \phi}$} \\
-&= e^{-\rmi j\phi} \frac{1- (e^{\rmi j\phi})^{2j+1}}{1-e^{\rmi\phi}}
-= \frac{e^{-\rmi(j+1/2)\phi} - e^{\rmi(j+1/2)\phi}}{e^{-\rmi\phi/2}-e^{\rmi\phi/2}}\\
-&= \frac{\sin(j+1/2)\phi}{\sin\phi/2}
+ \chi^{(j)}(\phi) &= \Tr D^{(j)}(\phi) = \Tr \rme^{(-\rmi/\hbar)J_3 \phi} \\
+ &= \Tr \textrm{diagonal}\left( \rme^{-\rmi j\phi }, \rme^{-\rmi (j-1)\phi}, \ldots,
+\rme^{-\rmi(-j)\phi}\right)\\
+&= \rme^{-\rmi j\phi } + \rme^{-\rmi (j-1)\phi} + \cdots + \rme^{-\rmi(-j)\phi}\\
+&= \text{geometrijski red s omjerom članova $\rme^{\rmi \phi}$} \\
+&= \rme^{-\rmi j\phi} \frac{1- (\rme^{\rmi j\phi})^{2j+1}}{1-\rme^{\rmi\phi}}
+= \frac{\rme^{-\rmi(j+1/2)\phi} - \rme^{\rmi(j+1/2)\phi}}{\rme^{-\rmi\phi/2}-\rme^{\rmi\phi/2}}\\
+&= \frac{\sin(j+1/2)\phi}{\sin\phi/2} \,.
 \end{split}
 \end{equation}
 Odredimo sada koeficijente $a_J$ Clebsch-Gordanovog razvoja. Pretpostavimo
@@ -877,10 +877,10 @@ prvo da je $j_1 \ge j_2$. Tada vrijedi
 \begin{equation}
 \begin{split}
 \chi^{(j_1)}(\phi)\chi^{(j_2)}(\phi)&=
- \frac{e^{+\rmi(j_1+1/2)\phi} - e^{-\rmi(j_1+1/2)\phi}}{2\rmi\sin\phi/2}
-\sum_{m=-j_2}^{j_2}e^{\rmi m \phi}\\
+ \frac{\rme^{+\rmi(j_1+1/2)\phi} - \rme^{-\rmi(j_1+1/2)\phi}}{2\rmi\sin\phi/2}
+\sum_{m=-j_2}^{j_2}\rme^{\rmi m \phi}\\
 &= \frac{1}{2 \rmi \sin\phi/2} \sum_{m=-j_2}^{j_2}
-\left[ e^{\rmi(j_1+m+1/2)\phi} - e^{-\rmi(j_1-m+1/2)\phi}\right]\\
+\left[ \rme^{\rmi(j_1+m+1/2)\phi} - \rme^{-\rmi(j_1-m+1/2)\phi}\right]\\
 &= (\text{zamjena $m\to -m$ u drugom članu}) \\
 &=\sum_{m=-j_2}^{j_2} \frac{\sin(j_1+m+1/2)\phi}{\sin\phi/2}\\
 &=\sum_{m=-j_2}^{j_2} \chi^{(j_1 + m)}(\phi) \qquad (J\equiv j_1 +m) \\
@@ -893,7 +893,7 @@ Za slučaj $j_2 \ge j_1$ imali bi sve isto kao gore, samo uz zamjenu $j_1 \leftr
 j_2$. Slijedi da općenito možemo pisati:
 \begin{equation}
  \chi^{(j_1)}(\phi)\chi^{(j_2)}(\phi)=
-\sum_{J=|j_1-j_2|}^{J=j_1+j_2} \chi^{(J)}(\phi)
+\sum_{J=|j_1-j_2|}^{J=j_1+j_2} \chi^{(J)}(\phi) \,.
 \end{equation}
 Dakle,
 \begin{equation}
@@ -1091,7 +1091,7 @@ koji komutiraju s hamiltonijanom invarijantni na vremenske translacije.
     one su povezane s Kartezijevim komponentama relacijama
     \begin{equation}
     T^{(1)}_0 = T_z \;, \quad T^{(1)}_{\pm 1} = \mp \frac{1}{\sqrt{2}}
-    (T_x \pm i T_y) \;,
+    (T_x \pm \rmi T_y) \;,
     \label{eq:kartvektor}
     \end{equation}
     koje čitatelj treba provjeriti.
@@ -1158,7 +1158,7 @@ atomskih i nuklearnih kvantnih sustava pod vanjskim utjecajima.
 \begin{primjer}[Skalarni operator]
 \begin{displaymath}
 \bra{j'm'}|T^{(0)}_0\ket{jm} = C^{j'm'}_{jm00}
-\frac{\bra{j'}|T^{(0)}|\ket{j}}{\sqrt{2j+1}}
+\frac{\bra{j'}|T^{(0)}|\ket{j}}{\sqrt{2j+1}} \,,
 \end{displaymath}
 pa svojstva Clebsch-Gordanovih koeficijenata, vidi dodatak \ref{sec:clebsch},
 odmah daju da matrični element iščezava osim ako je $m=m'$ i
@@ -1177,7 +1177,7 @@ potencijalom $\vec{A}$ dana je hamiltonijanom
     = \frac{e}{c} \dot{\vec{r}} \cdot \vec{A}
     = e \vec{r} \cdot \vec{E} + \cdots \,.
 \end{equation}
-Električno polje $\vec{E} = \vec{\epsilon}\, e^{i \vec{k}\cdot\vec{r}}$ se 
+Električno polje $\vec{E} = \vec{\epsilon}\, \rme^{i \vec{k}\cdot\vec{r}}$ se 
 u dipolnoj aproksimaciji, gdje se uzima da je valna duljina zračenja puno
 veća od atoma, aproksimira samo polarizacijskim vektorom 
 $\vec{E}\approx\vec{\epsilon}(1+\cdots)$
@@ -1252,7 +1252,7 @@ rotacija
 To povlači da svih $2l+1$ stanja date ireducibilne reprezentacije
 grupe rotacija s kvantnim brojem $l$
 \begin{equation}
-   \big\{\ket{nlm} \td m\in\{-l, -l+1, ..., l \}\big\}
+   \big\{\ket{nlm} \td m\in\{-l, -l+1, ..., l \}\big\} \,,
 \end{equation}
 ima istu energiju, kako smo već spominjali u odjeljku \ref{sec:reprezentacije}.
 Sferna simetrija implicira da energija ne ovisi o kvantnom broju $m$
@@ -1260,7 +1260,7 @@ tj. o prostornoj orijentaciji sustava.
 Međutim, poznato je da energije stanja vodikovog atoma ne
 ovise ni o kvantnom broju $l$ i da $n^2$ stanja
 \begin{equation}
-\big\{\ket{nlm} \td l=\{0, 1, \ldots, n-1\}; m\in\{-l, -l+1, \ldots, l \}\big\} 
+\big\{\ket{nlm} \td l=\{0, 1, \ldots, n-1\}; m\in\{-l, -l+1, \ldots, l \}\big\}  \,,
 \end{equation}
 imaju istu energiju\footnote{Ovdje radimo s pojednostavljenim modelom vodikovog atoma
 opisanim hamiltonijanom (\protect\ref{hatom}). U realnom vodikovom atomu
@@ -1281,8 +1281,8 @@ Da bismo istražili to pitanje vratit ćemo se u područje klasične
 fizike gdje se javlja slična situacija u problemu dva tijela čiji
 je hamiltonijan
 \begin{equation}
-    H = \frac{p^2}{2m} - \frac{e_{M}^2}{r} \quad ; \quad 
- e_{M}^2 \equiv G M m \;.
+    H = \frac{p^2}{2m} - \frac{e_{M}^2}{r} \,,  \qquad 
+ e_{M}^2 \equiv G M m \;,
 \end{equation}
 matematički ekvivalentan onom vodikovog atoma.
 Kod problema dva tijela rotacijska simetrija i pripadajući zakon
@@ -1379,8 +1379,8 @@ pokazuje se da vrijede sljedeći identiteti
  [\vec{M}, H] &= 0 \;, \tag{A} \\
  \vec{L}\cdot\vec{M} &= 0 \;, \tag{B} \\
 \vec{M}^2 &= \frac{2 H}{m}(\vec{L}^2 + \hbar^2) + e^4  \;, \tag{C} \\
- [L_i, M_j] &= i\hbar \epsilon_{ijk} M_k \;, \tag{D} \\
-[M_i, M_j] &= i \hbar \epsilon_{ijk} \left(- \frac{2H}{m}\right) L_k \tag{E} \;.
+ [L_i, M_j] &= \rmi\hbar \epsilon_{ijk} M_k \;, \tag{D} \\
+[M_i, M_j] &= \rmi \hbar \epsilon_{ijk} \left(- \frac{2H}{m}\right) L_k \tag{E} \;.
 \end{align}
 (A) kaže da je $\vec{M}$ očuvan i u kvantnomehaničkom slučaju, a (D) da
 je $M$ Kartezijev vektor u smislu odjeljka \ref{sec:tenzorskioperatori}.
@@ -1394,7 +1394,7 @@ negativan buduči da radimo s vezanim stanjima vodikovog atoma.
 Ovakav reskalirani operator $\vec{M}'$ zadovoljava sada komutacijske
 relacije
 \begin{equation}
-[M'_i, M'_j] = i \hbar \epsilon_{ijk}  L_k \tag{E'} \;,
+[M'_i, M'_j] = \rmi \hbar \epsilon_{ijk}  L_k \tag{E'} \;,
 \end{equation}
 i pomoću njega možemo definirati dva nova operatora
 \begin{align}
@@ -1407,8 +1407,8 @@ Uporabom relacija (D) i (E') te standardnih komutacijskih
 relacija za moment impulsa $\vec{L}$ lako se vidi da ova 
 dva operatora zadovoljavaju komutacijske relacije
 \begin{align}
-[I_i, I_j] &= i \hbar \epsilon_{ijk}  I_k \,, \\
-[K_i, K_j] &= i \hbar \epsilon_{ijk}  K_k \,,\\
+[I_i, I_j] &= \rmi \hbar \epsilon_{ijk}  I_k \,, \\
+[K_i, K_j] &= \rmi \hbar \epsilon_{ijk}  K_k \,,\\
 [I_i, K_j] &= 0 \,,
 \end{align}
 što znači da $I_i$ i $K_i$ generiraju dvije nezavisne
@@ -1417,7 +1417,7 @@ atoma \SO{3}$\times$\SO{3}\footnote{Algebra grupe
 \SO{3}$\times$\SO{3} izomorfna je algebri grupe \SO{4} pa otud naslov ovog odjeljka. 
 \SO{4} je grupa generirana s 6 \index{SO(4)}
 generatora $L_{\mu\nu}=x_\mu p_\nu - x_\nu p_\mu$; $\mu, \nu = 1,2,3,4$;
-$[x_\mu, p_\nu] = i\hbar \delta_{\mu\nu}$. Definiramo li
+$[x_\mu, p_\nu] = \rmi\hbar \delta_{\mu\nu}$. Definiramo li
 $L_i = \fhalf \epsilon_{ijk} L_{jk}$ i $M'_i = L_{4i}$, $i,j,k = 1,2,3$,
 dobijemo gornje komutacijske relacije.}.
 
@@ -1498,8 +1498,8 @@ $j=1/2$ i $j=1$
 \item
 Pokažite da vrijedi: 
 \begin{equation}
-\bra{j, m'} D^{(j)}(\phi, \theta, \psi) \ket{j, m} = e^{-im'\phi-im\psi}
-\bra{j, m'} e^{-i J_y \theta /\hbar} \ket{j, m} \;,
+\bra{j, m'} D^{(j)}(\phi, \theta, \psi) \ket{j, m} = \rme^{-\rmi m'\phi-\rmi m\psi}
+\bra{j, m'} \rme^{-\rmi J_y \theta /\hbar} \ket{j, m} \;,
 \end{equation}
 gdje su $\phi$, $\theta$ i $\psi$ tri Eulerova kuta,
 te odredite eksplicitno ove matrične elemente za $j=1/2$.
@@ -1578,7 +1578,7 @@ Koliki je $C(J,M)$?
 dijelovi tenzora drugog ranga ne miješaju pri rotacijama.
 
 \item Komutator kvantnomehaničkih generatora rotacija oko različitih osi
-    je proporconalan $\hbar$. Na primjer, $[L_x, L_y] = i\hbar L_z$. To
+    je proporconalan $\hbar$. Na primjer, $[L_x, L_y] = \rmi\hbar L_z$. To
     bi sugeriralo da u klasičnom limitu, gdje $\hbar\to 0$, rotacije
     oko različitih osi komutiraju. No znamo da to nije točno.
     U čemu je stvar?
