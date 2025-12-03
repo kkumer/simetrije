@@ -113,7 +113,9 @@ Zahvaljajući toj identifikaciji
 elemente grupe ćemo označavati kao $g(a_1, a_2$, $\ldots$, $a_n)$, odnosno
 skraćeno $g(a)$. \index{Parametar grupe}
 
-Promotrimo sada četiri aksioma grupe u svjetlu ove diskusije.
+Točan oblik parametrizacije, dakle način na koji su točke grupnog prostora obrojčene
+parametrima ("koordinatizirane"), je u velikoj mjeri proizvoljan.
+Neka ograničenja dolaze od aksioma grupe.
 \begin{enumerate}
 \item Zatvorenost: $g(c)=g(a)g(b) \in G$. Umjesto tablice množenja koja
     je definirala grupnu operaciju, sada nam treba funkcija, tzv.
@@ -195,9 +197,9 @@ u ravnini dana dvodimenzionalnim matricama
 ali to je jednodimenzionalna grupa jer je svaka matrica potpuno određena
 jednim realnim parametrom $\phi$. Matrične grupe imaju svoja klasična
 imena pa se tako grupa iz (\ref{eq:so2}) zove \SO{2}, što dolazi
-od \emph{specijalna} ($\det M = 1$) \emph{ortogonalna} ($M^\mathsf{T} M = 1$) 
-grupa $2\times 2$ matrica. \index{SO(2)}
-
+od \emph{specijalna} ($\det M = 1$) \index{Matrica!specijalna}
+\emph{ortogonalna} ($M^\mathsf{T} M = 1$) grupa $2\times 2$ matrica. \index{SO(2)}
+\index{Matrica!ortogonalna}
 
 \section{Grupe SO(3) i SU(2)}
 \label{sec:so3su2}
@@ -207,24 +209,23 @@ su grupa $3 \times 3$ ortogonalnih matrica determinante 1, dakle \SO{3},
 i grupa $2 \times 2$ unitarnih matrica determinante 1, \SU{2}, pa ćemo
 se u ovom odjeljku detaljnije upoznati s ove dvije grupe i njihovom
 međusobnom vezom.  \index{SO(3)} \index{SU(2)}
-No krenimo prvo s malo općenitijim razmatranjem transformacija prostora koje
-čuvaju udaljenosti između točaka. \index{Transformacija!izometrija}
-Takve transformacije nazivaju se \emph{izometrije}. U vektorskim prostorima,
-udaljenost točaka se prirodno definira kao norma razlike vektora do tih točaka,
-pa će transformacije koje čuvaju skalarni produkt vektora $(\vec{x}, \vec{y})$,
-čuvati i udaljenosti jer je norma (iznos) vektora $\sqrt{(\vec{x}, \vec{x})}$.
-Zapišemo li to pomoću matrica vidimo da matrica izometrije $R$ mora zadovoljavati
+No krenimo prvo s malo općenitijim razmatranjem transformacija
+$\vec{x} \to R \vec{x}$ u trodimenzionalnom euklidskom prostoru,
+a koje čuvaju skalarni produkt vektora $(\vec{x}, \vec{y})$.
+Uvjet očuvanja skalarnog produkta znači
 \begin{equation}
     (R\vec{x}, R\vec{y}) = \sum_{ijk} R_{ij}x_{j} \, R_{ik} y_{k} = \sum_{ijk} x_{j} (R^\mathsf{T})_{ji}
     \, R_{ik} y_{k} = (\vec{x}, R^{\mathsf{T}} R \vec{y}) \stackrel{!}{=} (\vec{x}, \vec{y}) \,,
 \end{equation}
 pa mora biti $R^{\mathsf{T}} R = 1$, a matrice koje to zadovoljavaju
-nazivamo \emph{ortogonalne} jer iz tog svojstva slijedi da su retci i stupci
+nazivamo \emph{ortogonalne} \index{Matrica!ortogonalna}
+jer iz tog svojstva slijedi da su retci i stupci
 tih matrica ortogonalni vektori, štoviše ortonormirani su. Grupa svih
 ortogonalnih $3 \times 3$ matrica se naziva \O{3}.
 \index{Ortogonalna matrica} \index{O(3)}
 
 Kako je prema Binet-Cauchyjevom teoremu $\det R^\mathsf{T} R = \det R^\mathsf{T} \det R$,
+\index{Teorem!Binet-Cauchyjev}
 te kako transpozicija ne mijenja determinantu, vidimo da je $(\det R)^2 = 1$,
 pa determinanta ortogonalne matrice može biti samo 1 ili -1. \label{pag:detO3}
 Matrice s determinantom -1, poput 
@@ -419,8 +420,8 @@ Promotrimo sada skup matrica $M(a)\equiv M(a_1, a_2, \ldots, a_n)$ koje
 Za infinitezimalno male vrijednosti parametara $a_i \to \epsilon_i \ll 1$, zahvaljujući
 svojstvu diferencijabilnosti Liejeve grupe možemo razviti oko $a_i = 0$:
 \begin{equation}
-   M(\epsilon)=M(0)+ \sum_{i=i}^{n}\epsilon_i \frac{\partial M(a_1, \ldots, a_n)}
- {\partial a_i}\Bigg|_{a_1=\ldots =a_n=0} + 0(\epsilon^2) \,,
+   M(\epsilon)=M(0)+ \sum_{i=1}^{n}\epsilon_i \frac{\partial M(a_1, \ldots, a_n)}
+ {\partial a_i}\Bigg|_{a_1=\ldots =a_n=0} + O(\epsilon^2) \,,
  \label{eq:razvojM}
 \end{equation}
 gdje diferenciranje matrica provodimo prirodno, diferencirajući svaki njen
@@ -474,7 +475,7 @@ X_3 = \frac{\partial R_3 (\phi)}{\partial \phi}\Bigg|_{\phi=0}=
 \begin{pmatrix}
 -\sin\phi & -\cos\phi & 0 \\
 \cos\phi & -\sin\phi & 0 \\
-0 & 0 & 1 
+0 & 0 & 0 
 \end{pmatrix}\Bigg|_{\phi=0} =
 \begin{pmatrix}
 0 & -1 & 0 \\
@@ -498,12 +499,11 @@ gdje smo upotrijebili svojstvo eksponencijalne funkcije
 \begin{equation}
     \lim_{N\to\infty}\left(1 + \frac{x}{N}\right)^N = \exp(x) \,,
 \end{equation}
-koje vrijedi za broj $x$,
-u nadi da će ono vrijediti i kad je $x$ matrica.
+koje vrijedi za broj $x$.
 U dodatku \ref{sec:expmat} diskutiramo
 kako eksponenciranje matrica zaista funkcionira isto kao i
 eksponenciranje brojeva, uz još neka dodatna zanimljiva svojstva,
-te tamo eksplicitno pokazujemo da je
+te tamo eksplicitno pokazujemo da je \index{Matrica!eksponenciranje}
 \begin{equation}
 e^{\phi X_3} = \exp\Bigg\{ 
     \phi  \begin{pmatrix}
@@ -541,7 +541,7 @@ Rotacije za infinitezimalni kut imat će oblik  $R(\epsilon)=1+\epsilon X$,
 gdje je $X$ jedan od generatora. Uvjet ortogonalnosti je sada
 \begin{equation} \label{eq:Xantisim}
  RR^\mathsf{T}=(1+\epsilon X)(1+\epsilon 
-   X^\mathsf{T}) = 1+\epsilon (X+X^\mathsf{T})+0(\epsilon^2) = 1 \,,
+   X^\mathsf{T}) = 1+\epsilon (X+X^\mathsf{T})+O(\epsilon^2) = 1 \,,
 \end{equation}
 što znači da je $X^\mathsf{T}=-X$ odnosno $X$ je antisimetrična 3$\times$3 matrica.
 Obratno, ako je $X$ antisimetrična, njena eksponencijacija $R = e^X$ daje ortogonalnu
@@ -618,7 +618,7 @@ ima samo svoju binarnu operaciju). To znači da o generatorima "znamo više" i
 lakše je proučavati njih i onda pomoću eksponencijacije vidjeti reperkusije tih
 spoznaja na samu grupu.\index{Liejeva grupa!generator} 
 To je dodatno pojačano još jednim njihovim važnim svojstvom.
-Neka su $X,Y\in\calA$. Definirajmo njihov \emph{komutator} 
+Neka su $X,Y\in\calA$. Definirajmo njihov \emph{komutator}  \index{Komutator}
 \begin{equation}
     [X, Y] \equiv X Y - Y X \,.
     \label{eq:defkomutator}
@@ -641,12 +641,13 @@ Liejev produkt dvaju elemenata $[X,Y]$ (ne mora biti komutator) sa svojstvima
 
 1) zatvorenost: $[X,Y]\in\calA \quad \forall X,Y\in\calA$
 
-2) distributivnost: $[\alpha X + \beta Y, Z]=\alpha[X,Z]+\beta[Y,Z]$
+2) bilinearnost: $[\alpha X + \beta Y, Z]=\alpha[X,Z]+\beta[Y,Z]$
 $\quad \alpha,\beta \in \mathbb{R} $
 
 3) antisimetrija: $[X,Y]=-[Y,X]$
 
 4) Jacobijev identitet: $[X, [Y, Z]]+[Y, [Z, X]]+[Z, [X, Y]]=0$
+\index{Jacobijev identitet}
 \end{definicija}
 Za vektorske prostore matrica, gdje je Liejev produkt definiran kao
 komutator (\ref{eq:defkomutator}), svojstva 2--4 su automatski ispunjena.
@@ -654,7 +655,7 @@ Ovo poopćenje od matričnih grupa smo napravili samo zato da
 spomenemo da zapravo o nikakvom poopćenju nema govora.
 Naime, kako smo rekli u fusnoti na stranici \pageref{fus:nematricne}, nematrične Liejeve grupe
 su egzotične, ali postoje. No, zahvaljujući sljedećem Adovom teoremu
-nematrične (konačno-dimenzionalne) Liejeve algebre ne postoje.
+nematrične (konačno-dimenzionalne) Liejeve algebre efektivno ne postoje.
 \begin{teorem}[Ado] \index{Teorem!Adov} \index{Ado, Igor \yrange{1910}{1983}}
  Svaka konačno-dimenzionalna apstraktna Liejeva algebra je izomorfna nekoj
  Liejevoj algebri konačno-dimenzionalnih matrica s komutatorom kao Liejevim produktom. \emph{(Bez
@@ -662,7 +663,7 @@ nematrične (konačno-dimenzionalne) Liejeve algebre ne postoje.
 \end{teorem}
 Dakle, ograničavajući se na Liejeve grupe \emph{matrica} ne gubimo mnogo
 na općenitosti jer sve Liejeve algebre koje ćemo sresti u ovoj knjizi su
-konačno-dimenzionalne\footnote{Istina, u fizici nekad nalazimo i primjenu beskonačno-dimenzionalnih
+konačno-dimenzionalne\footnote{U fizici nekad nalazimo i primjenu beskonačno-dimenzionalnih
 algebri za koje teorem ne vrijedi. Jedan primjer je tzv. Virasorova algebra važna
 u teoriji superstruna. \index{Virasorova algebra}}.
 Liejeve algebre se obično označavaju isto kao i pripadajuće Liejeve grupe, ali malim gotičkim slovima.
@@ -809,7 +810,9 @@ X_{1}^2 + X_{2}^2 + X_{3}^2 = -2\cdot \Eins \,,
 \end{primjer}
 Schurova lema\index{Schurova lema}, koja vrijedi i za Liejeve grupe, traži da Casimirov operator 
 bude proporcionalan jediničnom i ispostavlja se da je koeficijent proporcionalnosti
-zgodan za označavanje ireducibilnih reprezentacija kako ćemo vidjeti u sljedećem poglavlju.
+zgodan za označavanje ireducibilnih reprezentacija kako ćemo vidjeti u 
+odjeljku \ref{sec:repsu2} gdje će biti i pokazana veza Casimirovog s operatorom
+momenta impulsa.
 
 
 \begin{primjer}[Algebra grupe \SO{2}] \index{$\mathfrak{so}$(2)}
@@ -820,7 +823,7 @@ zgodan za označavanje ireducibilnih reprezentacija kako ćemo vidjeti u sljede�
     jednim generatorom koji naravno komutira sa samim sobom
     tj. $\soAlg{2} = \{ aX_{3}\,; a \in \mathbb{R} \}$, što je
     zapravo prostor svih antisimetričnih $2\times 2$ matrica,
-    koji je izomorfan s $\mathbb{R}$.
+    koji je kao Liejeva algebra izomorfan s $\mathbb{R}$.
     Općenito, za Liejeve algebre Abelovih grupa komutator iščezava 
     (vidi zadatak \ref{zad:abelovaalgebra}) i time
     je njihova struktura kompletno definirana strukturom vektorskog
@@ -1141,9 +1144,9 @@ kernela komutiraju sa cijelom grupom.\index{Centar grupe} \index{Grupa!centar}}.
 U zaključku, Liejeve algebre u velikoj mjeri određuju Liejevu grupu i
 glavna informacija o grupi koju gubimo razmatrajući samo algebru
 je njena topologija. Algebra, koja je određena okolinom jediničnog
-elementa grupe "ne vidi" je li se grupa možda netrivijalno "preklapa"
-na samu sebe daleko od jedinice.
-
+elementa grupe "ne vidi" ima li grupa više od jedne komponente povezanosti
+ili javlja li se možda višestruko pokrivanje gdje se grupa "preklapa na samu sebe"
+daleko od jedinice.
 
 \section{Klasične Liejeve grupe važne za fiziku}
 \label{sec:primjeriLie}
@@ -1162,7 +1165,7 @@ koje smanjuje broj parametara, jer je samo riječ o zahtjevu da determinanta,
 koja je izraz koji uključuje tih $2 n^2$ parametara bude \emph{različita} od nule.
 
 \begin{equation}
-\det M = f(a_1, a_2 , \dots, a_{2n}) \neq 0
+\det M = f(a_1, a_2 , \dots, a_{2n^2}) \neq 0
 \end{equation}
 
 Podgrupa ove grupe je grupa $\GL{n, \mathbb{R}}$ koja očito ima samo
@@ -1181,21 +1184,21 @@ za $\GL{n, \mathbb{C}}$ koja je povezana (ali ne i jednostavno povezana).
 
 Ovdje je na svaku matricu postavljen dodatni uvjet
 \begin{equation}
-\det M = f(a_1, a_2 , \dots, a_{2n}) = 1 \;,
+\det M = f(a_1, a_2 , \dots, a_{2n^2}) = 1 \;,
 \label{eq:SL}
 \end{equation}
 koji predstavlja jednu kompleksnu, tj. dvije realne jednadžbe koje
 se mogu iskoristiti za eliminaciju dvaju parametera. Tako ova grupa
-ima $2 n^2 - 2$ parametara. Grupa je jednostavno povezana i za fiziku
+ima $2 n^2 - 2$ parametara. Grupa je jednostavno povezana za $n>1$ i za fiziku
 je posebno važna grupa $\SL{2, \mathbb{C}}$ koja je univerzalna grupa
-pokrivanja za Lorentzovu grupu na analogan način na koji je \SU{2}
+pokrivanja za Lorentzovu grupu $\SOsup{+}{1,3}$ na analogan način na koji je \SU{2}
 univerzalna grupa pokrivanja za grupu rotacija \SO{3}.
     \index{Univerzalna grupa pokrivanja}
 
 Podgrupa ove grupe je grupa $\SL{n, \mathbb{R}}$ koja ima 
 $n^2 - 1$ parametar. (Jednadžba (\ref{eq:SL}) je sad samo jedna
 realna jednadžba, a ne dvije.) Ona je povezana, ali ne i jednostavno
-povezana.
+povezana za $n>1$.
 
 \item \textbf{Unitarna grupa}
     \index{Unitarna grupa|see{U($n$)}} 
@@ -1308,6 +1311,9 @@ U fizici se najčešće susrećemo s grupom ortogonalnih \emph{realnih} matrica
 koja ima $n(n-1)/2$ parametara. Ova grupa čuva
 kvadratnu formu $(\vec{x}, \vec{y}) = \sum_i x_i y_i$ tj. skalarni produkt na realnom
 vektorskom prostoru, što se može upotrijebiti kao alternativna definicija grupe.
+Uvjet ortogonalnosti $M M^{\mathrm{T}} = 1$ vodi na $(\det M)^2 = 1$, odnosno
+na zaključak da ortogonalne matrice imaju determinantu $\det M = \pm 1$.
+Kao posljedica \O{n} ima dvije komponente povezanosti.
 
 \item \textbf{Specijalna ortogonalna grupa}
     \index{Specijalna ortogonalna grupa|see{SO($n$)}} 
@@ -1317,10 +1323,9 @@ vektorskom prostoru, što se može upotrijebiti kao alternativna definicija grup
 \SO{n, \mathbb{C}} = \{ M\in O(n, \mathbb{C}) \; | \; \det M  = 1\} \;,
 \end{equation}
 i odgovarajuća realna grupa $\SO{n}$ imaju isti broj parametara kao
-$\O{n, \mathbb{C}}$, odnosno \O{n}. Naime, uvjet ortogonalnosti
-$M M^{\mathrm{T}} = 1$ vodi na $(\det M)^2 = 1$, odnosno
-na zaključak da ortogonalne matrice imaju determinantu $\det M = \pm 1$,
-pa ograničenje na $\det M = 1$ ne smanjuje dimenziju parametarskog prostora.
+$\O{n, \mathbb{C}}$, odnosno \O{n}. Naime, ograničenje determinante
+s $\det M = \pm 1$
+na $\det M = 1$ ne smanjuje dimenziju parametarskog prostora.
 
 \item \textbf{Pseudo-unitarna grupa}
     \index{Pseudo-unitarna grupa|see{U($p, q$)}} 
@@ -1441,7 +1446,7 @@ grupe.
 \begin{align*}
 \tag{a}\epsilon_{ijk}\epsilon_{imn}&=\delta_{jm}\delta_{kn}-\delta_{jn}\delta_{km}\\
 \tag{b}\epsilon_{ijk}\epsilon_{ijm}&=2\delta_{km} \\
-\tag{c}\epsilon_{ijk}\epsilon_{ijk}&=6 \\
+\tag{c}\epsilon_{ijk}\epsilon_{ijk}&=3! \\
 \tag{d}\epsilon_{ijk}a_j b_k &= (\vec{a}\times\vec{b})_i  \\
 \tag{e}\frac{1}{3!}\epsilon_{lmn} \epsilon_{ijs} A_{li} A_{mj} A_{ns} &= \det A
 \end{align*}
@@ -1472,6 +1477,7 @@ za vektore $\vec{a}$, $\vec{b}$ i \vec{c}
 
 \item \label{zad:abelovaalgebra} Za Abelovu grupu vrijedi $g_1 g_2 g_{1}^{-1} g_{2}^{-1} = e$,
     gdje se $g_1 g_2 g_{1}^{-1} g_{2}^{-1}$ naziva \emph{komutator} elemenata grupe.
+    \index{Komutator}
     Ako je $g_1$ generiran elementom algebre $g_1 = e^{s X}$, a $g_2 = e^{t Y}$, gdje su
     $s$ i $t$ realni parametri, pokažite da je
 \begin{equation}
