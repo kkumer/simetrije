@@ -473,7 +473,7 @@ grupe možemo kao i u odjeljku \ref{sec:so4} koristiti parove
 Tako imamo trivijalnu 1D (0,0) reprezentaciju i objekte koji se
 transformiraju prema njoj zovemo Lorentzovi skalari. Slijedeće
 dvije su 2D tzv. \emph{Weylove} reprezentacije ($\fhalf$, 0) i
-(0, $\fhalf$) prema kojima bi se transformirala bezmasena
+(0, $\fhalf$) prema kojima bi se transformirala bezmasena nabijena
 fermionska polja, kad bi takva postojala, što u ovom trenutku nije poznato.
 \index{Weylova reprezentacija} \index{Weyl, Hermann \yrange{1885}{1955}}
 Obični četverovektori poput $x^\mu$ pripadaju ireducibilnoj
@@ -490,7 +490,7 @@ gdje naravno trodimenzionalni $j=1$ potprostor odgovara prostornim vektorima,
 a jednodimenzionalni $j=0$ potprostor vremenskoj komponenti koja je invarijantna
 na rotacije.
 
-Za Diracovu jednadžbu koja opisuje \emph{masivna} fermionska polja poput elektronskog, 
+Za Diracovu jednadžbu koja opisuje \emph{masivna} nabijena fermionska polja poput elektronskog, 
 poznato je da udružuje lijeve
 i desne komponente pa je \SOsup{+}{1,3} pravu
 ortokronu Lorentzovu grupu potrebno proširiti operacijom pariteta $P$ i onda
@@ -554,6 +554,7 @@ Sada je element grupe \SOsup{+}{1,3} dan kao \index{SO$^{+}$(1,3)}
  \Lambda = \exp\left(-\frac{\rmi}{2} \omega_{\rho\sigma} J^{\rho\sigma}\right) \,,
 \label{eq:4DLorentz}
 \end{equation}
+gdje su $\omega_{\rho\sigma} = - \omega_{\sigma\rho}$ parametri,
 a komutacijske relacije (\ref{eq:LK1})--(\ref{eq:LK3}) se ujedinjuju u
 \begin{equation}
 \rmi [ J^{\mu\nu}, J^{\rho\sigma}] = g^{\mu\rho} J^{\nu\sigma}
@@ -882,21 +883,21 @@ Poincar\'{e}ove grupe.
 
 Spomenimo još da se gore diskutirana sloboda u izboru baza malih Hilbertovih
 prostora na orbiti u praksi koristi tako da se, umjesto standardne \emph{spinske}
-baze gdje je $\sigma$ svojstveno stanje $J_z$,
-koristi \emph{helicitetna} baza gdje je $\sigma$ svojstveno stanje operatora
+baze gdje je $\sigma$ svojstvena vrijednost od $J_z$,
+koristi \emph{helicitetna} baza gdje je $\sigma$ svojstvena vrijednost operatora
 heliciteta $\vec{J}\cdot\vec{\hat{p}}$, tj. operatora momenta impulsa projeciranog na smjer
-impulsa čestice. To ima nekoliko prednosti  \index{Operator!heliciteta}
+impulsa čestice. To ima nekoliko prednosti  \index{Operator!heliciteta} \index{Helicitet}
 \begin{itemize}
     \item Helicitet $\vec{J}\cdot\vec{\hat{p}}$ komutira s impulsom $\vec{P}$ 
         (vidi zadatak \ref{zad:help}) pa je onda stanje $\ket{\vec{p}, \sigma}$
         specificirano pomoću svojstvenih vrijednosti komutirajućih operatora koje
         su istovremeno mjerljive.
 
-   \item U ultrarelativističkom limesu elektromagnetske i jake nuklearne sile
+   \item U ultrarelativističkom limesu sve prirodne interakcije
        čuvaju vrijednost heliciteta.
 
-   \item U često korištenom sustavu dvije čestice u kojem njihov ukupni troimpuls
-       iščezava, njihov orbitalni moment impulsa je okomit na smjer njihovog
+   \item U često korištenom sustavu dvije čestice u kojem njihov ukupni 3-impuls
+       iščezava (tzv. CM sustav), njihov orbitalni moment impulsa je okomit na smjer njihovog
        relativnog gibanja. Tada je ukupni spin duž tog smjera (što je važna očuvana veličina)
        dan jednostavnim zbrajanjem heliciteta bez potrebe dodavanja doprinosa
        orbitalnog momenta impulsa kojeg često ne znamo.
@@ -992,7 +993,7 @@ Baza odgovarajućeg malog Hilbertovog prostora $\mathcal{H}_{k^*}$ bit
   \ket{\vec{k}^{*}, \sigma} = \ket{\vec{k}^{*}, t_1, t_{2}, \lambda} \,,
 \end{equation}
 gdje je $\lambda$ svojstvena vrijednost od $J_z$ koju ćemo po analogiji
-s masivnim slučajem zvati helicitet, a $t_{1,2}\in\mathbb{R}$,
+s masivnim slučajem zvati helicitet \index{Helicitet}, a $t_{1,2}\in\mathbb{R}$,
 su svojstvene
 vrijednosti infinitezimalnih generatora translacija $T$ (odredite ih, vidi
 zadatak \ref{zad:iso2gen}).
@@ -1033,7 +1034,7 @@ ipak prirodno desni ($\lambda=1$) i lijevi ($\lambda=-1)$
 foton smatrati dvama stanjima iste čestice.
 \index{Inverzija prostora}
 
-Zadnja finesa je da ništa dosad rečeno ne ograničava helicitet $\lambda$
+Zadnja finesa je da ništa dosad rečeno ne ograničava helicitet $\lambda$ \index{Helicitet}
 da ne bude bilo koji realni broj. Sjetimo se naime da je kvantizacija
 spina u \ref{ch:rotacije}. poglavlju bila posljedica \soAlg{3} algebre
 koju ovdje nemamo. Međutim, ovisnost o $\lambda$
