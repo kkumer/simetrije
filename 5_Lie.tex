@@ -822,7 +822,7 @@ momenta impulsa.
     razmatrali kao jednoparametarsku podgrupu grupe \SO{3}.
     No kakva je struktura njene algebre? Ona je generirana tim
     jednim generatorom koji naravno komutira sa samim sobom
-    tj. $\soAlg{2} = \{ aX_{3}\,; a \in \mathbb{R} \}$, što je
+    tj. $\soAlg{2} = \{ aX_{3} \td a \in \mathbb{R} \}$, što je
     zapravo prostor svih antisimetričnih $2\times 2$ matrica,
     koji je kao Liejeva algebra izomorfan s $\mathbb{R}$.
     Općenito, za Liejeve algebre Abelovih grupa komutator iščezava 
@@ -1117,7 +1117,7 @@ Njihovu univerzalnu grupu pokrivanja možemo identificirati
 tako da identificiramo jednostavno povezanu Liejevu grupu koju
 generira $\mathbb{R}$. Ako se oslonimo na eksponencijaciju
 vidimo da generiramo grupu pozitivnih realnih brojeva
-$\{\rme^{x}\,; x \in \mathbb{R}\}$ s množenjem kao grupnom operacijom.
+$\{\rme^{x} \td x \in \mathbb{R}\}$ s množenjem kao grupnom operacijom.
 No primjetite da je ta grupa izomorfna grupi $(\mathbb{R}, +)$
 gdje je preslikavanje izomorfizma upravo eksponencijalna funkcija.
 Tako možemo reći da je $R$ sam sebi algebra i sam sebi univerzalna
@@ -1181,12 +1181,12 @@ za $\GL{n, \mathbb{C}}$ koja je povezana (ali ne i jednostavno povezana).
     \index{SL($n$)}
 
 \begin{equation}
-\SL{n, \mathbb{C}} = \{ M\in \GL{n,\mathbb{C}} \; | \; \det M = 1\}
+\SL{n, \mathbb{C}} = \{ M\in \GL{n,\mathbb{C}} \td \det M = 1\}
 \end{equation}
 
 Ovdje je na svaku matricu postavljen dodatni uvjet
 \begin{equation}
-\det M = f(a_1, a_2 , \dots, a_{2n^2}) = 1 \;,
+\det M = f(a_1, a_2 , \dots, a_{2n^2}) = 1 \,,
 \label{eq:SL}
 \end{equation}
 koji predstavlja jednu kompleksnu, tj. dvije realne jednadžbe koje
@@ -1207,14 +1207,14 @@ povezana za $n>1$.
     \index{U($n$)}
 
 \begin{equation}
-\U{n} = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\dagger} = 1\}
+\U{n} = \{ M\in \GL{n,\mathbb{C}} \td M M^{\dagger} = 1\}
 \end{equation}
 Prebrojavanje nezavisnih parametara za ovu grupu može se izvesti
 na više načina. Uvjet $M M^\dagger = 1$ se može napisati izraženo
 preko komponenti matrica kao (u ovom odjeljku ćemo radi jasnoće
 suspregnuti Einsteinovu sumacijsku konvenciju i pisati sume eksplicitno)
 \begin{equation}
-\sum_{j=1}^{n} M_{ij} M_{kj}^* = \delta_{ik}\;,
+\sum_{j=1}^{n} M_{ij} M_{kj}^* = \delta_{ik}\,,
 \label{eq:unitaritycondition}
 \end{equation}
 gdje je iskorišteno $M^{\dagger}_{jk} = M^{*}_{kj}$.
@@ -1277,7 +1277,7 @@ smo ovdje uzeli kao definiciono, samo posljedica.
     \index{SU($n$)}
 
 \begin{equation}
-\SU{n} = \{ M\in U(n) \; | \; \det M  = 1\}
+\SU{n} = \{ M\in U(n) \td \det M  = 1\}
 \end{equation}
 
 Za prebrojavanje parametara treba prvo uočiti da je za sve unitarne
@@ -1294,7 +1294,7 @@ ima točno $n^2 - 1$ parametar. \SU{n} su kompaktne i jednostavno povezane.
     \index{O($n$)}
 
 \begin{equation}
-\O{n, \mathbb{C}} = \{ M\in \GL{n,\mathbb{C}} \; | \; M M^{\mathrm{T}} = 1\}
+\O{n, \mathbb{C}} = \{ M\in \GL{n,\mathbb{C}} \td M M^{\mathrm{T}} = 1\}
 \end{equation}
 
 Kod prebrojavanja parametara, jedina razlika obzirom na unitarne matrice
@@ -1308,7 +1308,7 @@ $2n + n(n-1)$ parametara i ostaje ih samo $n(n-1)$.
 
 U fizici se najčešće susrećemo s grupom ortogonalnih \emph{realnih} matrica
 \begin{equation}
-\O{n} \equiv \O{n, \mathbb{R}} = \{ M\in \GL{n,\mathbb{R}} \; | \; M M^{\mathrm{T}} = 1\} \,,
+\O{n} \equiv \O{n, \mathbb{R}} = \{ M\in \GL{n,\mathbb{R}} \td M M^{\mathrm{T}} = 1\} \,,
 \end{equation}
 koja ima $n(n-1)/2$ parametara. Ova grupa čuva
 kvadratnu formu $(\vec{x}, \vec{y}) = \sum_i x_i y_i$ tj. skalarni produkt na realnom
@@ -1322,7 +1322,7 @@ Kao posljedica \O{n} ima dvije komponente povezanosti.
     \index{SO($n$)}
 
 \begin{equation}
-\SO{n, \mathbb{C}} = \{ M\in O(n, \mathbb{C}) \; | \; \det M  = 1\} \;,
+\SO{n, \mathbb{C}} = \{ M\in O(n, \mathbb{C}) \td \det M  = 1\} \,,
 \end{equation}
 i odgovarajuća realna grupa $\SO{n}$ imaju isti broj parametara kao
 $\O{n, \mathbb{C}}$, odnosno \O{n}. Naime, ograničenje determinante
@@ -1335,12 +1335,12 @@ na $\det M = 1$ ne smanjuje dimenziju parametarskog prostora.
 
 Čine je $n\times n$ matrice
 \begin{equation}
-\U{p, q} = \{ M\in \GL{n,\mathbb{C}} \; | \; M^{\dagger} g M = g\} \;,
+\U{p, q} = \{ M\in \GL{n,\mathbb{C}} \td M^{\dagger} g M = g\} \,,
 \end{equation}
 gdje je $p+q=n$ i gdje je $g$ dijagonalna matrica oblika
 \begin{equation}
   g = \mathrm{diag}(\underbrace{1, 1, \dots, 1}_{p \times},
-\underbrace{-1, -1, \dots, -1}_{q \times}) \;.
+\underbrace{-1, -1, \dots, -1}_{q \times}) \,.
 \label{eq:metricg}
 \end{equation}
 Ova grupa ima isti broj parametara kao i $\U{n}$, te
@@ -1357,13 +1357,13 @@ definicije \ref{def:skalarniprodukt}.
     \index{O($p, q$)}
 
 \begin{equation}
-\O{p, q} = \{ M\in \GL{n,\mathbb{R}} \; | \; M^{\mathrm{T}} g M = g \} \;,
+\O{p, q} = \{ M\in \GL{n,\mathbb{R}} \td M^{\mathrm{T}} g M = g \} \,,
 \label{eq:MgM}
 \end{equation}
 gdje je $p+q=n$ i gdje je $g$ dijagonalna matrica iz (\ref{eq:metricg}).
 Ove matrice čuvaju kvadratnu formu oblika
 \begin{equation}
- \sum_{i=1}^{p} x_{i} y_{i} - \sum_{i=p+1}^{p+q=n} x_{i} y_i  \;.
+ \sum_{i=1}^{p} x_{i} y_{i} - \sum_{i=p+1}^{p+q=n} x_{i} y_i  \,.
 \end{equation}
 Najpoznatija grupa ove vrste je grupa Lorentzovih transformacija  $\O{1,3}$
 \index{Lorentzova grupa}  \index{Grupa!Lorentzova|see{Lorentzova grupa}}
