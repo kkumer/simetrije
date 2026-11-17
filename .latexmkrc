@@ -1,3 +1,6 @@
+# Regenerate gitinfo.tex (git hash/tag/date for colophon) on every run
+system('bash', 'gitinfo.sh') == 0 or warn "gitinfo.sh failed\n";
+
 @default_files = ('simetrije.tex');
 $makeindex = 'xindy -C utf8 -M simindex';
 $pdf_mode = 1;

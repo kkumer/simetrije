@@ -1,9 +1,9 @@
-name: Build and Release PDF (XeLaTeX)
+name: Build and Release PDF (LuaLaTeX)
 
 on:
   push:
     tags:
-      - '*'  # Trigger on any tag
+      - 'ver-*'
 
 jobs:
   build-and-release:
@@ -16,18 +16,14 @@ jobs:
     - name: Fetch all tags
       run: git fetch --tags --force
 
-    - name: Extract tag and commit hash
-      run: |
-        echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-        echo "COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-
-    - name: Update version in colophon
+    # Generate gitinfo.tex here, where git is available. latexmk also runs
+    # gitinfo.sh (see .latexmkrc), but inside the action's container git may
+    # be unusable, in which case gitinfo.sh keeps this file.
+    - name: Generate gitinfo.tex for colophon
       run: ./gitinfo.sh
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Compile LaTeX with XeLaTeX
-      uses: dante-ev/latex-action@latest
+    - name: Compile LaTeX with LuaLaTeX
+      uses: dante-ev/latex-action@2026-C
       with:
         root_file: simetrije.tex
 
