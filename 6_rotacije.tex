@@ -373,7 +373,7 @@ jer to je jedini način da (\ref{jzjpm}) ostane vrijediti.
 Odredimo sada vrijednost $m_{\textrm{\scriptsize max}}$ za datu
 ireducibilnu reprezentaciju $\beta$. Vrijedi
 \begin{eqnarray*}
-J_- J_+ =(J_x - i J_y)(J_x - i J_y)
+J_- J_+ =(J_x - i J_y)(J_x + i J_y)
    & = &J_{x}^2 + J_{y}^2 +i (J_x J_y - J_y J_x) \\
  & = & J_{x}^2 + J_{y}^2 - \hbar J_z \\
  & = & \jsq - J_{z}^2 - \hbar J_z \,.
@@ -856,7 +856,7 @@ a_J = \left( \chi^{(J)}, \chi^{(j_1)} \chi^{(j_2)} \right) \,.
 \end{displaymath}
 Za općeniti račun skalarnih umnožaka karaktera trebali bismo
 znati invarijantno integrirati u grupnom prostoru grupe rotacija (vidi \cite{Jones:1998},
-dodatak C ili \cite{Hamermesh:1989}, odjeljak 9-2), ali ovdje ćemo potrebni rezulatat
+dodatak C ili \cite{Hamermesh:1989}, odjeljak 9-2), ali ovdje ćemo potrebni rezultat
 dobiti i bez toga, uz par matematičkih trikova.
 Kako su karakteri konstante klasa konjugacije, za reprezentante 
 klasa biramo rotacije oko $z$-osi za koje su odgovarajući operatori
@@ -868,7 +868,7 @@ rotacije dijagonalni
 \rme^{-\rmi(-j)\phi}\right)\\
 &= \rme^{-\rmi j\phi } + \rme^{-\rmi (j-1)\phi} + \cdots + \rme^{-\rmi(-j)\phi}\\
 &= \text{geometrijski red s omjerom članova $\rme^{\rmi \phi}$} \\
-&= \rme^{-\rmi j\phi} \frac{1- (\rme^{\rmi j\phi})^{2j+1}}{1-\rme^{\rmi\phi}}
+&= \rme^{-\rmi j\phi} \frac{1- (\rme^{\rmi \phi})^{2j+1}}{1-\rme^{\rmi\phi}}
 = \frac{\rme^{-\rmi(j+1/2)\phi} - \rme^{\rmi(j+1/2)\phi}}{\rme^{-\rmi\phi/2}-\rme^{\rmi\phi/2}}\\
 &= \frac{\sin(j+1/2)\phi}{\sin\phi/2} \,.
 \end{split}
@@ -1115,7 +1115,7 @@ $T^{(k)}_q\ket{j,m}$ dana je s
 \begin{align}
     D(R) \Big( T^{(k)}_q\ket{j,m} \Big)& =
         D(R)  T^{(k)}_q D(R)^{-1} D(R) \ket{j,m}  \\
-   &= \sum_{q'=-k}^{k} \sum_{m=-j}^{j}
+   &= \sum_{q'=-k}^{k} \sum_{m'=-j}^{j}
    D^{(k)}_{q'q}(R) D^{(j)}_{m'm}(R) T^{(k)}_{q'} \ket{j, m'} \;,
 \end{align}
 a to je identično transformaciji kakvu bi imalo stanje
@@ -1131,7 +1131,7 @@ koeficijentom $C^{J M}_{jmkq}$, vidi (\ref{eq:defCG}).
 \index{Clebsch-Gordanov koeficijent}
 Po bliskoj analogiji s tim, za amplitudu vjerojatnosti
 pronalaženja stanja $T^{(k)}_q\ket{j,m}$ u stanju $\ket{j',m'}$
-stanje  imamo sljedeći teorem, koji je jedan od centralnih
+imamo sljedeći teorem, koji je jedan od centralnih
 rezultata primjene simetrija u kvantnoj mehanici.
 \begin{teorem}[Wigner-Eckart]
     \index{Teorem!Wigner-Eckartov} \index{Tenzor!sferični}

@@ -93,7 +93,8 @@ Skup dvije matrice
 \emph{svih} $2\times2$ matrica vidimo da on \emph{ne} čini grupu jer nije
 zadovoljen aksiom egzistencije inverza. Naime, neregularne matrice (one
 čija determinanta iščezava) nisu invertibilne. Međutim, ukoliko se
-ograničimo samo na skup regularnih  $2\times2$ matrica dobivamo grupu
+ograničimo samo na skup regularnih  $2\times2$ matrica definiranih na polju
+realnih brojeva dobivamo grupu
 koja se naziva \emph{opća linearna grupa} u dvije dimenzije i označava
 grupno-teorijskom oznakom GL(2).
 \index{Opća linearna grupa|see{GL($n$)}}
@@ -229,11 +230,11 @@ suvišnim i ovu je tablicu moguće i jednostavnije zapisati samo kao
 Grupne tablice množenja zadovoljavaju tzv. svojstvo latinskog
 kvadrata poznato i kao \index{Latinski kvadrat} \index{Teorem!o razmještaju}
 \begin{teorem}[Teorem o razmještaju]
-Svaki element grupe se pojavljuje jednom i samo jednom u svakom stupcu
+Svaki element grupe se pojavljuje i to točno jednom u svakom stupcu
 ili retku grupne tablice množenja.
 \end{teorem}
 
-\emph{Dokaz}: Pretpostavimo suprotno tj. da se u nekom retku
+\emph{Dokaz}: Pretpostavimo da se u nekom retku
 dvaput pojavi isti element, recimo $a$. To znači da je $a$ moguće
 dobiti množenjem prvog elementa iz tog retka, neka je to $k$, s
 dvama različitim elementima, recimo $m$ i $n$: $km=a$ i $kn=a$. To bi značilo
@@ -241,7 +242,14 @@ da je $km=kn$, a egzistencija inverza omogućuje "skraćivanje"
 ovakvih relacija tj. množenje slijeva s $k^{-1}$ pa
 dobivamo $m=n$ što je kontradiktorno jer smo pretpostavili da su
 $m$ i $n$ različiti elementi. Do slične bi kontradikcije dovela
-pretpostavka  ponavljanja istog elementa dvaput u istom stupcu.\qed
+pretpostavka  ponavljanja istog elementa dvaput u istom stupcu.
+Time smo dokazali jedinstvenost, što je dovoljno za konačne grupe
+gdje ona implicira i egzistenciju (razmislite zašto). Za beskonačne grupe
+potrebno je nezavisno dokazati egzistenciju. Pogledajmo proizvoljni redak
+kojem je recimo $k$ prvi element i pokažimo da se u tom retku svakako pojavljuje
+element $a$. Inverz $k^{-1}$ postoji,  a time i element $k^{-1}a$. Kako
+vrijedi $k(k^{-1}a) = a$, $a$ se doista pojavljuje u promatranom retku.
+\qed
 
 Treba uočiti da nam binarna operacija definirana tablicom množenja
 koja je u standardnom obliku gdje prvi redak i stupac odgovaraju
