@@ -12,13 +12,14 @@ u okviru licence  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 ## Pristup tiskanoj verziji knjige
 
-- **Print-on-demand**: Najnoviju verziju (ver-0.9.10) je moguće naručiti putem
+- **Print-on-demand**: Recentnu verziju (ver-0.9.10) je moguće naručiti putem
 [print-on-demand servisa lulu.com](https://www.lulu.com/shop/kre%C5%A1imir-kumeri%C4%8Dki/grupe-simetrije-i-tenzori-u-fizici/paperback/product-m2yr2pw.html) 
 (tvrdi uvez, 16 EUR + poštarina 8 EUR, cijena taman pokriva troškove tiska).
 
 - **Knjižnica PMF, Fizički odsjek**: Nakon završenog recenzentskog postupka i tiska,
 knjiga će se moći posuditi ili kupiti
-u knjižnici FO, PMF (po cijeni vjerojatno nižoj od ove gore). Najvjerojatnije ne prije ljeta 2026.
+u knjižnici FO, PMF. Najvjerojatnije tijekom 2027.
+
 
 ## Korekcije i modifikacije
 
@@ -30,6 +31,12 @@ Korekcije ovoj verziji knjige možete poslati putem "Pull request" procedure
 ili putem "Issues."
 
 
-**Copyright © 2025 Krešimir Kumerički. Sva prava pridržana.**
+## Upotreba AI
+
+Kompletan tekst knjige je napisao čovjek. AI je pomogla oko LaTeX+github kompajliranja
+i ispravnog vođenja verzija knjige. Pregled promjena datoteka u kojima je sudjelovala AI
+je dostupan [ovdje](https://github.com/search?q=repo%3Akkumer%2Fsimetrije+%22Co-Authored-By%3A+Claude%22&type=commits).
+
+**Copyright © 2026 Krešimir Kumerički. Sva prava pridržana.**
 
 
