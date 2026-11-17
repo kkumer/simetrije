@@ -2,6 +2,7 @@
 my*
 **/*.swp
 **/*.~
+CLAUDE.md
 
 # LaTeX processing
 **/*.aux
